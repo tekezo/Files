@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Private ThumbSense</name>
+    <identifier>notsave.private_thumbsense</identifier>
+    <autogen>--ShowStatusMessage-- ThumbSense</autogen>
+    <!-- ============================================================ -->
+    <!-- PointingButton -->
+    <autogen>--KeyToPointingButton-- KeyCode::F,     PointingButton::LEFT</autogen>
+    <autogen>--KeyToPointingButton-- KeyCode::J,     PointingButton::LEFT</autogen>
+    <autogen>--KeyToPointingButton-- KeyCode::D,     PointingButton::RIGHT</autogen>
+    <autogen>--KeyToPointingButton-- KeyCode::K,     PointingButton::RIGHT</autogen>
+    <autogen>--KeyToPointingButton-- KeyCode::C,     PointingButton::MIDDLE</autogen>
+    <autogen>--KeyToPointingButton-- KeyCode::M,     PointingButton::MIDDLE</autogen>
+
+    <!-- ============================================================ -->
+    <!-- Scroll Mode -->
+    <autogen>--KeyToKey-- KeyCode::S, KeyCode::VK_MODIFIER_EXTRA1</autogen>
+    <autogen>--KeyToKey-- KeyCode::L, KeyCode::VK_MODIFIER_EXTRA1</autogen>
+    <autogen>--PointingRelativeToScroll-- PointingButton::NONE, ModifierFlag::EXTRA1</autogen>
+
+    <!-- ============================================================ -->
+    <autogen>--KeyToKey-- KeyCode::G, ModifierFlag::NONE, KeyCode::BRACKET_LEFT,  ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::NONE, KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::NONE, KeyCode::W,             ModifierFlag::COMMAND_L</autogen>
+  </item>
+</root>
