@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Command+Home/End to Top/Bottom</name>
+    <identifier>private.commandhome2top</identifier>
+    <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_COMMAND, KeyCode::HOME</autogen>
+    <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_COMMAND, KeyCode::END</autogen>
+  </item>
+
+  <item>
+    <name>Change Command+Home/End to Top/Bottom (with cursor)</name>
+    <identifier>private.commandhome2top_cursor</identifier>
+    <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_COMMAND, KeyCode::HOME, ModifierFlag::SHIFT_L, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_COMMAND, KeyCode::END,  ModifierFlag::SHIFT_L, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
+
+  <item>
+    <name>Change MiddleClick to LeftClick x2</name>
+    <identifier>private.middleclick2leftclickx2</identifier>
+    <autogen>--PointingButtonToPointingButton-- PointingButton::MIDDLE, PointingButton::LEFT, PointingButton::LEFT</autogen>
+  </item>
+</root>
