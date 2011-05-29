@@ -20,4 +20,11 @@
     <not>FINDER</not>
     <autogen>--PointingButtonToPointingButton-- PointingButton::MIDDLE, PointingButton::LEFT, PointingButton::LEFT</autogen>
   </item>
+
+  <item>
+    <name>Change Forward Delete to Delete (effective only in Mail)</name>
+    <identifier>private.app_mail_forwarddelete2delete</identifier>
+    <only>MAIL</only>
+    <autogen>--KeyToKey-- FROMKEYCODE_FORWARD_DELETE, KeyCode::DELETE</autogen>
+  </item>
 </root>
