@@ -15,8 +15,9 @@
   </item>
 
   <item>
-    <name>Change MiddleClick to LeftClick x2</name>
+    <name>Change MiddleClick to LeftClick x2 (except in Finder)</name>
     <identifier>private.middleclick2leftclickx2</identifier>
+    <not>FINDER</not>
     <autogen>--PointingButtonToPointingButton-- PointingButton::MIDDLE, PointingButton::LEFT, PointingButton::LEFT</autogen>
   </item>
 </root>
