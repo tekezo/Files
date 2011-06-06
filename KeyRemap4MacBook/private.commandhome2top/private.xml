@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <root>
   <item>
+    <name>Command+Left/Right to forward/backward-word</name>
+    <identifier>private.commandArrow2optionLarrow</identifier>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_LEFT,  VK_COMMAND, KeyCode::CURSOR_LEFT,  ModifierFlag::OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_RIGHT, VK_COMMAND,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
+      KeyCode::CURSOR_LEFT,  ModifierFlag::OPTION_L</autogen>
+  </item>
+
+  <item>
     <name>Change Command+Home/End to Top/Bottom</name>
     <identifier>private.commandhome2top</identifier>
     <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_COMMAND, KeyCode::HOME</autogen>
