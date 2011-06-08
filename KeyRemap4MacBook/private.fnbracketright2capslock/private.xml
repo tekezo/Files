@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Fn+] to CapsLock</name>
+    <identifier>private.fnbracketright2capslock</identifier>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::FN, KeyCode::CAPSLOCK</autogen>
+  </item>
+</root>
