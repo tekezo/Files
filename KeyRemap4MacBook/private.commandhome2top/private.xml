@@ -20,10 +20,16 @@
   <item>
     <name>Change Command+Home/End to Top/Bottom (with cursor)</name>
     <identifier>private.commandhome2top_cursor</identifier>
-    <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_COMMAND | VK_SHIFT, KeyCode::HOME, VK_SHIFT</autogen>
-    <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_COMMAND | VK_SHIFT, KeyCode::END,  VK_SHIFT</autogen>
-    <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_COMMAND, KeyCode::HOME, ModifierFlag::SHIFT_L, KeyCode::CURSOR_LEFT,  KeyCode::HOME</autogen>
-    <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_COMMAND, KeyCode::END,  ModifierFlag::SHIFT_L, KeyCode::CURSOR_RIGHT, KeyCode::END</autogen>
+    <block>
+      <only>FINDER</only>
+      <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_COMMAND, KeyCode::HOME</autogen>
+      <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_COMMAND, KeyCode::END</autogen>
+    </block>
+    <block>
+      <not>FINDER</not>
+      <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_COMMAND, KeyCode::CURSOR_UP,   VK_COMMAND, KeyCode::HOME</autogen>
+      <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_COMMAND, KeyCode::CURSOR_DOWN, VK_COMMAND, KeyCode::END</autogen>
+    </block>
   </item>
 
   <item>
