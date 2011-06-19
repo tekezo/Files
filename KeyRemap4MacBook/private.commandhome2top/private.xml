@@ -33,6 +33,12 @@
   </item>
 
   <item>
+    <name>Change Option+Delete to Command+Z</name>
+    <identifier>private.optiondeletetocommandz</identifier>
+    <autogen>--KeyToKey-- KeyCode::DELETE, VK_OPTION | ModifierFlag::NONE, KeyCode::Z, ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+  <item>
     <name>Change MiddleClick to LeftClick x2</name>
     <identifier>private.middleclick2leftclickx2</identifier>
     <autogen>--PointingButtonToPointingButton-- PointingButton::MIDDLE, PointingButton::LEFT, PointingButton::LEFT</autogen>
