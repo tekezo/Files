@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>海配列サンプル</name>
+    <!--
+        ModifierFlag::EXTRA1 を母音が押された印として使います。
+        母音が押されたときは、EXTRA1 を Sticky Modifer として立てることで、
+        その次に押されたキーにのみ EXTRA1 が立っている状態にします
+
+        子音のキーは EXTRA1 が立っているときは対応する文字を入力します。
+      -->
+    <list>
+      <item>
+        <name>Core</name>
+        <identifier>private.japaense_umi_layout</identifier>
+        <inputmode_only>JAPANESE</inputmode_only>
+
+        <!-- 最初に VK_CONFIG_FORCE_OFF_* で他の子音をキャンセルする（共通処理） -->
+        <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::NONE,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_a,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_k,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_s,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_w,
+
+          KeyCode::VK_CONFIG_FORCE_ON_notsave_private_japanese_umi_a,
+          KeyCode::VK_STICKY_EXTRA1</autogen>
+
+        <!-- 最初に VK_CONFIG_FORCE_OFF_* で他の子音をキャンセルする（共通処理） -->
+        <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::NONE,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_a,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_k,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_s,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_w,
+
+          KeyCode::VK_CONFIG_FORCE_ON_notsave_private_japanese_umi_k,
+          KeyCode::VK_STICKY_EXTRA1</autogen>
+
+        <!-- 最初に VK_CONFIG_FORCE_OFF_* で他の子音をキャンセルする（共通処理） -->
+        <autogen>--KeyToKey-- KeyCode::Z, ModifierFlag::NONE,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_a,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_k,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_s,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_w,
+
+          KeyCode::VK_CONFIG_FORCE_ON_notsave_private_japanese_umi_s,
+          KeyCode::VK_STICKY_EXTRA1</autogen>
+
+        <!-- 最初に VK_CONFIG_FORCE_OFF_* で他の子音をキャンセルする（共通処理） -->
+        <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::NONE,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_a,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_k,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_s,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_japanese_umi_w,
+
+          KeyCode::VK_CONFIG_FORCE_ON_notsave_private_japanese_umi_w,
+          KeyCode::VK_STICKY_EXTRA1</autogen>
+
+        <!-- エスケープキーで EXTRA1 をクリアする -->
+        <autogen>--KeyToKey-- KeyCode::ESCAPE, ModifierFlag::EXTRA1, KeyCode::VK_STICKY_EXTRA1</autogen>
+      </item>
+      <item>
+        <name>ア行</name>
+        <identifier vk_config="true">notsave.private_japanese_umi_a</identifier>
+        <inputmode_only>JAPANESE</inputmode_only>
+        <!-- ア -->
+        <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::EXTRA1, KeyCode::KEY_3</autogen>
+        <!-- イ -->
+        <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::EXTRA1, KeyCode::E</autogen>
+
+        <!-- 子音でないキーは無効化する（共通処理） -->
+        <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::EXTRA1, KeyCode::VK_NONE</autogen>
+        <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::EXTRA1, KeyCode::VK_NONE</autogen>
+      </item>
+      <item>
+        <name>カ行</name>
+        <identifier vk_config="true">notsave.private_japanese_umi_k</identifier>
+        <inputmode_only>JAPANESE</inputmode_only>
+        <!-- カ -->
+        <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::EXTRA1, KeyCode::T</autogen>
+        <!-- キ -->
+        <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::EXTRA1, KeyCode::G</autogen>
+
+        <!-- 子音でないキーは無効化する（共通処理） -->
+        <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::EXTRA1, KeyCode::VK_NONE</autogen>
+        <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::EXTRA1, KeyCode::VK_NONE</autogen>
+      </item>
+      <item>
+        <name>サ行</name>
+        <identifier vk_config="true">notsave.private_japanese_umi_s</identifier>
+        <inputmode_only>JAPANESE</inputmode_only>
+        <!-- サ -->
+        <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::EXTRA1, KeyCode::X</autogen>
+        <!-- シ -->
+        <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::EXTRA1, KeyCode::D</autogen>
+
+        <!-- 子音でないキーは無効化する（共通処理） -->
+        <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::EXTRA1, KeyCode::VK_NONE</autogen>
+        <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::EXTRA1, KeyCode::VK_NONE</autogen>
+      </item>
+      <item>
+        <name>ワ行</name>
+        <identifier vk_config="true">notsave.private_japanese_umi_w</identifier>
+        <inputmode_only>JAPANESE</inputmode_only>
+        <!-- ワ -->
+        <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::EXTRA1, KeyCode::KEY_0</autogen>
+        <!-- ヲ -->
+        <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::EXTRA1, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+
+        <!-- 子音でないキーは無効化する（共通処理） -->
+        <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::EXTRA1, KeyCode::VK_NONE</autogen>
+        <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::EXTRA1, KeyCode::VK_NONE</autogen>
+      </item>
+    </list>
+  </item>
+</root>
