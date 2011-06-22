@@ -4,6 +4,6 @@
     <name>My Custom Setting</name>
     <identifier>private.my_custom_setting</identifier>
     <autogen>--KeyOverlaidModifier-- KeyCode::F, KeyCode::COMMAND_L, ModifierFlag::EXTRA1, KeyCode::F</autogen>
-    <autogen>--KeyToKey-- KeyCode::KEY_0, ModifierFlag::COMMAND_L | ModifierFlag::EXTRA1, KeyCode::TAB</autogen>
+    <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::COMMAND_L | ModifierFlag::EXTRA1, KeyCode::TAB</autogen>
   </item>
 </root>
