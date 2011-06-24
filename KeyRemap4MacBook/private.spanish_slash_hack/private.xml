@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Use "/" as slash in Spanish Input Sources on US keyboard</name>
+    <identifier>private.spanish_slash_hack</identifier>
+    <block>
+      <inputmodedetail_only>SPANISH</inputmodedetail_only>
+      <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::NONE,            KeyCode::KEY_6, ModifierFlag::SHIFT_L</autogen>
+      <autogen>--KeyToKey-- KeyCode::SLASH, VK_SHIFT | ModifierFlag::NONE, KeyCode::DOT,   VK_SHIFT</autogen>
+    </block>
+    <block>
+      <inputmodedetail_only>SPANISH_ISO</inputmodedetail_only>
+      <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::NONE,            KeyCode::KEY_7, ModifierFlag::SHIFT_L</autogen>
+      <autogen>--KeyToKey-- KeyCode::SLASH, VK_SHIFT | ModifierFlag::NONE, KeyCode::MINUS, VK_SHIFT</autogen>
+    </block>
+  </item>
+</root>
