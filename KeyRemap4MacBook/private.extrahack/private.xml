@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>ShowStatusMessage</name>
+    <identifier vk_config="true">notsave.private_sample</identifier>
+    <autogen>--ShowStatusMessage-- Private Sample</autogen>
+  </item>
+
+  <item>
+    <name>My Custom Setting</name>
+    <identifier>private.my_custom_setting</identifier>
+    <autogen>--KeyOverlaidModifier-- KeyCode::SPACE, KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_sample, ModifierFlag::EXTRA1, KeyCode::SPACE</autogen>
+    <autogen>--KeyOverlaidModifier-- KeyCode::A, ModifierFlag::EXTRA1, KeyCode::SHIFT_L, KeyCode::S, ModifierFlag::CONTROL_L</autogen>
+  </item>
+</root>
