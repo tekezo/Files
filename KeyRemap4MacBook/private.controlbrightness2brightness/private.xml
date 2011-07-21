@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>My Custom Setting</name>
+    <appendix>Control+Brightness Down to Brightness Down</appendix>
+    <appendix>Control+Brightness Up to Brightness Up</appendix>
+    <identifier>private.controlbrightness2brightness</identifier>
+    <autogen>--ConsumerToConsumer-- ConsumerKeyCode::BRIGHTNESS_DOWN, VK_CONTROL, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+    <autogen>--ConsumerToConsumer-- ConsumerKeyCode::BRIGHTNESS_UP,   VK_CONTROL, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+  </item>
+</root>
