@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>swap ä and æ</name>
+    <identifier>private.german_a_to_ae</identifier>
+
+    <!-- ä to æ -->
+    <autogen>--KeyToKey--
+      KeyCode::QUOTE, ModifierFlag::NONE,
+      KeyCode::QUOTE, ModifierFlag::OPTION_L</autogen>
+    <!-- Ä to Æ -->
+    <autogen>--KeyToKey--
+      KeyCode::QUOTE, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::QUOTE, VK_SHIFT | ModifierFlag::OPTION_L</autogen>
+
+    <!-- æ to ä -->
+    <autogen>--KeyToKey--
+      KeyCode::QUOTE, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::QUOTE</autogen>
+    <!-- Æ to Ä -->
+    <autogen>--KeyToKey--
+      KeyCode::QUOTE, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::QUOTE, VK_SHIFT</autogen>
+  </item>
+</root>
