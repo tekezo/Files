@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change mediakeys to F4-F8 only in ForkLift</name>
+    <identifier>private.forklift_mediakeys_to_f</identifier>
+    <only>FORKLIFT</only>
+    <autogen>--KeyToKey-- KeyCode::LAUNCHPAD, KeyCode::F4</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::KEYBOARDLIGHT_LOW, KeyCode::F5</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::KEYBOARDLIGHT_HIGH, KeyCode::F6</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PREV, KeyCode::F7</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PLAY, KeyCode::F8</autogen>
+  </item>
+</root>
