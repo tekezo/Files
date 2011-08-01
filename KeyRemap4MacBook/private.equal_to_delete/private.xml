@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Equal(=) to Delete</name>
+    <appendix>(Dashboard to Launchpad)</appendix>
+    <identifier>private.equal_to_delete</identifier>
+    <autogen>--KeyToKey-- KeyCode::EQUAL, KeyCode::DELETE</autogen>
+    <autogen>--KeyToKey-- KeyCode::LAUNCHPAD, KeyCode::DASHBOARD</autogen>
+  </item>
+</root>
