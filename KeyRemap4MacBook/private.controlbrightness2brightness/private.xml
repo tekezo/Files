@@ -8,4 +8,15 @@
     <autogen>--ConsumerToConsumer-- ConsumerKeyCode::BRIGHTNESS_DOWN, VK_CONTROL, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
     <autogen>--ConsumerToConsumer-- ConsumerKeyCode::BRIGHTNESS_UP,   VK_CONTROL, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
   </item>
+
+  <item>
+    <name>My Custom Setting</name>
+    <appendix>Control+Expose to Expose</appendix>
+    <appendix>Control+Dashboard to Dashboard</appendix>
+    <appendix>Control+Launchpad to Launchpad</appendix>
+    <identifier>private.controlexpose2expose</identifier>
+    <autogen>--KeyToKey-- KeyCode::EXPOSE_ALL, VK_CONTROL, KeyCode::EXPOSE_ALL</autogen>
+    <autogen>--KeyToKey-- KeyCode::DASHBOARD,  VK_CONTROL, KeyCode::DASHBOARD</autogen>
+    <autogen>--KeyToKey-- KeyCode::LAUNCHPAD,  VK_CONTROL, KeyCode::LAUNCHPAD</autogen>
+  </item>
 </root>
