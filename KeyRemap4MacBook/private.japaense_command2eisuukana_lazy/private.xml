@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>左右のコマンドキー（⌘）を「英数／かな」としても使う</name>
+    <appendix>（左コマンドキーを英数キーにする）</appendix>
+    <appendix>（右コマンドキーをかなキーにする）</appendix>
+    <identifier>private.japaense_command2eisuukana_lazy</identifier>
+    <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_L, KeyCode::VK_LAZY_COMMAND_L, KeyCode::JIS_EISUU</autogen>
+    <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_R, KeyCode::VK_LAZY_COMMAND_R, KeyCode::JIS_KANA</autogen>
+  </item>
+</root>
