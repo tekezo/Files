@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>0x1e to Option+7</name>
+    <identifier>private.0x1e_to_option7</identifier>
+    <!-- 0x1e only (without modifiers) -->
+    <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::NONE, KeyCode::KEY_7, ModifierFlag::OPTION_L</autogen>
+    <!-- shift+0x1e -->
+    <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, VK_SHIFT | ModifierFlag::NONE, KeyCode::KEY_7, ModifierFlag::OPTION_L | VK_SHIFT</autogen>
+  </item>
+</root>
