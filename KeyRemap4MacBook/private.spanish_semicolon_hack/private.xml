@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>My Custom Setting</name>
+    <identifier>private.spanish_semicolon_hack</identifier>
+    <!-- ============================================================ -->
+    <!-- change '; to ñ, '? to ¿ -->
+    <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::NONE,
+      KeyCode::QUOTE, KeyCode::VK_STICKY_EXTRA1</autogen>
+    <!-- ñ -->
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::EXTRA1,
+      KeyCode::DELETE, KeyCode::SEMICOLON</autogen>
+    <!-- ¿ -->
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::EXTRA1 | VK_SHIFT,
+      KeyCode::DELETE, KeyCode::EQUAL, VK_SHIFT</autogen>
+    <!-- ============================================================ -->
+    <!-- retain ; -->
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::NONE,
+      KeyCode::COMMA, ModifierFlag::SHIFT_L</autogen>
+  </item>
+</root>
