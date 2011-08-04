@@ -2,9 +2,17 @@
 <root>
   <item>
     <name>Change Equal(=) to Delete</name>
-    <appendix>(Dashboard to Launchpad)</appendix>
+    <appendix>Fn+Equal(=) to Equal(=)</appendix>
     <identifier>private.equal_to_delete</identifier>
+    <autogen>--KeyToKey-- KeyCode::EQUAL, ModifierFlag::FN, KeyCode::EQUAL</autogen>
     <autogen>--KeyToKey-- KeyCode::EQUAL, KeyCode::DELETE</autogen>
+  </item>
+
+  <item>
+    <name>Change Launchpad to Dashboard</name>
+    <appendix>Fn+Launchpad to F4</appendix>
+    <identifier>private.launchpad_to_dashboard</identifier>
+    <autogen>--KeyToKey-- KeyCode::LAUNCHPAD, ModifierFlag::FN, KeyCode::F4</autogen>
     <autogen>--KeyToKey-- KeyCode::LAUNCHPAD, KeyCode::DASHBOARD</autogen>
   </item>
 </root>
