@@ -10,4 +10,12 @@
     <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PREV, KeyCode::F7</autogen>
     <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PLAY, KeyCode::F8</autogen>
   </item>
+
+  <item>
+    <name>Shift_R to Shift_R</name>
+    <appendix>(+ When you type Shift_R only, send Enter)</appendix>
+    <identifier>private.shiftR2shiftR_enter</identifier>
+    <only>FINDER, FORKLIFT</only>
+    <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_R, KeyCode::SHIFT_R, KeyCode::ENTER</autogen>
+  </item>
 </root>
