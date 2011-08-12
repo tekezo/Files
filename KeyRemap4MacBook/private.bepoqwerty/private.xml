@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Workaround bepo qwerty</name>
+    <identifier>private.bepoqwerty</identifier>
+    <autogen>--KeyToKey-- KeyCode::V, VK_COMMAND, KeyCode::U, VK_COMMAND</autogen>
+  </item>
+</root>
