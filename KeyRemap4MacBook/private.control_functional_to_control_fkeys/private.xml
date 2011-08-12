@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Control+Functional to Control+Fkeys</name>
+    <identifier>private.control_functional_to_control_fkeys</identifier>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::BRIGHTNESS_DOWN,    VK_CONTROL, KeyCode::F1,  VK_CONTROL</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::BRIGHTNESS_UP,      VK_CONTROL, KeyCode::F2,  VK_CONTROL</autogen>
+    <autogen>--KeyToKey--      KeyCode::EXPOSE_ALL,                 VK_CONTROL, KeyCode::F3,  VK_CONTROL</autogen>
+    <autogen>--KeyToKey--      KeyCode::DASHBOARD,                  VK_CONTROL, KeyCode::F4,  VK_CONTROL</autogen>
+    <autogen>--KeyToKey--      KeyCode::LAUNCHPAD,                  VK_CONTROL, KeyCode::F4,  VK_CONTROL</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::KEYBOARDLIGHT_LOW,  VK_CONTROL, KeyCode::F5,  VK_CONTROL</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::KEYBOARDLIGHT_HIGH, VK_CONTROL, KeyCode::F6,  VK_CONTROL</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PREV,         VK_CONTROL, KeyCode::F7,  VK_CONTROL</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PLAY,         VK_CONTROL, KeyCode::F8,  VK_CONTROL</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_NEXT,         VK_CONTROL, KeyCode::F9,  VK_CONTROL</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::VOLUME_MUTE,        VK_CONTROL, KeyCode::F10, VK_CONTROL</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::VOLUME_DOWN,        VK_CONTROL, KeyCode::F11, VK_CONTROL</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::VOLUME_UP,          VK_CONTROL, KeyCode::F12, VK_CONTROL</autogen>
+  </item>
+</root>
