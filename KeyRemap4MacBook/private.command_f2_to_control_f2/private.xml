@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Command+F2,F3 to Control+F2,F3</name>
+    <identifier>private.command_f2_to_control_f2</identifier>
+    <autogen>--KeyToKey-- KeyCode::F2, VK_COMMAND, KeyCode::F2, ModifierFlag::CONTROL_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::F3, VK_COMMAND, KeyCode::F3, ModifierFlag::CONTROL_L</autogen>
+  </item>
+</root>
