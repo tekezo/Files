@@ -3,6 +3,31 @@
   <item>
     <name>Workaround bepo qwerty</name>
     <identifier>private.bepoqwerty</identifier>
+    <!--                  physical Q              physical M == bepo Q -->
+    <autogen>--KeyToKey-- KeyCode::Q, VK_COMMAND, KeyCode::M, VK_COMMAND</autogen>
+    <!--                  physical W              physical ] == bepo W -->
+    <autogen>--KeyToKey-- KeyCode::W, VK_COMMAND, KeyCode::BRACKET_RIGHT, VK_COMMAND</autogen>
+    <!--                  physical E              physical F == bepo E -->
+    <autogen>--KeyToKey-- KeyCode::E, VK_COMMAND, KeyCode::F, VK_COMMAND</autogen>
+    <!--                  physical R              physical L == bepo R -->
+    <autogen>--KeyToKey-- KeyCode::R, VK_COMMAND, KeyCode::L, VK_COMMAND</autogen>
+
+    <!--                  physical A              physical A == bepo A -->
+    <autogen>--KeyToKey-- KeyCode::A, VK_COMMAND, KeyCode::A, VK_COMMAND</autogen>
+    <!--                  physical S              physical K == bepo S -->
+    <autogen>--KeyToKey-- KeyCode::S, VK_COMMAND, KeyCode::K, VK_COMMAND</autogen>
+    <!--                  physical D              physical I == bepo D -->
+    <autogen>--KeyToKey-- KeyCode::D, VK_COMMAND, KeyCode::I, VK_COMMAND</autogen>
+    <!--                  physical F              physical / == bepo F -->
+    <autogen>--KeyToKey-- KeyCode::F, VK_COMMAND, KeyCode::SLASH, VK_COMMAND</autogen>
+
+    <!--                  physical Z              physical [ == bepo Z -->
+    <autogen>--KeyToKey-- KeyCode::Z, VK_COMMAND, KeyCode::BRACKET_LEFT, VK_COMMAND</autogen>
+    <!--                  physical X              physical C == bepo X -->
+    <autogen>--KeyToKey-- KeyCode::X, VK_COMMAND, KeyCode::C, VK_COMMAND</autogen>
+    <!--                  physical C              physical H == bepo C -->
+    <autogen>--KeyToKey-- KeyCode::C, VK_COMMAND, KeyCode::H, VK_COMMAND</autogen>
+    <!--                  physical V              physical U == bepo V -->
     <autogen>--KeyToKey-- KeyCode::V, VK_COMMAND, KeyCode::U, VK_COMMAND</autogen>
   </item>
 </root>
