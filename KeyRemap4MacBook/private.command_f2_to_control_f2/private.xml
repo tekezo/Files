@@ -2,8 +2,22 @@
 <root>
   <item>
     <name>Command+F2,F3 to Control+F2,F3</name>
+    <name>(+ F2 to Control+U in Excel)</name>
     <identifier>private.command_f2_to_control_f2</identifier>
-    <autogen>--KeyToKey-- KeyCode::F2, VK_COMMAND, KeyCode::F2, ModifierFlag::CONTROL_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::F3, VK_COMMAND, KeyCode::F3, ModifierFlag::CONTROL_L</autogen>
+    <block>
+      <autogen>--KeyToKey-- KeyCode::F2, VK_COMMAND, KeyCode::F2, ModifierFlag::CONTROL_L</autogen>
+      <autogen>--KeyToKey-- KeyCode::F3, VK_COMMAND, KeyCode::F3, ModifierFlag::CONTROL_L</autogen>
+    </block>
+    <block>
+      <only>EXCEL</only>
+      <autogen>--KeyToKey-- KeyCode::F2, ModifierFlag::NONE, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
+    </block>
+  </item>
+  <item>
+    <name>Option to Option</name>
+    <appendix>(+ When you type Option only, send Control+F2)</appendix>
+    <identifier>private.option_to_option_with_control_f2</identifier>
+    <autogen>--KeyOverlaidModifier-- KeyCode::OPTION_L, KeyCode::OPTION_L, KeyCode::F2, ModifierFlag::CONTROL_L</autogen>
+    <autogen>--KeyOverlaidModifier-- KeyCode::OPTION_R, KeyCode::OPTION_R, KeyCode::F2, ModifierFlag::CONTROL_L</autogen>
   </item>
 </root>
