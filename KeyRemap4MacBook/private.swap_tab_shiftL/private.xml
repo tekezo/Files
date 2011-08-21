@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Swap Tab and Shift_L</name>
+    <identifier>private.swap_tab_shiftL</identifier>
+    <autogen>--KeyToKey-- KeyCode::TAB, KeyCode::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_L, KeyCode::TAB</autogen>
+  </item>
+</root>
