@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Command+Control+D to F19</name>
+    <identifier>private.command_control_d_to_f19</identifier>
+    <autogen>--KeyToKey-- KeyCode::D, VK_COMMAND | VK_CONTROL | ModifierFlag::NONE, KeyCode::F19</autogen>
+  </item>
+</root>
