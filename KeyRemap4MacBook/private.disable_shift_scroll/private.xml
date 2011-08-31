@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Disable Shift+ScrollWheel</name>
+    <identifier>private.disable_shift_scroll</identifier>
+    <modifier_only>ModifierFlag::SHIFT_L, ModifierFlag::SHIFT_R</modifier_only>
+    <autogen>--DropScrollWheel--</autogen>
+  </item>
+</root>
