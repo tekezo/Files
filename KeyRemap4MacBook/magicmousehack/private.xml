@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>ThreeFinger Mode. (for multitouch extension)</name>
+    <identifier>notsave.private_threefingermode</identifier>
+    <block>
+      <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::MAGIC_MOUSE</device_only>
+      <autogen>--PointingRelativeToScroll-- PointingButton::NONE, VK_MOD_ANY</autogen>
+    </block>
+  </item>
+
+  <item>
+    <name>Disable ScrollWheel on Magic Mouse</name>
+    <identifier>private.dropscrollwheel_0x05ac_0x030d</identifier>
+    <block>
+      <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::MAGIC_MOUSE</device_only>
+      <autogen>--DropScrollWheel--</autogen>
+    </block>
+  </item>
+</root>
