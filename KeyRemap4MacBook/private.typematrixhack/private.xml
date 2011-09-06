@@ -3,12 +3,14 @@
   <item>
     <name>Typematrix Hack</name>
     <identifier>private.typematrixhack</identifier>
+    <!-- change keycode:42 to keycode:94 -->
     <autogen>--KeyToKey-- KeyCode::BACKSLASH, KeyCode::JIS_UNDERSCORE</autogen>
   </item>
 
   <item>
     <name>Typematrix Hack2</name>
     <identifier>private.typematrixhack2</identifier>
+    <!-- change keycode:94 to keycode:42 -->
     <autogen>--KeyToKey-- KeyCode::JIS_UNDERSCORE, KeyCode::BACKSLASH</autogen>
   </item>
 </root>
