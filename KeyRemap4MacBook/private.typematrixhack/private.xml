@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Typematrix Hack</name>
+    <identifier>private.typematrixhack</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, KeyCode::JIS_UNDERSCORE</autogen>
+  </item>
+
+  <item>
+    <name>Typematrix Hack2</name>
+    <identifier>private.typematrixhack2</identifier>
+    <autogen>--KeyToKey-- KeyCode::JIS_UNDERSCORE, KeyCode::BACKSLASH</autogen>
+  </item>
+</root>
