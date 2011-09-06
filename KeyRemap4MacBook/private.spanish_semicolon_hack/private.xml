@@ -3,19 +3,38 @@
   <item>
     <name>My Custom Setting</name>
     <identifier>private.spanish_semicolon_hack</identifier>
+    <inputmode_only>ROMAN</inputmode_only>
+
     <!-- ============================================================ -->
-    <!-- change '; to ñ, '? to ¿ -->
-    <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::NONE,
-      KeyCode::QUOTE, KeyCode::VK_STICKY_EXTRA1</autogen>
-    <!-- ñ -->
-    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::EXTRA1,
-      KeyCode::DELETE, KeyCode::SEMICOLON</autogen>
-    <!-- ¿ -->
-    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::EXTRA1 | VK_SHIFT,
-      KeyCode::DELETE, KeyCode::EQUAL, VK_SHIFT</autogen>
-    <!-- ============================================================ -->
-    <!-- retain ; -->
-    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::NONE,
-      KeyCode::COMMA, ModifierFlag::SHIFT_L</autogen>
+    <!-- change ' to sticky extra1 -->
+    <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::NONE, KeyCode::VK_STICKY_EXTRA1</autogen>
+    <!-- '; to ñ -->
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::EXTRA1 | VK_MOD_ANY,
+      KeyCode::N, ModifierFlag::OPTION_L,
+      KeyCode::N, VK_MOD_ANY</autogen>
+    <!-- 'a to á -->
+    <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::EXTRA1 | VK_MOD_ANY,
+      KeyCode::E, ModifierFlag::OPTION_L,
+      KeyCode::A, VK_MOD_ANY</autogen>
+    <!-- 'e to é -->
+    <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::EXTRA1 | VK_MOD_ANY,
+      KeyCode::E, ModifierFlag::OPTION_L,
+      KeyCode::E, VK_MOD_ANY</autogen>
+    <!-- " 'i " to í -->
+    <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::EXTRA1 | VK_MOD_ANY,
+      KeyCode::E, ModifierFlag::OPTION_L,
+      KeyCode::I, VK_MOD_ANY</autogen>
+    <!-- " 'o " to ó -->
+    <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::EXTRA1 | VK_MOD_ANY,
+      KeyCode::E, ModifierFlag::OPTION_L,
+      KeyCode::O, VK_MOD_ANY</autogen>
+    <!-- " 'u " to ú -->
+    <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::EXTRA1 | VK_MOD_ANY,
+      KeyCode::E, ModifierFlag::OPTION_L,
+      KeyCode::U, VK_MOD_ANY</autogen>
+
+    <!-- " ALT ? " to ¿ -->
+    <autogen>--KeyToKey-- KeyCode::SLASH, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::SLASH, VK_OPTION | ModifierFlag::SHIFT_L</autogen>
   </item>
 </root>
