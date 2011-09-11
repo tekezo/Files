@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>£ to ±</name>
+    <identifier>private.belgian_pound_sign_to_plusminus</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, VK_SHIFT | ModifierFlag::NONE, KeyCode::SLASH, ModifierFlag::OPTION_L | VK_SHIFT</autogen>
+  </item>
+</root>
