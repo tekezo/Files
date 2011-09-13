@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Section(§) to Command_L</name>
+    <identifier>private.section_to_command_l</identifier>
+    <autogen>--KeyToKey-- KeyCode::UK_SECTION, KeyCode::COMMAND_L</autogen>
+  </item>
+</root>
