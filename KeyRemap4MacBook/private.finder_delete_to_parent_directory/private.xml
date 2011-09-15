@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Delete to Open parent directory in Finder</name>
+    <identifier>private.finder_delete_to_parent_directory</identifier>
+    <only>FINDER</only>
+    <autogen>--KeyToKey-- KeyCode::DELETE, ModifierFlag::NONE, KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L</autogen>
+  </item>
+</root>
