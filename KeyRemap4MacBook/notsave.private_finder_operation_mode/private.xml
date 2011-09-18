@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Finder Operation Mode</name>
+    <identifier vk_config="true">notsave.private_finder_operation_mode</identifier>
+    <autogen>--ShowStatusMessage-- Finder Operation Mode</autogen>
+    <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::NONE, KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+  <item>
+    <name>Simultaneous Key Presses [F+D] to Finder Operation Mode</name>
+    <identifier>private.fd_to_finder_operation_mode</identifier>
+    <autogen>--SimultaneousKeyPresses-- KeyCode::F, KeyCode::D, KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_finder_operation_mode</autogen>
+  </item>
+</root>
