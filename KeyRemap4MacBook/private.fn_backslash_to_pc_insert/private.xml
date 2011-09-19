@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Fn+Backslash(\) to PC Insert Key (Mac's Help Key)</name>
+    <identifier>private.fn_backslash_to_pc_insert</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, ModifierFlag::FN, KeyCode::PC_INSERT</autogen>
+  </item>
+</root>
