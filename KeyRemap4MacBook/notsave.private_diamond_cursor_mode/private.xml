@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Diamond Cursor Mode</name>
+    <identifier>notsave.private_diamond_cursor_mode</identifier>
+    <autogen>--ShowStatusMessage-- Diamond Cursor Mode</autogen>
+    <autogen>--KeyToKey-- KeyCode::W, KeyCode::CURSOR_UP</autogen>
+    <autogen>--KeyToKey-- KeyCode::S, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::A, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>--KeyToKey-- KeyCode::D, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
+</root>
