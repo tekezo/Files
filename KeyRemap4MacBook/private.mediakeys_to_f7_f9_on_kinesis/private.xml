@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Media Keys to F7-F9 on Kinesis</name>
+    <identifier>private.mediakeys_to_f7_f9_on_kinesis</identifier>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PREV_18, KeyCode::F7</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PLAY,    KeyCode::F8</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_NEXT_17, KeyCode::F9</autogen>
+  </item>
+</root>
