@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>左コマンドキーを英数にする</name>
+    <appendix>左コマンドキー二度押しでOption+S（Google日本語入力向け）</appendix>
+    <identifier>private.jis_commandL2eisuu_option_s</identifier>
+    <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_L, ModifierFlag::EXTRA1, KeyCode::COMMAND_L, KeyCode::S, ModifierFlag::OPTION_L</autogen>
+    <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_L, KeyCode::COMMAND_L, KeyCode::JIS_EISUU, KeyCode::VK_STICKY_EXTRA1_FORCE_ON</autogen>
+  </item>
+</root>
