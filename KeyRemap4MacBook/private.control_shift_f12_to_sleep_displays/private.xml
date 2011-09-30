@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Control+Shift+F12 to Sleep Displays</name>
+    <identifier>private.control_shift_f12_to_sleep_displays</identifier>
+    <autogen>--KeyToConsumer-- KeyCode::F12, VK_CONTROL | VK_SHIFT | ModifierFlag::NONE, ConsumerKeyCode::EJECT, VK_CONTROL | VK_SHIFT</autogen>
+  </item>
+
+  <item>
+    <name>Control+Shift+Volume Up to Sleep Displays</name>
+    <identifier>private.control_shift_volume_up_to_sleep_displays</identifier>
+    <autogen>--ConsumerToConsumer-- ConsumerKeyCode::VOLUME_UP, VK_CONTROL | VK_SHIFT | ModifierFlag::NONE, ConsumerKeyCode::EJECT, VK_CONTROL | VK_SHIFT</autogen>
+  </item>
+</root>
