@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Disable Down-Arrow</name>
+    <identifier>private.disable_down_arrow</identifier>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_DOWN, KeyCode::VK_NONE</autogen>
+  </item>
+</root>
