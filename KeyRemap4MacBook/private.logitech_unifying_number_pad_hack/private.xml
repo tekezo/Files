@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <appendix>Force turn NumLock on at Logitech Unifying Devices</appendix>
+    <identifier>private.logitech_unifying_number_pad_hack</identifier>
+    <autogen>--ForceNumLockOn-- DeviceVendor::LOGITECH, DeviceProduct::LOGITECH_UNIFYING_0xc52b</autogen>
+  </item>
+</root>
