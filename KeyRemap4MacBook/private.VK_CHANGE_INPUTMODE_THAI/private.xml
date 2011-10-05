@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Command+1,2,3 to Input Source changes</name>
+    <identifier>private.VK_CHANGE_INPUTMODE_THAI</identifier>
+    <autogen>--KeyToKey-- KeyCode::KEY_1, VK_COMMAND | ModifierFlag::NONE, KeyCode::VK_CHANGE_INPUTMODE_ENGLISH</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_2, VK_COMMAND | ModifierFlag::NONE, KeyCode::VK_CHANGE_INPUTMODE_THAI</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_3, VK_COMMAND | ModifierFlag::NONE, KeyCode::VK_CHANGE_INPUTMODE_TRADITIONAL_CHINESE_YAHOO_KEYKEY</autogen>
+  </item>
+</root>
