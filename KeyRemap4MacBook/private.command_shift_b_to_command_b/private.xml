@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Command+Shift+B to Command+B (Toggle Bold)</name>
+    <appendix>Command+B to Option+Left-Arrow (Backward-Word)</appendix>
+    <identifier>private.command_shift_b_to_command_b</identifier>
+    <!-- ============================================================ -->
+    <!-- Command+Shift+B -->
+    <block>
+      <autogen>--KeyToKey-- KeyCode::B, VK_COMMAND | VK_SHIFT | ModifierFlag::NONE, KeyCode::B, VK_COMMAND</autogen>
+    </block>
+    <!-- ============================================================ -->
+    <!-- Command+B -->
+    <block>
+      <not>TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11, ECLIPSE</not>
+      <autogen>--KeyToKey-- KeyCode::B, VK_COMMAND, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L</autogen>
+    </block>
+    <block>
+      <only>TERMINAL</only>
+      <autogen>--KeyToKey-- KeyCode::B, VK_COMMAND, KeyCode::ESCAPE, KeyCode::B</autogen>
+    </block>
+  </item>
+</root>
