@@ -12,7 +12,7 @@
     <!-- ============================================================ -->
     <!-- Command+B -->
     <block>
-      <not>TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11, ECLIPSE</not>
+      <not>EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11, ECLIPSE</not>
       <autogen>--KeyToKey-- KeyCode::B, VK_COMMAND, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L</autogen>
     </block>
     <block>
