@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Music Keys Hack</name>
+    <identifier>private.music_keys_to_keyboard</identifier>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PREV,
+      KeyCode::R, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::OPTION_L</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_NEXT,
+      KeyCode::Z, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::OPTION_L</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PLAY,
+      KeyCode::R, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L | ModifierFlag::OPTION_L</autogen>
+  </item>
+</root>
