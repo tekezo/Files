@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Control+V to PageDown with cursor (Option+PageDown)</name>
+    <identifier>private.emacsmode_controlV</identifier>
+    <not>EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11, ECLIPSE</not>
+    <autogen>--KeyToKey-- KeyCode::V, VK_CONTROL, KeyCode::PAGEDOWN, ModifierFlag::OPTION_L</autogen>
+  </item>
+  <item>
+    <name>Command+V to PageUp with cursor (Option+PageUp)</name>
+    <identifier>private.emacsmode_commandV</identifier>
+    <not>EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11, ECLIPSE</not>
+    <autogen>--KeyToKey-- KeyCode::V, VK_COMMAND, KeyCode::PAGEUP, ModifierFlag::OPTION_L</autogen>
+  </item>
+</root>
