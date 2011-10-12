@@ -7,6 +7,7 @@
     <!-- ============================================================ -->
     <!-- Command+Shift+B -->
     <block>
+      <config_not>notsave.emacsmode_ex_controlSpace_core</config_not>
       <autogen>--KeyToKey-- KeyCode::B, VK_COMMAND | VK_SHIFT | ModifierFlag::NONE, KeyCode::B, VK_COMMAND</autogen>
     </block>
     <!-- ============================================================ -->
