@@ -43,13 +43,13 @@
       -->
 
     <!-- equal -->
-    <autogen>--KeyToKey-- KeyCode::KEYPAD_1, ModifierFlag::EXTRA1 | ModifierFlag::OPTION_L, KeyCode::KEYPAD_1</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_1, ModifierFlag::EXTRA1 | ModifierFlag::OPTION_L, KeyCode::CURSOR_UP</autogen>
 
     <!-- ( -->
-    <autogen>--KeyToKey-- KeyCode::KEYPAD_0, ModifierFlag::EXTRA2 | ModifierFlag::OPTION_L, KeyCode::CURSOR_UP</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_0, ModifierFlag::EXTRA2 | ModifierFlag::OPTION_L, KeyCode::KEYPAD_1</autogen>
 
     <!-- ) -->
-    <autogen>--KeyToKey-- KeyCode::KEYPAD_1, ModifierFlag::EXTRA2 | ModifierFlag::OPTION_L, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_1, ModifierFlag::EXTRA2 | ModifierFlag::OPTION_L, KeyCode::KEYPAD_3</autogen>
 
     <!-- to Sticky Modifier -->
     <autogen>--KeyToKey-- KeyCode::KEYPAD_6, ModifierFlag::OPTION_L | ModifierFlag::NONE, KeyCode::VK_STICKY_EXTRA1</autogen>
@@ -59,6 +59,8 @@
     <!-- Disable unnecessary Clear -->
     <autogen>--KeyToKey-- KeyCode::PC_KEYPAD_NUMLOCK, KeyCode::VK_NONE</autogen>
 
+    <!-- back? -->
+    <autogen>--KeyToKey-- KeyCode::FORWARD_DELETE, KeyCode::CURSOR_DOWN</autogen>
     <!-- other keys -->
     <autogen>--KeyToKey-- KeyCode::KEYPAD_SLASH, KeyCode::KEYPAD_EQUAL</autogen>
     <autogen>--KeyToKey-- KeyCode::KEYPAD_MULTIPLY, KeyCode::F8</autogen>
