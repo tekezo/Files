@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>NumLock to Launchpad</name>
+    <appendix>VideoMirror to Mission Control</appendix>
+    <appendix>F12 to Full Screen Mode (Command+Control+F)</appendix>
+    <identifier>private.numlock_to_launchpad</identifier>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::NUMLOCK,      KeyCode::LAUNCHPAD</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::VIDEO_MIRROR, KeyCode::EXPOSE_ALL</autogen>
+    <autogen>--KeyToKey-- KeyCode::F12, ModifierFlag::NONE, KeyCode::F, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L</autogen>
+  </item>
+</root>
