@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Control+LeftClick to Command+LeftClick on Firefox</name>
+    <identifier>private.control_leftclick_to_command_leftclick</identifier>
+    <only>FIREFOX</only>
+    <autogen>--PointingButtonToPointingButton-- PointingButton::LEFT, VK_CONTROL, PointingButton::LEFT, ModifierFlag::COMMAND_L</autogen>
+  </item>
+</root>
