@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Application Key to Eject</name>
+    <identifier>private.pc_application2eject</identifier>
+    <autogen>--KeyToConsumer-- KeyCode::PC_APPLICATION, ConsumerKeyCode::EJECT</autogen>
+  </item>
+</root>
