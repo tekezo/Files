@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>クロス親指シフト（ローマ字入力）</name>
+    <appendix>Q: ゐ</appendix>
+    <appendix>Z: ゑ</appendix>
+    <identifier>private.jis_oyayubishift_oldkana</identifier>
+    <inputmode_only>JAPANESE</inputmode_only>
+    <autogen>--SimultaneousKeyPresses-- KeyCode::JIS_KANA, KeyCode::Q,
+      KeyCode::W, KeyCode::Y, KeyCode::I, KeyCode::VK_NONE</autogen>
+    <autogen>--SimultaneousKeyPresses-- KeyCode::JIS_KANA, KeyCode::Z,
+      KeyCode::W, KeyCode::Y, KeyCode::E, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
