@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Command_L to Option_L (Enable at only Emacs)</name>
+    <appendix>(Pass-Through Tab and Backquote)</appendix>
+    <identifier>private.app_emacs_commandL2optionL_except_tab</identifier>
+    <only>EMACS</only>
+    <autogen>--KeyToKey-- KeyCode::TAB, ModifierFlag::OPTION_L, KeyCode::TAB, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, ModifierFlag::OPTION_L, KeyCode::BACKQUOTE, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+  </item>
+</root>
