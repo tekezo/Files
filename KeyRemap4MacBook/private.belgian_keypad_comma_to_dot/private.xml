@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <root>
   <item>
-    <name>Change KeyPad Comma to Dot (Option+.) on Belgian Keyboard</name>
+    <name>Change KeyPad Comma to Dot on Belgian Keyboard</name>
     <identifier>private.belgian_keypad_comma_to_dot</identifier>
     <autogen>--KeyToKey-- KeyCode::KEYPAD_DOT, KeyCode::KEYPAD_DOT, ModifierFlag::SHIFT_L</autogen>
   </item>
