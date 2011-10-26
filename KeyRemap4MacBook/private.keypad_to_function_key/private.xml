@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>KeyPad to Function Key</name>
+    <identifier>private.keypad_to_function_key</identifier>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_1, KeyCode::F1</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_2, KeyCode::F2</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_3, KeyCode::F3</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_4, KeyCode::F4</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_5, KeyCode::F5</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_6, KeyCode::F6</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_7, KeyCode::F7</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_8, KeyCode::F8</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_9, KeyCode::F9</autogen>
+  </item>
+</root>
