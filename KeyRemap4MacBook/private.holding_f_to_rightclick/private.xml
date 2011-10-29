@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Holding F to RightClick</name>
+    <identifier>private.holding_f_to_rightclick</identifier>
+    <autogen>--HoldingKeyToKey-- KeyCode::F, ModifierFlag::NONE, KeyCode::F, KeyCode::VK_NONE, KeyCode::VK_MOUSEKEY_BUTTON_RIGHT</autogen>
+  </item>
+</root>
