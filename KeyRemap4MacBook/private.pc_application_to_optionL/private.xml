@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>PC Application Key to Option_L (Emacs,Terminal)</name>
+    <appendix>PC Application Key to CapsLock (Other Apps)</appendix>
+    <identifier>private.pc_application_to_optionL</identifier>
+    <block>
+      <only>EMACS, TERMINAL</only>
+      <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, KeyCode::OPTION_L</autogen>
+    </block>
+    <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, KeyCode::CAPSLOCK</autogen>
+  </item>
+</root>
