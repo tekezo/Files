@@ -2,7 +2,7 @@
 <root>
   <item>
     <name>Change F19 to Escape on Vi</name>
-    <identifier>private.app_vi_f12_to_escape</identifier>
+    <identifier>private.app_vi_f19_to_escape</identifier>
     <only>VI</only>
     <autogen>--KeyToKey-- KeyCode::F19, KeyCode::ESCAPE</autogen>
   </item>
