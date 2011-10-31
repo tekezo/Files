@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Pass-Through on Virtual Machine </name>
+    <identifier>private.pass_through_vm</identifier>
+    <not>VIRTUALMACHINE</not>
+
+    <!-- Swap @ and " -->
+    <autogen>--KeyToKey-- KeyCode::KEY_2, VK_SHIFT, KeyCode::QUOTE, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::QUOTE, VK_SHIFT, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
+
+    <!-- Backslash (\) to Option_L+3 (Hash #), Shift+Backslash(\) to Tilde (~) -->
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, VK_SHIFT, KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, KeyCode::KEY_3, ModifierFlag::OPTION_L</autogen>
+
+    <!-- Section to Backslash (\) -->
+    <autogen>--KeyToKey-- KeyCode::UK_SECTION, KeyCode::BACKSLASH</autogen>
+  </item>
+</root>
