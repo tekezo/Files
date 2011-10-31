@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <root>
   <item>
-    <name>パスワード入力でもAIU配列</name>
+    <name>いつでもAIU配列</name>
     <identifier>private.jis_layout_aiu_password</identifier>
-    <only>PASSWORD</only>
     <modifier_not>
       ModifierFlag::COMMAND_L,
       ModifierFlag::COMMAND_R,
