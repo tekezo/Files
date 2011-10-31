@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Swap [ and -</name>
+    <identifier>private.swap_left_bracket_and_minus</identifier>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, KeyCode::MINUS</autogen>
+    <autogen>--KeyToKey-- KeyCode::MINUS, KeyCode::BRACKET_LEFT</autogen>
+  </item>
+</root>
