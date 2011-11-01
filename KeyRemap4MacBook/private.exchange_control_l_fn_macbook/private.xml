@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+  <deviceproductdef>
+    <productname>MY_MACBOOK_INTERNAL_KEYBOARD</productname>
+    <productid>0x0237</productid>
+  </deviceproductdef>
+
+  <item>
+    <name>Exchange Control_L and Fn on MacBook Internal Keyboard</name>
+    <identifier>private.exchange_control_l_fn_macbook</identifier>
+    <device_only>DeviceVendor::APPLE_COMPUTER, DeviceProduct::MY_MACBOOK_INTERNAL_KEYBOARD</device_only>
+    <autogen>--KeyToKey-- KeyCode::CONTROL_L, KeyCode::FN</autogen>
+    <autogen>--KeyToKey-- KeyCode::FN, KeyCode::CONTROL_L</autogen>
+  </item>
+</root>
