@@ -2,7 +2,9 @@
 <root>
   <item>
     <name>Backslash(\) to Fn</name>
+    <appendix>(+ Fn+Backslash(\) to Backslash(\))</appendix>
     <identifier>private.backslash_to_fn</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, ModifierFlag::FN, KeyCode::BACKSLASH</autogen>
     <autogen>--KeyToKey-- KeyCode::BACKSLASH, KeyCode::FN</autogen>
   </item>
 </root>
