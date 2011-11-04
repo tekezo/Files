@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Backslash(\) to Fn</name>
+    <identifier>private.backslash_to_fn</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, KeyCode::FN</autogen>
+  </item>
+</root>
