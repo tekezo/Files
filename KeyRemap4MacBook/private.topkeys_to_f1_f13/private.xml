@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change "Escape-F1...F12" to F1-F13</name>
+    <appendix>Change Eject to F16</appendix>
+    <identifier>private.topkeys_to_f1_f13</identifier>
+    <autogen>--KeyToKey--              KeyCode::ESCAPE, KeyCode::F1</autogen>
+    <autogen>--KeyToKey--              KeyCode::F1,     KeyCode::F2</autogen>
+    <autogen>--KeyToKey--              KeyCode::F2,     KeyCode::F3</autogen>
+    <autogen>--KeyToKey--              KeyCode::F3,     KeyCode::F4</autogen>
+    <autogen>--KeyToKey--              KeyCode::F4,     KeyCode::F5</autogen>
+    <autogen>--KeyToKey--              KeyCode::F5,     KeyCode::F6</autogen>
+    <autogen>--KeyToKey--              KeyCode::F6,     KeyCode::F7</autogen>
+    <autogen>--KeyToKey--              KeyCode::F7,     KeyCode::F8</autogen>
+    <autogen>--KeyToKey--              KeyCode::F8,     KeyCode::F9</autogen>
+    <autogen>--KeyToKey--              KeyCode::F9,     KeyCode::F10</autogen>
+    <autogen>--KeyToKey--              KeyCode::F10,    KeyCode::F11</autogen>
+    <autogen>--KeyToKey--              KeyCode::F11,    KeyCode::F12</autogen>
+    <autogen>--KeyToKey--              KeyCode::F12,    KeyCode::F13</autogen>
+    <!-- F14 is reserved by system -->
+    <!-- F15 is reserved by system -->
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::EJECT,  KeyCode::F16</autogen>
+  </item>
+</root>
