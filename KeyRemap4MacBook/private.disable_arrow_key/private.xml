@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Disable Arrow Key</name>
+    <identifier>private.disable_arrow_key</identifier>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_UP,    KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_DOWN,  KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_LEFT,  KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_RIGHT, KeyCode::VK_NONE</autogen>
+  </item>
+</root>
