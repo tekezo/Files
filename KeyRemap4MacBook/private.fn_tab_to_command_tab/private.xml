@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Fn+Tab to Command+Tab</name>
+    <identifier>private.fn_tab_to_command_tab</identifier>
+    <autogen>--KeyToKey-- KeyCode::TAB, ModifierFlag::FN, KeyCode::TAB, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_L, KeyCode::VK_LAZY_SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_R, KeyCode::VK_LAZY_SHIFT_R</autogen>
+  </item>
+</root>
