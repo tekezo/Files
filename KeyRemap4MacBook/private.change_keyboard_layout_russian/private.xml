@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change keyboard layout when Input Source is Russian</name>
+    <identifier>private.change_keyboard_layout_russian</identifier>
+    <inputmode_only>RUSSIAN</inputmode_only>
+    <!-- ` to ; -->
+    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, ModifierFlag::NONE,
+      KeyCode::KEY_4, ModifierFlag::SHIFT_L</autogen>
+    <!-- shift+` to : -->
+    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::KEY_6, VK_SHIFT</autogen>
+  </item>
+</root>
