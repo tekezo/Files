@@ -13,6 +13,7 @@
   <item>
     <name>Change Command+Home/End to Top/Bottom</name>
     <identifier>private.commandhome2top</identifier>
+    <not>WORD</not>
     <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_COMMAND, KeyCode::HOME</autogen>
     <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_COMMAND, KeyCode::END</autogen>
   </item>
@@ -26,7 +27,7 @@
       <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_COMMAND, KeyCode::END</autogen>
     </block>
     <block>
-      <not>FINDER</not>
+      <not>FINDER,WORD</not>
       <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_COMMAND, KeyCode::CURSOR_UP,   VK_COMMAND, KeyCode::HOME</autogen>
       <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_COMMAND, KeyCode::CURSOR_DOWN, VK_COMMAND, KeyCode::END</autogen>
     </block>
