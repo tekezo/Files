@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <root>
   <item>
+    <name>Pass-Through Home,End,PageUp,PageDown in MS Office</name>
+    <identifier>private.pass_through_word</identifier>
+    <only>WORD,EXCEL,POWERPOINT</only>
+    <autogen>--KeyToKey-- FROMKEYCODE_HOME,     KeyCode::HOME</autogen>
+    <autogen>--KeyToKey-- FROMKEYCODE_END,      KeyCode::END</autogen>
+    <autogen>--KeyToKey-- FROMKEYCODE_PAGEUP,   KeyCode::PAGEUP</autogen>
+    <autogen>--KeyToKey-- FROMKEYCODE_PAGEDOWN, KeyCode::PAGEDOWN</autogen>
+  </item>
+
+  <item>
     <name>Command+Left/Right to forward/backward-word</name>
     <identifier>private.commandArrow2optionLarrow</identifier>
     <autogen>--KeyToKey-- KeyCode::CURSOR_LEFT,  VK_COMMAND, KeyCode::CURSOR_LEFT,  ModifierFlag::OPTION_L</autogen>
