@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Control+Y,Control+X to &lt;, &gt; in German layout</name>
+    <identifier>private.control_yx_to_angular_brackets_in_german</identifier>
+    <autogen>--KeyToKey-- KeyCode::Z, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+      KeyCode::GERMAN_LESS_THAN</autogen>
+    <autogen>--KeyToKey-- KeyCode::X, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+      KeyCode::GERMAN_LESS_THAN, VK_SHIFT</autogen>
+  </item>
+</root>
