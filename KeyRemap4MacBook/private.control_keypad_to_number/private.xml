@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Control+Keypad0-KeyPad9 to Control+0-9.</name>
+    <identifier>private.control_keypad_to_number</identifier>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_0, VK_CONTROL, KeyCode::KEY_0, VK_CONTROL</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_1, VK_CONTROL, KeyCode::KEY_1, VK_CONTROL</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_2, VK_CONTROL, KeyCode::KEY_2, VK_CONTROL</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_3, VK_CONTROL, KeyCode::KEY_3, VK_CONTROL</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_4, VK_CONTROL, KeyCode::KEY_4, VK_CONTROL</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_5, VK_CONTROL, KeyCode::KEY_5, VK_CONTROL</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_6, VK_CONTROL, KeyCode::KEY_6, VK_CONTROL</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_7, VK_CONTROL, KeyCode::KEY_7, VK_CONTROL</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_8, VK_CONTROL, KeyCode::KEY_8, VK_CONTROL</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_9, VK_CONTROL, KeyCode::KEY_9, VK_CONTROL</autogen>
+  </item>
+</root>
