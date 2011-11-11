@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Command_R to Command_R</name>
+    <appendix>(+ When you type Command_R only, change inputmode to russian)</appendix>
+    <identifier>private.commandR2commandR_russian</identifier>
+    <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_R, KeyCode::COMMAND_R, KeyCode::VK_CHANGE_INPUTMODE_RUSSIAN</autogen>
+  </item>
+
+  <item>
+    <name>Shift_R to Shift_R</name>
+    <appendix>(+ When you type Shift_R only, change inputmode to russian)</appendix>
+    <identifier>private.shiftR2shiftR_russian</identifier>
+    <autogen>--KeyOverlaidModifier-- KeyCode::SHIFT_R, KeyCode::SHIFT_R, KeyCode::VK_CHANGE_INPUTMODE_RUSSIAN</autogen>
+  </item>
+</root>
