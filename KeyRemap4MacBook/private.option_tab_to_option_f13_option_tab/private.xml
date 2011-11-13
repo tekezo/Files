@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Option+Tab to Option+F13,Option+Tab</name>
+    <identifier>private.option_tab_to_option_f13_option_tab</identifier>
+    <autogen>--KeyToKey-- KeyCode::TAB, VK_OPTION, KeyCode::F13, VK_OPTION, KeyCode::TAB, VK_OPTION</autogen>
+  </item>
+</root>
