@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Option+Tab to Option+F13 (if current app is not in virtual machine)</name>
+    <identifier>private.option_tab_to_option_f13_option_tab</identifier>
+    <not>VIRTUALMACHINE</not>
+    <autogen>--KeyToKey-- KeyCode::TAB, VK_OPTION | VK_MOD_ANY, KeyCode::F13, VK_OPTION</autogen>
+  </item>
+</root>
