@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Holding NumLock Key to toggle "KeyPad as Arrow"</name>
+    <identifier>private.holding_numlock_to_toggle_keypad_arrow</identifier>
+    <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
+    <autogen>--HoldingKeyToKey-- KeyCode::PC_KEYPAD_NUMLOCK,
+      KeyCode::VK_NONE,
+      KeyCode::VK_CONFIG_TOGGLE_remap_keypadnumlock,
+      Option::NOREPEAT
+    </autogen>
+  </item>
+</root>
