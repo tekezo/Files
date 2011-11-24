@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>F15 to F2 in Emacs</name>
+    <identifier>private.f15_to_f2_emacs</identifier>
+    <only>EMACS</only>
+    <autogen>--KeyToKey-- KeyCode::F15, KeyCode::F2</autogen>
+  </item>
+</root>
