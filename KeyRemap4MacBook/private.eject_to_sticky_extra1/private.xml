@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Eject to Sticky Extra1 Modifier</name>
+    <appendix>Extra1+1 to Command+F1</appendix>
+    <appendix>Extra1+2 to Command+F2</appendix>
+    <appendix>Extra1+3 to Command+F3</appendix>
+    <appendix>Extra1+4 to Command+F4</appendix>
+    <identifier>private.eject_to_sticky_extra1</identifier>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::EJECT, KeyCode::VK_STICKY_EXTRA1</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_1, ModifierFlag::EXTRA1, KeyCode::F1, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_2, ModifierFlag::EXTRA1, KeyCode::F2, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_3, ModifierFlag::EXTRA1, KeyCode::F3, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_4, ModifierFlag::EXTRA1, KeyCode::F4, ModifierFlag::COMMAND_L</autogen>
+  </item>
+</root>
