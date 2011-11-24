@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Command_L+R to Command+Space</name>
+    <identifier>private.commandr_to_commandspace</identifier>
+    <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::COMMAND_L, KeyCode::SPACE, ModifierFlag::COMMAND_L</autogen>
+  </item>
+</root>
