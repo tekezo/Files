@@ -3,6 +3,7 @@
   <item>
     <name>Command_L+R to Command+Space</name>
     <identifier>private.commandr_to_commandspace</identifier>
+    <device_only>DeviceVendor::LOGITECH, DeviceProduct::ANY</device_only>
     <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::COMMAND_L, KeyCode::SPACE, ModifierFlag::COMMAND_L</autogen>
   </item>
 </root>
