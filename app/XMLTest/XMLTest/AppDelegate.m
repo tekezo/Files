@@ -3,10 +3,55 @@
 //  XMLTest
 //
 //  Created by Takayama Fumihiko on 11/11/16.
-//  Copyright (c) 2011年 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import "AppDelegate.h"
+
+@implementation NSString (HashBraces)
+
+- (NSString*) stringByReplacingHashBracesOccurrencesOfDictionary:(NSDictionary*)replacementDictionary options:(NSStringCompareOptions)options
+{
+  NSString* string = [NSString stringWithString:self];
+
+  NSRange searchRange = NSMakeRange(0, [string length]);
+
+  // withDictionary is {"#{XXX}" => "111", "#{YYY}" => "222"}.
+  // Then replace "#{XXX}" to "111", "#{YYY}" to "222".
+
+  for (;;) {
+    // ------------------------------------------------------------
+    // Searching "#{"
+    NSRange replacementBegin = [string rangeOfString:@"#{" options:options range:searchRange];
+    if (replacementBegin.location == NSNotFound) break;
+
+    // Setting length to 0 here becuase we adjust it after replacing.
+    searchRange.location = replacementBegin.location + 1;
+    searchRange.length = 0;
+
+    // ------------------------------------------------------------
+    // Replacing "#{...}"
+    NSRange range = NSMakeRange(replacementBegin.location,
+                                [string length] - replacementBegin.location);
+    for (NSString* target in replacementDictionary) {
+      NSRange replacementRange = [string rangeOfString:target
+                                               options:(options | NSAnchoredSearch)
+                                                 range:range];
+      if (replacementRange.location != NSNotFound) {
+        string = [string stringByReplacingCharactersInRange:replacementRange
+                                                 withString:[replacementDictionary objectForKey:target]];
+        searchRange.location = replacementBegin.location;
+        break;
+      }
+    }
+
+    searchRange.length = [string length] - searchRange.location;
+  }
+
+  return string;
+}
+
+@end
 
 @implementation AppDelegate
 
@@ -19,46 +64,20 @@
                                                   encoding:NSUTF8StringEncoding
                                                      error:&error];
 
-  //xmlstring = @"#{aaa}#{xxx}#{yyy}#{zzz} #{aaa} #{xxx} #{yyy} #{zzz}";
+  xmlstring = @"#{aaa}#{xxx}#{yyy}#{zzz} #{UNKNOWN} #{aaa} #{xxx} #{yyy} #{zzz}#{TARGET1}#{UNKNOWN}";
 
-  NSRange range = NSMakeRange(0, [xmlstring length]);
-  NSStringCompareOptions options = NSLiteralSearch;
-
-  NSString* replacementtarget[] = {@"#{aaa}",   @"#{xxx}", @"#{yyy}", @"#{zzz}"};
-  NSString* replacementvalue[]  = {@"AAAAAAAA", @"XXXXXX", @"Y",      @""};
-
-  for (;;) {
-    NSRange replacementBegin = [xmlstring rangeOfString:@"#{" options:options range:range];
-    if (replacementBegin.location == NSNotFound) break;
-    NSLog(@"Begin location:%ld, length:%ld", replacementBegin.location, replacementBegin.length);
-
-    range.location = replacementBegin.location + 1;
-    range.length = [xmlstring length] - range.location;
-    NSRange replacementEnd = [xmlstring rangeOfString:@"}" options:options range:range];
-    if (replacementEnd.location == NSNotFound) break;
-    NSLog(@"End location:%ld, length:%ld", replacementEnd.location, replacementEnd.length);
-
-    for (int i = 0; i < 100; ++i) {
-      NSRange replacementRange = NSMakeRange(replacementBegin.location,
-                                             replacementEnd.location + 1 - replacementBegin.location);
-      if (replacementRange.location + replacementRange.length > [xmlstring length]) {
-        break;
-      }
-      NSRange targetRange = [xmlstring rangeOfString:replacementtarget[i % 4] options:options range:replacementRange];
-      if (targetRange.location != NSNotFound) {
-        xmlstring = [xmlstring stringByReplacingOccurrencesOfString:replacementtarget[i % 4]
-                                                         withString:replacementvalue[i % 4]
-                                                            options:options
-                                                              range:replacementRange];
-      }
-    }
-
-    range.location = replacementBegin.location + 1;
-    if (range.location > [xmlstring length]) {
-      break;
-    }
-    range.length = [xmlstring length] - range.location;
+  NSMutableDictionary* replacement = [NSMutableDictionary new];
+  for (int i = 0; i < 100; ++i) {
+    [replacement setObject:[NSString stringWithFormat:@"VALUE%d", i]
+                    forKey:[NSString stringWithFormat:@"#{TARGET%d}", i]];
   }
+  [replacement setObject:@"AAAAAAAA" forKey:@"#{aaa}"];
+  //                       #{xxx}
+  [replacement setObject:@"XXXXXX" forKey:@"#{xxx}"];
+  [replacement setObject:@"Y" forKey:@"#{yyy}"];
+  [replacement setObject:@"" forKey:@"#{zzz}"];
+
+  xmlstring = [xmlstring stringByReplacingHashBracesOccurrencesOfDictionary:replacement options:NSLiteralSearch];
 
   NSLog(@">%@<", xmlstring);
 }
