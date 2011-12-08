@@ -8,4 +8,14 @@
     <autogen>--PointingButtonToKey-- PointingButton::LEFT, KeyCode::VK_NONE</autogen>
     <autogen>--PointingButtonToPointingButton-- PointingButton::RIGHT, PointingButton::LEFT</autogen>
   </item>
+
+  <item>
+    <name>Holding Escape to Left Click on Logitech devices</name>
+    <identifier>private.holding_escape_to_left_click</identifier>
+    <device_only>DeviceVendor::LOGITECH, DeviceProduct::ANY</device_only>
+    <autogen>--HoldingKeyToKey-- KeyCode::ESCAPE,
+      KeyCode::ESCAPE, KeyCode::VK_NONE,
+      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+      Option::NOREPEAT</autogen>
+  </item>
 </root>
