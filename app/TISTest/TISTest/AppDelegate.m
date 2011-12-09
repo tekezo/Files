@@ -39,6 +39,14 @@
     if (! source) continue;
 
     NSLog(@"%@", TISGetInputSourceProperty(source, kTISPropertyInputSourceID));
+
+    NSArray* languages = TISGetInputSourceProperty(source, kTISPropertyInputSourceLanguages);
+    if (languages && [languages count] > 0) {
+      NSString* lang = [languages objectAtIndex:0];
+      NSLog(@"lang: %@", lang);
+    }
+
+    NSLog(@"--------------------");
   }
 
 finish:
