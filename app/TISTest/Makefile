@@ -17,4 +17,4 @@ xcode:
 	open *.xcodeproj
 
 run: all
-	open ./build/Release/TISTest.app/Contents/MacOS/TISTest
+	./build/Release/TISTest.app/Contents/MacOS/TISTest

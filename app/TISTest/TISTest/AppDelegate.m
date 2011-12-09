@@ -31,14 +31,16 @@
   filter = CFDictionaryCreate(NULL, keys, values, 1, NULL, NULL);
   if (! filter) goto finish;
 
-  list = TISCreateInputSourceList(filter, false);
+  //list = TISCreateInputSourceList(filter, false);
+  list = TISCreateInputSourceList(filter, true);
   if (! list) goto finish;
 
   for (int i = 0; i < CFArrayGetCount(list); ++i) {
     TISInputSourceRef source = (TISInputSourceRef)(CFArrayGetValueAtIndex(list, i));
     if (! source) continue;
 
-    NSLog(@"%@", TISGetInputSourceProperty(source, kTISPropertyInputSourceID));
+    NSLog(@"kTISPropertyInputSourceID: %@", TISGetInputSourceProperty(source, kTISPropertyInputSourceID));
+    NSLog(@"kTISPropertyInputModeID: %@", TISGetInputSourceProperty(source, kTISPropertyInputModeID));
 
     NSArray* languages = TISGetInputSourceProperty(source, kTISPropertyInputSourceLanguages);
     if (languages && [languages count] > 0) {
