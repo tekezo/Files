@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+  <devicevendordef>
+    <vendorname>Chic_Technology_Corp</vendorname>
+    <vendorid>0x05fe</vendorid>
+  </devicevendordef>
+
+  <deviceproductdef>
+    <productname>Chic_Keypad</productname>
+    <productid>0x1010</productid>
+  </deviceproductdef>
+
+  <item>
+    <name>Delete to Down-Arrow on Chic Keypad</name>
+    <identifier>private.delete_to_down_chic_keypad</identifier>
+    <device_only>DeviceVendor::Chic_Technology_Corp, DeviceProduct::Chic_Keypad</device_only>
+    <autogen>--KeyToKey-- KeyCode::DELETE, KeyCode::CURSOR_DOWN</autogen>
+  </item>
+</root>
