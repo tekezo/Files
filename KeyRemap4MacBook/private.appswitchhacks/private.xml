@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Application Switch Hacks</name>
+    <appendix>Holding L to Command+F1 (Terminal.app)</appendix>
+    <appendix>Holding E to Command+F2 (Emacs.app)</appendix>
+    <appendix>Holding C to Command+F3 (Google Chrome.app)</appendix>
+    <appendix>Holding M to Command+F4 (Mail.app)</appendix>
+    <appendix>Holding B to Command+F5 (Thunderbird.app)</appendix>
+    <appendix>Holding P to Command+F6 (Skype.app)</appendix>
+    <appendix>Holding I to Command+F7 (LimeChat.app)</appendix>
+    <appendix>Holding X to Command+F8 (Excel.app)</appendix>
+    <appendix>Holding R to Command+F9 (RDC.app)</appendix>
+    <appendix>Holding V to Option+F1 (VMware Fusion.app)</appendix>
+    <appendix>Holding W to Option+F2 (Word.app)</appendix>
+    <appendix>Holding D to Option+F3 (Xcode.app)</appendix>
+    <appendix>Holding T to Option+F4 (iTunes.app)</appendix>
+    <appendix>Holding F to Option+F5 (Safari.app)</appendix>
+    <appendix>Holding O to Option+F6 (PowerPoint.app)</appendix>
+    <appendix>Holding [ to Control+F8</appendix>
+    <appendix>Holding ] to Control+F9</appendix>
+    <identifier>private.appswitchhacks</identifier>
+    <autogen>--HoldingKeyToKey-- KeyCode::L, ModifierFlag::NONE, KeyCode::L, KeyCode::VK_NONE, KeyCode::F1, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::E, ModifierFlag::NONE, KeyCode::E, KeyCode::VK_NONE, KeyCode::F2, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::C, ModifierFlag::NONE, KeyCode::C, KeyCode::VK_NONE, KeyCode::F3, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::M, ModifierFlag::NONE, KeyCode::M, KeyCode::VK_NONE, KeyCode::F4, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::B, ModifierFlag::NONE, KeyCode::B, KeyCode::VK_NONE, KeyCode::F5, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::P, ModifierFlag::NONE, KeyCode::P, KeyCode::VK_NONE, KeyCode::F6, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::I, ModifierFlag::NONE, KeyCode::I, KeyCode::VK_NONE, KeyCode::F7, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::X, ModifierFlag::NONE, KeyCode::X, KeyCode::VK_NONE, KeyCode::F8, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::R, ModifierFlag::NONE, KeyCode::R, KeyCode::VK_NONE, KeyCode::F9, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::V, ModifierFlag::NONE, KeyCode::V, KeyCode::VK_NONE, KeyCode::F1, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::W, ModifierFlag::NONE, KeyCode::W, KeyCode::VK_NONE, KeyCode::F2, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::D, ModifierFlag::NONE, KeyCode::D, KeyCode::VK_NONE, KeyCode::F3, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::T, ModifierFlag::NONE, KeyCode::T, KeyCode::VK_NONE, KeyCode::F4, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::F, ModifierFlag::NONE, KeyCode::F, KeyCode::VK_NONE, KeyCode::F5, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::O, ModifierFlag::NONE, KeyCode::O, KeyCode::VK_NONE, KeyCode::F6, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
+
+    <autogen>--HoldingKeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::NONE,
+      KeyCode::BRACKET_LEFT, KeyCode::VK_NONE,
+      KeyCode::F8, ModifierFlag::CONTROL_L, Option::NOREPEAT</autogen>
+    <autogen>--HoldingKeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::NONE,
+      KeyCode::BRACKET_RIGHT, KeyCode::VK_NONE,
+      KeyCode::F9, ModifierFlag::CONTROL_L, Option::NOREPEAT</autogen>
+  </item>
+</root>
