@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Swap ù to acute accent ´</name>
+    <identifier>private.french_u_to_acute_accent</identifier>
+    <inputmode_only>FRENCH</inputmode_only>
+    <!-- change ù to ´ -->
+    <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::NONE,
+      KeyCode::KEY_1, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L</autogen>
+
+    <!-- change ´ to ù -->
+    <autogen>--KeyToKey-- KeyCode::KEY_1, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::QUOTE</autogen>
+  </item>
+</root>
