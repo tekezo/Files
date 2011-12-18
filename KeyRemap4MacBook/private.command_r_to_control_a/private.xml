@@ -8,13 +8,7 @@
 
     <!-- Application specific -->
     <block>
-      <only>DREAMWEAVER</only>
-      <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::HOME, ModifierFlag::SHIFT_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::OPTION_R,  KeyCode::END,  ModifierFlag::SHIFT_L</autogen>
-    </block>
-
-    <block>
-      <only>BLUEFISH,WORD,EXCEL,POWERPOINT,VIRTUALMACHINE,REMOTEDESKTOPCONNECTION</only>
+      <only>WORD,EXCEL,POWERPOINT,VIRTUALMACHINE,REMOTEDESKTOPCONNECTION</only>
       <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::HOME</autogen>
       <autogen>--KeyToKey-- KeyCode::OPTION_R,  KeyCode::END</autogen>
     </block>
