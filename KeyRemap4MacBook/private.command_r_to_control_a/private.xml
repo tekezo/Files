@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Use Command_R/Option_R as PC Style Home/End</name>
+    <appendix>Command_R to beginning-of-line</appendix>
+    <appendix>Option_R to end-of-line</appendix>
+    <identifier>private.command_r_to_control_a</identifier>
+
+    <block>
+      <only>DREAMWEAVER</only>
+      <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::HOME, ModifierFlag::SHIFT_L</autogen>
+      <autogen>--KeyToKey-- KeyCode::OPTION_R,  KeyCode::END,  ModifierFlag::SHIFT_L</autogen>
+    </block>
+    <block>
+      <only>BLUEFISH,WORD,EXCEL,POWERPOINT,VIRTUALMACHINE,REMOTEDESKTOPCONNECTION</only>
+      <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::HOME</autogen>
+      <autogen>--KeyToKey-- KeyCode::OPTION_R,  KeyCode::END</autogen>
+    </block>
+    <block>
+      <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
+      <autogen>--KeyToKey-- KeyCode::OPTION_R,  KeyCode::E, ModifierFlag::CONTROL_L</autogen>
+    </block>
+  </item>
+</root>
