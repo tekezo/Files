@@ -11,9 +11,16 @@
   </deviceproductdef>
 
   <item>
-    <name>Delete to Down-Arrow on Chic Keypad</name>
+    <name>Change Chic Keypad</name>
+    <appendix>Delete to Up-Arrow</appendix>
+    <appendix>Minus to Down-Arrow</appendix>
+    <appendix>Disable Plus</appendix>
+    <appendix>Disable Asterisk</appendix>
     <identifier>private.delete_to_down_chic_keypad</identifier>
     <device_only>DeviceVendor::Chic_Technology_Corp, DeviceProduct::Chic_Keypad</device_only>
-    <autogen>--KeyToKey-- KeyCode::DELETE, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::DELETE,          KeyCode::CURSOR_UP</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_MINUS,    KeyCode::CURSOR_DOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_PLUS,     KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_MULTIPLY, KeyCode::VK_NONE</autogen>
   </item>
 </root>
