@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Control+Arrow to Option_L+Arrow</name>
+    <appendix>(This setting is effective except in RDC, VirtualMachine)</appendix>
+    <identifier>private.controlArrow2optionLarrow</identifier>
+    <not>REMOTEDESKTOPCONNECTION,VIRTUALMACHINE</not>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_UP,    VK_CONTROL, KeyCode::CURSOR_UP,    ModifierFlag::OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_DOWN,  VK_CONTROL, KeyCode::CURSOR_DOWN,  ModifierFlag::OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_LEFT,  VK_CONTROL, KeyCode::CURSOR_LEFT,  ModifierFlag::OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_RIGHT, VK_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L</autogen>
+  </item>
+</root>
