@@ -3,9 +3,10 @@
   <item>
     <name>Enable Control+Space</name>
     <appendix>(+ Space to Control)</appendix>
+    <appendix>(+ When you type Space only, send Space)</appendix>
     <identifier>private.emacsmode_ex_controlSpace</identifier>
     <not>EMACS, TERMINAL, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11, ECLIPSE</not>
     <autogen>--KeyToKey-- KeyCode::SPACE, VK_CONTROL | ModifierFlag::NONE, KeyCode::VK_LOCK_SHIFT_L_FORCE_ON, KeyCode::VK_CONFIG_FORCE_ON_notsave_emacsmode_ex_controlSpace_core</autogen>
-    <autogen>--KeyToKey-- KeyCode::SPACE, KeyCode::CONTROL_L</autogen>
+    <autogen>--KeyOverlaidModifier-- KeyCode::SPACE, KeyCode::CONTROL_L, KeyCode::SPACE</autogen>
   </item>
 </root>
