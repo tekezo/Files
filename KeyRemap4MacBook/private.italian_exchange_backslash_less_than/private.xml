@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Exchange Backslash and Less-Than</name>
+    <identifier>private.italian_exchange_backslash_less_than</identifier>
+    <autogen>--KeyToKey-- KeyCode::ITALIAN_BACKSLASH, KeyCode::ITALIAN_LESS_THAN</autogen>
+    <autogen>--KeyToKey-- KeyCode::ITALIAN_LESS_THAN, KeyCode::ITALIAN_BACKSLASH</autogen>
+  </item>
+</root>
