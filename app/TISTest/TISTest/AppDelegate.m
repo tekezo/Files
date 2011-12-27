@@ -16,6 +16,14 @@
   [super dealloc];
 }
 
+- (void) loadXML
+{
+  NSURL* url = [NSURL fileURLWithPath:@"/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/languagedef.xml"];
+  NSError* error = nil;
+  NSXMLDocument* xmldocument = [[NSXMLDocument alloc] initWithContentsOfURL:url options:0 error:&error];
+  NSLog(@"%@", xmldocument);
+}
+
 - (void) dumpInputSource
 {
   CFDictionaryRef filter = NULL;
@@ -62,6 +70,7 @@ finish:
 
 - (void) applicationDidFinishLaunching:(NSNotification*)aNotification
 {
+  [self loadXML];
   [self dumpInputSource];
 }
 
