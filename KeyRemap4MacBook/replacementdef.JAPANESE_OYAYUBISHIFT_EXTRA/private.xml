@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>JAPANESE_OYAYUBISHIFT_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+<not>REMOTEDESKTOPCONNECTION,VIRTUALMACHINE</not>
+]]>
+    </replacementvalue>
+  </replacementdef>
+
+</root>
