@@ -18,6 +18,14 @@
     <autogen>--KeyToKey-- KeyCode::RETURN,       ModifierFlag::FN, KeyCode::ENTER</autogen>
     <autogen>--KeyToKey-- KeyCode::DELETE,       ModifierFlag::FN, KeyCode::FORWARD_DELETE</autogen>
 
+    <!-- retain "physical fn+physical control+arrows" -->
+    <autogen>--KeyToKey-- KeyCode::PAGEUP,         ModifierFlag::FN, KeyCode::PAGEUP</autogen>
+    <autogen>--KeyToKey-- KeyCode::PAGEDOWN,       ModifierFlag::FN, KeyCode::PAGEDOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::HOME,           ModifierFlag::FN, KeyCode::HOME</autogen>
+    <autogen>--KeyToKey-- KeyCode::END,            ModifierFlag::FN, KeyCode::END</autogen>
+    <autogen>--KeyToKey-- KeyCode::ENTER,          ModifierFlag::FN, KeyCode::ENTER</autogen>
+    <autogen>--KeyToKey-- KeyCode::FORWARD_DELETE, ModifierFlag::FN, KeyCode::FORWARD_DELETE</autogen>
+
     <!-- change "physical fn+arrows" to arrows -->
     <autogen>--KeyToKey-- KeyCode::PAGEUP,         KeyCode::CURSOR_UP</autogen>
     <autogen>--KeyToKey-- KeyCode::PAGEDOWN,       KeyCode::CURSOR_DOWN</autogen>
