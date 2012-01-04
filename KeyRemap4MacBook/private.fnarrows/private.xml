@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Fn+Arrows to PageUp/PageDown/Home/End</name>
+    <appendix>Fn+Return to Enter</appendix>
+    <appendix>Fn+Delete to Forward Delete</appendix>
+    <appendix></appendix>
+    <appendix>This option is designed to use with following options.</appendix>
+    <appendix>- Disable NumPad Hack</appendix>
+    <appendix>- Change Control_L to Fn</appendix>
+    <appendix>- Change Fn to Control_L</appendix>
+    <identifier>private.fnarrows</identifier>
+
+    <autogen>--KeyToKey-- KeyCode::CURSOR_UP,    ModifierFlag::FN, KeyCode::PAGEUP</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_DOWN,  ModifierFlag::FN, KeyCode::PAGEDOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_LEFT,  ModifierFlag::FN, KeyCode::HOME</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::FN, KeyCode::END</autogen>
+    <autogen>--KeyToKey-- KeyCode::RETURN,       ModifierFlag::FN, KeyCode::ENTER</autogen>
+    <autogen>--KeyToKey-- KeyCode::DELETE,       ModifierFlag::FN, KeyCode::FORWARD_DELETE</autogen>
+
+    <!-- change "physical fn+arrows" to arrows -->
+    <autogen>--KeyToKey-- KeyCode::PAGEUP,         KeyCode::CURSOR_UP</autogen>
+    <autogen>--KeyToKey-- KeyCode::PAGEDOWN,       KeyCode::CURSOR_DOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::HOME,           KeyCode::CURSOR_LEFT</autogen>
+    <autogen>--KeyToKey-- KeyCode::END,            KeyCode::CURSOR_RIGHT</autogen>
+    <autogen>--KeyToKey-- KeyCode::ENTER,          KeyCode::RETURN</autogen>
+    <autogen>--KeyToKey-- KeyCode::FORWARD_DELETE, KeyCode::DELETE</autogen>
+  </item>
+</root>
