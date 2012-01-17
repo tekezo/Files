@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Swedish &lt; + Trackball to ScrollWheel</name>
+    <identifier>private.swedish_lessthan_trackball_to_scroll</identifier>
+    <autogen>--KeyToKey-- KeyCode::SWEDISH_LESS_THAN, KeyCode::VK_MODIFIER_EXTRA1</autogen>
+    <autogen>--PointingRelativeToScroll-- PointingButton::NONE, ModifierFlag::EXTRA1</autogen>
+  </item>
+</root>
