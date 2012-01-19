@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Input Source to French while pressing right option key.</name>
+    <identifier>private.option_r_language_switch</identifier>
+    <autogen>--KeyToKey-- KeyCode::OPTION_R, KeyCode::VK_NONE,
+      Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::VK_CHANGE_INPUTMODE_FRENCH,
+      Option::KEYTOKEY_AFTER_KEYUP,    KeyCode::VK_CHANGE_INPUTMODE_ENGLISH
+    </autogen>
+  </item>
+</root>
