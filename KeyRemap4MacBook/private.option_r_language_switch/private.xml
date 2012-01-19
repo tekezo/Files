@@ -3,7 +3,7 @@
   <item>
     <name>Change Input Source while pressing right option key.</name>
     <identifier>private.option_r_language_switch</identifier>
-    <!-- Hack: Sending Shift_L key event after send Command+Space to release Command key -->
+    <!-- Hack: Sending Shift_L key event after sending Command+Space to release Command key -->
     <autogen>--KeyToKey-- KeyCode::OPTION_R, KeyCode::VK_NONE,
       Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::SPACE, ModifierFlag::COMMAND_L, KeyCode::SHIFT_L,
       Option::KEYTOKEY_AFTER_KEYUP,    KeyCode::SPACE, ModifierFlag::COMMAND_L, KeyCode::SHIFT_L
