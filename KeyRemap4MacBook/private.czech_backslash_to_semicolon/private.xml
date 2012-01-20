@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Backslash to Semicolon(;) on Czech Keyboard</name>
+    <identifier>private.czech_backslash_to_semicolon</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, ModifierFlag::NONE,
+      KeyCode::SEMICOLON, ModifierFlag::OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::MINUS, ModifierFlag::OPTION_L</autogen>
+  </item>
+</root>
