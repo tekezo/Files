@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Swap Right Command+Arrow and Right Option+Arrow</name>
+    <identifier>private.swap_rightcommandarrow_and_rightoptionarrow</identifier>
+    <autogen>--KeyToKey--
+      KeyCode::CURSOR_UP,    ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_UP,    ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey--
+      KeyCode::CURSOR_DOWN,  ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_DOWN,  ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey--
+      KeyCode::CURSOR_LEFT,  ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_LEFT,  ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_R,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_R</autogen>
+
+    <autogen>--KeyToKey--
+      KeyCode::CURSOR_UP,    ModifierFlag::OPTION_R,
+      KeyCode::CURSOR_UP,    ModifierFlag::COMMAND_R</autogen>
+    <autogen>--KeyToKey--
+      KeyCode::CURSOR_DOWN,  ModifierFlag::OPTION_R,
+      KeyCode::CURSOR_DOWN,  ModifierFlag::COMMAND_R</autogen>
+    <autogen>--KeyToKey--
+      KeyCode::CURSOR_LEFT,  ModifierFlag::OPTION_R,
+      KeyCode::CURSOR_LEFT,  ModifierFlag::COMMAND_R</autogen>
+    <autogen>--KeyToKey--
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_R,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_R</autogen>
+  </item>
+</root>
