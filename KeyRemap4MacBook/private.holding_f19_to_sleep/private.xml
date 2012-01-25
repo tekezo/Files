@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Holding F19 to Sleep (Command+Option+Eject)</name>
+    <appendix>(You can adjust the threshold time of holding by</appendix>
+    <appendix>"[Holding Key to Key] Holding Threshold" in Key Repeat tab.)</appendix>
+    <identifier>private.holding_f19_to_sleep</identifier>
+    <autogen>--HoldingKeyToKey-- KeyCode::F19, KeyCode::F19, KeyCode::VK_NONE,
+      KeyCode::VK_CONSUMERKEY_EJECT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
+  </item>
+</root>
