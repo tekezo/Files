@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Fn+Number to Command+KeyPad</name>
+    <identifier>private.fnnumber2commandkeypad</identifier>
+    <autogen>--KeyToKey-- KeyCode::KEY_1,  ModifierFlag::FN, KeyCode::KEYPAD_1, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_2,  ModifierFlag::FN, KeyCode::KEYPAD_2, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_3,  ModifierFlag::FN, KeyCode::KEYPAD_3, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_4,  ModifierFlag::FN, KeyCode::KEYPAD_4, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_5,  ModifierFlag::FN, KeyCode::KEYPAD_5, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_6,  ModifierFlag::FN, KeyCode::KEYPAD_6, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_7,  ModifierFlag::FN, KeyCode::KEYPAD_7, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_8,  ModifierFlag::FN, KeyCode::KEYPAD_8, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_9,  ModifierFlag::FN, KeyCode::KEYPAD_9, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_0,  ModifierFlag::FN, KeyCode::KEYPAD_0, ModifierFlag::COMMAND_L</autogen>
+  </item>
+</root>
