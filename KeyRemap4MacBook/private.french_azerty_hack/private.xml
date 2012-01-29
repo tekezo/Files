@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Azerty Hack</name>
+    <identifier>private.french_azerty_hack</identifier>
+    <!-- ! to _ -->
+    <autogen>--KeyToKey-- KeyCode::KEY_8, ModifierFlag::NONE,
+      KeyCode::EQUAL, ModifierFlag::SHIFT_L</autogen>
+    <!-- @ to < -->
+    <autogen>--KeyToKey-- KeyCode::UK_SECTION, ModifierFlag::NONE,
+      KeyCode::BACKQUOTE</autogen>
+    <!-- # to > -->
+    <autogen>--KeyToKey-- KeyCode::UK_SECTION, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::BACKQUOTE, VK_SHIFT</autogen>
+    <!-- * to £ -->
+    <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::BACKSLASH, VK_SHIFT</autogen>
+    <!-- ` to * -->
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, ModifierFlag::NONE,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
+  </item>
+</root>
