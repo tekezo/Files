@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Swap $ and € on French</name>
+    <identifier>private.french_swap_dollar_and_euro</identifier>
+    <inputmode_only>FRENCH</inputmode_only>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::NONE,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::BRACKET_RIGHT</autogen>
+  </item>
+</root>
