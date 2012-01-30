@@ -1,22 +1,107 @@
 <?xml version="1.0"?>
 <root>
+
   <item>
     <name>Azerty Hack</name>
     <identifier>private.french_azerty_hack</identifier>
-    <!-- ! to _ -->
+    <!-- eventType:keyDown code:0x1c name:! flags: misc:characters:! -->
+    <!-- must be _ -->
     <autogen>--KeyToKey-- KeyCode::KEY_8, ModifierFlag::NONE,
       KeyCode::EQUAL, ModifierFlag::SHIFT_L</autogen>
-    <!-- @ to < -->
+
+    <!-- eventType:keyDown code:0xa name:@ flags: misc:characters:@ -->
+    <!-- must be < -->
     <autogen>--KeyToKey-- KeyCode::UK_SECTION, ModifierFlag::NONE,
       KeyCode::BACKQUOTE</autogen>
-    <!-- # to > -->
+
+    <!-- eventType:keyDown code:0xa name:# flags:Shift misc:characters:# -->
+    <!-- must be > -->
     <autogen>--KeyToKey-- KeyCode::UK_SECTION, VK_SHIFT | ModifierFlag::NONE,
       KeyCode::BACKQUOTE, VK_SHIFT</autogen>
-    <!-- * to £ -->
+
+    <!-- eventType:keyDown code:0x1e name:* flags:Shift misc:characters:* -->
+    <!-- must be £ -->
     <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, VK_SHIFT | ModifierFlag::NONE,
       KeyCode::BACKSLASH, VK_SHIFT</autogen>
-    <!-- ` to * -->
+
+    <!-- eventType:keyDown code:0x2a name: flags: misc:characters: -->
+    <!-- must be * -->
     <autogen>--KeyToKey-- KeyCode::BACKSLASH, ModifierFlag::NONE,
       KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
+
+    <!-- eventType:keyDown code:0x2a name:£ flags:Shift misc:characters:£ -->
+    <!-- must be µ -->
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::SEMICOLON, ModifierFlag::OPTION_R</autogen>
+
+    <!-- eventType:keyDown code:0x16 name:§ flags: misc:characters:§ -->
+    <!-- must be ! -->
+    <autogen>--KeyToKey-- KeyCode::KEY_6, ModifierFlag::NONE,
+      KeyCode::KEY_8</autogen>
+
+    <!-- eventType:keyDown code:0x1c name:! flags:Shift misc:characters:! -->
+    <!-- must be § -->
+    <!-- XXX -->
+
+    <!-- eventType:keyDown code:0x13 name:é flags:Cmd misc:characters:é -->
+    <!-- must be ∼ -->
+    <autogen>--KeyToKey-- KeyCode::KEY_2, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::N, ModifierFlag::OPTION_R</autogen>
+
+    <!-- eventType:keyDown code:0x14 name:" flags:Cmd misc:characters:" -->
+    <!-- must be # -->
+    <autogen>--KeyToKey-- KeyCode::KEY_3, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::BACKSLASH, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_L</autogen>
+
+    <!-- eventType:keyDown code:0x15 name:' flags:Cmd misc:characters:' -->
+    <!-- must be { -->
+    <autogen>--KeyToKey-- KeyCode::KEY_4, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::KEY_5, ModifierFlag::OPTION_R</autogen>
+
+    <!-- eventType:keyDown code:0x17 name:( flags:Cmd misc:characters:( -->
+    <!-- must be [ -->
+    <autogen>--KeyToKey-- KeyCode::KEY_5, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::KEY_5, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_L</autogen>
+
+    <!-- eventType:keyDown code:0x16 name:§ flags:Cmd misc:characters:§ -->
+    <!-- must be ⎟ -->
+    <autogen>--KeyToKey-- KeyCode::KEY_6, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::L, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_L</autogen>
+
+    <!-- eventType:keyDown code:0x1a name:è flags:Cmd misc:characters:è -->
+    <!-- must be ` -->
+    <autogen>--KeyToKey-- KeyCode::KEY_7, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::BACKSLASH</autogen>
+
+    <!-- eventType:keyDown code:0x1c name:! flags:Cmd misc:characters:! -->
+    <!-- must be \ -->
+    <autogen>--KeyToKey-- KeyCode::KEY_8, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::DOT, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_L</autogen>
+
+    <!-- eventType:keyDown code:0x19 name:ç flags:Cmd misc:characters:ç -->
+    <!-- must be ^ -->
+    <autogen>--KeyToKey-- KeyCode::KEY_9, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::BRACKET_LEFT</autogen>
+
+    <!-- eventType:keyDown code:0x1d name:à flags:Cmd misc:characters:à -->
+    <!-- must be @ -->
+    <autogen>--KeyToKey-- KeyCode::KEY_0, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::BACKSLASH, ModifierFlag::OPTION_R</autogen>
+
+    <!-- eventType:keyDown code:0x1b name:) flags:Cmd misc:characters:) -->
+    <!-- must be ] -->
+    <autogen>--KeyToKey-- KeyCode::MINUS, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::MINUS, ModifierFlag::OPTION_R | ModifierFlag::SHIFT_L</autogen>
+
+    <!-- eventType:keyDown code:0x18 name:- flags:Cmd misc:characters:- -->
+    <!-- must be } -->
+    <autogen>--KeyToKey-- KeyCode::EQUAL, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::MINUS, ModifierFlag::OPTION_R</autogen>
+
+    <!-- eventType:keyDown code:0xe name:e flags:Cmd misc:characters:e -->
+    <!-- must be € -->
+    <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::OPTION_R</autogen>
   </item>
+
 </root>
