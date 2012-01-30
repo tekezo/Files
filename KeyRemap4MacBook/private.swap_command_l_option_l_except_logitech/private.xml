@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Command_L and Option_L except on Logitech devices</name>
+    <identifier>private.swap_command_l_option_l_except_logitech</identifier>
+    <device_not>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_not>
+    <autogen>--KeyToKey-- KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+  </item>
+
+</root>
