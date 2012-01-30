@@ -11,13 +11,42 @@
 
   <item>
     <name>Czech Keyboard Hack</name>
-    <appendix>Right Command+VCFGBN to @&amp;[]{}</appendix>
+    <appendix>Right Command+VCFGBNů to @&amp;[]{}$</appendix>
     <identifier>private.czech_keyboard_hack</identifier>
-    <autogen>--KeyToKey-- KeyCode::V, ModifierFlag::COMMAND_R, KeyCode::KEY_2, ModifierFlag::OPTION_R</autogen>
-    <autogen>--KeyToKey-- KeyCode::C, ModifierFlag::COMMAND_R, KeyCode::KEY_7, ModifierFlag::OPTION_R</autogen>
-    <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::COMMAND_R, KeyCode::BRACKET_LEFT, ModifierFlag::OPTION_R</autogen>
-    <autogen>--KeyToKey-- KeyCode::G, ModifierFlag::COMMAND_R, KeyCode::BRACKET_RIGHT, ModifierFlag::OPTION_R</autogen>
-    <autogen>--KeyToKey-- KeyCode::B, ModifierFlag::COMMAND_R, KeyCode::KEY_9, ModifierFlag::OPTION_R</autogen>
-    <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::COMMAND_R, KeyCode::KEY_0, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::V,         ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::KEY_2, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::C,         ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::KEY_7, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::F,         ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::BRACKET_LEFT, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::G,         ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::B,         ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::KEY_9, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::N,         ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::KEY_0, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::KEY_4, ModifierFlag::OPTION_R</autogen>
   </item>
+
+  <item>
+    <name>Czech Keyboard Hack2</name>
+    <appendix>Control+Left Command+VCFGBNů to @&amp;[]{}$</appendix>
+    <identifier>private.czech_keyboard_hack2</identifier>
+    <autogen>--KeyToKey-- KeyCode::V,         ModifierFlag::COMMAND_L | VK_CONTROL | ModifierFlag::NONE,
+      KeyCode::KEY_2, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::C,         ModifierFlag::COMMAND_L | VK_CONTROL | ModifierFlag::NONE,
+      KeyCode::KEY_7, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::F,         ModifierFlag::COMMAND_L | VK_CONTROL | ModifierFlag::NONE,
+      KeyCode::BRACKET_LEFT, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::G,         ModifierFlag::COMMAND_L | VK_CONTROL | ModifierFlag::NONE,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::B,         ModifierFlag::COMMAND_L | VK_CONTROL | ModifierFlag::NONE,
+      KeyCode::KEY_9, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::N,         ModifierFlag::COMMAND_L | VK_CONTROL | ModifierFlag::NONE,
+      KeyCode::KEY_0, ModifierFlag::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::COMMAND_L | VK_CONTROL | ModifierFlag::NONE,
+      KeyCode::KEY_4, ModifierFlag::OPTION_R</autogen>
+  </item>
+
 </root>
