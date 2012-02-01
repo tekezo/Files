@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <root>
+  <devicevendordef>
+    <vendorname>Fujitsu</vendorname>
+    <vendorid>0x0430</vendorid>
+  </devicevendordef>
+
   <deviceproductdef>
     <productname>SunType6Keyboard</productname>
     <productid>0x0005</productid>
