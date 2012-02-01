@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+  <deviceproductdef>
+    <productname>SunType6Keyboard</productname>
+    <productid>0x0005</productid>
+  </deviceproductdef>
+
+  <item>
+    <name>Exchange ^ and greater key on Sun Type6 keyboard </name>
+    <identifier>private.sun.greaterkey</identifier>
+    <device_only>DeviceVendor::Fujitsu, DeviceProduct::SunType6Keyboard</device_only>
+    <!-- The order is important -->
+    <autogen>--KeyToKey-- 
+       KeyCode::GERMAN_CIRCUMFLEX, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+       KeyCode::KEY_7, ModifierFlag::OPTION_R
+     </autogen>
+    <autogen>--KeyToKey-- 
+       KeyCode::GERMAN_CIRCUMFLEX, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+       KeyCode::KEY_7, ModifierFlag::OPTION_L
+     </autogen>
+
+
+    <autogen>--KeyToKey-- KeyCode::GERMAN_CIRCUMFLEX, KeyCode::GERMAN_LESS_THAN</autogen>
+    <autogen>--KeyToKey-- KeyCode::GERMAN_LESS_THAN, KeyCode::GERMAN_CIRCUMFLEX</autogen> 
+ 
+
+  </item>
+
+</root>
+
+
