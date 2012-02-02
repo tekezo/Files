@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Application Key to Shift+Quote</name>
+    <identifier>private.application_key_to_shiftquote</identifier>
+    <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, KeyCode::QUOTE, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+  <item>
+    <name>Change Eject to Shift+Quote</name>
+    <identifier>private.eject_to_shiftquote</identifier>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::EJECT, KeyCode::QUOTE, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+</root>
