@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>CapsLock+Command+Left-Arrow to Command_L+Shift_L+Left-Arrow,Command_L+X</name>
+    <appendix>(except virtual machine, RDC)</appendix>
+    <identifier>private.commandLeftarrow2beginningofline_cut</identifier>
+    <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_LEFT, ModifierFlag::CAPSLOCK | VK_COMMAND | ModifierFlag::NONE,
+      KeyCode::CURSOR_LEFT, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+      KeyCode::X, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+  <item>
+    <name>CapsLock+Command+Right-Arrow to Command_L+Shift_L+Right-Arrow,Command_L+X</name>
+    <appendix>(except virtual machine, RDC)</appendix>
+    <identifier>private.commandRightarrow2endofline_cut</identifier>
+    <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::CAPSLOCK | VK_COMMAND | ModifierFlag::NONE,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+      KeyCode::X, ModifierFlag::CAPSLOCK | ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+</root>
