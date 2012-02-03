@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Command_R to Em-dash</name>
+    <identifier>private.command_r_to_emdash</identifier>
+    <autogen>--KeyToKey-- KeyCode::COMMAND_R,
+      KeyCode::MINUS, ModifierFlag::SHIFT_L | ModifierFlag::OPTION_L</autogen>
+  </item>
+
+</root>
