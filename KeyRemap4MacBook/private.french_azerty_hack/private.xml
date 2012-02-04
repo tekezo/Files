@@ -5,9 +5,9 @@
     <name>Azerty Hack</name>
     <identifier>private.french_azerty_hack</identifier>
     <!-- eventType:keyDown code:0x1c name:! flags: misc:characters:! -->
-    <!-- must be _ -->
+    <!-- must be - -->
     <autogen>--KeyToKey-- KeyCode::KEY_8, ModifierFlag::NONE,
-      KeyCode::EQUAL, ModifierFlag::SHIFT_L</autogen>
+      KeyCode::MINUS</autogen>
 
     <!-- eventType:keyDown code:0xa name:@ flags: misc:characters:@ -->
     <!-- must be < -->
@@ -39,9 +39,9 @@
     <autogen>--KeyToKey-- KeyCode::KEY_6, ModifierFlag::NONE,
       KeyCode::KEY_8</autogen>
 
-    <!-- eventType:keyDown code:0x1c name:! flags:Shift misc:characters:! -->
+    <!-- eventType:keyDown code:0x16 name:§ flags:Shift misc:characters:§ -->
     <!-- must be § -->
-    <autogen>--KeyToKey-- KeyCode::KEY_8, VK_SHIFT | ModifierFlag::NONE,
+    <autogen>--KeyToKey-- KeyCode::KEY_6, VK_SHIFT | ModifierFlag::NONE,
       KeyCode::KEY_6</autogen>
 
     <!-- eventType:keyDown code:0x13 name:é flags:Cmd misc:characters:é -->
