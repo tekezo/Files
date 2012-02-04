@@ -7,7 +7,7 @@
     <!-- eventType:keyDown code:0x1c name:! flags: misc:characters:! -->
     <!-- must be - -->
     <autogen>--KeyToKey-- KeyCode::KEY_8, ModifierFlag::NONE,
-      KeyCode::MINUS</autogen>
+      KeyCode::EQUAL</autogen>
 
     <!-- eventType:keyDown code:0xa name:@ flags: misc:characters:@ -->
     <!-- must be < -->
