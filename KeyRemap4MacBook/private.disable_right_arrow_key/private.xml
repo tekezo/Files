@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable Right Arrow Key</name>
+    <identifier>private.disable_right_arrow_key</identifier>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_RIGHT, KeyCode::VK_NONE</autogen>
+  </item>
+
+  <item>
+    <name>Change Right Shift to M</name>
+    <identifier>private.shiftR_to_m</identifier>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_R, KeyCode::M</autogen>
+  </item>
+
+</root>
