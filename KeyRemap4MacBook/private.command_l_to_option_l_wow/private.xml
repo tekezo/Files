@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Command_L to Option_L on World of Warcraft</name>
+    <identifier>private.command_l_to_option_l_wow</identifier>
+    <only>WORLD_OF_WARCRAFT</only>
+    <autogen>--KeyToKey-- KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+  </item>
+
+  <item>
+    <name>Change Command_R to Option_R on World of Warcraft</name>
+    <identifier>private.command_r_to_option_r_wow</identifier>
+    <only>WORLD_OF_WARCRAFT</only>
+    <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
+  </item>
+
+  <item>
+    <name>Change Option_L to Command_L on World of Warcraft</name>
+    <identifier>private.option_l_to_command_l_wow</identifier>
+    <only>WORLD_OF_WARCRAFT</only>
+    <autogen>--KeyToKey-- KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+  </item>
+
+  <item>
+    <name>Change Option_R to Command_R on World of Warcraft</name>
+    <identifier>private.option_r_to_command_r_wow</identifier>
+    <only>WORLD_OF_WARCRAFT</only>
+    <autogen>--KeyToKey-- KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
+  </item>
+</root>
