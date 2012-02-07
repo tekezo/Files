@@ -13,4 +13,10 @@
     <autogen>--KeyToKey-- KeyCode::SHIFT_R, KeyCode::M</autogen>
   </item>
 
+  <item>
+    <name>Change ¨ to M</name>
+    <identifier>private.swedish_dead_to_m</identifier>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, KeyCode::M</autogen>
+  </item>
+
 </root>
