@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Switching keyboard layouts using Command_L + Shift_L</name>
+    <identifier>private.command_l_shift_l_to_command_space</identifier>
+    <autogen>--KeyOverlaidModifier--
+      KeyCode::COMMAND_L, ModifierFlag::SHIFT_L,
+      KeyCode::COMMAND_L, ModifierFlag::SHIFT_L,
+      KeyCode::SPACE, ModifierFlag::COMMAND_L
+    </autogen>
+    <!-- Hack: Sending shift key down,up events after command+space to release command modifier -->
+    <autogen>--KeyOverlaidModifier--
+      KeyCode::SHIFT_L, ModifierFlag::COMMAND_L,
+      KeyCode::SHIFT_L, ModifierFlag::COMMAND_L,
+      KeyCode::SPACE, ModifierFlag::COMMAND_L, KeyCode::SHIFT_L
+    </autogen>
+  </item>
+
+  <item>
+    <name>Shift_L + Fn + keys left/right to select word</name>
+    <identifier>private.shift_fn_left_to_option_left</identifier>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_LEFT, ModifierFlag::FN | VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+    </autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_RIGHT, ModifierFlag::FN | VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+
+</root>
