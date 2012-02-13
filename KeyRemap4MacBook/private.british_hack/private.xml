@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>British Hack</name>
+    <identifier>private.british_hack</identifier>
+    <inputmode_only>BRITISH</inputmode_only>
+    <autogen>--KeyToKey-- KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
+    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, KeyCode::BACKSLASH</autogen>
+  </item>
+
+  <item>
+    <name>Czech Hack</name>
+    <identifier>private.czech_hack</identifier>
+    <inputmode_only>CZECH</inputmode_only>
+    <autogen>--KeyToKey-- KeyCode::UK_SECTION, KeyCode::SEMICOLON, ModifierFlag::OPTION_L</autogen>
+  </item>
+
+</root>
