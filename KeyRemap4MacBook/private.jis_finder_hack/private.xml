@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Finder Hack</name>
+    <identifier>private.jis_finder_hack</identifier>
+    <device_only>DeviceVendor::LOGITECH, DeviceProduct::ANY</device_only>
+    <only>FINDER</only>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, VK_COMMAND, KeyCode::JIS_BRACKET_LEFT, VK_COMMAND</autogen>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, VK_COMMAND, KeyCode::JIS_BRACKET_RIGHT, VK_COMMAND</autogen>
+  </item>
+
+</root>
