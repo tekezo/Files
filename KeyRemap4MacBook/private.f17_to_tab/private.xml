@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>F17 to Tab</name>
+    <identifier>private.f17_to_tab</identifier>
+    <autogen>--KeyToKey-- KeyCode::F17, KeyCode::TAB</autogen>
+  </item>
+
+  <item>
+    <name>F18 to Tab</name>
+    <identifier>private.f18_to_tab</identifier>
+    <autogen>--KeyToKey-- KeyCode::F18, KeyCode::TAB</autogen>
+  </item>
+
+  <item>
+    <name>F19 to Tab</name>
+    <identifier>private.f19_to_tab</identifier>
+    <autogen>--KeyToKey-- KeyCode::F19, KeyCode::TAB</autogen>
+  </item>
+
+</root>
