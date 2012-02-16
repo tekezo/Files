@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Eject to Backquote on Virtual Machine</name>
+    <identifier>private.eject_to_backquote_vm</identifier>
+    <only>VIRTUALMACHINE</only>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::EJECT, KeyCode::BACKQUOTE</autogen>
+  </item>
+
+</root>
