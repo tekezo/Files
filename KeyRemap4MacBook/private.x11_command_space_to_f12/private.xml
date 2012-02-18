@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Command+Space to F12 on X11</name>
+    <identifier>private.x11_command_space_to_f12</identifier>
+    <only>X11</only>
+    <autogen>--KeyToKey-- KeyCode::SPACE, VK_COMMAND, KeyCode::F12</autogen>
+  </item>
+
+</root>
