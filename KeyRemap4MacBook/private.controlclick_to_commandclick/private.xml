@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Control+LeftClick to Command+LeftClick except on Virtual Machine.</name>
+    <identifier>private.controlclick_to_commandclick</identifier>
+    <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
+    <autogen>--PointingButtonToPointingButton-- PointingButton::LEFT, VK_CONTROL,
+      PointingButton::LEFT, ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+</root>
