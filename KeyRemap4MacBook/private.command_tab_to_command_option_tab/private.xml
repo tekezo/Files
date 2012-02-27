@@ -2,7 +2,7 @@
 <root>
 
   <item>
-    <name>Command+Tab to Command+Option+Tab</name>
+    <name>Change Command+Tab to Command+Option+Tab</name>
     <identifier>private.command_tab_to_command_option_tab</identifier>
     <autogen>--KeyToKey-- KeyCode::TAB, VK_COMMAND, KeyCode::TAB, VK_COMMAND | ModifierFlag::OPTION_L</autogen>
   </item>
