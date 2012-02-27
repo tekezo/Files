@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Command_R to Command_R Lock</name>
+    <identifier>private.command_r_to_command_r_lock</identifier>
+    <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::VK_LOCK_COMMAND_R</autogen>
+  </item>
+
+  <item>
+    <name>Control_R to Control_R Lock</name>
+    <identifier>private.control_r_to_control_r_lock</identifier>
+    <autogen>--KeyToKey-- KeyCode::CONTROL_R, KeyCode::VK_LOCK_CONTROL_R</autogen>
+  </item>
+
+  <item>
+    <name>Option_R to Option_R Lock</name>
+    <identifier>private.option_r_to_option_r_lock</identifier>
+    <autogen>--KeyToKey-- KeyCode::OPTION_R, KeyCode::VK_LOCK_OPTION_R</autogen>
+  </item>
+
+  <item>
+    <name>Shift_R to Shift_R Lock</name>
+    <identifier>private.shift_r_to_shift_r_lock</identifier>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_R, KeyCode::VK_LOCK_SHIFT_R</autogen>
+  </item>
+
+</root>
