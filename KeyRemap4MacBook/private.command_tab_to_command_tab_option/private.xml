@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Command+Tab to Command+Tab+Option</name>
+    <identifier>private.command_tab_to_command_tab_option</identifier>
+    <autogen>--KeyToKey-- KeyCode::TAB, VK_COMMAND,
+      KeyCode::TAB, VK_COMMAND,
+      KeyCode::VK_STICKY_OPTION_R_FORCE_ON, VK_COMMAND</autogen>
+    <autogen>--KeyToKey-- KeyCode::COMMAND_L, KeyCode::COMMAND_L,
+      Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_WAIT_100MS, KeyCode::VK_STICKY_OPTION_R_FORCE_OFF</autogen>
+    <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::COMMAND_R,
+      Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_WAIT_100MS, KeyCode::VK_STICKY_OPTION_R_FORCE_OFF</autogen>
+  </item>
+
+</root>
