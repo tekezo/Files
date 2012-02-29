@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change _ to ч on Bulgarian</name>
+    <identifier>private.jis_underscore_to_backquote</identifier>
+    <inputmode_only>BULGARIAN</inputmode_only>
+    <autogen>--KeyToKey-- KeyCode::JIS_UNDERSCORE, KeyCode::BACKQUOTE</autogen>
+  </item>
+
+</root>
