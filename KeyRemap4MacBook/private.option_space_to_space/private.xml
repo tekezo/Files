@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Non-Breaking Space to Normal Space</name>
+    <appendix>(Option+Space to Space)</appendix>
+    <appendix>(Option+Shift+Space to Space)</appendix>
+    <identifier>private.option_space_to_space</identifier>
+    <autogen>--KeyToKey-- KeyCode::SPACE, VK_OPTION | ModifierFlag::NONE, KeyCode::SPACE</autogen>
+    <autogen>--KeyToKey-- KeyCode::SPACE, VK_OPTION | VK_SHIFT | ModifierFlag::NONE, KeyCode::SPACE</autogen>
+  </item>
+
+</root>
