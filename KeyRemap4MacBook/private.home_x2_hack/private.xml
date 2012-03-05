@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Home x2 to move to first non-space character on line</name>
+    <appendix>(+ Home to beginning of line)</appendix>
+    <identifier>private.home_x2_hack</identifier>
+    <autogen>--DoublePressModifier--
+      KeyCode::HOME,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
+      KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L
+    </autogen>
+  </item>
+
+</root>
