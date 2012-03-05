@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Right Command to M</name>
+    <identifier>private.command_r_to_m</identifier>
+    <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::M</autogen>
+  </item>
+
+</root>
