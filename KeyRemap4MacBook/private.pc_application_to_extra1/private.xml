@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>PC Application Key to Extra1 Modifier</name>
+    <identifier>private.pc_application_to_extra1</identifier>
+    <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, KeyCode::VK_MODIFIER_EXTRA1</autogen>
+  </item>
+
+  <item>
+    <name>Extra1+A to Command+F1</name>
+    <identifier>private.extra1_a_to_command_f1</identifier>
+    <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::EXTRA1, KeyCode::F1, ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+</root>
