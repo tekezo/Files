@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Ordinal-indicator(º) and Less-Than(&lt;) on IBM Model M</name>
+    <identifier>private.ibm_model_m_spanish_swap_ordinal_indicator_lessthan</identifier>
+    <autogen>--KeyToKey-- KeyCode::SPANISH_ORDINAL_INDICATOR, KeyCode::SPANISH_LESS_THAN</autogen>
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, KeyCode::SPANISH_ORDINAL_INDICATOR</autogen>
+  </item>
+
+</root>
