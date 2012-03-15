@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Right Control to Enter</name>
+    <identifier>private.controlR_to_enter</identifier>
+    <autogen>--KeyToKey-- KeyCode::CONTROL_R, KeyCode::ENTER</autogen>
+  </item>
+
+</root>
