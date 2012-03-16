@@ -27,4 +27,7 @@ TEST(StringFunctions, stringByReplacingDoubleCurlyBracesFromString)
 
   StringFunctions::stringByReplacingDoubleCurlyBracesFromString(actual, "{{AAA} } BBB}} XXX", replacement);
   EXPECT_EQ(" XXX", actual);
+
+  StringFunctions::stringByReplacingDoubleCurlyBracesFromString(actual, "{{AAA}", replacement);
+  EXPECT_EQ("{{AAA}", actual);
 }

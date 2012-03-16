@@ -32,6 +32,8 @@ namespace StringFunctions {
         for (;;) {
           c = istream.get();
           if (! istream.good()) {
+            // }} is not found
+            string += "{{";
             string += key;
             goto finish;
           }
