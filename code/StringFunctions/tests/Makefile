@@ -1,4 +1,4 @@
-CXXFLAGS = -I../../include -Wall -Werror -O2
+CXXFLAGS = -Wall -Werror -O2
 LDFLAGS =-F$(HOME)/Library/Frameworks -framework gtest \
 	-L$(HOME)/Library/Frameworks/gtest.Framework/Resources \
 	-lgtest_main
