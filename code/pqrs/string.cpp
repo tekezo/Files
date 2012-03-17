@@ -41,11 +41,9 @@ namespace pqrs {
               goto finish;
             }
 
-            key.push_back(c);
-
             if (c == '}' && previous == '}') {
-              // remove }}
-              key.erase(key.length() - 2, 2);
+              // remove }
+              key.erase(key.length() - 1, 1);
               boost::trim(key);
 
               replacement::iterator it = replacement.find(key);
@@ -55,6 +53,7 @@ namespace pqrs {
               break;
             }
 
+            key.push_back(c);
             previous = c;
           }
 
