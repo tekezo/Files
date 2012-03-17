@@ -6,9 +6,12 @@ TEST(StringFunctions, stringByReplacingDoubleCurlyBracesFromFile)
 {
   StringFunctions::Replacement replacement;
   replacement["AAA"] = "1";
+  replacement["BBB"] = "2222";
+  replacement["CCC"] = "";
 
   std::string actual;
-  StringFunctions::stringByReplacingDoubleCurlyBracesFromFile(actual, "", replacement);
+  StringFunctions::stringByReplacingDoubleCurlyBracesFromFile(actual, "data/sample", replacement);
+  EXPECT_EQ("1 2222 \n", actual);
 }
 
 TEST(StringFunctions, stringByReplacingDoubleCurlyBracesFromString)
@@ -17,6 +20,7 @@ TEST(StringFunctions, stringByReplacingDoubleCurlyBracesFromString)
   replacement["AAA"] = "1";
   replacement["BBB"] = "2222";
   replacement["CCC"] = "";
+  replacement["DDD"] = "44444444444444444444";
 
   std::string actual;
   StringFunctions::stringByReplacingDoubleCurlyBracesFromString(actual, "abc", replacement);
@@ -30,4 +34,7 @@ TEST(StringFunctions, stringByReplacingDoubleCurlyBracesFromString)
 
   StringFunctions::stringByReplacingDoubleCurlyBracesFromString(actual, "{{AAA}", replacement);
   EXPECT_EQ("{{AAA}", actual);
+
+  StringFunctions::stringByReplacingDoubleCurlyBracesFromString(actual, "{{DDD}}", replacement);
+  EXPECT_EQ("44444444444444444444", actual);
 }
