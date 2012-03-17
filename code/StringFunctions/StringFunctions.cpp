@@ -40,19 +40,18 @@ namespace StringFunctions {
             goto finish;
           }
 
-          if (! isspace(c)) {
-            key.push_back(c);
+          key.push_back(c);
 
-            if (c == '}' && previous == '}') {
-              // remove }}
-              key.erase(key.length() - 2, 2);
+          if (c == '}' && previous == '}') {
+            // remove }}
+            key.erase(key.length() - 2, 2);
+            boost::trim(key);
 
-              Replacement::iterator it = replacement.find(key);
-              if (it != replacement.end()) {
-                string += it->second;
-              }
-              break;
+            Replacement::iterator it = replacement.find(key);
+            if (it != replacement.end()) {
+              string += it->second;
             }
+            break;
           }
 
           previous = c;
