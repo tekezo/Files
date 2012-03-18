@@ -38,73 +38,16 @@ namespace pqrs {
       if (it->first != "replacementdef") {
         traverse_replacementdef_(it->second);
       } else {
-        std::cout << "replacementdef" << std::endl;
-        std::cout << (it->second).get_optional<std::string>("replacementname") << std::endl;
-        std::cout << (it->second).get_optional<std::string>("replacementvalue") << std::endl;
-      }
-    }
-#if 0
+        boost::optional<std::string> name  = (it->second).get_optional<std::string>("replacementname");
+        if (! name) continue;
+        boost::optional<std::string> value = (it->second).get_optional<std::string>("replacementvalue");
+        if (! value) continue;
 
-  } else {
-    ConfigXMLParserReplacementDefData* newdata = [self parse_replacementdef:e];
-    if (newdata) {
-      // Adding to replacement_ if needed.
-      if (! [replacement_ objectForKey : newdata.name]) {
-        [replacement_ setObject : newdata.value forKey : newdata.name];
-      }
-    }
-  }
-}
-#endif
-}
-
-#if 0
-
--(ConfigXMLParserReplacementDefData*) parse_replacementdef : (NSXMLElement*)replacementdefElement
-{
-  ConfigXMLParserReplacementDefData* newdata = [[ConfigXMLParserReplacementDefData new] autorelease];
-
-  NSUInteger count = [replacementdefElement childCount];
-  for (NSUInteger i = 0; i < count; ++i) {
-    NSXMLElement* e = [self castToNSXMLElement:[replacementdefElement childAtIndex:i]];
-    if (! e) continue;
-
-    NSString* name = [e name];
-    NSString* stringValue = [self trim:[e stringValue]];
-
-    if ([name isEqualToString : @ "replacementname"]) {
-      newdata.name = [NSString stringWithFormat : @ "#{%@}", stringValue];
-    } else if ([name isEqualToString : @ "replacementvalue"]) {
-      newdata.value = stringValue;
-    }
-  }
-
-  if (! newdata.name) return nil;
-  if (! newdata.value) return nil;
-
-  return newdata;
-}
-
--(void) traverse_replacementdef : (NSXMLElement*)element
-{
-  NSUInteger count = [element childCount];
-  for (NSUInteger i = 0; i < count; ++i) {
-    NSXMLElement* e = [self castToNSXMLElement:[element childAtIndex:i]];
-    if (! e) continue;
-
-    if (! [[e name] isEqualToString : @ "replacementdef"]) {
-      [self traverse_replacementdef : e];
-
-    } else {
-      ConfigXMLParserReplacementDefData* newdata = [self parse_replacementdef:e];
-      if (newdata) {
-        // Adding to replacement_ if needed.
-        if (! [replacement_ objectForKey : newdata.name]) {
-          [replacement_ setObject : newdata.value forKey : newdata.name];
+        // Adding to replacement_ if name is not found.
+        if (replacement_.find(*name) == replacement_.end()) {
+          replacement_[*name] = *value;
         }
       }
     }
   }
-}
-#endif
 }
