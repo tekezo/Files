@@ -2,7 +2,6 @@
 #define PQRS_STRING_HPP
 
 #include <string>
-#include <vector>
 #include <tr1/unordered_map>
 
 namespace pqrs {

@@ -1,9 +1,7 @@
-#include <cctype>
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <boost/algorithm/string/trim.hpp>
-#include <boost/property_tree/xml_parser.hpp>
 #include "pqrs/string.hpp"
 
 namespace pqrs {
