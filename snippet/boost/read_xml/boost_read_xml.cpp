@@ -19,10 +19,18 @@ read_xml_from_string(void)
   }
 }
 
+void
+read_xml_from_file(void)
+{
+  boost::property_tree::ptree pt;
+  boost::property_tree::read_xml("/Library/org.pqrs/KeyRemap4MacBook/prefpane/checkbox.xml", pt);
+}
+
 int
 main(void)
 {
   read_xml_from_string();
+  read_xml_from_file();
 
   return 0;
 }
