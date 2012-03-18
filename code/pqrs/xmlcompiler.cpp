@@ -1,5 +1,9 @@
 #include <exception>
+#include <iostream>
+#include <sstream>
 #include <boost/foreach.hpp>
+#include <boost/property_tree/xml_parser.hpp>
+#include "pqrs/string.hpp"
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
@@ -12,114 +16,26 @@ namespace pqrs {
     return true;
   }
 
-  // ============================================================
-  // replacementdef
-
   bool
-  xmlcompiler::reload_replacementdef_(void)
+  xmlcompiler::read_xml(const char* xmlfilepath, boost::property_tree::ptree& pt, bool with_replacement)
   {
-    bool retval = false;
+    try {
+      int flags = boost::property_tree::xml_parser::no_comments;
 
-    replacement_.clear();
-
-    const char* paths[] = {
-      "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
-      "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/replacementdef.xml",
-    };
-    BOOST_FOREACH(const char* xmlfilepath, paths) {
-      try {
-        boost::property_tree::ptree pt;
-        boost::property_tree::read_xml(xmlfilepath, pt);
-
-        traverse_replacementdef_(pt);
-
-        // Set retval to true if only one XML file is loaded successfully.
-        // Unless we do it, all setting becomes disabled by one error.
-        // (== If private.xml is invalid, system wide replacementdef.xml is not loaded.)
-        retval = true;
-
-      } catch (std::exception& e) {
-        errormessage_ = e.what();
-      }
-    }
-
-    return true;
-  }
-
-  void
-  xmlcompiler::traverse_replacementdef_(const boost::property_tree::ptree& pt)
-  {
-    for (boost::property_tree::ptree::const_iterator it = pt.begin(); it != pt.end(); ++it) {
-      if (it->first != "replacementdef") {
-        traverse_replacementdef_(it->second);
+      if (! with_replacement) {
+        boost::property_tree::read_xml(xmlfilepath, pt, flags, std::locale::classic());
       } else {
-        std::cout << "replacementdef" << std::endl;
-        std::cout << (it->second).get_optional<std::string>("replacementname") << std::endl;
-        std::cout << (it->second).get_optional<std::string>("replacementvalue") << std::endl;
+        std::string xml;
+        pqrs::string::string_by_replacing_double_curly_braces_from_file(xml, xmlfilepath, replacement_);
+        std::stringstream istream(xml, std::stringstream::in);
+        boost::property_tree::read_xml(istream, pt, flags);
       }
-    }
-#if 0
 
-      } else {
-        ConfigXMLParserReplacementDefData* newdata = [self parse_replacementdef:e];
-        if (newdata) {
-          // Adding to replacement_ if needed.
-          if (! [replacement_ objectForKey : newdata.name]) {
-            [replacement_ setObject : newdata.value forKey : newdata.name];
-          }
-        }
-      }
+      return true;
+
+    } catch (std::exception& e) {
+      errormessage_ = e.what();
     }
-#endif
+    return false;
   }
-
-#if 0
-
-  -(ConfigXMLParserReplacementDefData*) parse_replacementdef : (NSXMLElement*)replacementdefElement
-  {
-    ConfigXMLParserReplacementDefData* newdata = [[ConfigXMLParserReplacementDefData new] autorelease];
-
-    NSUInteger count = [replacementdefElement childCount];
-    for (NSUInteger i = 0; i < count; ++i) {
-      NSXMLElement* e = [self castToNSXMLElement:[replacementdefElement childAtIndex:i]];
-      if (! e) continue;
-
-      NSString* name = [e name];
-      NSString* stringValue = [self trim:[e stringValue]];
-
-      if ([name isEqualToString : @ "replacementname"]) {
-        newdata.name = [NSString stringWithFormat : @ "#{%@}", stringValue];
-      } else if ([name isEqualToString : @ "replacementvalue"]) {
-        newdata.value = stringValue;
-      }
-    }
-
-    if (! newdata.name) return nil;
-    if (! newdata.value) return nil;
-
-    return newdata;
-  }
-
-  -(void) traverse_replacementdef : (NSXMLElement*)element
-  {
-    NSUInteger count = [element childCount];
-    for (NSUInteger i = 0; i < count; ++i) {
-      NSXMLElement* e = [self castToNSXMLElement:[element childAtIndex:i]];
-      if (! e) continue;
-
-      if (! [[e name] isEqualToString : @ "replacementdef"]) {
-        [self traverse_replacementdef : e];
-
-      } else {
-        ConfigXMLParserReplacementDefData* newdata = [self parse_replacementdef:e];
-        if (newdata) {
-          // Adding to replacement_ if needed.
-          if (! [replacement_ objectForKey : newdata.name]) {
-            [replacement_ setObject : newdata.value forKey : newdata.name];
-          }
-        }
-      }
-    }
-  }
-#endif
 }

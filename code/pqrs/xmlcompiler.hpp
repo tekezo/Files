@@ -2,7 +2,7 @@
 #define PQRS_XMLCOMPILER_HPP
 
 #include "pqrs/string.hpp"
-#include <boost/property_tree/xml_parser.hpp>
+#include <boost/property_tree/ptree.hpp>
 
 namespace pqrs {
   class xmlcompiler {
@@ -12,6 +12,8 @@ namespace pqrs {
     bool reload(void);
 
   private:
+    bool read_xml(const char* xmlfilepath, boost::property_tree::ptree& pt, bool with_replacement);
+
     bool reload_replacementdef_(void);
     void traverse_replacementdef_(const boost::property_tree::ptree& pt);
 
