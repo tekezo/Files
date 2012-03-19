@@ -1,7 +1,8 @@
 #include <exception>
 #include <iostream>
 #include <sstream>
-#include <boost/foreach.hpp>
+#include <boost/algorithm/string/replace.hpp>
+#include <boost/algorithm/string/trim.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 #include "pqrs/string.hpp"
 #include "pqrs/xmlcompiler.hpp"
@@ -12,12 +13,15 @@ namespace pqrs {
   bool
   xmlcompiler::reload(void)
   {
-    reload_replacementdef_();
-    return true;
+    if (reload_replacementdef_() &&
+        reload_appdef_()) {
+      return true;
+    }
+    return false;
   }
 
   bool
-  xmlcompiler::read_xml(const char* xmlfilepath, boost::property_tree::ptree& pt, bool with_replacement)
+  xmlcompiler::read_xml_(const char* xmlfilepath, boost::property_tree::ptree& pt, bool with_replacement)
   {
     try {
       int flags = boost::property_tree::xml_parser::no_comments;
@@ -37,5 +41,12 @@ namespace pqrs {
       errormessage_ = e.what();
     }
     return false;
+  }
+
+  void
+  normalize_identifier(std::string& identifier)
+  {
+    boost::trim(identifier);
+    boost::replace_all(identifier, ".", "_");
   }
 }

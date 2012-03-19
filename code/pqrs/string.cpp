@@ -44,7 +44,7 @@ namespace pqrs {
               key.erase(key.length() - 1, 1);
               boost::trim(key);
 
-              replacement::iterator it = replacement.find(key);
+              auto it = replacement.find(key);
               if (it != replacement.end()) {
                 string += it->second;
               }

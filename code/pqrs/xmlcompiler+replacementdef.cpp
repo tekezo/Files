@@ -1,5 +1,4 @@
 #include <exception>
-#include <boost/foreach.hpp>
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
@@ -14,9 +13,9 @@ namespace pqrs {
       "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
       "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/replacementdef.xml",
     };
-    BOOST_FOREACH(const char* xmlfilepath, paths) {
+    for (auto xmlfilepath : paths) {
       boost::property_tree::ptree pt;
-      if (! pqrs::xmlcompiler::read_xml(xmlfilepath, pt, false)) {
+      if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, pt, false)) {
         continue;
       }
 
@@ -34,18 +33,25 @@ namespace pqrs {
   void
   xmlcompiler::traverse_replacementdef_(const boost::property_tree::ptree& pt)
   {
-    for (boost::property_tree::ptree::const_iterator it = pt.begin(); it != pt.end(); ++it) {
-      if (it->first != "replacementdef") {
-        traverse_replacementdef_(it->second);
+    for (auto it : pt) {
+      if (it.first != "replacementdef") {
+        traverse_replacementdef_(it.second);
       } else {
-        boost::optional<std::string> name  = (it->second).get_optional<std::string>("replacementname");
-        if (! name) continue;
-        boost::optional<std::string> value = (it->second).get_optional<std::string>("replacementvalue");
-        if (! value) continue;
-
+        std::string name;
+        std::string value;
+        for (auto child : it.second) {
+          if (child.first == "replacementname") {
+            name = child.second.data();
+          } else if (child.first == "replacementvalue") {
+            value = child.second.data();
+          }
+        }
+        if (name.empty() || value.empty()) {
+          continue;
+        }
         // Adding to replacement_ if name is not found.
-        if (replacement_.find(*name) == replacement_.end()) {
-          replacement_[*name] = *value;
+        if (replacement_.find(name) == replacement_.end()) {
+          replacement_[name] = value;
         }
       }
     }
