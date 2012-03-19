@@ -14,6 +14,7 @@ namespace pqrs {
   xmlcompiler::reload(void)
   {
     if (reload_replacementdef_() &&
+        reload_symbolmap_() &&
         reload_appdef_()) {
       return true;
     }

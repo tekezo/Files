@@ -55,6 +55,9 @@ namespace pqrs {
     bool reload_appdef_(void);
     void traverse_appdef_(const boost::property_tree::ptree& pt);
 
+    bool reload_symbolmap_(void);
+    bool traverse_symbolmap_(const boost::property_tree::ptree& pt);
+
     std::string errormessage_;
     symbolmap_keycode symbolmap_keycode_;
     pqrs::string::replacement replacement_;

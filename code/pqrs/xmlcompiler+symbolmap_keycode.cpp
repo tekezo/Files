@@ -1,3 +1,5 @@
+#include <cerrno>
+#include <cstdlib>
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
@@ -33,7 +35,6 @@ namespace pqrs {
     }
 
     symbolmap_[n] = value;
-    std::cout << "append: " << n << " " << value << std::endl;
     return true;
   }
 
@@ -47,5 +48,44 @@ namespace pqrs {
     }
     symbolmap_[n] = *v + 1;
     return append(type, name, *v);
+  }
+
+  // ============================================================
+  bool
+  xmlcompiler::reload_symbolmap_(void)
+  {
+    symbolmap_keycode_.clear();
+
+    const char* xmlfilepath = "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/symbolmap.xml";
+
+    boost::property_tree::ptree pt;
+    if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, pt, true)) {
+      return false;
+    }
+
+    return traverse_symbolmap_(pt);
+  }
+
+  bool
+  xmlcompiler::traverse_symbolmap_(const boost::property_tree::ptree& pt)
+  {
+    for (auto it : pt) {
+      if (it.first != "item") {
+        traverse_symbolmap_(it.second);
+      } else {
+        std::string value = it.second.get<std::string>("<xmlattr>.value");
+        errno = 0;
+        unsigned int v = strtol(value.c_str(), NULL, 0);
+        if (errno != 0) {
+          return false;
+        }
+        if (! symbolmap_keycode_.append(it.second.get<std::string>("<xmlattr>.type"),
+                                        it.second.get<std::string>("<xmlattr>.name"),
+                                        v)) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 }

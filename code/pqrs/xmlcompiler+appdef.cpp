@@ -28,7 +28,7 @@ namespace pqrs {
       retval = true;
     }
 
-    return true;
+    return retval;
   }
 
   void
