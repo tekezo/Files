@@ -33,9 +33,9 @@ namespace pqrs {
       boost::optional<uint32_t> get(const std::string& name);
       boost::optional<uint32_t> get(const std::string& type, const std::string& name);
 
-      // Call append("KeyCode", "RETURN", 36) to register "KeyCode::RETURN = 36".
-      bool append(const std::string& type, const std::string& name, uint32_t value);
-      bool append(const std::string& type, const std::string& name);
+      // Call add("KeyCode", "RETURN", 36) to register "KeyCode::RETURN = 36".
+      bool add(const std::string& type, const std::string& name, uint32_t value);
+      bool add(const std::string& type, const std::string& name);
 
     private:
       std::tr1::unordered_map<std::string, uint32_t> symbolmap_;
@@ -58,6 +58,7 @@ namespace pqrs {
     class remapclasses_initialize_vector {
     public:
       remapclasses_initialize_vector(void);
+      const std::vector<uint32_t>& get(void) const;
       void add(const std::vector<uint32_t>& v, uint32_t configindex);
       void freeze(void);
 
@@ -68,8 +69,9 @@ namespace pqrs {
       };
 
       std::vector<uint32_t> data_;
-      std::tr1::unordered_map<uint32_t, bool> is_configindex_appended_;
+      std::tr1::unordered_map<uint32_t, bool> is_configindex_added_;
       uint32_t max_configindex_;
+      bool freezed_;
     };
 
   private:

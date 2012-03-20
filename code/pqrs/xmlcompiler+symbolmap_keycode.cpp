@@ -25,7 +25,7 @@ namespace pqrs {
   }
 
   bool
-  xmlcompiler::symbolmap_keycode::append(const std::string& type, const std::string& name, uint32_t value)
+  xmlcompiler::symbolmap_keycode::add(const std::string& type, const std::string& name, uint32_t value)
   {
     auto n = type + "::" + name;
     if (get(n)) {
@@ -37,7 +37,7 @@ namespace pqrs {
   }
 
   bool
-  xmlcompiler::symbolmap_keycode::append(const std::string& type, const std::string& name)
+  xmlcompiler::symbolmap_keycode::add(const std::string& type, const std::string& name)
   {
     auto n = type + "::VK__AUTOINDEX__BEGIN__";
     auto v = get(n);
@@ -45,7 +45,7 @@ namespace pqrs {
       return false;
     }
     symbolmap_[n] = *v + 1;
-    return append(type, name, *v);
+    return add(type, name, *v);
   }
 
   // ============================================================
@@ -75,10 +75,10 @@ namespace pqrs {
         if (! value) {
           throw xmlcompiler_runtime_error("Invalid value in symbolmap.xml.");
         }
-        if (! symbolmap_keycode_.append(it.second.get<std::string>("<xmlattr>.type"),
-                                        it.second.get<std::string>("<xmlattr>.name"),
-                                        *value)) {
-          throw xmlcompiler_runtime_error("Failed to symbolmap_keycode_.append.");
+        if (! symbolmap_keycode_.add(it.second.get<std::string>("<xmlattr>.type"),
+                                     it.second.get<std::string>("<xmlattr>.name"),
+                                     *value)) {
+          throw xmlcompiler_runtime_error("Failed to symbolmap_keycode_.add.");
         }
       }
     }
