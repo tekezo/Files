@@ -64,3 +64,28 @@ TEST(pqrs_string, string_by_replacing_double_curly_braces_from_string)
   pqrs::string::string_by_replacing_double_curly_braces_from_string(actual, "{{ LOOP1 }}{{ LOOP2 }}", replacement);
   EXPECT_EQ("{{ LOOP1 }}   {{ LOOP2 }}    ", actual);
 }
+
+TEST(pqrs_string, to_uint32_t)
+{
+  boost::optional<uint32_t> actual;
+
+  actual = pqrs::string::to_uint32_t("123456");
+  EXPECT_TRUE(actual);
+  EXPECT_EQ(123456, *actual);
+
+  // oct
+  actual = pqrs::string::to_uint32_t("0100");
+  EXPECT_TRUE(actual);
+  EXPECT_EQ(64, *actual);
+
+  // hex
+  actual = pqrs::string::to_uint32_t("0x123456");
+  EXPECT_TRUE(actual);
+  EXPECT_EQ(1193046, *actual);
+
+  actual = pqrs::string::to_uint32_t("0xG");
+  EXPECT_FALSE(actual);
+
+  actual = pqrs::string::to_uint32_t("abc");
+  EXPECT_FALSE(actual);
+}

@@ -2,6 +2,8 @@
 #define PQRS_STRING_HPP
 
 #include <string>
+#include <boost/optional.hpp>
+#include <tr1/cstdint>
 #include <tr1/unordered_map>
 
 namespace pqrs {
@@ -14,6 +16,9 @@ namespace pqrs {
     int string_by_replacing_double_curly_braces_from_string(std::string& string,
                                                             const std::string& source,
                                                             replacement replacement);
+
+    // octal,decimal,hex is supported.
+    boost::optional<uint32_t> to_uint32_t(const char* string);
   }
 }
 
