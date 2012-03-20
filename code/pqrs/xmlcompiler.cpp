@@ -15,7 +15,9 @@ namespace pqrs {
   {
     if (reload_replacementdef_() &&
         reload_symbolmap_() &&
-        reload_appdef_()) {
+        reload_appdef_() &&
+        reload_devicedef_() &&
+        reload_autogen_()) {
       return true;
     }
     return false;

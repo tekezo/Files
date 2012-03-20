@@ -55,6 +55,15 @@ namespace pqrs {
       std::vector<std::string> rules_prefix_;
     };
 
+    class remapclasses_initialize_vector {
+    public:
+
+    private:
+      std::vector<uint32_t> data_;
+      std::tr1::unordered_map<uint32_t, bool> is_configindex_appended_;
+      uint32_t max_configindex_;
+    };
+
   private:
     bool read_xml_(const char* xmlfilepath, boost::property_tree::ptree& pt, bool with_replacement);
 
@@ -72,9 +81,13 @@ namespace pqrs {
     bool reload_devicedef_(void);
     void traverse_devicedef_(const boost::property_tree::ptree& pt);
 
+    bool reload_autogen_(void);
+    void traverse_autogen_(const boost::property_tree::ptree& pt);
+
     std::string errormessage_;
     symbolmap_keycode symbolmap_keycode_;
     pqrs::string::replacement replacement_;
+    std::tr1::unordered_map<uint32_t, std::string> confignamemap_;
 
     std::vector<std::tr1::shared_ptr<appdef> > app_;
   };
