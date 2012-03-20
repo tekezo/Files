@@ -1,6 +1,8 @@
 #ifndef PQRS_XMLCOMPILER_HPP
 #define PQRS_XMLCOMPILER_HPP
 
+#include <string>
+#include <stdexcept>
 #include <vector>
 #include <tr1/memory>
 #include <tr1/unordered_map>
@@ -15,19 +17,28 @@ namespace pqrs {
 
     bool reload(void);
 
+    class xmlcompiler_runtime_error : public std::runtime_error {
+    public:
+      xmlcompiler_runtime_error(const std::string& what) : std::runtime_error(what) {}
+    };
+    class xmlcompiler_logic_error : public std::logic_error {
+    public:
+      xmlcompiler_logic_error(const std::string& what) : std::logic_error(what) {}
+    };
+
     class symbolmap_keycode {
     public:
       void clear(void);
 
-      boost::optional<unsigned int> get(const std::string& name);
-      boost::optional<unsigned int> get(const std::string& type, const std::string& name);
+      boost::optional<uint32_t> get(const std::string& name);
+      boost::optional<uint32_t> get(const std::string& type, const std::string& name);
 
       // Call append("KeyCode", "RETURN", 36) to register "KeyCode::RETURN = 36".
-      bool append(const std::string& type, const std::string& name, unsigned int value);
+      bool append(const std::string& type, const std::string& name, uint32_t value);
       bool append(const std::string& type, const std::string& name);
 
     private:
-      std::tr1::unordered_map<std::string, unsigned int> symbolmap_;
+      std::tr1::unordered_map<std::string, uint32_t> symbolmap_;
     };
 
     class appdef {
@@ -52,11 +63,14 @@ namespace pqrs {
     bool reload_replacementdef_(void);
     void traverse_replacementdef_(const boost::property_tree::ptree& pt);
 
+    bool reload_symbolmap_(void);
+    bool traverse_symbolmap_(const boost::property_tree::ptree& pt);
+
     bool reload_appdef_(void);
     void traverse_appdef_(const boost::property_tree::ptree& pt);
 
-    bool reload_symbolmap_(void);
-    bool traverse_symbolmap_(const boost::property_tree::ptree& pt);
+    bool reload_devicedef_(void);
+    void traverse_devicedef_(const boost::property_tree::ptree& pt);
 
     std::string errormessage_;
     symbolmap_keycode symbolmap_keycode_;

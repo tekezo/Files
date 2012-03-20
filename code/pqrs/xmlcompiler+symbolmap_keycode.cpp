@@ -1,5 +1,3 @@
-#include <cerrno>
-#include <cstdlib>
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
@@ -9,7 +7,7 @@ namespace pqrs {
     symbolmap_.clear();
   }
 
-  boost::optional<unsigned int>
+  boost::optional<uint32_t>
   xmlcompiler::symbolmap_keycode::get(const std::string& name)
   {
     auto it = symbolmap_.find(name);
@@ -20,14 +18,14 @@ namespace pqrs {
     return it->second;
   }
 
-  boost::optional<unsigned int>
+  boost::optional<uint32_t>
   xmlcompiler::symbolmap_keycode::get(const std::string& type, const std::string& name)
   {
     return get(type + "::" + name);
   }
 
   bool
-  xmlcompiler::symbolmap_keycode::append(const std::string& type, const std::string& name, unsigned int value)
+  xmlcompiler::symbolmap_keycode::append(const std::string& type, const std::string& name, uint32_t value)
   {
     auto n = type + "::" + name;
     if (get(n)) {
@@ -73,16 +71,14 @@ namespace pqrs {
       if (it.first != "item") {
         traverse_symbolmap_(it.second);
       } else {
-        std::string value = it.second.get<std::string>("<xmlattr>.value");
-        errno = 0;
-        unsigned int v = strtol(value.c_str(), NULL, 0);
-        if (errno != 0) {
-          return false;
+        auto value = pqrs::string::to_uint32_t(it.second.get<std::string>("<xmlattr>.value"));
+        if (! value) {
+          throw xmlcompiler_runtime_error("Invalid value in symbolmap.xml.");
         }
         if (! symbolmap_keycode_.append(it.second.get<std::string>("<xmlattr>.type"),
                                         it.second.get<std::string>("<xmlattr>.name"),
-                                        v)) {
-          return false;
+                                        *value)) {
+          throw xmlcompiler_runtime_error("Failed to symbolmap_keycode_.append.");
         }
       }
     }

@@ -16,14 +16,14 @@ TEST(pqrs_xmlcompiler_symbolmap_keycode, append)
   EXPECT_TRUE(s.append("KeyCode", "VK_NEW2"));
 
   {
-    boost::optional<unsigned int> expected = 1024;
-    boost::optional<unsigned int> actual = s.get("KeyCode::VK_NEW1");
+    boost::optional<uint32_t> expected = 1024;
+    boost::optional<uint32_t> actual = s.get("KeyCode::VK_NEW1");
     EXPECT_EQ(expected, actual);
   }
 
   {
-    boost::optional<unsigned int> expected = 1025;
-    boost::optional<unsigned int> actual = s.get("KeyCode::VK_NEW2");
+    boost::optional<uint32_t> expected = 1025;
+    boost::optional<uint32_t> actual = s.get("KeyCode::VK_NEW2");
     EXPECT_EQ(expected, actual);
   }
 }

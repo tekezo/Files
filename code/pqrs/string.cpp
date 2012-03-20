@@ -179,5 +179,11 @@ namespace pqrs {
         return boost::none;
       }
     }
+
+    boost::optional<uint32_t>
+    to_uint32_t(const std::string& string)
+    {
+      return to_uint32_t(string.c_str());
+    }
   }
 }
