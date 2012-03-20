@@ -2,7 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <boost/lexical_cast.hpp>
-#include <boost/algorithm/string/trim.hpp>
+#include <boost/algorithm/string.hpp>
 #include "pqrs/string.hpp"
 
 namespace pqrs {

@@ -93,12 +93,14 @@ namespace pqrs {
     void traverse_devicedef_(const boost::property_tree::ptree& pt);
 
     bool reload_autogen_(void);
+    void add_configindex_and_keycode_to_symbolmap_(const boost::property_tree::ptree& pt, bool handle_notsave);
     void traverse_autogen_(const boost::property_tree::ptree& pt);
 
     std::string errormessage_;
     symbolmap_keycode symbolmap_keycode_;
     pqrs::string::replacement replacement_;
     std::tr1::unordered_map<uint32_t, std::string> confignamemap_;
+    remapclasses_initialize_vector remapclasses_initialize_vector_;
 
     std::vector<std::tr1::shared_ptr<appdef> > app_;
   };

@@ -1,8 +1,7 @@
 #include <exception>
 #include <iostream>
 #include <sstream>
-#include <boost/algorithm/string/replace.hpp>
-#include <boost/algorithm/string/trim.hpp>
+#include <boost/algorithm/string.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 #include "pqrs/string.hpp"
 #include "pqrs/xmlcompiler.hpp"
@@ -47,9 +46,8 @@ namespace pqrs {
   }
 
   void
-  normalize_identifier(std::string& identifier)
+  xmlcompiler::normalize_identifier(std::string& identifier)
   {
-    boost::trim(identifier);
     boost::replace_all(identifier, ".", "_");
   }
 }

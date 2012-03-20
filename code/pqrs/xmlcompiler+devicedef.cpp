@@ -1,5 +1,5 @@
 #include <exception>
-#include <boost/algorithm/string/trim.hpp>
+#include <boost/algorithm/string.hpp>
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {

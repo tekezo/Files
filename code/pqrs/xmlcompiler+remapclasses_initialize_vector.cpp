@@ -35,6 +35,9 @@ namespace pqrs {
     if (freezed_) {
       throw xmlcompiler_logic_error("remapclasses_initialize_vector is freezed.");
     }
+    if (is_configindex_added_.find(configindex) != is_configindex_added_.end()) {
+      throw xmlcompiler_runtime_error("configindex is already added to remapclasses_initialize_vector.");
+    }
 
     // size
     data_.push_back(v.size() + 1); // +1 == configindex

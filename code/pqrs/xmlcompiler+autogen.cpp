@@ -1,5 +1,5 @@
 #include <exception>
-#include <boost/algorithm/string/trim.hpp>
+#include <boost/algorithm/string.hpp>
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
@@ -9,6 +9,7 @@ namespace pqrs {
     bool retval = false;
 
     confignamemap_.clear();
+    remapclasses_initialize_vector_.clear();
 
     const char* paths[] = {
       "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
@@ -19,6 +20,15 @@ namespace pqrs {
       if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, pt, true)) {
         continue;
       }
+
+      // add_configindex_and_keycode_to_symbolmap_
+      //   1st loop: <identifier>notsave.*</identifier>
+      //   2nd loop: other <identifier>
+      //
+      // We need to assign higher priority to notsave.* settings.
+      // So, adding configindex by 2steps.
+      add_configindex_and_keycode_to_symbolmap_(pt, true);
+      add_configindex_and_keycode_to_symbolmap_(pt, false);
 
       traverse_autogen_(pt);
 
@@ -32,44 +42,49 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::traverse_autogen_(const boost::property_tree::ptree& pt)
+  xmlcompiler::add_configindex_and_keycode_to_symbolmap_(const boost::property_tree::ptree& pt, bool handle_notsave)
   {
     for (auto it : pt) {
-      if (it.first != "devicevendordef" &&
-          it.first != "deviceproductdef") {
-        traverse_devicedef_(it.second);
+      if (it.first != "identifier") {
+        add_configindex_and_keycode_to_symbolmap_(it.second, handle_notsave);
       } else {
-        std::string type;
-        std::string name;
-        boost::optional<uint32_t> value;
+        auto identifier = boost::trim_copy(it.second.data());
+        normalize_identifier(identifier);
 
-        if (it.first == "devicevendordef") {
-          type = "DeviceVendor";
-        } else if (it.first == "deviceproductdef") {
-          type = "DeviceProduct";
-        } else {
-          throw xmlcompiler_logic_error("unknown type in traverse_devicedef_");
-        }
-
-        for (auto child : it.second) {
-          if (child.first == "vendorname" ||
-              child.first == "productname") {
-            name = boost::trim_copy(child.second.data());
-          } else if (child.first == "vendorid" ||
-                     child.first == "productid") {
-            value = pqrs::string::to_uint32_t(boost::trim_copy(child.second.data()));
-          }
-        }
-
-        if (name.empty() || ! value) {
+        // ----------------------------------------
+        // Do not treat essentials.
+        auto attr_essential = it.second.get_optional<std::string>("<xmlattr>.essential");
+        if (attr_essential) {
           continue;
         }
 
-        // Adding to symbolmap_ if name is not found.
-        if (! symbolmap_keycode_.get(type, name)) {
-          symbolmap_keycode_.add(type, name, *value);
+        // ----------------------------------------
+        if (handle_notsave != boost::starts_with(identifier, "notsave_")) {
+          continue;
         }
+
+        // ----------------------------------------
+        auto attr_vk_config = it.second.get_optional<std::string>("<xmlattr>.vk_config");
+        if (attr_vk_config) {
+          const char* names[] = {
+            "VK_CONFIG_TOGGLE_",
+            "VK_CONFIG_FORCE_ON_",
+            "VK_CONFIG_FORCE_OFF_",
+            "VK_CONFIG_SYNC_KEYDOWNUP_",
+          };
+          for (auto n : names) {
+            symbolmap_keycode_.add("KeyCode", std::string(n) + identifier);
+          }
+        }
+
+        // ----------------------------------------
+        symbolmap_keycode_.add("ConfigIndex", identifier);
       }
     }
+  }
+
+  void
+  xmlcompiler::traverse_autogen_(const boost::property_tree::ptree& pt)
+  {
   }
 }
