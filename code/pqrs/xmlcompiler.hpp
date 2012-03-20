@@ -57,8 +57,16 @@ namespace pqrs {
 
     class remapclasses_initialize_vector {
     public:
+      remapclasses_initialize_vector(void);
+      void add(const std::vector<uint32_t>& v, uint32_t configindex);
+      void freeze(void);
 
     private:
+      enum {
+        INDEX_OF_FORMAT_VERSION = 0,
+        INDEX_OF_COUNT = 1,
+      };
+
       std::vector<uint32_t> data_;
       std::tr1::unordered_map<uint32_t, bool> is_configindex_appended_;
       uint32_t max_configindex_;
