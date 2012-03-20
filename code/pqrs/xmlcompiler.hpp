@@ -58,6 +58,7 @@ namespace pqrs {
     class remapclasses_initialize_vector {
     public:
       remapclasses_initialize_vector(void);
+      void clear(void);
       const std::vector<uint32_t>& get(void) const;
       void add(const std::vector<uint32_t>& v, uint32_t configindex);
       void freeze(void);

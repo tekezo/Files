@@ -2,13 +2,22 @@
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
-  xmlcompiler::remapclasses_initialize_vector::remapclasses_initialize_vector(void) :
-    max_configindex_(0),
-    freezed_(false)
+  xmlcompiler::remapclasses_initialize_vector::remapclasses_initialize_vector(void)
+  {
+    clear();
+  }
+
+  void
+  xmlcompiler::remapclasses_initialize_vector::clear(void)
   {
     data_.resize(2);
     data_[INDEX_OF_FORMAT_VERSION] = BRIDGE_REMAPCLASS_INITIALIZE_VECTOR_FORMAT_VERSION;
     data_[INDEX_OF_COUNT] = 0;
+
+    is_configindex_added_.clear();
+
+    max_configindex_ = 0;
+    freezed_ = false;
   }
 
   const std::vector<uint32_t>&
