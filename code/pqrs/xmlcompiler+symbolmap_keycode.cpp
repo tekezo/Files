@@ -1,10 +1,16 @@
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
+  xmlcompiler::symbolmap_keycode::symbolmap_keycode(void)
+  {
+    clear();
+  }
+
   void
   xmlcompiler::symbolmap_keycode::clear(void)
   {
     symbolmap_.clear();
+    add("ConfigIndex", "VK__AUTOINDEX__BEGIN__", 0);
   }
 
   boost::optional<uint32_t>
@@ -42,6 +48,7 @@ namespace pqrs {
     auto n = type + "::VK__AUTOINDEX__BEGIN__";
     auto v = get(n);
     if (! v) {
+      throw xmlcompiler_logic_error("VK__AUTOINDEX__BEGIN__ is not found.");
       return false;
     }
     symbolmap_[n] = *v + 1;

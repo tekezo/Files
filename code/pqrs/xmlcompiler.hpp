@@ -28,6 +28,7 @@ namespace pqrs {
 
     class symbolmap_keycode {
     public:
+      symbolmap_keycode(void);
       void clear(void);
 
       boost::optional<uint32_t> get(const std::string& name);
