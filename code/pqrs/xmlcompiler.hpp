@@ -95,7 +95,10 @@ namespace pqrs {
 
     bool reload_autogen_(void);
     void add_configindex_and_keycode_to_symbolmap_(const boost::property_tree::ptree& pt, bool handle_notsave);
-    void traverse_autogen_(const boost::property_tree::ptree& pt);
+    void traverse_identifier_(const boost::property_tree::ptree& pt);
+    void traverse_autogen_(const boost::property_tree::ptree& pt,
+                           const std::string& identifier,
+                           std::vector<uint32_t> initialize_vector);
 
     std::string errormessage_;
     symbolmap_keycode symbolmap_keycode_;
