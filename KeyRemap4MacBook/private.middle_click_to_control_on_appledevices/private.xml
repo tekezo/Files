@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Middle Click to Control on Apple Mice</name>
+    <identifier>private.middle_click_to_control_on_appledevices</identifier>
+    <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::ANY</device_only>
+    <autogen>--PointingButtonToKey-- PointingButton::MIDDLE, KeyCode::CONTROL_L</autogen>
+  </item>
+
+  <item>
+    <name>Middle Click to Option on Apple Mice</name>
+    <identifier>private.middle_click_to_option_on_appledevices</identifier>
+    <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::ANY</device_only>
+    <autogen>--PointingButtonToKey-- PointingButton::MIDDLE, KeyCode::OPTION_L</autogen>
+  </item>
+
+</root>
