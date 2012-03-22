@@ -14,7 +14,7 @@ namespace pqrs {
       "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
       "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/appdef.xml",
     };
-    for (auto xmlfilepath : paths) {
+    for (auto& xmlfilepath : paths) {
       boost::property_tree::ptree pt;
       if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, pt, true)) {
         continue;
@@ -34,14 +34,14 @@ namespace pqrs {
   void
   xmlcompiler::traverse_appdef_(const boost::property_tree::ptree& pt)
   {
-    for (auto it : pt) {
+    for (auto& it : pt) {
       if (it.first != "appdef") {
         traverse_appdef_(it.second);
       } else {
         std::tr1::shared_ptr<appdef> newappdef(new appdef);
         if (! newappdef) continue;
 
-        for (auto child : it.second) {
+        for (auto& child : it.second) {
           if (child.first == "appname") {
             newappdef->set_name(boost::trim_copy(child.second.data()));
           } else if (child.first == "equal") {
@@ -82,12 +82,12 @@ namespace pqrs {
   bool
   xmlcompiler::appdef::is_rules_matched(const std::string& identifier)
   {
-    for (auto r : rules_equal_) {
+    for (auto& r : rules_equal_) {
       if (identifier == r) {
         return true;
       }
     }
-    for (auto r : rules_prefix_) {
+    for (auto& r : rules_prefix_) {
       if (identifier.compare(0, r.length(), r)) {
         return true;
       }

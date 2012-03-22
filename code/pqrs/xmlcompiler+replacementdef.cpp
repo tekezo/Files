@@ -13,7 +13,7 @@ namespace pqrs {
       "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
       "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/replacementdef.xml",
     };
-    for (auto xmlfilepath : paths) {
+    for (auto& xmlfilepath : paths) {
       boost::property_tree::ptree pt;
       if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, pt, false)) {
         continue;
@@ -33,13 +33,13 @@ namespace pqrs {
   void
   xmlcompiler::traverse_replacementdef_(const boost::property_tree::ptree& pt)
   {
-    for (auto it : pt) {
+    for (auto& it : pt) {
       if (it.first != "replacementdef") {
         traverse_replacementdef_(it.second);
       } else {
         std::string name;
         std::string value;
-        for (auto child : it.second) {
+        for (auto& child : it.second) {
           if (child.first == "replacementname") {
             name = child.second.data();
           } else if (child.first == "replacementvalue") {

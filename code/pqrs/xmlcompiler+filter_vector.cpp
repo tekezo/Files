@@ -6,7 +6,7 @@
 namespace pqrs {
   xmlcompiler::filter_vector::filter_vector(const symbolmap& symbolmap, const boost::property_tree::ptree& pt)
   {
-    for (auto it : pt) {
+    for (auto& it : pt) {
       /*  */ if (it.first == "not") {
         add(symbolmap, BRIDGE_FILTERTYPE_APPLICATION_NOT,  "ApplicationType::", it.second.data());
       } else if (it.first == "only") {
@@ -51,7 +51,7 @@ namespace pqrs {
     boost::split(splits, string, boost::is_any_of(","), boost::token_compress_on);
 
     // trim values
-    for (auto value : splits) {
+    for (auto& value : splits) {
       boost::trim(value);
     }
     pqrs::vector::remove_empty_strings(splits);
@@ -59,14 +59,14 @@ namespace pqrs {
     data_.push_back(splits.size() + 1);         // +1 == filter_type
     data_.push_back(filter_type);
 
-    for (auto value : splits) {
+    for (auto& value : splits) {
       // support '|' for <modifier_only>.
       // For example: <modifier_only>ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L|ModifierFlag::OPTION_L</modifier_only>
       std::vector<std::string> items;
       boost::split(items, value, boost::is_any_of("|"), boost::token_compress_on);
 
       uint32_t filter_value = 0;
-      for (auto i : items) {
+      for (auto& i : items) {
         boost::trim(i);
         auto v = symbolmap.get(prefix + i);
         if (! v) {

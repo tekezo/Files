@@ -16,7 +16,7 @@ namespace pqrs {
       "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
       "/Library/org.pqrs/KeyRemap4MacBook/prefpane/checkbox.xml",
     };
-    for (auto xmlfilepath : paths) {
+    for (auto& xmlfilepath : paths) {
       boost::property_tree::ptree pt;
       if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, pt, true)) {
         continue;
@@ -47,7 +47,7 @@ namespace pqrs {
   void
   xmlcompiler::add_configindex_and_keycode_to_symbolmap_(const boost::property_tree::ptree& pt, bool handle_notsave)
   {
-    for (auto it : pt) {
+    for (auto& it : pt) {
       if (it.first != "identifier") {
         add_configindex_and_keycode_to_symbolmap_(it.second, handle_notsave);
       } else {
@@ -75,7 +75,7 @@ namespace pqrs {
             "VK_CONFIG_FORCE_OFF_",
             "VK_CONFIG_SYNC_KEYDOWNUP_",
           };
-          for (auto n : names) {
+          for (auto& n : names) {
             symbolmap_.add("KeyCode", std::string(n) + identifier);
           }
         }
@@ -89,7 +89,7 @@ namespace pqrs {
   void
   xmlcompiler::traverse_identifier_(const boost::property_tree::ptree& pt)
   {
-    for (auto it : pt) {
+    for (auto& it : pt) {
       if (it.first != "identifier") {
         traverse_identifier_(it.second);
 
@@ -115,7 +115,7 @@ namespace pqrs {
             "VK_CONFIG_FORCE_OFF_",
             "VK_CONFIG_SYNC_KEYDOWNUP_",
           };
-          for (auto n : names) {
+          for (auto& n : names) {
             auto v = symbolmap_.get("KeyCode", std::string(n) + identifier);
             if (! v) {
               throw xmlcompiler_runtime_error(std::string(n) + " is not found in symbolmap.");
@@ -145,27 +145,27 @@ namespace pqrs {
     make_filters_(pt, filters);
 
     if (boost::starts_with(identifier, "passthrough_")) {
-      [filtervec addObject:[NSNumber numberWithUnsignedInt:2]];
-      [filtervec addObject:[NSNumber numberWithUnsignedInt:BRIDGE_FILTERTYPE_CONFIG_NOT]];
-      [filtervec addObject:[keycode_ numberValue:@"ConfigIndex::notsave_passthrough"]];
+      [filtervec addObject :[NSNumber numberWithUnsignedInt : 2]];
+      [filtervec addObject :[NSNumber numberWithUnsignedInt : BRIDGE_FILTERTYPE_CONFIG_NOT]];
+      [filtervec addObject :[keycode_ numberValue : @ "ConfigIndex::notsave_passthrough"]];
     }
 
     // ----------------------------------------
-    for (auto it : pt) {
+    for (auto& it : pt) {
       if (it.first == "autogen") {
         NSString* autogen_text = [n stringValue];
         autogen_text = [autogen_text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 
         // drop whitespaces for preprocessor. (for FROMKEYCODE_HOME, etc)
         // Note: preserve space when --ShowStatusMessage--.
-        if (! [autogen_text hasPrefix:@"--ShowStatusMessage--"]) {
-          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@" " withString:@""];
-          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@"\t" withString:@""];
-          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        if (! [autogen_text hasPrefix : @ "--ShowStatusMessage--"]) {
+          autogen_text = [autogen_text stringByReplacingOccurrencesOfString : @ " " withString : @ ""];
+          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@ "\r" withString:@ ""];
+          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@ "\t" withString:@ ""];
+          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@ "\n" withString:@ ""];
         }
 
-        [self handle_autogen:initialize_vector filtervec:filtervec autogen_text:autogen_text];
+        [self handle_autogen : initialize_vector filtervec : filtervec autogen_text : autogen_text];
       }
 
       traverse_autogen_(it, identifier, initialize_vector);

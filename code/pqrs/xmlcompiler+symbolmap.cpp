@@ -74,7 +74,7 @@ namespace pqrs {
   bool
   xmlcompiler::traverse_symbolmap_(const boost::property_tree::ptree& pt)
   {
-    for (auto it : pt) {
+    for (auto& it : pt) {
       if (it.first != "item") {
         traverse_symbolmap_(it.second);
       } else {

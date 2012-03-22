@@ -71,12 +71,23 @@ TEST(pqrs_xmlcompiler_filter_vector, filter_vector)
   s.add("ApplicationType", "APP1", 1);
   s.add("ApplicationType", "APP2", 2);
   s.add("ApplicationType", "APP3", 3);
+  s.add("DeviceVendor", "VENDOR1", 10);
+  s.add("DeviceVendor", "VENDOR2", 20);
+  s.add("DeviceVendor", "VENDOR3", 30);
+  s.add("DeviceProduct", "PRODUCT1", 100);
+  s.add("DeviceProduct", "PRODUCT2", 200);
+  s.add("DeviceProduct", "PRODUCT3", 300);
 
   std::string xml("<?xml version=\"1.0\"?>"
                   "<item>"
                   "  <only>APP1,APP3</only>"
                   "  <not>APP2</not>"
                   "  <identifier>sample</identifier>"
+                  "  <device_only>DeviceVendor::VENDOR1, DeviceProduct::PRODUCT1, </device_only>"
+                  "  <device_not>"
+                  "    DeviceVendor::VENDOR3,,,,"
+                  "    DeviceProduct::PRODUCT3,"
+                  "  </device_not>"
                   "</item>");
   std::stringstream istream(xml, std::stringstream::in);
 
@@ -96,9 +107,21 @@ TEST(pqrs_xmlcompiler_filter_vector, filter_vector)
     expected.push_back(3); // APP3
 
     // <not>APP2</not>
-    expected.push_back(2);
+    expected.push_back(2); // count
     expected.push_back(BRIDGE_FILTERTYPE_APPLICATION_NOT);
     expected.push_back(2); // APP2
+
+    // <device_only>DeviceVendor::VENDOR1, DeviceProduct::PRODUCT1, </device_only>
+    expected.push_back(3); // count
+    expected.push_back(BRIDGE_FILTERTYPE_DEVICE_ONLY);
+    expected.push_back(10);
+    expected.push_back(100);
+
+    // <device_not>DeviceVendor::VENDOR3, DeviceProduct::PRODUCT3, </device_not>
+    expected.push_back(3); // count
+    expected.push_back(BRIDGE_FILTERTYPE_DEVICE_NOT);
+    expected.push_back(30);
+    expected.push_back(300);
 
     EXPECT_EQ(expected, fv.get());
   }

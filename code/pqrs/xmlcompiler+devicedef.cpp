@@ -12,7 +12,7 @@ namespace pqrs {
       "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
       "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/devicedef.xml",
     };
-    for (auto xmlfilepath : paths) {
+    for (auto& xmlfilepath : paths) {
       boost::property_tree::ptree pt;
       if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, pt, true)) {
         continue;
@@ -32,7 +32,7 @@ namespace pqrs {
   void
   xmlcompiler::traverse_devicedef_(const boost::property_tree::ptree& pt)
   {
-    for (auto it : pt) {
+    for (auto& it : pt) {
       if (it.first != "devicevendordef" &&
           it.first != "deviceproductdef") {
         traverse_devicedef_(it.second);
@@ -49,7 +49,7 @@ namespace pqrs {
           throw xmlcompiler_logic_error("unknown type in traverse_devicedef_");
         }
 
-        for (auto child : it.second) {
+        for (auto& child : it.second) {
           if (child.first == "vendorname" ||
               child.first == "productname") {
             name = boost::trim_copy(child.second.data());
