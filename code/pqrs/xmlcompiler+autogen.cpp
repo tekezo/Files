@@ -76,12 +76,12 @@ namespace pqrs {
             "VK_CONFIG_SYNC_KEYDOWNUP_",
           };
           for (auto n : names) {
-            symbolmap_keycode_.add("KeyCode", std::string(n) + identifier);
+            symbolmap_.add("KeyCode", std::string(n) + identifier);
           }
         }
 
         // ----------------------------------------
-        symbolmap_keycode_.add("ConfigIndex", identifier);
+        symbolmap_.add("ConfigIndex", identifier);
       }
     }
   }
@@ -116,7 +116,7 @@ namespace pqrs {
             "VK_CONFIG_SYNC_KEYDOWNUP_",
           };
           for (auto n : names) {
-            auto v = symbolmap_keycode_.get("KeyCode", std::string(n) + identifier);
+            auto v = symbolmap_.get("KeyCode", std::string(n) + identifier);
             if (! v) {
               throw xmlcompiler_runtime_error(std::string(n) + " is not found in symbolmap.");
             }
@@ -126,7 +126,7 @@ namespace pqrs {
 
         traverse_autogen_(pt, identifier, initialize_vector);
 
-        uint32_t configindex = *(symbolmap_keycode_.get("ConfigIndex", identifier));
+        uint32_t configindex = *(symbolmap_.get("ConfigIndex", identifier));
         remapclasses_initialize_vector_.add(initialize_vector, configindex);
         confignamemap_[configindex] = raw_identifier;
       }
@@ -136,86 +136,47 @@ namespace pqrs {
   void
   xmlcompiler::traverse_autogen_(const boost::property_tree::ptree& pt,
                                  const std::string& identifier,
-                                 std::vector<uint32_t> initialize_vector)
+                                 std::vector<uint32_t>& initialize_vector)
   {
+#if 0
+    // ----------------------------------------
+    // filters
+    std::vector<uint32_t> filters;
+    make_filters_(pt, filters);
+
+    if (boost::starts_with(identifier, "passthrough_")) {
+      [filtervec addObject:[NSNumber numberWithUnsignedInt:2]];
+      [filtervec addObject:[NSNumber numberWithUnsignedInt:BRIDGE_FILTERTYPE_CONFIG_NOT]];
+      [filtervec addObject:[keycode_ numberValue:@"ConfigIndex::notsave_passthrough"]];
+    }
+
+    // ----------------------------------------
+    for (auto it : pt) {
+      if (it.first == "autogen") {
+        NSString* autogen_text = [n stringValue];
+        autogen_text = [autogen_text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+        // drop whitespaces for preprocessor. (for FROMKEYCODE_HOME, etc)
+        // Note: preserve space when --ShowStatusMessage--.
+        if (! [autogen_text hasPrefix:@"--ShowStatusMessage--"]) {
+          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@" " withString:@""];
+          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@"\t" withString:@""];
+          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        }
+
+        [self handle_autogen:initialize_vector filtervec:filtervec autogen_text:autogen_text];
+      }
+
+      traverse_autogen_(it, identifier, initialize_vector);
+    }
+#endif
   }
 }
 
 #if 0
 // ======================================================================
 // filter
-
--(void) append_to_filter : (NSMutableArray*)filters node : (NSXMLNode*)node prefix : (NSString*)prefix filtertype : (unsigned int)filtertype
-{
-  NSArray* a = [[node stringValue] componentsSeparatedByString : @ ","];
-
-  NSUInteger count = [a count] + 1;
-  [filters addObject :[NSNumber numberWithUnsignedInteger : count]];
-  [filters addObject :[NSNumber numberWithUnsignedInt : filtertype]];
-
-  for (NSString* name in a) {
-    // support '|' for <modifier_only>.
-    // For example: <modifier_only>ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L|ModifierFlag::OPTION_L</modifier_only>
-    unsigned int value = 0;
-    for (NSString* v in [name componentsSeparatedByString : @ "|"]) {
-      value |= [keycode_ unsignedIntValue :[NSString stringWithFormat : @ "%@%@", prefix, [KeyCode normalizeName : v]]];
-    }
-    [filters addObject :[NSNumber numberWithUnsignedInt : value]];
-  }
-}
-
--(NSMutableArray*) make_filtervec : (NSXMLNode*)parent_node_of_autogen
-{
-  NSMutableArray* filters = [[NSMutableArray new] autorelease];
-
-  for (;;) {
-    if (! parent_node_of_autogen) break;
-
-    NSUInteger count = [parent_node_of_autogen childCount];
-    for (NSUInteger i = 0; i < count; ++i) {
-      NSXMLNode* n = [parent_node_of_autogen childAtIndex:i];
-      if ([n kind] != NSXMLElementKind) continue;
-
-      NSString* n_name = [n name];
-      /*  */ if ([n_name isEqualToString : @ "not"]) {
-        [self append_to_filter : filters node : n prefix : @ "ApplicationType::" filtertype : BRIDGE_FILTERTYPE_APPLICATION_NOT];
-      } else if ([n_name isEqualToString : @ "only"]) {
-        [self append_to_filter : filters node : n prefix : @ "ApplicationType::" filtertype : BRIDGE_FILTERTYPE_APPLICATION_ONLY];
-
-      } else if ([n_name isEqualToString : @ "device_not"]) {
-        [self append_to_filter : filters node : n prefix : @ "" filtertype : BRIDGE_FILTERTYPE_DEVICE_NOT];
-      } else if ([n_name isEqualToString : @ "device_only"]) {
-        [self append_to_filter : filters node : n prefix : @ "" filtertype : BRIDGE_FILTERTYPE_DEVICE_ONLY];
-
-      } else if ([n_name isEqualToString : @ "config_not"]) {
-        [self append_to_filter : filters node : n prefix : @ "ConfigIndex::" filtertype : BRIDGE_FILTERTYPE_CONFIG_NOT];
-      } else if ([n_name isEqualToString : @ "config_only"]) {
-        [self append_to_filter : filters node : n prefix : @ "ConfigIndex::" filtertype : BRIDGE_FILTERTYPE_CONFIG_ONLY];
-
-      } else if ([n_name isEqualToString : @ "modifier_not"]) {
-        [self append_to_filter : filters node : n prefix : @ "" filtertype : BRIDGE_FILTERTYPE_MODIFIER_NOT];
-      } else if ([n_name isEqualToString : @ "modifier_only"]) {
-        [self append_to_filter : filters node : n prefix : @ "" filtertype : BRIDGE_FILTERTYPE_MODIFIER_ONLY];
-
-      } else if ([n_name isEqualToString : @ "inputmode_not"]) {
-        [self append_to_filter : filters node : n prefix : @ "InputMode::" filtertype : BRIDGE_FILTERTYPE_INPUTMODE_NOT];
-      } else if ([n_name isEqualToString : @ "inputmode_only"]) {
-        [self append_to_filter : filters node : n prefix : @ "InputMode::" filtertype : BRIDGE_FILTERTYPE_INPUTMODE_ONLY];
-
-      } else if ([n_name isEqualToString : @ "inputmodedetail_not"]) {
-        [self append_to_filter : filters node : n prefix : @ "InputModeDetail::" filtertype : BRIDGE_FILTERTYPE_INPUTMODEDETAIL_NOT];
-      } else if ([n_name isEqualToString : @ "inputmodedetail_only"]) {
-        [self append_to_filter : filters node : n prefix : @ "InputModeDetail::" filtertype : BRIDGE_FILTERTYPE_INPUTMODEDETAIL_ONLY];
-      }
-    }
-
-    if ([[parent_node_of_autogen name] isEqualToString : @ "item"]) break;
-
-    parent_node_of_autogen = [parent_node_of_autogen parent];
-  }
-
-  return filters;
-}
 
 // ======================================================================
 // autogen
@@ -462,118 +423,4 @@ namespace pqrs {
   @throw [NSException exceptionWithName : @ "<autogen> error" reason :[NSString stringWithFormat : @ "unknown parameters: %@", autogen_text] userInfo : nil];
 }
 
--(void) traverse_autogen : (NSMutableArray*)initialize_vector node : (NSXMLNode*)node name : (NSString*)name
-{
-  NSUInteger count = [node childCount];
-  NSMutableArray* filtervec = nil;
-
-  for (NSUInteger i = 0; i < count; ++i) {
-    NSXMLNode* n = [node childAtIndex:i];
-    if ([n kind] != NSXMLElementKind) continue;
-
-    if ([[n name] isEqualToString : @ "autogen"]) {
-      if (! filtervec) {
-        filtervec = [self make_filtervec :[n parent]];
-
-        if (! [name hasPrefix : @ "passthrough_"]) {
-          [filtervec addObject :[NSNumber numberWithUnsignedInt : 2]];
-          [filtervec addObject :[NSNumber numberWithUnsignedInt : BRIDGE_FILTERTYPE_CONFIG_NOT]];
-          [filtervec addObject :[keycode_ numberValue : @ "ConfigIndex::notsave_passthrough"]];
-        }
-      }
-
-      NSString* autogen_text = [n stringValue];
-      autogen_text = [autogen_text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
-      // drop whitespaces for preprocessor. (for FROMKEYCODE_HOME, etc)
-      // Note: preserve space when --ShowStatusMessage--.
-      if (! [autogen_text hasPrefix : @ "--ShowStatusMessage--"]) {
-        autogen_text = [autogen_text stringByReplacingOccurrencesOfString : @ " " withString : @ ""];
-        autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@ "\r" withString:@ ""];
-        autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@ "\t" withString:@ ""];
-        autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@ "\n" withString:@ ""];
-      }
-
-      [self handle_autogen : initialize_vector filtervec : filtervec autogen_text : autogen_text];
-    }
-
-    [self traverse_autogen : initialize_vector node : n name : name];
-  }
-}
-
-// ======================================================================
-// initialize
-
--(void) append_to_keycode : (NSXMLElement*)element handle_notsave : (BOOL)handle_notsave
-{
-  NSUInteger count = [element childCount];
-  for (NSUInteger i = 0; i < count; ++i) {
-    NSXMLElement* e = [self castToNSXMLElement:[element childAtIndex:i]];
-    if (! e) continue;
-
-    if (! [[e name] isEqualToString : @ "identifier"]) {
-      [self append_to_keycode : e handle_notsave : handle_notsave];
-
-    } else {
-      NSString* name = [KeyCode normalizeName:[e stringValue]];
-
-      BOOL isnotsave = [name hasPrefix:@ "notsave_"];
-      if ((isnotsave && ! handle_notsave) ||
-          (! isnotsave && handle_notsave)) {
-        continue;
-      }
-
-      if ([e attributeForName : @ "vk_config"]) {
-        [keycode_ append : @ "KeyCode" name :[NSString stringWithFormat : @ "VK_CONFIG_TOGGLE_%@", name]];
-        [keycode_ append : @ "KeyCode" name :[NSString stringWithFormat : @ "VK_CONFIG_FORCE_ON_%@", name]];
-        [keycode_ append : @ "KeyCode" name :[NSString stringWithFormat : @ "VK_CONFIG_FORCE_OFF_%@", name]];
-        [keycode_ append : @ "KeyCode" name :[NSString stringWithFormat : @ "VK_CONFIG_SYNC_KEYDOWNUP_%@", name]];
-      }
-
-      if (! [e attributeForName : @ "essential"]) {
-        [keycode_ append : @ "ConfigIndex" name : name];
-      }
-    }
-  }
-}
-
--(void) traverse_identifier : (NSXMLElement*)element
-{
-  NSUInteger count = [element childCount];
-  for (NSUInteger i = 0; i < count; ++i) {
-    NSXMLElement* e = [self castToNSXMLElement:[element childAtIndex:i]];
-    if (! e) continue;
-
-    if (! [[e name] isEqualToString : @ "identifier"]) {
-      [self traverse_identifier : e];
-
-    } else {
-      NSXMLNode* attr_essential = [e attributeForName:@ "essential"];
-      if (attr_essential) continue;
-
-      NSAutoreleasePool* pool = [NSAutoreleasePool new];
-      {
-        NSMutableArray* initialize_vector = [[NSMutableArray new] autorelease];
-        NSString* rawname = [e stringValue];
-        NSString* name = [KeyCode normalizeName:rawname];
-
-        if ([e attributeForName : @ "vk_config"]) {
-          [initialize_vector addObject :[NSNumber numberWithUnsignedInt : 5]];
-          [initialize_vector addObject :[NSNumber numberWithUnsignedInt : BRIDGE_VK_CONFIG]];
-          [initialize_vector addObject :[keycode_ numberValue :[NSString stringWithFormat : @ "KeyCode::VK_CONFIG_TOGGLE_%@", name]]];
-          [initialize_vector addObject :[keycode_ numberValue :[NSString stringWithFormat : @ "KeyCode::VK_CONFIG_FORCE_ON_%@", name]]];
-          [initialize_vector addObject :[keycode_ numberValue :[NSString stringWithFormat : @ "KeyCode::VK_CONFIG_FORCE_OFF_%@", name]]];
-          [initialize_vector addObject :[keycode_ numberValue :[NSString stringWithFormat : @ "KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_%@", name]]];
-        }
-
-        [self traverse_autogen : initialize_vector node :[e parent] name : name];
-
-        NSNumber* configindex = [keycode_ numberValue:[NSString stringWithFormat:@ "ConfigIndex::%@", name]];
-        [remapclasses_initialize_vector_ addVector : initialize_vector configindex :[configindex unsignedIntValue]];
-        [dict_config_name_ setObject : rawname forKey : configindex];
-      }
-      [pool drain];
-    }
-  }
-}
 #endif

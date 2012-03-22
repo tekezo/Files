@@ -26,9 +26,9 @@ namespace pqrs {
       xmlcompiler_logic_error(const std::string& what) : std::logic_error(what) {}
     };
 
-    class symbolmap_keycode {
+    class symbolmap {
     public:
-      symbolmap_keycode(void);
+      symbolmap(void);
       void clear(void);
 
       boost::optional<uint32_t> get(const std::string& name);
@@ -76,6 +76,17 @@ namespace pqrs {
       bool freezed_;
     };
 
+    class filter_vector {
+    public:
+      filter_vector(const symbolmap& symbolmap, const boost::property_tree::ptree& pt);
+      const std::vector<uint32_t>& get(void) const;
+
+    private:
+      void add(const symbolmap& symbolmap, uint32_t filter_type, const std::string& type, const std::string& string);
+
+      std::vector<uint32_t> data_;
+    };
+
   private:
     bool read_xml_(const char* xmlfilepath, boost::property_tree::ptree& pt, bool with_replacement);
 
@@ -98,10 +109,12 @@ namespace pqrs {
     void traverse_identifier_(const boost::property_tree::ptree& pt);
     void traverse_autogen_(const boost::property_tree::ptree& pt,
                            const std::string& identifier,
-                           std::vector<uint32_t> initialize_vector);
+                           std::vector<uint32_t>& initialize_vector);
+    void make_filters_(const boost::property_tree::ptree& pt,
+                       std::vector<uint32_t>& filters);
 
     std::string errormessage_;
-    symbolmap_keycode symbolmap_keycode_;
+    symbolmap symbolmap_;
     pqrs::string::replacement replacement_;
     std::tr1::unordered_map<uint32_t, std::string> confignamemap_;
     remapclasses_initialize_vector remapclasses_initialize_vector_;

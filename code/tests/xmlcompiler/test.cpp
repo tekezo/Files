@@ -8,9 +8,9 @@ TEST(pqrs_xmlcompiler, reload)
   xmlcompiler.reload();
 }
 
-TEST(pqrs_xmlcompiler_symbolmap_keycode, add)
+TEST(pqrs_xmlcompiler_symbolmap, add)
 {
-  pqrs::xmlcompiler::symbolmap_keycode s;
+  pqrs::xmlcompiler::symbolmap s;
   EXPECT_TRUE(s.add("KeyCode", "SPACE", 36));
   EXPECT_TRUE(s.add("KeyCode", "VK__AUTOINDEX__BEGIN__", 1024));
   EXPECT_TRUE(s.add("KeyCode", "VK_NEW1"));
