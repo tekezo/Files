@@ -183,7 +183,7 @@ namespace pqrs {
           pqrs::string::remove_whitespaces(autogen);
         }
 
-        // [self handle_autogen : initialize_vector filtervec : filtervec autogen_text : autogen_text];
+        handle_autogen(autogen, fv, initialize_vector);
       }
 
       traverse_autogen_(it.second, identifier, fv, initialize_vector);
@@ -235,7 +235,7 @@ namespace pqrs {
       pqrs::vector::make_combination(combination, seeds, sizeof(seeds) / sizeof(seeds[0]));
 
       for (auto& v : combination) {
-        handle_autogen(boost::replace_all_copy(autogen, "VK_MOD_ANY", boost::join(v, "|") + "ModifierFlag::NONE"),
+        handle_autogen(boost::replace_all_copy(autogen, "VK_MOD_ANY", boost::join(*v, "|") + "ModifierFlag::NONE"),
                        filter_vector, initialize_vector);
       }
       return;
@@ -355,7 +355,6 @@ namespace pqrs {
   @throw [NSException exceptionWithName : @ "<autogen> error" reason :[NSString stringWithFormat : @ "unknown parameters: %@", autogen_text] userInfo : nil];
 }
 #endif
-}
 }
 
 #if 0
