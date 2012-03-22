@@ -4,6 +4,7 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string.hpp>
 #include "pqrs/string.hpp"
+#include "pqrs/vector.hpp"
 
 namespace pqrs {
   namespace string {
@@ -184,6 +185,35 @@ namespace pqrs {
     to_uint32_t(const std::string& string)
     {
       return to_uint32_t(string.c_str());
+    }
+
+    // ============================================================
+    void
+    split(std::vector<std::string>& v, std::string string, int flags, const char* delimiter)
+    {
+      v.clear();
+      boost::split(v, string, boost::is_any_of(delimiter));
+
+      if (flags & split_option::trim) {
+        for (auto& it : v) {
+          boost::trim(it);
+        }
+      }
+      if (flags & split_option::remove_empty_strings) {
+        pqrs::vector::remove_empty_strings(v);
+      }
+    }
+
+    void
+    split_by_comma(std::vector<std::string>& v, std::string string, int flags)
+    {
+      split(v, string, flags, ",");
+    }
+
+    void
+    split_by_pipe(std::vector<std::string>& v, std::string string, int flags)
+    {
+      split(v, string, flags, "|");
     }
   }
 }

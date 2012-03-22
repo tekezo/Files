@@ -17,7 +17,8 @@ TEST(pqrs_string, string_by_replacing_double_curly_braces_from_file)
   // performance test
   {
     for (int i = 0; i < 1000; ++i) {
-      replacement[std::string("TARGET") + boost::lexical_cast<std::string>(i)] = "REPLACEMENT";
+      std::string key = std::string("TARGET") + boost::lexical_cast<std::string>(i);
+      replacement[key] = "REPLACEMENT";
     }
     const char* filepath = "/Library/org.pqrs/KeyRemap4MacBook/prefpane/checkbox.xml";
     pqrs::string::string_by_replacing_double_curly_braces_from_file(actual, filepath, replacement);
@@ -88,4 +89,34 @@ TEST(pqrs_string, to_uint32_t)
 
   actual = pqrs::string::to_uint32_t("abc");
   EXPECT_FALSE(actual);
+}
+
+TEST(pqrs_string, split_by_comma)
+{
+  std::vector<std::string> actual;
+  pqrs::string::split_by_comma(actual, ", A, , B,C,D, E,  F,,,,G,");
+
+  std::vector<std::string> expected;
+  expected.push_back("A");
+  expected.push_back("B");
+  expected.push_back("C");
+  expected.push_back("D");
+  expected.push_back("E");
+  expected.push_back("F");
+  expected.push_back("G");
+
+  EXPECT_EQ(expected, actual);
+}
+
+TEST(pqrs_string, split_by_pipe)
+{
+  std::vector<std::string> actual;
+  pqrs::string::split_by_pipe(actual, "A||B|C|");
+
+  std::vector<std::string> expected;
+  expected.push_back("A");
+  expected.push_back("B");
+  expected.push_back("C");
+
+  EXPECT_EQ(expected, actual);
 }

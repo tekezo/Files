@@ -2,6 +2,7 @@
 #define PQRS_STRING_HPP
 
 #include <string>
+#include <vector>
 #include <boost/optional.hpp>
 #include <tr1/cstdint>
 #include <tr1/unordered_map>
@@ -20,6 +21,19 @@ namespace pqrs {
     // octal,decimal,hex is supported.
     boost::optional<uint32_t> to_uint32_t(const char* string);
     boost::optional<uint32_t> to_uint32_t(const std::string& string);
+
+    // split
+    enum split_option {
+      none,
+      trim,
+      remove_empty_strings,
+    };
+    void split_by_comma(std::vector<std::string>& v,
+                        std::string string,
+                        int flags = split_option::trim | split_option::remove_empty_strings);
+    void split_by_pipe(std::vector<std::string>& v,
+                       std::string string,
+                       int flags = split_option::trim | split_option::remove_empty_strings);
   }
 }
 
