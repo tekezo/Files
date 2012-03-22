@@ -270,16 +270,18 @@ namespace pqrs {
         }
       }
     }
+
+    // For compatibility
+    if (boost::starts_with(autogen, "--KeyOverlaidModifierWithRepeat--")) {
+      handle_autogen(boost::replace_first_copy(autogen,
+                                               "--KeyOverlaidModifierWithRepeat--",
+                                               "--KeyOverlaidModifier--Option::KEYOVERLAIDMODIFIER_REPEAT,"),
+                     filter_vector, initialize_vector);
+      return;
+    }
   }
 
 #if 0
-  if ([autogen_text rangeOfString : @ "--KeyOverlaidModifierWithRepeat--"].location != NSNotFound) {
-    [self handle_autogen : initialize_vector filtervec : filtervec
-     autogen_text :[autogen_text stringByReplacingOccurrencesOfString : @ "--KeyOverlaidModifierWithRepeat--"
-                    withString : @ "--KeyOverlaidModifier--Option::KEYOVERLAIDMODIFIER_REPEAT,"]];
-    return;
-  }
-
   if ([autogen_text rangeOfString : @ "--StripModifierFromScrollWheel--"].location != NSNotFound) {
     [self handle_autogen : initialize_vector filtervec : filtervec
      autogen_text :[NSString stringWithFormat : @ "%@,ModifierFlag::NONE",
