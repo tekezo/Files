@@ -215,19 +215,23 @@ namespace pqrs {
       }
     }
 
-    const char* keys[][2] = {
-      { "VK_MOD_CCOS_L", "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::OPTION_L|ModifierFlag::SHIFT_L" },
-      { "VK_MOD_CCS_L",  "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::SHIFT_L" },
-      { "VK_MOD_CCO_L",  "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::OPTION_L" },
-    };
-    for (auto& k : keys) {
-      if (autogen.find(k[0]) != std::string::npos) {
-        handle_autogen(boost::replace_all_copy(autogen, k[0], k[1]),
-                       filter_vector, initialize_vector);
-        return;
+    // VK_MOD_*
+    {
+      const char* keys[][2] = {
+        { "VK_MOD_CCOS_L", "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::OPTION_L|ModifierFlag::SHIFT_L" },
+        { "VK_MOD_CCS_L",  "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::SHIFT_L" },
+        { "VK_MOD_CCO_L",  "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::OPTION_L" },
+      };
+      for (auto& k : keys) {
+        if (autogen.find(k[0]) != std::string::npos) {
+          handle_autogen(boost::replace_all_copy(autogen, k[0], k[1]),
+                         filter_vector, initialize_vector);
+          return;
+        }
       }
     }
 
+    // VK_MOD_ANY
     if (autogen.find("VK_MOD_ANY") != std::string::npos) {
       // to reduce combination, we ignore same modifier combination such as (COMMAND_L | COMMAND_R).
       const char* seeds[] = { "VK_COMMAND", "VK_CONTROL", "ModifierFlag::FN", "VK_OPTION", "VK_SHIFT" };
@@ -240,31 +244,35 @@ namespace pqrs {
       }
       return;
     }
+
+    // FROMKEYCODE_HOME, FROMKEYCODE_END, ...
+    {
+      const char* keys[] = { "HOME", "END", "PAGEUP", "PAGEDOWN", "FORWARD_DELETE" };
+      for (auto& k : keys) {
+        std::string fromkeycode = std::string("FROMKEYCODE_") + k;
+        if (autogen.find(fromkeycode + ",ModifierFlag::") != std::string::npos) {
+          handle_autogen(boost::replace_all_copy(autogen, fromkeycode, std::string("KeyCode::") + k),
+                         filter_vector, initialize_vector);
+          handle_autogen(boost::replace_all_copy(autogen,
+                                                 fromkeycode + ",",
+                                                 std::string("KeyCode::") + k + ",ModifierFlag::FN|"),
+                         filter_vector, initialize_vector);
+          return;
+        }
+        if (autogen.find(fromkeycode) != std::string::npos) {
+          handle_autogen(boost::replace_all_copy(autogen, fromkeycode, std::string("KeyCode::") + k),
+                         filter_vector, initialize_vector);
+          handle_autogen(boost::replace_all_copy(autogen,
+                                                 fromkeycode,
+                                                 std::string("KeyCode::") + k + ",ModifierFlag::FN"),
+                         filter_vector, initialize_vector);
+          return;
+        }
+      }
+    }
   }
 
 #if 0
-  for (NSString* keyname in [NSArray arrayWithObjects : @ "HOME", @ "END", @ "PAGEUP", @ "PAGEDOWN", @ "FORWARD_DELETE", nil]) {
-    if ([autogen_text rangeOfString :[NSString stringWithFormat : @ "FROMKEYCODE_%@,ModifierFlag::", keyname]].location != NSNotFound) {
-      [self handle_autogen : initialize_vector filtervec : filtervec
-       autogen_text :[autogen_text stringByReplacingOccurrencesOfString :[NSString stringWithFormat : @ "FROMKEYCODE_%@", keyname]
-                      withString :[NSString stringWithFormat : @ "KeyCode::%@", keyname]]];
-      [self handle_autogen : initialize_vector filtervec : filtervec
-       autogen_text :[autogen_text stringByReplacingOccurrencesOfString :[NSString stringWithFormat : @ "FROMKEYCODE_%@,", keyname]
-                      withString :[NSString stringWithFormat : @ "KeyCode::%@,ModifierFlag::FN|", [self getextrakey : keyname]]]];
-      return;
-    }
-
-    if ([autogen_text rangeOfString :[NSString stringWithFormat : @ "FROMKEYCODE_%@", keyname]].location != NSNotFound) {
-      [self handle_autogen : initialize_vector filtervec : filtervec
-       autogen_text :[autogen_text stringByReplacingOccurrencesOfString :[NSString stringWithFormat : @ "FROMKEYCODE_%@", keyname]
-                      withString :[NSString stringWithFormat : @ "KeyCode::%@", keyname]]];
-      [self handle_autogen : initialize_vector filtervec : filtervec
-       autogen_text :[autogen_text stringByReplacingOccurrencesOfString :[NSString stringWithFormat : @ "FROMKEYCODE_%@", keyname]
-                      withString :[NSString stringWithFormat : @ "KeyCode::%@,ModifierFlag::FN", [self getextrakey : keyname]]]];
-      return;
-    }
-  }
-
   if ([autogen_text rangeOfString : @ "--KeyOverlaidModifierWithRepeat--"].location != NSNotFound) {
     [self handle_autogen : initialize_vector filtervec : filtervec
      autogen_text :[autogen_text stringByReplacingOccurrencesOfString : @ "--KeyOverlaidModifierWithRepeat--"
