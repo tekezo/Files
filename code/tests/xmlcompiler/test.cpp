@@ -77,6 +77,9 @@ TEST(pqrs_xmlcompiler_filter_vector, filter_vector)
   s.add("DeviceProduct", "PRODUCT1", 100);
   s.add("DeviceProduct", "PRODUCT2", 200);
   s.add("DeviceProduct", "PRODUCT3", 300);
+  s.add("ConfigIndex", "config1", 1000);
+  s.add("ConfigIndex", "config2", 2000);
+  s.add("ConfigIndex", "config3", 3000);
 
   std::string xml("<?xml version=\"1.0\"?>"
                   "<item>"
@@ -88,6 +91,8 @@ TEST(pqrs_xmlcompiler_filter_vector, filter_vector)
                   "    DeviceVendor::VENDOR3,,,,"
                   "    DeviceProduct::PRODUCT3,"
                   "  </device_not>"
+                  "  <config_only>config1,config2</config_only>"
+                  "  <config_not>config3</config_not>"
                   "</item>");
   std::stringstream istream(xml, std::stringstream::in);
 
@@ -122,6 +127,17 @@ TEST(pqrs_xmlcompiler_filter_vector, filter_vector)
     expected.push_back(BRIDGE_FILTERTYPE_DEVICE_NOT);
     expected.push_back(30);
     expected.push_back(300);
+
+    // <config_only>config1,config2</config_only>
+    expected.push_back(3); // count
+    expected.push_back(BRIDGE_FILTERTYPE_CONFIG_ONLY);
+    expected.push_back(1000);
+    expected.push_back(2000);
+
+    // <config_not>config3</config_not>
+    expected.push_back(2); // count
+    expected.push_back(BRIDGE_FILTERTYPE_CONFIG_NOT);
+    expected.push_back(3000);
 
     EXPECT_EQ(expected, fv.get());
   }
