@@ -18,35 +18,27 @@ namespace pqrs {
     }
 
     // ============================================================
-    static void
-    make_combination_(std::vector<std::tr1::shared_ptr<std::vector<std::string> > >& v,
-                      const std::vector<std::string>& seeds,
-                      size_t seeds_size)
+    void
+    make_combination(std::vector<std::tr1::shared_ptr<std::vector<std::string> > >& v,
+                     const char* seeds[], size_t seeds_size)
     {
       typedef std::tr1::shared_ptr<std::vector<std::string> > ptr;
 
       if (seeds_size == 0) {
         ptr ptr(new std::vector<std::string>());
+        v.clear();
         v.push_back(ptr);
         return;
       }
 
       auto last = seeds[seeds_size - 1];
-      make_combination_(v, seeds, seeds_size - 1);
+      make_combination(v, seeds, seeds_size - 1);
       size_t size = v.size();
       for (size_t i = 0; i < size; ++i) {
         ptr copy(new std::vector<std::string>(*(v[i])));
         copy->push_back(last);
         v.push_back(copy);
       }
-    }
-
-    void
-    make_combination(std::vector<std::tr1::shared_ptr<std::vector<std::string> > >& v,
-                     const std::vector<std::string>& seeds)
-    {
-      v.clear();
-      make_combination_(v, seeds, seeds.size());
     }
   }
 }

@@ -198,48 +198,48 @@ namespace pqrs {
     // ------------------------------------------------------------
     // preprocess
     //
-    const char* keys[] = { "COMMAND", "CONTROL", "SHIFT", "OTION" };
-    for (auto& k : keys) {
-      std::string vk = std::string("VK_") + k;
-      if (autogen.find(vk) != std::string::npos) {
-        const char* suffix[] = { "_L", "_R" };
-        for (auto& s : suffix) {
-          handle_autogen(boost::replace_all_copy(autogen, vk, std::string(k) + s),
-                         filter_vector, initialize_vector);
+
+    // VK_COMMAND, VK_CONTROL, VK_SHIFT, VK_OPTION
+    {
+      const char* keys[] = { "COMMAND", "CONTROL", "SHIFT", "OPTION" };
+      for (auto& k : keys) {
+        std::string vk = std::string("VK_") + k;
+        if (autogen.find(vk) != std::string::npos) {
+          const char* suffix[] = { "_L", "_R" };
+          for (auto& s : suffix) {
+            handle_autogen(boost::replace_all_copy(autogen, vk, std::string(k) + s),
+                           filter_vector, initialize_vector);
+          }
+          return;
         }
       }
     }
-  }
 
-#if 0
-  if ([autogen_text rangeOfString : @ "VK_MOD_CCOS_L"].location != NSNotFound) {
-    autogen_text = [autogen_text stringByReplacingOccurrencesOfString : @ "VK_MOD_CCOS_L" withString : @ "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::OPTION_L|ModifierFlag::SHIFT_L"];
-    [self handle_autogen : initialize_vector filtervec : filtervec autogen_text : autogen_text];
-    return;
-  }
+    const char* keys[][2] = {
+      { "VK_MOD_CCOS_L", "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::OPTION_L|ModifierFlag::SHIFT_L" },
+      { "VK_MOD_CCS_L",  "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::SHIFT_L" },
+      { "VK_MOD_CCO_L",  "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::OPTION_L" },
+    };
+    for (auto& k : keys) {
+      if (autogen.find(k[0]) != std::string::npos) {
+        handle_autogen(boost::replace_all_copy(autogen, k[0], k[1]),
+                       filter_vector, initialize_vector);
+        return;
+      }
+    }
 
-  if ([autogen_text rangeOfString : @ "VK_MOD_CCS_L"].location != NSNotFound) {
-    autogen_text = [autogen_text stringByReplacingOccurrencesOfString : @ "VK_MOD_CCS_L" withString : @ "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::SHIFT_L"];
-    [self handle_autogen : initialize_vector filtervec : filtervec autogen_text : autogen_text];
-    return;
-  }
+    if (autogen.find("VK_MOD_ANY") != std::string::npos) {
+      // to reduce combination, we ignore same modifier combination such as (COMMAND_L | COMMAND_R).
+      const char* keys[] = { "VK_COMMAND", "VK_CONTROL", "ModifierFlag::FN", "VK_OPTION", "VK_SHIFT" };
 
-  if ([autogen_text rangeOfString : @ "VK_MOD_CCO_L"].location != NSNotFound) {
-    autogen_text = [autogen_text stringByReplacingOccurrencesOfString : @ "VK_MOD_CCO_L" withString : @ "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::OPTION_L"];
-    [self handle_autogen : initialize_vector filtervec : filtervec autogen_text : autogen_text];
-    return;
-  }
-
-  if ([autogen_text rangeOfString : @ "VK_MOD_ANY"].location != NSNotFound) {
-    // to reduce combination, we ignore same modifier combination such as (COMMAND_L | COMMAND_R).
-    NSMutableArray* combination = [self combination :[NSArray arrayWithObjects : @ "VK_COMMAND", @ "VK_CONTROL", @ "ModifierFlag::FN", @ "VK_OPTION", @ "VK_SHIFT", nil]];
-    for (NSMutableArray* a in combination) {
+      for (NSMutableArray* a in combination) {
       [self handle_autogen : initialize_vector filtervec : filtervec
        autogen_text :[autogen_text stringByReplacingOccurrencesOfString : @ "VK_MOD_ANY" withString :[[a arrayByAddingObject : @ "ModifierFlag::NONE"] componentsJoinedByString : @ "|"]]];
     }
     return;
   }
 
+#if 0
   for (NSString* keyname in [NSArray arrayWithObjects : @ "HOME", @ "END", @ "PAGEUP", @ "PAGEDOWN", @ "FORWARD_DELETE", nil]) {
     if ([autogen_text rangeOfString :[NSString stringWithFormat : @ "FROMKEYCODE_%@,ModifierFlag::", keyname]].location != NSNotFound) {
       [self handle_autogen : initialize_vector filtervec : filtervec
@@ -352,6 +352,7 @@ namespace pqrs {
   @throw [NSException exceptionWithName : @ "<autogen> error" reason :[NSString stringWithFormat : @ "unknown parameters: %@", autogen_text] userInfo : nil];
 }
 #endif
+}
 }
 
 #if 0

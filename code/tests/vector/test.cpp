@@ -26,13 +26,9 @@ TEST(pqrs_vector, remove_empty_strings)
 
 TEST(pqrs_vector, make_combination)
 {
-  std::vector<std::string> seeds;
-  seeds.push_back("A");
-  seeds.push_back("B");
-  seeds.push_back("C");
-  seeds.push_back("D");
+  const char* seeds[] = { "A", "B", "C", "D" };
   std::vector<std::tr1::shared_ptr<std::vector<std::string> > > actual;
-  pqrs::vector::make_combination(actual, seeds);
+  pqrs::vector::make_combination(actual, seeds, sizeof(seeds) / sizeof(seeds[0]));
 
   EXPECT_EQ(16, actual.size());
 

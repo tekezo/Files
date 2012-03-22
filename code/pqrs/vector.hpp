@@ -11,7 +11,7 @@ namespace pqrs {
     void push_back(std::vector<uint32_t>& v1, const std::vector<uint32_t>& v2);
 
     void make_combination(std::vector<std::tr1::shared_ptr<std::vector<std::string> > >& v,
-                          const std::vector<std::string>& seeds);
+                          const char* seeds[], size_t seeds_size);
   }
 }
 
