@@ -376,17 +376,6 @@ namespace pqrs {
 }
 
 #if 0
-// ======================================================================
-// autogen
--(NSString*) getextrakey : (NSString*)keyname
-{
-  if ([keyname isEqualToString : @ "HOME"])           { return @ "CURSOR_LEFT";  }
-  if ([keyname isEqualToString : @ "END"])            { return @ "CURSOR_RIGHT"; }
-  if ([keyname isEqualToString : @ "PAGEUP"])         { return @ "CURSOR_UP";    }
-  if ([keyname isEqualToString : @ "PAGEDOWN"])       { return @ "CURSOR_DOWN";  }
-  if ([keyname isEqualToString : @ "FORWARD_DELETE"]) { return @ "DELETE";       }
-  return @ "";
-}
 
 -(void) append_to_initialize_vector : (NSMutableArray*)initialize_vector filtervec : (NSArray*)filtervec params : (NSString*)params type : (unsigned int)type
 {
@@ -442,6 +431,5 @@ namespace pqrs {
     [initialize_vector addObjectsFromArray : filtervec];
   }
 }
-
 
 #endif
