@@ -8,29 +8,29 @@ namespace pqrs {
   {
     for (auto it : pt) {
       /*  */ if (it.first == "not") {
-        add(symbolmap, BRIDGE_FILTERTYPE_APPLICATION_NOT, "ApplicationType", it.second.data());
+        add(symbolmap, BRIDGE_FILTERTYPE_APPLICATION_NOT,  "ApplicationType::", it.second.data());
       } else if (it.first == "only") {
-        add(symbolmap, BRIDGE_FILTERTYPE_APPLICATION_ONLY, "ApplicationType", it.second.data());
+        add(symbolmap, BRIDGE_FILTERTYPE_APPLICATION_ONLY, "ApplicationType::", it.second.data());
       } else if (it.first == "device_not") {
-        add(symbolmap, BRIDGE_FILTERTYPE_DEVICE_NOT, "", it.second.data());
+        add(symbolmap, BRIDGE_FILTERTYPE_DEVICE_NOT,  "", it.second.data());
       } else if (it.first == "device_only") {
         add(symbolmap, BRIDGE_FILTERTYPE_DEVICE_ONLY, "", it.second.data());
       } else if (it.first == "config_not") {
-        add(symbolmap, BRIDGE_FILTERTYPE_CONFIG_NOT, "ConfigIndex", it.second.data());
+        add(symbolmap, BRIDGE_FILTERTYPE_CONFIG_NOT,  "ConfigIndex::", it.second.data());
       } else if (it.first == "config_only") {
-        add(symbolmap, BRIDGE_FILTERTYPE_CONFIG_ONLY, "ConfigIndex", it.second.data());
+        add(symbolmap, BRIDGE_FILTERTYPE_CONFIG_ONLY, "ConfigIndex::", it.second.data());
       } else if (it.first == "modifier_not") {
-        add(symbolmap, BRIDGE_FILTERTYPE_MODIFIER_NOT, "", it.second.data());
+        add(symbolmap, BRIDGE_FILTERTYPE_MODIFIER_NOT,  "", it.second.data());
       } else if (it.first == "modifier_only") {
         add(symbolmap, BRIDGE_FILTERTYPE_MODIFIER_ONLY, "", it.second.data());
       } else if (it.first == "inputmode_not") {
-        add(symbolmap, BRIDGE_FILTERTYPE_INPUTMODE_NOT, "InputMode", it.second.data());
+        add(symbolmap, BRIDGE_FILTERTYPE_INPUTMODE_NOT,  "InputMode::", it.second.data());
       } else if (it.first == "inputmode_only") {
-        add(symbolmap, BRIDGE_FILTERTYPE_INPUTMODE_ONLY, "InputMode", it.second.data());
+        add(symbolmap, BRIDGE_FILTERTYPE_INPUTMODE_ONLY, "InputMode::", it.second.data());
       } else if (it.first == "inputmodedetail_not") {
-        add(symbolmap, BRIDGE_FILTERTYPE_INPUTMODEDETAIL_NOT, "InputModeDetail", it.second.data());
+        add(symbolmap, BRIDGE_FILTERTYPE_INPUTMODEDETAIL_NOT,  "InputModeDetail::", it.second.data());
       } else if (it.first == "inputmodedetail_only") {
-        add(symbolmap, BRIDGE_FILTERTYPE_INPUTMODEDETAIL_ONLY, "InputModeDetail", it.second.data());
+        add(symbolmap, BRIDGE_FILTERTYPE_INPUTMODEDETAIL_ONLY, "InputModeDetail::", it.second.data());
       }
     }
   }
@@ -44,7 +44,7 @@ namespace pqrs {
   void
   xmlcompiler::filter_vector::add(const symbolmap& symbolmap,
                                   uint32_t filter_type,
-                                  const std::string& type,
+                                  const std::string& prefix,
                                   const std::string& string)
   {
     std::vector<std::string> splits;
@@ -52,11 +52,11 @@ namespace pqrs {
 
     // trim values
     for (auto value : splits) {
-      boost::trim(s);
+      boost::trim(value);
     }
-    pqrs::vector::remove_empty_strings(split);
+    pqrs::vector::remove_empty_strings(splits);
 
-    data_.push_back(split.size() + 1);         // +1 == filter_type
+    data_.push_back(splits.size() + 1);         // +1 == filter_type
     data_.push_back(filter_type);
 
     for (auto value : splits) {
@@ -65,25 +65,12 @@ namespace pqrs {
       std::vector<std::string> items;
       boost::split(items, value, boost::is_any_of("|"), boost::token_compress_on);
 
-      uint32_t filter_value;
+      uint32_t filter_value = 0;
       for (auto i : items) {
         boost::trim(i);
-        std::vector<std::string> type_name;
-        boost::iter_split(type_name, i, boost::algorithm::first_finder("::"));
-
-        std::string symbol_type;
-        std::string symbol_name;
-        if (type_name.size() == 2) {
-          symbol_type = type_name[0];
-          symbol_name = type_name[1];
-        } else {
-          symbol_type = type;
-          symbol_name = type_name[0];
-        }
-
-        boost::optional v = symbolmap.get(symbol_type, symbol_name);
+        auto v = symbolmap.get(prefix + i);
         if (! v) {
-          throw xmlcompiler_runtime_error(std::string("Unknown Variable: " + symbol_type + "::" + symbol_name));
+          throw xmlcompiler_runtime_error(std::string("Unknown Variable: " + prefix + i));
         }
         filter_value |= *v;
       }

@@ -31,8 +31,8 @@ namespace pqrs {
       symbolmap(void);
       void clear(void);
 
-      boost::optional<uint32_t> get(const std::string& name);
-      boost::optional<uint32_t> get(const std::string& type, const std::string& name);
+      boost::optional<uint32_t> get(const std::string& name) const;
+      boost::optional<uint32_t> get(const std::string& type, const std::string& name) const;
 
       // Call add("KeyCode", "RETURN", 36) to register "KeyCode::RETURN = 36".
       bool add(const std::string& type, const std::string& name, uint32_t value);

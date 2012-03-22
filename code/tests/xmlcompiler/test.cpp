@@ -1,3 +1,4 @@
+#include <boost/property_tree/xml_parser.hpp>
 #include <gtest/gtest.h>
 #include "pqrs/xmlcompiler.hpp"
 #include "pqrs/bridge.h"
@@ -62,4 +63,43 @@ TEST(pqrs_xmlcompiler_remapclasses_initialize_vector, add)
   expected.push_back(2);
 
   EXPECT_EQ(expected, v.get());
+}
+
+TEST(pqrs_xmlcompiler_filter_vector, filter_vector)
+{
+  pqrs::xmlcompiler::symbolmap s;
+  s.add("ApplicationType", "APP1", 1);
+  s.add("ApplicationType", "APP2", 2);
+  s.add("ApplicationType", "APP3", 3);
+
+  std::string xml("<?xml version=\"1.0\"?>"
+                  "<item>"
+                  "  <only>APP1,APP3</only>"
+                  "  <not>APP2</not>"
+                  "  <identifier>sample</identifier>"
+                  "</item>");
+  std::stringstream istream(xml, std::stringstream::in);
+
+  int flags = boost::property_tree::xml_parser::no_comments;
+  boost::property_tree::ptree pt;
+  boost::property_tree::read_xml(istream, pt, flags);
+
+  for (auto it : pt) {
+    pqrs::xmlcompiler::filter_vector fv(s, it.second);
+
+    std::vector<uint32_t> expected;
+
+    // <only>APP1,APP3</only>
+    expected.push_back(3); // count
+    expected.push_back(BRIDGE_FILTERTYPE_APPLICATION_ONLY);
+    expected.push_back(1); // APP1
+    expected.push_back(3); // APP3
+
+    // <not>APP2</not>
+    expected.push_back(2);
+    expected.push_back(BRIDGE_FILTERTYPE_APPLICATION_NOT);
+    expected.push_back(2); // APP2
+
+    EXPECT_EQ(expected, fv.get());
+  }
 }

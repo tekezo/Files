@@ -14,7 +14,7 @@ namespace pqrs {
   }
 
   boost::optional<uint32_t>
-  xmlcompiler::symbolmap::get(const std::string& name)
+  xmlcompiler::symbolmap::get(const std::string& name) const
   {
     auto it = symbolmap_.find(name);
     if (it == symbolmap_.end()) {
@@ -25,7 +25,7 @@ namespace pqrs {
   }
 
   boost::optional<uint32_t>
-  xmlcompiler::symbolmap::get(const std::string& type, const std::string& name)
+  xmlcompiler::symbolmap::get(const std::string& type, const std::string& name) const
   {
     return get(type + "::" + name);
   }
