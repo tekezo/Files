@@ -95,7 +95,7 @@ TEST(pqrs_xmlcompiler_filter_vector, filter_vector)
   boost::property_tree::ptree pt;
   boost::property_tree::read_xml(istream, pt, flags);
 
-  for (auto it : pt) {
+  for (auto& it : pt) {
     pqrs::xmlcompiler::filter_vector fv(s, it.second);
 
     std::vector<uint32_t> expected;
