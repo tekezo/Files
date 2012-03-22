@@ -47,27 +47,20 @@ namespace pqrs {
                                   const std::string& prefix,
                                   const std::string& string)
   {
-    std::vector<std::string> splits;
-    boost::split(splits, string, boost::is_any_of(","), boost::token_compress_on);
+    std::vector<std::string> values;
+    pqrs::string::split_by_comma(values, string);
 
-    // trim values
-    for (auto& value : splits) {
-      boost::trim(value);
-    }
-    pqrs::vector::remove_empty_strings(splits);
-
-    data_.push_back(splits.size() + 1);         // +1 == filter_type
+    data_.push_back(values.size() + 1); // +1 == filter_type
     data_.push_back(filter_type);
 
-    for (auto& value : splits) {
+    for (auto& v : values) {
       // support '|' for <modifier_only>.
       // For example: <modifier_only>ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L|ModifierFlag::OPTION_L</modifier_only>
       std::vector<std::string> items;
-      boost::split(items, value, boost::is_any_of("|"), boost::token_compress_on);
+      pqrs::string::split_by_pipe(items, v);
 
       uint32_t filter_value = 0;
       for (auto& i : items) {
-        boost::trim(i);
         auto v = symbolmap.get(prefix + i);
         if (! v) {
           throw xmlcompiler_runtime_error(std::string("Unknown Variable: " + prefix + i));
