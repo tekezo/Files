@@ -230,13 +230,16 @@ namespace pqrs {
 
     if (autogen.find("VK_MOD_ANY") != std::string::npos) {
       // to reduce combination, we ignore same modifier combination such as (COMMAND_L | COMMAND_R).
-      const char* keys[] = { "VK_COMMAND", "VK_CONTROL", "ModifierFlag::FN", "VK_OPTION", "VK_SHIFT" };
+      const char* seeds[] = { "VK_COMMAND", "VK_CONTROL", "ModifierFlag::FN", "VK_OPTION", "VK_SHIFT" };
+      std::vector<std::tr1::shared_ptr<std::vector<std::string> > > combination;
+      pqrs::vector::make_combination(combination, seeds, sizeof(seeds) / sizeof(seeds[0]));
 
-      for (NSMutableArray* a in combination) {
-      [self handle_autogen : initialize_vector filtervec : filtervec
-       autogen_text :[autogen_text stringByReplacingOccurrencesOfString : @ "VK_MOD_ANY" withString :[[a arrayByAddingObject : @ "ModifierFlag::NONE"] componentsJoinedByString : @ "|"]]];
+      for (auto& v : combination) {
+        handle_autogen(boost::replace_all_copy(autogen, "VK_MOD_ANY", boost::join(v, "|") + "ModifierFlag::NONE"),
+                       filter_vector, initialize_vector);
+      }
+      return;
     }
-    return;
   }
 
 #if 0
