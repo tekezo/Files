@@ -18,22 +18,33 @@ namespace pqrs {
       "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
       "/Library/org.pqrs/KeyRemap4MacBook/prefpane/checkbox.xml",
     };
+    std::vector<std::tr1::shared_ptr<boost::property_tree::ptree> > pts;
+
     for (auto& xmlfilepath : paths) {
-      boost::property_tree::ptree pt;
-      if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, pt, true)) {
+      std::tr1::shared_ptr<boost::property_tree::ptree> ptr(new boost::property_tree::ptree());
+      if (! ptr) {
         continue;
       }
+      pts.push_back(ptr);
 
+      if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, *ptr, true)) {
+        continue;
+      }
+    }
+
+    for (auto& ptr : pts) {
       // add_configindex_and_keycode_to_symbolmap_
       //   1st loop: <identifier>notsave.*</identifier>
       //   2nd loop: other <identifier>
       //
       // We need to assign higher priority to notsave.* settings.
       // So, adding configindex by 2steps.
-      add_configindex_and_keycode_to_symbolmap_(pt, true);
-      add_configindex_and_keycode_to_symbolmap_(pt, false);
+      add_configindex_and_keycode_to_symbolmap_(*ptr, true);
+      add_configindex_and_keycode_to_symbolmap_(*ptr, false);
+    }
 
-      traverse_identifier_(pt);
+    for (auto& ptr : pts) {
+      traverse_identifier_(*ptr);
 
       // Set retval to true if only one XML file is loaded successfully.
       // Unless we do it, all setting becomes disabled by one error.
@@ -169,10 +180,7 @@ namespace pqrs {
         // drop whitespaces for preprocessor. (for FROMKEYCODE_HOME, etc)
         // Note: preserve space when --ShowStatusMessage--.
         if (! boost::starts_with(autogen, "--ShowStatusMessage--")) {
-          boost::replace_all(autogen, " ", "");
-          boost::replace_all(autogen, "\n", "");
-          boost::replace_all(autogen, "\r", "");
-          boost::replace_all(autogen, "\t", "");
+          pqrs::string::remove_whitespaces(autogen);
         }
 
         // [self handle_autogen : initialize_vector filtervec : filtervec autogen_text : autogen_text];
@@ -184,9 +192,6 @@ namespace pqrs {
 }
 
 #if 0
-// ======================================================================
-// filter
-
 // ======================================================================
 // autogen
 
