@@ -113,8 +113,9 @@ namespace pqrs {
                            const std::string& identifier,
                            const filter_vector& filter_vector,
                            std::vector<uint32_t>& initialize_vector);
-    void make_filters_(const boost::property_tree::ptree& pt,
-                       std::vector<uint32_t>& filters);
+    void handle_autogen(const std::string& autogen,
+                        const filter_vector& filter_vector,
+                        std::vector<uint32_t>& initialize_vector);
 
     std::string errormessage_;
     symbolmap symbolmap_;

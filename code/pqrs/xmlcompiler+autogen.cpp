@@ -189,114 +189,29 @@ namespace pqrs {
       traverse_autogen_(it.second, identifier, fv, initialize_vector);
     }
   }
-}
+
+  void
+  xmlcompiler::handle_autogen(const std::string& autogen,
+                              const filter_vector& filter_vector,
+                              std::vector<uint32_t>& initialize_vector)
+  {
+    // ------------------------------------------------------------
+    // preprocess
+    //
+    const char* keys[] = { "COMMAND", "CONTROL", "SHIFT", "OTION" };
+    for (auto& k : keys) {
+      std::string vk = std::string("VK_") + k;
+      if (autogen.find(vk) != std::string::npos) {
+        const char* suffix[] = { "_L", "_R" };
+        for (auto& s : suffix) {
+          handle_autogen(boost::replace_all_copy(autogen, vk, std::string(k) + s),
+                         filter_vector, initialize_vector);
+        }
+      }
+    }
+  }
 
 #if 0
-// ======================================================================
-// autogen
-
--(NSMutableArray*) combination : (NSArray*)input
-{
-  if ([input count] == 0) {
-    NSMutableArray* a = [[NSMutableArray new] autorelease];
-    return [NSMutableArray arrayWithObject : a];
-  }
-
-  id last = [input lastObject];
-
-  NSRange range;
-  range.location = 0;
-  range.length = [input count] - 1;
-  NSMutableArray* subarray = [self combination:[input subarrayWithRange:range]];
-
-  NSMutableArray* newarray = [NSMutableArray arrayWithArray:subarray];
-  for (NSMutableArray* a in subarray) {
-    [newarray addObject :[a arrayByAddingObject : last]];
-  }
-  return newarray;
-}
-
--(NSString*) getextrakey : (NSString*)keyname
-{
-  if ([keyname isEqualToString : @ "HOME"])           { return @ "CURSOR_LEFT";  }
-  if ([keyname isEqualToString : @ "END"])            { return @ "CURSOR_RIGHT"; }
-  if ([keyname isEqualToString : @ "PAGEUP"])         { return @ "CURSOR_UP";    }
-  if ([keyname isEqualToString : @ "PAGEDOWN"])       { return @ "CURSOR_DOWN";  }
-  if ([keyname isEqualToString : @ "FORWARD_DELETE"]) { return @ "DELETE";       }
-  return @ "";
-}
-
--(void) append_to_initialize_vector : (NSMutableArray*)initialize_vector filtervec : (NSArray*)filtervec params : (NSString*)params type : (unsigned int)type
-{
-  NSMutableArray* args = [[NSMutableArray new] autorelease];
-  [args addObject :[NSNumber numberWithUnsignedInt : type]];
-
-  if ([params length] > 0) {
-    for (NSString* p in [params componentsSeparatedByString : @ ","]) {
-      unsigned int datatype = 0;
-      unsigned int newvalue = 0;
-      for (NSString* value in [p componentsSeparatedByString : @ "|"]) {
-        unsigned int newdatatype = 0;
-        /*  */ if ([value hasPrefix : @ "KeyCode::"]) {
-          newdatatype = BRIDGE_DATATYPE_KEYCODE;
-        } else if ([value hasPrefix : @ "ModifierFlag::"]) {
-          newdatatype = BRIDGE_DATATYPE_FLAGS;
-        } else if ([value hasPrefix : @ "ConsumerKeyCode::"]) {
-          newdatatype = BRIDGE_DATATYPE_CONSUMERKEYCODE;
-        } else if ([value hasPrefix : @ "PointingButton::"]) {
-          newdatatype = BRIDGE_DATATYPE_POINTINGBUTTON;
-        } else if ([value hasPrefix : @ "ScrollWheel::"]) {
-          newdatatype = BRIDGE_DATATYPE_SCROLLWHEEL;
-        } else if ([value hasPrefix : @ "KeyboardType::"]) {
-          newdatatype = BRIDGE_DATATYPE_KEYBOARDTYPE;
-        } else if ([value hasPrefix : @ "DeviceVendor::"]) {
-          newdatatype = BRIDGE_DATATYPE_DEVICEVENDOR;
-        } else if ([value hasPrefix : @ "DeviceProduct::"]) {
-          newdatatype = BRIDGE_DATATYPE_DEVICEPRODUCT;
-        } else if ([value hasPrefix : @ "Option::"]) {
-          newdatatype = BRIDGE_DATATYPE_OPTION;
-        } else {
-          @throw [NSException exceptionWithName : @ "<autogen> error" reason :[NSString stringWithFormat : @ "unknown datatype: %@ (%@)", value, params] userInfo : nil];
-        }
-
-        if (datatype && datatype != newdatatype) {
-          // Don't connect different data type. (Example: KeyCode::A | ModifierFlag::SHIFT_L)
-          @throw [NSException exceptionWithName : @ "<autogen> error" reason :[NSString stringWithFormat : @ "invalid connect(|): %@", params] userInfo : nil];
-        }
-
-        datatype = newdatatype;
-        newvalue |= [keycode_ unsignedIntValue:value];
-      }
-
-      [args addObject :[NSNumber numberWithUnsignedInt : datatype]];
-      [args addObject :[NSNumber numberWithUnsignedInt : newvalue]];
-    }
-  }
-
-  [initialize_vector addObject :[NSNumber numberWithUnsignedInteger :[args count]]];
-  [initialize_vector addObjectsFromArray : args];
-
-  if ([filtervec count] > 0) {
-    [initialize_vector addObjectsFromArray : filtervec];
-  }
-}
-
--(void) handle_autogen : (NSMutableArray*)initialize_vector filtervec : (NSArray*)filtervec autogen_text : (NSString*)autogen_text
-{
-  // ------------------------------------------------------------
-  // preprocess
-  //
-  for (NSString* modifier in [NSArray arrayWithObjects : @ "COMMAND", @ "CONTROL", @ "SHIFT", @ "OPTION", nil]) {
-    NSString* symbol = [NSString stringWithFormat : @ "VK_%@", modifier];
-    if ([autogen_text rangeOfString : symbol].location != NSNotFound) {
-      [self handle_autogen : initialize_vector filtervec : filtervec
-       autogen_text :[autogen_text stringByReplacingOccurrencesOfString : symbol withString :[NSString stringWithFormat : @ "ModifierFlag::%@_L", modifier]]];
-      [self handle_autogen : initialize_vector filtervec : filtervec
-       autogen_text :[autogen_text stringByReplacingOccurrencesOfString : symbol withString :[NSString stringWithFormat : @ "ModifierFlag::%@_R", modifier]]];
-      return;
-    }
-  }
-
   if ([autogen_text rangeOfString : @ "VK_MOD_CCOS_L"].location != NSNotFound) {
     autogen_text = [autogen_text stringByReplacingOccurrencesOfString : @ "VK_MOD_CCOS_L" withString : @ "ModifierFlag::COMMAND_L|ModifierFlag::CONTROL_L|ModifierFlag::OPTION_L|ModifierFlag::SHIFT_L"];
     [self handle_autogen : initialize_vector filtervec : filtervec autogen_text : autogen_text];
@@ -436,5 +351,76 @@ namespace pqrs {
 
   @throw [NSException exceptionWithName : @ "<autogen> error" reason :[NSString stringWithFormat : @ "unknown parameters: %@", autogen_text] userInfo : nil];
 }
+#endif
+}
+
+#if 0
+// ======================================================================
+// autogen
+-(NSString*) getextrakey : (NSString*)keyname
+{
+  if ([keyname isEqualToString : @ "HOME"])           { return @ "CURSOR_LEFT";  }
+  if ([keyname isEqualToString : @ "END"])            { return @ "CURSOR_RIGHT"; }
+  if ([keyname isEqualToString : @ "PAGEUP"])         { return @ "CURSOR_UP";    }
+  if ([keyname isEqualToString : @ "PAGEDOWN"])       { return @ "CURSOR_DOWN";  }
+  if ([keyname isEqualToString : @ "FORWARD_DELETE"]) { return @ "DELETE";       }
+  return @ "";
+}
+
+-(void) append_to_initialize_vector : (NSMutableArray*)initialize_vector filtervec : (NSArray*)filtervec params : (NSString*)params type : (unsigned int)type
+{
+  NSMutableArray* args = [[NSMutableArray new] autorelease];
+  [args addObject :[NSNumber numberWithUnsignedInt : type]];
+
+  if ([params length] > 0) {
+    for (NSString* p in [params componentsSeparatedByString : @ ","]) {
+      unsigned int datatype = 0;
+      unsigned int newvalue = 0;
+      for (NSString* value in [p componentsSeparatedByString : @ "|"]) {
+        unsigned int newdatatype = 0;
+        /*  */ if ([value hasPrefix : @ "KeyCode::"]) {
+          newdatatype = BRIDGE_DATATYPE_KEYCODE;
+        } else if ([value hasPrefix : @ "ModifierFlag::"]) {
+          newdatatype = BRIDGE_DATATYPE_FLAGS;
+        } else if ([value hasPrefix : @ "ConsumerKeyCode::"]) {
+          newdatatype = BRIDGE_DATATYPE_CONSUMERKEYCODE;
+        } else if ([value hasPrefix : @ "PointingButton::"]) {
+          newdatatype = BRIDGE_DATATYPE_POINTINGBUTTON;
+        } else if ([value hasPrefix : @ "ScrollWheel::"]) {
+          newdatatype = BRIDGE_DATATYPE_SCROLLWHEEL;
+        } else if ([value hasPrefix : @ "KeyboardType::"]) {
+          newdatatype = BRIDGE_DATATYPE_KEYBOARDTYPE;
+        } else if ([value hasPrefix : @ "DeviceVendor::"]) {
+          newdatatype = BRIDGE_DATATYPE_DEVICEVENDOR;
+        } else if ([value hasPrefix : @ "DeviceProduct::"]) {
+          newdatatype = BRIDGE_DATATYPE_DEVICEPRODUCT;
+        } else if ([value hasPrefix : @ "Option::"]) {
+          newdatatype = BRIDGE_DATATYPE_OPTION;
+        } else {
+          @throw [NSException exceptionWithName : @ "<autogen> error" reason :[NSString stringWithFormat : @ "unknown datatype: %@ (%@)", value, params] userInfo : nil];
+        }
+
+        if (datatype && datatype != newdatatype) {
+          // Don't connect different data type. (Example: KeyCode::A | ModifierFlag::SHIFT_L)
+          @throw [NSException exceptionWithName : @ "<autogen> error" reason :[NSString stringWithFormat : @ "invalid connect(|): %@", params] userInfo : nil];
+        }
+
+        datatype = newdatatype;
+        newvalue |= [keycode_ unsignedIntValue:value];
+      }
+
+      [args addObject :[NSNumber numberWithUnsignedInt : datatype]];
+      [args addObject :[NSNumber numberWithUnsignedInt : newvalue]];
+    }
+  }
+
+  [initialize_vector addObject :[NSNumber numberWithUnsignedInteger :[args count]]];
+  [initialize_vector addObjectsFromArray : args];
+
+  if ([filtervec count] > 0) {
+    [initialize_vector addObjectsFromArray : filtervec];
+  }
+}
+
 
 #endif
