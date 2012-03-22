@@ -1,7 +1,9 @@
+#include <algorithm>
 #include <exception>
 #include <boost/algorithm/string.hpp>
 #include "pqrs/xmlcompiler.hpp"
 #include "pqrs/bridge.h"
+#include "pqrs/vector.hpp"
 
 namespace pqrs {
   bool
@@ -124,7 +126,8 @@ namespace pqrs {
           }
         }
 
-        traverse_autogen_(pt, identifier, initialize_vector);
+        filter_vector fv;
+        traverse_autogen_(pt, identifier, fv, initialize_vector);
 
         uint32_t configindex = *(symbolmap_.get("ConfigIndex", identifier));
         remapclasses_initialize_vector_.add(initialize_vector, configindex);
@@ -136,41 +139,47 @@ namespace pqrs {
   void
   xmlcompiler::traverse_autogen_(const boost::property_tree::ptree& pt,
                                  const std::string& identifier,
+                                 const filter_vector& parent_filter_vector,
                                  std::vector<uint32_t>& initialize_vector)
   {
-#if 0
-    // ----------------------------------------
-    // filters
-    std::vector<uint32_t> filters;
-    make_filters_(pt, filters);
+    filter_vector fv(symbolmap_, pt);
 
-    if (boost::starts_with(identifier, "passthrough_")) {
-      [filtervec addObject :[NSNumber numberWithUnsignedInt : 2]];
-      [filtervec addObject :[NSNumber numberWithUnsignedInt : BRIDGE_FILTERTYPE_CONFIG_NOT]];
-      [filtervec addObject :[keycode_ numberValue : @ "ConfigIndex::notsave_passthrough"]];
+    // Add passthrough filter.
+    if (parent_filter_vector.empty() &&
+        ! boost::starts_with(identifier, "passthrough_")) {
+      auto v = symbolmap_.get("ConfigIndex::notsave_passthrough");
+      if (! v) {
+        throw xmlcompiler_logic_error("ConfigIndex::notsave_passthrough is not found in symbolmap.");
+      }
+
+      std::vector<uint32_t>& vec = fv.get();
+      vec.push_back(2); // count
+      vec.push_back(BRIDGE_FILTERTYPE_CONFIG_NOT);
+      vec.push_back(*v);
     }
+
+    // Add parent filters.
+    pqrs::vector::push_back(fv.get(), parent_filter_vector.get());
 
     // ----------------------------------------
     for (auto& it : pt) {
       if (it.first == "autogen") {
-        NSString* autogen_text = [n stringValue];
-        autogen_text = [autogen_text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        std::string autogen = boost::trim_copy(it.second.data());
 
         // drop whitespaces for preprocessor. (for FROMKEYCODE_HOME, etc)
         // Note: preserve space when --ShowStatusMessage--.
-        if (! [autogen_text hasPrefix : @ "--ShowStatusMessage--"]) {
-          autogen_text = [autogen_text stringByReplacingOccurrencesOfString : @ " " withString : @ ""];
-          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@ "\r" withString:@ ""];
-          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@ "\t" withString:@ ""];
-          autogen_text = [autogen_text stringByReplacingOccurrencesOfString:@ "\n" withString:@ ""];
+        if (! boost::starts_with(autogen, "--ShowStatusMessage--")) {
+          boost::replace_all(autogen, " ", "");
+          boost::replace_all(autogen, "\n", "");
+          boost::replace_all(autogen, "\r", "");
+          boost::replace_all(autogen, "\t", "");
         }
 
-        [self handle_autogen : initialize_vector filtervec : filtervec autogen_text : autogen_text];
+        // [self handle_autogen : initialize_vector filtervec : filtervec autogen_text : autogen_text];
       }
 
-      traverse_autogen_(it, identifier, initialize_vector);
+      traverse_autogen_(it.second, identifier, fv, initialize_vector);
     }
-#endif
   }
 }
 

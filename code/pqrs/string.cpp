@@ -215,5 +215,13 @@ namespace pqrs {
     {
       split(v, string, flags, "|");
     }
+
+    // ============================================================
+    void
+    remove_whitespaces(std::string& string)
+    {
+      auto it = std::remove_if(string.begin(), string.end(), boost::is_any_of(" \n\r\t"));
+      string.erase(it, string.end());
+    }
   }
 }

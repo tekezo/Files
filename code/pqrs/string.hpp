@@ -34,6 +34,9 @@ namespace pqrs {
     void split_by_pipe(std::vector<std::string>& v,
                        std::string string,
                        int flags = split_option::trim | split_option::remove_empty_strings);
+
+    // others
+    void remove_whitespaces(std::string& string);
   }
 }
 

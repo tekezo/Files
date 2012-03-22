@@ -1,4 +1,5 @@
 #include "pqrs/bridge.h"
+#include "pqrs/vector.hpp"
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
@@ -44,7 +45,7 @@ namespace pqrs {
     // configindex
     data_.push_back(configindex);
     // data
-    std::copy(v.begin(), v.end(), std::back_inserter(data_));
+    pqrs::vector::push_back(data_, v);
 
     ++(data_[INDEX_OF_COUNT]);
 

@@ -120,3 +120,10 @@ TEST(pqrs_string, split_by_pipe)
 
   EXPECT_EQ(expected, actual);
 }
+
+TEST(pqrs_string, remove_whitespaces)
+{
+  std::string actual = " A B C \r\n \t D ";
+  pqrs::string::remove_whitespaces(actual);
+  EXPECT_EQ("ABCD", actual);
+}

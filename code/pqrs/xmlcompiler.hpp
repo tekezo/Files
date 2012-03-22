@@ -16,6 +16,7 @@ namespace pqrs {
     xmlcompiler(void);
 
     bool reload(void);
+    static void normalize_identifier(std::string& identifier);
 
     class xmlcompiler_runtime_error : public std::runtime_error {
     public:
@@ -78,8 +79,11 @@ namespace pqrs {
 
     class filter_vector {
     public:
+      filter_vector(void);
       filter_vector(const symbolmap& symbolmap, const boost::property_tree::ptree& pt);
+      std::vector<uint32_t>& get(void);
       const std::vector<uint32_t>& get(void) const;
+      bool empty(void) const;
 
     private:
       void add(const symbolmap& symbolmap, uint32_t filter_type, const std::string& type, const std::string& string);
@@ -89,8 +93,6 @@ namespace pqrs {
 
   private:
     bool read_xml_(const char* xmlfilepath, boost::property_tree::ptree& pt, bool with_replacement);
-
-    void normalize_identifier(std::string& identifier);
 
     bool reload_replacementdef_(void);
     void traverse_replacementdef_(const boost::property_tree::ptree& pt);
@@ -109,6 +111,7 @@ namespace pqrs {
     void traverse_identifier_(const boost::property_tree::ptree& pt);
     void traverse_autogen_(const boost::property_tree::ptree& pt,
                            const std::string& identifier,
+                           const filter_vector& filter_vector,
                            std::vector<uint32_t>& initialize_vector);
     void make_filters_(const boost::property_tree::ptree& pt,
                        std::vector<uint32_t>& filters);

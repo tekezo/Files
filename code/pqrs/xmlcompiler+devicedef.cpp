@@ -10,7 +10,8 @@ namespace pqrs {
 
     const char* paths[] = {
       "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
-      "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/devicedef.xml",
+      "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/devicevendordef.xml",
+      "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/deviceproductdef.xml",
     };
     for (auto& xmlfilepath : paths) {
       boost::property_tree::ptree pt;

@@ -4,6 +4,9 @@
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
+  xmlcompiler::filter_vector::filter_vector(void)
+  {}
+
   xmlcompiler::filter_vector::filter_vector(const symbolmap& symbolmap, const boost::property_tree::ptree& pt)
   {
     for (auto& it : pt) {
@@ -35,10 +38,22 @@ namespace pqrs {
     }
   }
 
+  std::vector<uint32_t>&
+  xmlcompiler::filter_vector::get(void)
+  {
+    return data_;
+  }
+
   const std::vector<uint32_t>&
   xmlcompiler::filter_vector::get(void) const
   {
     return data_;
+  }
+
+  bool
+  xmlcompiler::filter_vector::empty(void) const
+  {
+    return data_.empty();
   }
 
   void
@@ -61,9 +76,12 @@ namespace pqrs {
 
       uint32_t filter_value = 0;
       for (auto& i : items) {
-        auto v = symbolmap.get(prefix + i);
+        std::string key = prefix + i;
+        normalize_identifier(key);
+
+        auto v = symbolmap.get(key);
         if (! v) {
-          throw xmlcompiler_runtime_error(std::string("Unknown Variable: " + prefix + i));
+          throw xmlcompiler_runtime_error(std::string("Unknown Variable: " + key));
         }
         filter_value |= *v;
       }
