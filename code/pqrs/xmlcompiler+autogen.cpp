@@ -247,24 +247,30 @@ namespace pqrs {
 
     // FROMKEYCODE_HOME, FROMKEYCODE_END, ...
     {
-      const char* keys[] = { "HOME", "END", "PAGEUP", "PAGEDOWN", "FORWARD_DELETE" };
+      const char* keys[][2] = {
+        { "HOME",           "CURSOR_LEFT"  },
+        { "END",            "CURSOR_RIGHT" },
+        { "PAGEUP",         "CURSOR_UP"    },
+        { "PAGEDOWN",       "CURSOR_DOWN"  },
+        { "FORWARD_DELETE", "DELETE"       },
+      };
       for (auto& k : keys) {
-        std::string fromkeycode = std::string("FROMKEYCODE_") + k;
+        std::string fromkeycode = std::string("FROMKEYCODE_") + k[0];
         if (autogen.find(fromkeycode + ",ModifierFlag::") != std::string::npos) {
-          handle_autogen(boost::replace_all_copy(autogen, fromkeycode, std::string("KeyCode::") + k),
+          handle_autogen(boost::replace_all_copy(autogen, fromkeycode, std::string("KeyCode::") + k[0]),
                          filter_vector, initialize_vector);
           handle_autogen(boost::replace_all_copy(autogen,
                                                  fromkeycode + ",",
-                                                 std::string("KeyCode::") + k + ",ModifierFlag::FN|"),
+                                                 std::string("KeyCode::") + k[1] + ",ModifierFlag::FN|"),
                          filter_vector, initialize_vector);
           return;
         }
         if (autogen.find(fromkeycode) != std::string::npos) {
-          handle_autogen(boost::replace_all_copy(autogen, fromkeycode, std::string("KeyCode::") + k),
+          handle_autogen(boost::replace_all_copy(autogen, fromkeycode, std::string("KeyCode::") + k[0]),
                          filter_vector, initialize_vector);
           handle_autogen(boost::replace_all_copy(autogen,
                                                  fromkeycode,
-                                                 std::string("KeyCode::") + k + ",ModifierFlag::FN"),
+                                                 std::string("KeyCode::") + k[1] + ",ModifierFlag::FN"),
                          filter_vector, initialize_vector);
           return;
         }
@@ -279,27 +285,29 @@ namespace pqrs {
                      filter_vector, initialize_vector);
       return;
     }
+
+    if (boost::starts_with(autogen, "--StripModifierFromScrollWheel--")) {
+      handle_autogen(boost::replace_first_copy(autogen,
+                                               "--StripModifierFromScrollWheel--",
+                                               "--ScrollWheelToScrollWheel--") + ",ModifierFlag::NONE",
+                     filter_vector, initialize_vector);
+      return;
+    }
+
+    if (autogen.find("SimultaneousKeyPresses::Option::RAW") != std::string::npos) {
+      handle_autogen(boost::replace_all_copy(autogen,
+                                             "SimultaneousKeyPresses::Option::RAW",
+                                             "Option::SIMULTANEOUSKEYPRESSES_RAW"),
+                     filter_vector, initialize_vector);
+      return;
+    }
+
+    // ------------------------------------------------------------
+    // add to initialize_vector
+    //
   }
 
 #if 0
-  if ([autogen_text rangeOfString : @ "--StripModifierFromScrollWheel--"].location != NSNotFound) {
-    [self handle_autogen : initialize_vector filtervec : filtervec
-     autogen_text :[NSString stringWithFormat : @ "%@,ModifierFlag::NONE",
-                    [autogen_text stringByReplacingOccurrencesOfString : @ "--StripModifierFromScrollWheel--"
-                     withString : @ "--ScrollWheelToScrollWheel--"]]];
-    return;
-  }
-
-  if ([autogen_text rangeOfString : @ "SimultaneousKeyPresses::Option::RAW"].location != NSNotFound) {
-    [self handle_autogen : initialize_vector filtervec : filtervec
-     autogen_text :[autogen_text stringByReplacingOccurrencesOfString : @ "SimultaneousKeyPresses::Option::RAW"
-                    withString : @ "Option::SIMULTANEOUSKEYPRESSES_RAW"]];
-    return;
-  }
-
-  // ------------------------------------------------------------
-  // append to initialize_vector
-  //
 
   if ([autogen_text hasPrefix : @ "--ShowStatusMessage--"]) {
     NSString* params = [autogen_text substringFromIndex :[@ "--ShowStatusMessage--" length]];
