@@ -305,25 +305,22 @@ namespace pqrs {
     // ------------------------------------------------------------
     // add to initialize_vector
     //
+
+    if (boost::starts_with(autogen, "--ShowStatusMessage--")) {
+      std::string message = boost::replace_first_copy(autogen, "--ShowStatusMessage--", "");
+      boost::trim(message);
+
+      size_t length = message.size();
+      initialize_vector.push_back(length + 1);
+      initialize_vector.push_back(BRIDGE_STATUSMESSAGE);
+
+      std::copy(message.begin(), message.end(), std::back_inserter(initialize_vector));
+      // no need filtervec
+      return;
+    }
   }
 
 #if 0
-
-  if ([autogen_text hasPrefix : @ "--ShowStatusMessage--"]) {
-    NSString* params = [autogen_text substringFromIndex :[@ "--ShowStatusMessage--" length]];
-    params = [params stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-
-    const char* utf8string = [params UTF8String];
-    size_t length = strlen(utf8string);
-    [initialize_vector addObject :[NSNumber numberWithUnsignedLong : (length + 1)]];
-    [initialize_vector addObject :[NSNumber numberWithUnsignedInt : BRIDGE_STATUSMESSAGE]];
-    for (size_t i = 0; i < length; ++i) {
-      [initialize_vector addObject :[NSNumber numberWithChar : utf8string[i]]];
-    }
-
-    // no need filtervec
-    return;
-  }
 
   if ([autogen_text hasPrefix : @ "--SimultaneousKeyPresses--"]) {
     NSString* params = [autogen_text substringFromIndex :[@ "--SimultaneousKeyPresses--" length]];
