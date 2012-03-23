@@ -321,7 +321,6 @@ namespace pqrs {
   }
 
 #if 0
-
   if ([autogen_text hasPrefix : @ "--SimultaneousKeyPresses--"]) {
     NSString* params = [autogen_text substringFromIndex :[@ "--SimultaneousKeyPresses--" length]];
 

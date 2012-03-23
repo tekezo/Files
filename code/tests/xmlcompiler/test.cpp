@@ -87,7 +87,7 @@ TEST(pqrs_xmlcompiler_filter_vector, filter_vector)
   std::string xml("<?xml version=\"1.0\"?>"
                   "<item>"
                   "  <only>APP1,APP3</only>"
-                  "  <not>APP2</not>"
+                  "  <not><!-- XXX --->APP2</not>"
                   "  <identifier>sample</identifier>"
                   "  <device_only>DeviceVendor::VENDOR1, DeviceProduct::PRODUCT1, </device_only>"
                   "  <device_not>"
