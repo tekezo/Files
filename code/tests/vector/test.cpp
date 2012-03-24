@@ -24,6 +24,36 @@ TEST(pqrs_vector, remove_empty_strings)
   EXPECT_EQ(expected, v);
 }
 
+TEST(pqrs_vector, push_back)
+{
+  std::vector<uint32_t> v1;
+  v1.push_back(1);
+  v1.push_back(2);
+  v1.push_back(3);
+  v1.push_back(4);
+  v1.push_back(5);
+
+  std::vector<uint32_t> v2;
+  v2.push_back(6);
+  v2.push_back(7);
+
+  std::vector<uint32_t> v3;
+
+  pqrs::vector::push_back(v1, v2);
+  std::vector<uint32_t> expected;
+  expected.push_back(1);
+  expected.push_back(2);
+  expected.push_back(3);
+  expected.push_back(4);
+  expected.push_back(5);
+  expected.push_back(6);
+  expected.push_back(7);
+  EXPECT_EQ(expected, v1);
+
+  pqrs::vector::push_back(v1, v3);
+  EXPECT_EQ(expected, v1);
+}
+
 TEST(pqrs_vector, make_combination)
 {
   const char* seeds[] = { "A", "B", "C", "D" };
