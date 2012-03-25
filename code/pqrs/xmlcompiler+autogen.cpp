@@ -8,56 +8,36 @@
 #include "pqrs/vector.hpp"
 
 namespace pqrs {
-  bool
+  void
   xmlcompiler::reload_autogen_(void)
   {
-    bool retval = false;
-
     confignamemap_.clear();
     remapclasses_initialize_vector_.clear();
     simultaneous_keycode_index_ = 0;
 
-    const char* paths[] = {
-      "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
-      "/Library/org.pqrs/KeyRemap4MacBook/prefpane/checkbox.xml",
-    };
-    std::vector<std::tr1::shared_ptr<boost::property_tree::ptree> > pts;
+    std::vector<std::string> xmlfilepaths;
+    xmlfilepaths.push_back("/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml");
+    xmlfilepaths.push_back("/Library/org.pqrs/KeyRemap4MacBook/prefpane/checkbox.xml");
 
-    for (auto& xmlfilepath : paths) {
-      std::tr1::shared_ptr<boost::property_tree::ptree> ptr(new boost::property_tree::ptree());
-      if (! ptr) {
-        continue;
-      }
-      pts.push_back(ptr);
+    std::vector<ptree_ptr> pt_ptrs;
+    read_xmls_(pt_ptrs, xmlfilepaths);
 
-      if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, *ptr, true)) {
-        continue;
-      }
-    }
-
-    for (auto& ptr : pts) {
+    for (auto pt_ptr : pt_ptrs) {
       // add_configindex_and_keycode_to_symbolmap_
       //   1st loop: <identifier>notsave.*</identifier>
       //   2nd loop: other <identifier>
       //
       // We need to assign higher priority to notsave.* settings.
       // So, adding configindex by 2steps.
-      add_configindex_and_keycode_to_symbolmap_(*ptr, true);
-      add_configindex_and_keycode_to_symbolmap_(*ptr, false);
+      add_configindex_and_keycode_to_symbolmap_(*pt_ptr, true);
+      add_configindex_and_keycode_to_symbolmap_(*pt_ptr, false);
     }
 
-    for (auto& ptr : pts) {
-      traverse_identifier_(*ptr);
-
-      // Set retval to true if only one XML file is loaded successfully.
-      // Unless we do it, all setting becomes disabled by one error.
-      // (== If private.xml is invalid, system wide devicedef.xml is not loaded.)
-      retval = true;
+    for (auto pt_ptr : pt_ptrs) {
+      traverse_identifier_(*pt_ptr);
     }
 
     remapclasses_initialize_vector_.freeze();
-
-    return retval;
   }
 
   void

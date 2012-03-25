@@ -3,31 +3,20 @@
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
-  bool
+  void
   xmlcompiler::reload_devicedef_(void)
   {
-    bool retval = false;
+    std::vector<std::string> xmlfilepaths;
+    xmlfilepaths.push_back("/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml");
+    xmlfilepaths.push_back("/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/devicevendordef.xml");
+    xmlfilepaths.push_back("/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/deviceproductdef.xml");
 
-    const char* paths[] = {
-      "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
-      "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/devicevendordef.xml",
-      "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/deviceproductdef.xml",
-    };
-    for (auto& xmlfilepath : paths) {
-      boost::property_tree::ptree pt;
-      if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, pt, true)) {
-        continue;
-      }
+    std::vector<ptree_ptr> pt_ptrs;
+    read_xmls_(pt_ptrs, xmlfilepaths);
 
-      traverse_devicedef_(pt);
-
-      // Set retval to true if only one XML file is loaded successfully.
-      // Unless we do it, all setting becomes disabled by one error.
-      // (== If private.xml is invalid, system wide devicedef.xml is not loaded.)
-      retval = true;
+    for (auto pt_ptr : pt_ptrs) {
+      traverse_devicedef_(*pt_ptr);
     }
-
-    return retval;
   }
 
   void

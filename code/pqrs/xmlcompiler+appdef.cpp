@@ -3,32 +3,21 @@
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
-  bool
+  void
   xmlcompiler::reload_appdef_(void)
   {
-    bool retval = false;
-
     app_.clear();
 
-    const char* paths[] = {
-      "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
-      "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/appdef.xml",
-    };
-    for (auto& xmlfilepath : paths) {
-      boost::property_tree::ptree pt;
-      if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, pt, true)) {
-        continue;
-      }
+    std::vector<std::string> xmlfilepaths;
+    xmlfilepaths.push_back("/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml");
+    xmlfilepaths.push_back("/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/appdef.xml");
 
-      traverse_appdef_(pt);
+    std::vector<ptree_ptr> pt_ptrs;
+    read_xmls_(pt_ptrs, xmlfilepaths);
 
-      // Set retval to true if only one XML file is loaded successfully.
-      // Unless we do it, all setting becomes disabled by one error.
-      // (== If private.xml is invalid, system wide appdef.xml is not loaded.)
-      retval = true;
+    for (auto pt_ptr : pt_ptrs) {
+      traverse_appdef_(*pt_ptr);
     }
-
-    return retval;
   }
 
   void

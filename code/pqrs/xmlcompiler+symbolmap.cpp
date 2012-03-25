@@ -65,22 +65,23 @@ namespace pqrs {
   }
 
   // ============================================================
-  bool
+  void
   xmlcompiler::reload_symbolmap_(void)
   {
     symbolmap_.clear();
 
-    const char* xmlfilepath = "/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/symbolmap.xml";
+    std::vector<std::string> xmlfilepaths;
+    xmlfilepaths.push_back("/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/symbolmap.xml");
 
-    boost::property_tree::ptree pt;
-    if (! pqrs::xmlcompiler::read_xml_(xmlfilepath, pt, true)) {
-      return false;
+    std::vector<ptree_ptr> pt_ptrs;
+    read_xmls_(pt_ptrs, xmlfilepaths);
+
+    for (auto pt_ptr : pt_ptrs) {
+      traverse_symbolmap_(*pt_ptr);
     }
-
-    return traverse_symbolmap_(pt);
   }
 
-  bool
+  void
   xmlcompiler::traverse_symbolmap_(const boost::property_tree::ptree& pt)
   {
     for (auto& it : pt) {
@@ -96,6 +97,5 @@ namespace pqrs {
                        *value);
       }
     }
-    return true;
   }
 }

@@ -15,7 +15,7 @@ namespace pqrs {
   public:
     xmlcompiler(void);
 
-    bool reload(void);
+    void reload(void);
     static void normalize_identifier(std::string& identifier);
 
     class xmlcompiler_runtime_error : public std::runtime_error {
@@ -95,21 +95,22 @@ namespace pqrs {
     };
 
   private:
-    bool read_xml_(const char* xmlfilepath, boost::property_tree::ptree& pt, bool with_replacement);
+    typedef std::tr1::shared_ptr<boost::property_tree::ptree> ptree_ptr;
+    void read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<std::string>& xmlfilepaths);
 
-    bool reload_replacementdef_(void);
+    void reload_replacementdef_(void);
     void traverse_replacementdef_(const boost::property_tree::ptree& pt);
 
-    bool reload_symbolmap_(void);
-    bool traverse_symbolmap_(const boost::property_tree::ptree& pt);
+    void reload_symbolmap_(void);
+    void traverse_symbolmap_(const boost::property_tree::ptree& pt);
 
-    bool reload_appdef_(void);
+    void reload_appdef_(void);
     void traverse_appdef_(const boost::property_tree::ptree& pt);
 
-    bool reload_devicedef_(void);
+    void reload_devicedef_(void);
     void traverse_devicedef_(const boost::property_tree::ptree& pt);
 
-    bool reload_autogen_(void);
+    void reload_autogen_(void);
     void add_configindex_and_keycode_to_symbolmap_(const boost::property_tree::ptree& pt, bool handle_notsave);
     void traverse_identifier_(const boost::property_tree::ptree& pt);
     void traverse_autogen_(const boost::property_tree::ptree& pt,
