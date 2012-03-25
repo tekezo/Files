@@ -34,7 +34,9 @@ namespace pqrs {
   xmlcompiler::symbolmap::add(const std::string& type, const std::string& name, uint32_t value)
   {
     auto n = type + "::" + name;
-    if (get(n)) {
+
+    auto it = symbolmap_.find(n);
+    if (it != symbolmap_.end()) {
       xmlcompiler_logic_error("Symbol is already registered: " + n);
     }
 
