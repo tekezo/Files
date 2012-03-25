@@ -210,7 +210,7 @@ namespace pqrs {
         if (autogen.find(vk) != std::string::npos) {
           const char* suffix[] = { "_L", "_R" };
           for (auto& s : suffix) {
-            handle_autogen(boost::replace_all_copy(autogen, vk, std::string(k) + s),
+            handle_autogen(boost::replace_all_copy(autogen, vk, std::string("ModifierFlag::") + k + s),
                            filter_vector, initialize_vector);
           }
           return;
