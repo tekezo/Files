@@ -232,7 +232,7 @@ namespace pqrs {
       pqrs::vector::make_combination(combination, seeds, sizeof(seeds) / sizeof(seeds[0]));
 
       for (auto& v : combination) {
-        handle_autogen(boost::replace_all_copy(autogen, "VK_MOD_ANY", boost::join(*v, "|") + "ModifierFlag::NONE"),
+        handle_autogen(boost::replace_all_copy(autogen, "VK_MOD_ANY", boost::join(*v, "|") + "|ModifierFlag::NONE"),
                        filter_vector, initialize_vector);
       }
       return;

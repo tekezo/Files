@@ -30,6 +30,18 @@ namespace pqrs {
     return get(type + "::" + name);
   }
 
+  bool
+  xmlcompiler::symbolmap::exists(const std::string& name) const
+  {
+    return symbolmap_.find(name) != symbolmap_.end();
+  }
+
+  bool
+  xmlcompiler::symbolmap::exists(const std::string& type, const std::string& name) const
+  {
+    return exists(type + "::" + name);
+  }
+
   void
   xmlcompiler::symbolmap::add(const std::string& type, const std::string& name, uint32_t value)
   {

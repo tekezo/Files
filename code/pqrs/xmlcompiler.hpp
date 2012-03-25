@@ -35,6 +35,9 @@ namespace pqrs {
       uint32_t get(const std::string& name) const;
       uint32_t get(const std::string& type, const std::string& name) const;
 
+      bool exists(const std::string& name) const;
+      bool exists(const std::string& type, const std::string& name) const;
+
       // Call add("KeyCode", "RETURN", 36) to register "KeyCode::RETURN = 36".
       void add(const std::string& type, const std::string& name, uint32_t value);
       void add(const std::string& type, const std::string& name);

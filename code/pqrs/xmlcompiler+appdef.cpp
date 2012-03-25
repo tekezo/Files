@@ -56,7 +56,7 @@ namespace pqrs {
         }
 
         // Adding to symbolmap_ if name is not found.
-        if (! symbolmap_.get("ApplicationType", newappdef->get_name())) {
+        if (! symbolmap_.exists("ApplicationType", newappdef->get_name())) {
           symbolmap_.add("ApplicationType", newappdef->get_name());
         }
       }
