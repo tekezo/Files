@@ -71,7 +71,7 @@ namespace pqrs {
     symbolmap_.clear();
 
     std::vector<std::string> xmlfilepaths;
-    xmlfilepaths.push_back("/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/symbolmap.xml");
+    xmlfilepaths.push_back(system_xml_directory_ + "/symbolmap.xml");
 
     std::vector<ptree_ptr> pt_ptrs;
     read_xmls_(pt_ptrs, xmlfilepaths);
