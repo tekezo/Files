@@ -32,12 +32,12 @@ namespace pqrs {
       symbolmap(void);
       void clear(void);
 
-      boost::optional<uint32_t> get(const std::string& name) const;
-      boost::optional<uint32_t> get(const std::string& type, const std::string& name) const;
+      uint32_t get(const std::string& name) const;
+      uint32_t get(const std::string& type, const std::string& name) const;
 
       // Call add("KeyCode", "RETURN", 36) to register "KeyCode::RETURN = 36".
-      bool add(const std::string& type, const std::string& name, uint32_t value);
-      bool add(const std::string& type, const std::string& name);
+      void add(const std::string& type, const std::string& name, uint32_t value);
+      void add(const std::string& type, const std::string& name);
 
     private:
       std::tr1::unordered_map<std::string, uint32_t> symbolmap_;

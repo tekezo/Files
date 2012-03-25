@@ -132,18 +132,14 @@ namespace pqrs {
             "VK_CONFIG_SYNC_KEYDOWNUP_",
           };
           for (auto& n : names) {
-            auto v = symbolmap_.get("KeyCode", std::string(n) + identifier);
-            if (! v) {
-              throw xmlcompiler_runtime_error(std::string(n) + " is not found in symbolmap.");
-            }
-            initialize_vector.push_back(*v);
+            initialize_vector.push_back(symbolmap_.get("KeyCode", std::string(n) + identifier));
           }
         }
 
         filter_vector fv;
         traverse_autogen_(pt, identifier, fv, initialize_vector);
 
-        uint32_t configindex = *(symbolmap_.get("ConfigIndex", identifier));
+        uint32_t configindex = symbolmap_.get("ConfigIndex", identifier);
         remapclasses_initialize_vector_.add(initialize_vector, configindex);
         confignamemap_[configindex] = raw_identifier;
       }
@@ -161,15 +157,9 @@ namespace pqrs {
     // Add passthrough filter.
     if (parent_filter_vector.empty() &&
         ! boost::starts_with(identifier, "passthrough_")) {
-      auto v = symbolmap_.get("ConfigIndex::notsave_passthrough");
-      if (! v) {
-        throw xmlcompiler_logic_error("ConfigIndex::notsave_passthrough is not found in symbolmap.");
-      }
-
-      std::vector<uint32_t>& vec = fv.get();
-      vec.push_back(2); // count
-      vec.push_back(BRIDGE_FILTERTYPE_CONFIG_NOT);
-      vec.push_back(*v);
+      fv.get().push_back(2); // count
+      fv.get().push_back(BRIDGE_FILTERTYPE_CONFIG_NOT);
+      fv.get().push_back(symbolmap_.get("ConfigIndex::notsave_passthrough"));
     }
 
     // Add parent filters.
@@ -427,10 +417,7 @@ namespace pqrs {
         }
 
         datatype = newdatatype;
-        auto v2 = symbolmap_.get(v);
-        if (v2) {
-          newvalue |= *v2;
-        }
+        newvalue |= symbolmap_.get(v);
       }
 
       vector.push_back(datatype);

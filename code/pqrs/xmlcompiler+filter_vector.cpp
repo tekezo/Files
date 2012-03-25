@@ -78,12 +78,7 @@ namespace pqrs {
       for (auto& i : items) {
         std::string key = prefix + i;
         normalize_identifier(key);
-
-        auto v = symbolmap.get(key);
-        if (! v) {
-          throw xmlcompiler_runtime_error(std::string("Unknown Variable: " + key));
-        }
-        filter_value |= *v;
+        filter_value |= symbolmap.get(key);
       }
       data_.push_back(filter_value);
     }

@@ -12,22 +12,13 @@ TEST(pqrs_xmlcompiler, reload)
 TEST(pqrs_xmlcompiler_symbolmap, add)
 {
   pqrs::xmlcompiler::symbolmap s;
-  EXPECT_TRUE(s.add("KeyCode", "SPACE", 36));
-  EXPECT_TRUE(s.add("KeyCode", "VK__AUTOINDEX__BEGIN__", 1024));
-  EXPECT_TRUE(s.add("KeyCode", "VK_NEW1"));
-  EXPECT_TRUE(s.add("KeyCode", "VK_NEW2"));
+  s.add("KeyCode", "SPACE", 36);
+  s.add("KeyCode", "VK__AUTOINDEX__BEGIN__", 1024);
+  s.add("KeyCode", "VK_NEW1");
+  s.add("KeyCode", "VK_NEW2");
 
-  {
-    boost::optional<uint32_t> expected = 1024;
-    boost::optional<uint32_t> actual = s.get("KeyCode::VK_NEW1");
-    EXPECT_EQ(expected, actual);
-  }
-
-  {
-    boost::optional<uint32_t> expected = 1025;
-    boost::optional<uint32_t> actual = s.get("KeyCode::VK_NEW2");
-    EXPECT_EQ(expected, actual);
-  }
+  EXPECT_EQ(1024, s.get("KeyCode::VK_NEW1"));
+  EXPECT_EQ(1025, s.get("KeyCode::VK_NEW2"));
 }
 
 TEST(pqrs_xmlcompiler_remapclasses_initialize_vector, add)

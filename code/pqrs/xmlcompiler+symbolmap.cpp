@@ -10,49 +10,44 @@ namespace pqrs {
   xmlcompiler::symbolmap::clear(void)
   {
     symbolmap_.clear();
-    add("ConfigIndex", "VK__AUTOINDEX__BEGIN__", 0);
+    symbolmap_["ConfigIndex::VK__AUTOINDEX__BEGIN__"] = 0;
   }
 
-  boost::optional<uint32_t>
+  uint32_t
   xmlcompiler::symbolmap::get(const std::string& name) const
   {
     auto it = symbolmap_.find(name);
     if (it == symbolmap_.end()) {
-      return boost::none;
+      throw xmlcompiler_runtime_error("Unknown symbol: " + name);
     }
 
     return it->second;
   }
 
-  boost::optional<uint32_t>
+  uint32_t
   xmlcompiler::symbolmap::get(const std::string& type, const std::string& name) const
   {
     return get(type + "::" + name);
   }
 
-  bool
+  void
   xmlcompiler::symbolmap::add(const std::string& type, const std::string& name, uint32_t value)
   {
     auto n = type + "::" + name;
     if (get(n)) {
-      return false;
+      xmlcompiler_logic_error("Symbol is already registered: " + n);
     }
 
     symbolmap_[n] = value;
-    return true;
   }
 
-  bool
+  void
   xmlcompiler::symbolmap::add(const std::string& type, const std::string& name)
   {
     auto n = type + "::VK__AUTOINDEX__BEGIN__";
     auto v = get(n);
-    if (! v) {
-      throw xmlcompiler_logic_error("VK__AUTOINDEX__BEGIN__ is not found.");
-      return false;
-    }
-    symbolmap_[n] = *v + 1;
-    return add(type, name, *v);
+    symbolmap_[n] = v + 1;
+    return add(type, name, v);
   }
 
   // ============================================================
@@ -82,11 +77,9 @@ namespace pqrs {
         if (! value) {
           throw xmlcompiler_runtime_error("Invalid value in symbolmap.xml.");
         }
-        if (! symbolmap_.add(it.second.get<std::string>("<xmlattr>.type"),
-                             it.second.get<std::string>("<xmlattr>.name"),
-                             *value)) {
-          throw xmlcompiler_runtime_error("Failed to symbolmap_.add.");
-        }
+        symbolmap_.add(it.second.get<std::string>("<xmlattr>.type"),
+                       it.second.get<std::string>("<xmlattr>.name"),
+                       *value);
       }
     }
     return true;
