@@ -9,8 +9,8 @@ namespace pqrs {
     app_.clear();
 
     std::vector<std::string> xmlfilepaths;
-    xmlfilepaths.push_back("/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml");
-    xmlfilepaths.push_back("/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/appdef.xml");
+    xmlfilepaths.push_back(private_xml_directory_ + "/private.xml");
+    xmlfilepaths.push_back(system_xml_directory_ + "/appdef.xml");
 
     std::vector<ptree_ptr> pt_ptrs;
     read_xmls_(pt_ptrs, xmlfilepaths);
