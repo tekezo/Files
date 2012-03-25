@@ -13,7 +13,7 @@
 namespace pqrs {
   class xmlcompiler {
   public:
-    xmlcompiler(void);
+    xmlcompiler(const std::string& system_xml_directory, const std::string& private_xml_directory);
 
     void reload(void);
     static void normalize_identifier(std::string& identifier);
@@ -98,6 +98,8 @@ namespace pqrs {
     typedef std::tr1::shared_ptr<boost::property_tree::ptree> ptree_ptr;
     void read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<std::string>& xmlfilepaths);
 
+    void set_error_message_(const std::string& message);
+
     void reload_replacementdef_(void);
     void traverse_replacementdef_(const boost::property_tree::ptree& pt);
 
@@ -125,7 +127,9 @@ namespace pqrs {
                                   const filter_vector& filter_vector,
                                   std::vector<uint32_t>& initialize_vector);
 
-    std::string errormessage_;
+    const std::string system_xml_directory_;
+    const std::string private_xml_directory_;
+    std::string error_message_;
     symbolmap symbolmap_;
     pqrs::string::replacement replacement_;
     std::tr1::unordered_map<uint32_t, std::string> confignamemap_;

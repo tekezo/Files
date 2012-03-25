@@ -5,7 +5,7 @@
 
 TEST(pqrs_xmlcompiler, reload)
 {
-  pqrs::xmlcompiler xmlcompiler;
+  pqrs::xmlcompiler xmlcompiler("data/system_xml", "data/private_xml");
   xmlcompiler.reload();
 }
 

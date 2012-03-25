@@ -87,14 +87,21 @@ namespace pqrs {
     for (auto& it : pt) {
       if (it.first != "item") {
         traverse_symbolmap_(it.second);
+
       } else {
         auto value = pqrs::string::to_uint32_t(it.second.get<std::string>("<xmlattr>.value"));
         if (! value) {
-          throw xmlcompiler_runtime_error("Invalid value in symbolmap.xml.");
+          set_error_message_("Invalid value: " + it.second.data());
+          continue;
         }
-        symbolmap_.add(it.second.get<std::string>("<xmlattr>.type"),
-                       it.second.get<std::string>("<xmlattr>.name"),
-                       *value);
+
+        try {
+          symbolmap_.add(it.second.get<std::string>("<xmlattr>.type"),
+                         it.second.get<std::string>("<xmlattr>.name"),
+                         *value);
+        } catch (std::exception& e) {
+          set_error_message_(e.what());
+        }
       }
     }
   }

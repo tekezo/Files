@@ -7,7 +7,10 @@
 #include "pqrs/xmlcompiler.hpp"
 
 namespace pqrs {
-  xmlcompiler::xmlcompiler(void) {}
+  xmlcompiler::xmlcompiler(const std::string& system_xml_directory, const std::string& private_xml_directory) :
+    system_xml_directory_(system_xml_directory),
+    private_xml_directory_(private_xml_directory)
+  {}
 
   void
   xmlcompiler::reload(void)
@@ -38,10 +41,16 @@ namespace pqrs {
         pt_ptrs.push_back(pt_ptr);
 
       } catch (std::exception& e) {
-        if (errormessage_.empty()) {
-          errormessage_ = e.what();
-        }
+        set_error_message_(e.what());
       }
+    }
+  }
+
+  void
+  xmlcompiler::set_error_message_(const std::string& message)
+  {
+    if (error_message_.empty()) {
+      error_message_ = message;
     }
   }
 
