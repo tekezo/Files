@@ -1,8 +1,10 @@
 #include <algorithm>
 #include <exception>
 #include <boost/algorithm/string.hpp>
+#include <boost/lexical_cast.hpp>
 #include "pqrs/xmlcompiler.hpp"
 #include "pqrs/bridge.h"
+#include "pqrs/string.hpp"
 #include "pqrs/vector.hpp"
 
 namespace pqrs {
@@ -13,6 +15,7 @@ namespace pqrs {
 
     confignamemap_.clear();
     remapclasses_initialize_vector_.clear();
+    simultaneous_keycode_index_ = 0;
 
     const char* paths[] = {
       "/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml",
@@ -306,126 +309,136 @@ namespace pqrs {
     // add to initialize_vector
     //
 
-    if (boost::starts_with(autogen, "--ShowStatusMessage--")) {
-      std::string message = boost::replace_first_copy(autogen, "--ShowStatusMessage--", "");
-      boost::trim(message);
+    {
+      const char* symbol = "--ShowStatusMessage--";
+      if (boost::starts_with(autogen, symbol)) {
+        std::string params = autogen.substr(strlen(symbol));
+        boost::trim(params);
 
-      size_t length = message.size();
-      initialize_vector.push_back(length + 1);
-      initialize_vector.push_back(BRIDGE_STATUSMESSAGE);
+        size_t length = params.size();
+        initialize_vector.push_back(length + 1);
+        initialize_vector.push_back(BRIDGE_STATUSMESSAGE);
 
-      std::copy(message.begin(), message.end(), std::back_inserter(initialize_vector));
-      // no need filtervec
-      return;
+        std::copy(params.begin(), params.end(), std::back_inserter(initialize_vector));
+        // no need filter_vector
+        return;
+      }
     }
-  }
 
-#if 0
-  if ([autogen_text hasPrefix : @ "--SimultaneousKeyPresses--"]) {
-    NSString* params = [autogen_text substringFromIndex :[@ "--SimultaneousKeyPresses--" length]];
+    {
+      const char* symbol = "--SimultaneousKeyPresses--";
+      if (boost::starts_with(autogen, symbol)) {
+        std::string params = autogen.substr(strlen(symbol));
+        boost::trim(params);
 
-    NSString* newkeycode = [NSString stringWithFormat:@ "VK_SIMULTANEOUSKEYPRESSES_%d", simultaneous_keycode_index_];
-    [keycode_ append : @ "KeyCode" name : newkeycode];
-    ++simultaneous_keycode_index_;
+        std::string newkeycode = std::string("VK_SIMULTANEOUSKEYPRESSES_") +
+                                 boost::lexical_cast<std::string>(simultaneous_keycode_index_);
+        symbolmap_.add("KeyCode", newkeycode);
+        ++simultaneous_keycode_index_;
 
-    params = [NSString stringWithFormat:@ "KeyCode::%@,%@", newkeycode, params];
-    [self append_to_initialize_vector : initialize_vector filtervec : filtervec params : params type : BRIDGE_REMAPTYPE_SIMULTANEOUSKEYPRESSES];
-
-    return;
-  }
-
-  static struct {
-    NSString* symbol;
-    unsigned int type;
-  } info[] = {
-    { @ "--KeyToKey--",                       BRIDGE_REMAPTYPE_KEYTOKEY },
-    { @ "--KeyToConsumer--",                  BRIDGE_REMAPTYPE_KEYTOCONSUMER },
-    { @ "--KeyToPointingButton--",            BRIDGE_REMAPTYPE_KEYTOPOINTINGBUTTON },
-    { @ "--DoublePressModifier--",            BRIDGE_REMAPTYPE_DOUBLEPRESSMODIFIER },
-    { @ "--HoldingKeyToKey--",                BRIDGE_REMAPTYPE_HOLDINGKEYTOKEY },
-    { @ "--IgnoreMultipleSameKeyPress--",     BRIDGE_REMAPTYPE_IGNOREMULTIPLESAMEKEYPRESS },
-    { @ "--KeyOverlaidModifier--",            BRIDGE_REMAPTYPE_KEYOVERLAIDMODIFIER },
-    { @ "--ConsumerToConsumer--",             BRIDGE_REMAPTYPE_CONSUMERTOCONSUMER },
-    { @ "--ConsumerToKey--",                  BRIDGE_REMAPTYPE_CONSUMERTOKEY },
-    { @ "--PointingButtonToPointingButton--", BRIDGE_REMAPTYPE_POINTINGBUTTONTOPOINTINGBUTTON },
-    { @ "--PointingButtonToKey--",            BRIDGE_REMAPTYPE_POINTINGBUTTONTOKEY },
-    { @ "--PointingRelativeToScroll--",       BRIDGE_REMAPTYPE_POINTINGRELATIVETOSCROLL },
-    { @ "--DropKeyAfterRemap--",              BRIDGE_REMAPTYPE_DROPKEYAFTERREMAP },
-    { @ "--SetKeyboardType--",                BRIDGE_REMAPTYPE_SETKEYBOARDTYPE },
-    { @ "--ForceNumLockOn--",                 BRIDGE_REMAPTYPE_FORCENUMLOCKON },
-    { @ "--DropPointingRelativeCursorMove--", BRIDGE_REMAPTYPE_DROPPOINTINGRELATIVECURSORMOVE },
-    { @ "--DropScrollWheel--",                BRIDGE_REMAPTYPE_DROPSCROLLWHEEL },
-    { @ "--ScrollWheelToScrollWheel--",       BRIDGE_REMAPTYPE_SCROLLWHEELTOSCROLLWHEEL },
-    { @ "--ScrollWheelToKey--",               BRIDGE_REMAPTYPE_SCROLLWHEELTOKEY },
-    { NULL, 0 },
-  };
-  for (int i = 0; info[i].symbol; ++i) {
-    if ([autogen_text hasPrefix : info[i].symbol]) {
-      [self append_to_initialize_vector : initialize_vector filtervec : filtervec params :[autogen_text substringFromIndex :[info[i].symbol length]] type : info[i].type];
-      return;
+        params = std::string("KeyCode::") + newkeycode + "," + params;
+        add_to_initialize_vector(params, BRIDGE_REMAPTYPE_SIMULTANEOUSKEYPRESSES, filter_vector, initialize_vector);
+        return;
+      }
     }
+
+    static struct {
+      const char* symbol;
+      uint32_t type;
+    } info[] = {
+      { "--KeyToKey--",                       BRIDGE_REMAPTYPE_KEYTOKEY },
+      { "--KeyToConsumer--",                  BRIDGE_REMAPTYPE_KEYTOCONSUMER },
+      { "--KeyToPointingButton--",            BRIDGE_REMAPTYPE_KEYTOPOINTINGBUTTON },
+      { "--DoublePressModifier--",            BRIDGE_REMAPTYPE_DOUBLEPRESSMODIFIER },
+      { "--HoldingKeyToKey--",                BRIDGE_REMAPTYPE_HOLDINGKEYTOKEY },
+      { "--IgnoreMultipleSameKeyPress--",     BRIDGE_REMAPTYPE_IGNOREMULTIPLESAMEKEYPRESS },
+      { "--KeyOverlaidModifier--",            BRIDGE_REMAPTYPE_KEYOVERLAIDMODIFIER },
+      { "--ConsumerToConsumer--",             BRIDGE_REMAPTYPE_CONSUMERTOCONSUMER },
+      { "--ConsumerToKey--",                  BRIDGE_REMAPTYPE_CONSUMERTOKEY },
+      { "--PointingButtonToPointingButton--", BRIDGE_REMAPTYPE_POINTINGBUTTONTOPOINTINGBUTTON },
+      { "--PointingButtonToKey--",            BRIDGE_REMAPTYPE_POINTINGBUTTONTOKEY },
+      { "--PointingRelativeToScroll--",       BRIDGE_REMAPTYPE_POINTINGRELATIVETOSCROLL },
+      { "--DropKeyAfterRemap--",              BRIDGE_REMAPTYPE_DROPKEYAFTERREMAP },
+      { "--SetKeyboardType--",                BRIDGE_REMAPTYPE_SETKEYBOARDTYPE },
+      { "--ForceNumLockOn--",                 BRIDGE_REMAPTYPE_FORCENUMLOCKON },
+      { "--DropPointingRelativeCursorMove--", BRIDGE_REMAPTYPE_DROPPOINTINGRELATIVECURSORMOVE },
+      { "--DropScrollWheel--",                BRIDGE_REMAPTYPE_DROPSCROLLWHEEL },
+      { "--ScrollWheelToScrollWheel--",       BRIDGE_REMAPTYPE_SCROLLWHEELTOSCROLLWHEEL },
+      { "--ScrollWheelToKey--",               BRIDGE_REMAPTYPE_SCROLLWHEELTOKEY },
+    };
+    for (auto& it : info) {
+      if (boost::starts_with(autogen, it.symbol)) {
+        std::string params = autogen.substr(strlen(it.symbol));
+        boost::trim(params);
+
+        add_to_initialize_vector(params, it.type, filter_vector, initialize_vector);
+        return;
+      }
+    }
+
+    throw xmlcompiler_runtime_error("invalid <autogen>: " + autogen);
   }
 
-  @throw [NSException exceptionWithName : @ "<autogen> error" reason :[NSString stringWithFormat : @ "unknown parameters: %@", autogen_text] userInfo : nil];
-}
-#endif
-}
+  void
+  xmlcompiler::add_to_initialize_vector(const std::string& params,
+                                        uint32_t type,
+                                        const filter_vector& filter_vector,
+                                        std::vector<uint32_t>& initialize_vector)
+  {
+    std::vector<uint32_t> vector;
+    vector.push_back(type);
 
-#if 0
-
--(void) append_to_initialize_vector : (NSMutableArray*)initialize_vector filtervec : (NSArray*)filtervec params : (NSString*)params type : (unsigned int)type
-{
-  NSMutableArray* args = [[NSMutableArray new] autorelease];
-  [args addObject :[NSNumber numberWithUnsignedInt : type]];
-
-  if ([params length] > 0) {
-    for (NSString* p in [params componentsSeparatedByString : @ ","]) {
+    std::vector<std::string> args;
+    pqrs::string::split_by_comma(args, params);
+    for (auto& a : args) {
       unsigned int datatype = 0;
       unsigned int newvalue = 0;
-      for (NSString* value in [p componentsSeparatedByString : @ "|"]) {
+
+      std::vector<std::string> values;
+      pqrs::string::split_by_pipe(values, a);
+
+      for (auto& v : values) {
         unsigned int newdatatype = 0;
-        /*  */ if ([value hasPrefix : @ "KeyCode::"]) {
+        /*  */ if (boost::starts_with(v, "KeyCode::")) {
           newdatatype = BRIDGE_DATATYPE_KEYCODE;
-        } else if ([value hasPrefix : @ "ModifierFlag::"]) {
+        } else if (boost::starts_with(v, "ModifierFlag::")) {
           newdatatype = BRIDGE_DATATYPE_FLAGS;
-        } else if ([value hasPrefix : @ "ConsumerKeyCode::"]) {
+        } else if (boost::starts_with(v, "ConsumerKeyCode::")) {
           newdatatype = BRIDGE_DATATYPE_CONSUMERKEYCODE;
-        } else if ([value hasPrefix : @ "PointingButton::"]) {
+        } else if (boost::starts_with(v, "PointingButton::")) {
           newdatatype = BRIDGE_DATATYPE_POINTINGBUTTON;
-        } else if ([value hasPrefix : @ "ScrollWheel::"]) {
+        } else if (boost::starts_with(v, "ScrollWheel::")) {
           newdatatype = BRIDGE_DATATYPE_SCROLLWHEEL;
-        } else if ([value hasPrefix : @ "KeyboardType::"]) {
+        } else if (boost::starts_with(v, "KeyboardType::")) {
           newdatatype = BRIDGE_DATATYPE_KEYBOARDTYPE;
-        } else if ([value hasPrefix : @ "DeviceVendor::"]) {
+        } else if (boost::starts_with(v, "DeviceVendor::")) {
           newdatatype = BRIDGE_DATATYPE_DEVICEVENDOR;
-        } else if ([value hasPrefix : @ "DeviceProduct::"]) {
+        } else if (boost::starts_with(v, "DeviceProduct::")) {
           newdatatype = BRIDGE_DATATYPE_DEVICEPRODUCT;
-        } else if ([value hasPrefix : @ "Option::"]) {
+        } else if (boost::starts_with(v, "Option::")) {
           newdatatype = BRIDGE_DATATYPE_OPTION;
         } else {
-          @throw [NSException exceptionWithName : @ "<autogen> error" reason :[NSString stringWithFormat : @ "unknown datatype: %@ (%@)", value, params] userInfo : nil];
+          throw xmlcompiler_runtime_error("unknown datatype: " + v);
         }
 
         if (datatype && datatype != newdatatype) {
           // Don't connect different data type. (Example: KeyCode::A | ModifierFlag::SHIFT_L)
-          @throw [NSException exceptionWithName : @ "<autogen> error" reason :[NSString stringWithFormat : @ "invalid connect(|): %@", params] userInfo : nil];
+          throw xmlcompiler_runtime_error("invalid connect(|): " + params);
         }
 
         datatype = newdatatype;
-        newvalue |= [keycode_ unsignedIntValue:value];
+        auto v2 = symbolmap_.get(v);
+        if (v2) {
+          newvalue |= *v2;
+        }
       }
 
-      [args addObject :[NSNumber numberWithUnsignedInt : datatype]];
-      [args addObject :[NSNumber numberWithUnsignedInt : newvalue]];
+      vector.push_back(datatype);
+      vector.push_back(newvalue);
     }
-  }
 
-  [initialize_vector addObject :[NSNumber numberWithUnsignedInteger :[args count]]];
-  [initialize_vector addObjectsFromArray : args];
-
-  if ([filtervec count] > 0) {
-    [initialize_vector addObjectsFromArray : filtervec];
+    initialize_vector.push_back(vector.size());
+    pqrs::vector::push_back(initialize_vector, vector);
+    pqrs::vector::push_back(initialize_vector, filter_vector.get());
   }
 }
-
-#endif

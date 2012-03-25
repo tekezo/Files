@@ -116,12 +116,17 @@ namespace pqrs {
     void handle_autogen(const std::string& autogen,
                         const filter_vector& filter_vector,
                         std::vector<uint32_t>& initialize_vector);
+    void add_to_initialize_vector(const std::string& params,
+                                  uint32_t type,
+                                  const filter_vector& filter_vector,
+                                  std::vector<uint32_t>& initialize_vector);
 
     std::string errormessage_;
     symbolmap symbolmap_;
     pqrs::string::replacement replacement_;
     std::tr1::unordered_map<uint32_t, std::string> confignamemap_;
     remapclasses_initialize_vector remapclasses_initialize_vector_;
+    uint32_t simultaneous_keycode_index_;
 
     std::vector<std::tr1::shared_ptr<appdef> > app_;
   };
