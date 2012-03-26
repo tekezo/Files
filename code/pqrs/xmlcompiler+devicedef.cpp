@@ -7,9 +7,9 @@ namespace pqrs {
   xmlcompiler::reload_devicedef_(void)
   {
     std::vector<std::string> xmlfilepaths;
-    xmlfilepaths.push_back("/Users/tekezo/Library/Application Support/KeyRemap4MacBook/private.xml");
-    xmlfilepaths.push_back("/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/devicevendordef.xml");
-    xmlfilepaths.push_back("/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources/deviceproductdef.xml");
+    xmlfilepaths.push_back(private_xml_directory_ + "/private.xml");
+    xmlfilepaths.push_back(system_xml_directory_ + "/devicevendordef.xml");
+    xmlfilepaths.push_back(system_xml_directory_ + "/deviceproductdef.xml");
 
     std::vector<ptree_ptr> pt_ptrs;
     read_xmls_(pt_ptrs, xmlfilepaths);
