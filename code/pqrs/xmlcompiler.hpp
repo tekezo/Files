@@ -16,6 +16,7 @@ namespace pqrs {
     xmlcompiler(const std::string& system_xml_directory, const std::string& private_xml_directory);
 
     void reload(void);
+    const std::string& get_error_message(void) const;
     static void normalize_identifier(std::string& identifier);
 
     class xmlcompiler_runtime_error : public std::runtime_error {
@@ -25,6 +26,23 @@ namespace pqrs {
     class xmlcompiler_logic_error : public std::logic_error {
     public:
       xmlcompiler_logic_error(const std::string& what) : std::logic_error(what) {}
+    };
+
+    class directory {
+    public:
+      enum base_directory {
+        system_xml,
+        private_xml,
+      };
+
+      directory(base_directory base_directory, const std::string& relative_path) :
+        base_directory_(base_directory),
+        relative_path_(relative_path)
+      {}
+
+    private:
+      base_directory base_directory_;
+      const std::string relative_path_;
     };
 
     class symbolmap {

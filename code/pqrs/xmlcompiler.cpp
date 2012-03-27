@@ -22,6 +22,12 @@ namespace pqrs {
     reload_autogen_();
   }
 
+  const std::string&
+  xmlcompiler::get_error_message(void) const
+  {
+    return error_message_;
+  }
+
   void
   xmlcompiler::read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<std::string>& xmlfilepaths)
   {
@@ -41,7 +47,8 @@ namespace pqrs {
         pt_ptrs.push_back(pt_ptr);
 
       } catch (std::exception& e) {
-        set_error_message_(e.what());
+        std::string what = e.what();
+        set_error_message_(what);
       }
     }
   }

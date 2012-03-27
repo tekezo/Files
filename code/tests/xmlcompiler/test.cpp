@@ -9,6 +9,17 @@ TEST(pqrs_xmlcompiler, reload)
   xmlcompiler.reload();
 }
 
+TEST(pqrs_xmlcompiler, reload_invalid_xml)
+{
+  pqrs::xmlcompiler xmlcompiler("data/system_xml", "data/invalid_xml/private_xml");
+  xmlcompiler.reload();
+  std::cout << std::endl;
+  std::cout << std::endl;
+  std::cout <<  xmlcompiler.get_error_message() << std::endl;
+  std::cout << std::endl;
+  std::cout << std::endl;
+}
+
 TEST(pqrs_xmlcompiler_symbolmap, add)
 {
   pqrs::xmlcompiler::symbolmap s;
