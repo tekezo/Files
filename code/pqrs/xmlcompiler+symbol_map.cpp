@@ -90,16 +90,16 @@ namespace pqrs {
         traverse_symbol_map_(it.second);
 
       } else {
-        auto value = pqrs::string::to_uint32_t(it.second.get<std::string>("<xmlattr>.value"));
-        if (! value) {
-          set_error_message_("Invalid value: " + it.second.data());
-          continue;
-        }
-
         try {
+          auto value = pqrs::string::to_uint32_t(it.second.get<std::string>("<xmlattr>.value"));
+          if (! value) {
+            set_error_message_("Invalid value: " + it.second.data());
+            continue;
+          }
+
           symbol_map_.add(it.second.get<std::string>("<xmlattr>.type"),
-                         it.second.get<std::string>("<xmlattr>.name"),
-                         *value);
+                          it.second.get<std::string>("<xmlattr>.name"),
+                          *value);
         } catch (std::exception& e) {
           set_error_message_(e.what());
         }

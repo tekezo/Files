@@ -95,6 +95,13 @@ TEST(pqrs_string, to_uint32_t)
 
   actual = pqrs::string::to_uint32_t("abc");
   EXPECT_FALSE(actual);
+
+  // boost::optional<std::string>
+  actual = pqrs::string::to_uint32_t(boost::none);
+  EXPECT_FALSE(actual);
+
+  actual = pqrs::string::to_uint32_t(boost::optional<std::string>("123"));
+  EXPECT_EQ(static_cast<uint32_t>(123), *actual);
 }
 
 TEST(pqrs_string, split_by_comma)

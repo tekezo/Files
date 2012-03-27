@@ -187,6 +187,13 @@ namespace pqrs {
       return to_uint32_t(string.c_str());
     }
 
+    boost::optional<uint32_t>
+    to_uint32_t(const boost::optional<std::string>& string)
+    {
+      if (! string) return boost::none;
+      return to_uint32_t(*string);
+    }
+
     // ============================================================
     static void
     split(std::vector<std::string>& v, std::string string, int flags, const char* delimiter)

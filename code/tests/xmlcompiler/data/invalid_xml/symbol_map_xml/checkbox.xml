@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+  <list>
+    <item>
+      <!-- Pass Through Mode Core -->
+      <name>What is Pass Through Mode?</name>
+      <appendix>You can disable all settings temporarily.</appendix>
+      <appendix>Turn on a setting below, and toggle "Pass Through Mode".</appendix>
+      <identifier vk_config="true">notsave.passthrough</identifier>
+      <autogen>--ShowStatusMessage-- Pass Through</autogen>
+    </item>
+    <item>
+      <name>Return to Option_L</name>
+      <identifier>remap.return2optionL</identifier>
+      <autogen>--KeyToKey-- KeyCode::RETURN, KeyCode::OPTION_L</autogen>
+    </item>
+  </list>
+</root>

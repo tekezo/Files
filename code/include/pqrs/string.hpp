@@ -21,6 +21,7 @@ namespace pqrs {
     // octal,decimal,hex is supported.
     boost::optional<uint32_t> to_uint32_t(const char* string);
     boost::optional<uint32_t> to_uint32_t(const std::string& string);
+    boost::optional<uint32_t> to_uint32_t(const boost::optional<std::string>& string);
 
     // split
     enum split_option {

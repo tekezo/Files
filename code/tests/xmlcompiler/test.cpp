@@ -11,9 +11,16 @@ TEST(pqrs_xmlcompiler, reload)
 
 TEST(pqrs_xmlcompiler, reload_invalid_xml)
 {
-  pqrs::xmlcompiler xmlcompiler("data/system_xml", "data/invalid_xml/private_xml");
-  xmlcompiler.reload();
-  EXPECT_EQ("<private.xml>(4): expected element name", xmlcompiler.get_error_message());
+  {
+    pqrs::xmlcompiler xmlcompiler("data/system_xml", "data/invalid_xml/private_xml");
+    xmlcompiler.reload();
+    EXPECT_EQ("<private.xml>(4): expected element name", xmlcompiler.get_error_message());
+  }
+  {
+    pqrs::xmlcompiler xmlcompiler("data/invalid_xml/symbol_map_xml", "data/private_xml");
+    xmlcompiler.reload();
+    EXPECT_EQ("<private.xml>(4): expected element name", xmlcompiler.get_error_message());
+  }
 }
 
 TEST(pqrs_xmlcompiler_symbol_map, add)
