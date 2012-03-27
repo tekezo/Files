@@ -20,6 +20,7 @@ TEST(pqrs_xmlcompiler, reload_invalid_xml)
     pqrs::xmlcompiler xmlcompiler("data/invalid_xml/symbol_map_xml_no_value", "data/private_xml");
     xmlcompiler.reload();
     EXPECT_EQ("No 'value' Attribute found within <symbol_map>.", xmlcompiler.get_error_message());
+    EXPECT_EQ(1, xmlcompiler.get_error_count());
   }
 }
 
