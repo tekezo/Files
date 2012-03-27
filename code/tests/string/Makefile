@@ -1,12 +1,5 @@
 include ../Makefile.inc
 
-LDFLAGS =-F$(HOME)/Library/Frameworks -framework gtest \
-	-L$(HOME)/Library/Frameworks/gtest.Framework/Resources \
-	-lgtest_main
-
-SOURCES=$(wildcard *.cpp)
-OBJECTS=$(patsubst %.cpp,%.o,$(SOURCES))
-
 all: run
 
 a.out: $(SOURCES)

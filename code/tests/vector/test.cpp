@@ -60,7 +60,7 @@ TEST(pqrs_vector, make_combination)
   std::vector<std::tr1::shared_ptr<std::vector<std::string> > > actual;
   pqrs::vector::make_combination(actual, seeds, sizeof(seeds) / sizeof(seeds[0]));
 
-  EXPECT_EQ(16, actual.size());
+  EXPECT_EQ(static_cast<uint32_t>(16), actual.size());
 
   { // 0
     std::vector<std::string> expected;
