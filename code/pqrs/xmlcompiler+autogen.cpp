@@ -15,12 +15,14 @@ namespace pqrs {
     remapclasses_initialize_vector_.clear();
     simultaneous_keycode_index_ = 0;
 
-    std::vector<std::string> xmlfilepaths;
-    xmlfilepaths.push_back(private_xml_directory_ + "/private.xml");
-    xmlfilepaths.push_back(system_xml_directory_ + "/checkbox.xml");
+    std::vector<xml_file_path_ptr> xml_file_path_ptrs;
+    xml_file_path_ptrs.push_back(
+      xml_file_path_ptr(new xml_file_path(xml_file_path::base_directory::private_xml, "private.xml")));
+    xml_file_path_ptrs.push_back(
+      xml_file_path_ptr(new xml_file_path(xml_file_path::base_directory::system_xml,  "checkbox.xml")));
 
     std::vector<ptree_ptr> pt_ptrs;
-    read_xmls_(pt_ptrs, xmlfilepaths);
+    read_xmls_(pt_ptrs, xml_file_path_ptrs);
 
     for (auto pt_ptr : pt_ptrs) {
       // add_configindex_and_keycode_to_symbolmap_

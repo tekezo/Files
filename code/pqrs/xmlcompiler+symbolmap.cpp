@@ -70,11 +70,12 @@ namespace pqrs {
   {
     symbolmap_.clear();
 
-    std::vector<std::string> xmlfilepaths;
-    xmlfilepaths.push_back(system_xml_directory_ + "/symbolmap.xml");
+    std::vector<xml_file_path_ptr> xml_file_path_ptrs;
+    xml_file_path_ptrs.push_back(
+      xml_file_path_ptr(new xml_file_path(xml_file_path::base_directory::system_xml,  "symbolmap.xml")));
 
     std::vector<ptree_ptr> pt_ptrs;
-    read_xmls_(pt_ptrs, xmlfilepaths);
+    read_xmls_(pt_ptrs, xml_file_path_ptrs);
 
     for (auto pt_ptr : pt_ptrs) {
       traverse_symbolmap_(*pt_ptr);

@@ -29,13 +29,25 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<std::string>& xmlfilepaths)
+  xmlcompiler::read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<xml_file_path_ptr>& xml_file_path_ptrs)
   {
     pt_ptrs.clear();
 
-    for (auto& path : xmlfilepaths) {
+    for (auto& path_ptr : xml_file_path_ptrs) {
       try {
         ptree_ptr pt_ptr(new boost::property_tree::ptree());
+
+        std::string path;
+        switch (path_ptr->get_base_directory()) {
+          case xml_file_path::base_directory::system_xml:
+            path += system_xml_directory_;
+            break;
+          case xml_file_path::base_directory::private_xml:
+            path += private_xml_directory_;
+            break;
+        }
+        path += "/";
+        path += path_ptr->get_relative_path();
 
         int flags = boost::property_tree::xml_parser::no_comments;
 

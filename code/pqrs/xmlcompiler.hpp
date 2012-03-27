@@ -19,6 +19,7 @@ namespace pqrs {
     const std::string& get_error_message(void) const;
     static void normalize_identifier(std::string& identifier);
 
+    // ============================================================
     class xmlcompiler_runtime_error : public std::runtime_error {
     public:
       xmlcompiler_runtime_error(const std::string& what) : std::runtime_error(what) {}
@@ -28,22 +29,29 @@ namespace pqrs {
       xmlcompiler_logic_error(const std::string& what) : std::logic_error(what) {}
     };
 
-    class directory {
+    class xml_file_path {
     public:
-      enum base_directory {
-        system_xml,
-        private_xml,
+      class base_directory {
+      public:
+        enum type {
+          system_xml,
+          private_xml,
+        };
       };
 
-      directory(base_directory base_directory, const std::string& relative_path) :
-        base_directory_(base_directory),
+      xml_file_path(base_directory::type base_directory_type, const std::string& relative_path) :
+        base_directory_type_(base_directory_type),
         relative_path_(relative_path)
       {}
 
+      base_directory::type get_base_directory(void) const { return base_directory_type_; }
+      const std::string& get_relative_path(void) const { return relative_path_; }
+
     private:
-      base_directory base_directory_;
+      base_directory::type base_directory_type_;
       const std::string relative_path_;
     };
+    typedef std::tr1::shared_ptr<xml_file_path> xml_file_path_ptr;
 
     class symbolmap {
     public:
@@ -114,7 +122,7 @@ namespace pqrs {
 
   private:
     typedef std::tr1::shared_ptr<boost::property_tree::ptree> ptree_ptr;
-    void read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<std::string>& xmlfilepaths);
+    void read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<xml_file_path_ptr>& xml_file_path_ptrs);
 
     void set_error_message_(const std::string& message);
 
