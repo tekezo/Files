@@ -25,14 +25,14 @@ namespace pqrs {
     read_xmls_(pt_ptrs, xml_file_path_ptrs);
 
     for (auto pt_ptr : pt_ptrs) {
-      // add_configindex_and_keycode_to_symbolmap_
+      // add_configindex_and_keycode_to_symbol_map_
       //   1st loop: <identifier>notsave.*</identifier>
       //   2nd loop: other <identifier>
       //
       // We need to assign higher priority to notsave.* settings.
       // So, adding configindex by 2steps.
-      add_configindex_and_keycode_to_symbolmap_(*pt_ptr, true);
-      add_configindex_and_keycode_to_symbolmap_(*pt_ptr, false);
+      add_configindex_and_keycode_to_symbol_map_(*pt_ptr, true);
+      add_configindex_and_keycode_to_symbol_map_(*pt_ptr, false);
     }
 
     for (auto pt_ptr : pt_ptrs) {
@@ -43,11 +43,11 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::add_configindex_and_keycode_to_symbolmap_(const boost::property_tree::ptree& pt, bool handle_notsave)
+  xmlcompiler::add_configindex_and_keycode_to_symbol_map_(const boost::property_tree::ptree& pt, bool handle_notsave)
   {
     for (auto& it : pt) {
       if (it.first != "identifier") {
-        add_configindex_and_keycode_to_symbolmap_(it.second, handle_notsave);
+        add_configindex_and_keycode_to_symbol_map_(it.second, handle_notsave);
       } else {
         auto identifier = boost::trim_copy(it.second.data());
         normalize_identifier(identifier);
@@ -74,12 +74,12 @@ namespace pqrs {
             "VK_CONFIG_SYNC_KEYDOWNUP_",
           };
           for (auto& n : names) {
-            symbolmap_.add("KeyCode", std::string(n) + identifier);
+            symbol_map_.add("KeyCode", std::string(n) + identifier);
           }
         }
 
         // ----------------------------------------
-        symbolmap_.add("ConfigIndex", identifier);
+        symbol_map_.add("ConfigIndex", identifier);
       }
     }
   }
@@ -114,14 +114,14 @@ namespace pqrs {
             "VK_CONFIG_SYNC_KEYDOWNUP_",
           };
           for (auto& n : names) {
-            initialize_vector.push_back(symbolmap_.get("KeyCode", std::string(n) + identifier));
+            initialize_vector.push_back(symbol_map_.get("KeyCode", std::string(n) + identifier));
           }
         }
 
         filter_vector fv;
         traverse_autogen_(pt, identifier, fv, initialize_vector);
 
-        uint32_t configindex = symbolmap_.get("ConfigIndex", identifier);
+        uint32_t configindex = symbol_map_.get("ConfigIndex", identifier);
         remapclasses_initialize_vector_.add(initialize_vector, configindex);
         confignamemap_[configindex] = raw_identifier;
       }
@@ -134,14 +134,14 @@ namespace pqrs {
                                  const filter_vector& parent_filter_vector,
                                  std::vector<uint32_t>& initialize_vector)
   {
-    filter_vector fv(symbolmap_, pt);
+    filter_vector fv(symbol_map_, pt);
 
     // Add passthrough filter.
     if (parent_filter_vector.empty() &&
         ! boost::starts_with(identifier, "passthrough_")) {
       fv.get().push_back(2); // count
       fv.get().push_back(BRIDGE_FILTERTYPE_CONFIG_NOT);
-      fv.get().push_back(symbolmap_.get("ConfigIndex::notsave_passthrough"));
+      fv.get().push_back(symbol_map_.get("ConfigIndex::notsave_passthrough"));
     }
 
     // Add parent filters.
@@ -305,7 +305,7 @@ namespace pqrs {
 
         std::string newkeycode = std::string("VK_SIMULTANEOUSKEYPRESSES_") +
                                  boost::lexical_cast<std::string>(simultaneous_keycode_index_);
-        symbolmap_.add("KeyCode", newkeycode);
+        symbol_map_.add("KeyCode", newkeycode);
         ++simultaneous_keycode_index_;
 
         params = std::string("KeyCode::") + newkeycode + "," + params;
@@ -399,7 +399,7 @@ namespace pqrs {
         }
 
         datatype = newdatatype;
-        newvalue |= symbolmap_.get(v);
+        newvalue |= symbol_map_.get(v);
       }
 
       vector.push_back(datatype);

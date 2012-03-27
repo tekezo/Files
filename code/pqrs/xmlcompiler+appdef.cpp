@@ -46,9 +46,9 @@ namespace pqrs {
           continue;
         }
 
-        // Adding to symbolmap_ if name is not found.
-        if (! symbolmap_.exists("ApplicationType", newappdef->get_name())) {
-          symbolmap_.add("ApplicationType", newappdef->get_name());
+        // Adding to symbol_map_ if name is not found.
+        if (! symbol_map_.exists("ApplicationType", newappdef->get_name())) {
+          symbol_map_.add("ApplicationType", newappdef->get_name());
         }
       }
     }

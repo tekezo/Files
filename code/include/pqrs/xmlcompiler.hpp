@@ -53,9 +53,9 @@ namespace pqrs {
     };
     typedef std::tr1::shared_ptr<xml_file_path> xml_file_path_ptr;
 
-    class symbolmap {
+    class symbol_map {
     public:
-      symbolmap(void);
+      symbol_map(void);
       void clear(void);
 
       uint32_t get(const std::string& name) const;
@@ -69,7 +69,7 @@ namespace pqrs {
       void add(const std::string& type, const std::string& name);
 
     private:
-      std::tr1::unordered_map<std::string, uint32_t> symbolmap_;
+      std::tr1::unordered_map<std::string, uint32_t> symbol_map_;
     };
 
     class appdef {
@@ -109,13 +109,13 @@ namespace pqrs {
     class filter_vector {
     public:
       filter_vector(void);
-      filter_vector(const symbolmap& symbolmap, const boost::property_tree::ptree& pt);
+      filter_vector(const symbol_map& symbol_map, const boost::property_tree::ptree& pt);
       std::vector<uint32_t>& get(void);
       const std::vector<uint32_t>& get(void) const;
       bool empty(void) const;
 
     private:
-      void add(const symbolmap& symbolmap, uint32_t filter_type, const std::string& type, const std::string& string);
+      void add(const symbol_map& symbol_map, uint32_t filter_type, const std::string& type, const std::string& string);
 
       std::vector<uint32_t> data_;
     };
@@ -129,8 +129,8 @@ namespace pqrs {
     void reload_replacementdef_(void);
     void traverse_replacementdef_(const boost::property_tree::ptree& pt);
 
-    void reload_symbolmap_(void);
-    void traverse_symbolmap_(const boost::property_tree::ptree& pt);
+    void reload_symbol_map_(void);
+    void traverse_symbol_map_(const boost::property_tree::ptree& pt);
 
     void reload_appdef_(void);
     void traverse_appdef_(const boost::property_tree::ptree& pt);
@@ -139,7 +139,7 @@ namespace pqrs {
     void traverse_devicedef_(const boost::property_tree::ptree& pt);
 
     void reload_autogen_(void);
-    void add_configindex_and_keycode_to_symbolmap_(const boost::property_tree::ptree& pt, bool handle_notsave);
+    void add_configindex_and_keycode_to_symbol_map_(const boost::property_tree::ptree& pt, bool handle_notsave);
     void traverse_identifier_(const boost::property_tree::ptree& pt);
     void traverse_autogen_(const boost::property_tree::ptree& pt,
                            const std::string& identifier,
@@ -156,7 +156,7 @@ namespace pqrs {
     const std::string system_xml_directory_;
     const std::string private_xml_directory_;
     std::string error_message_;
-    symbolmap symbolmap_;
+    symbol_map symbol_map_;
     pqrs::string::replacement replacement_;
     std::tr1::unordered_map<uint32_t, std::string> confignamemap_;
     remapclasses_initialize_vector remapclasses_initialize_vector_;

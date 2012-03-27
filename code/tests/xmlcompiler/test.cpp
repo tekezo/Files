@@ -16,9 +16,9 @@ TEST(pqrs_xmlcompiler, reload_invalid_xml)
   EXPECT_EQ("<private.xml>(4): expected element name", xmlcompiler.get_error_message());
 }
 
-TEST(pqrs_xmlcompiler_symbolmap, add)
+TEST(pqrs_xmlcompiler_symbol_map, add)
 {
-  pqrs::xmlcompiler::symbolmap s;
+  pqrs::xmlcompiler::symbol_map s;
   s.add("KeyCode", "SPACE", 36);
   s.add("KeyCode", "VK__AUTOINDEX__BEGIN__", 1024);
   s.add("KeyCode", "VK_NEW1");
@@ -65,7 +65,7 @@ TEST(pqrs_xmlcompiler_remapclasses_initialize_vector, add)
 
 TEST(pqrs_xmlcompiler_filter_vector, filter_vector)
 {
-  pqrs::xmlcompiler::symbolmap s;
+  pqrs::xmlcompiler::symbol_map s;
   s.add("ApplicationType", "APP1", 1);
   s.add("ApplicationType", "APP2", 2);
   s.add("ApplicationType", "APP3", 3);

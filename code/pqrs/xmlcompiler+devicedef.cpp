@@ -56,9 +56,9 @@ namespace pqrs {
           continue;
         }
 
-        // Adding to symbolmap_ if name is not found.
-        if (! symbolmap_.exists(type, name)) {
-          symbolmap_.add(type, name, *value);
+        // Adding to symbol_map_ if name is not found.
+        if (! symbol_map_.exists(type, name)) {
+          symbol_map_.add(type, name, *value);
         }
       }
     }

@@ -16,7 +16,7 @@ namespace pqrs {
   xmlcompiler::reload(void)
   {
     reload_replacementdef_();
-    reload_symbolmap_();
+    reload_symbol_map_();
     reload_appdef_();
     reload_devicedef_();
     reload_autogen_();
