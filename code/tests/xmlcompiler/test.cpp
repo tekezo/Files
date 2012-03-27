@@ -13,11 +13,7 @@ TEST(pqrs_xmlcompiler, reload_invalid_xml)
 {
   pqrs::xmlcompiler xmlcompiler("data/system_xml", "data/invalid_xml/private_xml");
   xmlcompiler.reload();
-  std::cout << std::endl;
-  std::cout << std::endl;
-  std::cout <<  xmlcompiler.get_error_message() << std::endl;
-  std::cout << std::endl;
-  std::cout << std::endl;
+  EXPECT_EQ("<private.xml>(4): expected element name", xmlcompiler.get_error_message());
 }
 
 TEST(pqrs_xmlcompiler_symbolmap, add)
