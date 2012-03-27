@@ -6,8 +6,9 @@
 
 TEST(pqrs_xmlcompiler, reload)
 {
-  pqrs::xmlcompiler xmlcompiler("data/system_xml", "data/private_xml");
-  xmlcompiler.reload();
+  struct pqrs_xmlcompiler* p = NULL;
+  EXPECT_EQ(0, pqrs_xmlcompiler_initialize(&p, "data/system_xml", "data/private_xml"));
+  pqrs_xmlcompiler_reload(p);
 }
 
 TEST(pqrs_xmlcompiler, reload_invalid_xml)
