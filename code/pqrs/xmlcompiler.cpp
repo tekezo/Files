@@ -9,12 +9,16 @@
 namespace pqrs {
   xmlcompiler::xmlcompiler(const std::string& system_xml_directory, const std::string& private_xml_directory) :
     system_xml_directory_(system_xml_directory),
-    private_xml_directory_(private_xml_directory)
+    private_xml_directory_(private_xml_directory),
+    error_count_(0)
   {}
 
   void
   xmlcompiler::reload(void)
   {
+    error_message_.clear();
+    error_count_ = 0;
+
     reload_replacementdef_();
     reload_symbol_map_();
     reload_appdef_();
@@ -26,6 +30,12 @@ namespace pqrs {
   xmlcompiler::get_error_message(void) const
   {
     return error_message_;
+  }
+
+  int
+  xmlcompiler::get_error_count(void) const
+  {
+    return error_count_;
   }
 
   void
@@ -81,6 +91,7 @@ namespace pqrs {
     if (error_message_.empty()) {
       error_message_ = message;
     }
+    ++error_count_;
   }
 
   void

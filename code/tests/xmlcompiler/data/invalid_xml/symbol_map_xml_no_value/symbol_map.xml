@@ -3,7 +3,7 @@
   <symbol_map type="ApplicationType" name="UNKNOWN" value="0" />
   <symbol_map type="ApplicationType" name="VK__AUTOINDEX__BEGIN__" value="1" />
   <symbol_map type="ConsumerKeyCode" name="BRIGHTNESS_DOWN" value="3" />
-  <symbol_map type="ConsumerKeyCode" name="BRIGHTNESS_UP" />
+  <symbol_map type="ConsumerKeyCode" name="BRIGHTNESS_UP" /> <!-- no value -->
   <symbol_map type="ConsumerKeyCode" name="KEYBOARDLIGHT_OFF" value="23" />
   <symbol_map type="ConsumerKeyCode" name="KEYBOARDLIGHT_LOW" value="22" />
   <symbol_map type="ConsumerKeyCode" name="KEYBOARDLIGHT_HIGH" value="21" />

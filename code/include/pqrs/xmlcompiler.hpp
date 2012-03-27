@@ -16,7 +16,10 @@ namespace pqrs {
     xmlcompiler(const std::string& system_xml_directory, const std::string& private_xml_directory);
 
     void reload(void);
+
     const std::string& get_error_message(void) const;
+    int get_error_count(void) const;
+
     static void normalize_identifier(std::string& identifier);
 
     // ============================================================
@@ -155,7 +158,10 @@ namespace pqrs {
 
     const std::string system_xml_directory_;
     const std::string private_xml_directory_;
+
     std::string error_message_;
+    int error_count_;
+
     symbol_map symbol_map_;
     pqrs::string::replacement replacement_;
     std::tr1::unordered_map<uint32_t, std::string> confignamemap_;

@@ -91,15 +91,26 @@ namespace pqrs {
 
       } else {
         try {
-          auto value = pqrs::string::to_uint32_t(it.second.get<std::string>("<xmlattr>.value"));
-          if (! value) {
-            set_error_message_("Invalid value: " + it.second.data());
+          auto type = it.second.get_optional<std::string>("<xmlattr>.type");
+          if (! type) {
+            set_error_message_(std::string("No 'type' Attribute found within <symbol_map>.") + it.second.data());
             continue;
           }
 
-          symbol_map_.add(it.second.get<std::string>("<xmlattr>.type"),
-                          it.second.get<std::string>("<xmlattr>.name"),
-                          *value);
+          auto name = it.second.get_optional<std::string>("<xmlattr>.name");
+          if (! name) {
+            set_error_message_(std::string("No 'name' Attribute found within <symbol_map>.") + it.second.data());
+            continue;
+          }
+
+          auto value = pqrs::string::to_uint32_t(it.second.get_optional<std::string>("<xmlattr>.value"));
+          if (! value) {
+            set_error_message_(std::string("No 'value' Attribute found within <symbol_map>.") + it.second.data());
+            continue;
+          }
+
+          symbol_map_.add(*type, *name, *value);
+
         } catch (std::exception& e) {
           set_error_message_(e.what());
         }
