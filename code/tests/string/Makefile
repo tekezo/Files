@@ -1,4 +1,5 @@
-CXXFLAGS = -I../.. -Wall -Wextra -Werror -O2 -std=c++11
+include ../Makefile.inc
+
 LDFLAGS =-F$(HOME)/Library/Frameworks -framework gtest \
 	-L$(HOME)/Library/Frameworks/gtest.Framework/Resources \
 	-lgtest_main
