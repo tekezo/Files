@@ -24,8 +24,8 @@ TEST(pqrs_xmlcompiler_symbolmap, add)
   s.add("KeyCode", "VK_NEW1");
   s.add("KeyCode", "VK_NEW2");
 
-  EXPECT_EQ(1024, s.get("KeyCode::VK_NEW1"));
-  EXPECT_EQ(1025, s.get("KeyCode::VK_NEW2"));
+  EXPECT_EQ(static_cast<uint32_t>(1024), s.get("KeyCode::VK_NEW1"));
+  EXPECT_EQ(static_cast<uint32_t>(1025), s.get("KeyCode::VK_NEW2"));
 }
 
 TEST(pqrs_xmlcompiler_remapclasses_initialize_vector, add)
