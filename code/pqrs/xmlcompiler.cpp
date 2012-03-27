@@ -60,6 +60,16 @@ namespace pqrs {
 
       } catch (std::exception& e) {
         std::string what = e.what();
+
+        // Hack:
+        // boost::property_tree::read_xml throw exception with filename.
+        // But, when we call read_xml with stream, the filename becomes "unspecified file" as follow.
+        //
+        // <unspecified file>(4): expected element name
+        //
+        // So, we change "unspecified file" to file name by ourself.
+        boost::replace_first(what, "<unspecified file>", std::string("<") + path_ptr->get_relative_path() + ">");
+
         set_error_message_(what);
       }
     }
