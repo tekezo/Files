@@ -1,4 +1,4 @@
-CXXFLAGS = -I../.. \
+CXXFLAGS = -I../../include \
 	-Wall \
 	-Wextra \
 	-Wmissing-prototypes \
