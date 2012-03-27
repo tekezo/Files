@@ -188,7 +188,7 @@ namespace pqrs {
     }
 
     // ============================================================
-    void
+    static void
     split(std::vector<std::string>& v, std::string string, int flags, const char* delimiter)
     {
       v.clear();

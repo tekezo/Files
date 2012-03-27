@@ -78,17 +78,17 @@ TEST(pqrs_string, to_uint32_t)
 
   actual = pqrs::string::to_uint32_t("123456");
   EXPECT_TRUE(actual);
-  EXPECT_EQ(123456, *actual);
+  EXPECT_EQ(static_cast<uint32_t>(123456), *actual);
 
   // oct
   actual = pqrs::string::to_uint32_t("0100");
   EXPECT_TRUE(actual);
-  EXPECT_EQ(64, *actual);
+  EXPECT_EQ(static_cast<uint32_t>(64), *actual);
 
   // hex
   actual = pqrs::string::to_uint32_t("0x123456");
   EXPECT_TRUE(actual);
-  EXPECT_EQ(1193046, *actual);
+  EXPECT_EQ(static_cast<uint32_t>(1193046), *actual);
 
   actual = pqrs::string::to_uint32_t("0xG");
   EXPECT_FALSE(actual);
