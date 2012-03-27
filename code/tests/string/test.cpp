@@ -11,8 +11,14 @@ TEST(pqrs_string, string_by_replacing_double_curly_braces_from_file)
   replacement["CCC"] = "";
 
   std::string actual;
-  pqrs::string::string_by_replacing_double_curly_braces_from_file(actual, "data/sample", replacement);
+  int error = 0;
+  error = pqrs::string::string_by_replacing_double_curly_braces_from_file(actual, "data/sample", replacement);
   EXPECT_EQ("1 2222 \n", actual);
+  EXPECT_EQ(0, error);
+
+  error = pqrs::string::string_by_replacing_double_curly_braces_from_file(actual, "data/noexists", replacement);
+  EXPECT_EQ("", actual);
+  EXPECT_EQ(-1, error);
 
   // performance test
   {
