@@ -86,6 +86,8 @@ namespace pqrs {
 
     std::vector<xml_file_path_ptr> xml_file_path_ptrs;
     xml_file_path_ptrs.push_back(
+      xml_file_path_ptr(new xml_file_path(xml_file_path::base_directory::private_xml, "private.xml")));
+    xml_file_path_ptrs.push_back(
       xml_file_path_ptr(new xml_file_path(xml_file_path::base_directory::system_xml,  "symbol_map.xml")));
 
     std::vector<ptree_ptr> pt_ptrs;

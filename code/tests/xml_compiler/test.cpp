@@ -6,6 +6,14 @@
 
 TEST(pqrs_xml_compiler, reload)
 {
+  pqrs::xml_compiler xml_compiler("data/system_xml", "data/private_xml");
+  xml_compiler.reload();
+  EXPECT_EQ(boost::optional<uint32_t>(123), xml_compiler.find_symbol_map("KeyCode::MY_LANG_KEY"));
+  EXPECT_EQ(boost::optional<uint32_t>(2), xml_compiler.find_symbol_map("ConsumerKeyCode::BRIGHTNESS_UP"));
+}
+
+TEST(pqrs_xml_compiler, reload_bindings_clang)
+{
   struct pqrs_xml_compiler* p = NULL;
   EXPECT_EQ(0, pqrs_xml_compiler_initialize(&p, "data/system_xml", "data/private_xml"));
   pqrs_xml_compiler_reload(p);
@@ -45,11 +53,6 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
     EXPECT_EQ("No 'value' Attribute found within <symbol_map>.", std::string(pqrs_xml_compiler_get_error_message(p)));
     EXPECT_EQ(1, pqrs_xml_compiler_get_error_count(p));
     pqrs_xml_compiler_terminate(&p);
-  }
-  {
-    pqrs::xml_compiler xml_compiler("data/invalid_xml/symbol_map_xml_dup", "data/private_xml");
-    xml_compiler.reload();
-    EXPECT_EQ(boost::optional<uint32_t>(2), xml_compiler.find_symbol_map("ConsumerKeyCode::BRIGHTNESS_UP"));
   }
 }
 
