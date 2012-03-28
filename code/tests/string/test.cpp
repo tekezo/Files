@@ -60,12 +60,12 @@ TEST(pqrs_string, string_by_replacing_double_curly_braces_from_string)
   EXPECT_EQ(" XXX", actual);
 
   // no }}
-  pqrs::string::string_by_replacing_double_curly_braces_from_string(actual, "{{AAA}", replacement);
-  EXPECT_EQ("{{AAA}", actual);
+  pqrs::string::string_by_replacing_double_curly_braces_from_string(actual, "AAA {{AAA}", replacement);
+  EXPECT_EQ("AAA ", actual);
 
   // no }}
   pqrs::string::string_by_replacing_double_curly_braces_from_string(actual, "{{ AAA }", replacement);
-  EXPECT_EQ("{{ AAA }", actual);
+  EXPECT_EQ("", actual);
 
   // looped replacing
   pqrs::string::string_by_replacing_double_curly_braces_from_string(actual, "{{ LOOP1 }}{{ LOOP2 }}", replacement);

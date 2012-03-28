@@ -45,7 +45,7 @@ namespace pqrs {
           continue;
         }
         if (name->empty()) {
-          set_error_message_("Invalid <replacementname>.");
+          set_error_message_("Empty <replacementname>.");
           continue;
         }
         if (name->find_first_of("{{") != std::string::npos ||
