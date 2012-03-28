@@ -1,9 +1,5 @@
 all:
-	make -C string
-	make -C vector
-	make -C xmlcompiler
+	@for d in `find * -type d -maxdepth 0`; do make -C $$d; done
 
 clean:
-	make -C string clean
-	make -C vector clean
-	make -C xmlcompiler clean
+	@for d in `find * -type d -maxdepth 0`; do make -C $$d clean; done
