@@ -26,10 +26,19 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   // ------------------------------------------------------------
   // invalid XML format
   {
-    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/private_xml");
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/broken_xml");
     xml_compiler.reload();
     EXPECT_EQ("<private.xml>(4): expected element name", std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(boost::optional<uint32_t>(2), xml_compiler.get_symbol_map_value("ConsumerKeyCode::BRIGHTNESS_UP"));
+  }
+
+  // ------------------------------------------------------------
+  // Unknown symbol_map
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/unknown_symbol_map");
+    xml_compiler.reload();
+    EXPECT_EQ("Unknown symbol: KeyCode::MY_UNKNOWN_KEY", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 
   // ------------------------------------------------------------

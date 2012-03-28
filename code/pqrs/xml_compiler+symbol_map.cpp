@@ -95,30 +95,25 @@ namespace pqrs {
         traverse_symbol_map_(it.second);
 
       } else {
-        try {
-          auto type = it.second.get_optional<std::string>("<xmlattr>.type");
-          if (! type) {
-            set_error_message_("No 'type' Attribute found within <symbol_map>.");
-            continue;
-          }
-
-          auto name = it.second.get_optional<std::string>("<xmlattr>.name");
-          if (! name) {
-            set_error_message_("No 'name' Attribute found within <symbol_map>.");
-            continue;
-          }
-
-          auto value = pqrs::string::to_uint32_t(it.second.get_optional<std::string>("<xmlattr>.value"));
-          if (! value) {
-            set_error_message_("No 'value' Attribute found within <symbol_map>.");
-            continue;
-          }
-
-          symbol_map_.add(*type, *name, *value);
-
-        } catch (std::exception& e) {
-          set_error_message_(e.what());
+        auto type = it.second.get_optional<std::string>("<xmlattr>.type");
+        if (! type) {
+          set_error_message_("No 'type' Attribute found within <symbol_map>.");
+          continue;
         }
+
+        auto name = it.second.get_optional<std::string>("<xmlattr>.name");
+        if (! name) {
+          set_error_message_("No 'name' Attribute found within <symbol_map>.");
+          continue;
+        }
+
+        auto value = pqrs::string::to_uint32_t(it.second.get_optional<std::string>("<xmlattr>.value"));
+        if (! value) {
+          set_error_message_("No 'value' Attribute found within <symbol_map>.");
+          continue;
+        }
+
+        symbol_map_.add(*type, *name, *value);
       }
     }
   }

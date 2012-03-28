@@ -158,7 +158,11 @@ namespace pqrs {
           pqrs::string::remove_whitespaces(autogen);
         }
 
-        handle_autogen(autogen, fv, initialize_vector);
+        try {
+          handle_autogen(autogen, fv, initialize_vector);
+        } catch (std::exception& e) {
+          set_error_message_(e.what());
+        }
       }
 
       traverse_autogen_(it.second, identifier, fv, initialize_vector);
