@@ -10,9 +10,9 @@
       <autogen>--ShowStatusMessage-- Pass Through</autogen>
     </item>
     <item>
-      <name>Return to Option_L</name>
-      <identifier>remap.return2optionL</identifier>
-      <autogen>--KeyToKey-- KeyCode::RETURN, KeyCode::OPTION_L</autogen>
+      <name>Return to Tab</name>
+      <identifier>remap.return2tab</identifier>
+      <autogen>--KeyToKey-- KeyCode::RETURN, KeyCode::TAB</autogen>
     </item>
   </list>
 </root>
