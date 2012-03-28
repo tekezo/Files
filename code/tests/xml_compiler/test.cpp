@@ -37,19 +37,31 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_no_name", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("No 'replacementname' within <replacementdef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("No <replacementname> within <replacementdef>.", std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_empty_name", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("Invalid 'replacementname'.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("Invalid <replacementname>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_invalid_name1", "data/private_xml");
+    xml_compiler.reload();
+    EXPECT_EQ("Do not use '{{' and '}}' within <replacementname>: VI{{_J", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_invalid_name2", "data/private_xml");
+    xml_compiler.reload();
+    EXPECT_EQ("Do not use '{{' and '}}' within <replacementname>: VI_}}J", std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_no_value", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("No 'replacementvalue' within <replacementdef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("No <replacementvalue> within <replacementdef>: VI_J", std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 

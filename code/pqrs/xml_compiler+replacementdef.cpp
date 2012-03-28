@@ -38,19 +38,27 @@ namespace pqrs {
           }
         }
 
+        // --------------------------------------------------
+        // Validation
         if (! name) {
-          set_error_message_("No 'replacementname' within <replacementdef>.");
+          set_error_message_("No <replacementname> within <replacementdef>.");
           continue;
         }
         if (name->empty()) {
-          set_error_message_("Invalid 'replacementname'.");
+          set_error_message_("Invalid <replacementname>.");
           continue;
         }
+        if (name->find_first_of("{{") != std::string::npos ||
+            name->find_first_of("}}") != std::string::npos) {
+          set_error_message_(std::string("Do not use '{{' and '}}' within <replacementname>: ") + *name);
+        }
+
         if (! value) {
-          set_error_message_("No 'replacementvalue' within <replacementdef>.");
+          set_error_message_(std::string("No <replacementvalue> within <replacementdef>: ") + *name);
           continue;
         }
 
+        // --------------------------------------------------
         // Adding to replacement_ if name is not found.
         if (replacement_.find(*name) == replacement_.end()) {
           replacement_[*name] = *value;
