@@ -28,8 +28,8 @@ namespace pqrs {
       if (it.first != "replacementdef") {
         traverse_replacementdef_(it.second);
       } else {
-        std::string name;
-        std::string value;
+        boost::optional<std::string> name;
+        boost::optional<std::string> value;
         for (auto& child : it.second) {
           if (child.first == "replacementname") {
             name = child.second.data();
@@ -37,12 +37,19 @@ namespace pqrs {
             value = child.second.data();
           }
         }
-        if (name.empty() || value.empty()) {
+
+        if (! name) {
+          set_error_message_("No 'replacementname' within <replacementdef>.");
           continue;
         }
+        if (! value) {
+          set_error_message_("No 'replacementvalue' within <replacementdef>.");
+          continue;
+        }
+
         // Adding to replacement_ if name is not found.
-        if (replacement_.find(name) == replacement_.end()) {
-          replacement_[name] = value;
+        if (replacement_.find(*name) == replacement_.end()) {
+          replacement_[*name] = *value;
         }
       }
     }

@@ -51,6 +51,7 @@ namespace pqrs {
   {
     auto n = type + "::" + name;
 
+    // register value if the definition does not exists.
     auto it = symbol_map_.find(n);
     if (it == symbol_map_.end()) {
       symbol_map_[n] = value;
@@ -97,19 +98,19 @@ namespace pqrs {
         try {
           auto type = it.second.get_optional<std::string>("<xmlattr>.type");
           if (! type) {
-            set_error_message_(std::string("No 'type' Attribute found within <symbol_map>.") + it.second.data());
+            set_error_message_("No 'type' Attribute found within <symbol_map>.");
             continue;
           }
 
           auto name = it.second.get_optional<std::string>("<xmlattr>.name");
           if (! name) {
-            set_error_message_(std::string("No 'name' Attribute found within <symbol_map>.") + it.second.data());
+            set_error_message_("No 'name' Attribute found within <symbol_map>.");
             continue;
           }
 
           auto value = pqrs::string::to_uint32_t(it.second.get_optional<std::string>("<xmlattr>.value"));
           if (! value) {
-            set_error_message_(std::string("No 'value' Attribute found within <symbol_map>.") + it.second.data());
+            set_error_message_("No 'value' Attribute found within <symbol_map>.");
             continue;
           }
 
