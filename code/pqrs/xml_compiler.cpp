@@ -38,6 +38,12 @@ namespace pqrs {
     return error_count_;
   }
 
+  boost::optional<uint32_t>
+  xml_compiler::find_symbol_map(const std::string& name) const
+  {
+    return symbol_map_.get_optional(name);
+  }
+
   void
   xml_compiler::read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<xml_file_path_ptr>& xml_file_path_ptrs)
   {

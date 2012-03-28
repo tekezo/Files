@@ -20,6 +20,8 @@ namespace pqrs {
     const std::string& get_error_message(void) const;
     int get_error_count(void) const;
 
+    boost::optional<uint32_t> find_symbol_map(const std::string& name) const;
+
     static void normalize_identifier(std::string& identifier);
 
     // ============================================================
@@ -63,6 +65,9 @@ namespace pqrs {
 
       uint32_t get(const std::string& name) const;
       uint32_t get(const std::string& type, const std::string& name) const;
+
+      boost::optional<uint32_t> get_optional(const std::string& name) const;
+      boost::optional<uint32_t> get_optional(const std::string& type, const std::string& name) const;
 
       bool exists(const std::string& name) const;
       bool exists(const std::string& type, const std::string& name) const;

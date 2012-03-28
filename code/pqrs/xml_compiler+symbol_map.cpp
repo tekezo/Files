@@ -16,18 +16,34 @@ namespace pqrs {
   uint32_t
   xml_compiler::symbol_map::get(const std::string& name) const
   {
-    auto it = symbol_map_.find(name);
-    if (it == symbol_map_.end()) {
+    auto v = get_optional(name);
+    if (! v) {
       throw xml_compiler_runtime_error("Unknown symbol: " + name);
     }
-
-    return it->second;
+    return *v;
   }
 
   uint32_t
   xml_compiler::symbol_map::get(const std::string& type, const std::string& name) const
   {
     return get(type + "::" + name);
+  }
+
+  boost::optional<uint32_t>
+  xml_compiler::symbol_map::get_optional(const std::string& name) const
+  {
+    auto it = symbol_map_.find(name);
+    if (it == symbol_map_.end()) {
+      return boost::none;
+    }
+
+    return it->second;
+  }
+
+  boost::optional<uint32_t>
+  xml_compiler::symbol_map::get_optional(const std::string& type, const std::string& name) const
+  {
+    return get_optional(type + "::" + name);
   }
 
   bool
@@ -48,11 +64,9 @@ namespace pqrs {
     auto n = type + "::" + name;
 
     auto it = symbol_map_.find(n);
-    if (it != symbol_map_.end()) {
-      xml_compiler_logic_error("Symbol is already registered: " + n);
+    if (it == symbol_map_.end()) {
+      symbol_map_[n] = value;
     }
-
-    symbol_map_[n] = value;
   }
 
   void
