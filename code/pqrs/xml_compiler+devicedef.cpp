@@ -1,10 +1,10 @@
 #include <exception>
 #include <boost/algorithm/string.hpp>
-#include "pqrs/xmlcompiler.hpp"
+#include "pqrs/xml_compiler.hpp"
 
 namespace pqrs {
   void
-  xmlcompiler::reload_devicedef_(void)
+  xml_compiler::reload_devicedef_(void)
   {
     std::vector<xml_file_path_ptr> xml_file_path_ptrs;
     xml_file_path_ptrs.push_back(
@@ -23,7 +23,7 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::traverse_devicedef_(const boost::property_tree::ptree& pt)
+  xml_compiler::traverse_devicedef_(const boost::property_tree::ptree& pt)
   {
     for (auto& it : pt) {
       if (it.first != "devicevendordef" &&
@@ -39,7 +39,7 @@ namespace pqrs {
         } else if (it.first == "deviceproductdef") {
           type = "DeviceProduct";
         } else {
-          throw xmlcompiler_logic_error("unknown type in traverse_devicedef_");
+          throw xml_compiler_logic_error("unknown type in traverse_devicedef_");
         }
 
         for (auto& child : it.second) {

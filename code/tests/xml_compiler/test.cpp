@@ -1,55 +1,55 @@
 #include <boost/property_tree/xml_parser.hpp>
 #include <gtest/gtest.h>
-#include "pqrs/xmlcompiler_bindings_clang.h"
-#include "pqrs/xmlcompiler.hpp"
+#include "pqrs/xml_compiler_bindings_clang.h"
+#include "pqrs/xml_compiler.hpp"
 #include "pqrs/bridge.h"
 
-TEST(pqrs_xmlcompiler, reload)
+TEST(pqrs_xml_compiler, reload)
 {
-  struct pqrs_xmlcompiler* p = NULL;
-  EXPECT_EQ(0, pqrs_xmlcompiler_initialize(&p, "data/system_xml", "data/private_xml"));
-  pqrs_xmlcompiler_reload(p);
-  pqrs_xmlcompiler_terminate(&p);
+  struct pqrs_xml_compiler* p = NULL;
+  EXPECT_EQ(0, pqrs_xml_compiler_initialize(&p, "data/system_xml", "data/private_xml"));
+  pqrs_xml_compiler_reload(p);
+  pqrs_xml_compiler_terminate(&p);
 }
 
-TEST(pqrs_xmlcompiler, reload_invalid_xml)
+TEST(pqrs_xml_compiler, reload_invalid_xml)
 {
   {
-    struct pqrs_xmlcompiler* p = NULL;
-    EXPECT_EQ(0, pqrs_xmlcompiler_initialize(&p, "data/system_xml", "data/invalid_xml/private_xml"));
-    pqrs_xmlcompiler_reload(p);
-    EXPECT_EQ("<private.xml>(4): expected element name", std::string(pqrs_xmlcompiler_get_error_message(p)));
-    pqrs_xmlcompiler_terminate(&p);
+    struct pqrs_xml_compiler* p = NULL;
+    EXPECT_EQ(0, pqrs_xml_compiler_initialize(&p, "data/system_xml", "data/invalid_xml/private_xml"));
+    pqrs_xml_compiler_reload(p);
+    EXPECT_EQ("<private.xml>(4): expected element name", std::string(pqrs_xml_compiler_get_error_message(p)));
+    pqrs_xml_compiler_terminate(&p);
   }
   {
-    struct pqrs_xmlcompiler* p = NULL;
-    EXPECT_EQ(0, pqrs_xmlcompiler_initialize(&p, "data/invalid_xml/symbol_map_xml_no_type", "data/private_xml"));
-    pqrs_xmlcompiler_reload(p);
-    EXPECT_EQ("No 'type' Attribute found within <symbol_map>.", std::string(pqrs_xmlcompiler_get_error_message(p)));
-    EXPECT_EQ(1, pqrs_xmlcompiler_get_error_count(p));
-    pqrs_xmlcompiler_terminate(&p);
+    struct pqrs_xml_compiler* p = NULL;
+    EXPECT_EQ(0, pqrs_xml_compiler_initialize(&p, "data/invalid_xml/symbol_map_xml_no_type", "data/private_xml"));
+    pqrs_xml_compiler_reload(p);
+    EXPECT_EQ("No 'type' Attribute found within <symbol_map>.", std::string(pqrs_xml_compiler_get_error_message(p)));
+    EXPECT_EQ(1, pqrs_xml_compiler_get_error_count(p));
+    pqrs_xml_compiler_terminate(&p);
   }
   {
-    struct pqrs_xmlcompiler* p = NULL;
-    EXPECT_EQ(0, pqrs_xmlcompiler_initialize(&p, "data/invalid_xml/symbol_map_xml_no_name", "data/private_xml"));
-    pqrs_xmlcompiler_reload(p);
-    EXPECT_EQ("No 'name' Attribute found within <symbol_map>.", std::string(pqrs_xmlcompiler_get_error_message(p)));
-    EXPECT_EQ(1, pqrs_xmlcompiler_get_error_count(p));
-    pqrs_xmlcompiler_terminate(&p);
+    struct pqrs_xml_compiler* p = NULL;
+    EXPECT_EQ(0, pqrs_xml_compiler_initialize(&p, "data/invalid_xml/symbol_map_xml_no_name", "data/private_xml"));
+    pqrs_xml_compiler_reload(p);
+    EXPECT_EQ("No 'name' Attribute found within <symbol_map>.", std::string(pqrs_xml_compiler_get_error_message(p)));
+    EXPECT_EQ(1, pqrs_xml_compiler_get_error_count(p));
+    pqrs_xml_compiler_terminate(&p);
   }
   {
-    struct pqrs_xmlcompiler* p = NULL;
-    EXPECT_EQ(0, pqrs_xmlcompiler_initialize(&p, "data/invalid_xml/symbol_map_xml_no_value", "data/private_xml"));
-    pqrs_xmlcompiler_reload(p);
-    EXPECT_EQ("No 'value' Attribute found within <symbol_map>.", std::string(pqrs_xmlcompiler_get_error_message(p)));
-    EXPECT_EQ(1, pqrs_xmlcompiler_get_error_count(p));
-    pqrs_xmlcompiler_terminate(&p);
+    struct pqrs_xml_compiler* p = NULL;
+    EXPECT_EQ(0, pqrs_xml_compiler_initialize(&p, "data/invalid_xml/symbol_map_xml_no_value", "data/private_xml"));
+    pqrs_xml_compiler_reload(p);
+    EXPECT_EQ("No 'value' Attribute found within <symbol_map>.", std::string(pqrs_xml_compiler_get_error_message(p)));
+    EXPECT_EQ(1, pqrs_xml_compiler_get_error_count(p));
+    pqrs_xml_compiler_terminate(&p);
   }
 }
 
-TEST(pqrs_xmlcompiler_symbol_map, add)
+TEST(pqrs_xml_compiler_symbol_map, add)
 {
-  pqrs::xmlcompiler::symbol_map s;
+  pqrs::xml_compiler::symbol_map s;
   s.add("KeyCode", "SPACE", 36);
   s.add("KeyCode", "VK__AUTOINDEX__BEGIN__", 1024);
   s.add("KeyCode", "VK_NEW1");
@@ -59,9 +59,9 @@ TEST(pqrs_xmlcompiler_symbol_map, add)
   EXPECT_EQ(static_cast<uint32_t>(1025), s.get("KeyCode::VK_NEW2"));
 }
 
-TEST(pqrs_xmlcompiler_remapclasses_initialize_vector, add)
+TEST(pqrs_xml_compiler_remapclasses_initialize_vector, add)
 {
-  pqrs::xmlcompiler::remapclasses_initialize_vector v;
+  pqrs::xml_compiler::remapclasses_initialize_vector v;
   std::vector<uint32_t> v1;
   v.add(v1, 1);
 
@@ -94,9 +94,9 @@ TEST(pqrs_xmlcompiler_remapclasses_initialize_vector, add)
   EXPECT_EQ(expected, v.get());
 }
 
-TEST(pqrs_xmlcompiler_filter_vector, filter_vector)
+TEST(pqrs_xml_compiler_filter_vector, filter_vector)
 {
-  pqrs::xmlcompiler::symbol_map s;
+  pqrs::xml_compiler::symbol_map s;
   s.add("ApplicationType", "APP1", 1);
   s.add("ApplicationType", "APP2", 2);
   s.add("ApplicationType", "APP3", 3);
@@ -135,7 +135,7 @@ TEST(pqrs_xmlcompiler_filter_vector, filter_vector)
   boost::property_tree::read_xml(istream, pt, flags);
 
   for (auto& it : pt) {
-    pqrs::xmlcompiler::filter_vector fv(s, it.second);
+    pqrs::xml_compiler::filter_vector fv(s, it.second);
 
     std::vector<uint32_t> expected;
 

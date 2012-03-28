@@ -1,10 +1,10 @@
 #include <exception>
 #include <boost/algorithm/string.hpp>
-#include "pqrs/xmlcompiler.hpp"
+#include "pqrs/xml_compiler.hpp"
 
 namespace pqrs {
   void
-  xmlcompiler::reload_appdef_(void)
+  xml_compiler::reload_appdef_(void)
   {
     app_.clear();
 
@@ -23,7 +23,7 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::traverse_appdef_(const boost::property_tree::ptree& pt)
+  xml_compiler::traverse_appdef_(const boost::property_tree::ptree& pt)
   {
     for (auto& it : pt) {
       if (it.first != "appdef") {
@@ -55,7 +55,7 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::appdef::add_rule_equal(const std::string& v)
+  xml_compiler::appdef::add_rule_equal(const std::string& v)
   {
     if (! v.empty()) {
       rules_equal_.push_back(v);
@@ -63,7 +63,7 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::appdef::add_rule_prefix(const std::string& v)
+  xml_compiler::appdef::add_rule_prefix(const std::string& v)
   {
     if (! v.empty()) {
       rules_prefix_.push_back(v);
@@ -71,7 +71,7 @@ namespace pqrs {
   }
 
   bool
-  xmlcompiler::appdef::is_rules_matched(const std::string& identifier)
+  xml_compiler::appdef::is_rules_matched(const std::string& identifier)
   {
     for (auto& r : rules_equal_) {
       if (identifier == r) {

@@ -4,17 +4,17 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 #include "pqrs/string.hpp"
-#include "pqrs/xmlcompiler.hpp"
+#include "pqrs/xml_compiler.hpp"
 
 namespace pqrs {
-  xmlcompiler::xmlcompiler(const std::string& system_xml_directory, const std::string& private_xml_directory) :
+  xml_compiler::xml_compiler(const std::string& system_xml_directory, const std::string& private_xml_directory) :
     system_xml_directory_(system_xml_directory),
     private_xml_directory_(private_xml_directory),
     error_count_(0)
   {}
 
   void
-  xmlcompiler::reload(void)
+  xml_compiler::reload(void)
   {
     error_message_.clear();
     error_count_ = 0;
@@ -27,19 +27,19 @@ namespace pqrs {
   }
 
   const std::string&
-  xmlcompiler::get_error_message(void) const
+  xml_compiler::get_error_message(void) const
   {
     return error_message_;
   }
 
   int
-  xmlcompiler::get_error_count(void) const
+  xml_compiler::get_error_count(void) const
   {
     return error_count_;
   }
 
   void
-  xmlcompiler::read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<xml_file_path_ptr>& xml_file_path_ptrs)
+  xml_compiler::read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<xml_file_path_ptr>& xml_file_path_ptrs)
   {
     pt_ptrs.clear();
 
@@ -86,7 +86,7 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::set_error_message_(const std::string& message)
+  xml_compiler::set_error_message_(const std::string& message)
   {
     if (error_message_.empty()) {
       error_message_ = message;
@@ -95,7 +95,7 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::normalize_identifier(std::string& identifier)
+  xml_compiler::normalize_identifier(std::string& identifier)
   {
     boost::replace_all(identifier, ".", "_");
   }

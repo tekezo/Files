@@ -2,14 +2,14 @@
 #include <exception>
 #include <boost/algorithm/string.hpp>
 #include <boost/lexical_cast.hpp>
-#include "pqrs/xmlcompiler.hpp"
+#include "pqrs/xml_compiler.hpp"
 #include "pqrs/bridge.h"
 #include "pqrs/string.hpp"
 #include "pqrs/vector.hpp"
 
 namespace pqrs {
   void
-  xmlcompiler::reload_autogen_(void)
+  xml_compiler::reload_autogen_(void)
   {
     confignamemap_.clear();
     remapclasses_initialize_vector_.clear();
@@ -43,7 +43,7 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::add_configindex_and_keycode_to_symbol_map_(const boost::property_tree::ptree& pt, bool handle_notsave)
+  xml_compiler::add_configindex_and_keycode_to_symbol_map_(const boost::property_tree::ptree& pt, bool handle_notsave)
   {
     for (auto& it : pt) {
       if (it.first != "identifier") {
@@ -85,7 +85,7 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::traverse_identifier_(const boost::property_tree::ptree& pt)
+  xml_compiler::traverse_identifier_(const boost::property_tree::ptree& pt)
   {
     for (auto& it : pt) {
       if (it.first != "identifier") {
@@ -129,10 +129,10 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::traverse_autogen_(const boost::property_tree::ptree& pt,
-                                 const std::string& identifier,
-                                 const filter_vector& parent_filter_vector,
-                                 std::vector<uint32_t>& initialize_vector)
+  xml_compiler::traverse_autogen_(const boost::property_tree::ptree& pt,
+                                  const std::string& identifier,
+                                  const filter_vector& parent_filter_vector,
+                                  std::vector<uint32_t>& initialize_vector)
   {
     filter_vector fv(symbol_map_, pt);
 
@@ -166,9 +166,9 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::handle_autogen(const std::string& autogen,
-                              const filter_vector& filter_vector,
-                              std::vector<uint32_t>& initialize_vector)
+  xml_compiler::handle_autogen(const std::string& autogen,
+                               const filter_vector& filter_vector,
+                               std::vector<uint32_t>& initialize_vector)
   {
     // ------------------------------------------------------------
     // preprocess
@@ -348,14 +348,14 @@ namespace pqrs {
       }
     }
 
-    throw xmlcompiler_runtime_error("invalid <autogen>: " + autogen);
+    throw xml_compiler_runtime_error("invalid <autogen>: " + autogen);
   }
 
   void
-  xmlcompiler::add_to_initialize_vector(const std::string& params,
-                                        uint32_t type,
-                                        const filter_vector& filter_vector,
-                                        std::vector<uint32_t>& initialize_vector)
+  xml_compiler::add_to_initialize_vector(const std::string& params,
+                                         uint32_t type,
+                                         const filter_vector& filter_vector,
+                                         std::vector<uint32_t>& initialize_vector)
   {
     std::vector<uint32_t> vector;
     vector.push_back(type);
@@ -390,12 +390,12 @@ namespace pqrs {
         } else if (boost::starts_with(v, "Option::")) {
           newdatatype = BRIDGE_DATATYPE_OPTION;
         } else {
-          throw xmlcompiler_runtime_error("unknown datatype: " + v);
+          throw xml_compiler_runtime_error("unknown datatype: " + v);
         }
 
         if (datatype && datatype != newdatatype) {
           // Don't connect different data type. (Example: KeyCode::A | ModifierFlag::SHIFT_L)
-          throw xmlcompiler_runtime_error("invalid connect(|): " + params);
+          throw xml_compiler_runtime_error("invalid connect(|): " + params);
         }
 
         datatype = newdatatype;

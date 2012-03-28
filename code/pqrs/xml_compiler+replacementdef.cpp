@@ -1,9 +1,9 @@
 #include <exception>
-#include "pqrs/xmlcompiler.hpp"
+#include "pqrs/xml_compiler.hpp"
 
 namespace pqrs {
   void
-  xmlcompiler::reload_replacementdef_(void)
+  xml_compiler::reload_replacementdef_(void)
   {
     replacement_.clear();
 
@@ -22,7 +22,7 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::traverse_replacementdef_(const boost::property_tree::ptree& pt)
+  xml_compiler::traverse_replacementdef_(const boost::property_tree::ptree& pt)
   {
     for (auto& it : pt) {
       if (it.first != "replacementdef") {

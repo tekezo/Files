@@ -1,1 +1,0 @@
-../../pqrs/xmlcompiler+devicedef.cpp

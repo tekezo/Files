@@ -1,13 +1,13 @@
 #include <boost/algorithm/string.hpp>
 #include "pqrs/bridge.h"
 #include "pqrs/vector.hpp"
-#include "pqrs/xmlcompiler.hpp"
+#include "pqrs/xml_compiler.hpp"
 
 namespace pqrs {
-  xmlcompiler::filter_vector::filter_vector(void)
+  xml_compiler::filter_vector::filter_vector(void)
   {}
 
-  xmlcompiler::filter_vector::filter_vector(const symbol_map& symbol_map, const boost::property_tree::ptree& pt)
+  xml_compiler::filter_vector::filter_vector(const symbol_map& symbol_map, const boost::property_tree::ptree& pt)
   {
     for (auto& it : pt) {
       /*  */ if (it.first == "not") {
@@ -39,28 +39,28 @@ namespace pqrs {
   }
 
   std::vector<uint32_t>&
-  xmlcompiler::filter_vector::get(void)
+  xml_compiler::filter_vector::get(void)
   {
     return data_;
   }
 
   const std::vector<uint32_t>&
-  xmlcompiler::filter_vector::get(void) const
+  xml_compiler::filter_vector::get(void) const
   {
     return data_;
   }
 
   bool
-  xmlcompiler::filter_vector::empty(void) const
+  xml_compiler::filter_vector::empty(void) const
   {
     return data_.empty();
   }
 
   void
-  xmlcompiler::filter_vector::add(const symbol_map& symbol_map,
-                                  uint32_t filter_type,
-                                  const std::string& prefix,
-                                  const std::string& string)
+  xml_compiler::filter_vector::add(const symbol_map& symbol_map,
+                                   uint32_t filter_type,
+                                   const std::string& prefix,
+                                   const std::string& string)
   {
     std::vector<std::string> values;
     pqrs::string::split_by_comma(values, string);

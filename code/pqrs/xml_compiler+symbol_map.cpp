@@ -1,62 +1,62 @@
-#include "pqrs/xmlcompiler.hpp"
+#include "pqrs/xml_compiler.hpp"
 
 namespace pqrs {
-  xmlcompiler::symbol_map::symbol_map(void)
+  xml_compiler::symbol_map::symbol_map(void)
   {
     clear();
   }
 
   void
-  xmlcompiler::symbol_map::clear(void)
+  xml_compiler::symbol_map::clear(void)
   {
     symbol_map_.clear();
     symbol_map_["ConfigIndex::VK__AUTOINDEX__BEGIN__"] = 0;
   }
 
   uint32_t
-  xmlcompiler::symbol_map::get(const std::string& name) const
+  xml_compiler::symbol_map::get(const std::string& name) const
   {
     auto it = symbol_map_.find(name);
     if (it == symbol_map_.end()) {
-      throw xmlcompiler_runtime_error("Unknown symbol: " + name);
+      throw xml_compiler_runtime_error("Unknown symbol: " + name);
     }
 
     return it->second;
   }
 
   uint32_t
-  xmlcompiler::symbol_map::get(const std::string& type, const std::string& name) const
+  xml_compiler::symbol_map::get(const std::string& type, const std::string& name) const
   {
     return get(type + "::" + name);
   }
 
   bool
-  xmlcompiler::symbol_map::exists(const std::string& name) const
+  xml_compiler::symbol_map::exists(const std::string& name) const
   {
     return symbol_map_.find(name) != symbol_map_.end();
   }
 
   bool
-  xmlcompiler::symbol_map::exists(const std::string& type, const std::string& name) const
+  xml_compiler::symbol_map::exists(const std::string& type, const std::string& name) const
   {
     return exists(type + "::" + name);
   }
 
   void
-  xmlcompiler::symbol_map::add(const std::string& type, const std::string& name, uint32_t value)
+  xml_compiler::symbol_map::add(const std::string& type, const std::string& name, uint32_t value)
   {
     auto n = type + "::" + name;
 
     auto it = symbol_map_.find(n);
     if (it != symbol_map_.end()) {
-      xmlcompiler_logic_error("Symbol is already registered: " + n);
+      xml_compiler_logic_error("Symbol is already registered: " + n);
     }
 
     symbol_map_[n] = value;
   }
 
   void
-  xmlcompiler::symbol_map::add(const std::string& type, const std::string& name)
+  xml_compiler::symbol_map::add(const std::string& type, const std::string& name)
   {
     auto n = type + "::VK__AUTOINDEX__BEGIN__";
     auto v = get(n);
@@ -66,7 +66,7 @@ namespace pqrs {
 
   // ============================================================
   void
-  xmlcompiler::reload_symbol_map_(void)
+  xml_compiler::reload_symbol_map_(void)
   {
     symbol_map_.clear();
 
@@ -83,7 +83,7 @@ namespace pqrs {
   }
 
   void
-  xmlcompiler::traverse_symbol_map_(const boost::property_tree::ptree& pt)
+  xml_compiler::traverse_symbol_map_(const boost::property_tree::ptree& pt)
   {
     for (auto& it : pt) {
       if (it.first != "symbol_map") {

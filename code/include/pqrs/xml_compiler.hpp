@@ -1,5 +1,5 @@
-#ifndef PQRS_XMLCOMPILER_HPP
-#define PQRS_XMLCOMPILER_HPP
+#ifndef PQRS_XML_COMPILER_HPP
+#define PQRS_XML_COMPILER_HPP
 
 #include <string>
 #include <stdexcept>
@@ -11,9 +11,9 @@
 #include "pqrs/string.hpp"
 
 namespace pqrs {
-  class xmlcompiler {
+  class xml_compiler {
   public:
-    xmlcompiler(const std::string& system_xml_directory, const std::string& private_xml_directory);
+    xml_compiler(const std::string& system_xml_directory, const std::string& private_xml_directory);
 
     void reload(void);
 
@@ -23,13 +23,13 @@ namespace pqrs {
     static void normalize_identifier(std::string& identifier);
 
     // ============================================================
-    class xmlcompiler_runtime_error : public std::runtime_error {
+    class xml_compiler_runtime_error : public std::runtime_error {
     public:
-      xmlcompiler_runtime_error(const std::string& what) : std::runtime_error(what) {}
+      xml_compiler_runtime_error(const std::string& what) : std::runtime_error(what) {}
     };
-    class xmlcompiler_logic_error : public std::logic_error {
+    class xml_compiler_logic_error : public std::logic_error {
     public:
-      xmlcompiler_logic_error(const std::string& what) : std::logic_error(what) {}
+      xml_compiler_logic_error(const std::string& what) : std::logic_error(what) {}
     };
 
     class xml_file_path {
