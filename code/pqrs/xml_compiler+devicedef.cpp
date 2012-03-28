@@ -31,32 +31,54 @@ namespace pqrs {
         traverse_devicedef_(it.second);
       } else {
         std::string type;
-        std::string name;
+        const char* name_tag_name = NULL;
+        const char* value_tag_name = NULL;
+        boost::optional<std::string> name;
         boost::optional<uint32_t> value;
 
+        // ----------------------------------------
         if (it.first == "devicevendordef") {
-          type = "DeviceVendor";
+          type           = "DeviceVendor";
+          name_tag_name  = "vendorname";
+          value_tag_name = "vendorid";
+
         } else if (it.first == "deviceproductdef") {
-          type = "DeviceProduct";
+          type           = "DeviceProduct";
+          name_tag_name  = "productname";
+          value_tag_name = "productid";
+
         } else {
           throw xml_compiler_logic_error("unknown type in traverse_devicedef_");
         }
 
+        // ----------------------------------------
         for (auto& child : it.second) {
-          if (child.first == "vendorname" ||
-              child.first == "productname") {
+          if (child.first == name_tag_name) {
             name = boost::trim_copy(child.second.data());
-          } else if (child.first == "vendorid" ||
-                     child.first == "productid") {
+          } else if (child.first == value_tag_name) {
             value = pqrs::string::to_uint32_t(boost::trim_copy(child.second.data()));
           }
         }
 
-        if (name.empty() || ! value) {
+        // ----------------------------------------
+        // Validation
+        if (! name) {
+          set_error_message_(std::string("No <") + name_tag_name + "> within <" + it.first + ">.");
           continue;
         }
 
-        symbol_map_.add(type, name, *value);
+        if (name->empty()) {
+          set_error_message_(std::string("Empty <") + name_tag_name + "> within <" + it.first + ">.");
+          continue;
+        }
+
+        if (! value) {
+          set_error_message_(std::string("No <") + value_tag_name + "> within <" + it.first + ">.");
+          continue;
+        }
+
+        // ----------------------------------------
+        symbol_map_.add(type, *name, *value);
       }
     }
   }
