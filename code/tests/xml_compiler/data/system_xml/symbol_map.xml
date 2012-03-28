@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <root>
+  {{SYMBOL_MAP_REPLACEMENT}}
   <symbol_map type="ApplicationType" name="UNKNOWN" value="0" />
   <symbol_map type="ApplicationType" name="VK__AUTOINDEX__BEGIN__" value="1" />
   <symbol_map type="ConsumerKeyCode" name="BRIGHTNESS_DOWN" value="3" />

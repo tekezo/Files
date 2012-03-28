@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
 <root>
+  <replacementdef>
+    <replacementname>SYMBOL_MAP_REPLACEMENT</replacementname>
+    <replacementvalue></replacementvalue>
+  </replacementdef>
+
   <!-- ============================================================ -->
   <replacementdef>
     <replacementname>VI_H</replacementname>
