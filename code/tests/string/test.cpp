@@ -3,6 +3,19 @@
 #include <boost/lexical_cast.hpp>
 #include "pqrs/string.hpp"
 
+TEST(pqrs_string, string_from_file)
+{
+  std::string actual;
+  int error = 0;
+  error = pqrs::string::string_from_file(actual, "data/sample");
+  EXPECT_EQ("{{AAA}} {{BBB}} {{ CCC }}\n", actual);
+  EXPECT_EQ(0, error);
+
+  error = pqrs::string::string_from_file(actual, "data/noexists");
+  EXPECT_EQ("", actual);
+  EXPECT_EQ(-1, error);
+}
+
 TEST(pqrs_string, string_by_replacing_double_curly_braces_from_file)
 {
   pqrs::string::replacement replacement;
@@ -26,7 +39,7 @@ TEST(pqrs_string, string_by_replacing_double_curly_braces_from_file)
       std::string key = std::string("TARGET") + boost::lexical_cast<std::string>(i);
       replacement[key] = "REPLACEMENT";
     }
-    const char* filepath = "/Library/org.pqrs/KeyRemap4MacBook/prefpane/checkbox.xml";
+    const char* filepath = "data/checkbox.xml";
     pqrs::string::string_by_replacing_double_curly_braces_from_file(actual, filepath, replacement);
   }
 }

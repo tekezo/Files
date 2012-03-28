@@ -68,7 +68,11 @@ namespace pqrs {
         int flags = boost::property_tree::xml_parser::no_comments;
 
         std::string xml;
-        pqrs::string::string_by_replacing_double_curly_braces_from_file(xml, path.c_str(), replacement_);
+        if (replacement_.empty()) {
+          pqrs::string::string_from_file(xml, path.c_str());
+        } else {
+          pqrs::string::string_by_replacing_double_curly_braces_from_file(xml, path.c_str(), replacement_);
+        }
         std::stringstream istream(xml, std::stringstream::in);
         boost::property_tree::read_xml(istream, *pt_ptr, flags);
 

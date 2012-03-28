@@ -9,6 +9,8 @@
 
 namespace pqrs {
   namespace string {
+    int string_from_file(std::string& string, const char* filename);
+
     typedef std::tr1::unordered_map<std::string, std::string> replacement;
 
     int string_by_replacing_double_curly_braces_from_file(std::string& string,

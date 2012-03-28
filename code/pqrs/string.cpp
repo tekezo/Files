@@ -66,6 +66,39 @@ namespace pqrs {
     }
 
     int
+    string_from_file(std::string& string, const char* filename)
+    {
+      string.clear();
+
+      // ----------------------------------------
+      // Validate parameters.
+      if (! filename) {
+        return -1;
+      }
+
+      // ----------------------------------------
+      std::ifstream istream(filename);
+      if (! istream) {
+        return -1;
+      }
+
+      // ----------------------------------------
+      // Get length of file and call string.reserve with file length.
+      istream.seekg(0, std::ios::end);
+      string.reserve(istream.tellg());
+      istream.seekg(0, std::ios::beg);
+
+      for (;;) {
+        int c = istream.get();
+        if (! istream.good()) break;
+
+        string.push_back(c);
+      }
+
+      return 0;
+    }
+
+    int
     string_by_replacing_double_curly_braces_from_file(std::string& string,
                                                       const char* filename,
                                                       replacement replacement)
@@ -75,7 +108,7 @@ namespace pqrs {
       // ----------------------------------------
       // Validate parameters.
       if (! filename) {
-        return 0;
+        return -1;
       }
 
       // ----------------------------------------
