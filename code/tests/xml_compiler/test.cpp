@@ -88,19 +88,25 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_no_type");
     xml_compiler.reload();
-    EXPECT_EQ("No 'type' Attribute found within <symbol_map>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("No 'type' Attribute within <symbol_map>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_empty_type");
+    xml_compiler.reload();
+    EXPECT_EQ("Empty 'type' Attribute within <symbol_map>.", std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_no_name");
     xml_compiler.reload();
-    EXPECT_EQ("No 'name' Attribute found within <symbol_map>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("No 'name' Attribute within <symbol_map>.", std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_no_value");
     xml_compiler.reload();
-    EXPECT_EQ("No 'value' Attribute found within <symbol_map>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("No 'value' Attribute within <symbol_map>.", std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 

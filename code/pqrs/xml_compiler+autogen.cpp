@@ -24,7 +24,7 @@ namespace pqrs {
     std::vector<ptree_ptr> pt_ptrs;
     read_xmls_(pt_ptrs, xml_file_path_ptrs);
 
-    for (auto pt_ptr : pt_ptrs) {
+    for (auto& pt_ptr : pt_ptrs) {
       // add_configindex_and_keycode_to_symbol_map_
       //   1st loop: <identifier>notsave.*</identifier>
       //   2nd loop: other <identifier>
@@ -35,7 +35,7 @@ namespace pqrs {
       add_configindex_and_keycode_to_symbol_map_(*pt_ptr, false);
     }
 
-    for (auto pt_ptr : pt_ptrs) {
+    for (auto& pt_ptr : pt_ptrs) {
       traverse_identifier_(*pt_ptr);
     }
 

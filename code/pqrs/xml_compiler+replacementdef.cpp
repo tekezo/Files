@@ -16,7 +16,7 @@ namespace pqrs {
     std::vector<ptree_ptr> pt_ptrs;
     read_xmls_(pt_ptrs, xml_file_path_ptrs);
 
-    for (auto pt_ptr : pt_ptrs) {
+    for (auto& pt_ptr : pt_ptrs) {
       traverse_replacementdef_(*pt_ptr);
     }
   }

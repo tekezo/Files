@@ -82,7 +82,7 @@ namespace pqrs {
     std::vector<ptree_ptr> pt_ptrs;
     read_xmls_(pt_ptrs, xml_file_path_ptrs);
 
-    for (auto pt_ptr : pt_ptrs) {
+    for (auto& pt_ptr : pt_ptrs) {
       traverse_symbol_map_(*pt_ptr);
     }
   }
@@ -95,25 +95,38 @@ namespace pqrs {
         traverse_symbol_map_(it.second);
 
       } else {
-        auto type = it.second.get_optional<std::string>("<xmlattr>.type");
-        if (! type) {
-          set_error_message_("No 'type' Attribute found within <symbol_map>.");
+        std::vector<boost::optional<std::string> > vector;
+        const char* attrs[] = {
+          "<xmlattr>.type",
+          "<xmlattr>.name",
+          "<xmlattr>.value",
+        };
+        for (auto& attr : attrs) {
+          const char* attrname = attr + strlen("<xmlattr>.");
+
+          auto v = it.second.get_optional<std::string>(attr);
+          if (! v) {
+            set_error_message_(std::string("No '") + attrname + "' Attribute within <symbol_map>.");
+            break;
+          }
+          if (v->empty()) {
+            set_error_message_(std::string("Empty '") + attrname + "' Attribute within <symbol_map>.");
+            continue;
+          }
+          vector.push_back(v);
+        }
+        // An error has occured when vector.size != attrs.size.
+        if (vector.size() != sizeof(attrs) / sizeof(attrs[0])) {
           continue;
         }
 
-        auto name = it.second.get_optional<std::string>("<xmlattr>.name");
-        if (! name) {
-          set_error_message_("No 'name' Attribute found within <symbol_map>.");
-          continue;
-        }
-
-        auto value = pqrs::string::to_uint32_t(it.second.get_optional<std::string>("<xmlattr>.value"));
+        auto value = pqrs::string::to_uint32_t(vector[2]);
         if (! value) {
-          set_error_message_("No 'value' Attribute found within <symbol_map>.");
+          set_error_message_("Invalid 'value' Attribute within <symbol_map>: " + *(vector[2]));
           continue;
         }
 
-        symbol_map_.add(*type, *name, *value);
+        symbol_map_.add(*(vector[0]), *(vector[1]), *value);
       }
     }
   }
