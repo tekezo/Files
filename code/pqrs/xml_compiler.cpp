@@ -39,7 +39,7 @@ namespace pqrs {
   }
 
   boost::optional<uint32_t>
-  xml_compiler::find_symbol_map(const std::string& name) const
+  xml_compiler::get_symbol_map_value(const std::string& name) const
   {
     return symbol_map_.get_optional(name);
   }

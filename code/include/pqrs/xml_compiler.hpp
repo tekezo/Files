@@ -20,7 +20,7 @@ namespace pqrs {
     const std::string& get_error_message(void) const;
     int get_error_count(void) const;
 
-    boost::optional<uint32_t> find_symbol_map(const std::string& name) const;
+    boost::optional<uint32_t> get_symbol_map_value(const std::string& name) const;
 
     static void normalize_identifier(std::string& identifier);
 
@@ -68,9 +68,6 @@ namespace pqrs {
 
       boost::optional<uint32_t> get_optional(const std::string& name) const;
       boost::optional<uint32_t> get_optional(const std::string& type, const std::string& name) const;
-
-      bool exists(const std::string& name) const;
-      bool exists(const std::string& type, const std::string& name) const;
 
       // Call add("KeyCode", "RETURN", 36) to register "KeyCode::RETURN = 36".
       void add(const std::string& type, const std::string& name, uint32_t value);

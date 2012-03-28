@@ -56,10 +56,7 @@ namespace pqrs {
           continue;
         }
 
-        // Adding to symbol_map_ if name is not found.
-        if (! symbol_map_.exists(type, name)) {
-          symbol_map_.add(type, name, *value);
-        }
+        symbol_map_.add(type, name, *value);
       }
     }
   }

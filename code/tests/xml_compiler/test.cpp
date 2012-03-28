@@ -8,8 +8,8 @@ TEST(pqrs_xml_compiler, reload)
 {
   pqrs::xml_compiler xml_compiler("data/system_xml", "data/private_xml");
   xml_compiler.reload();
-  EXPECT_EQ(boost::optional<uint32_t>(123), xml_compiler.find_symbol_map("KeyCode::MY_LANG_KEY"));
-  EXPECT_EQ(boost::optional<uint32_t>(2), xml_compiler.find_symbol_map("ConsumerKeyCode::BRIGHTNESS_UP"));
+  EXPECT_EQ(boost::optional<uint32_t>(123), xml_compiler.get_symbol_map_value("KeyCode::MY_LANG_KEY"));
+  EXPECT_EQ(boost::optional<uint32_t>(2), xml_compiler.get_symbol_map_value("ConsumerKeyCode::BRIGHTNESS_UP"));
 }
 
 TEST(pqrs_xml_compiler, reload_bindings_clang)
