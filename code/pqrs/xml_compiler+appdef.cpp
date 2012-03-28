@@ -42,12 +42,16 @@ namespace pqrs {
           }
         }
 
-        if ((newappdef->get_name()).empty()) {
+        if (! newappdef->get_name()) {
+          set_error_message_("No <appname> within <appdef>.");
+          continue;
+        }
+        if (newappdef->get_name()->empty()) {
           set_error_message_("Empty <appname> within <appdef>.");
           continue;
         }
 
-        symbol_map_.add("ApplicationType", newappdef->get_name());
+        symbol_map_.add("ApplicationType", *(newappdef->get_name()));
       }
     }
   }

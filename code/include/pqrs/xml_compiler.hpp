@@ -79,14 +79,14 @@ namespace pqrs {
 
     class appdef {
     public:
-      const std::string& get_name(void) const { return name_; }
+      const boost::optional<std::string>& get_name(void) const { return name_; }
       void set_name(const std::string& v) { name_ = v; }
       void add_rule_equal(const std::string& v);
       void add_rule_prefix(const std::string& v);
       bool is_rules_matched(const std::string& identifier);
 
     private:
-      std::string name_;
+      boost::optional<std::string> name_;
       std::vector<std::string> rules_equal_;
       std::vector<std::string> rules_prefix_;
     };

@@ -107,9 +107,24 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   // ------------------------------------------------------------
   // appdef.xml
   {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/appdef_no_name");
+    xml_compiler.reload();
+    EXPECT_EQ("No <appname> within <appdef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+  {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/appdef_empty_name");
     xml_compiler.reload();
     EXPECT_EQ("Empty <appname> within <appdef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+
+  // ------------------------------------------------------------
+  // devicevendordef.xml
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/devicevendordef_no_name");
+    xml_compiler.reload();
+    EXPECT_EQ("No <vendorname> within <devicevendordef>.", std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 }
