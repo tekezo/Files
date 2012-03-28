@@ -42,6 +42,15 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   }
 
   // ------------------------------------------------------------
+  // dup identifier
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/dup_identifier");
+    xml_compiler.reload();
+    EXPECT_EQ("Duplicated identifier: private_swap_space_and_tab", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+
+  // ------------------------------------------------------------
   // replacementdef.xml
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_no_name", "data/private_xml");
@@ -112,12 +121,12 @@ TEST(pqrs_xml_compiler_remapclasses_initialize_vector, add)
 {
   pqrs::xml_compiler::remapclasses_initialize_vector v;
   std::vector<uint32_t> v1;
-  v.add(v1, 1);
+  v.add(v1, 1, "remap.empty");
 
   v1.push_back(1);
   v1.push_back(2);
   v1.push_back(3);
-  v.add(v1, 3);
+  v.add(v1, 3, "remap.three_items");
 
   v.freeze();
 

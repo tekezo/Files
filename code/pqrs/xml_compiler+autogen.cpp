@@ -88,42 +88,47 @@ namespace pqrs {
   xml_compiler::traverse_identifier_(const boost::property_tree::ptree& pt)
   {
     for (auto& it : pt) {
-      if (it.first != "identifier") {
-        traverse_identifier_(it.second);
+      try {
+        if (it.first != "identifier") {
+          traverse_identifier_(it.second);
 
-      } else {
-        auto attr_essential = it.second.get_optional<std::string>("<xmlattr>.essential");
-        if (attr_essential) {
-          continue;
-        }
-
-        std::vector<uint32_t> initialize_vector;
-        auto raw_identifier = boost::trim_copy(it.second.data());
-        auto identifier = raw_identifier;
-        normalize_identifier(identifier);
-
-        auto attr_vk_config = it.second.get_optional<std::string>("<xmlattr>.essential");
-        if (attr_vk_config) {
-          initialize_vector.push_back(5); // count
-          initialize_vector.push_back(BRIDGE_VK_CONFIG);
-
-          const char* names[] = {
-            "VK_CONFIG_TOGGLE_",
-            "VK_CONFIG_FORCE_ON_",
-            "VK_CONFIG_FORCE_OFF_",
-            "VK_CONFIG_SYNC_KEYDOWNUP_",
-          };
-          for (auto& n : names) {
-            initialize_vector.push_back(symbol_map_.get("KeyCode", std::string(n) + identifier));
+        } else {
+          auto attr_essential = it.second.get_optional<std::string>("<xmlattr>.essential");
+          if (attr_essential) {
+            continue;
           }
+
+          std::vector<uint32_t> initialize_vector;
+          auto raw_identifier = boost::trim_copy(it.second.data());
+          auto identifier = raw_identifier;
+          normalize_identifier(identifier);
+
+          auto attr_vk_config = it.second.get_optional<std::string>("<xmlattr>.essential");
+          if (attr_vk_config) {
+            initialize_vector.push_back(5); // count
+            initialize_vector.push_back(BRIDGE_VK_CONFIG);
+
+            const char* names[] = {
+              "VK_CONFIG_TOGGLE_",
+              "VK_CONFIG_FORCE_ON_",
+              "VK_CONFIG_FORCE_OFF_",
+              "VK_CONFIG_SYNC_KEYDOWNUP_",
+            };
+            for (auto& n : names) {
+              initialize_vector.push_back(symbol_map_.get("KeyCode", std::string(n) + identifier));
+            }
+          }
+
+          filter_vector fv;
+          traverse_autogen_(pt, identifier, fv, initialize_vector);
+
+          uint32_t configindex = symbol_map_.get("ConfigIndex", identifier);
+          remapclasses_initialize_vector_.add(initialize_vector, configindex, identifier);
+          confignamemap_[configindex] = raw_identifier;
         }
 
-        filter_vector fv;
-        traverse_autogen_(pt, identifier, fv, initialize_vector);
-
-        uint32_t configindex = symbol_map_.get("ConfigIndex", identifier);
-        remapclasses_initialize_vector_.add(initialize_vector, configindex);
-        confignamemap_[configindex] = raw_identifier;
+      } catch (std::exception& e) {
+        set_error_message_(e.what());
       }
     }
   }
@@ -149,23 +154,25 @@ namespace pqrs {
 
     // ----------------------------------------
     for (auto& it : pt) {
-      if (it.first == "autogen") {
-        std::string autogen = boost::trim_copy(it.second.data());
+      try {
+        if (it.first != "autogen") {
+          traverse_autogen_(it.second, identifier, fv, initialize_vector);
 
-        // drop whitespaces for preprocessor. (for FROMKEYCODE_HOME, etc)
-        // Note: preserve space when --ShowStatusMessage--.
-        if (! boost::starts_with(autogen, "--ShowStatusMessage--")) {
-          pqrs::string::remove_whitespaces(autogen);
-        }
+        } else {
+          std::string autogen = boost::trim_copy(it.second.data());
 
-        try {
+          // drop whitespaces for preprocessor. (for FROMKEYCODE_HOME, etc)
+          // Note: preserve space when --ShowStatusMessage--.
+          if (! boost::starts_with(autogen, "--ShowStatusMessage--")) {
+            pqrs::string::remove_whitespaces(autogen);
+          }
+
           handle_autogen(autogen, fv, initialize_vector);
-        } catch (std::exception& e) {
-          set_error_message_(e.what());
         }
-      }
 
-      traverse_autogen_(it.second, identifier, fv, initialize_vector);
+      } catch (std::exception& e) {
+        set_error_message_(e.what());
+      }
     }
   }
 

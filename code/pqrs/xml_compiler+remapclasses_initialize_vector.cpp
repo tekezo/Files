@@ -31,13 +31,15 @@ namespace pqrs {
   }
 
   void
-  xml_compiler::remapclasses_initialize_vector::add(const std::vector<uint32_t>& v, uint32_t configindex)
+  xml_compiler::remapclasses_initialize_vector::add(const std::vector<uint32_t>& v,
+                                                    uint32_t configindex,
+                                                    const std::string& identifier)
   {
     if (freezed_) {
       throw xml_compiler_logic_error("remapclasses_initialize_vector is freezed.");
     }
     if (is_configindex_added_.find(configindex) != is_configindex_added_.end()) {
-      throw xml_compiler_runtime_error("configindex is already added to remapclasses_initialize_vector.");
+      throw xml_compiler_runtime_error(std::string("Duplicated identifier: ") + identifier);
     }
 
     // size
@@ -65,7 +67,7 @@ namespace pqrs {
     for (uint32_t i = 0; i < max_configindex_; ++i) {
       if (is_configindex_added_.find(i) == is_configindex_added_.end()) {
         std::vector<uint32_t> v;
-        add(v, i);
+        add(v, i, "");
       }
     }
 
