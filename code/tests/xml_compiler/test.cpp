@@ -61,7 +61,7 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_empty_name", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("Empty <replacementname>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("Empty <replacementname> within <replacementdef>.", std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
@@ -101,6 +101,15 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_no_value");
     xml_compiler.reload();
     EXPECT_EQ("No 'value' Attribute found within <symbol_map>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+
+  // ------------------------------------------------------------
+  // appdef.xml
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/appdef_empty_name");
+    xml_compiler.reload();
+    EXPECT_EQ("Empty <appname> within <appdef>.", std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 }

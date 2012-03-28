@@ -43,7 +43,7 @@ namespace pqrs {
         }
 
         if ((newappdef->get_name()).empty()) {
-          set_error_message_("Empty <appname>.");
+          set_error_message_("Empty <appname> within <appdef>.");
           continue;
         }
 
