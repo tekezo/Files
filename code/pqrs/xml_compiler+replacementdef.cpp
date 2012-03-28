@@ -42,6 +42,10 @@ namespace pqrs {
           set_error_message_("No 'replacementname' within <replacementdef>.");
           continue;
         }
+        if (name->empty()) {
+          set_error_message_("Invalid 'replacementname'.");
+          continue;
+        }
         if (! value) {
           set_error_message_("No 'replacementvalue' within <replacementdef>.");
           continue;
