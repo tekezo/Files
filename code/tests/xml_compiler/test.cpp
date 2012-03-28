@@ -28,7 +28,7 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/broken_xml");
     xml_compiler.reload();
-    EXPECT_EQ("<private.xml>(4): expected element name", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("<private.xml>(4): expected element name", xml_compiler.get_error_message());
     EXPECT_EQ(boost::optional<uint32_t>(2), xml_compiler.get_symbol_map_value("ConsumerKeyCode::BRIGHTNESS_UP"));
   }
 
@@ -37,7 +37,7 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/unknown_symbol_map");
     xml_compiler.reload();
-    EXPECT_EQ("Unknown symbol: KeyCode::MY_UNKNOWN_KEY", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("Unknown symbol: KeyCode::MY_UNKNOWN_KEY", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 
@@ -46,7 +46,7 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/dup_identifier");
     xml_compiler.reload();
-    EXPECT_EQ("Duplicated identifier: private_swap_space_and_tab", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("Duplicated identifier: private_swap_space_and_tab", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 
@@ -55,31 +55,31 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_no_name", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("No <replacementname> within <replacementdef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("No <replacementname> within <replacementdef>.", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_empty_name", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("Empty <replacementname> within <replacementdef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("Empty <replacementname> within <replacementdef>.", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_invalid_name1", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("Do not use '{{' and '}}' within <replacementname>: VI{{_J", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("Do not use '{{' and '}}' within <replacementname>: VI{{_J", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_invalid_name2", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("Do not use '{{' and '}}' within <replacementname>: VI_}}J", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("Do not use '{{' and '}}' within <replacementname>: VI_}}J", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_no_value", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("No <replacementvalue> within <replacementdef>: VI_J", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("No <replacementvalue> within <replacementdef>: VI_J", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 
@@ -88,43 +88,43 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_no_type");
     xml_compiler.reload();
-    EXPECT_EQ("No 'type' Attribute within <symbol_map>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("No 'type' Attribute within <symbol_map>.", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_empty_type");
     xml_compiler.reload();
-    EXPECT_EQ("Empty 'type' Attribute within <symbol_map>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("Empty 'type' Attribute within <symbol_map>.", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_no_name");
     xml_compiler.reload();
-    EXPECT_EQ("No 'name' Attribute within <symbol_map>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("No 'name' Attribute within <symbol_map>.", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_empty_name");
     xml_compiler.reload();
-    EXPECT_EQ("Empty 'name' Attribute within <symbol_map>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("Empty 'name' Attribute within <symbol_map>.", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_no_value");
     xml_compiler.reload();
-    EXPECT_EQ("No 'value' Attribute within <symbol_map>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("No 'value' Attribute within <symbol_map>.", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_empty_value");
     xml_compiler.reload();
-    EXPECT_EQ("Empty 'value' Attribute within <symbol_map>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("Empty 'value' Attribute within <symbol_map>.", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_invalid_value");
     xml_compiler.reload();
-    EXPECT_EQ("Invalid 'value' Attribute within <symbol_map>: XXX", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ("Invalid 'value' Attribute within <symbol_map>: XXX", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 
