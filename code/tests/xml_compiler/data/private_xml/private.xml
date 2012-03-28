@@ -1,427 +1,51 @@
 <?xml version="1.0"?>
 <root>
 
+  <!-- ============================================================ -->
+  <!-- appdef -->
+
+  <appdef>
+    <appname>APPSTORE</appname>
+    <equal>com.apple.appstore</equal>
+  </appdef>
+
+  <!-- overwrite system value -->
+  <appdef>
+    <appname>TERMINAL</appname>
+    <equal>com.example.terminal</equal>
+  </appdef>
+
+  <!-- ============================================================ -->
+  <!-- devicevendordef, deviceproductdef -->
+
+  <devicevendordef>
+    <vendorname>HEWLETT_PACKARD</vendorname>
+    <vendorid>0x03f0</vendorid>
+  </devicevendordef>
+
   <deviceproductdef>
-    <productname>
-      MY_MACBOOK_PRO
-    </productname>
-    <productid>
-      0x0245
-    </productid>
+    <productname>MY_HP_KEYBOARD</productname>
+    <productid>0x0224</productid>
   </deviceproductdef>
 
-  <item>
-    <name>sample</name>
-
-    <item>
-      <name>Swap Space and Tab</name>
-      <identifier>private.swap_space_and_tab</identifier>
-      <autogen>--KeyToKey-- KeyCode::SPACE, KeyCode::TAB</autogen>
-      <autogen>--KeyToKey-- KeyCode::TAB, KeyCode::SPACE</autogen>
-    </item>
-
-    <item>
-      <name>My Excel Hacks (effective only in Excel)</name>
-      <appendix>Change Command+2 to Ctrl+U</appendix>
-      <appendix>Change Control+A to Home</appendix>
-      <appendix>Change Control+E to End</appendix>
-      <identifier>private.app_excel_command2_to_ctrlu</identifier>
-      <only>EXCEL</only>
-      <autogen>--KeyToKey-- KeyCode::KEY_2, VK_COMMAND, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::A, VK_CONTROL, KeyCode::HOME</autogen>
-      <autogen>--KeyToKey-- KeyCode::E, VK_CONTROL, KeyCode::END</autogen>
-    </item>
-
-    <item>
-      <name>My TrackPad LeftClick Hack</name>
-      <appendix>Command+LeftClick to F12 (only in MacBookPro2,1 Trackpad)</appendix>
-      <identifier>private.pointing_leftclick2f12_trackpad</identifier>
-      <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x021a</device_only>
-      <autogen>--PointingButtonToKey-- PointingButton::LEFT, VK_COMMAND, KeyCode::F12</autogen>
-    </item>
-
-    <!-- ============================================================ -->
-    <!-- An example of appdef -->
-    <appdef>
-      <appname>APPSTORE</appname>
-      <equal>com.apple.appstore</equal>
-    </appdef>
-
-    <item>
-      <name>Space to Tab on App Store.app</name>
-      <identifier>private.appdef</identifier>
-      <only>APPSTORE</only>
-      <autogen>--KeyToKey-- KeyCode::SPACE, KeyCode::TAB</autogen>
-    </item>
-
-    <!-- ============================================================ -->
-    <!-- An example of devicevendordef,deviceproductdef -->
-    <devicevendordef>
-      <vendorname>HEWLETT_PACKARD</vendorname>
-      <vendorid>0x03f0</vendorid>
-    </devicevendordef>
-
-    <deviceproductdef>
-      <productname>MY_HP_KEYBOARD</productname>
-      <productid>0x0224</productid>
-    </deviceproductdef>
-
-    <item>
-      <name>Space to Tab on MY_HP_KEYBOARD</name>
-      <identifier>private.deviceproductdef</identifier>
-      <device_only>DeviceVendor::HEWLETT_PACKARD, DeviceProduct::MY_HP_KEYBOARD</device_only>
-      <autogen>--KeyToKey-- KeyCode::SPACE, KeyCode::TAB</autogen>
-    </item>
-
-    <!-- ============================================================ -->
-  </item>
-
-  <item>
-    <name>private</name>
-
-    <list>
-      <appdef>
-        <appname>
-          Activity Monitor
-        </appname>
-        <equal>
-          com.apple.ActivityMonitor
-        </equal>
-      </appdef>
-
-      <item>
-        <name>Disable ScrollWheel on Magic Mouse</name>
-        <identifier>private.dropscrollwheel_0x05ac_0x030d</identifier>
-        <block>
-          <device_only>DeviceVendor::APPLE_INC,DeviceProduct::MAGIC_MOUSE</device_only>
-          <autogen>--DropScrollWheel--</autogen>
-        </block>
-      </item>
-
-      <item>
-        <name>Control+Scroll (Left/Right) to Move a space</name>
-        <appendix>(Change Control+Left Scroll to Control+Left Arrow)</appendix>
-        <appendix>(Change Control+Right Scroll to Control+Right Arrow)</appendix>
-        <identifier>private.controlscroll_to_controlarrow</identifier>
-        <autogen>--ScrollWheelToKey-- ScrollWheel::LEFT,  VK_CONTROL | ModifierFlag::NONE,
-          KeyCode::CURSOR_LEFT,  VK_CONTROL</autogen>
-        <autogen>--ScrollWheelToKey-- ScrollWheel::RIGHT, VK_CONTROL | ModifierFlag::NONE,
-          KeyCode::CURSOR_RIGHT, VK_CONTROL</autogen>
-      </item>
-
-      <item>
-        <name>ActivityMonitor Hack</name>
-        <appendix>Command+Q to Command+W</appendix>
-        <only>Activity Monitor</only>
-        <identifier>private.activitymonitor_hack</identifier>
-        <autogen>--KeyToKey-- KeyCode::Q, VK_COMMAND | ModifierFlag::NONE, KeyCode::W, VK_COMMAND</autogen>
-      </item>
-
-      <item>
-        <name>My LibreOffice Hacks</name>
-        <appendix>Change Command+2 to F2</appendix>
-        <identifier>private.libreoffice_hack</identifier>
-        <only>LIBREOFFICE</only>
-        <autogen>--KeyToKey-- KeyCode::KEY_2, VK_COMMAND, KeyCode::F2</autogen>
-        <autogen>--KeyToKey-- KeyCode::A, VK_CONTROL, KeyCode::HOME</autogen>
-        <autogen>--KeyToKey-- KeyCode::E, VK_CONTROL, KeyCode::END</autogen>
-      </item>
-
-      <item>
-        <name>My Excel Hacks (effective only in Excel)</name>
-        <appendix>Change Command+2 to Ctrl+U</appendix>
-        <identifier>private.myexcelhacks</identifier>
-        <only>EXCEL</only>
-        <autogen>--KeyToKey-- KeyCode::KEY_2, VK_COMMAND | ModifierFlag::NONE, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
-        <autogen>--KeyToKey-- KeyCode::KEY_2, VK_OPTION  | ModifierFlag::NONE, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
-        <autogen>--KeyToKey-- KeyCode::V, VK_OPTION | ModifierFlag::NONE, KeyCode::V, ModifierFlag::COMMAND_L, KeyCode::RETURN</autogen>
-      </item>
-
-      <item>
-        <name>My Word Hacks (effective only in Excel)</name>
-        <identifier>private.myword</identifier>
-        <only>WORD</only>
-        <autogen>--ConsumerToKey-- ConsumerKeyCode::EJECT,
-          KeyCode::C, ModifierFlag::COMMAND_L,
-          KeyCode::VK_WAIT_100MS,
-          KeyCode::VK_WAIT_100MS,
-          KeyCode::F8, ModifierFlag::COMMAND_L,
-          KeyCode::VK_WAIT_100MS,
-          KeyCode::VK_WAIT_100MS,
-          KeyCode::U, ModifierFlag::CONTROL_L,
-          KeyCode::VK_WAIT_100MS,
-          KeyCode::VK_WAIT_100MS,
-          KeyCode::V, ModifierFlag::COMMAND_L,
-          KeyCode::RETURN,
-          KeyCode::VK_WAIT_100MS,
-          KeyCode::F2, ModifierFlag::OPTION_L
-        </autogen>
-      </item>
-
-      <item>
-        <name>My Office Hacks</name>
-        <appendix>Change Control+A to Home</appendix>
-        <appendix>Change Control+E to End</appendix>
-        <identifier>private.app_office_hack</identifier>
-        <only>EXCEL, POWERPOINT, WORD</only>
-        <autogen>--KeyToKey-- KeyCode::A, VK_CONTROL, KeyCode::HOME</autogen>
-        <autogen>--KeyToKey-- KeyCode::E, VK_CONTROL, KeyCode::END</autogen>
-      </item>
-
-      <item>
-        <name>My TrackPad LeftClick Hack</name>
-        <appendix>LeftClick to F13 (only in MacBookPro2,1 Trackpad)</appendix>
-        <identifier>private.pointing_leftclick2f13_trackpad</identifier>
-        <device_only>
-          DeviceVendor::APPLE_COMPUTER,
-          DeviceProduct::MY_MACBOOK_PRO
-        </device_only>
-        <autogen>--PointingButtonToPointingButton-- PointingButton::LEFT, ModifierFlag::FN, PointingButton::LEFT</autogen>
-        <autogen>--PointingButtonToKey-- PointingButton::LEFT,
-          KeyCode::VK_CHANGE_INPUTMODE_ENGLISH, KeyCode::F13, Option::NOREPEAT</autogen>
-      </item>
-
-      <item>
-        <name>LimeChat Hacks</name>
-        <appendix>Disable Command+W</appendix>
-        <identifier>private.limechathacks</identifier>
-        <only>LIMECHAT</only>
-        <autogen>--KeyToKey-- KeyCode::W, VK_COMMAND, KeyCode::VK_NONE</autogen>
-      </item>
-
-      <item>
-        <name>Terminal Hacks</name>
-        <appendix>Disable Command+F</appendix>
-        <appendix>Disable Command+I</appendix>
-        <appendix>Disable Command+O</appendix>
-        <identifier>private.terminalhack</identifier>
-        <only>TERMINAL</only>
-        <autogen>--KeyToKey-- KeyCode::F, VK_COMMAND, KeyCode::VK_NONE</autogen>
-        <autogen>--KeyToKey-- KeyCode::I, VK_COMMAND, KeyCode::VK_NONE</autogen>
-        <autogen>--KeyToKey-- KeyCode::O, VK_COMMAND, KeyCode::VK_NONE</autogen>
-      </item>
-
-      <item>
-        <name>Emacs Hacks</name>
-        <identifier>private.emacshack</identifier>
-        <only>EMACS</only>
-      </item>
-
-      <item>
-        <name>Eclipse Hacks</name>
-        <identifier>private.eclipse</identifier>
-        <only>ECLIPSE</only>
-        <autogen>--KeyToKey-- KeyCode::R, VK_COMMAND | ModifierFlag::NONE, KeyCode::F5</autogen>
-      </item>
-
-      <item>
-        <name>RDC Hacks</name>
-        <identifier>private.rdchacks</identifier>
-        <only>REMOTEDESKTOPCONNECTION</only>
-        <autogen>--KeyToKey-- KeyCode::S, VK_COMMAND, KeyCode::S, ModifierFlag::CONTROL_L</autogen>
-        <autogen>--KeyToKey-- KeyCode::Z, VK_COMMAND, KeyCode::Z, ModifierFlag::CONTROL_L</autogen>
-        <autogen>--KeyToKey-- KeyCode::X, VK_COMMAND, KeyCode::X, ModifierFlag::CONTROL_L</autogen>
-        <autogen>--KeyToKey-- KeyCode::C, VK_COMMAND, KeyCode::C, ModifierFlag::CONTROL_L</autogen>
-        <autogen>--KeyToKey-- KeyCode::V, VK_COMMAND, KeyCode::V, ModifierFlag::CONTROL_L</autogen>
-        <autogen>--KeyToKey-- KeyCode::A, VK_COMMAND, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
-        <autogen>--KeyToKey-- KeyCode::W, VK_COMMAND, KeyCode::W, ModifierFlag::CONTROL_L</autogen>
-        <autogen>--ConsumerToKey-- ConsumerKeyCode::EJECT, KeyCode::SHIFT_L, ModifierFlag::OPTION_L</autogen>
-
-        <autogen>--KeyToKey-- KeyCode::KEY_7, VK_CONTROL, KeyCode::F7</autogen>
-        <autogen>--KeyToKey-- KeyCode::V, VK_OPTION | ModifierFlag::NONE,
-          KeyCode::V, ModifierFlag::CONTROL_L, KeyCode::RETURN</autogen>
-      </item>
-
-      <item>
-        <name>Virtual Machine Hacks</name>
-        <identifier>private.vmhacks</identifier>
-        <only>VIRTUALMACHINE</only>
-        <autogen>--KeyToKey-- KeyCode::J, VK_CONTROL | ModifierFlag::NONE, KeyCode::RETURN</autogen>
-        <autogen>--KeyToKey-- KeyCode::KEY_5, VK_CONTROL, KeyCode::F5</autogen>
-        <autogen>--KeyToKey-- KeyCode::KEY_6, VK_CONTROL, KeyCode::F6</autogen>
-      </item>
-
-      <item>
-        <name>Firefox Hacks</name>
-        <appendix>Shift+Command+S to F10 (to SJIS)</appendix>
-        <appendix>Shift+Command+E to F11 (to EUC)</appendix>
-        <appendix>Shift+Command+U to F12 (to UTF-8)</appendix>
-        <identifier>private.browserhacks</identifier>
-        <only>FIREFOX</only>
-        <autogen>--KeyToKey-- KeyCode::S, VK_COMMAND | VK_SHIFT | ModifierFlag::NONE, KeyCode::F10, VK_SHIFT</autogen>
-        <autogen>--KeyToKey-- KeyCode::E, VK_COMMAND | VK_SHIFT | ModifierFlag::NONE, KeyCode::F11, VK_SHIFT</autogen>
-        <autogen>--KeyToKey-- KeyCode::U, VK_COMMAND | VK_SHIFT | ModifierFlag::NONE, KeyCode::F12, VK_SHIFT</autogen>
-      </item>
-
-      <item>
-        <name>Application Switch Hacks</name>
-        <appendix>Holding L to Command+F1 (Terminal.app)</appendix>
-        <appendix>Holding E to Command+F2 (Emacs.app)</appendix>
-        <appendix>Holding C to Command+F3 (Google Chrome.app)</appendix>
-        <appendix>Holding M to Command+F4 (Mail.app)</appendix>
-        <appendix>Holding B to Command+F5 (Thunderbird.app)</appendix>
-        <appendix>Holding P to Command+F6 (Skype.app)</appendix>
-        <appendix>Holding I to Command+F7 (LimeChat.app)</appendix>
-        <appendix>Holding X to Command+F8 (Excel.app)</appendix>
-        <appendix>Holding R to Command+F9 (RDC.app)</appendix>
-        <appendix>Holding V to Option+F1 (VMware Fusion.app)</appendix>
-        <appendix>Holding W to Option+F2 (Word.app)</appendix>
-        <appendix>Holding D to Option+F3 (Xcode.app)</appendix>
-        <appendix>Holding T to Option+F4 (iTunes.app)</appendix>
-        <appendix>Holding F to Option+F5 (Safari.app)</appendix>
-        <appendix>Holding O to Option+F6 (PowerPoint.app)</appendix>
-        <appendix>Holding Q to Option+F7 (Dictionary.app)</appendix>
-        <appendix>Holding [ to Control+F8</appendix>
-        <appendix>Holding ] to Control+F9</appendix>
-        <identifier>private.appswitchhacks</identifier>
-        <autogen>--HoldingKeyToKey-- KeyCode::L, ModifierFlag::NONE, KeyCode::L, KeyCode::VK_NONE, KeyCode::F1, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::E, ModifierFlag::NONE, KeyCode::E, KeyCode::VK_NONE, KeyCode::F2, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::C, ModifierFlag::NONE, KeyCode::C, KeyCode::VK_NONE, KeyCode::F3, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::M, ModifierFlag::NONE, KeyCode::M, KeyCode::VK_NONE, KeyCode::F4, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::B, ModifierFlag::NONE, KeyCode::B, KeyCode::VK_NONE, KeyCode::F5, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::P, ModifierFlag::NONE, KeyCode::P, KeyCode::VK_NONE, KeyCode::F6, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::I, ModifierFlag::NONE, KeyCode::I, KeyCode::VK_NONE, KeyCode::F7, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::X, ModifierFlag::NONE, KeyCode::X, KeyCode::VK_NONE, KeyCode::F8, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::R, ModifierFlag::NONE, KeyCode::R, KeyCode::VK_NONE, KeyCode::F9, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::V, ModifierFlag::NONE, KeyCode::V, KeyCode::VK_NONE, KeyCode::F1, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::W, ModifierFlag::NONE, KeyCode::W, KeyCode::VK_NONE, KeyCode::F2, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::D, ModifierFlag::NONE, KeyCode::D, KeyCode::VK_NONE, KeyCode::F3, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::T, ModifierFlag::NONE, KeyCode::T, KeyCode::VK_NONE, KeyCode::F4, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::F, ModifierFlag::NONE, KeyCode::F, KeyCode::VK_NONE, KeyCode::F5, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::O, ModifierFlag::NONE, KeyCode::O, KeyCode::VK_NONE, KeyCode::F6, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::Q, ModifierFlag::NONE, KeyCode::Q, KeyCode::VK_NONE,
-          KeyCode::C, ModifierFlag::COMMAND_L,
-          KeyCode::VK_WAIT_100MS,
-          KeyCode::F7, ModifierFlag::OPTION_L,
-          KeyCode::VK_WAIT_100MS,
-          KeyCode::VK_WAIT_100MS,
-          KeyCode::V, ModifierFlag::COMMAND_L,
-          Option::NOREPEAT</autogen>
-
-        <autogen>--HoldingKeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::NONE,
-          KeyCode::BRACKET_LEFT, KeyCode::VK_NONE,
-          KeyCode::F8, ModifierFlag::CONTROL_L, Option::NOREPEAT</autogen>
-        <autogen>--HoldingKeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::NONE,
-          KeyCode::BRACKET_RIGHT, KeyCode::VK_NONE,
-          KeyCode::F9, ModifierFlag::CONTROL_L, Option::NOREPEAT</autogen>
-      </item>
-    </list>
-
-    <item>
-      <name>Command_L to Control_L</name>
-      <appendix>(+ When you type Command_L only, send EISUU)</appendix>
-      <appendix>(+ When you type Shift+Command_L only, send ESCAPE)</appendix>
-      <identifier>private.jis_commandL2controlL_eisuu_escape</identifier>
-      <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_L, VK_SHIFT, KeyCode::CONTROL_L, ModifierFlag::SHIFT_L, KeyCode::ESCAPE</autogen>
-      <block>
-        <only>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</only>
-        <autogen>--KeyToKey-- KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
-      </block>
-      <block>
-        <not>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</not>
-        <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_L, KeyCode::CONTROL_L,
-          KeyCode::VK_CHANGE_INPUTMODE_ENGLISH</autogen>
-      </block>
-    </item>
-
-    <item>
-      <name>Command_R to Command_R</name>
-      <appendix>(+ When you type Command_R only, send KANA)</appendix>
-      <appendix>(+ When you type Shift+Command_R only, send Return)</appendix>
-      <identifier>private.jis_commandR2commandR_kana_return</identifier>
-      <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_R, VK_SHIFT, KeyCode::COMMAND_R, ModifierFlag::SHIFT_L, KeyCode::RETURN</autogen>
-      <block>
-        <only>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</only>
-        <autogen>--DoublePressModifier-- KeyCode::Q, VK_CONTROL | ModifierFlag::NONE,
-          KeyCode::VK_NONE,
-          KeyCode::Q, VK_COMMAND
-        </autogen>
-        <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::CONTROL_R</autogen>
-      </block>
-      <block>
-        <not>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</not>
-        <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_R, KeyCode::COMMAND_R, KeyCode::JIS_KANA</autogen>
-      </block>
-    </item>
-
-    <item>
-      <name>ThreeFinger Mode. (for multitouch extension)</name>
-      <identifier>notsave.private_threefingermode</identifier>
-      <block>
-        <device_only>DeviceVendor::APPLE_INC,DeviceProduct::MAGIC_MOUSE</device_only>
-        <autogen>--PointingRelativeToScroll-- PointingButton::NONE, VK_MOD_ANY</autogen>
-      </block>
-    </item>
-
-    <item>
-      <name>Expose Hack</name>
-      <appendix>F3 to Expose, Option</appendix>
-      <identifier>private.expose_hack</identifier>
-      <autogen>--KeyToKey-- KeyCode::F3, KeyCode::EXPOSE_ALL, KeyCode::OPTION_L</autogen>
-    </item>
-
-    <item>
-      <name>Drop Option+Space (Non-Breaking Space)</name>
-      <identifier>private.option_space_to_space_without_emacs</identifier>
-      <not>EMACS</not>
-      <autogen>--DropKeyAfterRemap-- KeyCode::SPACE, VK_OPTION | ModifierFlag::NONE</autogen>
-    </item>
-
-    <devicevendordef>
-      <vendorname>ELECOM</vendorname>
-      <vendorid>0x056e</vendorid>
-    </devicevendordef>
-
-    <deviceproductdef>
-      <productname>KATOKI_MOUSE</productname>
-      <productid>0x001e</productid>
-    </deviceproductdef>
-
-    <item>
-      <name>RightClick+CursorMove to ScrollWheel in Katoki Mouse</name>
-      <identifier>private.pointing_relative_rightclick_to_scroll</identifier>
-      <device_only>DeviceVendor::ELECOM, DeviceProduct::KATOKI_MOUSE</device_only>
-      <autogen>--PointingRelativeToScroll-- PointingButton::RIGHT</autogen>
-    </item>
-
-    <item>
-      <name>セミコロン(;)は常に半角</name>
-      <identifier>private.jis_semicolon_roman</identifier>
-      <inputmode_only>JAPANESE</inputmode_only>
-      <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::NONE, KeyCode::SEMICOLON,
-        Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::JIS_EISUU,
-        Option::KEYTOKEY_AFTER_KEYUP, KeyCode::JIS_KANA
-      </autogen>
-    </item>
-  </item>
-
+  <!-- overwrite system value -->
   <devicevendordef>
     <vendorname>APPLE_INC</vendorname>
     <vendorid>0x05ac</vendorid>
   </devicevendordef>
 
+  <!-- overwrite system value -->
   <deviceproductdef>
     <productname>MAGIC_MOUSE</productname>
     <productid>0x030d</productid>
   </deviceproductdef>
 
+  <!-- ============================================================ -->
+  <!-- replacementdef -->
+
   <replacementdef>
     <replacementname>MY_REPLACEMENT</replacementname>
     <replacementvalue>----------sample replacement----------------------------------------</replacementvalue>
-  </replacementdef>
-
-  <replacementdef>
-    <replacementname>MY_XML</replacementname>
-    <replacementvalue>
-      <![CDATA[
-    <autogen>--KeyToKey-- KeyCode::SPACE, KeyCode::TAB</autogen>
-    ]]>
-    </replacementvalue>
-  </replacementdef>
-
-  <replacementdef>
-    <replacementname>UBIQUITOUS_VIM_BINDINGS_EXCEPTION_APPS</replacementname>
-    <replacementvalue>TERMINAL, VI, PASSWORD, FIREFOX, EMACS, GOOGLE_CHROME</replacementvalue>
   </replacementdef>
 
   <replacementdef>
@@ -433,28 +57,27 @@
     </replacementvalue>
   </replacementdef>
 
+  <replacementdef>
+    <replacementname>MY_XML</replacementname>
+    <replacementvalue>
+      <![CDATA[
+        <autogen>--KeyToKey-- KeyCode::SPACE, KeyCode::TAB</autogen>
+      ]]>
+    </replacementvalue>
+  </replacementdef>
+
   <item>
     <name>{{MY_REPLACEMENT}}</name>
+    <identifier>private.replacement</identifier>
+    {{MY_XML}}
   </item>
 
+  <!-- ============================================================ -->
   <item>
-    <name>My Custom Setting</name>
-    <identifier>private.my_custom_setting</identifier>
-
-    <inputmode_only>GERMAN</inputmode_only>
-    <block>
-      <only>FIREFOX</only>
-      <autogen>--PointingButtonToKey-- PointingButton::BUTTON4, KeyCode::DELETE</autogen>
-      <autogen>--PointingButtonToKey-- PointingButton::BUTTON5, KeyCode::DELETE, ModifierFlag::SHIFT_L</autogen>
-    </block>
-    <block>
-      <autogen>--PointingButtonToKey--
-        PointingButton::BUTTON4,
-        KeyCode::KEY_5, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L</autogen>
-      <autogen>--PointingButtonToKey--
-        PointingButton::BUTTON5,
-        KeyCode::KEY_6, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L</autogen>
-    </block>
+    <name>Swap Space and Tab</name>
+    <identifier>private.swap_space_and_tab</identifier>
+    <only>APPSTORE</only>
+    <autogen>--KeyToKey-- KeyCode::SPACE, KeyCode::TAB</autogen>
+    <autogen>--KeyToKey-- KeyCode::TAB, KeyCode::SPACE</autogen>
   </item>
-
 </root>
