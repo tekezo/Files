@@ -151,6 +151,12 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
     EXPECT_EQ("No <vendorname> within <devicevendordef>.", std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/devicevendordef_empty_name");
+    xml_compiler.reload();
+    EXPECT_EQ("Empty <vendorname> within <devicevendordef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
 }
 
 TEST(pqrs_xml_compiler_symbol_map, add)
