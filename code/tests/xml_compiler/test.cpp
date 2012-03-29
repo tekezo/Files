@@ -38,7 +38,7 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/unknown_symbol_map");
     xml_compiler.reload();
     EXPECT_EQ("Unknown symbol: KeyCode::MY_UNKNOWN_KEY", xml_compiler.get_error_message());
-    EXPECT_EQ(1, xml_compiler.get_error_count());
+    EXPECT_EQ(2, xml_compiler.get_error_count());
   }
 
   // ------------------------------------------------------------
