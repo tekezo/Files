@@ -122,7 +122,7 @@ namespace pqrs {
 
         auto value = pqrs::string::to_uint32_t(vector[2]);
         if (! value) {
-          set_error_message_("Invalid 'value' Attribute within <symbol_map>: " + *(vector[2]));
+          set_error_message_("Invalid 'value' Attribute within <symbol_map>:\n\n" + *(vector[2]));
           continue;
         }
 

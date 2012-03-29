@@ -67,19 +67,19 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_invalid_name1", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("Do not use '{{' and '}}' within <replacementname>: VI{{_J", xml_compiler.get_error_message());
+    EXPECT_EQ("Do not use '{{' and '}}' within <replacementname>:\n\nVI{{_J", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_invalid_name2", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("Do not use '{{' and '}}' within <replacementname>: VI_}}J", xml_compiler.get_error_message());
+    EXPECT_EQ("Do not use '{{' and '}}' within <replacementname>:\n\nVI_}}J", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_no_value", "data/private_xml");
     xml_compiler.reload();
-    EXPECT_EQ("No <replacementvalue> within <replacementdef>: VI_J", xml_compiler.get_error_message());
+    EXPECT_EQ("No <replacementvalue> within <replacementdef>:\n\nVI_J", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 
@@ -124,7 +124,7 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_invalid_value");
     xml_compiler.reload();
-    EXPECT_EQ("Invalid 'value' Attribute within <symbol_map>: XXX", xml_compiler.get_error_message());
+    EXPECT_EQ("Invalid 'value' Attribute within <symbol_map>:\n\nXXX", xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 

@@ -359,7 +359,7 @@ namespace pqrs {
       }
     }
 
-    throw xml_compiler_runtime_error("invalid <autogen>: " + autogen);
+    throw xml_compiler_runtime_error("invalid <autogen>:\n\n" + autogen);
   }
 
   void

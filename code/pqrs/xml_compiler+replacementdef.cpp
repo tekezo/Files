@@ -50,11 +50,11 @@ namespace pqrs {
         }
         if (name->find_first_of("{{") != std::string::npos ||
             name->find_first_of("}}") != std::string::npos) {
-          set_error_message_(std::string("Do not use '{{' and '}}' within <replacementname>: ") + *name);
+          set_error_message_(std::string("Do not use '{{' and '}}' within <replacementname>:\n\n") + *name);
         }
 
         if (! value) {
-          set_error_message_(std::string("No <replacementvalue> within <replacementdef>: ") + *name);
+          set_error_message_(std::string("No <replacementvalue> within <replacementdef>:\n\n") + *name);
           continue;
         }
 
