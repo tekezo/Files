@@ -9,8 +9,8 @@
   <!-- appdef -->
 
   <appdef>
-    <appname>APPSTORE</appname>
-    <equal>com.apple.appstore</equal>
+    <appname>  APPSTORE  </appname>
+    <equal>  com.apple.appstore  </equal>
   </appdef>
 
   <!-- overwrite system value -->
@@ -23,13 +23,13 @@
   <!-- devicevendordef, deviceproductdef -->
 
   <devicevendordef>
-    <vendorname>HEWLETT_PACKARD</vendorname>
-    <vendorid>0x03f0</vendorid>
+    <vendorname>  HEWLETT_PACKARD  </vendorname>
+    <vendorid>  0x03f0  </vendorid>
   </devicevendordef>
 
   <deviceproductdef>
-    <productname>MY_HP_KEYBOARD</productname>
-    <productid>0x0224</productid>
+    <productname>  MY_HP_KEYBOARD  </productname>
+    <productid>  0x0224  </productid>
   </deviceproductdef>
 
   <!-- overwrite system value -->

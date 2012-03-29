@@ -33,13 +33,16 @@ namespace pqrs {
   void
   xml_compiler::remapclasses_initialize_vector::add(const std::vector<uint32_t>& v,
                                                     uint32_t configindex,
-                                                    const std::string& identifier)
+                                                    const std::string& raw_identifier)
   {
     if (freezed_) {
       throw xml_compiler_logic_error("remapclasses_initialize_vector is freezed.");
     }
     if (is_configindex_added_.find(configindex) != is_configindex_added_.end()) {
-      throw xml_compiler_runtime_error(std::string("Duplicated identifier: ") + identifier);
+      throw xml_compiler_runtime_error(boost::format("Duplicated identifier:\n"
+                                                     "\n"
+                                                     "<identifier>%1%</identifier>") %
+                                       raw_identifier);
     }
 
     // size

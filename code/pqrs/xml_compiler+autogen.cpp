@@ -123,7 +123,7 @@ namespace pqrs {
           traverse_autogen_(pt, identifier, fv, initialize_vector);
 
           uint32_t configindex = symbol_map_.get("ConfigIndex", identifier);
-          remapclasses_initialize_vector_.add(initialize_vector, configindex, identifier);
+          remapclasses_initialize_vector_.add(initialize_vector, configindex, raw_identifier);
           confignamemap_[configindex] = raw_identifier;
         }
 

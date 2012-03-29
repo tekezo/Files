@@ -105,6 +105,12 @@ namespace pqrs {
   }
 
   void
+  xml_compiler::set_error_message_(const boost::format& message)
+  {
+    set_error_message_(message.str());
+  }
+
+  void
   xml_compiler::normalize_identifier(std::string& identifier)
   {
     boost::replace_all(identifier, ".", "_");

@@ -34,7 +34,7 @@ namespace pqrs {
         const char* name_tag_name = NULL;
         const char* value_tag_name = NULL;
         boost::optional<std::string> name;
-        boost::optional<uint32_t> value;
+        boost::optional<std::string> value;
 
         // ----------------------------------------
         if (it.first == "devicevendordef") {
@@ -56,7 +56,7 @@ namespace pqrs {
           if (child.first == name_tag_name) {
             name = boost::trim_copy(child.second.data());
           } else if (child.first == value_tag_name) {
-            value = pqrs::string::to_uint32_t(boost::trim_copy(child.second.data()));
+            value = boost::trim_copy(child.second.data());
           }
         }
 
@@ -77,8 +77,20 @@ namespace pqrs {
           continue;
         }
 
+        if (value->empty()) {
+          set_error_message_(std::string("Empty <") + value_tag_name + "> within <" + it.first + ">.");
+          continue;
+        }
+
+        auto v = pqrs::string::to_uint32_t(value);
+        if (! v) {
+          set_error_message_(std::string("Invalid <") + value_tag_name + "> within <" + it.first + ">:\n\n<" +
+                             value_tag_name + ">" + *value + "</" + value_tag_name + ">");
+          continue;
+        }
+
         // ----------------------------------------
-        symbol_map_.add(type, *name, *value);
+        symbol_map_.add(type, *name, *v);
       }
     }
   }

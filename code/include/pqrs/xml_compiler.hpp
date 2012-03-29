@@ -6,6 +6,7 @@
 #include <vector>
 #include <tr1/memory>
 #include <tr1/unordered_map>
+#include <boost/format.hpp>
 #include <boost/optional.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include "pqrs/string.hpp"
@@ -28,10 +29,12 @@ namespace pqrs {
     class xml_compiler_runtime_error : public std::runtime_error {
     public:
       xml_compiler_runtime_error(const std::string& what) : std::runtime_error(what) {}
+      xml_compiler_runtime_error(const boost::format& what) : std::runtime_error(what.str()) {}
     };
     class xml_compiler_logic_error : public std::logic_error {
     public:
       xml_compiler_logic_error(const std::string& what) : std::logic_error(what) {}
+      xml_compiler_logic_error(const boost::format& what) : std::logic_error(what.str()) {}
     };
 
     class xml_file_path {
@@ -130,6 +133,7 @@ namespace pqrs {
     void read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<xml_file_path_ptr>& xml_file_path_ptrs);
 
     void set_error_message_(const std::string& message);
+    void set_error_message_(const boost::format& message);
 
     void reload_replacementdef_(void);
     void traverse_replacementdef_(const boost::property_tree::ptree& pt);

@@ -122,7 +122,10 @@ namespace pqrs {
 
         auto value = pqrs::string::to_uint32_t(vector[2]);
         if (! value) {
-          set_error_message_("Invalid 'value' Attribute within <symbol_map>:\n\n" + *(vector[2]));
+          set_error_message_(boost::format("Invalid 'value' Attribute within <symbol_map>:\n"
+                                           "\n"
+                                           "<symbol_map type=\"%1%\" name=\"%2%\" value=\"%3%\" />")
+                             % *(vector[0]) % *(vector[1]) % *(vector[2]));
           continue;
         }
 

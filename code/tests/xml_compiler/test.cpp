@@ -46,7 +46,10 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/dup_identifier");
     xml_compiler.reload();
-    EXPECT_EQ("Duplicated identifier: private_swap_space_and_tab", xml_compiler.get_error_message());
+    const char* message = "Duplicated identifier:\n"
+                          "\n"
+                          "<identifier>private.swap_space_and_tab</identifier>";
+    EXPECT_EQ(message, xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 
@@ -124,7 +127,10 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/symbol_map_xml_invalid_value");
     xml_compiler.reload();
-    EXPECT_EQ("Invalid 'value' Attribute within <symbol_map>:\n\nXXX", xml_compiler.get_error_message());
+    const char* message = "Invalid 'value' Attribute within <symbol_map>:\n"
+                          "\n"
+                          "<symbol_map type=\"ConsumerKeyCode\" name=\"BRIGHTNESS_UP\" value=\"XXX\" />";
+    EXPECT_EQ(message, xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 
@@ -155,6 +161,27 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/devicevendordef_empty_name");
     xml_compiler.reload();
     EXPECT_EQ("Empty <vendorname> within <devicevendordef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/devicevendordef_no_value");
+    xml_compiler.reload();
+    EXPECT_EQ("No <vendorid> within <devicevendordef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/devicevendordef_empty_value");
+    xml_compiler.reload();
+    EXPECT_EQ("Empty <vendorid> within <devicevendordef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/devicevendordef_invalid_value");
+    xml_compiler.reload();
+    const char* message = "Invalid <vendorid> within <devicevendordef>:\n"
+                          "\n"
+                          "<vendorid>XXX</vendorid>";
+    EXPECT_EQ(message, std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
 }
