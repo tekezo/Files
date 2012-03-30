@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <root>
+  {{ DEVICEPRODUCTDEF_REPLACEMENT }}
+
   <deviceproductdef>
     <productname>APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x0218</productname>
     <productid>0x0218</productid>

@@ -184,6 +184,42 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
     EXPECT_EQ(message, std::string(xml_compiler.get_error_message()));
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
+
+  // ------------------------------------------------------------
+  // deviceproductdef.xml
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/deviceproductdef_no_name");
+    xml_compiler.reload();
+    EXPECT_EQ("No <productname> within <deviceproductdef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/deviceproductdef_empty_name");
+    xml_compiler.reload();
+    EXPECT_EQ("Empty <productname> within <deviceproductdef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/deviceproductdef_no_value");
+    xml_compiler.reload();
+    EXPECT_EQ("No <productid> within <deviceproductdef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/deviceproductdef_empty_value");
+    xml_compiler.reload();
+    EXPECT_EQ("Empty <productid> within <deviceproductdef>.", std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/deviceproductdef_invalid_value");
+    xml_compiler.reload();
+    const char* message = "Invalid <productid> within <deviceproductdef>:\n"
+                          "\n"
+                          "<productid>XXX</productid>";
+    EXPECT_EQ(message, std::string(xml_compiler.get_error_message()));
+    EXPECT_EQ(1, xml_compiler.get_error_count());
+  }
 }
 
 TEST(pqrs_xml_compiler_symbol_map, add)
