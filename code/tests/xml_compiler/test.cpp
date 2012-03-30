@@ -54,6 +54,15 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   }
 
   // ------------------------------------------------------------
+  // empty identifier
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/empty_identifier");
+    xml_compiler.reload();
+    EXPECT_EQ("Empty <identifier>.", xml_compiler.get_error_message());
+    EXPECT_EQ(3, xml_compiler.get_error_count());
+  }
+
+  // ------------------------------------------------------------
   // replacementdef.xml
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_no_name", "data/private_xml");

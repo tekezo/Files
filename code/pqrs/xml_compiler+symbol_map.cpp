@@ -49,6 +49,13 @@ namespace pqrs {
   void
   xml_compiler::symbol_map::add(const std::string& type, const std::string& name, uint32_t value)
   {
+    if (type.empty()) {
+      throw xml_compiler_logic_error("Empty type: ::" + name);
+    }
+    if (name.empty()) {
+      throw xml_compiler_logic_error("Empty name: " + type + "::");
+    }
+
     auto n = type + "::" + name;
 
     // register value if the definition does not exists.

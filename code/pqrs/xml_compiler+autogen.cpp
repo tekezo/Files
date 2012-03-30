@@ -50,6 +50,10 @@ namespace pqrs {
         add_configindex_and_keycode_to_symbol_map_(it.second, handle_notsave);
       } else {
         auto identifier = boost::trim_copy(it.second.data());
+        if (identifier.empty()) {
+          set_error_message_("Empty <identifier>.");
+          continue;
+        }
         normalize_identifier(identifier);
 
         // ----------------------------------------
@@ -100,6 +104,10 @@ namespace pqrs {
 
           std::vector<uint32_t> initialize_vector;
           auto raw_identifier = boost::trim_copy(it.second.data());
+          if (raw_identifier.empty()) {
+            set_error_message_("Empty <identifier>.");
+            continue;
+          }
           auto identifier = raw_identifier;
           normalize_identifier(identifier);
 
