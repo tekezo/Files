@@ -131,8 +131,8 @@ namespace pqrs {
         if (! value) {
           set_error_message_(boost::format("Invalid 'value' Attribute within <symbol_map>:\n"
                                            "\n"
-                                           "<symbol_map type=\"%1%\" name=\"%2%\" value=\"%3%\" />")
-                             % *(vector[0]) % *(vector[1]) % *(vector[2]));
+                                           "<symbol_map type=\"%1%\" name=\"%2%\" value=\"%3%\" />") %
+                             *(vector[0]) % *(vector[1]) % *(vector[2]));
           continue;
         }
 

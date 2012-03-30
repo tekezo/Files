@@ -31,27 +31,47 @@ namespace pqrs {
       //
       // We need to assign higher priority to notsave.* settings.
       // So, adding configindex by 2steps.
-      add_configindex_and_keycode_to_symbol_map_(*pt_ptr, true);
-      add_configindex_and_keycode_to_symbol_map_(*pt_ptr, false);
+      add_configindex_and_keycode_to_symbol_map_(*pt_ptr, "", true);
+      add_configindex_and_keycode_to_symbol_map_(*pt_ptr, "", false);
     }
 
     for (auto& pt_ptr : pt_ptrs) {
-      traverse_identifier_(*pt_ptr);
+      traverse_identifier_(*pt_ptr, "");
     }
 
     remapclasses_initialize_vector_.freeze();
   }
 
+  bool
+  xml_compiler::valid_identifier_(const std::string identifier, const std::string parent_tag_name)
+  {
+    if (identifier.empty()) {
+      set_error_message_("Empty <identifier>.");
+      return false;
+    }
+
+    if (parent_tag_name != "item") {
+      set_error_message_(boost::format("<identifier> must be placed directly under <item>:\n"
+                                       "\n"
+                                       "<identifier>%1%</identifier>") %
+                         identifier);
+      return false;
+    }
+
+    return true;
+  }
+
   void
-  xml_compiler::add_configindex_and_keycode_to_symbol_map_(const boost::property_tree::ptree& pt, bool handle_notsave)
+  xml_compiler::add_configindex_and_keycode_to_symbol_map_(const boost::property_tree::ptree& pt,
+                                                           const std::string& parent_tag_name,
+                                                           bool handle_notsave)
   {
     for (auto& it : pt) {
       if (it.first != "identifier") {
-        add_configindex_and_keycode_to_symbol_map_(it.second, handle_notsave);
+        add_configindex_and_keycode_to_symbol_map_(it.second, it.first, handle_notsave);
       } else {
         auto identifier = boost::trim_copy(it.second.data());
-        if (identifier.empty()) {
-          set_error_message_("Empty <identifier>.");
+        if (! valid_identifier_(identifier, parent_tag_name)) {
           continue;
         }
         normalize_identifier(identifier);
@@ -89,12 +109,13 @@ namespace pqrs {
   }
 
   void
-  xml_compiler::traverse_identifier_(const boost::property_tree::ptree& pt)
+  xml_compiler::traverse_identifier_(const boost::property_tree::ptree& pt,
+                                     const std::string& parent_tag_name)
   {
     for (auto& it : pt) {
       try {
         if (it.first != "identifier") {
-          traverse_identifier_(it.second);
+          traverse_identifier_(it.second, it.first);
 
         } else {
           auto attr_essential = it.second.get_optional<std::string>("<xmlattr>.essential");
@@ -104,8 +125,7 @@ namespace pqrs {
 
           std::vector<uint32_t> initialize_vector;
           auto raw_identifier = boost::trim_copy(it.second.data());
-          if (raw_identifier.empty()) {
-            set_error_message_("Empty <identifier>.");
+          if (! valid_identifier_(raw_identifier, parent_tag_name)) {
             continue;
           }
           auto identifier = raw_identifier;

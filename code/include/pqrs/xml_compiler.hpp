@@ -148,8 +148,12 @@ namespace pqrs {
     void traverse_devicedef_(const boost::property_tree::ptree& pt);
 
     void reload_autogen_(void);
-    void add_configindex_and_keycode_to_symbol_map_(const boost::property_tree::ptree& pt, bool handle_notsave);
-    void traverse_identifier_(const boost::property_tree::ptree& pt);
+    bool valid_identifier_(const std::string identifier, const std::string parent_tag_name);
+    void add_configindex_and_keycode_to_symbol_map_(const boost::property_tree::ptree& pt,
+                                                    const std::string& parent_tag_name,
+                                                    bool handle_notsave);
+    void traverse_identifier_(const boost::property_tree::ptree& pt,
+                              const std::string& parent_tag_name);
     void traverse_autogen_(const boost::property_tree::ptree& pt,
                            const std::string& identifier,
                            const filter_vector& filter_vector,

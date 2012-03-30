@@ -42,7 +42,7 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   }
 
   // ------------------------------------------------------------
-  // dup identifier
+  // identifier
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/dup_identifier");
     xml_compiler.reload();
@@ -52,13 +52,19 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
     EXPECT_EQ(message, xml_compiler.get_error_message());
     EXPECT_EQ(1, xml_compiler.get_error_count());
   }
-
-  // ------------------------------------------------------------
-  // empty identifier
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/empty_identifier");
     xml_compiler.reload();
     EXPECT_EQ("Empty <identifier>.", xml_compiler.get_error_message());
+    EXPECT_EQ(3, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/invalid_identifier_place");
+    xml_compiler.reload();
+    const char* message = "<identifier> must be placed directly under <item>:\n"
+                          "\n"
+                          "<identifier>private.swap_space_and_tab</identifier>";
+    EXPECT_EQ(message, xml_compiler.get_error_message());
     EXPECT_EQ(3, xml_compiler.get_error_count());
   }
 
