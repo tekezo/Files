@@ -33,15 +33,6 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   }
 
   // ------------------------------------------------------------
-  // Unknown symbol_map
-  {
-    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/unknown_symbol_map");
-    xml_compiler.reload();
-    EXPECT_EQ("Unknown symbol: KeyCode::MY_UNKNOWN_KEY", xml_compiler.get_error_message());
-    EXPECT_EQ(2, xml_compiler.get_error_count());
-  }
-
-  // ------------------------------------------------------------
   // identifier
   {
     pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/dup_identifier");
@@ -77,6 +68,42 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
                           "\n"
                           "<autogen>--KeyToKey2-- KeyCode::SPACE, VK_SHIFT, KeyCode::TAB</autogen>";
     EXPECT_EQ(message, xml_compiler.get_error_message());
+    EXPECT_EQ(2, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/autogen_invalid_pipe_type");
+    xml_compiler.reload();
+    const char* message = "Cannot connect(|) except ModifierFlag and PointingButton:\n"
+                          "\n"
+                          "KeyCode::SPACE|KeyCode::TAB";
+    EXPECT_EQ(message, xml_compiler.get_error_message());
+    EXPECT_EQ(2, xml_compiler.get_error_count());
+  }
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/autogen_invalid_pipe_different_type");
+    xml_compiler.reload();
+    const char* message = "Cannot connect(|) between different types:\n"
+                          "\n"
+                          "ModifierFlag::SHIFT_L|PointingButton::LEFT";
+    EXPECT_EQ(message, xml_compiler.get_error_message());
+    EXPECT_EQ(2, xml_compiler.get_error_count());
+  }
+
+  // ------------------------------------------------------------
+  // Unknown symbol_map
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/unknown_symbol_map");
+    xml_compiler.reload();
+    EXPECT_EQ("Unknown symbol:\n\nKeyCode::MY_UNKNOWN_KEY", xml_compiler.get_error_message());
+    EXPECT_EQ(2, xml_compiler.get_error_count());
+  }
+
+  // ------------------------------------------------------------
+  // Unknown data_type
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/unknown_data_type");
+    xml_compiler.reload();
+    EXPECT_EQ("Unknown symbol:\n\nKeyCode2::SPACE", xml_compiler.get_error_message());
     EXPECT_EQ(2, xml_compiler.get_error_count());
   }
 

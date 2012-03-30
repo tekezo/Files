@@ -18,7 +18,7 @@ namespace pqrs {
   {
     auto v = get_optional(name);
     if (! v) {
-      throw xml_compiler_runtime_error("Unknown symbol: " + name);
+      throw xml_compiler_runtime_error("Unknown symbol:\n\n" + name);
     }
     return *v;
   }
@@ -50,10 +50,10 @@ namespace pqrs {
   xml_compiler::symbol_map::add(const std::string& type, const std::string& name, uint32_t value)
   {
     if (type.empty()) {
-      throw xml_compiler_logic_error("Empty type: ::" + name);
+      throw xml_compiler_logic_error("Empty type:\n\n::" + name);
     }
     if (name.empty()) {
-      throw xml_compiler_logic_error("Empty name: " + type + "::");
+      throw xml_compiler_logic_error("Empty name:\n\n" + type + "::");
     }
 
     auto n = type + "::" + name;

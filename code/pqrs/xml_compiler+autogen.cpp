@@ -434,12 +434,22 @@ namespace pqrs {
         } else if (boost::starts_with(v, "Option::")) {
           newdatatype = BRIDGE_DATATYPE_OPTION;
         } else {
-          throw xml_compiler_runtime_error("unknown datatype: " + v);
+          throw xml_compiler_runtime_error("Unknown symbol:\n\n" + v);
         }
 
-        if (datatype && datatype != newdatatype) {
-          // Don't connect different data type. (Example: KeyCode::A | ModifierFlag::SHIFT_L)
-          throw xml_compiler_runtime_error("invalid connect(|): " + params);
+        if (datatype) {
+          // There are some connection(|).
+
+          if (newdatatype != BRIDGE_DATATYPE_FLAGS &&
+              newdatatype != BRIDGE_DATATYPE_POINTINGBUTTON) {
+            // Don't connect no-flags. (Example: KeyCode::A | KeyCode::B)
+            throw xml_compiler_runtime_error("Cannot connect(|) except ModifierFlag and PointingButton:\n\n" + a);
+          }
+
+          if (newdatatype != datatype) {
+            // Don't connect different data type. (Example: PointingButton::A | ModifierFlag::SHIFT_L)
+            throw xml_compiler_runtime_error("Cannot connect(|) between different types:\n\n" + a);
+          }
         }
 
         datatype = newdatatype;
