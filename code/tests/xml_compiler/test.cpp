@@ -69,6 +69,18 @@ TEST(pqrs_xml_compiler, reload_invalid_xml)
   }
 
   // ------------------------------------------------------------
+  // autogen
+  {
+    pqrs::xml_compiler xml_compiler("data/system_xml", "data/invalid_xml/unknown_autogen");
+    xml_compiler.reload();
+    const char* message = "Invalid <autogen>:\n"
+                          "\n"
+                          "<autogen>--KeyToKey2-- KeyCode::SPACE, VK_SHIFT, KeyCode::TAB</autogen>";
+    EXPECT_EQ(message, xml_compiler.get_error_message());
+    EXPECT_EQ(2, xml_compiler.get_error_count());
+  }
+
+  // ------------------------------------------------------------
   // replacementdef.xml
   {
     pqrs::xml_compiler xml_compiler("data/invalid_xml/replacementdef_no_name", "data/private_xml");

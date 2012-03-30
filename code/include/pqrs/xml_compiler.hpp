@@ -159,6 +159,7 @@ namespace pqrs {
                            const filter_vector& filter_vector,
                            std::vector<uint32_t>& initialize_vector);
     void handle_autogen(const std::string& autogen,
+                        const std::string& raw_autogen,
                         const filter_vector& filter_vector,
                         std::vector<uint32_t>& initialize_vector);
     void add_to_initialize_vector(const std::string& params,
