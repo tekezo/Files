@@ -128,6 +128,22 @@ namespace pqrs {
       std::vector<uint32_t> data_;
     };
 
+    class name_node;
+    typedef std::tr1::shared_ptr<name_node> name_node_ptr;
+
+    class name_node {
+    public:
+      std::string name;
+      int name_line_count;
+
+      // for number.xml
+      int default_value;
+      int step;
+      std::string baseunit;
+
+      std::tr1::shared_ptr<std::vector<name_node_ptr> > children;
+    };
+
   private:
     typedef std::tr1::shared_ptr<boost::property_tree::ptree> ptree_ptr;
     void read_xmls_(std::vector<ptree_ptr>& pt_ptrs, const std::vector<xml_file_path_ptr>& xml_file_path_ptrs);
@@ -166,6 +182,8 @@ namespace pqrs {
                                   uint32_t type,
                                   const filter_vector& filter_vector,
                                   std::vector<uint32_t>& initialize_vector);
+
+    void reload_preferences_(void);
 
     const std::string system_xml_directory_;
     const std::string private_xml_directory_;
