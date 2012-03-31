@@ -37,6 +37,7 @@ namespace pqrs {
       xml_compiler_logic_error(const boost::format& what) : std::logic_error(what.str()) {}
     };
 
+    // ============================================================
     class xml_file_path {
     public:
       class base_directory {
@@ -61,6 +62,7 @@ namespace pqrs {
     };
     typedef std::tr1::shared_ptr<xml_file_path> xml_file_path_ptr;
 
+    // ============================================================
     class symbol_map {
     public:
       symbol_map(void);
@@ -80,6 +82,7 @@ namespace pqrs {
       std::tr1::unordered_map<std::string, uint32_t> symbol_map_;
     };
 
+    // ============================================================
     class appdef {
     public:
       const boost::optional<std::string>& get_name(void) const { return name_; }
@@ -94,6 +97,7 @@ namespace pqrs {
       std::vector<std::string> rules_prefix_;
     };
 
+    // ============================================================
     class remapclasses_initialize_vector {
     public:
       remapclasses_initialize_vector(void);
@@ -114,6 +118,7 @@ namespace pqrs {
       bool freezed_;
     };
 
+    // ============================================================
     class filter_vector {
     public:
       filter_vector(void);
@@ -128,20 +133,34 @@ namespace pqrs {
       std::vector<uint32_t> data_;
     };
 
-    class name_node;
-    typedef std::tr1::shared_ptr<name_node> name_node_ptr;
+    // ============================================================
+    enum preferences_node_type {
+      checkbox,
+      number,
+    };
 
-    class name_node {
-    public:
+    class preferences_checkbox_node;
+    typedef std::tr1::shared_ptr<preferences_checkbox_node> preferences_checkbox_node_ptr;
+
+    class preferences_checkbox_node {
       std::string name;
       int name_line_count;
 
-      // for number.xml
+      std::tr1::shared_ptr<std::vector<preferences_checkbox_node_ptr> > children;
+    };
+
+    class preferences_number_node;
+    typedef std::tr1::shared_ptr<preferences_number_node> preferences_number_node_ptr;
+
+    class preferences_number_node {
+      std::string name;
+      int name_line_count;
+
       int default_value;
       int step;
       std::string baseunit;
 
-      std::tr1::shared_ptr<std::vector<name_node_ptr> > children;
+      std::tr1::shared_ptr<std::vector<preferences_number_node_ptr> > children;
     };
 
   private:
@@ -184,6 +203,7 @@ namespace pqrs {
                                   std::vector<uint32_t>& initialize_vector);
 
     void reload_preferences_(void);
+    void traverse_preferences_(const boost::property_tree::ptree& pt, preferences_node_type type);
 
     const std::string system_xml_directory_;
     const std::string private_xml_directory_;
@@ -198,6 +218,9 @@ namespace pqrs {
     uint32_t simultaneous_keycode_index_;
 
     std::vector<std::tr1::shared_ptr<appdef> > app_;
+
+    std::vector<preferences_checkbox_node_ptr> preferences_checkbox_nodes_;
+    std::vector<preferences_number_node_ptr> preferences_number_nodes_;
   };
 }
 
