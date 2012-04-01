@@ -134,33 +134,39 @@ namespace pqrs {
     };
 
     // ============================================================
-    enum preferences_node_type {
-      checkbox,
-      number,
-    };
-
     class preferences_checkbox_node;
     typedef std::tr1::shared_ptr<preferences_checkbox_node> preferences_checkbox_node_ptr;
 
     class preferences_checkbox_node {
-      std::string name;
-      int name_line_count;
+    public:
+      preferences_checkbox_node(void);
+      static bool handle_name_and_appendix(boost::property_tree::ptree::const_iterator& it,
+                                           std::string& name,
+                                           int& name_line_count);
 
-      std::tr1::shared_ptr<std::vector<preferences_checkbox_node_ptr> > children;
+    private:
+      std::string name_;
+      int name_line_count_;
+
+      std::tr1::shared_ptr<std::vector<preferences_checkbox_node_ptr> > children_;
     };
 
     class preferences_number_node;
     typedef std::tr1::shared_ptr<preferences_number_node> preferences_number_node_ptr;
 
     class preferences_number_node {
-      std::string name;
-      int name_line_count;
+    public:
+      preferences_number_node(void);
 
-      int default_value;
-      int step;
-      std::string baseunit;
+    private:
+      std::string name_;
+      int name_line_count_;
 
-      std::tr1::shared_ptr<std::vector<preferences_number_node_ptr> > children;
+      int default_value_;
+      int step_;
+      std::string baseunit_;
+
+      std::tr1::shared_ptr<std::vector<preferences_number_node_ptr> > children_;
     };
 
   private:
@@ -203,7 +209,10 @@ namespace pqrs {
                                   std::vector<uint32_t>& initialize_vector);
 
     void reload_preferences_(void);
-    void traverse_preferences_(const boost::property_tree::ptree& pt, preferences_node_type type);
+    void traverse_preferences_(const boost::property_tree::ptree& pt,
+                               std::vector<preferences_checkbox_node_ptr>& preferences_nodes);
+    void traverse_preferences_(const boost::property_tree::ptree& pt,
+                               std::vector<preferences_number_node_ptr>& preferences_nodes);
 
     const std::string system_xml_directory_;
     const std::string private_xml_directory_;
