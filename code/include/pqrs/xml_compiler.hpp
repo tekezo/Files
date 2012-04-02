@@ -134,42 +134,46 @@ namespace pqrs {
     };
 
     // ============================================================
-    class preferences_checkbox_node {
+    class preferences_node {
     public:
-      preferences_checkbox_node(void);
+      preferences_node(void);
+      preferences_node(const preferences_node& parent);
+      virtual ~preferences_node(void) {}
 
-      bool handle_item_child(const boost::property_tree::ptree::value_type& it);
+      bool handle_name_and_appendix(const boost::property_tree::ptree::value_type& it);
 
       const std::string& get_name(void) const { return name_; }
       int get_name_line_count(void) const { return name_line_count_; }
+      const std::string& get_name_for_filter(void) const { return name_for_filter_; }
+      const std::string& get_identifier(void) const { return identifier_; }
 
-      static bool handle_name_and_appendix(const boost::property_tree::ptree::value_type& it,
-                                           std::string& name,
-                                           int& name_line_count);
-
-    private:
+    protected:
       std::string name_;
       int name_line_count_;
+      std::string name_for_filter_;
+
+      std::string identifier_;
     };
 
-    class preferences_number_node {
+    class preferences_checkbox_node : public preferences_node {
+    public:
+      bool handle_item_child(const boost::property_tree::ptree::value_type& it);
+    };
+
+    class preferences_number_node : public preferences_node {
     public:
       preferences_number_node(void);
 
       bool handle_item_child(const boost::property_tree::ptree::value_type& it);
 
-      const std::string& get_name(void) const { return name_; }
-      int get_name_line_count(void) const { return name_line_count_; }
       int get_default_value(void) const { return default_value_; }
       int get_step(void) const { return step_; }
+      const std::string get_base_unit(void) const { return base_unit_; }
 
     private:
-      std::string name_;
-      int name_line_count_;
-
       int default_value_;
       int step_;
-      std::string baseunit_;
+      std::string base_unit_;
     };
 
     template <class T>
