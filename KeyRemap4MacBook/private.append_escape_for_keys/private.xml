@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>PC Application Key to ModifierFlag::EXTRA1</name>
+    <appendix>(EXTRA1+Key to Escape,Key)</appendix>
+    <identifier>private.append_escape_for_keys</identifier>
+    <!-- CapsLock (which is changed to pc application key by PCKeyboardHack) to ModifierFlag::EXTRA1 -->
+    <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, KeyCode::VK_MODIFIER_EXTRA1</autogen>
+
+    <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::Q</autogen>
+    <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::W</autogen>
+    <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::E</autogen>
+    <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::R</autogen>
+    <autogen>--KeyToKey-- KeyCode::T, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::T</autogen>
+    <autogen>--KeyToKey-- KeyCode::Y, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::Y</autogen>
+    <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::U</autogen>
+    <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::I</autogen>
+    <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::O</autogen>
+    <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::P</autogen>
+
+    <autogen>--KeyToKey-- KeyCode::A, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::A</autogen>
+    <autogen>--KeyToKey-- KeyCode::S, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::S</autogen>
+    <autogen>--KeyToKey-- KeyCode::D, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::D</autogen>
+    <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::F</autogen>
+    <autogen>--KeyToKey-- KeyCode::G, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::G</autogen>
+    <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::H</autogen>
+    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::J</autogen>
+    <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::K</autogen>
+    <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::L</autogen>
+
+    <autogen>--KeyToKey-- KeyCode::Z, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::Z</autogen>
+    <autogen>--KeyToKey-- KeyCode::X, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::X</autogen>
+    <autogen>--KeyToKey-- KeyCode::C, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::C</autogen>
+    <autogen>--KeyToKey-- KeyCode::V, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::V</autogen>
+    <autogen>--KeyToKey-- KeyCode::B, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::B</autogen>
+    <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::N</autogen>
+    <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::EXTRA1, KeyCode::ESCAPE, KeyCode::M</autogen>
+  </item>
+</root>
