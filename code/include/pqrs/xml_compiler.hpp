@@ -134,29 +134,34 @@ namespace pqrs {
     };
 
     // ============================================================
-    class preferences_checkbox_node;
-    typedef std::tr1::shared_ptr<preferences_checkbox_node> preferences_checkbox_node_ptr;
-
     class preferences_checkbox_node {
     public:
       preferences_checkbox_node(void);
-      static bool handle_name_and_appendix(boost::property_tree::ptree::const_iterator& it,
+
+      bool handle_item_child(const boost::property_tree::ptree::value_type& it);
+
+      const std::string& get_name(void) const { return name_; }
+      int get_name_line_count(void) const { return name_line_count_; }
+
+      static bool handle_name_and_appendix(const boost::property_tree::ptree::value_type& it,
                                            std::string& name,
                                            int& name_line_count);
 
     private:
       std::string name_;
       int name_line_count_;
-
-      std::tr1::shared_ptr<std::vector<preferences_checkbox_node_ptr> > children_;
     };
-
-    class preferences_number_node;
-    typedef std::tr1::shared_ptr<preferences_number_node> preferences_number_node_ptr;
 
     class preferences_number_node {
     public:
       preferences_number_node(void);
+
+      bool handle_item_child(const boost::property_tree::ptree::value_type& it);
+
+      const std::string& get_name(void) const { return name_; }
+      int get_name_line_count(void) const { return name_line_count_; }
+      int get_default_value(void) const { return default_value_; }
+      int get_step(void) const { return step_; }
 
     private:
       std::string name_;
@@ -165,8 +170,25 @@ namespace pqrs {
       int default_value_;
       int step_;
       std::string baseunit_;
+    };
 
-      std::tr1::shared_ptr<std::vector<preferences_number_node_ptr> > children_;
+    template <class T>
+    class preferences_node_tree {
+    public:
+      typedef std::tr1::shared_ptr<preferences_node_tree> preferences_node_tree_ptr;
+      typedef std::vector<preferences_node_tree_ptr> preferences_node_tree_ptrs;
+      typedef std::tr1::shared_ptr<preferences_node_tree_ptrs> preferences_node_tree_ptrs_ptr;
+
+      void clear(void);
+      void traverse_item(const boost::property_tree::ptree& pt);
+
+    private:
+      T node_;
+
+      // We use shared_ptr<vector> to store children node by these reason.
+      // * sizeof(shared_ptr) < sizeof(vector).
+      // * children_ is mostly empty.
+      preferences_node_tree_ptrs_ptr children_;
     };
 
   private:
@@ -209,10 +231,6 @@ namespace pqrs {
                                   std::vector<uint32_t>& initialize_vector);
 
     void reload_preferences_(void);
-    void traverse_preferences_(const boost::property_tree::ptree& pt,
-                               std::vector<preferences_checkbox_node_ptr>& preferences_nodes);
-    void traverse_preferences_(const boost::property_tree::ptree& pt,
-                               std::vector<preferences_number_node_ptr>& preferences_nodes);
 
     const std::string system_xml_directory_;
     const std::string private_xml_directory_;
@@ -228,8 +246,8 @@ namespace pqrs {
 
     std::vector<std::tr1::shared_ptr<appdef> > app_;
 
-    std::vector<preferences_checkbox_node_ptr> preferences_checkbox_nodes_;
-    std::vector<preferences_number_node_ptr> preferences_number_nodes_;
+    preferences_node_tree<preferences_checkbox_node> preferences_checkbox_node_tree_;
+    preferences_node_tree<preferences_number_node> preferences_number_node_tree_;
   };
 }
 
