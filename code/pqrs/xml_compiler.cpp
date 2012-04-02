@@ -24,6 +24,7 @@ namespace pqrs {
     reload_appdef_();
     reload_devicedef_();
     reload_autogen_();
+    reload_preferences_();
   }
 
   const std::string&

@@ -165,5 +165,19 @@ namespace pqrs {
         preferences_checkbox_node_tree_.traverse_item(*pt_ptr);
       }
     }
+
+    // number
+    {
+      std::vector<xml_file_path_ptr> xml_file_path_ptrs;
+      xml_file_path_ptrs.push_back(
+        xml_file_path_ptr(new xml_file_path(xml_file_path::base_directory::private_xml, "number.xml")));
+
+      std::vector<ptree_ptr> pt_ptrs;
+      read_xmls_(pt_ptrs, xml_file_path_ptrs);
+
+      for (auto& pt_ptr : pt_ptrs) {
+        preferences_number_node_tree_.traverse_item(*pt_ptr);
+      }
+    }
   }
 }
