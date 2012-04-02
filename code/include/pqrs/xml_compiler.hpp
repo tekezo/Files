@@ -137,32 +137,38 @@ namespace pqrs {
     class preferences_node {
     public:
       preferences_node(void);
-      preferences_node(const preferences_node& parent);
       virtual ~preferences_node(void) {}
 
       bool handle_name_and_appendix(const boost::property_tree::ptree::value_type& it);
 
       const std::string& get_name(void) const { return name_; }
       int get_name_line_count(void) const { return name_line_count_; }
-      const std::string& get_name_for_filter(void) const { return name_for_filter_; }
       const std::string& get_identifier(void) const { return identifier_; }
 
     protected:
       std::string name_;
       int name_line_count_;
-      std::string name_for_filter_;
 
       std::string identifier_;
     };
 
     class preferences_checkbox_node : public preferences_node {
     public:
+      preferences_checkbox_node(void);
+      preferences_checkbox_node(const preferences_checkbox_node& parent_node);
+
       bool handle_item_child(const boost::property_tree::ptree::value_type& it);
+
+      const std::string& get_name_for_filter(void) const { return name_for_filter_; }
+
+    private:
+      std::string name_for_filter_;
     };
 
     class preferences_number_node : public preferences_node {
     public:
       preferences_number_node(void);
+      preferences_number_node(const preferences_number_node& parent_node);
 
       bool handle_item_child(const boost::property_tree::ptree::value_type& it);
 
@@ -182,6 +188,9 @@ namespace pqrs {
       typedef std::tr1::shared_ptr<preferences_node_tree> preferences_node_tree_ptr;
       typedef std::vector<preferences_node_tree_ptr> preferences_node_tree_ptrs;
       typedef std::tr1::shared_ptr<preferences_node_tree_ptrs> preferences_node_tree_ptrs_ptr;
+
+      preferences_node_tree(void) {}
+      preferences_node_tree(const T& parent_node) : node_(parent_node) {}
 
       void clear(void);
       void traverse_item(const boost::property_tree::ptree& pt);

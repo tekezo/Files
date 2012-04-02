@@ -6,38 +6,23 @@ namespace pqrs {
     name_line_count_(0)
   {}
 
-  xml_compiler::preferences_node::preferences_node(const preferences_node& parent) :
-    name_line_count_(0),
-    name_for_filter_(parent.name_for_filter_ + " ")
-  {}
-
   bool
   xml_compiler::preferences_node::handle_name_and_appendix(const boost::property_tree::ptree::value_type& it)
   {
     if (it.first == "name") {
-      std::string data = boost::trim_copy(it.second.data());
-
-      name_ += data;
+      name_ += boost::trim_copy(it.second.data());
       name_ += "\n";
 
       ++name_line_count_;
-
-      name_for_filter_ += boost::algorithm::to_lower_copy(data);
-      name_for_filter_ += " ";
 
       return true;
 
     } else if (it.first == "appendix") {
-      std::string data = boost::trim_copy(it.second.data());
-
       name_ += "  ";
-      name_ += data;
+      name_ += boost::trim_copy(it.second.data());
       name_ += "\n";
 
       ++name_line_count_;
-
-      name_for_filter_ += boost::algorithm::to_lower_copy(data);
-      name_for_filter_ += " ";
 
       return true;
     }
@@ -45,10 +30,20 @@ namespace pqrs {
     return false;
   }
 
+  xml_compiler::preferences_checkbox_node::preferences_checkbox_node(void)
+  {}
+
+  xml_compiler::preferences_checkbox_node::preferences_checkbox_node(const preferences_checkbox_node& parent) :
+    name_for_filter_(parent.name_for_filter_ + " ")
+  {}
+
   bool
   xml_compiler::preferences_checkbox_node::handle_item_child(const boost::property_tree::ptree::value_type& it)
   {
     if (preferences_node::handle_name_and_appendix(it)) {
+      name_for_filter_ += boost::algorithm::to_lower_copy(boost::trim_copy(it.second.data()));
+      name_for_filter_ += " ";
+
       return true;
     }
     if (it.first == "identifier") {
@@ -61,6 +56,10 @@ namespace pqrs {
   xml_compiler::preferences_number_node::preferences_number_node(void) :
     default_value_(0),
     step_(1)
+  {}
+
+  xml_compiler::preferences_number_node::preferences_number_node(const preferences_number_node& /*parent*/) :
+    preferences_number_node()
   {}
 
   bool
@@ -124,16 +123,13 @@ namespace pqrs {
         traverse_item(it.second);
 
       } else {
-        preferences_node_tree_ptr ptr(new preferences_node_tree);
+        preferences_node_tree_ptr ptr(new preferences_node_tree(node_));
 
         for (auto& child : it.second) {
           if ((ptr->node_).handle_item_child(child)) {
             continue;
           }
-
-          if (child.first == "item") {
-            ptr->traverse_item(child.second);
-          }
+          ptr->traverse_item(child.second);
         }
 
         if (! children_) {
