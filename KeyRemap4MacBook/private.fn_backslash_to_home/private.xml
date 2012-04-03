@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Fn+Backslash to Home</name>
+    <identifier>private.fn_backslash_to_home</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, ModifierFlag::FN, KeyCode::HOME</autogen>
+  </item>
+</root>
