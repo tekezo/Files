@@ -13,6 +13,14 @@ namespace pqrs {
     symbol_map_["ConfigIndex::VK__AUTOINDEX__BEGIN__"] = 0;
   }
 
+  void
+  xml_compiler::symbol_map::dump(void) const
+  {
+    for (auto& it : symbol_map_) {
+      std::cout << it.first << " " << it.second << std::endl;
+    }
+  }
+
   uint32_t
   xml_compiler::symbol_map::get(const std::string& name) const
   {
