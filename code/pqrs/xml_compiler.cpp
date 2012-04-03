@@ -27,6 +27,12 @@ namespace pqrs {
     reload_preferences_();
   }
 
+  const xml_compiler::remapclasses_initialize_vector&
+  xml_compiler::get_remapclasses_initialize_vector(void) const
+  {
+    return remapclasses_initialize_vector_;
+  }
+
   const std::string&
   xml_compiler::get_error_message(void) const
   {
@@ -43,6 +49,12 @@ namespace pqrs {
   xml_compiler::get_symbol_map_value(const std::string& name) const
   {
     return symbol_map_.get_optional(name);
+  }
+
+  void
+  xml_compiler::dump_symbol_map(void) const
+  {
+    symbol_map_.dump();
   }
 
   void

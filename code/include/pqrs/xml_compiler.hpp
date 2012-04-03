@@ -14,14 +14,18 @@
 namespace pqrs {
   class xml_compiler {
   public:
+    class remapclasses_initialize_vector;
+
     xml_compiler(const std::string& system_xml_directory, const std::string& private_xml_directory);
 
     void reload(void);
+    const remapclasses_initialize_vector& get_remapclasses_initialize_vector(void) const;
 
     const std::string& get_error_message(void) const;
     int get_error_count(void) const;
 
     boost::optional<uint32_t> get_symbol_map_value(const std::string& name) const;
+    void dump_symbol_map(void) const;
 
     static void normalize_identifier(std::string& identifier);
 
@@ -67,6 +71,7 @@ namespace pqrs {
     public:
       symbol_map(void);
       void clear(void);
+      void dump(void) const; // For debug
 
       uint32_t get(const std::string& name) const;
       uint32_t get(const std::string& type, const std::string& name) const;
