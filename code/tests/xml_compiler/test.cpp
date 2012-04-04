@@ -16,7 +16,6 @@ TEST(pqrs_xml_compiler, dump)
   }
 }
 
-
 TEST(pqrs_xml_compiler, reload)
 {
   pqrs::xml_compiler xml_compiler("data/system_xml", "data/private_xml");
