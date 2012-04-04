@@ -24,17 +24,21 @@ namespace pqrs {
     std::vector<ptree_ptr> pt_ptrs;
     read_xmls_(pt_ptrs, xml_file_path_ptrs);
 
+    // ----------------------------------------
+    // add_configindex_and_keycode_to_symbol_map_
+    //   1st loop: <identifier>notsave.*</identifier>
+    //   2nd loop: other <identifier>
+    //
+    // We need to assign higher priority to notsave.* settings.
+    // So, adding configindex by 2steps.
     for (auto& pt_ptr : pt_ptrs) {
-      // add_configindex_and_keycode_to_symbol_map_
-      //   1st loop: <identifier>notsave.*</identifier>
-      //   2nd loop: other <identifier>
-      //
-      // We need to assign higher priority to notsave.* settings.
-      // So, adding configindex by 2steps.
       add_configindex_and_keycode_to_symbol_map_(*pt_ptr, "", true);
+    }
+    for (auto& pt_ptr : pt_ptrs) {
       add_configindex_and_keycode_to_symbol_map_(*pt_ptr, "", false);
     }
 
+    // ----------------------------------------
     for (auto& pt_ptr : pt_ptrs) {
       traverse_identifier_(*pt_ptr, "");
     }
