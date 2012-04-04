@@ -135,7 +135,7 @@ namespace pqrs {
           auto identifier = raw_identifier;
           normalize_identifier(identifier);
 
-          auto attr_vk_config = it.second.get_optional<std::string>("<xmlattr>.essential");
+          auto attr_vk_config = it.second.get_optional<std::string>("<xmlattr>.vk_config");
           if (attr_vk_config) {
             initialize_vector.push_back(5); // count
             initialize_vector.push_back(BRIDGE_VK_CONFIG);
