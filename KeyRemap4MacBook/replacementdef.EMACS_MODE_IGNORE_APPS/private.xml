@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+  <replacementdef>
+    <replacementname>EMACS_MODE_IGNORE_APPS</replacementname>
+    <replacementvalue>
+      ECLIPSE,
+      EMACS,
+      FIREFOX,
+      REMOTEDESKTOPCONNECTION,
+      TERMINAL,
+      VI,
+      VIRTUALMACHINE,
+      X11,
+    </replacementvalue>
+  </replacementdef>
+</root>
