@@ -3,7 +3,12 @@
 system_xml_directory=/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources
 private_xml_directory=/noexists
 
-for command in "dump_data" "dump_tree" "dump_number"; do
+for command in \
+    dump_data \
+    dump_tree \
+    dump_number \
+    dump_identifier_except_essential \
+    ; do
     echo "------------------------------------------------------------"
     echo "$command old"
     time /Library/org.pqrs/KeyRemap4MacBook/bin/dump_xml_compiler_result \
