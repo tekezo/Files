@@ -11,13 +11,13 @@ for command in \
     ; do
     echo "------------------------------------------------------------"
     echo "$command old"
-    time /Library/org.pqrs/KeyRemap4MacBook/bin/dump_xml_compiler_result \
+    /usr/bin/time /Library/org.pqrs/KeyRemap4MacBook/bin/dump_xml_compiler_result \
         $system_xml_directory $private_xml_directory $command > ~/$command.old
     echo "------------------------------------------------------------"
 
     echo "------------------------------------------------------------"
     echo "$command new"
-    time ../../KeyRemap4MacBook/src/bin/dump_xml_compiler_result/build/Release/dump_xml_compiler_result \
+    /usr/bin/time ../../KeyRemap4MacBook/src/bin/dump_xml_compiler_result/build/Release/dump_xml_compiler_result \
         $system_xml_directory $private_xml_directory $command > ~/$command.new
     echo "------------------------------------------------------------"
 
