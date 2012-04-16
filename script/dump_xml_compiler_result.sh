@@ -7,6 +7,7 @@ private_xml_directory=~/Library/Application\ Support/KeyRemap4MacBook
 for command in \
     dump_data \
     dump_tree \
+    dump_tree_all \
     dump_number \
     dump_identifier_except_essential \
     ; do
