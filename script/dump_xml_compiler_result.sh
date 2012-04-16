@@ -1,7 +1,8 @@
 #!/bin/sh
 
 system_xml_directory=/Library/org.pqrs/KeyRemap4MacBook/app/KeyRemap4MacBook.app/Contents/Resources
-private_xml_directory=/noexists
+#private_xml_directory=/noexists
+private_xml_directory=~/Library/Application\ Support/KeyRemap4MacBook
 
 for command in \
     dump_data \
@@ -12,17 +13,17 @@ for command in \
     echo "------------------------------------------------------------"
     echo "$command old"
     /usr/bin/time /Library/org.pqrs/KeyRemap4MacBook/bin/dump_xml_compiler_result \
-        $system_xml_directory $private_xml_directory $command > ~/$command.old
+        $system_xml_directory "$private_xml_directory" $command > ~/$command.old
     echo "------------------------------------------------------------"
 
     echo "------------------------------------------------------------"
     echo "$command new"
     /usr/bin/time ../../KeyRemap4MacBook/src/bin/dump_xml_compiler_result/build/Release/dump_xml_compiler_result \
-        $system_xml_directory $private_xml_directory $command > ~/$command.new
+        $system_xml_directory "$private_xml_directory" $command > ~/$command.new
     echo "------------------------------------------------------------"
 
     echo "------------------------------------------------------------"
     echo "diff old new"
-    diff ~/$command.old ~/$command.new
+    diff -u ~/$command.old ~/$command.new
     echo "------------------------------------------------------------"
 done
