@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Backquote(`) to u</name>
+    <identifier>private.backquote_to_u</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, KeyCode::U</autogen>
+  </item>
+</root>
