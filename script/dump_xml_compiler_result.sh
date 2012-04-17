@@ -10,7 +10,9 @@ for command in \
     dump_tree_all \
     dump_number \
     dump_identifier_except_essential \
-    output_bridge_essential_config_index_hpp \
+    output_bridge_essential_configuration_enum_h \
+    output_bridge_essential_configuration_default_values_c \
+    output_bridge_essential_configuration_identifiers_m \
     ; do
     echo "------------------------------------------------------------"
     echo "$command old"
