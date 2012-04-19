@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>USB Filco Majestouch Keyboard Hack</name>
+    <appendix>Change Right Alt Key to Application Key</appendix>
+    <appendix>Change Right Application Key to Alt Key</appendix>
+    <identifier>private.majestouch_hack</identifier>
+    <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, KeyCode::OPTION_R</autogen>
+    <autogen>--KeyToKey-- KeyCode::OPTION_R, KeyCode::PC_APPLICATION</autogen>
+  </item>
+</root>
