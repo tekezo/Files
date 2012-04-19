@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Use PC Style Home/End (except in Virtual Machine,RDC)</name>
+    <appendix>(Change Home to Control+A)</appendix>
+    <appendix>(Change End to Control+E)</appendix>
+    <identifier>private.pclikehomeend_emacs</identifier>
+    <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, X11</not>
+
+    <!-- we should not change home/end key on Dreamweaver, Office -->
+    <block>
+      <only>DREAMWEAVER</only>
+      <autogen>--KeyToKey-- FROMKEYCODE_HOME, KeyCode::HOME, ModifierFlag::SHIFT_L</autogen>
+      <autogen>--KeyToKey-- FROMKEYCODE_END,  KeyCode::END,  ModifierFlag::SHIFT_L</autogen>
+    </block>
+    <block>
+      <only>BLUEFISH,WORD,EXCEL,POWERPOINT</only>
+      <autogen>--KeyToKey-- FROMKEYCODE_HOME, KeyCode::HOME</autogen>
+      <autogen>--KeyToKey-- FROMKEYCODE_END,  KeyCode::END</autogen>
+    </block>
+
+    <!-- ============================================================ -->
+    <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_COMMAND, KeyCode::CURSOR_UP,    ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_CONTROL, KeyCode::CURSOR_UP,    ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_COMMAND, KeyCode::CURSOR_DOWN,  ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_CONTROL, KeyCode::CURSOR_DOWN,  ModifierFlag::COMMAND_L</autogen>
+    <block>
+      <!-- Control+Shift+A/E do not work in springpadit.com. -->
+      <!-- Therefore we need to change Shift+Home/End to Command+Shift+Left/Right. -->
+      <only>SAFARI,FIREFOX,THUNDERBIRD,GOOGLE_CHROME,OPERA</only>
+      <autogen>--KeyToKey-- FROMKEYCODE_HOME, VK_SHIFT | ModifierFlag::NONE,
+        KeyCode::CURSOR_LEFT,   ModifierFlag::COMMAND_L | VK_SHIFT</autogen>
+      <autogen>--KeyToKey-- FROMKEYCODE_END,  VK_SHIFT | ModifierFlag::NONE,
+        KeyCode::CURSOR_RIGHT,  ModifierFlag::COMMAND_L | VK_SHIFT</autogen>
+    </block>
+    <autogen>--KeyToKey-- FROMKEYCODE_HOME,             KeyCode::A, ModifierFlag::CONTROL_L</autogen>
+    <autogen>--KeyToKey-- FROMKEYCODE_END,              KeyCode::E, ModifierFlag::CONTROL_L</autogen>
+  </item>
+</root>
