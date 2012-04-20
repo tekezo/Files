@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Swap Left Alt and Left Windows Key on Non-Apple Keyboard</name>
+    <identifier>private.swap_alt_windows_on_non_apple_keyboard</identifier>
+    <device_not>DeviceVendor::APPLE_COMPUTER, DeviceProduct::ANY</device_not>
+    <autogen>--KeyToKey-- KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+  </item>
+</root>
