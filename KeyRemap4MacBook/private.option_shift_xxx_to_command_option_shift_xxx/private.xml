@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change Option+Shift+XXX to Command+Option+Shift+XXX</name>
+    <identifier>private.option_shift_xxx_to_command_option_shift_xxx</identifier>
+
+    <include system_xml_path="include/checkbox/commons/wrap_keys/alphabet.xml">
+      <replacementdef>
+        <replacementname>BEFORE</replacementname>
+        <replacementvalue>VK_OPTION | VK_SHIFT | ModifierFlag::NONE</replacementvalue>
+      </replacementdef>
+      <replacementdef>
+        <replacementname>AFTER</replacementname>
+        <replacementvalue>ModifierFlag::COMMAND_L | VK_OPTION | VK_SHIFT</replacementvalue>
+      </replacementdef>
+    </include>
+    <include system_xml_path="include/checkbox/commons/wrap_keys/number.xml">
+      <replacementdef>
+        <replacementname>BEFORE</replacementname>
+        <replacementvalue>VK_OPTION | VK_SHIFT | ModifierFlag::NONE</replacementvalue>
+      </replacementdef>
+      <replacementdef>
+        <replacementname>AFTER</replacementname>
+        <replacementvalue>ModifierFlag::COMMAND_L | VK_OPTION | VK_SHIFT</replacementvalue>
+      </replacementdef>
+    </include>
+    <include system_xml_path="include/checkbox/commons/wrap_keys/symbol.xml">
+      <replacementdef>
+        <replacementname>BEFORE</replacementname>
+        <replacementvalue>VK_OPTION | VK_SHIFT | ModifierFlag::NONE</replacementvalue>
+      </replacementdef>
+      <replacementdef>
+        <replacementname>AFTER</replacementname>
+        <replacementvalue>ModifierFlag::COMMAND_L | VK_OPTION | VK_SHIFT</replacementvalue>
+      </replacementdef>
+    </include>
+  </item>
+</root>
