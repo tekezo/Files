@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Control+KeyPad Minus to KeyPad Clear</name>
+    <identifier>private.keypad_minus_to_keypad_clear</identifier>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_MINUS, VK_CONTROL, KeyCode::KEYPAD_CLEAR</autogen>
+  </item>
+</root>
