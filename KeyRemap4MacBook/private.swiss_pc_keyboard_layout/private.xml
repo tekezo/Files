@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change AltGr+^ to ~</name>
+    <appendix>(When Input Source is Swiss French or Swiss German)</appendix>
+    <identifier>private.swiss_pc_keyboard_layout</identifier>
+    <inputmode_only>SWISS</inputmode_only>
+    <!-- alt+^ to ~ -->
+    <autogen>
+      --KeyToKey--
+      KeyCode::EQUAL, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::N, VK_OPTION
+    </autogen>
+  </item>
+
+</root>
