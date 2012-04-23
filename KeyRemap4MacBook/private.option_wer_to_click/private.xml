@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Option+WER to Click</name>
+    <appendix>- Option+W to LeftClick</appendix>
+    <appendix>- Option+E to MiddleClick</appendix>
+    <appendix>- Option+R to RightClick</appendix>
+    <identifier>private.option_wer_to_click</identifier>
+    <autogen>--KeyToPointingButton-- KeyCode::W, VK_OPTION, PointingButton::LEFT</autogen>
+    <autogen>--KeyToPointingButton-- KeyCode::E, VK_OPTION, PointingButton::MIDDLE</autogen>
+    <autogen>--KeyToPointingButton-- KeyCode::R, VK_OPTION, PointingButton::RIGHT</autogen>
+  </item>
+
+</root>
