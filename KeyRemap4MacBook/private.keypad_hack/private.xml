@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use Left Shift to toggle KeyPad Shift Mode</name>
+    <identifier>private.shift_l_toggle_keypad_shift_mode</identifier>
+    <autogen>--KeyOverlaidModifier--
+      KeyCode::SHIFT_L, KeyCode::SHIFT_L,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_private_keypad_shift_mode</autogen>
+  </item>
+
+  <item>
+    <name>KeyPad Shift Mode</name>
+    <identifier vk_config="true">notsave.private_keypad_shift_mode</identifier>
+    <autogen>--ShowStatusMessage-- KeyPad Shift</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_1, ModifierFlag::NONE, KeyCode::KEYPAD_1, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_2, ModifierFlag::NONE, KeyCode::KEYPAD_2, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_3, ModifierFlag::NONE, KeyCode::KEYPAD_3, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_4, ModifierFlag::NONE, KeyCode::KEYPAD_4, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_5, ModifierFlag::NONE, KeyCode::KEYPAD_5, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_6, ModifierFlag::NONE, KeyCode::KEYPAD_6, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_7, ModifierFlag::NONE, KeyCode::KEYPAD_7, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_8, ModifierFlag::NONE, KeyCode::KEYPAD_8, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_9, ModifierFlag::NONE, KeyCode::KEYPAD_9, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_0, ModifierFlag::NONE, KeyCode::KEYPAD_0, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+</root>
