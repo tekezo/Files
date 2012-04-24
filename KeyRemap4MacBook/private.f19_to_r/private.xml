@@ -7,4 +7,10 @@
     <autogen>--KeyToKey-- KeyCode::F19, KeyCode::R</autogen>
   </item>
 
+  <item>
+    <name>Change F19 to Shift+R</name>
+    <identifier>private.f19_to_shift_r</identifier>
+    <autogen>--KeyToKey-- KeyCode::F19, KeyCode::R, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
 </root>
