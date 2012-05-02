@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable Space Key</name>
+    <identifier>private.disable_space</identifier>
+    <autogen>--KeyToKey-- KeyCode::SPACE, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
