@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Noppoo Choc Mini keyboard Hack</name>
+    <identifier>private.noppoo_choc_mini_keyboard_hack</identifier>
+    <!-- c: c,left -->
+    <!-- b: b,right -->
+    <!-- d: d,tab -->
+    <!-- f: f,down -->
+    <!-- g: g,up -->
+    <!-- e: e,space -->
+    <autogen>--SimultaneousKeyPresses-- KeyCode::C, KeyCode::CURSOR_LEFT,  KeyCode::C</autogen>
+    <autogen>--SimultaneousKeyPresses-- KeyCode::B, KeyCode::CURSOR_RIGHT, KeyCode::B</autogen>
+    <autogen>--SimultaneousKeyPresses-- KeyCode::D, KeyCode::TAB,          KeyCode::D</autogen>
+    <autogen>--SimultaneousKeyPresses-- KeyCode::F, KeyCode::CURSOR_DOWN,  KeyCode::F</autogen>
+    <autogen>--SimultaneousKeyPresses-- KeyCode::G, KeyCode::CURSOR_UP,    KeyCode::G</autogen>
+    <autogen>--SimultaneousKeyPresses-- KeyCode::E, KeyCode::SPACE,        KeyCode::E</autogen>
+  </item>
+</root>
