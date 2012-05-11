@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Logitech N305 Holding Clear Key to Comma</name>
+    <appendix>(Use this with "Logitech N305 hack")</appendix>
+    <identifier>private.logitech_n305_hack3</identifier>
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+
+    <autogen>
+      --HoldingKeyToKey--
+      KeyCode::PC_KEYPAD_NUMLOCK,
+      KeyCode::VK_NONE,
+      KeyCode::COMMA,
+      Option::NOREPEAT
+    </autogen>
+  </item>
+</root>
