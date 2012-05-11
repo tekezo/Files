@@ -14,4 +14,34 @@
       Option::NOREPEAT
     </autogen>
   </item>
+
+  <item>
+    <name>Logitech N305 Change Dot to Comma</name>
+    <appendix>Holding Dot to Dot</appendix>
+    <appendix>(Use this with "Logitech N305 hack")</appendix>
+    <identifier>private.logitech_n305_hack3_1</identifier>
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+
+    <autogen>
+      --HoldingKeyToKey--
+      KeyCode::KEYPAD_DOT,
+      KeyCode::COMMA,
+      KeyCode::VK_NONE,
+      KeyCode::KEYPAD_DOT,
+      Option::NOREPEAT
+    </autogen>
+  </item>
+
+  <item>
+    <name>Logitech N305 Change Dot to Comma</name>
+    <appendix>(Use this with "Logitech N305 hack")</appendix>
+    <identifier>private.logitech_n305_hack3_2</identifier>
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::KEYPAD_DOT,
+      KeyCode::COMMA
+    </autogen>
+  </item>
 </root>
