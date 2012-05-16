@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Return to Enter on Non-Apple Keyboard</name>
+    <identifier>private.non_apple_devices_return_to_enter</identifier>
+    <device_not>DeviceVendor::APPLE_COMPUTER, DeviceProduct::ANY</device_not>
+    <autogen>--KeyToKey-- KeyCode::RETURN, KeyCode::ENTER</autogen>
+  </item>
+</root>
