@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>F1 to Escape</name>
+    <identifier>private.f1_to_escape</identifier>
+    <autogen>--KeyToKey-- KeyCode::F1, KeyCode::ESCAPE</autogen>
+  </item>
+
+  <item>
+    <name>Brightness Down to Escape</name>
+    <identifier>private.brightnessdown_to_escape</identifier>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::BRIGHTNESS_DOWN, KeyCode::ESCAPE</autogen>
+  </item>
+
+</root>
