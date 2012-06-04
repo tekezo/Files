@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Dashboard to F9</name>
+    <identifier>private.dashboard_to_f9</identifier>
+    <autogen>--KeyToKey-- KeyCode::DASHBOARD, KeyCode::F9</autogen>
+  </item>
+
+</root>
