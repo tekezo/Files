@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Fn+F1,F2 to Brightness Adjust</name>
+    <appendix>Fn+F1 to Brightness Down</appendix>
+    <appendix>Fn+F2 to Brightness Up</appendix>
+    <identifier>private.fn_fkeys_to_external_brightness_control</identifier>
+    <autogen>--KeyToKey-- KeyCode::F1, ModifierFlag::FN, KeyCode::BRIGHTNESS_DOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::F2, ModifierFlag::FN, KeyCode::BRIGHTNESS_UP</autogen>
+  </item>
+
+</root>
