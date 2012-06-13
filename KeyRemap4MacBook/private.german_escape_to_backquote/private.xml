@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Escape to Backquote</name>
+    <identifier>private.german_escape_to_backquote</identifier>
+    <inputmode_only>GERMAN</inputmode_only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::ESCAPE, ModifierFlag::NONE,
+
+      KeyCode::GERMAN_QUOTE, ModifierFlag::SHIFT_L,
+      KeyCode::SPACE
+    </autogen>
+  </item>
+
+  <item>
+    <name>Escape to Backquote accent</name>
+    <identifier>private.german_escape_to_backquote2</identifier>
+    <inputmode_only>GERMAN</inputmode_only>
+    <autogen>--KeyToKey-- KeyCode::ESCAPE, ModifierFlag::NONE, KeyCode::GERMAN_QUOTE, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+  <item>
+    <name>Escape to Quote accent</name>
+    <identifier>private.german_escape_to_quote</identifier>
+    <inputmode_only>GERMAN</inputmode_only>
+    <autogen>--KeyToKey-- KeyCode::ESCAPE, KeyCode::GERMAN_QUOTE</autogen>
+  </item>
+
+</root>
