@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>F19 to CapsLock on Apple keyboard.</name>
+    <appendix>Otherwise, F19 to Control.</name>
+    <identifier>private.capslock_hack_f19</identifier>
+    <block>
+      <device_only>DeviceVendor::APPLE_INC, DeviceProduct::ANY</device_only>
+      <autogen>--KeyToKey-- KeyCode::F19, KeyCode::CAPSLOCK</autogen>
+    </block>
+    <block>
+      <autogen>--KeyToKey-- KeyCode::F19, KeyCode::CONTROL_L</autogen>
+    </block>
+  </item>
+
+  <item>
+    <name>Control to CapsLock on non-Apple keyboard.</name>
+    <identifier>private.control_to_capslock_on_non_apple_keyboard</identifier>
+    <block>
+      <device_not>DeviceVendor::APPLE_INC, DeviceProduct::ANY</device_not>
+      <autogen>--KeyToKey-- KeyCode::CONTROL_L, KeyCode::CAPSLOCK</autogen>
+    </block>
+  </item>
+
+</root>
