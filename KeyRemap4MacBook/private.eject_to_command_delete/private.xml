@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Eject to Command+Delete</name>
+    <identifier>private.eject_to_command_delete</identifier>
+    <autogen>--ConsumerToKey--
+      ConsumerKeyCode::EJECT, ModifierFlag::NONE,
+      KeyCode::DELETE, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+
+</root>
