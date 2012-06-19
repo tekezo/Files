@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <appdef>
+    <appname>
+      iPhoneSimulator
+    </appname>
+    <equal>
+      com.apple.iphonesimulator
+    </equal>
+  </appdef>
+
+  <item>
+    <name>Space to Tab on iOS Simulator</name>
+    <identifier>private.space_to_tab_iPhoneSimulator</identifier>
+    <only>iPhoneSimulator</only>
+    <autogen>--KeyToKey-- KeyCode::SPACE, KeyCode::TAB</autogen>
+  </item>
+
+</root>
