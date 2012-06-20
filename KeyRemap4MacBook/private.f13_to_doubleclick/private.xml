@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change F13 to Double Click</name>
+    <identifier>private.f13_to_doubleclick</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F13,
+      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+    </autogen>
+  </item>
+
+</root>
