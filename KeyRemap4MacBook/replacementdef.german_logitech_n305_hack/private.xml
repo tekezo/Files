@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>LOGITECH_N305_LEFT_PARENTHES</replacementname>
+    <replacementvalue>KeyCode::KEY_8, ModifierFlag::SHIFT_L</replacementvalue>
+  </replacementdef>
+
+  <replacementdef>
+    <replacementname>LOGITECH_N305_RIGHT_PARENTHES</replacementname>
+    <replacementvalue>KeyCode::KEY_9, ModifierFlag::SHIFT_L</replacementvalue>
+  </replacementdef>
+
+  <replacementdef>
+    <replacementname>LOGITECH_N305_EQUAL</replacementname>
+    <replacementvalue>KeyCode::KEY_0, ModifierFlag::SHIFT_L</replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Information: Logitech N305 Hack for German is enabled.</name>
+  </item>
+
+</root>
