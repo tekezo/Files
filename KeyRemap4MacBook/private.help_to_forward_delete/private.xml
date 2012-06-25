@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Help to Forward Delete</name>
+    <identifier>remap.help_to_forward_delete</identifier>
+    <autogen>--KeyToKey-- KeyCode::HELP, KeyCode::FORWARD_DELETE</autogen>
+  </item>
+
+</root>
