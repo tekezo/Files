@@ -4,7 +4,14 @@
   <item>
     <name>Shift_L+Shift_R to CapsLock</name>
     <appendix>+ Shift_R+Shift_L to CapsLock</appendix>
+    <appendix>+ Change Shift_L to turn CapsLock off</appendix>
+    <appendix>+ Change Shift_R to turn CapsLock off</appendix>
     <identifier>private.shiftLR_to_capslock</identifier>
+    <block>
+      <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
+      <autogen>--KeyToKey-- KeyCode::SHIFT_R, KeyCode::CAPSLOCK, KeyCode::SHIFT_R</autogen>
+      <autogen>--KeyToKey-- KeyCode::SHIFT_L, KeyCode::CAPSLOCK, KeyCode::SHIFT_L</autogen>
+    </block>
     <autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::CAPSLOCK</autogen>
     <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_L, KeyCode::CAPSLOCK</autogen>
   </item>
