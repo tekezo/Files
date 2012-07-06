@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Toggle HanEng Key(to Shift_L(R)+Space)</name>
+    <identifier>private.ksc_haneng2shiftLSpace</identifier>
+    <autogen>--KeyOverlaidModifier-- KeyCode::JIS_KANA, KeyCode::SHIFT_L, KeyCode::SPACE, ModifierFlag::SHIFT_R</autogen>
+  </item>
+
+</root>
