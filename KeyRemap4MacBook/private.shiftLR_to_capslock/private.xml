@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Shift_L+Shift_R to CapsLock</name>
+    <appendix>+ Shift_R+Shift_L to CapsLock</appendix>
+    <identifier>private.shiftLR_to_capslock</identifier>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_L, ModifierFlag::SHIFT_R, KeyCode::CAPSLOCK</autogen>
+    <autogen>--KeyToKey-- KeyCode::SHIFT_R, ModifierFlag::SHIFT_L, KeyCode::CAPSLOCK</autogen>
+  </item>
+
+</root>
