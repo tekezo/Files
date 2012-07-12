@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Return to Enter in Excel</name>
+    <identifier>private.app_excel_return_to_enter</identifier>
+    <only>EXCEL</only>
+    <autogen>--KeyToKey-- KeyCode::RETURN, KeyCode::ENTER</autogen>
+  </item>
+
+</root>
