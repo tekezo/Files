@@ -6,7 +6,7 @@
     <name>(Command+Shift+R to Shift+PageUp)</name>
     <identifier>private.commandr_to_pageup</identifier>
     <autogen>--KeyToKey-- KeyCode::R, VK_COMMAND | ModifierFlag::NONE, KeyCode::PAGEUP</autogen>
-    <autogen>--KeyToKey-- KeyCode::R, VK_COMMAND | VK_SHIFT | ModifierFlag::NONE, KeyCode::PAGEUP</autogen>
+    <autogen>--KeyToKey-- KeyCode::R, VK_COMMAND | VK_SHIFT | ModifierFlag::NONE, KeyCode::PAGEUP, VK_SHIFT</autogen>
   </item>
 
 </root>
