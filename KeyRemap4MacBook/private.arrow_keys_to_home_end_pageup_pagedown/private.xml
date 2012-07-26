@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Arrow keys to Home/End/PageUp/PageDown</name>
+    <identifier>private.arrow_keys_to_home_end_pageup_pagedown</identifier>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_UP,    KeyCode::PAGEUP</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_DOWN,  KeyCode::PAGEDOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_LEFT,  KeyCode::HOME</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_RIGHT, KeyCode::END</autogen>
+  </item>
+
+</root>
