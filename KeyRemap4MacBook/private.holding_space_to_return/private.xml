@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Holding Space to Return</name>
+    <identifier>private.holding_space_to_return</identifier>
+    <autogen>
+      --HoldingKeyToKey--
+      KeyCode::SPACE,   <!-- target key -->
+      KeyCode::SPACE,   <!-- shorten -->
+      KeyCode::VK_NONE, <!-- separator -->
+      KeyCode::RETURN,  <!-- holding -->
+      Option::NOREPEAT,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Holding Space to Return with repeat</name>
+    <identifier>private.holding_space_to_return_repeat</identifier>
+    <autogen>
+      --HoldingKeyToKey--
+      KeyCode::SPACE,   <!-- target key -->
+      KeyCode::SPACE,   <!-- shorten -->
+      KeyCode::VK_NONE, <!-- separator -->
+      KeyCode::RETURN   <!-- holding -->
+    </autogen>
+  </item>
+
+</root>
