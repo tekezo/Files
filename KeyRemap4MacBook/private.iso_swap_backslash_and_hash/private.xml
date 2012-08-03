@@ -3,6 +3,7 @@
 
   <item>
     <name>Swap Backslash(\) and Hash(#)</name>
+    <appendix>(You can enter Backslash by Alt+3)</appendix>
     <identifier>private.iso_swap_backslash_and_hash</identifier>
     <autogen>--KeyToKey-- KeyCode::BACKSLASH, ModifierFlag::NONE, KeyCode::KEY_3, ModifierFlag::OPTION_L</autogen>
     <autogen>--KeyToKey-- KeyCode::KEY_3, VK_OPTION | ModifierFlag::NONE, KeyCode::BACKSLASH</autogen>
