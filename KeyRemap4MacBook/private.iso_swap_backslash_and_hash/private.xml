@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Backslash(\) and Hash(#)</name>
+    <identifier>private.iso_swap_backslash_and_hash</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH, ModifierFlag::NONE, KeyCode::KEY_3, ModifierFlag::OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_3, VK_OPTION | ModifierFlag::NONE, KeyCode::BACKSLASH</autogen>
+  </item>
+
+</root>
