@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Option+D to Command+L on Safari</name>
+    <identifier>private.safari_option_d_to_command_l</identifier>
+    <only>SAFARI</only>
+    <autogen>--KeyToKey-- KeyCode::D, VK_OPTION | ModifierFlag::NONE, KeyCode::L, ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+</root>
