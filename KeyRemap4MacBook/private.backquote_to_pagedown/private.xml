@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Backquote to PageDown</name>
+    <identifier>private.backquote_to_pagedown</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, KeyCode::PAGEDOWN</autogen>
+  </item>
+
+</root>
