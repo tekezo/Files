@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Backquote to 0</name>
+    <identifier>private.backquote_to_zero</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, KeyCode::KEY_0</autogen>
+  </item>
+
+</root>
