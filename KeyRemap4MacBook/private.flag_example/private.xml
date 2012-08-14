@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>A to B</name>
+    <appendix>A to C</appendix>
+    <identifier>private.fn_s_to_example</identifier>
+    <block>
+      <config_not>notsave.private_flag1</config_not>
+      <autogen>
+        --KeyToKey--
+        KeyCode::A,
+        KeyCode::B, KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag1
+      </autogen>
+    </block>
+    <block>
+      <config_only>notsave.private_flag1</config_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::A,
+        KeyCode::C, KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_flag1
+      </autogen>
+    </block>
+  </item>
+
+  <item>
+    <name>----</name>
+    <identifier vk_config="true">notsave.private_flag1</identifier>
+  </item>
+
+</root>
