@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Fn+S to "example"</name>
+    <identifier>private.fn_s_to_example</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::S, ModifierFlag::FN,
+      KeyCode::E,
+      KeyCode::X,
+      KeyCode::A,
+      KeyCode::M,
+      KeyCode::P,
+      KeyCode::L,
+      KeyCode::E,
+    </autogen>
+  </item>
+
+</root>
