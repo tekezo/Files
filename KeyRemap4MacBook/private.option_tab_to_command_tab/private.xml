@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Option+Tab to Command+Tab</name>
+    <identifier>private.option_tab_to_command_tab</identifier>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::OPTION_L,
+      KeyCode::OPTION_L,
+      Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_LOCK_COMMAND_L_FORCE_OFF
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::OPTION_R,
+      KeyCode::OPTION_R,
+      Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_LOCK_COMMAND_L_FORCE_OFF
+    </autogen>
+
+    <!-- Option+Tab to Command+Tab (+ Turn Command Lock on) -->
+    <autogen>
+      --KeyToKey--
+      KeyCode::TAB, VK_OPTION,
+      KeyCode::TAB, ModifierFlag::COMMAND_L,
+      KeyCode::VK_LOCK_COMMAND_L_FORCE_ON, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
