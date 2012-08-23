@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <devicevendordef>
+    <vendorname>BROADCOM</vendorname>
+    <vendorid>0x45e</vendorid>
+  </devicevendordef>
+
+  <deviceproductdef>
+    <productname>BROADCOM_FOOT_PEDAL</productname>
+    <productid>0x8502</productid>
+  </deviceproductdef>
+
+  <item>
+    <name>Up/Down to Option+Up/Down on foot pedal</name>
+    <identifier>private.foot_pedal_up_down_to_option_up_down</identifier>
+    <device_only>DeviceVendor::BROADCOM, DeviceProduct::BROADCOM_FOOT_PEDAL</device_only>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_UP,   KeyCode::CURSOR_UP,   ModifierFlag::OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L</autogen>
+  </item>
+
+</root>
