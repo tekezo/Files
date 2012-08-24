@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change PC Application Key to Control+Option.</name>
+    <identifier>private.pc_application_to_controloption</identifier>
+    <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, KeyCode::OPTION_L, ModifierFlag::CONTROL_L</autogen>
+  </item>
+
+</root>
