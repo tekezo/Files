@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>JAPANESE_OYAYUBISHIFT_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+    <autogen>--KeyToKey-- KeyCode::JIS_ATMARK, ModifierFlag::NONE, KeyCode::JIS_COLON, KeyCode::VK_NONE</autogen>
+    <autogen>--KeyToKey-- KeyCode::JIS_COLON,  ModifierFlag::NONE, KeyCode::COMMA,     KeyCode::VK_NONE</autogen>
+    ]]>
+    </replacementvalue>
+  </replacementdef>
+
+</root>
