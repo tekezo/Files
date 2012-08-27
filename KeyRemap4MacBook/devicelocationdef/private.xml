@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <devicelocationdef>
+    <locationname>MY_MAGIC_MOUSE</locationname>
+    <locationid>0x3b7e9574</locationid>
+  </devicelocationdef>
+
+  <item>
+    <name>Disable ScrollWheel on Magic Mouse</name>
+    <identifier>private.devicelocationdef_example</identifier>
+    <block>
+      <device_only>
+        DeviceVendor::APPLE_INC,
+        DeviceProduct::MAGIC_MOUSE,
+        DeviceLocation::MY_MAGIC_MOUSE
+      </device_only>
+      <autogen>--DropScrollWheel--</autogen>
+    </block>
+  </item>
+
+</root>
