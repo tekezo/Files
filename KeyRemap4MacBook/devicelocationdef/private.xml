@@ -1,9 +1,18 @@
 <?xml version="1.0"?>
 <root>
 
+  <!--
+      $ ioreg -rk "LocationID"
+
+      ...
+      |   "DeviceName" = "Magic Mouse"
+      |   "LocationID" = 998151540
+      ...
+    -->
+
   <devicelocationdef>
     <locationname>MY_MAGIC_MOUSE</locationname>
-    <locationid>0x3b7e9574</locationid>
+    <locationid>998151540</locationid>
   </devicelocationdef>
 
   <item>
