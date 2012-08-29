@@ -5,19 +5,19 @@
     <identifier>private.holding_hacks</identifier>
     <!-- <inputmode_only>DVORAK</inputmode_only> -->
     <autogen>
-      --HoldingKeyToKey--
-      KeyCode::A, VK_SHIFT,
-      KeyCode::A, VK_SHIFT,
-      KeyCode::VK_NONE,
-      KeyCode::L, ModifierFlag::OPTION_L,
-      KeyCode::A, VK_SHIFT,
+      --HoldingKeyToKey--                        <!-- setting type -->
+      KeyCode::A, VK_SHIFT | ModifierFlag::NONE, <!-- target key (shift+a) -->
+      KeyCode::A, VK_SHIFT,                      <!-- result key when short press -->
+      KeyCode::VK_NONE,                          <!-- delimiter -->
+      KeyCode::L, ModifierFlag::OPTION_L,        <!-- result key when holding target key (option+l) -->
+      KeyCode::A, VK_SHIFT,                      <!-- result key when holding target key (shift+a) -->
     </autogen>
     <autogen>
-      --HoldingKeyToKey--
-      KeyCode::A,
-      KeyCode::A,
-      KeyCode::VK_NONE,
-      KeyCode::L, ModifierFlag::OPTION_L,
-      KeyCode::A
+      --HoldingKeyToKey--                 <!-- setting type -->
+      KeyCode::A, ModifierFlag::NONE,     <!-- target key (a) -->
+      KeyCode::A,                         <!-- result key when short press -->
+      KeyCode::VK_NONE,                   <!-- delimiter -->
+      KeyCode::L, ModifierFlag::OPTION_L, <!-- result key when holding target key (option+l) -->
+      KeyCode::A                          <!-- result key when holding target key (a) -->
     </autogen>
   </item>
