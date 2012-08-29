@@ -3,7 +3,7 @@
     <appendix>holding "a" to ã</appendix>
     <appendix>holding "A" to Ã</appendix>
     <identifier>private.holding_hacks</identifier>
-    <inputmode_only>DVORAK</inputmode_only>
+    <!-- <inputmode_only>DVORAK</inputmode_only> -->
     <autogen>
       --HoldingKeyToKey--
       KeyCode::A, VK_SHIFT,
