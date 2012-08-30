@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Space and JIS KANA</name>
+    <identifier>private.swap_space_jis_kana</identifier>
+    <autogen>--KeyToKey-- KeyCode::SPACE, KeyCode::JIS_KANA</autogen>
+    <autogen>--KeyToKey-- KeyCode::JIS_KANA, KeyCode::SPACE</autogen>
+  </item>
+
+</root>
