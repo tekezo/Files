@@ -3,6 +3,8 @@
 
   <item>
     <name>Tilt to Click</name>
+    <appendix>(There is a limitation by behavoir of tilt wheel.</appendix>
+    <appendix>This setting does not support mouse drag.)</appendix>
     <identifier>private.tilt_to_click</identifier>
     <autogen>--ScrollWheelToKey-- ScrollWheel::LEFT,  KeyCode::VK_MOUSEKEY_BUTTON_LEFT</autogen>
     <autogen>--ScrollWheelToKey-- ScrollWheel::RIGHT, KeyCode::VK_MOUSEKEY_BUTTON_RIGHT</autogen>
