@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Right Control to Delete</name>
+    <identifier>private.right_control_to_delete</identifier>
+    <autogen>--KeyToKey-- KeyCode::CONTROL_R, KeyCode::DELETE</autogen>
+  </item>
+
+</root>
