@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Tilt to Click</name>
+    <identifier>private.tilt_to_click</identifier>
+    <autogen>--ScrollWheelToKey-- ScrollWheel::LEFT,  KeyCode::VK_MOUSEKEY_BUTTON_LEFT</autogen>
+    <autogen>--ScrollWheelToKey-- ScrollWheel::RIGHT, KeyCode::VK_MOUSEKEY_BUTTON_RIGHT</autogen>
+  </item>
+
+</root>
