@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Shift+Backslash(\) and Option+Backquote(`)</name>
+    <identifier>private.swap_shift_backslash_option_backquote</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::BACKSLASH, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::BACKQUOTE, ModifierFlag::OPTION_L
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::BACKQUOTE, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::BACKSLASH, ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+
+</root>
