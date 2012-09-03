@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Caps Lock+QWERTYUIO to 123456789</name>
+    <identifier>private.caps_qwertyuio_to_123456789</identifier>
+    <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::CAPSLOCK, KeyCode::KEY_1</autogen>
+    <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::CAPSLOCK, KeyCode::KEY_2</autogen>
+    <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::CAPSLOCK, KeyCode::KEY_3</autogen>
+    <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::CAPSLOCK, KeyCode::KEY_4</autogen>
+    <autogen>--KeyToKey-- KeyCode::T, ModifierFlag::CAPSLOCK, KeyCode::KEY_5</autogen>
+    <autogen>--KeyToKey-- KeyCode::Y, ModifierFlag::CAPSLOCK, KeyCode::KEY_6</autogen>
+    <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::CAPSLOCK, KeyCode::KEY_7</autogen>
+    <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::CAPSLOCK, KeyCode::KEY_8</autogen>
+    <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::CAPSLOCK, KeyCode::KEY_9</autogen>
+  </item>
+
+  <item>
+    <name>Fn+QWERTYUIO to Shift+123456789</name>
+    <identifier>private.fn_qwertyuio_to_shift_123456789</identifier>
+    <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::FN, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::FN, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::FN, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::FN, KeyCode::KEY_4, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::T, ModifierFlag::FN, KeyCode::KEY_5, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::Y, ModifierFlag::FN, KeyCode::KEY_6, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::FN, KeyCode::KEY_7, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::FN, KeyCode::KEY_8, ModifierFlag::SHIFT_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::FN, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+</root>
