@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Shift+Backslash and Option+Backquote on British PC.</name>
+    <identifier>private.swap_shift_backslash_option_backquote</identifier>
+    <!-- Shift+Backslash (British PC) == Shift+Backquote (US) -->
+    <autogen>
+      --KeyToKey--
+      KeyCode::BACKQUOTE, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::UK_SECTION, ModifierFlag::OPTION_L
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::UK_SECTION, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+
+</root>
