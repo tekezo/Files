@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Eject to Volume Up</name>
+    <identifier>private.eject_to_volume_up</identifier>
+    <autogen>--ConsumerToConsumer-- ConsumerKeyCode::EJECT, ConsumerKeyCode::VOLUME_UP</autogen>
+  </item>
+
+</root>
