@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>fn to [</name>
+    <identifier>private.fn_to_bracketleft</identifier>
+    <autogen>--KeyOverlaidModifier-- KeyCode::FN, KeyCode::FN, KeyCode::BRACKET_LEFT</autogen>
+  </item>
+
+  <item>
+    <name>~ to [</name>
+    <identifier>private.backquote_to_bracketleft</identifier>
+    <autogen>--KeyOverlaidModifier-- KeyCode::BACKQUOTE, KeyCode::BRACKET_LEFT</autogen>
+  </item>
+
+</root>
