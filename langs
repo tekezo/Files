@@ -1,0 +1,770 @@
+xcodebuild -alltargets -configuration Release build
+=== BUILD NATIVE TARGET TISTest OF PROJECT TISTest WITH CONFIGURATION Release ===
+Check dependencies
+
+
+** BUILD SUCCEEDED **
+
+./build/Release/TISTest.app/Contents/MacOS/TISTest
+2012-06-07 15:55:29.042 TISTest[6662:303] <?xml version="1.0" standalone="yes"?><root><!-- ============================================================ --><!-- kTISPropertyInputSourceID --><languagedef><languagename>CANADIAN</languagename><inputsourceid_equal>com.apple.keylayout.Canadian</inputsourceid_equal></languagedef><languagedef><languagename>BEPO</languagename><inputsourceid_equal>org.pqrs.inputmode.unknown.FrenchDvorak</inputsourceid_equal></languagedef><languagedef><languagename>BEPO</languagename><languagedetail>BEPO_AZERTYCMD</languagedetail><inputsourceid_equal>org.pqrs.inputmode.unknown.FrenchDvorak-AzertyCmd</inputsourceid_equal></languagedef><!-- ============================================================ --><!-- kTISPropertyInputModeID --><!-- Japanese --><languagedef><languagename>JAPANESE</languagename><languagedetail>JAPANESE_HIRAGANA</languagedetail><inputmodeid_equal>com.apple.inputmethod.Japanese.Hiragana</inputmodeid_equal></languagedef><languagedef><languagename>JAPANESE</languagename><languagedetail>JAPANESE_KATAKANA</languagedetail><inputmodeid_equal>com.apple.inputmethod.Japanese.Katakana</inputmodeid_equal></languagedef><languagedef><languagename>JAPANESE</languagename><languagedetail>JAPANESE_FULLWIDTH_ROMAN</languagedetail><inputmodeid_equal>com.apple.inputmethod.Japanese.FullWidthRoman</inputmodeid_equal></languagedef><languagedef><languagename>JAPANESE</languagename><languagedetail>JAPANESE_HALFWIDTH_KANA</languagedetail><inputmodeid_equal>com.apple.inputmethod.Japanese.HalfWidthKana</inputmodeid_equal></languagedef><languagedef><languagename>JAPANESE</languagename><inputmodeid_equal>com.apple.inputmethod.Japanese</inputmodeid_equal></languagedef><!-- ============================================================ --><!-- BCP 47 --><languagedef><languagename>FRENCH</languagename><bcp47>fr</bcp47></languagedef></root>
+2012-06-07 15:55:29.125 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.PressAndHold
+2012-06-07 15:55:29.125 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.127 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.128 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.128 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.CharacterPaletteIM
+2012-06-07 15:55:29.128 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.130 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.131 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.131 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.KeyboardViewer
+2012-06-07 15:55:29.131 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.132 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.133 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.133 TISTest[6662:303] kTISPropertyInputSourceID: info.yatsu.inputmethod.MacUIM-IMK.Japanese
+2012-06-07 15:55:29.133 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese
+2012-06-07 15:55:29.134 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.134 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.135 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.US
+2012-06-07 15:55:29.135 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.142 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.143 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.143 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.German
+2012-06-07 15:55:29.143 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.144 TISTest[6662:303] lang: de
+2012-06-07 15:55:29.144 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.144 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.French
+2012-06-07 15:55:29.145 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.145 TISTest[6662:303] lang: fr
+2012-06-07 15:55:29.145 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.146 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Estonian
+2012-06-07 15:55:29.146 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.146 TISTest[6662:303] lang: et
+2012-06-07 15:55:29.146 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.147 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Dvorak
+2012-06-07 15:55:29.147 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.148 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.148 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.148 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Canadian
+2012-06-07 15:55:29.149 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.149 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.149 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.149 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.SCIM.ITABC
+2012-06-07 15:55:29.150 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.SCIM.ITABC
+2012-06-07 15:55:29.150 TISTest[6662:303] lang: zh-Hans
+2012-06-07 15:55:29.150 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.151 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.SCIM.WBH
+2012-06-07 15:55:29.151 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.SCIM.WBH
+2012-06-07 15:55:29.151 TISTest[6662:303] lang: zh-Hans
+2012-06-07 15:55:29.152 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.152 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.SCIM.WBX
+2012-06-07 15:55:29.152 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.SCIM.WBX
+2012-06-07 15:55:29.152 TISTest[6662:303] lang: zh-Hans
+2012-06-07 15:55:29.153 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.153 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.ChineseHandwriting
+2012-06-07 15:55:29.153 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.154 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.155 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.155 TISTest[6662:303] kTISPropertyInputSourceID: org.unknown.keylayout.Russian-IlyaBirmanTypography
+2012-06-07 15:55:29.155 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.156 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.156 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.156 TISTest[6662:303] kTISPropertyInputSourceID: org.unknown.keylayout.English-IlyaBirmanTypography
+2012-06-07 15:55:29.157 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.157 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.158 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.158 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Czech-QWERTY
+2012-06-07 15:55:29.158 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.159 TISTest[6662:303] lang: cs
+2012-06-07 15:55:29.159 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.159 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Czech
+2012-06-07 15:55:29.160 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.160 TISTest[6662:303] lang: cs
+2012-06-07 15:55:29.160 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.161 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Hungarian
+2012-06-07 15:55:29.161 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.161 TISTest[6662:303] lang: hu
+2012-06-07 15:55:29.162 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.162 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Latvian
+2012-06-07 15:55:29.162 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.163 TISTest[6662:303] lang: lv
+2012-06-07 15:55:29.163 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.164 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Lithuanian
+2012-06-07 15:55:29.164 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.164 TISTest[6662:303] lang: lt
+2012-06-07 15:55:29.165 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.165 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.PolishPro
+2012-06-07 15:55:29.165 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.166 TISTest[6662:303] lang: pl
+2012-06-07 15:55:29.166 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.166 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Polish
+2012-06-07 15:55:29.166 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.167 TISTest[6662:303] lang: pl
+2012-06-07 15:55:29.167 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.167 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Slovak
+2012-06-07 15:55:29.168 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.168 TISTest[6662:303] lang: sk
+2012-06-07 15:55:29.168 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.169 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Slovak-QWERTY
+2012-06-07 15:55:29.169 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.169 TISTest[6662:303] lang: sk
+2012-06-07 15:55:29.170 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.170 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Bulgarian-Phonetic
+2012-06-07 15:55:29.170 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.171 TISTest[6662:303] lang: bg
+2012-06-07 15:55:29.171 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.171 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Bulgarian
+2012-06-07 15:55:29.172 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.172 TISTest[6662:303] lang: bg
+2012-06-07 15:55:29.172 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.173 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Byelorussian
+2012-06-07 15:55:29.173 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.173 TISTest[6662:303] lang: be
+2012-06-07 15:55:29.173 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.174 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Macedonian
+2012-06-07 15:55:29.174 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.174 TISTest[6662:303] lang: mk
+2012-06-07 15:55:29.175 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.175 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Russian-Phonetic
+2012-06-07 15:55:29.175 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.176 TISTest[6662:303] lang: ru
+2012-06-07 15:55:29.176 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.176 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Russian
+2012-06-07 15:55:29.177 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.177 TISTest[6662:303] lang: ru
+2012-06-07 15:55:29.177 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.178 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.RussianWin
+2012-06-07 15:55:29.178 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.178 TISTest[6662:303] lang: ru
+2012-06-07 15:55:29.179 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.179 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Serbian
+2012-06-07 15:55:29.179 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.180 TISTest[6662:303] lang: sr-Cyrl
+2012-06-07 15:55:29.180 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.180 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Ukrainian
+2012-06-07 15:55:29.181 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.181 TISTest[6662:303] lang: uk
+2012-06-07 15:55:29.181 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.182 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Colemak
+2012-06-07 15:55:29.182 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.182 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.183 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.183 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Dvorak-Left
+2012-06-07 15:55:29.183 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.184 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.184 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.184 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Dvorak-Right
+2012-06-07 15:55:29.185 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.185 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.185 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.186 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.DVORAK-QWERTYCMD
+2012-06-07 15:55:29.186 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.187 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.187 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.187 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Australian
+2012-06-07 15:55:29.187 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.188 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.188 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.188 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Austrian
+2012-06-07 15:55:29.189 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.189 TISTest[6662:303] lang: de
+2012-06-07 15:55:29.189 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.190 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Belgian
+2012-06-07 15:55:29.190 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.190 TISTest[6662:303] lang: nl
+2012-06-07 15:55:29.191 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.191 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Brazilian
+2012-06-07 15:55:29.191 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.192 TISTest[6662:303] lang: pt
+2012-06-07 15:55:29.192 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.192 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.British-PC
+2012-06-07 15:55:29.193 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.193 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.193 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.194 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.British
+2012-06-07 15:55:29.194 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.194 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.195 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.195 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Canadian-CSA
+2012-06-07 15:55:29.195 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.196 TISTest[6662:303] lang: fr
+2012-06-07 15:55:29.196 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.196 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Danish
+2012-06-07 15:55:29.196 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.197 TISTest[6662:303] lang: da
+2012-06-07 15:55:29.197 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.197 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Dutch
+2012-06-07 15:55:29.198 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.198 TISTest[6662:303] lang: nl
+2012-06-07 15:55:29.198 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.199 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Finnish
+2012-06-07 15:55:29.199 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.199 TISTest[6662:303] lang: fi
+2012-06-07 15:55:29.200 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.200 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.French-numerical
+2012-06-07 15:55:29.200 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.201 TISTest[6662:303] lang: fr
+2012-06-07 15:55:29.201 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.201 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Irish
+2012-06-07 15:55:29.201 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.202 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.202 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.202 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Italian-Pro
+2012-06-07 15:55:29.203 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.203 TISTest[6662:303] lang: it
+2012-06-07 15:55:29.203 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.204 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Italian
+2012-06-07 15:55:29.204 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.204 TISTest[6662:303] lang: it
+2012-06-07 15:55:29.205 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.205 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Norwegian
+2012-06-07 15:55:29.205 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.206 TISTest[6662:303] lang: nb
+2012-06-07 15:55:29.206 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.206 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Portuguese
+2012-06-07 15:55:29.206 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.207 TISTest[6662:303] lang: pt
+2012-06-07 15:55:29.207 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.207 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Spanish-ISO
+2012-06-07 15:55:29.208 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.208 TISTest[6662:303] lang: es
+2012-06-07 15:55:29.209 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.209 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Spanish
+2012-06-07 15:55:29.209 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.210 TISTest[6662:303] lang: es
+2012-06-07 15:55:29.210 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.210 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Swedish-Pro
+2012-06-07 15:55:29.211 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.211 TISTest[6662:303] lang: sv
+2012-06-07 15:55:29.211 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.212 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Swedish
+2012-06-07 15:55:29.212 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.212 TISTest[6662:303] lang: sv
+2012-06-07 15:55:29.213 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.213 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.SwissFrench
+2012-06-07 15:55:29.213 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.214 TISTest[6662:303] lang: fr
+2012-06-07 15:55:29.214 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.214 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.SwissGerman
+2012-06-07 15:55:29.215 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.215 TISTest[6662:303] lang: de
+2012-06-07 15:55:29.216 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.216 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.USInternational-PC
+2012-06-07 15:55:29.216 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.217 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.217 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.217 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.AfghanDari
+2012-06-07 15:55:29.218 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.218 TISTest[6662:303] lang: fa
+2012-06-07 15:55:29.218 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.219 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.AfghanPashto
+2012-06-07 15:55:29.219 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.219 TISTest[6662:303] lang: ps
+2012-06-07 15:55:29.220 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.220 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.AfghanUzbek
+2012-06-07 15:55:29.220 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.221 TISTest[6662:303] lang: uz
+2012-06-07 15:55:29.221 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.221 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Arabic-QWERTY
+2012-06-07 15:55:29.221 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.222 TISTest[6662:303] lang: ar
+2012-06-07 15:55:29.222 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.222 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Arabic
+2012-06-07 15:55:29.223 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.223 TISTest[6662:303] lang: ar
+2012-06-07 15:55:29.223 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.224 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.ArabicPC
+2012-06-07 15:55:29.224 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.224 TISTest[6662:303] lang: ar
+2012-06-07 15:55:29.225 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.225 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Armenian-HMQWERTY
+2012-06-07 15:55:29.225 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.226 TISTest[6662:303] lang: hy
+2012-06-07 15:55:29.226 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.226 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Armenian-WesternQWERTY
+2012-06-07 15:55:29.227 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.227 TISTest[6662:303] lang: hy
+2012-06-07 15:55:29.227 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.228 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Azeri
+2012-06-07 15:55:29.228 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.228 TISTest[6662:303] lang: az-Latn
+2012-06-07 15:55:29.229 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.229 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Bangla-QWERTY
+2012-06-07 15:55:29.229 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.229 TISTest[6662:303] lang: bn
+2012-06-07 15:55:29.230 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.230 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Bangla
+2012-06-07 15:55:29.230 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.231 TISTest[6662:303] lang: bn
+2012-06-07 15:55:29.231 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.231 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Cherokee-Nation
+2012-06-07 15:55:29.232 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.232 TISTest[6662:303] lang: chr
+2012-06-07 15:55:29.232 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.233 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Cherokee-QWERTY
+2012-06-07 15:55:29.233 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.233 TISTest[6662:303] lang: chr
+2012-06-07 15:55:29.234 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.234 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Croatian
+2012-06-07 15:55:29.234 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.235 TISTest[6662:303] lang: hr
+2012-06-07 15:55:29.235 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.235 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Croatian-PC
+2012-06-07 15:55:29.236 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.236 TISTest[6662:303] lang: hr
+2012-06-07 15:55:29.236 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.237 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Devanagari-QWERTY
+2012-06-07 15:55:29.237 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.237 TISTest[6662:303] lang: hi
+2012-06-07 15:55:29.238 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.238 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Devanagari
+2012-06-07 15:55:29.238 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.239 TISTest[6662:303] lang: hi
+2012-06-07 15:55:29.239 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.239 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Faroese
+2012-06-07 15:55:29.239 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.240 TISTest[6662:303] lang: fo
+2012-06-07 15:55:29.240 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.241 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.FinnishExtended
+2012-06-07 15:55:29.241 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.241 TISTest[6662:303] lang: fi
+2012-06-07 15:55:29.242 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.242 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.FinnishSami-PC
+2012-06-07 15:55:29.242 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.243 TISTest[6662:303] lang: fi
+2012-06-07 15:55:29.243 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.243 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Georgian-QWERTY
+2012-06-07 15:55:29.244 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.244 TISTest[6662:303] lang: ka
+2012-06-07 15:55:29.244 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.244 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Greek
+2012-06-07 15:55:29.245 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.245 TISTest[6662:303] lang: el
+2012-06-07 15:55:29.245 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.246 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.GreekPolytonic
+2012-06-07 15:55:29.246 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.246 TISTest[6662:303] lang: el
+2012-06-07 15:55:29.247 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.247 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Gujarati-QWERTY
+2012-06-07 15:55:29.247 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.248 TISTest[6662:303] lang: gu
+2012-06-07 15:55:29.248 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.248 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Gujarati
+2012-06-07 15:55:29.249 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.249 TISTest[6662:303] lang: gu
+2012-06-07 15:55:29.249 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.250 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Gurmukhi-QWERTY
+2012-06-07 15:55:29.250 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.250 TISTest[6662:303] lang: pa
+2012-06-07 15:55:29.251 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.251 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Gurmukhi
+2012-06-07 15:55:29.251 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.251 TISTest[6662:303] lang: pa
+2012-06-07 15:55:29.252 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.252 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Hawaiian
+2012-06-07 15:55:29.252 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.253 TISTest[6662:303] lang: haw
+2012-06-07 15:55:29.253 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.253 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Hebrew-QWERTY
+2012-06-07 15:55:29.254 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.254 TISTest[6662:303] lang: he
+2012-06-07 15:55:29.254 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.255 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Hebrew
+2012-06-07 15:55:29.255 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.255 TISTest[6662:303] lang: he
+2012-06-07 15:55:29.256 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.256 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Hebrew-PC
+2012-06-07 15:55:29.256 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.257 TISTest[6662:303] lang: he
+2012-06-07 15:55:29.257 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.257 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Icelandic
+2012-06-07 15:55:29.258 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.258 TISTest[6662:303] lang: is
+2012-06-07 15:55:29.258 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.259 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Inuktitut-Nunavut
+2012-06-07 15:55:29.259 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.260 TISTest[6662:303] lang: iu
+2012-06-07 15:55:29.260 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.260 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Inuktitut-Nutaaq
+2012-06-07 15:55:29.260 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.261 TISTest[6662:303] lang: iu
+2012-06-07 15:55:29.261 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.262 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Inuktitut-QWERTY
+2012-06-07 15:55:29.262 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.262 TISTest[6662:303] lang: iu
+2012-06-07 15:55:29.263 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.263 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.InuttitutNunavik
+2012-06-07 15:55:29.263 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.264 TISTest[6662:303] lang: iu
+2012-06-07 15:55:29.264 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.264 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.IrishExtended
+2012-06-07 15:55:29.264 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.265 TISTest[6662:303] lang: ga
+2012-06-07 15:55:29.265 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.265 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Jawi-QWERTY
+2012-06-07 15:55:29.266 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.266 TISTest[6662:303] lang: ms-Arab
+2012-06-07 15:55:29.266 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.267 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Kannada-QWERTY
+2012-06-07 15:55:29.267 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.267 TISTest[6662:303] lang: kn
+2012-06-07 15:55:29.268 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.268 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Kannada
+2012-06-07 15:55:29.268 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.269 TISTest[6662:303] lang: kn
+2012-06-07 15:55:29.269 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.269 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Kazakh
+2012-06-07 15:55:29.270 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.270 TISTest[6662:303] lang: kk
+2012-06-07 15:55:29.270 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.271 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Khmer
+2012-06-07 15:55:29.271 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.271 TISTest[6662:303] lang: km
+2012-06-07 15:55:29.271 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.272 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Kurdish-Sorani
+2012-06-07 15:55:29.272 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.272 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.273 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.273 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Malayalam-QWERTY
+2012-06-07 15:55:29.273 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.274 TISTest[6662:303] lang: ml
+2012-06-07 15:55:29.274 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.274 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Malayalam
+2012-06-07 15:55:29.275 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.275 TISTest[6662:303] lang: ml
+2012-06-07 15:55:29.275 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.276 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Maltese
+2012-06-07 15:55:29.276 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.276 TISTest[6662:303] lang: mt
+2012-06-07 15:55:29.277 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.277 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Maori
+2012-06-07 15:55:29.277 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.278 TISTest[6662:303] lang: mi
+2012-06-07 15:55:29.278 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.278 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Myanmar-QWERTY
+2012-06-07 15:55:29.278 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.279 TISTest[6662:303] lang: my
+2012-06-07 15:55:29.279 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.279 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Nepali
+2012-06-07 15:55:29.280 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.280 TISTest[6662:303] lang: ne
+2012-06-07 15:55:29.280 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.281 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.NorthernSami
+2012-06-07 15:55:29.281 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.281 TISTest[6662:303] lang: se
+2012-06-07 15:55:29.282 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.282 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.NorwegianExtended
+2012-06-07 15:55:29.282 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.283 TISTest[6662:303] lang: nb
+2012-06-07 15:55:29.283 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.283 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.NorwegianSami-PC
+2012-06-07 15:55:29.284 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.284 TISTest[6662:303] lang: nb
+2012-06-07 15:55:29.284 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.285 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Oriya-QWERTY
+2012-06-07 15:55:29.285 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.285 TISTest[6662:303] lang: or
+2012-06-07 15:55:29.286 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.286 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Oriya
+2012-06-07 15:55:29.286 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.287 TISTest[6662:303] lang: or
+2012-06-07 15:55:29.287 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.287 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Persian-QWERTY
+2012-06-07 15:55:29.288 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.288 TISTest[6662:303] lang: fa
+2012-06-07 15:55:29.289 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.289 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Persian
+2012-06-07 15:55:29.289 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.289 TISTest[6662:303] lang: fa
+2012-06-07 15:55:29.290 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.290 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Persian-ISIRI2901
+2012-06-07 15:55:29.290 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.291 TISTest[6662:303] lang: fa
+2012-06-07 15:55:29.291 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.291 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Romanian-Standard
+2012-06-07 15:55:29.292 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.292 TISTest[6662:303] lang: ro
+2012-06-07 15:55:29.292 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.293 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Romanian
+2012-06-07 15:55:29.293 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.293 TISTest[6662:303] lang: ro
+2012-06-07 15:55:29.294 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.294 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Sami-PC
+2012-06-07 15:55:29.294 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.295 TISTest[6662:303] lang: se
+2012-06-07 15:55:29.295 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.295 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Serbian-Latin
+2012-06-07 15:55:29.296 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.296 TISTest[6662:303] lang: sr-Latn
+2012-06-07 15:55:29.296 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.297 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Sinhala-QWERTY
+2012-06-07 15:55:29.297 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.297 TISTest[6662:303] lang: si
+2012-06-07 15:55:29.298 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.298 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Sinhala
+2012-06-07 15:55:29.298 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.299 TISTest[6662:303] lang: si
+2012-06-07 15:55:29.299 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.299 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Slovenian
+2012-06-07 15:55:29.299 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.300 TISTest[6662:303] lang: sl
+2012-06-07 15:55:29.300 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.300 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.SwedishSami-PC
+2012-06-07 15:55:29.301 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.301 TISTest[6662:303] lang: sv
+2012-06-07 15:55:29.301 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.302 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Telugu-QWERTY
+2012-06-07 15:55:29.302 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.302 TISTest[6662:303] lang: te
+2012-06-07 15:55:29.303 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.303 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Telugu
+2012-06-07 15:55:29.303 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.304 TISTest[6662:303] lang: te
+2012-06-07 15:55:29.304 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.304 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Thai-PattaChote
+2012-06-07 15:55:29.304 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.305 TISTest[6662:303] lang: th
+2012-06-07 15:55:29.305 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.305 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Thai
+2012-06-07 15:55:29.306 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.306 TISTest[6662:303] lang: th
+2012-06-07 15:55:29.306 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.306 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.TibetanOtaniUS
+2012-06-07 15:55:29.307 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.307 TISTest[6662:303] lang: bo
+2012-06-07 15:55:29.307 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.308 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Tibetan-QWERTY
+2012-06-07 15:55:29.308 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.308 TISTest[6662:303] lang: bo
+2012-06-07 15:55:29.309 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.309 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Tibetan-Wylie
+2012-06-07 15:55:29.309 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.310 TISTest[6662:303] lang: bo
+2012-06-07 15:55:29.310 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.310 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Turkish-QWERTY-PC
+2012-06-07 15:55:29.310 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.311 TISTest[6662:303] lang: tr
+2012-06-07 15:55:29.311 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.311 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Turkish-QWERTY
+2012-06-07 15:55:29.312 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.312 TISTest[6662:303] lang: tr
+2012-06-07 15:55:29.312 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.313 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Turkish
+2012-06-07 15:55:29.313 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.313 TISTest[6662:303] lang: tr
+2012-06-07 15:55:29.314 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.314 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.USExtended
+2012-06-07 15:55:29.314 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.315 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.315 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.315 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.UnicodeHexInput
+2012-06-07 15:55:29.315 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.316 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.316 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.316 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Urdu
+2012-06-07 15:55:29.317 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.317 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.317 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.317 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Uyghur
+2012-06-07 15:55:29.318 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.318 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.318 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.319 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Vietnamese
+2012-06-07 15:55:29.319 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.319 TISTest[6662:303] lang: vi
+2012-06-07 15:55:29.319 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.320 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keylayout.Welsh
+2012-06-07 15:55:29.320 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.320 TISTest[6662:303] lang: cy
+2012-06-07 15:55:29.321 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.321 TISTest[6662:303] kTISPropertyInputSourceID: org.unknown.keylayout.Colemak
+2012-06-07 15:55:29.321 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.322 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.322 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.322 TISTest[6662:303] kTISPropertyInputSourceID: org.unknown.keylayout.JANSI
+2012-06-07 15:55:29.323 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.323 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.323 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.323 TISTest[6662:303] kTISPropertyInputSourceID: org.unknown.keylayout.RussianWin
+2012-06-07 15:55:29.324 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.324 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.324 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.325 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keyboardlayout.fr-dvorak-bepo.keylayout.FrenchDvorak-AzertyCmdRoman
+2012-06-07 15:55:29.325 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.325 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.325 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.326 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keyboardlayout.fr-dvorak-bepo.keylayout.FrenchDvorak-AzertyCmd
+2012-06-07 15:55:29.326 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.326 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.327 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.327 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keyboardlayout.fr-dvorak-bepo.keylayout.FrenchDvorak-QwertyCmdRoman
+2012-06-07 15:55:29.327 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.328 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.328 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.328 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keyboardlayout.fr-dvorak-bepo.keylayout.FrenchDvorak-QwertyCmd
+2012-06-07 15:55:29.328 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.329 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.329 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.329 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keyboardlayout.fr-dvorak-bepo.keylayout.FrenchDvorak-QwertzCmdRoman
+2012-06-07 15:55:29.329 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.330 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.330 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.330 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keyboardlayout.fr-dvorak-bepo.keylayout.FrenchDvorak-QwertzCmd
+2012-06-07 15:55:29.331 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.331 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.331 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.331 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keyboardlayout.fr-dvorak-bepo.keylayout.FrenchDvorakRoman
+2012-06-07 15:55:29.332 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.332 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.332 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.332 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.keyboardlayout.fr-dvorak-bepo.keylayout.FrenchDvorak
+2012-06-07 15:55:29.333 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.333 TISTest[6662:303] lang: 
+2012-06-07 15:55:29.333 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.334 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.50onPaletteIM
+2012-06-07 15:55:29.334 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.335 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.335 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.335 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.ink.inkserver
+2012-06-07 15:55:29.336 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.336 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.337 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.338 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Korean.3SetKorean
+2012-06-07 15:55:29.338 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Korean.3SetKorean
+2012-06-07 15:55:29.338 TISTest[6662:303] lang: ko
+2012-06-07 15:55:29.338 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.339 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Korean.2SetKorean
+2012-06-07 15:55:29.339 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Korean.2SetKorean
+2012-06-07 15:55:29.339 TISTest[6662:303] lang: ko
+2012-06-07 15:55:29.340 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.340 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Korean.HNCRomaja
+2012-06-07 15:55:29.340 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Korean.HNCRomaja
+2012-06-07 15:55:29.340 TISTest[6662:303] lang: ko
+2012-06-07 15:55:29.341 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.341 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Korean.390Sebulshik
+2012-06-07 15:55:29.341 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Korean.390Sebulshik
+2012-06-07 15:55:29.342 TISTest[6662:303] lang: ko
+2012-06-07 15:55:29.342 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.342 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Korean.GongjinCheongRomaja
+2012-06-07 15:55:29.342 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Korean.GongjinCheongRomaja
+2012-06-07 15:55:29.343 TISTest[6662:303] lang: ko
+2012-06-07 15:55:29.343 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.343 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Kotoeri.Japanese
+2012-06-07 15:55:29.344 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese
+2012-06-07 15:55:29.344 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.344 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.344 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Kotoeri.Japanese.HalfWidthKana
+2012-06-07 15:55:29.345 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese.HalfWidthKana
+2012-06-07 15:55:29.345 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.345 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.346 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Kotoeri.Japanese.placename
+2012-06-07 15:55:29.346 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese.placename
+2012-06-07 15:55:29.346 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.346 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.347 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Kotoeri.Roman
+2012-06-07 15:55:29.347 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Roman
+2012-06-07 15:55:29.347 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.347 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.348 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.kotoeri.Ainu
+2012-06-07 15:55:29.348 TISTest[6662:303] kTISPropertyInputModeID: com.apple.kotoeri.Ainu
+2012-06-07 15:55:29.348 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.349 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.349 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Kotoeri.Japanese.FullWidthRoman
+2012-06-07 15:55:29.349 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese.FullWidthRoman
+2012-06-07 15:55:29.349 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.350 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.350 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Kotoeri.Japanese.Katakana
+2012-06-07 15:55:29.350 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese.Katakana
+2012-06-07 15:55:29.351 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.351 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.351 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Kotoeri.Japanese.firstname
+2012-06-07 15:55:29.351 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese.firstname
+2012-06-07 15:55:29.352 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.352 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.352 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Kotoeri.Japanese.lastname
+2012-06-07 15:55:29.352 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese.lastname
+2012-06-07 15:55:29.353 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.353 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.353 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Tamil.AnjalIM
+2012-06-07 15:55:29.354 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Tamil.AnjalIM
+2012-06-07 15:55:29.354 TISTest[6662:303] lang: ta
+2012-06-07 15:55:29.354 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.355 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.Tamil.Tamil99
+2012-06-07 15:55:29.355 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Tamil.Tamil99
+2012-06-07 15:55:29.355 TISTest[6662:303] lang: ta
+2012-06-07 15:55:29.356 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.356 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.TCIM.Zhuyin
+2012-06-07 15:55:29.356 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.TCIM.Zhuyin
+2012-06-07 15:55:29.356 TISTest[6662:303] lang: zh-Hant
+2012-06-07 15:55:29.357 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.357 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.TCIM.Cangjie
+2012-06-07 15:55:29.357 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.TCIM.Cangjie
+2012-06-07 15:55:29.357 TISTest[6662:303] lang: zh-Hant
+2012-06-07 15:55:29.358 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.358 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.TCIM.Jianyi
+2012-06-07 15:55:29.358 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.TCIM.Jianyi
+2012-06-07 15:55:29.359 TISTest[6662:303] lang: zh-Hant
+2012-06-07 15:55:29.359 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.359 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.TCIM.Pinyin
+2012-06-07 15:55:29.360 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.TCIM.Pinyin
+2012-06-07 15:55:29.360 TISTest[6662:303] lang: zh-Hant
+2012-06-07 15:55:29.360 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.361 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.VietnameseIM.VietnameseSimpleTelex
+2012-06-07 15:55:29.361 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.VietnameseSimpleTelex
+2012-06-07 15:55:29.361 TISTest[6662:303] lang: vi
+2012-06-07 15:55:29.362 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.362 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.VietnameseIM.VietnameseVNI
+2012-06-07 15:55:29.362 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.VietnameseVNI
+2012-06-07 15:55:29.362 TISTest[6662:303] lang: vi
+2012-06-07 15:55:29.363 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.363 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.VietnameseIM.VietnameseVIQR
+2012-06-07 15:55:29.363 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.VietnameseVIQR
+2012-06-07 15:55:29.363 TISTest[6662:303] lang: vi
+2012-06-07 15:55:29.364 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.364 TISTest[6662:303] kTISPropertyInputSourceID: com.apple.inputmethod.VietnameseIM.VietnameseTelex
+2012-06-07 15:55:29.364 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.VietnameseTelex
+2012-06-07 15:55:29.365 TISTest[6662:303] lang: vi
+2012-06-07 15:55:29.365 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.365 TISTest[6662:303] kTISPropertyInputSourceID: com.yahoo.inputmethod.KeyKey
+2012-06-07 15:55:29.365 TISTest[6662:303] kTISPropertyInputModeID: (null)
+2012-06-07 15:55:29.366 TISTest[6662:303] lang: zh-Hant
+2012-06-07 15:55:29.366 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.366 TISTest[6662:303] kTISPropertyInputSourceID: jp.sourceforge.inputmethod.aquaskk
+2012-06-07 15:55:29.366 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese
+2012-06-07 15:55:29.367 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.367 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.367 TISTest[6662:303] kTISPropertyInputSourceID: jp.sourceforge.inputmethod.aquaskk
+2012-06-07 15:55:29.368 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese.HalfWidthKana
+2012-06-07 15:55:29.368 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.368 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.368 TISTest[6662:303] kTISPropertyInputSourceID: jp.sourceforge.inputmethod.aquaskk
+2012-06-07 15:55:29.369 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Roman
+2012-06-07 15:55:29.369 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.369 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.370 TISTest[6662:303] kTISPropertyInputSourceID: jp.sourceforge.inputmethod.aquaskk
+2012-06-07 15:55:29.370 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese.FullWidthRoman
+2012-06-07 15:55:29.370 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.370 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.371 TISTest[6662:303] kTISPropertyInputSourceID: jp.sourceforge.inputmethod.aquaskk
+2012-06-07 15:55:29.371 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese.Hiragana
+2012-06-07 15:55:29.371 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.371 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.372 TISTest[6662:303] kTISPropertyInputSourceID: jp.sourceforge.inputmethod.aquaskk
+2012-06-07 15:55:29.372 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Japanese.Katakana
+2012-06-07 15:55:29.372 TISTest[6662:303] lang: ja
+2012-06-07 15:55:29.373 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.373 TISTest[6662:303] kTISPropertyInputSourceID: info.yatsu.inputmethod.MacUIM-IMK.Korean
+2012-06-07 15:55:29.373 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Korean
+2012-06-07 15:55:29.373 TISTest[6662:303] lang: ko
+2012-06-07 15:55:29.374 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.374 TISTest[6662:303] kTISPropertyInputSourceID: info.yatsu.inputmethod.MacUIM-IMK.Roman
+2012-06-07 15:55:29.374 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.Roman
+2012-06-07 15:55:29.374 TISTest[6662:303] lang: en
+2012-06-07 15:55:29.375 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.375 TISTest[6662:303] kTISPropertyInputSourceID: info.yatsu.inputmethod.MacUIM-IMK.SimpChinese
+2012-06-07 15:55:29.375 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.SimpChinese
+2012-06-07 15:55:29.376 TISTest[6662:303] lang: zh-Hans
+2012-06-07 15:55:29.376 TISTest[6662:303] --------------------
+2012-06-07 15:55:29.376 TISTest[6662:303] kTISPropertyInputSourceID: info.yatsu.inputmethod.MacUIM-IMK.TradChinese
+2012-06-07 15:55:29.377 TISTest[6662:303] kTISPropertyInputModeID: com.apple.inputmethod.TradChinese
+2012-06-07 15:55:29.377 TISTest[6662:303] lang: zh-Hant
+2012-06-07 15:55:29.377 TISTest[6662:303] --------------------
+make: *** [run] Interrupt: 2
