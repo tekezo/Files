@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Command+F5 to Command+F2 on Logitech Devices</name>
+    <identifier>private.command_f5_to_command_f2</identifier>
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+    <autogen>--KeyToKey-- KeyCode::F5, VK_COMMAND, KeyCode::F2, VK_COMMAND</autogen>
+  </item>
+
+</root>
