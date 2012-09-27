@@ -8,4 +8,32 @@
     <autogen>--KeyToKey-- KeyCode::F5, VK_COMMAND, KeyCode::F2, VK_COMMAND</autogen>
   </item>
 
+  <item>
+    <name>Command+F5 to Command+Brightness Up on Logitech Devices</name>
+    <identifier>private.command_f5_to_command_brightness_up</identifier>
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+    <autogen>--KeyToConsumer-- KeyCode::F5, VK_COMMAND, ConsumerKeyCode::BRIGHTNESS_UP, VK_COMMAND</autogen>
+  </item>
+
+  <item>
+    <name>Command+F5 to Command+Brightness Up on Logitech Devices (2)</name>
+    <identifier>private.command_f5_to_command_brightness_up2</identifier>
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+    <autogen>--KeyToKey-- KeyCode::F5, VK_COMMAND, KeyCode::BRIGHTNESS_UP, VK_COMMAND</autogen>
+  </item>
+
+  <item>
+    <name>Command+5 to Command+Brightness Up on Logitech Devices</name>
+    <identifier>private.command_5_to_command_brightness_up</identifier>
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+    <autogen>--KeyToConsumer-- KeyCode::KEY_5, VK_COMMAND, ConsumerKeyCode::BRIGHTNESS_UP, VK_COMMAND</autogen>
+  </item>
+
+  <item>
+    <name>Command+5 to Command+Brightness Up on Logitech Devices (2)</name>
+    <identifier>private.command_5_to_command_brightness_up2</identifier>
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+    <autogen>--KeyToKey-- KeyCode::KEY_5, VK_COMMAND, KeyCode::BRIGHTNESS_UP, VK_COMMAND</autogen>
+  </item>
+
 </root>
