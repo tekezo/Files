@@ -37,7 +37,7 @@
   </item>
 
   <item>
-    <name>Change "Brightness controls for embed display" to "Brightness controls for external display"</name>
+    <name>Change "Brightness controls for an embed display" to "Brightness controls for an external display"</name>
     <identifier>private.brightness_control_external_display</identifier>
     <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
     <autogen>--ConsumerToKey-- ConsumerKeyCode::BRIGHTNESS_DOWN, KeyCode::BRIGHTNESS_DOWN</autogen>
