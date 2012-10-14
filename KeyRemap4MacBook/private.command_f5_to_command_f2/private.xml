@@ -44,4 +44,12 @@
     <autogen>--ConsumerToKey-- ConsumerKeyCode::BRIGHTNESS_UP,   KeyCode::BRIGHTNESS_UP</autogen>
   </item>
 
+  <item>
+    <name>Change "Brightness controls for an external display" to "Brightness controls for an embed display"</name>
+    <identifier>private.brightness_control_embed_display</identifier>
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+    <autogen>--KeyToConsumer-- KeyCode::BRIGHTNESS_DOWN, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::BRIGHTNESS_UP,   ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+  </item>
+
 </root>
