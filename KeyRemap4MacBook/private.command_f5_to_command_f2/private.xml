@@ -36,4 +36,14 @@
     <autogen>--KeyToKey-- KeyCode::KEY_5, VK_COMMAND, KeyCode::BRIGHTNESS_UP, VK_COMMAND</autogen>
   </item>
 
+  <item>
+    <name>Change "Brightness controls for embed display" to "Brightness controls for external display"</name>
+    <identifier>private.brightness_control_external_display</identifier>
+    <!--
+        <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+        -->
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::BRIGHTNESS_DOWN, KeyCode::BRIGHTNESS_DOWN</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::BRIGHTNESS_UP,   KeyCode::BRIGHTNESS_UP</autogen>
+  </item>
+
 </root>
