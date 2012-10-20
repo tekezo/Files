@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Return Key to "Return Key+Leave Normal Mode"</name>
+    <identifier>private.ubiq_vi_return_to_leave_normal_mode</identifier>
+    <config_only>notsave.ubiq_vimnormal</config_only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::RETURN,
+      KeyCode::RETURN,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_ubiq_vimnormal,
+    </autogen>
+  </item>
+
+</root>
