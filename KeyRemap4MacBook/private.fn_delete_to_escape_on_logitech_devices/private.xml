@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>fn+Delete to Escape on Logitech Devices</name>
+    <identifier>private.fn_delete_to_escape_on_logitech_devices</identifier>
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+    <autogen>--KeyToKey-- KeyCode::DELETE, ModifierFlag::FN, KeyCode::ESCAPE</autogen>
+  </item>
+
+</root>
