@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Control_R to Control_R</name>
+    <appendix>(+ When you type Control_R only, send Escape)</appendix>
+    <identifier>private.controlR2controlR_escape</identifier>
+    <autogen>--KeyOverlaidModifier-- KeyCode::CONTROL_R, KeyCode::CONTROL_R, KeyCode::ESCAPE</autogen>
+  </item>
+
+</root>
