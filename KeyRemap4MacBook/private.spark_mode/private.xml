@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Spark Mode</name>
+    <identifier vk_config="true">notsave.private_spark_mode</identifier>
+    <autogen>--ShowStatusMessage-- Spark Mode</autogen>
+
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_0, KeyCode::KEY_0, ModifierFlag::OPTION_L</autogen>
+  </item>
+
+  <item>
+    <name>Activate Spark Mode by Clear</name>
+    <identifier>private.spark_mode</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::KEYPAD_CLEAR,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_private_spark_mode
+    </autogen>
+  </item>
+</root>
