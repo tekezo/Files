@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Eject to Sleep (Command+Option+Eject)</name>
+    <identifier>private.eject_to_sleep</identifier>
+    <autogen>
+      --ConsumerToConsumer--
+      ConsumerKeyCode::EJECT, ModifierFlag::NONE,
+      ConsumerKeyCode::EJECT, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L, Option::NOREPEAT
+    </autogen>
+  </item>
+</root>
