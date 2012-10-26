@@ -8,4 +8,13 @@
     <autogen>--KeyToKey-- KeyCode::DELETE, ModifierFlag::FN, KeyCode::ESCAPE</autogen>
   </item>
 
+  <item>
+    <name>Forward Delete to Escape on Logitech Devices</name>
+    <identifier>private.forwarddelete_to_escape_on_logitech_devices</identifier>
+    <!--
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+    -->
+    <autogen>--KeyToKey-- KeyCode::FORWARD_DELETE, KeyCode::ESCAPE</autogen>
+  </item>
+
 </root>
