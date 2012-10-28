@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change F19 to Percent(%) Key</name>
+    <identifier>private.f19_to_percent</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F19,
+      KeyCode::KEY_5, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
