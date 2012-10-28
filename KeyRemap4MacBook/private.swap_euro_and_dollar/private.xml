@@ -1,21 +1,21 @@
 <?xml version="1.0"?>
 <root>
+
+  <!-- For Danish Input Source -->
+
   <item>
     <name>Swap € and $</name>
     <identifier>private.swap_euro_and_dollar</identifier>
     <autogen>
       --KeyToKey--
-      <!-- € -->
-      KeyCode::FRENCH_DOLLAR, VK_OPTION | ModifierFlag::NONE,
-      <!-- $ -->
-      KeyCode::FRENCH_DOLLAR
+      KeyCode::KEY_4, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L | VK_SHIFT
     </autogen>
+
     <autogen>
       --KeyToKey--
-      <!-- $ -->
-      KeyCode::FRENCH_DOLLAR, ModifierFlag::NONE,
-      <!-- € -->
-      KeyCode::FRENCH_DOLLAR, ModifierFlag::OPTION_L
+      KeyCode::KEY_3, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::KEY_4, VK_SHIFT
     </autogen>
   </item>
 </root>
