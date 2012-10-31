@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Clear Key (Num Lock Key) to Comma(,)</name>
+    <identifier>private.gmail_navigation_in_mail</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::KEYPAD_CLEAR,
+      KeyCode::COMMA
+    </autogen>
+  </item>
+
+</root>
