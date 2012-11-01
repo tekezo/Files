@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Holding F1,F2 to Brightness Control</name>
+    <appendix>No Repeat Version</appendix>
+    <identifier>private.holding_f1_f2_to_brightness_control_no_repeat</identifier>
+    <autogen>
+      --HoldingKeyToKey--
+      KeyCode::F1,
+      KeyCode::F1,
+      KeyCode::VK_NONE,
+      KeyCode::VK_CONSUMERKEY_BRIGHTNESS_DOWN,
+      Option::NOREPEAT
+    </autogen>
+    <autogen>
+      --HoldingKeyToKey--
+      KeyCode::F2,
+      KeyCode::F2,
+      KeyCode::VK_NONE,
+      KeyCode::VK_CONSUMERKEY_BRIGHTNESS_UP,
+      Option::NOREPEAT
+    </autogen>
+  </item>
+
+  <item>
+    <name>Holding F1,F2 to Brightness Control</name>
+    <identifier>private.holding_f1_f2_to_brightness_control</identifier>
+    <autogen>
+      --HoldingKeyToKey--
+      KeyCode::F1,
+      KeyCode::F1,
+      KeyCode::VK_NONE,
+      KeyCode::VK_CONSUMERKEY_BRIGHTNESS_DOWN,
+    </autogen>
+    <autogen>
+      --HoldingKeyToKey--
+      KeyCode::F2,
+      KeyCode::F2,
+      KeyCode::VK_NONE,
+      KeyCode::VK_CONSUMERKEY_BRIGHTNESS_UP,
+    </autogen>
+  </item>
+
+</root>
