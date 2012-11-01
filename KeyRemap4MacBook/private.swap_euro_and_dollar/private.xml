@@ -4,6 +4,33 @@
   <!-- For Danish Input Source -->
 
   <item>
+    <name>Change Shift+4 to $</name>
+    <appendix>Change Option+Shift+4 to €</appendix>
+    <appendix>Change Option+Shift+3 to ¢</appendix>
+    <identifier>private.swap_euro_and_dollar_and_cent</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::KEY_4, VK_SHIFT | ModifierFlag::NONE,
+      <!-- $ -->
+      KeyCode::KEY_3, ModifierFlag::OPTION_L | VK_SHIFT
+    </autogen>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::KEY_4, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+      <!-- € -->
+      KeyCode::KEY_4, VK_SHIFT
+    </autogen>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::KEY_3, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+      <!-- ¢ -->
+      KeyCode::KEY_4, VK_OPTION | VK_SHIFT
+    </autogen>
+  </item>
+
+  <item>
     <name>Swap € and $</name>
     <identifier>private.swap_euro_and_dollar</identifier>
     <autogen>
