@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Alt+Plus to Backslash</name>
+    <identifier>private.finnish_alt_plus_to_backslash</identifier>
+    <inputsource_only>FINNISH</inputsource_only>
+    <autogen>
+      --KeyToKey--
+      <!-- keycode 0x1b -->
+      KeyCode::MINUS, VK_OPTION,
+      KeyCode::KEY_7, ModifierFlag::SHIFT_L | VK_OPTION
+    </autogen>
+  </item>
+
+</root>
