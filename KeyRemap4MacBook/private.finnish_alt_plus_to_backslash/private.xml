@@ -8,7 +8,7 @@
     <autogen>
       --KeyToKey--
       <!-- keycode 0x1b -->
-      KeyCode::MINUS, VK_OPTION,
+      KeyCode::MINUS, VK_OPTION | ModifierFlag::NONE,
       KeyCode::KEY_7, ModifierFlag::SHIFT_L | VK_OPTION
     </autogen>
   </item>
