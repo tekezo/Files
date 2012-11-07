@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Numpad 1-9 to Normal 1-9</name>
+    <identifier>private.numpad_to_normal_number</identifier>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_1, KeyCode::KEY_1</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_2, KeyCode::KEY_2</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_3, KeyCode::KEY_3</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_4, KeyCode::KEY_4</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_5, KeyCode::KEY_5</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_6, KeyCode::KEY_6</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_7, KeyCode::KEY_7</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_8, KeyCode::KEY_8</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEYPAD_9, KeyCode::KEY_9</autogen>
+  </item>
+
+  <item>
+    <name>Change Normal 1-9 to Numpad 1-9</name>
+    <identifier>private.normal_number_to_numpad</identifier>
+    <autogen>--KeyToKey-- KeyCode::KEY_1, KeyCode::KEYPAD_1</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_2, KeyCode::KEYPAD_2</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_3, KeyCode::KEYPAD_3</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_4, KeyCode::KEYPAD_4</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_5, KeyCode::KEYPAD_5</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_6, KeyCode::KEYPAD_6</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_7, KeyCode::KEYPAD_7</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_8, KeyCode::KEYPAD_8</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_9, KeyCode::KEYPAD_9</autogen>
+  </item>
+
+</root>
