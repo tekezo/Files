@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkchangeinputsourcedef>
+    <name>KeyCode::VK_CHANGE_INPUTSOURCE_MY_ENGLISH</name>
+    <inputsourceid_equal>com.apple.keylayout.US</inputsourceid_equal>
+  </vkchangeinputsourcedef>
+
+  <item>
+    <name>Select Russian</name>
+    <identifier>private.right_command_select_russian</identifier>
+    <inputsource_only>ENGLISH</inputsource_only>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::COMMAND_R,
+      KeyCode::COMMAND_R,
+      KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN
+    </autogen>
+  </item>
+  <item>
+    <name>Select English</name>
+    <identifier>private.right_command_select_english</identifier>
+    <inputsource_only>RUSSIAN</inputsource_only>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::COMMAND_R,
+      KeyCode::COMMAND_R,
+      KeyCode::VK_CHANGE_INPUTSOURCE_MY_ENGLISH
+    </autogen>
+  </item>
+
+</item>
