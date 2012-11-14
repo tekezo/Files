@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Function Keys to Functional Keys except Blender</name>
+    <identifier>private.swap_function_and_functional_keys_except_blender</identifier>
+    <not>
+      BLENDER,
+    </not>
+
+    <autogen>--KeyToConsumer-- KeyCode::F1, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::F2, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+    <autogen>--KeyToKey--      KeyCode::F3, KeyCode::EXPOSE_ALL</autogen>
+    <autogen>--KeyToKey--      KeyCode::F4, KeyCode::LAUNCHPAD</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::F5, ConsumerKeyCode::KEYBOARDLIGHT_LOW</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::F6, ConsumerKeyCode::KEYBOARDLIGHT_HIGH</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::F7, ConsumerKeyCode::MUSIC_PREV</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::F8, ConsumerKeyCode::MUSIC_PLAY</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::F9, ConsumerKeyCode::MUSIC_NEXT</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::F10, ConsumerKeyCode::VOLUME_MUTE</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::F11, ConsumerKeyCode::VOLUME_DOWN</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::F12, ConsumerKeyCode::VOLUME_UP</autogen>
+
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::BRIGHTNESS_DOWN,    KeyCode::F1</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::BRIGHTNESS_UP,      KeyCode::F2</autogen>
+    <autogen>--KeyToKey--      KeyCode::EXPOSE_ALL,                 KeyCode::F3</autogen>
+    <autogen>--KeyToKey--      KeyCode::DASHBOARD,                  KeyCode::F4</autogen>
+    <autogen>--KeyToKey--      KeyCode::LAUNCHPAD,                  KeyCode::F4</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::KEYBOARDLIGHT_LOW,  KeyCode::F5</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::KEYBOARDLIGHT_HIGH, KeyCode::F6</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PREV,         KeyCode::F7</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_PLAY,         KeyCode::F8</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::MUSIC_NEXT,         KeyCode::F9</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::VOLUME_MUTE,        KeyCode::F10</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::VOLUME_DOWN,        KeyCode::F11</autogen>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::VOLUME_UP,          KeyCode::F12</autogen>
+  </item>
+
+</root>
