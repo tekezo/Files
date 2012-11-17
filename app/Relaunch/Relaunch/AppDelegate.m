@@ -1,20 +1,17 @@
-//
-//  AppDelegate.m
-//  Relaunch
-//
-//  Created by Takayama Fumihiko on 12/11/17.
-//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
-//
-
 #import "AppDelegate.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (void) applicationDidFinishLaunching:(NSNotification*)aNotification
+{}
+
+- (IBAction) relaunch:(id)sender
 {
-    // Insert code here to initialize your application
+  NSLog(@"Relaunch");
+  [NSTask launchedTaskWithLaunchPath:[[NSBundle mainBundle] executablePath] arguments:[NSArray array]];
+  [NSApp terminate:self];
 }
 
 @end
