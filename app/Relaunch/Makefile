@@ -17,4 +17,4 @@ xcode:
 	open *.xcodeproj
 
 run:
-	open ./build/Release/XMLTest.app/Contents/MacOS/XMLTest
+	open ./build/Release/Relaunch.app/Contents/MacOS/Relaunch*
