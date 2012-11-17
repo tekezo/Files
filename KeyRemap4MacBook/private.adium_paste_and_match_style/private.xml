@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Adium Paste and Match Style</name>
+    <appendix>Use Command and V key to paste with match style in Adium</appendix>
+    <identifier>private.adium_paste_and_match_style</identifier>
+    <only>ADIUMX</only>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::V, VK_COMMAND,
+
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_100MS, <!-- wait until input source switching is completed -->
+
+        KeyCode::V, VK_COMMAND | ModifierFlag::SHIFT_L | ModifierFlag::OPTION_L,
+        KeyCode::VK_WAIT_100MS, <!-- wait until Command+Shift+Option+V is handled -->
+
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+    <block>
+      <autogen>
+        --KeyToKey--
+        KeyCode::V, VK_COMMAND,
+        KeyCode::V, VK_COMMAND | ModifierFlag::SHIFT_L | ModifierFlag::OPTION_L,
+      </autogen>
+    </block>
+  </item>
+
+</root>
