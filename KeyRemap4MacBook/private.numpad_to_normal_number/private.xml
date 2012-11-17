@@ -29,4 +29,19 @@
     <autogen>--KeyToKey-- KeyCode::KEY_9, KeyCode::KEYPAD_9</autogen>
   </item>
 
+  <item>
+    <name>Change Fn+JKL... (MacBook's NumPad) to Normal 0-9</name>
+    <identifier>private.macbook_numpad_to_normal_number</identifier>
+    <autogen>--KeyToKey-- KeyCode::M,     ModifierFlag::FN, KeyCode::KEY_0</autogen>
+    <autogen>--KeyToKey-- KeyCode::J,     ModifierFlag::FN, KeyCode::KEY_1</autogen>
+    <autogen>--KeyToKey-- KeyCode::K,     ModifierFlag::FN, KeyCode::KEY_2</autogen>
+    <autogen>--KeyToKey-- KeyCode::L,     ModifierFlag::FN, KeyCode::KEY_3</autogen>
+    <autogen>--KeyToKey-- KeyCode::U,     ModifierFlag::FN, KeyCode::KEY_4</autogen>
+    <autogen>--KeyToKey-- KeyCode::I,     ModifierFlag::FN, KeyCode::KEY_5</autogen>
+    <autogen>--KeyToKey-- KeyCode::O,     ModifierFlag::FN, KeyCode::KEY_6</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_7, ModifierFlag::FN, KeyCode::KEY_7</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_8, ModifierFlag::FN, KeyCode::KEY_8</autogen>
+    <autogen>--KeyToKey-- KeyCode::KEY_9, ModifierFlag::FN, KeyCode::KEY_9</autogen>
+  </item>
+
 </root>
