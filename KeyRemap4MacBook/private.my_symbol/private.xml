@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkchangeinputsourcedef>
+    <name>KeyCode::VK_CHANGE_INPUTSOURCE_MYSYMBOL</name>
+    <inputsourceid_equal>org.unknown.keylayout.MySymbol</inputsourceid_equal>
+  </vkchangeinputsourcedef>
+
+  <item>
+    <name>Greek Mode</name>
+    <identifier vk_config="true">notsave.private_greek_mode</identifier>
+    <autogen>--ShowStatusMessage-- Greek Mode</autogen>
+    <include path="greek.xml">
+      <replacementdef>
+        <replacementname>KEYCODE</replacementname>
+        <replacementvalue>KeyCode::E</replacementvalue>
+      </replacementdef>
+    </include>
+  </item>
+
+  <item>
+    <name>Change Command_R to toggle Greek Mode</name>
+    <identifier>private.command_r_to_greek_mode</identifier>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::COMMAND_R,
+      KeyCode::COMMAND_R,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_private_greek_mode,
+    </autogen>
+  </item>
+
+</root>
