@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>右Optionで中国語（簡体字）入力モードへ</name>
+    <identifier>private.option_r_switch_chinese</identifier>
+    <block>
+      <inputsource_only>JAPANESE</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::OPTION_R,
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_private_previous_input_source_is_japanese,
+        KeyCode::VK_CHANGE_INPUTSOURCE_CHINESE_SIMPLIFIED,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>ENGLISH</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::OPTION_R,
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_private_previous_input_source_is_english,
+        KeyCode::VK_CHANGE_INPUTSOURCE_CHINESE_SIMPLIFIED,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>CHINESE_SIMPLIFIED</inputsource_only>
+      <block>
+        <config_only>notsave.private_previous_input_source_is_english</config_only>
+        <autogen>
+          --KeyToKey--
+          KeyCode::OPTION_R,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_previous_input_source_is_english,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_previous_input_source_is_japanese,
+          KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        </autogen>
+      </block>
+      <autogen>
+        --KeyToKey--
+        KeyCode::OPTION_R,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_previous_input_source_is_english,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_previous_input_source_is_japanese,
+        KeyCode::VK_CHANGE_INPUTSOURCE_JAPANESE,
+      </autogen>
+    </block>
+  </item>
+
+  <item><identifier vk_config="true">notsave.private_previous_input_source_is_japanese</identifier></item>
+  <item><identifier vk_config="true">notsave.private_previous_input_source_is_english</identifier></item>
+
+</root>
