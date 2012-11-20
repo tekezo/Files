@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <autogen>
+    --KeyToKey--
+    {{ KEYCODE }},
+
+    KeyCode::VK_CHANGE_INPUTSOURCE_MYSYMBOL,
+    KeyCode::VK_WAIT_100MS,
+
+    {{ KEYCODE }},
+    KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_greek_mode,
+    KeyCode::VK_WAIT_100MS,
+
+    KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+  </autogen>
+
+</root>
