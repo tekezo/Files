@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Command+Caps Lock to Control+Tab on Firefox</name>
+    <appendix>(Use this setting with PCKeyboardHack.</appendix>
+    <appendix>Set caps lock keycode to 110 on PCKeyboardHack.)</appendix>
+    <identifier>private.firefox_command_caps_to_control_tab</identifier>
+    <block>
+      <only>FIREFOX</only>
+      <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, VK_COMMAND, KeyCode::TAB, ModifierFlag::CONTROL_L</autogen>
+    </block>
+    <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, KeyCode::CAPSLOCK</autogen>
+  </item>
+
+</root>
