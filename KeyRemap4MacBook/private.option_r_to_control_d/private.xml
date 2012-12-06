@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right option key to control+d</name>
+    <identifier>private.option_r_to_control_d</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::OPTION_R,
+      KeyCode::D, ModifierFlag::CONTROL_L
+    </autogen>
+  </item>
+
+</root>
