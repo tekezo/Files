@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Toggle Russian and English by right shift key</name>
+    <identifier>private.toggle_russian_and_english</identifier>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyOverlaidModifier--
+        KeyCode::SHIFT_R,
+        KeyCode::SHIFT_R,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+      </autogen>
+    </block>
+    <block>
+      <inputsource_only>ENGLISH</inputsource_only>
+      <autogen>
+        --KeyOverlaidModifier--
+        KeyCode::SHIFT_R,
+        KeyCode::SHIFT_R,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+  </item>
+
+</root>
