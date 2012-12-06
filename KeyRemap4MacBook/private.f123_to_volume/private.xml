@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change F1/F2/F3 to Volume Control</name>
+    <identifier>private.f123_to_volume</identifier>
+    <autogen>--KeyToConsumer-- KeyCode::F1, ConsumerKeyCode::VOLUME_MUTE</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::F2, ConsumerKeyCode::VOLUME_DOWN</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::F3, ConsumerKeyCode::VOLUME_UP</autogen>
+  </item>
+
+  <item>
+    <name>Change Brightness Down/Brightness Up/Expose to Volume Control</name>
+    <identifier>private.f123_to_volume_fn</identifier>
+    <autogen>--ConsumerToConsumer-- ConsumerKeyCode::BRIGHTNESS_DOWN, ConsumerKeyCode::VOLUME_MUTE</autogen>
+    <autogen>--ConsumerToConsumer-- ConsumerKeyCode::BRIGHTNESS_UP,   ConsumerKeyCode::VOLUME_DOWN</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::EXPOSE_ALL, ConsumerKeyCode::VOLUME_UP</autogen>
+  </item>
+
+</root>
