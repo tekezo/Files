@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>F5 to 8</name>
+    <identifier>private.f5_to_eight</identifier>
+    <autogen>--KeyToKey-- KeyCode::F5, KeyCode::KEY_8</autogen>
+  </item>
+
+  <item>
+    <name>Keyboard Backlit Down to 8</name>
+    <identifier>private.keyboardbacklitdown_to_eight</identifier>
+    <autogen>--ConsumerToKey-- ConsumerKeyCode::KEYBOARDLIGHT_LOW, KeyCode::KEY_8</autogen>
+  </item>
+
+</root>
