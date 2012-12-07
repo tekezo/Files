@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Dvorak layout while command key is pressed</name>
+    <identifier>private.modifier_to_dvorak_layout</identifier>
+    <block>
+      <inputsource_only>RUSSIAN</inputsource_only>
+      <autogen>
+        --KeyToKey--
+        KeyCode::COMMAND_L,
+        KeyCode::COMMAND_L,
+
+        Option::KEYTOKEY_BEFORE_KEYDOWN,
+        KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK,
+
+        Option::KEYTOKEY_AFTER_KEYUP,
+        KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN,
+      </autogen>
+    </block>
+  </item>
+
+</root>
