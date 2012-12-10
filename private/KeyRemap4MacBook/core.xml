@@ -10,6 +10,15 @@
       </equal>
     </appdef>
 
+    <deviceproductdef>
+      <productname>
+        MY_MACBOOK_PRO
+      </productname>
+      <productid>
+        0x0245
+      </productid>
+    </deviceproductdef>
+
     <devicelocationdef>
       <locationname>MY_MAGIC_MOUSE</locationname>
       <locationid>998151540</locationid>
