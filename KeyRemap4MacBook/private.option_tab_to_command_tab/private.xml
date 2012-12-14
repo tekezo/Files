@@ -9,13 +9,28 @@
       --KeyToKey--
       KeyCode::OPTION_L,
       KeyCode::OPTION_L,
-      Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_LOCK_COMMAND_L_FORCE_OFF
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_LOCK_COMMAND_L_FORCE_OFF,
+      KeyCode::VK_LOCK_EXTRA1_FORCE_OFF
     </autogen>
     <autogen>
       --KeyToKey--
       KeyCode::OPTION_R,
       KeyCode::OPTION_R,
-      Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_LOCK_COMMAND_L_FORCE_OFF
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_LOCK_COMMAND_L_FORCE_OFF,
+      KeyCode::VK_LOCK_EXTRA1_FORCE_OFF
+    </autogen>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q, ModifierFlag::COMMAND_L | VK_OPTION | ModifierFlag::EXTRA1,
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::H, ModifierFlag::COMMAND_L | VK_OPTION | ModifierFlag::EXTRA1,
+      KeyCode::H, ModifierFlag::COMMAND_L,
     </autogen>
 
     <!-- Option+Tab to Command+Tab (+ Turn Command Lock on) -->
@@ -24,6 +39,7 @@
       KeyCode::TAB, VK_OPTION,
       KeyCode::TAB, ModifierFlag::COMMAND_L,
       KeyCode::VK_LOCK_COMMAND_L_FORCE_ON, ModifierFlag::COMMAND_L,
+      KeyCode::VK_LOCK_EXTRA1_FORCE_ON, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
 
