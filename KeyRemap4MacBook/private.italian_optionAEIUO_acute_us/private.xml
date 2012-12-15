@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Option+AEIUO to áéíúó on "U.S. Input Source"</name>
+    <identifier>private.italian_optionAEIUO_acute_us</identifier>
+
+    <!-- Option+AEIUO -->
+    <autogen>
+      --KeyToKey--
+      KeyCode::A, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::E, VK_OPTION, KeyCode::A,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::E, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::E, VK_OPTION, KeyCode::E,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::I, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::E, VK_OPTION, KeyCode::I,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::U, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::E, VK_OPTION, KeyCode::U,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::O, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::E, VK_OPTION, KeyCode::O,
+    </autogen>
+
+    <!-- Option+Shift+AEIUO -->
+    <autogen>
+      --KeyToKey--
+      KeyCode::A, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::E, VK_OPTION, KeyCode::A, VK_SHIFT,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::E, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::E, VK_OPTION, KeyCode::E, VK_SHIFT,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::I, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::E, VK_OPTION, KeyCode::I, VK_SHIFT,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::U, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::E, VK_OPTION, KeyCode::U, VK_SHIFT,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::O, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::E, VK_OPTION, KeyCode::O, VK_SHIFT,
+    </autogen>
+
+  </item>
+
+</root>
