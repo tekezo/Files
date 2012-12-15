@@ -10,4 +10,8 @@
     </replacementvalue>
   </replacementdef>
 
+  <item>
+    <name>Apply only filter to "Command_L to Option_L".</name>
+  </item>
+
 </root>
