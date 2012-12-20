@@ -9,15 +9,29 @@
     <autogen>
       --KeyToKey--
       KeyCode::F2, ModifierFlag::FN | ModifierFlag::NONE,
+
+      <!-- change input source to us -->
       KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+      KeyCode::VK_WAIT_50MS,
+
       KeyCode::U, ModifierFlag::CONTROL_L,
+
+      <!-- restore input source -->
+      KeyCode::VK_WAIT_50MS,
       KeyCode::VK_CHANGE_INPUTSOURCE_HUNGARIAN_PRO_PC,
     </autogen>
     <autogen>
       --KeyToKey--
       KeyCode::F2, ModifierFlag::NONE,
+
+      <!-- change input source to us -->
       KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+      KeyCode::VK_WAIT_50MS,
+
       KeyCode::U, ModifierFlag::CONTROL_L,
+
+      <!-- restore input source -->
+      KeyCode::VK_WAIT_50MS,
       KeyCode::VK_CHANGE_INPUTSOURCE_HUNGARIAN_PRO_PC,
     </autogen>
   </item>
