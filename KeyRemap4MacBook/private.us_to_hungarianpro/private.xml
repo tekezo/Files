@@ -2,6 +2,27 @@
 <root>
 
   <item>
+    <name>Change Brightness Up to Ctrl+U on Hungarian Pro PC</name>
+    <identifier>private.app_excel_brightnessup_to_ctrlu</identifier>
+    <only>EXCEL</only>
+    <inputsource_only>HUNGARIAN</inputsource_only>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F2, ModifierFlag::FN | ModifierFlag::NONE,
+      KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+      KeyCode::U, ModifierFlag::CONTROL_L,
+      KeyCode::VK_CHANGE_INPUTSOURCE_HUNGARIAN_PRO_PC,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::F2, ModifierFlag::NONE,
+      KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+      KeyCode::U, ModifierFlag::CONTROL_L,
+      KeyCode::VK_CHANGE_INPUTSOURCE_HUNGARIAN_PRO_PC,
+    </autogen>
+  </item>
+
+  <item>
     <name>Change U.S. input source to Hungarian PRO</name>
     <identifier>private.us_to_hungarianpro</identifier>
     <inputsource_only>ENGLISH</inputsource_only>
@@ -15,8 +36,8 @@
     <!-- change / to - (for all modifier combinations) -->
     <autogen>--KeyToKey-- KeyCode::SLASH, KeyCode::MINUS</autogen>
 
-    <!-- change option+n to 0 -->
-    <autogen>--KeyToKey-- KeyCode::N, VK_OPTION | ModifierFlag::NONE, KeyCode::KEY_0</autogen>
+    <!-- change option+o to 0 -->
+    <autogen>--KeyToKey-- KeyCode::O, VK_OPTION | ModifierFlag::NONE, KeyCode::KEY_0</autogen>
 
     <!-- change 0 to ö -->
     <autogen>
@@ -31,6 +52,11 @@
       KeyCode::U, ModifierFlag::OPTION_L,
       KeyCode::O,
     </autogen>
+
+    <!-- etc. -->
+    <!-- ...  -->
+    <!-- ...  -->
+    <!-- ...  -->
   </item>
 
 </root>
