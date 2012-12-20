@@ -2,7 +2,7 @@
 <root>
 
   <item>
-    <name>Change Brightness Up to Ctrl+U on Hungarian Pro PC</name>
+    <name>Change F2 to Ctrl+U on Hungarian Pro PC</name>
     <identifier>private.app_excel_brightnessup_to_ctrlu</identifier>
     <only>EXCEL</only>
     <inputsource_only>HUNGARIAN</inputsource_only>
