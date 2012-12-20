@@ -4,6 +4,7 @@
   <item>
     <name>Change U.S. input source to Hungarian PRO</name>
     <identifier>private.us_to_hungarianpro</identifier>
+    <inputsource_only>ENGLISH</inputsource_only>
 
     <!-- change z to y (for all modifier combinations) -->
     <autogen>--KeyToKey-- KeyCode::Z, KeyCode::Y</autogen>
