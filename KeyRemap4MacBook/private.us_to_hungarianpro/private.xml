@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change U.S. input source to Hungarian PRO</name>
+    <identifier>private.us_to_hungarianpro</identifier>
+
+    <!-- change z to y (for all modifier combinations) -->
+    <autogen>--KeyToKey-- KeyCode::Z, KeyCode::Y</autogen>
+
+    <!-- change y to z (for all modifier combinations) -->
+    <autogen>--KeyToKey-- KeyCode::Y, KeyCode::Z</autogen>
+
+    <!-- change / to - (for all modifier combinations) -->
+    <autogen>--KeyToKey-- KeyCode::SLASH, KeyCode::MINUS</autogen>
+
+    <!-- change option+n to 0 -->
+    <autogen>--KeyToKey-- KeyCode::N, VK_OPTION | ModifierFlag::NONE, KeyCode::KEY_0</autogen>
+
+    <!-- change 0 to ö -->
+    <autogen>
+      --KeyToKey--
+      KeyCode::KEY_0, VK_SHIFT | ModifierFlag::NONE, <!-- with shift -->
+      KeyCode::U, ModifierFlag::OPTION_L,
+      KeyCode::O, VK_SHIFT
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::KEY_0, ModifierFlag::NONE, <!-- without shift -->
+      KeyCode::U, ModifierFlag::OPTION_L,
+      KeyCode::O,
+    </autogen>
+  </item>
+
+</root>
