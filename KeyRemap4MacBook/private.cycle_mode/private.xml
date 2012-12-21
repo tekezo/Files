@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Cycle Mode</name>
+    <appendix>KeyCode::B is mode change key</appendix>
+    <appendix>KeyCode::Q is changed.</appendix>
+    <identifier>private.cycle_mode</identifier>
+    <autogen>
+      --KeyToKey--
+      KeyCode::B, ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_mode1,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::B, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_mode4,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <name></name>
+    <identifier vk_config="true">notsave.private_mode1</identifier>
+    <autogen>--ShowStatusMessage-- Mode1</autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::B, ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_mode1,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_mode2,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::B, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_mode1,
+    </autogen>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q,
+      KeyCode::KEY_1,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <name></name>
+    <identifier vk_config="true">notsave.private_mode2</identifier>
+    <autogen>--ShowStatusMessage-- Mode2</autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::B, ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_mode2,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_mode3,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::B, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_mode2,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_mode1,
+    </autogen>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q,
+      KeyCode::KEY_2,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <name></name>
+    <identifier vk_config="true">notsave.private_mode3</identifier>
+    <autogen>--ShowStatusMessage-- Mode3</autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::B, ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_mode3,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_mode4,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::B, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_mode3,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_mode2,
+    </autogen>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q,
+      KeyCode::KEY_3,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <name></name>
+    <identifier vk_config="true">notsave.private_mode4</identifier>
+    <autogen>--ShowStatusMessage-- Mode4</autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::B, ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_mode4,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::B, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_mode4,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_mode3,
+    </autogen>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::Q,
+      KeyCode::KEY_4,
+    </autogen>
+  </item>
+
+</root>
