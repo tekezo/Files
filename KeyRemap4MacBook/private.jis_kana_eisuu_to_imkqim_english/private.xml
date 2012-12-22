@@ -4,7 +4,6 @@
   <vkchangeinputsourcedef>
     <name>KeyCode::VK_CHANGE_INPUTSOURCE_IMKQIM</name>
     <inputsourceid_equal>com.sinomac.inputmethod.IMKQIM.pinyin</inputsourceid_equal>
-    <inputsourceid_equal>org.unknown.keylayout.MySymbol</inputsourceid_equal>
   </vkchangeinputsourcedef>
 
   <item>
