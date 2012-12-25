@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Option+6,A to Option+I,A</name>
+    <identifier>private.option_6_a_to_option_i_a</identifier>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::KEY_6, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::VK_STICKY_EXTRA1
+    </autogen>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::A, ModifierFlag::EXTRA1 | ModifierFlag::NONE,
+      KeyCode::I, ModifierFlag::OPTION_L,
+      KeyCode::A,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::A, VK_SHIFT | ModifierFlag::EXTRA1 | ModifierFlag::NONE,
+      KeyCode::I, ModifierFlag::OPTION_L,
+      KeyCode::A, VK_SHIFT,
+    </autogen>
+  </item>
+
+</root>
