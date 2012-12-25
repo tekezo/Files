@@ -7,19 +7,19 @@
   </vkchangeinputsourcedef>
 
   <item>
-    <name>JIS KANA to IMKQIM</name>
-    <identifier>private.jis_kana_to_imkqim</identifier>
-    <autogen>--KeyToKey-- KeyCode::JIS_KANA, KeyCode::VK_CHANGE_INPUTSOURCE_IMKQIM</autogen>
+    <name>JIS EISUU to IMKQIM</name>
+    <identifier>private.jis_eisuu_to_imkqim</identifier>
+    <autogen>--KeyToKey-- KeyCode::JIS_EISUU, KeyCode::VK_CHANGE_INPUTSOURCE_IMKQIM</autogen>
   </item>
 
   <item>
-    <name>JIS KANA to toggle IMKQIM/English</name>
-    <identifier>private.jis_kana_to_imkqim_toggle</identifier>
+    <name>JIS EISUU to toggle IMKQIM/English</name>
+    <identifier>private.jis_eisuu_to_imkqim_toggle</identifier>
     <block>
       <inputsource_only>ENGLISH</inputsource_only>
-      <autogen>--KeyToKey-- KeyCode::JIS_KANA, KeyCode::VK_CHANGE_INPUTSOURCE_IMKQIM</autogen>
+      <autogen>--KeyToKey-- KeyCode::JIS_EISUU, KeyCode::VK_CHANGE_INPUTSOURCE_IMKQIM</autogen>
     </block>
-    <autogen>--KeyToKey-- KeyCode::JIS_KANA, KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH</autogen>
+    <autogen>--KeyToKey-- KeyCode::JIS_EISUU, KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH</autogen>
   </item>
 
 </root>
