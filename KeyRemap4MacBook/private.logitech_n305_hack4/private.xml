@@ -5,6 +5,8 @@
     <name>My N305 Hack</name>
     <identifier>private.logitech_n305_hack4</identifier>
     <inputsource_only>FRENCH</inputsource_only>
+
+    <!-- with shift key -->
     <include path="logitech_n305.xml">
       <replacementdef>
         <replacementname>LOGITECH_N305_LEFT_PARENTHES</replacementname>
@@ -14,6 +16,29 @@
       <replacementdef>
         <replacementname>LOGITECH_N305_RIGHT_PARENTHES</replacementname>
         <replacementvalue>KeyCode::MINUS, ModifierFlag::OPTION_L</replacementvalue>
+      </replacementdef>
+
+      <replacementdef>
+        <replacementname>LOGITECH_N305_EQUAL</replacementname>
+        <replacementvalue>KeyCode::SLASH</replacementvalue>
+      </replacementdef>
+
+      <replacementdef>
+        <replacementname>LOGITECH_N305_EXTRA_MODIFIERS</replacementname>
+        <replacementvalue>| VK_SHIFT</replacementvalue>
+      </replacementdef>
+    </include>
+
+    <!-- without shift key -->
+    <include path="logitech_n305.xml">
+      <replacementdef>
+        <replacementname>LOGITECH_N305_LEFT_PARENTHES</replacementname>
+        <replacementvalue>KeyCode::KEY_5, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L</replacementvalue>
+      </replacementdef>
+
+      <replacementdef>
+        <replacementname>LOGITECH_N305_RIGHT_PARENTHES</replacementname>
+        <replacementvalue>KeyCode::MINUS, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L</replacementvalue>
       </replacementdef>
 
       <replacementdef>
