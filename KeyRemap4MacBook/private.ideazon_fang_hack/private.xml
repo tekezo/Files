@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <devicevendordef>
+    <vendorname>Ideazon</vendorname>
+    <vendorid>0x1038</vendorid>
+  </devicevendordef>
+
+  <deviceproductdef>
+    <productname>Ideazon_Fang</productname>
+    <productid>0x0310</productid>
+  </deviceproductdef>
+
+  <item>
+    <name>Set keyboard type to ANSI on Ideazon Fang</name>
+    <identifier>private.ideazon_fang_hack</identifier>
+    <device_only>
+      DeviceVendor::Ideazon,
+      DeviceProduct::Ideazon_Fang,
+    </device_only>
+    <autogen>__SetKeyboardType__ KeyboardType::MACBOOK</autogen>
+  </item>
+
+</root>
