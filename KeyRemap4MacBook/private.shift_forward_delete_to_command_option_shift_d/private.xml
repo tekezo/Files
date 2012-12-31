@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>shift-forward delete to command-option-shift-D</name>
+    <identifier>private.shift_forward_delete_to_command_option_shift_d</identifier>
+    <autogen>
+      --KeyToKey--
+      FROMKEYCODE_FORWARD_DELETE, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::D, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L | VK_SHIFT,
+    </autogen>
+  </item>
+
+</root>
