@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>KeyToKey</name>
+    <appendix>(FN+Bracket Left to Cursor Up)</appendix>
+    <appendix>(FN+Quote to Cursor Down)</appendix>
+    <appendix>(FN+Semicolon to Cursor Left)</appendix>
+    <appendix>(FN+Backslash to Cursor Right)</appendix>
+    <identifier>private.right_diamond</identifier>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::FN, KeyCode::CURSOR_UP</autogen>
+    <autogen>--KeyToKey-- KeyCode::QUOTE,        ModifierFlag::FN, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON,    ModifierFlag::FN, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>--KeyToKey-- KeyCode::BACKSLASH,    ModifierFlag::FN, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
+
+</root>
