@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<root>
+  <item hidden="true">
+    <name>Q map</name>
+    <identifier vk_config="true">notsave.private_asetniop_q</identifier>
+    <autogen>__KeyToKey__ KeyCode::W, KeyCode::W,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::E, KeyCode::X,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::R, KeyCode::F,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::U, KeyCode::Q,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::KEY_1, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, KeyCode::KEY_9, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::P, KeyCode::SLASH, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+  </item>
+  <item hidden="true">
+    <name>W map</name>
+    <identifier vk_config="true">notsave.private_asetniop_w</identifier>
+    <autogen>__KeyToKey__ KeyCode::Q, KeyCode::W,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::E, KeyCode::D,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::R, KeyCode::C,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::U, KeyCode::J,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::Z,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, KeyCode::DOT,                          KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::P, KeyCode::KEY_0, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
+  </item>
+  <item hidden="true">
+    <name>E map</name>
+    <identifier vk_config="true">notsave.private_asetniop_e</identifier>
+    <autogen>__KeyToKey__ KeyCode::Q, KeyCode::X,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::W, KeyCode::D,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::R, KeyCode::R,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::U, KeyCode::Y,                            KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::COMMA,                        KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, KeyCode::MINUS,                        KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::P, KeyCode::QUOTE,                        KeyCode::VK_NONE</autogen>
+  </item>
+
+  <item>
+    <name>asetniop</name>
+    <identifier>private.asetniop</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::Q,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_asetniop_q,
+      KeyCode::Q
+    </autogen>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::W,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_asetniop_w,
+      KeyCode::W
+    </autogen>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::E,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_asetniop_e,
+      KeyCode::E
+    </autogen>
+  </item>
+</root>
