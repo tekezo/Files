@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Alt+q to extra1</name>
+    <appendix>extra1+j to shift+up</appendix>
+    <identifier>private.alt_q_j</identifier>
+    <autogen>--KeyToKey-- KeyCode::Q, VK_OPTION, KeyCode::VK_MODIFIER_EXTRA1</autogen>
+    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::EXTRA1, KeyCode::CURSOR_UP, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+  <item>
+    <name>Alt+q to extra1 (if you press only Alt+q, send Alt+q)</name>
+    <appendix>extra1+j to shift+up</appendix>
+    <identifier>private.alt_q_j2</identifier>
+    <autogen>
+      --KeyOverlaidModifier--
+      KeyCode::Q, VK_OPTION,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::Q, VK_OPTION
+    </autogen>
+    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::EXTRA1, KeyCode::CURSOR_UP, ModifierFlag::SHIFT_L</autogen>
+  </item>
+</root>
