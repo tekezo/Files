@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>My Custom Setting</name>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::N, VK_OPTION,
+      KeyCode::N,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, VK_OPTION | VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::N, VK_OPTION,
+      KeyCode::N, VK_SHIFT,
+    </autogen>
+  </item>
+
+</root>

@@ -7,6 +7,11 @@
     <autogen>__KeyToKey__ KeyCode::E, KeyCode::X,                            KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::R, KeyCode::F,                            KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::U, KeyCode::Q,                            KeyCode::VK_NONE</autogen>
+    <!-- strip control modifier -->
+    <autogen>__KeyToKey__ KeyCode::I, VK_CONTROL, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, VK_CONTROL, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::P, VK_CONTROL, KeyCode::SLASH, ModifierFlag::SHIFT_L</autogen>
+    <!-- -->
     <autogen>__KeyToKey__ KeyCode::I, KeyCode::KEY_1, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::O, KeyCode::KEY_9, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::P, KeyCode::SLASH, ModifierFlag::SHIFT_L, KeyCode::VK_NONE</autogen>
