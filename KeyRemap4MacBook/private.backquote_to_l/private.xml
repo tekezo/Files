@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Backquote(`) to L</name>
+    <identifier>private.backquote_to_l</identifier>
+    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, KeyCode::L</autogen>
+  </item>
+</root>
