@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Old style fkeys</name>
+    <identifier>private.oldstylefkeys</identifier>
+    <autogen>--KeyToConsumer-- KeyCode::EXPOSE_ALL, ConsumerKeyCode::VOLUME_MUTE</autogen>
+    <autogen>--KeyToConsumer-- KeyCode::DASHBOARD,  ConsumerKeyCode::VOLUME_DOWN</autogen>
+    <autogen>--ConsumerToConsumer-- ConsumerKeyCode::KEYBOARDLIGHT_LOW,  ConsumerKeyCode::VOLUME_UP</autogen>
+
+    <autogen>
+      --ConsumerToKey--
+      ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_virtual_numlock
+    </autogen>
+
+    <autogen>--ConsumerToConsumer-- ConsumerKeyCode::MUSIC_PREV,  ConsumerKeyCode::VIDEO_MIRROR</autogen>
+    <autogen>--ConsumerToConsumer-- ConsumerKeyCode::MUSIC_PLAY,  ConsumerKeyCode::KEYBOARDLIGHT_OFF</autogen>
+    <autogen>--ConsumerToConsumer-- ConsumerKeyCode::MUSIC_NEXT,  ConsumerKeyCode::KEYBOARDLIGHT_LOW</autogen>
+    <autogen>--ConsumerToConsumer-- ConsumerKeyCode::VOLUME_MUTE, ConsumerKeyCode::KEYBOARDLIGHT_HIGH</autogen>
+    <autogen>--ConsumerToKey--      ConsumerKeyCode::VOLUME_DOWN, KeyCode::F11</autogen>
+    <autogen>--ConsumerToKey--      ConsumerKeyCode::VOLUME_UP,   KeyCode::F12</autogen>
+  </item>
+
+</root>
