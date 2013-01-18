@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>My Custom Setting</name>
+    <identifier>private.swap_return_and_left_click</identifier>
+    <autogen>--KeyToPointingButton-- KeyCode::RETURN, PointingButton::LEFT</autogen>
+    <autogen>--PointingButtonToKey-- PointingButton::LEFT, KeyCode::RETURN</autogen>
+  </item>
+
+</root>
