@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>change ù key to left shift key</name>
+    <identifier>private.quote_to_shift</identifier>
+    <autogen>--KeyToKey-- KeyCode::QUOTE, KeyCode::SHIFT_L</autogen>
+  </item>
+
+</root>
