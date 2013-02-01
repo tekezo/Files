@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Holding j key turns Normal Mode on</name>
+    <identifier>private.vimnormal_holding_j_toggle</identifier>
+    <not>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</not>
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::J,
+      KeyCode::J,
+      KeyCode::VK_NONE,
+      KeyCode::VK_LOCK_ALL_FORCE_OFF,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_ubiq_vimnormal,
+      {{ UBIQUITOUS_VIM_BINDINGS_CANCEL_OPERATOR_PENDING }}
+    </autogen>
+  </item>
+
+</root>
