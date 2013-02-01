@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change fn+s to š</name>
+    <appendix>You need to enable Czech and U.S. input sources.</appendix>
+    <identifier>private.fn_s_to_czech_s</identifier>
+    <autogen>__KeyToKey__
+      KeyCode::S, ModifierFlag::FN,
+
+      <!-- change input source to Czech -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_CZECH,
+
+      <!-- wait until input source was changed -->
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS,
+
+      <!-- put š -->
+      KeyCode::KEY_3,
+
+      <!-- restore input source -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeating -->
+      Option::NOREPEAT,
+    </autogen>
+  </item>
+
+</root>
