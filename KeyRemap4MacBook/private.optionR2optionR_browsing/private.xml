@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Option_R to Option_R</name>
+    <appendix>(+ When you type Option_R only, toggle Browsing Mode on Preview.app)</appendix>
+    <appendix>(+ When you type Option_R only, toggle Browsing Mode on other apps)</appendix>
+    <identifier>private.optionR2optionR_browsing</identifier>
+    <block>
+      <only>PREVIEW</only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::OPTION_R,
+        KeyCode::OPTION_R,
+        KeyCode::VK_CONFIG_TOGGLE_notsave_browsingmode
+      </autogen>
+    </block>
+    <block>
+      <not>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</not>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::OPTION_R,
+        KeyCode::OPTION_R,
+        KeyCode::VK_LOCK_ALL_FORCE_OFF,
+        KeyCode::VK_CONFIG_TOGGLE_notsave_ubiq_vimnormal,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_c_operator_pending,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_d_operator_pending,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_g_operator_pending,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_r_operator_pending,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_R_operator_pending,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_c_w_operator_pending,
+      </autogen>
+    </block>
+  </item>
+
+</root>
