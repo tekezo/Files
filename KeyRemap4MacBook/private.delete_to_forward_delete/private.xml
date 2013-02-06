@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change delete to forward delete</name>
+    <appendix>(+ change = to delete while holding delete key)</appendix>
+    <appendix></appendix>
+    <appendix>*** forward delete is not repeat ***</appendix>
+    <identifier>private.delete_to_forward_delete</identifier>
+    <device_only>DeviceVendor::APPLE_INC, DeviceProduct::ANY</device_only>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::DELETE,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::FORWARD_DELETE,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::EQUAL, ModifierFlag::EXTRA1,
+      KeyCode::DELETE,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change delete to forward delete</name>
+    <appendix>(+ send delete when pressing delete and = keys simultaneously)</appendix>
+    <identifier>private.delete_to_forward_delete2</identifier>
+    <device_only>DeviceVendor::APPLE_INC, DeviceProduct::ANY</device_only>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::DELETE, KeyCode::EQUAL,
+      KeyCode::DELETE,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::DELETE,
+      KeyCode::FORWARD_DELETE,
+    </autogen>
+  </item>
+
+</root>
