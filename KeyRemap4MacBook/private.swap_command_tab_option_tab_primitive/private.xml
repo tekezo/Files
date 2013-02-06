@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Command+Tab and Option+Tab</name>
+    <identifier>private.swap_command_tab_option_tab_primitive</identifier>
+    <autogen>--KeyToKey-- KeyCode::TAB, VK_OPTION, KeyCode::TAB, ModifierFlag::COMMAND_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::TAB, VK_COMMAND, KeyCode::TAB, ModifierFlag::OPTION_L</autogen>
+  </item>
+
+</root>
