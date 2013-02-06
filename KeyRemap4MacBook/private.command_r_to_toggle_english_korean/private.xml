@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change current input source to English/Korean by right command key.</name>
+    <appendix>Enable "Select next input source in menu" shortcut (command+option+space)</appendix>
+    <identifier>private.command_r_to_toggle_english_korean</identifier>
+    <block>
+      <inputsource_only>ENGLISH</inputsource_only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::COMMAND_R,
+        KeyCode::COMMAND_R,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH,
+        KeyCode::VK_WAIT_100MS,
+        KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+      </autogen>
+    </block>
+    <block>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::COMMAND_R,
+        KeyCode::COMMAND_R,
+        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH
+      </autogen>
+    </block>
+  </item>
+
+</root>
