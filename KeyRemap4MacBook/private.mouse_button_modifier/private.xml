@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Mouse Button modifier</name>
+    <identifier>private.mouse_button_modifier</identifier>
+
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::LEFT,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_left_button_mode,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
+    </autogen>
+
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::RIGHT,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_right_button_mode,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_RIGHT,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
+      KeyCode::VK_LOCK_SHIFT_L_FORCE_OFF,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <name></name>
+    <identifier vk_config="true">notsave.private_left_button_mode</identifier>
+
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::RIGHT,
+      KeyCode::OPTION_L
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <name></name>
+    <identifier vk_config="true">notsave.private_right_button_mode</identifier>
+
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::LEFT,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
+      KeyCode::VK_LOCK_SHIFT_L_FORCE_ON,
+      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+    </autogen>
+  </item>
+
+</root>
