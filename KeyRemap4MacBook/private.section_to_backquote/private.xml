@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <inputsourcedef>
+    <name>PORTUGUESE</name>
+    <languagecode>pt</languagecode>
+  </inputsourcedef>
+
+  <item>
+    <name>Change § to ` in Portuguese input source.</name>
+    <identifier>private.section_to_backquote</identifier>
+    <inputsource_only>PORTUGUESE</inputsource_only>
+    <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+</root>
