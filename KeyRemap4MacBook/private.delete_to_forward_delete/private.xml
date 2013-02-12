@@ -38,4 +38,15 @@
     </autogen>
   </item>
 
+  <item>
+    <appendix>Send forward delete when pressing delete and = keys simultaneously</appendix>
+    <identifier>private.send_forward_delete</identifier>
+    <device_only>DeviceVendor::APPLE_INC, DeviceProduct::ANY</device_only>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::DELETE, KeyCode::EQUAL,
+      KeyCode::FORWARD_DELETE,
+    </autogen>
+  </item>
+
 </root>
