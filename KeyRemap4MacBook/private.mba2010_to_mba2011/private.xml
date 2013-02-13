@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change MBA 2010 to MBA 2011 and later</name>
+    <identifier>private.mba2010_to_mba2011</identifier>
+    <autogen>__KeyToKey__           KeyCode::DASHBOARD,           KeyCode::LAUNCHPAD</autogen>
+    <autogen>__KeyToConsumer__      KeyCode::F5,                  ConsumerKeyCode::KEYBOARDLIGHT_LOW</autogen>
+    <autogen>__ConsumerToConsumer__ ConsumerKeyCode::MUSIC_PREV,  ConsumerKeyCode::KEYBOARDLIGHT_HIGH</autogen>
+    <autogen>__ConsumerToConsumer__ ConsumerKeyCode::MUSIC_PLAY,  ConsumerKeyCode::MUSIC_PREV</autogen>
+    <autogen>__ConsumerToConsumer__ ConsumerKeyCode::MUSIC_NEXT,  ConsumerKeyCode::MUSIC_PLAY</autogen>
+    <autogen>__ConsumerToConsumer__ ConsumerKeyCode::VOLUME_MUTE, ConsumerKeyCode::MUSIC_NEXT</autogen>
+    <autogen>__ConsumerToConsumer__ ConsumerKeyCode::VOLUME_DOWN, ConsumerKeyCode::VOLUME_MUTE</autogen>
+    <autogen>__ConsumerToConsumer__ ConsumerKeyCode::VOLUME_UP,   ConsumerKeyCode::VOLUME_DOWN</autogen>
+    <autogen>__ConsumerToConsumer__ ConsumerKeyCode::EJECT,       ConsumerKeyCode::VOLUME_UP</autogen>
+  </item>
+
+</root>
