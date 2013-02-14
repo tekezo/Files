@@ -15,4 +15,8 @@
     </replacementvalue>
   </replacementdef>
 
+  <item>
+    <name>C-x C-x (Cut) is added.</name>
+  </item>
+
 </root>
