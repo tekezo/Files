@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change pc application key to extra modifier</name>
+    <appendix>extra+j = Down</appendix>
+    <appendix>extra+k = Left</appendix>
+    <identifier>private.application_key_to_extra1</identifier>
+    <autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::VK_MODIFIER_EXTRA1</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::EXTRA1, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::EXTRA1, KeyCode::CURSOR_LEFT</autogen>
+  </item>
+
+</root>
