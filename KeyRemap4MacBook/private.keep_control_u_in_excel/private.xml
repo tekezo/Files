@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Keep control-u behavior on Excel</name>
+    <identifier>private.keep_control_u_in_excel</identifier>
+    <only>EXCEL</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::U, VK_CONTROL | ModifierFlag::NONE,
+      KeyCode::U, VK_CONTROL
+    </autogen>
+  </item>
+
+</root>
