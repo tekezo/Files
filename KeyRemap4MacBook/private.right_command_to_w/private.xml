@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right command key to 'w'</name>
+    <identifier>private.right_command_to_w</identifier>
+    <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::W</autogen>
+  </item>
+
+</root>
