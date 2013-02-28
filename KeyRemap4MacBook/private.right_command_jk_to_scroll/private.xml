@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>"Right command key + j/k" to scroll down/up</name>
+    <identifier>private.right_command_jk_to_scroll</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::J, ModifierFlag::COMMAND_R,
+      KeyCode::VK_MOUSEKEY_SCROLL_DOWN,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::K, ModifierFlag::COMMAND_R,
+      KeyCode::VK_MOUSEKEY_SCROLL_UP,
+    </autogen>
+  </item>
+
+</root>
