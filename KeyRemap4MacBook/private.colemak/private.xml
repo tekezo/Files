@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change QWERTY to Colemak layout</name>
+    <identifier>private.qwerty2colemak</identifier>
+    <autogen>__KeyToKey__ KeyCode::E, KeyCode::F</autogen>
+    <autogen>__KeyToKey__ KeyCode::R, KeyCode::P</autogen>
+    <autogen>__KeyToKey__ KeyCode::T, KeyCode::G</autogen>
+    <autogen>__KeyToKey__ KeyCode::Y, KeyCode::J</autogen>
+    <autogen>__KeyToKey__ KeyCode::U, KeyCode::L</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::U</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, KeyCode::Y</autogen>
+    <autogen>__KeyToKey__ KeyCode::P, KeyCode::SEMICOLON</autogen>
+    <autogen>__KeyToKey__ KeyCode::S, KeyCode::R</autogen>
+    <autogen>__KeyToKey__ KeyCode::D, KeyCode::S</autogen>
+    <autogen>__KeyToKey__ KeyCode::F, KeyCode::T</autogen>
+    <autogen>__KeyToKey__ KeyCode::G, KeyCode::D</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::N</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::E</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::I</autogen>
+    <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::O</autogen>
+    <autogen>__KeyToKey__ KeyCode::N, KeyCode::K</autogen>
+  </item>
+</root>
