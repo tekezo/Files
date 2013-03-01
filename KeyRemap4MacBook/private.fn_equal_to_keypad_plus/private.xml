@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>fn+equal to keypad plus</name>
+    <appendix>fn+shift+equal to keypad equal</appendix>
+    <identifier>private.fn_equal_to_keypad_plus</identifier>
+    <autogen>__KeyToKey__ KeyCode::EQUAL, ModifierFlag::FN | VK_SHIFT, KeyCode::KEYPAD_EQUAL</autogen>
+    <autogen>__KeyToKey__ KeyCode::EQUAL, ModifierFlag::FN, KeyCode::KEYPAD_PLUS</autogen>
+  </item>
+
+</root>
