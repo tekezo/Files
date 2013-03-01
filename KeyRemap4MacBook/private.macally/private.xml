@@ -2,7 +2,7 @@
 <root>
 
   <item>
-    <name>Change F1-F6 to normal F1-F6</name>
+    <name>Change F1-F7,F9 to normal F1-F7,F9</name>
     <appendix>(Decrease "[Simultaneous Key Presses] Delay Threshold" in Key Repeat tab)</appendix>
     <identifier>private.macally</identifier>
     <autogen>
@@ -34,6 +34,16 @@
       __SimultaneousKeyPresses__
       KeyCode::Z, KeyCode::COMMAND_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE,
       KeyCode::F6
+    </autogen>
+    <autogen>
+      __ConsumerToKey__
+      ConsumerKeyCode::MUSIC_PREV_18,
+      KeyCode::F7
+    </autogen>
+    <autogen>
+      __ConsumerToKey__
+      ConsumerKeyCode::MUSIC_NEXT_17,
+      KeyCode::F9
     </autogen>
   </item>
 
