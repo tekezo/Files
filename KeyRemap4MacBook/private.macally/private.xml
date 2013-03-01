@@ -27,12 +27,12 @@
     </autogen>
     <autogen>
       __SimultaneousKeyPresses__
-      KeyCode::Z, KeyCode::COMMAND_L, ModifierToKey::COMMAND_L,
+      KeyCode::Z, KeyCode::COMMAND_L, ModifierFlag::NONE,
       KeyCode::F5
     </autogen>
     <autogen>
       __SimultaneousKeyPresses__
-      KeyCode::Z, KeyCode::COMMAND_L, ModifierToKey::COMMAND_L | ModifierToKey::SHIFT_L,
+      KeyCode::Z, KeyCode::COMMAND_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE,
       KeyCode::F6
     </autogen>
   </item>
