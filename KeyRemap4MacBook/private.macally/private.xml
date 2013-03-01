@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change F1-F6 to normal F1-F6</name>
+    <appendix>(Decrease "[Simultaneous Key Presses] Delay Threshold" in Key Repeat tab)</appendix>
+    <identifier>private.macally</identifier>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::Q, KeyCode::COMMAND_L,
+      KeyCode::F1
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::X, KeyCode::COMMAND_L,
+      KeyCode::F2
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::C, KeyCode::COMMAND_L,
+      KeyCode::F3
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::V, KeyCode::COMMAND_L,
+      KeyCode::F4
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::Z, KeyCode::COMMAND_L, ModifierToKey::COMMAND_L,
+      KeyCode::F5
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::Z, KeyCode::COMMAND_L, ModifierToKey::COMMAND_L | ModifierToKey::SHIFT_L,
+      KeyCode::F6
+    </autogen>
+  </item>
+
+</root>
