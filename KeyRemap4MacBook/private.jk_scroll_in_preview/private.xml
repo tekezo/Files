@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use J/K as Scroll in Preview.app</name>
+    <identifier>private.jk_scroll_in_preview</identifier>
+    <only>PREVIEW</only>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::VK_MOUSEKEY_SCROLL_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::VK_MOUSEKEY_SCROLL_UP</autogen>
+  </item>
+
+</root>
