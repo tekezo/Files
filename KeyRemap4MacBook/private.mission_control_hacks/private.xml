@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Mission Control Hacks</name>
+    <appendix>Move window to next/previous desktop by fn+[, fn+]</appendix>
+    <appendix>(Move mouse pointer to titlebar, and then press fn+[ or fn+])</appendix>
+    <identifier>private.mission_control_hacks</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_LEFT, ModifierFlag::FN,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+      KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_RIGHT, ModifierFlag::FN,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+    </autogen>
+  </item>
+
+</root>
