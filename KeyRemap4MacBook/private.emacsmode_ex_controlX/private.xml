@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Enable Control+X</name>
+    <identifier>private.emacsmode_ex_controlX</identifier>
+    <not>{{EMACS_MODE_IGNORE_APPS}}</not>
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::X, VK_CONTROL | ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_emacsmode_ex_controlX_core,
+      KeyCode::VK_NONE,
+      KeyCode::X, VK_COMMAND,
+    </autogen>
+  </item>
+
+</root>
