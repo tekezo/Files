@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Fingers</name>
+    <identifier>notsave.private_fingers</identifier>
+    <autogen>__ShowStatusMessage__ Fingers</autogen>
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::LEFT,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_private_button_lock_mode
+    </autogen>
+  </item>
+
+  <item>
+    <name>Button Lock Mode</name>
+    <identifier vk_config="true">notsave.private_button_lock_mode</identifier>
+    <autogen>__ShowStatusMessage__ Lock Mode</autogen>
+    <block>
+      <config_only>notsave.private_fingers</config_only>
+      <autogen>
+        __PointingButtonToKey__
+        PointingButton::LEFT,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_button_lock_mode
+      </autogen>
+    </block>
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::LEFT,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT
+    </autogen>
+  </item>
+
+</root>
