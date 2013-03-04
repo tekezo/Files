@@ -5,9 +5,12 @@
     <replacementname>BROWSING_MODE_EXTRA</replacementname>
     <replacementvalue>
       <![CDATA[
-<autogen>__KeyToKey__ KeyCode::J, KeyCode::VK_MOUSEKEY_SCROLL_UP</autogen>
-<autogen>__KeyToKey__ KeyCode::K, KeyCode::VK_MOUSEKEY_SCROLL_DOWN</autogen>
-<autogen>__KeyToKey__ KeyCode::F, KeyCode::VK_MOUSEKEY_HIGHSPEED</autogen>
+<block>
+  <only>PREVIEW</only>
+  <autogen>__KeyToKey__ KeyCode::J, KeyCode::VK_MOUSEKEY_SCROLL_UP</autogen>
+  <autogen>__KeyToKey__ KeyCode::K, KeyCode::VK_MOUSEKEY_SCROLL_DOWN</autogen>
+  <autogen>__KeyToKey__ KeyCode::F, KeyCode::VK_MOUSEKEY_HIGHSPEED</autogen>
+</block>
 ]]>
     </replacementvalue>
   </replacementdef>
