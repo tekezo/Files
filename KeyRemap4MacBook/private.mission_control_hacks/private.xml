@@ -20,6 +20,11 @@
       KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
     </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKSLASH, ModifierFlag::FN,
+      KeyCode::F13,
+    </autogen>
   </item>
 
 </root>
