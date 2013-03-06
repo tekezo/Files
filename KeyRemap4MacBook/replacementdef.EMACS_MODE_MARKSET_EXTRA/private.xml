@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>EMACS_MODE_MARKSET_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+  <autogen>
+    --KeyToKey--
+    KeyCode::I, VK_CONTROL | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+    KeyCode::VK_LOCK_SHIFT_L_FORCE_OFF,
+    KeyCode::I, VK_CONTROL,
+    KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlSpace_core
+  </autogen>
+  ]]>
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>MarkSet is changed.</name>
+  </item>
+
+</root>
