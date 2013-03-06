@@ -9,6 +9,8 @@
     <autogen>
       __KeyToKey__
       KeyCode::BRACKET_LEFT, ModifierFlag::FN,
+      KeyCode::F13,
+      KeyCode::VK_WAIT_100MS,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
       KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
@@ -16,6 +18,8 @@
     <autogen>
       __KeyToKey__
       KeyCode::BRACKET_RIGHT, ModifierFlag::FN,
+      KeyCode::F13,
+      KeyCode::VK_WAIT_100MS,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
       KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
