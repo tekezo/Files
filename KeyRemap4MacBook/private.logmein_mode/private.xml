@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>LogMeIn Mode</name>
+    <identifier vk_config="true">notsave.private_logmein_mode</identifier>
+    <autogen>__ShowStatusMessage__ LogMeIn Mode</autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_L,
+      KeyCode::CONTROL_L,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Toggle LogMeIn Mode by right shift key</name>
+    <appendix>(You can also use right shift key as normal shift modifier.)</appendix>
+    <identifier>private.logmein_mode_shift_r</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SHIFT_R,
+      KeyCode::SHIFT_R,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_private_logmein_mode,
+    </autogen>
+  </item>
+
+</root>
