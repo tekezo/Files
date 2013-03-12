@@ -30,6 +30,7 @@
         KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
         KeyCode::VK_NONE,
         KeyCode::VK_CONFIG_TOGGLE_notsave_mousekeys_mode,
+        KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
       </autogen>
     </block>
 
