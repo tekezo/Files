@@ -21,6 +21,18 @@
     <appendix>(Use . key to release click.)</appendix>
     <identifier>private.m_to_click_lock</identifier>
     <config_only>notsave.mousekeys_mode</config_only>
+
+    <block>
+      <config_only>remap.mouse_keys_mode_holding_m</config_only>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::M, ModifierFlag::NONE,
+        KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+        KeyCode::VK_NONE,
+        KeyCode::VK_CONFIG_TOGGLE_notsave_mousekeys_mode,
+      </autogen>
+    </block>
+
     <autogen>
       __KeyToKey__
       KeyCode::M,
