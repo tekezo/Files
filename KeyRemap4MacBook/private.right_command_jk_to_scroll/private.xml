@@ -16,4 +16,21 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Use M key to click lock in Mouse Keys Mode.</name>
+    <appendix>(Use . key to release click.)</appendix>
+    <identifier>private.m_to_click_lock</identifier>
+    <config_only>notsave.mousekeys_mode</config_only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::M,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::DOT,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
+    </autogen>
+  </item>
+
 </root>
