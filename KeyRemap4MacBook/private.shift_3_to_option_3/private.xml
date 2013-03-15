@@ -2,12 +2,17 @@
 <root>
 
   <item>
-    <name>Change # to £</name>
+    <name>Swap # to £</name>
     <identifier>private.shift_3_to_option_3</identifier>
     <autogen>
       __KeyToKey__
       KeyCode::KEY_3, VK_SHIFT | ModifierFlag::NONE,
       KeyCode::KEY_3, ModifierFlag::OPTION_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_3, VK_OPTION | ModifierFlag::NONE,
+      KeyCode::KEY_3, ModifierFlag::SHIFT_L,
     </autogen>
   </item>
 
