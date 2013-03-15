@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change # to £</name>
+    <identifier>private.shift_3_to_option_3</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_3, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
