@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Two cursors to diagonal</name>
+    <appendix>Simultaneous arrow keys presses to Home/End/PageUp/PageDown</appendix>
+    <appendix>(Up+Left to Home)</appendix>
+    <appendix>(Up+Right to PageUp)</appendix>
+    <appendix>(Down+Left to End)</appendix>
+    <appendix>(Down+Right to PageDown)</appendix>
+    <identifier>private.simcursor_to_diagonal_cursor</identifier>
+
+    <!-- control-home -->
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::CURSOR_UP, KeyCode::CURSOR_LEFT, VK_COMMAND,
+      KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::CURSOR_UP, KeyCode::CURSOR_LEFT, VK_CONTROL,
+      KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L,
+    </autogen>
+
+    <!-- control-end -->
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::CURSOR_DOWN, KeyCode::CURSOR_LEFT, VK_COMMAND,
+      KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::CURSOR_DOWN, KeyCode::CURSOR_LEFT, VK_CONTROL,
+      KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L,
+    </autogen>
+
+    <!-- shift-home,shift-end -->
+    <block>
+      <only>SAFARI,FIREFOX,THUNDERBIRD,GOOGLE_CHROME,OPERA</only>
+      <autogen>
+        __SimultaneousKeyPresses__
+        KeyCode::CURSOR_UP, KeyCode::CURSOR_LEFT, VK_SHIFT,
+        KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_DOWN, KeyCode::CURSOR_LEFT, VK_SHIFT,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | VK_SHIFT,
+      </autogen>
+    </block>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::CURSOR_UP, KeyCode::CURSOR_LEFT,
+      KeyCode::A, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::CURSOR_UP, KeyCode::CURSOR_RIGHT,
+      KeyCode::PAGEUP,
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::CURSOR_DOWN, KeyCode::CURSOR_LEFT,
+      KeyCode::E, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      KeyCode::CURSOR_DOWN, KeyCode::CURSOR_RIGHT,
+      KeyCode::PAGEDOWN,
+    </autogen>
+  </item>
+
+</root>
