@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<root>
+
+  <inputsourcedef>
+    <name>DVQT</name>
+    <inputsourceid_equal>com.apple.keylayout.US</inputsourceid_equal>
+  </inputsourcedef>
+
+  <item>
+    <name>Toggle DVQT by F7</name>
+    <identifier>private.toggle_dvqt_f7</identifier>
+    <autogen>__KeyToKey__ KeyCode::F7, KeyCode::VK_CONFIG_TOGGLE_private_remap_DVQT</autogen>
+  </item>
+
+  <item>
+    <name>Dvorak-US⌘ fix</name>
+    <identifier vk_config="true">private.remap.DVQT</identifier>
+    <inputsource_only>DVQT</inputsource_only>
+    <modifier_not>
+      ModifierFlag::COMMAND_L,
+      ModifierFlag::COMMAND_R,
+      ModifierFlag::FN
+    </modifier_not>
+
+    <autogen>__ShowStatusMessage__ DVQT</autogen>
+
+    <autogen>--KeyToKey-- KeyCode::Q, ModifierFlag::OPTION_L, KeyCode::QUOTE, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::W, ModifierFlag::OPTION_L, KeyCode::COMMA, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::E, ModifierFlag::OPTION_L,KeyCode::DOT, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::R, ModifierFlag::OPTION_L,KeyCode::P, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::T, ModifierFlag::OPTION_L,KeyCode::Y, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::Y, ModifierFlag::OPTION_L,KeyCode::F, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::OPTION_L,KeyCode::G, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::OPTION_L,KeyCode::C, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::OPTION_L,KeyCode::R, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::P, ModifierFlag::OPTION_L,KeyCode::L, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT,  ModifierFlag::OPTION_L,KeyCode::SLASH, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT,  ModifierFlag::OPTION_L,KeyCode::EQUAL, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::S, ModifierFlag::OPTION_L,KeyCode::O, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::D, ModifierFlag::OPTION_L,ModifierFlag::OPTION_L, KeyCode::E, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::F, ModifierFlag::OPTION_L,KeyCode::U, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::G, ModifierFlag::OPTION_L,KeyCode::I, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::OPTION_L,KeyCode::D, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::OPTION_L,KeyCode::H, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::OPTION_L,KeyCode::T, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::OPTION_L,KeyCode::N, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON,  ModifierFlag::OPTION_L,KeyCode::S, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::QUOTE,  ModifierFlag::OPTION_L,KeyCode::MINUS, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::Z, ModifierFlag::OPTION_L,KeyCode::SEMICOLON, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::X, ModifierFlag::OPTION_L,KeyCode::Q, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::C, ModifierFlag::OPTION_L,KeyCode::J, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::V, ModifierFlag::OPTION_L,KeyCode::K, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::B, ModifierFlag::OPTION_L,KeyCode::X, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::N, ModifierFlag::OPTION_L,KeyCode::B, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::COMMA, ModifierFlag::OPTION_L,KeyCode::W, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::OPTION_L,KeyCode::V, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::SLASH, ModifierFlag::OPTION_L,KeyCode::Z, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::MINUS, ModifierFlag::OPTION_L,KeyCode::BRACKET_LEFT, ModifierFlag:: OPTION_L</autogen>
+    <autogen>--KeyToKey-- KeyCode::EQUAL, ModifierFlag::OPTION_L,KeyCode::BRACKET_RIGHT, ModifierFlag:: OPTION_L</autogen>
+
+
+    <autogen>--KeyToKey-- KeyCode::Q, KeyCode::QUOTE</autogen>
+    <autogen>--KeyToKey-- KeyCode::W, KeyCode::COMMA</autogen>
+    <autogen>--KeyToKey-- KeyCode::E, KeyCode::DOT</autogen>
+    <autogen>--KeyToKey-- KeyCode::R, KeyCode::P</autogen>
+    <autogen>--KeyToKey-- KeyCode::T, KeyCode::Y</autogen>
+    <autogen>--KeyToKey-- KeyCode::Y, KeyCode::F</autogen>
+    <autogen>--KeyToKey-- KeyCode::U, KeyCode::G</autogen>
+    <autogen>--KeyToKey-- KeyCode::I, KeyCode::C</autogen>
+    <autogen>--KeyToKey-- KeyCode::O, KeyCode::R</autogen>
+    <autogen>--KeyToKey-- KeyCode::P, KeyCode::L</autogen>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_LEFT, KeyCode::SLASH</autogen>
+    <autogen>--KeyToKey-- KeyCode::BRACKET_RIGHT, KeyCode::EQUAL</autogen>
+    <autogen>--KeyToKey-- KeyCode::S, KeyCode::O</autogen>
+    <autogen>--KeyToKey-- KeyCode::D, KeyCode::E</autogen>
+    <autogen>--KeyToKey-- KeyCode::F, KeyCode::U</autogen>
+    <autogen>--KeyToKey-- KeyCode::G, KeyCode::I</autogen>
+    <autogen>--KeyToKey-- KeyCode::H, KeyCode::D</autogen>
+    <autogen>--KeyToKey-- KeyCode::J, KeyCode::H</autogen>
+    <autogen>--KeyToKey-- KeyCode::K, KeyCode::T</autogen>
+    <autogen>--KeyToKey-- KeyCode::L, KeyCode::N</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, KeyCode::S</autogen>
+    <autogen>--KeyToKey-- KeyCode::QUOTE, KeyCode::MINUS</autogen>
+    <autogen>--KeyToKey-- KeyCode::Z, KeyCode::SEMICOLON</autogen>
+    <autogen>--KeyToKey-- KeyCode::X, KeyCode::Q</autogen>
+    <autogen>--KeyToKey-- KeyCode::C, KeyCode::J</autogen>
+    <autogen>--KeyToKey-- KeyCode::V, KeyCode::K</autogen>
+    <autogen>--KeyToKey-- KeyCode::B, KeyCode::X</autogen>
+    <autogen>--KeyToKey-- KeyCode::N, KeyCode::B</autogen>
+    <autogen>--KeyToKey-- KeyCode::COMMA, KeyCode::W</autogen>
+    <autogen>--KeyToKey-- KeyCode::DOT, KeyCode::V</autogen>
+    <autogen>--KeyToKey-- KeyCode::SLASH, KeyCode::Z</autogen>
+    <autogen>--KeyToKey-- KeyCode::MINUS, KeyCode::BRACKET_LEFT</autogen>
+    <autogen>--KeyToKey-- KeyCode::EQUAL, KeyCode::BRACKET_RIGHT</autogen>
+  </item>
+
+</root>
