@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Filco Hack</name>
+    <appendix>Swap left command and left option</appendix>
+    <appendix>Swap right command and right option</appendix>
+    <appendix></appendix>
+    <appendix>PC Style Home/End</appendix>
+    <identifier>private.filco_hack</identifier>
+    <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
+    <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
+
+    <autogen>
+      __KeyToKey__
+      FROMKEYCODE_HOME, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::CURSOR_LEFT,  ModifierFlag::COMMAND_L | VK_SHIFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      FROMKEYCODE_HOME, ModifierFlag::NONE,
+      KeyCode::CURSOR_LEFT,  ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      FROMKEYCODE_END, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | VK_SHIFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      FROMKEYCODE_END, ModifierFlag::NONE,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
