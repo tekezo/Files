@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Control+R to RightClick</name>
+    <identifier>private.control_r_to_right_click</identifier>
+    <autogen>__KeyToPointingButton__ KeyCode::R, ModifierFlag::CONTROL_L, PointingButton::RIGHT</autogen>
+    <autogen>__KeyToPointingButton__ KeyCode::R, ModifierFlag::CONTROL_R, PointingButton::RIGHT</autogen>
+  </item>
+
+</root>
