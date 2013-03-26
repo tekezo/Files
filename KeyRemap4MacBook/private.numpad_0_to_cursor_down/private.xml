@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <root>
   <item>
-    <name>Numpad 0 to Cursor Down</name>
+    <name>Change Numpad 0 to Cursor Down</name>
     <identifier>private.numpad_0_to_cursor_down</identifier>
     <autogen>__KeyToKey__ KeyCode::KEYPAD_0, KeyCode::CURSOR_DOWN</autogen>
   </item>
