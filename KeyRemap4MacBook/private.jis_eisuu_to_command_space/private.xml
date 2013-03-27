@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change JIS EISUU to command-space</name>
+    <identifier>private.jis_eisuu_to_command_space</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::JIS_EISUU,
+      KeyCode::SPACE, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+
+</root>
