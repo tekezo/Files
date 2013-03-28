@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>change ` to @</name>
+    <appendix>(+ change F3 to #)</appendix>
+    <identifier>private.backquote_to_at</identifier>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, ModifierFlag::NONE, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::NONE, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::EXPOSE_ALL, ModifierFlag::NONE, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+</root>
