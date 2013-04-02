@@ -12,7 +12,7 @@
     <identifier>private.launcher</identifier>
     <autogen>
       __KeyToKey__
-      KeyCode::S, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::S, ModifierFlag::COMMAND_R,
       KeyCode::VK_OPEN_URL_APP_Safari,
     </autogen>
   </item>
