@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Safari</name>
+    <url>file:///Applications/Safari.app</url>
+  </vkopenurldef>
+
+  <item>
+    <name>Launcher</name>
+    <identifier>private.launcher</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
+      KeyCode::VK_OPEN_URL_APP_Safari,
+    </autogen>
+  </item>
+
+</root>
