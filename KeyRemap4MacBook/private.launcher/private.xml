@@ -8,6 +8,7 @@
 
   <item>
     <name>Launcher</name>
+    <appendix>Right command + S: Safari</appendix>
     <identifier>private.launcher</identifier>
     <autogen>
       __KeyToKey__
