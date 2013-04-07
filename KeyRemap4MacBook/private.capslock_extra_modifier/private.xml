@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use caps lock key to extra modifier</name>
+    <appendix>(You need to change the key code of caps lock to 80 on PCKeyboardHack)</appendix>
+    <identifier>private.capslock_extra_modifier</identifier>
+    <block>
+      <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::F19,
+        KeyCode::VK_MODIFIER_EXTRA1,
+        KeyCode::CAPSLOCK,
+      </autogen>
+    </block>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19, VK_SHIFT | ModifierFlag::NONE,
+      KeyCode::CAPSLOCK,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19,
+      KeyCode::VK_MODIFIER_EXTRA1,
+    </autogen>
+
+    <autogen>__KeyToKey__ KeyCode::I, ModifierFlag::EXTRA1, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::EXTRA1, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::EXTRA1, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::EXTRA1, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
+
+</root>
