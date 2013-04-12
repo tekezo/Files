@@ -13,7 +13,7 @@
   </item>
 
   <item>
-    <name>Toggle "Tilda Mode" if you press and release only right shift key</name>
+    <name>Toggle "Tilde Mode" if you press and release only right shift key</name>
     <identifier>private.tilde_mode</identifier>
     <autogen>
       __KeyOverlaidModifier__
