@@ -13,6 +13,7 @@
 		3476B4BB172910D50029E934 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3476B4B9172910D50029E934 /* Credits.rtf */; };
 		3476B4BE172910D50029E934 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3476B4BD172910D50029E934 /* AppDelegate.m */; };
 		3476B4C1172910D50029E934 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3476B4BF172910D50029E934 /* MainMenu.xib */; };
+		34BE1E6D17291F9B00B4949F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34BE1E6C17291F9B00B4949F /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		3476B4BC172910D50029E934 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3476B4BD172910D50029E934 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3476B4C0172910D50029E934 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		34BE1E6C17291F9B00B4949F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BE1E6D17291F9B00B4949F /* IOKit.framework in Frameworks */,
 				3476B4AB172910D50029E934 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,6 +75,7 @@
 		3476B4AC172910D50029E934 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34BE1E6C17291F9B00B4949F /* IOKit.framework */,
 				3476B4AD172910D50029E934 /* AppKit.framework */,
 				3476B4AE172910D50029E934 /* CoreData.framework */,
 				3476B4AF172910D50029E934 /* Foundation.framework */,
@@ -303,6 +307,7 @@
 				3476B4C6172910D50029E934 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
