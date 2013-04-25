@@ -15,6 +15,18 @@ enum {
   POWER_KEY_TYPE_KEYCODE, // subtype == NX_SUBTYPE_AUX_CONTROL_BUTTONS and keyCode == NX_POWER_KEY
 };
 
+// The power button sends two events.
+// POWER_KEY_TYPE_SUBTYPE and POWER_KEY_TYPE_KEYCODE.
+//
+// A build-in keyboard of MacBook sends these events.
+// - POWER_KEY_TYPE_SUBTYPE (at key down)
+// - POWER_KEY_TYPE_KEYCODE (at key down)
+//
+// An external keyboard which has power key sends these events.
+// - POWER_KEY_TYPE_SUBTYPE (at key down)
+// - POWER_KEY_TYPE_KEYCODE (at key down)
+// - POWER_KEY_TYPE_KEYCODE (at key up)
+
 + (int) getPowerKeyType:(CGEventRef)cgEvent
 {
   if (! cgEvent) return POWER_KEY_TYPE_NONE;
@@ -49,12 +61,13 @@ CGEventRef eventTapCallBack(CGEventTapProxy proxy, CGEventType type, CGEventRef 
       // NSSystemDefined events that are not the Power Key will be returned unmodified.
       int powerKeyType = [AppDelegate getPowerKeyType:event];
       if (powerKeyType == POWER_KEY_TYPE_SUBTYPE) {
+        // This event show a shutdown dialog.
         NSLog(@"isPowerKey POWER_KEY_TYPE_SUBTYPE");
         event = NULL;
       }
       if (powerKeyType == POWER_KEY_TYPE_KEYCODE) {
         NSLog(@"isPowerKey POWER_KEY_TYPE_KEYCODE");
-        event = NULL;
+        // event = NULL;
       }
       break;
     }
