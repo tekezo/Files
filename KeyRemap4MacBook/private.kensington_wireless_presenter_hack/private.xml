@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <deviceproductdef>
+    <productname>Kensington_Wireless_Presenter</productname>
+    <productid>0x2011</productid>
+  </deviceproductdef>
+
+  <item>
+    <name>PageUp/PageDown to Left/Right</name>
+    <appendix>(This is effective only with "Kensington Wireless Presenter")</appendix>
+    <identifier>private.kensington_wireless_presenter_hack</identifier>
+    <device_only>
+      DeviceVendor::KENSINGTON,DeviceProduct::Kensington_Wireless_Presenter,
+      <!-- Kensington Hack 0x0,0x0 -->
+      DeviceVendor::PSEUDO,DeviceProduct::PSEUDO,
+    </device_only>
+    <autogen>__KeyToKey__ FROMKEYCODE_PAGEUP,   KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ FROMKEYCODE_PAGEDOWN, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
+
+</root>
