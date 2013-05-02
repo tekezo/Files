@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change eject key to delete key</name>
+    <identifier>private.eject_to_delete</identifier>
+    <autogen>__ConsumerToKey__ ConsumerKeyCode::EJECT, KeyCode::DELETE</autogen>
+  </item>
+
+  <item>
+    <name>Change shift-right bracket key to delete key</name>
+    <identifier>private.shift_right_bracket_to_delete</identifier>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L, KeyCode::DELETE</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_R, KeyCode::DELETE</autogen>
+  </item>
+
+  <item>
+    <name>Change right bracket key to delete key</name>
+    <identifier>private.right_bracket_to_delete</identifier>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::DELETE</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::DELETE</autogen>
+  </item>
+
+</root>
