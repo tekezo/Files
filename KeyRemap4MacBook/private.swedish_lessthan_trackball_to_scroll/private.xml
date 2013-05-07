@@ -4,16 +4,29 @@
     <name>Swedish &lt; + Trackball to ScrollWheel</name>
     <appendix>(When you type only &lt;, send &lt;)</appendix>
     <identifier>private.swedish_lessthan_trackball_to_scroll_2</identifier>
-    <autogen>--KeyOverlaidModifier-- KeyCode::SWEDISH_LESS_THAN,
+    <autogen>__KeyOverlaidModifier__ KeyCode::SWEDISH_LESS_THAN,
       KeyCode::VK_MODIFIER_EXTRA1,
       KeyCode::SWEDISH_LESS_THAN</autogen>
-    <autogen>--PointingRelativeToScroll-- PointingButton::NONE, ModifierFlag::EXTRA1</autogen>
+    <autogen>__PointingRelativeToScroll__ PointingButton::NONE, ModifierFlag::EXTRA1</autogen>
+  </item>
+
+  <item>
+    <name>Swedish &lt; + Trackball to ScrollWheel</name>
+    <appendix>(When you type only &lt;, right click)</appendix>
+    <identifier>private.swedish_lessthan_trackball_to_scroll_3</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SWEDISH_LESS_THAN,
+      KeyCode::VK_MODIFIER_EXTRA1,
+      KeyCode::VK_MOUSEKEY_BUTTON_RIGHT,
+    </autogen>
+    <autogen>__PointingRelativeToScroll__ PointingButton::NONE, ModifierFlag::EXTRA1</autogen>
   </item>
 
   <item>
     <name>Swedish &lt; + Trackball to ScrollWheel</name>
     <identifier>private.swedish_lessthan_trackball_to_scroll</identifier>
-    <autogen>--KeyToKey-- KeyCode::SWEDISH_LESS_THAN, KeyCode::VK_MODIFIER_EXTRA1</autogen>
-    <autogen>--PointingRelativeToScroll-- PointingButton::NONE, ModifierFlag::EXTRA1</autogen>
+    <autogen>__KeyToKey__ KeyCode::SWEDISH_LESS_THAN, KeyCode::VK_MODIFIER_EXTRA1</autogen>
+    <autogen>__PointingRelativeToScroll__ PointingButton::NONE, ModifierFlag::EXTRA1</autogen>
   </item>
 </root>
