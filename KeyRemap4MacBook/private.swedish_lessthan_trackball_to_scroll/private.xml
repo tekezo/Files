@@ -24,9 +24,35 @@
   </item>
 
   <item>
+    <name>Change Swedish &lt; to right click</name>
+    <identifier>private.swedish_lessthan_to_rightclick</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SWEDISH_LESS_THAN,
+      KeyCode::VK_MOUSEKEY_BUTTON_RIGHT,
+    </autogen>
+  </item>
+
+  <item>
     <name>Swedish &lt; + Trackball to ScrollWheel</name>
     <identifier>private.swedish_lessthan_trackball_to_scroll</identifier>
     <autogen>__KeyToKey__ KeyCode::SWEDISH_LESS_THAN, KeyCode::VK_MODIFIER_EXTRA1</autogen>
     <autogen>__PointingRelativeToScroll__ PointingButton::NONE, ModifierFlag::EXTRA1</autogen>
   </item>
+
+  <item>
+    <name>Change 1 and 2 to scroll left/right</name>
+    <identifier>private.1_2_to_left_right</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_1,
+      KeyCode::VK_MOUSEKEY_SCROLL_LEFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_2,
+      KeyCode::VK_MOUSEKEY_SCROLL_RIGHT,
+    </autogen>
+  </item>
+
 </root>
