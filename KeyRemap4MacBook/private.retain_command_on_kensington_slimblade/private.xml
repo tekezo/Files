@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <deviceproductdef>
+    <productname>Kensington_SlimBlade</productname>
+    <productid>0x2041</productid>
+  </deviceproductdef>
+
+  <item>
+    <name>Retain command key on Kensington SlimBlade</name>
+    <identifier>private.retain_command_on_kensington_slimblade</identifier>
+    <device_only>
+      DeviceVendor::KENSINGTON,
+      DeviceProduct::Kensington_SlimBlade,
+    </device_only>
+    <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::COMMAND_R</autogen>
+  </item>
+
+</root>
