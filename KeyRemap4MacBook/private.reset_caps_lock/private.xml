@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>My Custom Setting</name>
+    <identifier>private.reset_caps_lock</identifier>
+    <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
+    <autogen>__KeyToKey__ KeyCode::A, KeyCode::CAPSLOCK, KeyCode::A</autogen>
+    <autogen>__KeyToKey__ KeyCode::B, KeyCode::CAPSLOCK, KeyCode::B</autogen>
+    <autogen>__KeyToKey__ KeyCode::C, KeyCode::CAPSLOCK, KeyCode::C</autogen>
+    <autogen>__KeyToKey__ KeyCode::D, KeyCode::CAPSLOCK, KeyCode::D</autogen>
+    <autogen>__KeyToKey__ KeyCode::E, KeyCode::CAPSLOCK, KeyCode::E</autogen>
+    <autogen>__KeyToKey__ KeyCode::F, KeyCode::CAPSLOCK, KeyCode::F</autogen>
+    <autogen>__KeyToKey__ KeyCode::G, KeyCode::CAPSLOCK, KeyCode::G</autogen>
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::CAPSLOCK, KeyCode::H</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::CAPSLOCK, KeyCode::I</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CAPSLOCK, KeyCode::J</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CAPSLOCK, KeyCode::K</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CAPSLOCK, KeyCode::L</autogen>
+    <autogen>__KeyToKey__ KeyCode::M, KeyCode::CAPSLOCK, KeyCode::M</autogen>
+    <autogen>__KeyToKey__ KeyCode::N, KeyCode::CAPSLOCK, KeyCode::N</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, KeyCode::CAPSLOCK, KeyCode::O</autogen>
+    <autogen>__KeyToKey__ KeyCode::P, KeyCode::CAPSLOCK, KeyCode::P</autogen>
+    <autogen>__KeyToKey__ KeyCode::Q, KeyCode::CAPSLOCK, KeyCode::Q</autogen>
+    <autogen>__KeyToKey__ KeyCode::R, KeyCode::CAPSLOCK, KeyCode::R</autogen>
+    <autogen>__KeyToKey__ KeyCode::S, KeyCode::CAPSLOCK, KeyCode::S</autogen>
+    <autogen>__KeyToKey__ KeyCode::T, KeyCode::CAPSLOCK, KeyCode::T</autogen>
+    <autogen>__KeyToKey__ KeyCode::U, KeyCode::CAPSLOCK, KeyCode::U</autogen>
+    <autogen>__KeyToKey__ KeyCode::V, KeyCode::CAPSLOCK, KeyCode::V</autogen>
+    <autogen>__KeyToKey__ KeyCode::W, KeyCode::CAPSLOCK, KeyCode::W</autogen>
+    <autogen>__KeyToKey__ KeyCode::X, KeyCode::CAPSLOCK, KeyCode::X</autogen>
+    <autogen>__KeyToKey__ KeyCode::Y, KeyCode::CAPSLOCK, KeyCode::Y</autogen>
+    <autogen>__KeyToKey__ KeyCode::Z, KeyCode::CAPSLOCK, KeyCode::Z</autogen>
+  </item>
+
+</root>
