@@ -2,8 +2,10 @@
 <root>
 
   <item>
-    <name>My Custom Setting</name>
+    <name>Reset caps lock when a-z keys is pressed.</name>
+    <appendix>(Exclude Photoshop)</appendix>
     <identifier>private.reset_caps_lock</identifier>
+    <not>PHOTOSHOP</not>
     <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
     <autogen>__KeyToKey__ KeyCode::A, KeyCode::CAPSLOCK, KeyCode::A</autogen>
     <autogen>__KeyToKey__ KeyCode::B, KeyCode::CAPSLOCK, KeyCode::B</autogen>
