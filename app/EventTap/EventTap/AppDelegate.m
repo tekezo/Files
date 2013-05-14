@@ -50,32 +50,13 @@ enum {
 
 CGEventRef eventTapCallBack(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void* refcon)
 {
-  switch (type) {
-    case kCGEventTapDisabledByTimeout:
-      // Re-enable the event tap if it times out.
-      CGEventTapEnable(eventTap, true);
-      break;
-
-    case NSSystemDefined:
-    {
-      // NSSystemDefined events that are not the Power Key will be returned unmodified.
-      int powerKeyType = [AppDelegate getPowerKeyType:event];
-      if (powerKeyType == POWER_KEY_TYPE_SUBTYPE) {
-        // This event show a shutdown dialog.
-        NSLog(@"isPowerKey POWER_KEY_TYPE_SUBTYPE");
-        event = NULL;
-      }
-      if (powerKeyType == POWER_KEY_TYPE_KEYCODE) {
-        NSLog(@"isPowerKey POWER_KEY_TYPE_KEYCODE");
-        // event = NULL;
-      }
-      break;
-    }
-
-    default:
-      break;
+  NSEvent* e = [NSEvent eventWithCGEvent:event];
+  NSLog(@"eventTapCallBack: type:%ld", [e type]);
+  if ([e type] == NSSystemDefined) {
+    NSLog(@"eventTapCallBack: subtype:%hd, data1:%lx, data2:%lx", [e subtype], [e data1], [e data2]);
+    int keyCode = (([e data1] & 0xFFFF0000) >> 16);
+    NSLog(@"eventTapCallBack: keyCode:%d", keyCode);
   }
-
   return event;
 }
 

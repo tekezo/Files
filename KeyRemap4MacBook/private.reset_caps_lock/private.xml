@@ -4,35 +4,88 @@
   <item>
     <name>Reset caps lock when a-z keys is pressed.</name>
     <appendix>(Exclude Photoshop)</appendix>
+    <appendix></appendix>
+    <appendix>You need to change a key code of caps lock key to 110 by PCKeyboardHack.</autogen>
     <identifier>private.reset_caps_lock</identifier>
-    <not>PHOTOSHOP</not>
-    <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
-    <autogen>__KeyToKey__ KeyCode::A, KeyCode::CAPSLOCK, KeyCode::A</autogen>
-    <autogen>__KeyToKey__ KeyCode::B, KeyCode::CAPSLOCK, KeyCode::B</autogen>
-    <autogen>__KeyToKey__ KeyCode::C, KeyCode::CAPSLOCK, KeyCode::C</autogen>
-    <autogen>__KeyToKey__ KeyCode::D, KeyCode::CAPSLOCK, KeyCode::D</autogen>
-    <autogen>__KeyToKey__ KeyCode::E, KeyCode::CAPSLOCK, KeyCode::E</autogen>
-    <autogen>__KeyToKey__ KeyCode::F, KeyCode::CAPSLOCK, KeyCode::F</autogen>
-    <autogen>__KeyToKey__ KeyCode::G, KeyCode::CAPSLOCK, KeyCode::G</autogen>
-    <autogen>__KeyToKey__ KeyCode::H, KeyCode::CAPSLOCK, KeyCode::H</autogen>
-    <autogen>__KeyToKey__ KeyCode::I, KeyCode::CAPSLOCK, KeyCode::I</autogen>
-    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CAPSLOCK, KeyCode::J</autogen>
-    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CAPSLOCK, KeyCode::K</autogen>
-    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CAPSLOCK, KeyCode::L</autogen>
-    <autogen>__KeyToKey__ KeyCode::M, KeyCode::CAPSLOCK, KeyCode::M</autogen>
-    <autogen>__KeyToKey__ KeyCode::N, KeyCode::CAPSLOCK, KeyCode::N</autogen>
-    <autogen>__KeyToKey__ KeyCode::O, KeyCode::CAPSLOCK, KeyCode::O</autogen>
-    <autogen>__KeyToKey__ KeyCode::P, KeyCode::CAPSLOCK, KeyCode::P</autogen>
-    <autogen>__KeyToKey__ KeyCode::Q, KeyCode::CAPSLOCK, KeyCode::Q</autogen>
-    <autogen>__KeyToKey__ KeyCode::R, KeyCode::CAPSLOCK, KeyCode::R</autogen>
-    <autogen>__KeyToKey__ KeyCode::S, KeyCode::CAPSLOCK, KeyCode::S</autogen>
-    <autogen>__KeyToKey__ KeyCode::T, KeyCode::CAPSLOCK, KeyCode::T</autogen>
-    <autogen>__KeyToKey__ KeyCode::U, KeyCode::CAPSLOCK, KeyCode::U</autogen>
-    <autogen>__KeyToKey__ KeyCode::V, KeyCode::CAPSLOCK, KeyCode::V</autogen>
-    <autogen>__KeyToKey__ KeyCode::W, KeyCode::CAPSLOCK, KeyCode::W</autogen>
-    <autogen>__KeyToKey__ KeyCode::X, KeyCode::CAPSLOCK, KeyCode::X</autogen>
-    <autogen>__KeyToKey__ KeyCode::Y, KeyCode::CAPSLOCK, KeyCode::Y</autogen>
-    <autogen>__KeyToKey__ KeyCode::Z, KeyCode::CAPSLOCK, KeyCode::Z</autogen>
+    <block>
+      <only>PHOTOSHOP</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::PC_APPLICATION,
+        KeyCode::CAPSLOCK,
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_private_caps_lock_flag,
+      </autogen>
+    </block>
+    <block>
+      <not>PHOTOSHOP</not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::PC_APPLICATION,
+        KeyCode::CAPSLOCK,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag,
+      </autogen>
+      <block>
+        <config_only>notsave.private_caps_lock_flag</config_only>
+        <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
+        <autogen>__KeyToKey__ KeyCode::A, KeyCode::CAPSLOCK, KeyCode::A,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::B, KeyCode::CAPSLOCK, KeyCode::B,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::C, KeyCode::CAPSLOCK, KeyCode::C,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::D, KeyCode::CAPSLOCK, KeyCode::D,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::E, KeyCode::CAPSLOCK, KeyCode::E,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::F, KeyCode::CAPSLOCK, KeyCode::F,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::G, KeyCode::CAPSLOCK, KeyCode::G,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::H, KeyCode::CAPSLOCK, KeyCode::H,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::I, KeyCode::CAPSLOCK, KeyCode::I,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::J, KeyCode::CAPSLOCK, KeyCode::J,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::K, KeyCode::CAPSLOCK, KeyCode::K,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::L, KeyCode::CAPSLOCK, KeyCode::L,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::M, KeyCode::CAPSLOCK, KeyCode::M,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::N, KeyCode::CAPSLOCK, KeyCode::N,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::O, KeyCode::CAPSLOCK, KeyCode::O,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::P, KeyCode::CAPSLOCK, KeyCode::P,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::Q, KeyCode::CAPSLOCK, KeyCode::Q,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::R, KeyCode::CAPSLOCK, KeyCode::R,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::S, KeyCode::CAPSLOCK, KeyCode::S,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::T, KeyCode::CAPSLOCK, KeyCode::T,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::U, KeyCode::CAPSLOCK, KeyCode::U,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::V, KeyCode::CAPSLOCK, KeyCode::V,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::W, KeyCode::CAPSLOCK, KeyCode::W,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::X, KeyCode::CAPSLOCK, KeyCode::X,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::Y, KeyCode::CAPSLOCK, KeyCode::Y,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+        <autogen>__KeyToKey__ KeyCode::Z, KeyCode::CAPSLOCK, KeyCode::Z,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_caps_lock_flag</autogen>
+      </block>
+    </block>
+  </item>
+
+  <item>
+    <name></name>
+    <identifier vk_config="true">notsave.private_caps_lock_flag</identifier>
   </item>
 
 </root>
