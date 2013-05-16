@@ -5,7 +5,7 @@
     <name>Reset caps lock when a-z keys is pressed.</name>
     <appendix>(Exclude Photoshop)</appendix>
     <appendix></appendix>
-    <appendix>You need to change a key code of caps lock key to 110 by PCKeyboardHack.</autogen>
+    <appendix>You need to change a key code of caps lock key to 110 by PCKeyboardHack.</appendix>
     <identifier>private.reset_caps_lock</identifier>
     <block>
       <only>PHOTOSHOP</only>
