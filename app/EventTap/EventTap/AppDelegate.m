@@ -50,12 +50,18 @@ enum {
 
 CGEventRef eventTapCallBack(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void* refcon)
 {
-  NSEvent* e = [NSEvent eventWithCGEvent:event];
-  NSLog(@"eventTapCallBack: type:%ld", [e type]);
-  if ([e type] == NSSystemDefined) {
-    NSLog(@"eventTapCallBack: subtype:%hd, data1:%lx, data2:%lx", [e subtype], [e data1], [e data2]);
-    int keyCode = (([e data1] & 0xFFFF0000) >> 16);
-    NSLog(@"eventTapCallBack: keyCode:%d", keyCode);
+  switch (type) {
+    case NSSystemDefined:
+    {
+      NSEvent* e = [NSEvent eventWithCGEvent:event];
+      NSLog(@"eventTapCallBack: type:%ld", [e type]);
+      if ([e type] == NSSystemDefined) {
+        NSLog(@"eventTapCallBack: subtype:%hd, data1:%lx, data2:%lx", [e subtype], [e data1], [e data2]);
+        int keyCode = (([e data1] & 0xFFFF0000) >> 16);
+        NSLog(@"eventTapCallBack: keyCode:%d", keyCode);
+      }
+      break;
+    }
   }
   return event;
 }
@@ -81,7 +87,9 @@ CGEventRef eventTapCallBack(CGEventTapProxy proxy, CGEventType type, CGEventRef 
   CGEventTapEnable(eventTap, 1);
 
   CFRelease(runLoopSource);
-  CFRelease(eventTap);
+  //CFRelease(eventTap);
+
+  //CGEventTapEnable(eventTap, 0);
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification*)aNotification
