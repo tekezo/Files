@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>PRIVATE_CLEAR_FLAGS</replacementname>
+    <replacementvalue>
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_flag1,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_flag2,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_flag3,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_flag4,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_flag5,
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Tab to symbol (!@#$%)</name>
+    <identifier>private.cycle_tab</identifier>
+    <block>
+      <config_only>notsave.private_flag1</config_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB, ModifierFlag::EXTRA1 | ModifierFlag::NONE,
+        KeyCode::DELETE,
+        KeyCode::KEY_2, ModifierFlag::SHIFT_L,
+        {{ PRIVATE_CLEAR_FLAGS }},
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag2,
+        KeyCode::VK_STICKY_EXTRA1,
+      </autogen>
+    </block>
+    <block>
+      <config_only>notsave.private_flag2</config_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB, ModifierFlag::EXTRA1 | ModifierFlag::NONE,
+        KeyCode::DELETE,
+        KeyCode::KEY_3, ModifierFlag::SHIFT_L,
+        {{ PRIVATE_CLEAR_FLAGS }},
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag3,
+        KeyCode::VK_STICKY_EXTRA1,
+      </autogen>
+    </block>
+    <block>
+      <config_only>notsave.private_flag3</config_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB, ModifierFlag::EXTRA1 | ModifierFlag::NONE,
+        KeyCode::DELETE,
+        KeyCode::KEY_4, ModifierFlag::SHIFT_L,
+        {{ PRIVATE_CLEAR_FLAGS }},
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag4,
+        KeyCode::VK_STICKY_EXTRA1,
+      </autogen>
+    </block>
+    <block>
+      <config_only>notsave.private_flag4</config_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB, ModifierFlag::EXTRA1 | ModifierFlag::NONE,
+        KeyCode::DELETE,
+        KeyCode::KEY_5, ModifierFlag::SHIFT_L,
+        {{ PRIVATE_CLEAR_FLAGS }},
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag5,
+        KeyCode::VK_STICKY_EXTRA1,
+      </autogen>
+    </block>
+    <block>
+      <config_only>notsave.private_flag5</config_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB, ModifierFlag::EXTRA1 | ModifierFlag::NONE,
+        KeyCode::DELETE,
+        KeyCode::KEY_1, ModifierFlag::SHIFT_L,
+        {{ PRIVATE_CLEAR_FLAGS }},
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag1,
+        KeyCode::VK_STICKY_EXTRA1,
+      </autogen>
+    </block>
+    <autogen>
+      __KeyToKey__
+      KeyCode::TAB,
+      KeyCode::KEY_1, ModifierFlag::SHIFT_L,
+      {{ PRIVATE_CLEAR_FLAGS }},
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_flag1,
+      KeyCode::VK_STICKY_EXTRA1,
+    </autogen>
+  </item>
+
+  <item hidden="true"><identifier vk_config="true">notsave.private_flag1</identifier></item>
+  <item hidden="true"><identifier vk_config="true">notsave.private_flag2</identifier></item>
+  <item hidden="true"><identifier vk_config="true">notsave.private_flag3</identifier></item>
+  <item hidden="true"><identifier vk_config="true">notsave.private_flag4</identifier></item>
+  <item hidden="true"><identifier vk_config="true">notsave.private_flag5</identifier></item>
+
+</root>
