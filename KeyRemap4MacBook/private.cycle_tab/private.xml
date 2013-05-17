@@ -12,6 +12,12 @@
     </replacementvalue>
   </replacementdef>
 
+  <item hidden="true"><identifier vk_config="true">notsave.private_flag1</identifier></item>
+  <item hidden="true"><identifier vk_config="true">notsave.private_flag2</identifier></item>
+  <item hidden="true"><identifier vk_config="true">notsave.private_flag3</identifier></item>
+  <item hidden="true"><identifier vk_config="true">notsave.private_flag4</identifier></item>
+  <item hidden="true"><identifier vk_config="true">notsave.private_flag5</identifier></item>
+
   <item>
     <name>Tab to symbol (!@#$%)</name>
     <identifier>private.cycle_tab</identifier>
@@ -84,11 +90,5 @@
       KeyCode::VK_STICKY_EXTRA1,
     </autogen>
   </item>
-
-  <item hidden="true"><identifier vk_config="true">notsave.private_flag1</identifier></item>
-  <item hidden="true"><identifier vk_config="true">notsave.private_flag2</identifier></item>
-  <item hidden="true"><identifier vk_config="true">notsave.private_flag3</identifier></item>
-  <item hidden="true"><identifier vk_config="true">notsave.private_flag4</identifier></item>
-  <item hidden="true"><identifier vk_config="true">notsave.private_flag5</identifier></item>
 
 </root>
