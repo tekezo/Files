@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change tilt wheel to change space.</name>
+    <identifier>private.tilt_to_control_arrow</identifier>
+    <autogen>
+      __ScrollWheelToKey__
+      ScrollWheel::LEFT,
+      KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __ScrollWheelToKey__
+      ScrollWheel::RIGHT,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
+</root>
