@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Modifier Indicator</name>
+    <appendix>Caps, Right Command, Right Option, Right Shift.</appendix>
+    <appendix></appendix>
+    <appendix>You need to change a key code of caps lock to 110 by PCKeyboardHack.</appendix>
+    <identifier>private.modifier_indicator</identifier>
+    <!-- ============================================================ -->
+    <!-- caps lock -->
+    <block>
+      <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::PC_APPLICATION,
+        KeyCode::CAPSLOCK,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_indicator_caps_lock,
+        Option::NOREPEAT,
+      </autogen>
+    </block>
+    <block>
+      <modifier_not>ModifierFlag::CAPSLOCK</modifier_not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::PC_APPLICATION,
+        KeyCode::CAPSLOCK,
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_private_indicator_caps_lock,
+        Option::NOREPEAT,
+      </autogen>
+    </block>
+
+    <!-- ============================================================ -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_indicator_right_command, ModifierFlag::COMMAND_R,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_indicator_right_option, ModifierFlag::OPTION_R,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_R,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_indicator_right_shift, ModifierFlag::SHIFT_R,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_indicator_caps_lock</identifier>
+    <autogen>__ShowStatusMessage__ Caps</autogen>
+  </item>
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_indicator_right_command</identifier>
+    <autogen>__ShowStatusMessage__ Command</autogen>
+  </item>
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_indicator_right_option</identifier>
+    <autogen>__ShowStatusMessage__ Option</autogen>
+  </item>
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_indicator_right_shift</identifier>
+    <autogen>__ShowStatusMessage__ Shift</autogen>
+  </item>
+
+</root>
