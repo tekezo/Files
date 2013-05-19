@@ -25,6 +25,37 @@
     </devicelocationdef>
 
     <item>
+      <name>Drop command-space</name>
+      <identifier>private.drop_command_space</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE,   MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::SHIFT_L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      </autogen>
+    </item>
+
+    <item>
+      <name>Mission Control Hacks</name>
+      <appendix>Move window to next/previous desktop by fn+[, fn+]</appendix>
+      <appendix>(Move mouse pointer to titlebar, and then press fn+[ or fn+])</appendix>
+      <identifier>private.my_mission_control_hacks</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BRACKET_LEFT, ModifierFlag::FN,
+        KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+        KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L,
+        KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BRACKET_RIGHT, ModifierFlag::FN,
+        KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L,
+        KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+      </autogen>
+    </item>
+
+    <item>
       <name>Disable ScrollWheel on Magic Mouse</name>
       <identifier>private.dropscrollwheel_0x05ac_0x030d</identifier>
       <block>
@@ -36,7 +67,7 @@
           DeviceProduct::MAGIC_MOUSE,
           DeviceLocation::MY_MAGIC_MOUSE
         </device_only>
-        <autogen>--DropScrollWheel--</autogen>
+        <autogen>__DropScrollWheel__</autogen>
       </block>
     </item>
 
@@ -45,11 +76,13 @@
       <appendix>(Change Control+Left Scroll to Control+Left Arrow)</appendix>
       <appendix>(Change Control+Right Scroll to Control+Right Arrow)</appendix>
       <identifier>private.controlscroll_to_controlarrow</identifier>
-      <autogen>--ScrollWheelToKey-- ScrollWheel::LEFT,  VK_CONTROL | ModifierFlag::NONE,
-        KeyCode::CURSOR_LEFT,  VK_CONTROL</autogen>
-      <autogen>--ScrollWheelToKey-- ScrollWheel::RIGHT, VK_CONTROL | ModifierFlag::NONE,
+      <autogen>
+        __ScrollWheelToKey__ ScrollWheel::LEFT,  VK_CONTROL | ModifierFlag::NONE,
+        KeyCode::CURSOR_LEFT,  VK_CONTROL
+      </autogen>
+      <autogen>__ScrollWheelToKey__ ScrollWheel::RIGHT, VK_CONTROL | ModifierFlag::NONE,
         KeyCode::CURSOR_RIGHT, VK_CONTROL</autogen>
-      <autogen>--ScrollWheelToKey-- ScrollWheel::UP, VK_CONTROL | ModifierFlag::NONE,
+      <autogen>__ScrollWheelToKey__ ScrollWheel::UP, VK_CONTROL | ModifierFlag::NONE,
         KeyCode::EXPOSE_ALL</autogen>
     </item>
 
@@ -58,7 +91,7 @@
       <appendix>Command+Q to Command+W</appendix>
       <only>Activity Monitor</only>
       <identifier>private.activitymonitor_hack</identifier>
-      <autogen>--KeyToKey-- KeyCode::Q, VK_COMMAND | ModifierFlag::NONE, KeyCode::W, VK_COMMAND</autogen>
+      <autogen>__KeyToKey__ KeyCode::Q, VK_COMMAND | ModifierFlag::NONE, KeyCode::W, VK_COMMAND</autogen>
     </item>
 
     <item>
@@ -66,9 +99,9 @@
       <appendix>Change Command+2 to F2</appendix>
       <identifier>private.libreoffice_hack</identifier>
       <only>LIBREOFFICE</only>
-      <autogen>--KeyToKey-- KeyCode::KEY_2, VK_COMMAND, KeyCode::F2</autogen>
-      <autogen>--KeyToKey-- KeyCode::A, VK_CONTROL, KeyCode::HOME</autogen>
-      <autogen>--KeyToKey-- KeyCode::E, VK_CONTROL, KeyCode::END</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_2, VK_COMMAND, KeyCode::F2</autogen>
+      <autogen>__KeyToKey__ KeyCode::A, VK_CONTROL, KeyCode::HOME</autogen>
+      <autogen>__KeyToKey__ KeyCode::E, VK_CONTROL, KeyCode::END</autogen>
     </item>
 
     <item>
@@ -76,11 +109,11 @@
       <appendix>Change Command+2 to Ctrl+U</appendix>
       <identifier>private.myexcelhacks</identifier>
       <only>EXCEL</only>
-      <autogen>--KeyToKey-- KeyCode::KEY_2, VK_COMMAND | ModifierFlag::NONE, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::KEY_2, VK_OPTION  | ModifierFlag::NONE, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::V, VK_OPTION | ModifierFlag::NONE, KeyCode::V, ModifierFlag::COMMAND_L, KeyCode::RETURN</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_2, VK_COMMAND | ModifierFlag::NONE, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_2, VK_OPTION  | ModifierFlag::NONE, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::V, VK_OPTION | ModifierFlag::NONE, KeyCode::V, ModifierFlag::COMMAND_L, KeyCode::RETURN</autogen>
       <autogen>
-        --HoldingKeyToKey--
+        __HoldingKeyToKey__
         KeyCode::RETURN, ModifierFlag::NONE,
         KeyCode::RETURN,
         KeyCode::VK_NONE,
@@ -93,11 +126,11 @@
       <name>My Word Hacks (effective only in Excel)</name>
       <identifier>private.myword</identifier>
       <only>WORD</only>
-      <autogen>--ConsumerToKey-- ConsumerKeyCode::EJECT,
+      <autogen>__ConsumerToKey__ ConsumerKeyCode::EJECT,
         KeyCode::C, ModifierFlag::COMMAND_L,
         KeyCode::VK_WAIT_100MS,
         KeyCode::VK_WAIT_100MS,
-        KeyCode::F8, ModifierFlag::COMMAND_L,
+        KeyCode::VK_OPEN_URL_APP_Microsoft_Excel_2011,
         KeyCode::VK_WAIT_100MS,
         KeyCode::VK_WAIT_100MS,
         KeyCode::U, ModifierFlag::CONTROL_L,
@@ -106,7 +139,15 @@
         KeyCode::V, ModifierFlag::COMMAND_L,
         KeyCode::RETURN,
         KeyCode::VK_WAIT_100MS,
-        KeyCode::F2, ModifierFlag::OPTION_L
+        KeyCode::VK_OPEN_URL_APP_Microsoft_Word_2011,
+      </autogen>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::RETURN, ModifierFlag::NONE,
+        KeyCode::RETURN,
+        KeyCode::VK_NONE,
+        KeyCode::RETURN, ModifierFlag::SHIFT_L,
+        Option::NOREPEAT
       </autogen>
     </item>
 
@@ -116,30 +157,15 @@
       <appendix>Change Control+E to End</appendix>
       <identifier>private.app_office_hack</identifier>
       <only>EXCEL, POWERPOINT, WORD</only>
-      <autogen>--KeyToKey-- KeyCode::A, VK_CONTROL, KeyCode::HOME</autogen>
-      <autogen>--KeyToKey-- KeyCode::E, VK_CONTROL, KeyCode::END</autogen>
+      <autogen>__KeyToKey__ KeyCode::A, VK_CONTROL, KeyCode::HOME</autogen>
+      <autogen>__KeyToKey__ KeyCode::E, VK_CONTROL, KeyCode::END</autogen>
     </item>
 
     <item>
-      <name>My TrackPad LeftClick Hack</name>
-      <appendix>LeftClick to F13 (only in MacBookPro2,1 Trackpad)</appendix>
-      <identifier>private.pointing_leftclick2f13_trackpad</identifier>
-      <device_only>
-        DeviceVendor::APPLE_COMPUTER,
-        DeviceProduct::MY_MACBOOK_PRO
-      </device_only>
-      <autogen>--PointingButtonToPointingButton-- PointingButton::RIGHT, ModifierFlag::FN, PointingButton::RIGHT</autogen>
-      <autogen>--PointingButtonToPointingButton-- PointingButton::RIGHT, PointingButton::LEFT</autogen>
-      <autogen>--PointingButtonToKey-- PointingButton::LEFT,
-        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH, KeyCode::F13, Option::NOREPEAT</autogen>
-    </item>
-
-    <item>
-      <name>LimeChat Hacks</name>
-      <appendix>Disable Command+W</appendix>
+      <name>Disable Command+W</name>
       <identifier>private.limechathacks</identifier>
-      <only>LIMECHAT</only>
-      <autogen>--KeyToKey-- KeyCode::W, VK_COMMAND, KeyCode::VK_NONE</autogen>
+      <only>LIMECHAT, ADIUMX</only>
+      <autogen>__KeyToKey__ KeyCode::W, VK_COMMAND, KeyCode::VK_NONE</autogen>
     </item>
 
     <item>
@@ -149,40 +175,58 @@
       <appendix>Disable Command+O</appendix>
       <identifier>private.terminalhack</identifier>
       <only>TERMINAL</only>
-      <autogen>--KeyToKey-- KeyCode::F, VK_COMMAND, KeyCode::VK_NONE</autogen>
-      <autogen>--KeyToKey-- KeyCode::I, VK_COMMAND, KeyCode::VK_NONE</autogen>
-      <autogen>--KeyToKey-- KeyCode::O, VK_COMMAND, KeyCode::VK_NONE</autogen>
-      <autogen>--KeyToKey-- KeyCode::BACKSLASH, VK_CONTROL, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::F, VK_COMMAND, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::I, VK_COMMAND, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::O, VK_COMMAND, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::BACKSLASH, VK_CONTROL, KeyCode::VK_NONE</autogen>
     </item>
 
     <item>
       <name>Emacs Hacks</name>
       <identifier>private.emacshack</identifier>
       <only>EMACS</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::S, VK_CONTROL | ModifierFlag::NONE,
+        KeyCode::S, VK_CONTROL,
+        KeyCode::VK_CHANGE_INPUTSOURCE_US,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::X, VK_OPTION | ModifierFlag::NONE,
+        KeyCode::X, VK_OPTION,
+        KeyCode::VK_CHANGE_INPUTSOURCE_US,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+        KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::VK_CHANGE_INPUTSOURCE_US,
+      </autogen>
     </item>
 
     <item>
       <name>Eclipse Hacks</name>
       <identifier>private.eclipse</identifier>
       <only>ECLIPSE</only>
-      <autogen>--KeyToKey-- KeyCode::R, VK_COMMAND | ModifierFlag::NONE, KeyCode::F5</autogen>
+      <autogen>__KeyToKey__ KeyCode::R, VK_COMMAND | ModifierFlag::NONE, KeyCode::F5</autogen>
     </item>
 
     <item>
       <name>RDC Hacks</name>
       <identifier>private.rdchacks</identifier>
       <only>REMOTEDESKTOPCONNECTION</only>
-      <autogen>--KeyToKey-- KeyCode::S, VK_COMMAND, KeyCode::S, ModifierFlag::CONTROL_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::Z, VK_COMMAND, KeyCode::Z, ModifierFlag::CONTROL_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::X, VK_COMMAND, KeyCode::X, ModifierFlag::CONTROL_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::C, VK_COMMAND, KeyCode::C, ModifierFlag::CONTROL_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::V, VK_COMMAND, KeyCode::V, ModifierFlag::CONTROL_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::A, VK_COMMAND, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::W, VK_COMMAND, KeyCode::W, ModifierFlag::CONTROL_L</autogen>
-      <autogen>--ConsumerToKey-- ConsumerKeyCode::EJECT, KeyCode::SHIFT_L, ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::S, VK_COMMAND, KeyCode::S, ModifierFlag::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::Z, VK_COMMAND, KeyCode::Z, ModifierFlag::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::X, VK_COMMAND, KeyCode::X, ModifierFlag::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::C, VK_COMMAND, KeyCode::C, ModifierFlag::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::V, VK_COMMAND, KeyCode::V, ModifierFlag::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::A, VK_COMMAND, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::W, VK_COMMAND, KeyCode::W, ModifierFlag::CONTROL_L</autogen>
+      <autogen>__ConsumerToKey__ ConsumerKeyCode::EJECT, KeyCode::SHIFT_L, ModifierFlag::OPTION_L</autogen>
 
       <autogen>
-        --KeyToKey--
+        __KeyToKey__
         KeyCode::F12,
         KeyCode::H, ModifierFlag::OPTION_L,
         KeyCode::VK_WAIT_100MS,
@@ -191,8 +235,8 @@
         KeyCode::A,
       </autogen>
 
-      <autogen>--KeyToKey-- KeyCode::KEY_7, VK_CONTROL, KeyCode::F7</autogen>
-      <autogen>--KeyToKey-- KeyCode::V, VK_OPTION | ModifierFlag::NONE,
+      <autogen>__KeyToKey__ KeyCode::KEY_7, VK_CONTROL, KeyCode::F7</autogen>
+      <autogen>__KeyToKey__ KeyCode::V, VK_OPTION | ModifierFlag::NONE,
         KeyCode::V, ModifierFlag::CONTROL_L, KeyCode::RETURN</autogen>
     </item>
 
@@ -200,77 +244,164 @@
       <name>Virtual Machine Hacks</name>
       <identifier>private.vmhacks</identifier>
       <only>VIRTUALMACHINE</only>
-      <autogen>--ConsumerToKey-- ConsumerKeyCode::EJECT, KeyCode::BACKQUOTE, ModifierFlag::OPTION_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::J, VK_CONTROL | ModifierFlag::NONE, KeyCode::RETURN</autogen>
-      <autogen>--KeyToKey-- KeyCode::G, VK_CONTROL | ModifierFlag::NONE, KeyCode::ESCAPE</autogen>
-      <autogen>--KeyToKey-- KeyCode::KEY_5, VK_CONTROL, KeyCode::F5</autogen>
-      <autogen>--KeyToKey-- KeyCode::KEY_6, VK_CONTROL, KeyCode::F6</autogen>
-      <autogen>--KeyToKey-- KeyCode::KEY_7, VK_CONTROL, KeyCode::F7</autogen>
+      <autogen>__ConsumerToKey__ ConsumerKeyCode::EJECT, KeyCode::BACKQUOTE, ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::J, VK_CONTROL | ModifierFlag::NONE, KeyCode::RETURN</autogen>
+      <autogen>__KeyToKey__ KeyCode::G, VK_CONTROL | ModifierFlag::NONE, KeyCode::ESCAPE</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_5, VK_CONTROL, KeyCode::F5</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_6, VK_CONTROL, KeyCode::F6</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEY_7, VK_CONTROL, KeyCode::F7</autogen>
     </item>
 
-    <item>
-      <name>Firefox Hacks</name>
-      <appendix>Shift+Command+S to F10 (to SJIS)</appendix>
-      <appendix>Shift+Command+E to F11 (to EUC)</appendix>
-      <appendix>Shift+Command+U to F12 (to UTF-8)</appendix>
-      <identifier>private.browserhacks</identifier>
-      <only>FIREFOX</only>
-      <autogen>--KeyToKey-- KeyCode::S, VK_COMMAND | VK_SHIFT | ModifierFlag::NONE, KeyCode::F10, VK_SHIFT</autogen>
-      <autogen>--KeyToKey-- KeyCode::E, VK_COMMAND | VK_SHIFT | ModifierFlag::NONE, KeyCode::F11, VK_SHIFT</autogen>
-      <autogen>--KeyToKey-- KeyCode::U, VK_COMMAND | VK_SHIFT | ModifierFlag::NONE, KeyCode::F12, VK_SHIFT</autogen>
-    </item>
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_Emacs</name>
+      <url>file://{{ ENV_HOME }}/Applications/Emacs.app</url>
+    </vkopenurldef>
+
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_Google_Chrome</name>
+      <url>file://{{ ENV_HOME }}/Applications/Google%20Chrome.app</url>
+    </vkopenurldef>
+
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_Firefox</name>
+      <url>file://{{ ENV_HOME }}/Applications/Firefox.app</url>
+    </vkopenurldef>
+
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_Thunderbird</name>
+      <url>file://{{ ENV_HOME }}/Applications/Thunderbird.app</url>
+    </vkopenurldef>
+
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_Skype</name>
+      <url>file://{{ ENV_HOME }}/Applications/Skype.app</url>
+    </vkopenurldef>
+
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_Adium</name>
+      <url>file://{{ ENV_HOME }}/Applications/Adium.app</url>
+    </vkopenurldef>
+
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_CoRD</name>
+      <url>file://{{ ENV_HOME }}/Applications/CoRD.app</url>
+    </vkopenurldef>
 
     <item>
       <name>Application Switch Hacks</name>
-      <appendix>Holding L to Command+F1 (Terminal.app)</appendix>
-      <appendix>Holding E to Command+F2 (Emacs.app)</appendix>
-      <appendix>Holding C to Command+F3 (Google Chrome.app)</appendix>
-      <appendix>Holding M to Command+F4 (Mail.app)</appendix>
-      <appendix>Holding B to Command+F5 (Thunderbird.app)</appendix>
-      <appendix>Holding P to Command+F6 (Skype.app)</appendix>
-      <appendix>Holding I to Command+F7 (LimeChat.app)</appendix>
-      <appendix>Holding X to Command+F8 (Excel.app)</appendix>
-      <appendix>Holding R to Command+F9 (RDC.app)</appendix>
-      <appendix>Holding V to Option+F1 (VMware Fusion.app)</appendix>
-      <appendix>Holding W to Option+F2 (Word.app)</appendix>
-      <appendix>Holding D to Option+F3 (Xcode.app)</appendix>
-      <appendix>Holding T to Option+F4 (iTunes.app)</appendix>
-      <appendix>Holding F to Option+F5 (Safari.app)</appendix>
-      <appendix>Holding O to Option+F6 (PowerPoint.app)</appendix>
+      <appendix>Holding A to Activity Monitor.app</appendix>
+      <appendix>Holding L to Terminal.app</appendix>
+      <appendix>Holding E to Emacs.app</appendix>
+      <appendix>Holding C to Firefox.app</appendix>
+      <appendix>Holding M to Mail.app</appendix>
+      <appendix>Holding B to Thunderbird.app</appendix>
+      <appendix>Holding P to Skype.app</appendix>
+      <appendix>Holding I to Adium.app</appendix>
+      <appendix>Holding X to Excel.app</appendix>
+      <appendix>Holding R to CoRD.app</appendix>
+      <appendix>Holding W to Word.app</appendix>
+      <appendix>Holding D to Xcode.app</appendix>
+      <appendix>Holding T to iTunes.app</appendix>
+      <appendix>Holding F to Safari.app</appendix>
+      <appendix>Holding O to PowerPoint.app</appendix>
       <appendix>Holding Q to Option+F7 (Dictionary.app)</appendix>
       <appendix>Holding [ to Control+F8</appendix>
       <appendix>Holding ] to Control+F9</appendix>
       <identifier>private.appswitchhacks</identifier>
-      <autogen>--HoldingKeyToKey-- KeyCode::L, ModifierFlag::NONE, KeyCode::L, KeyCode::VK_NONE, KeyCode::F1, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::E, ModifierFlag::NONE, KeyCode::E, KeyCode::VK_NONE, KeyCode::F2, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::C, ModifierFlag::NONE, KeyCode::C, KeyCode::VK_NONE, KeyCode::F3, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::M, ModifierFlag::NONE, KeyCode::M, KeyCode::VK_NONE, KeyCode::F4, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::B, ModifierFlag::NONE, KeyCode::B, KeyCode::VK_NONE, KeyCode::F5, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::P, ModifierFlag::NONE, KeyCode::P, KeyCode::VK_NONE, KeyCode::F6, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::I, ModifierFlag::NONE, KeyCode::I, KeyCode::VK_NONE, KeyCode::F7, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::X, ModifierFlag::NONE, KeyCode::X, KeyCode::VK_NONE, KeyCode::F8, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::R, ModifierFlag::NONE, KeyCode::R, KeyCode::VK_NONE, KeyCode::F9, ModifierFlag::COMMAND_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::V, ModifierFlag::NONE, KeyCode::V, KeyCode::VK_NONE, KeyCode::F1, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::W, ModifierFlag::NONE, KeyCode::W, KeyCode::VK_NONE, KeyCode::F2, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::D, ModifierFlag::NONE, KeyCode::D, KeyCode::VK_NONE, KeyCode::F3, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::T, ModifierFlag::NONE, KeyCode::T, KeyCode::VK_NONE, KeyCode::F4, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::F, ModifierFlag::NONE, KeyCode::F, KeyCode::VK_NONE, KeyCode::F5, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::O, ModifierFlag::NONE, KeyCode::O, KeyCode::VK_NONE, KeyCode::F6, ModifierFlag::OPTION_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::Q, ModifierFlag::NONE, KeyCode::Q, KeyCode::VK_NONE,
+      <autogen>__HoldingKeyToKey__ KeyCode::A, ModifierFlag::NONE, KeyCode::A, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Activity_Monitor</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::B, ModifierFlag::NONE, KeyCode::B, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Thunderbird</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::D, ModifierFlag::NONE, KeyCode::D, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Xcode</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::E, ModifierFlag::NONE, KeyCode::E, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Emacs</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::F, ModifierFlag::NONE, KeyCode::F, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Safari</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::I, ModifierFlag::NONE, KeyCode::I, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Adium</autogen>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::G, ModifierFlag::NONE,
+        KeyCode::G,
+        KeyCode::VK_NONE,
+        KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook
+      </autogen>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+        KeyCode::VK_NONE,
+        KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_EventViewer,
+      </autogen>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::G, VK_COMMAND | ModifierFlag::NONE,
+        KeyCode::G, VK_COMMAND,
+        KeyCode::VK_NONE,
+        KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_ReloadXML,
+      </autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::L, ModifierFlag::NONE, KeyCode::L, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Terminal</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::M, ModifierFlag::NONE, KeyCode::M, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Mail</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::O, ModifierFlag::NONE, KeyCode::O, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Microsoft_PowerPoint_2011</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::P, ModifierFlag::NONE, KeyCode::P, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Skype</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::R, ModifierFlag::NONE, KeyCode::R, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_CoRD</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::T, ModifierFlag::NONE, KeyCode::T, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_iTunes</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::W, ModifierFlag::NONE, KeyCode::W, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Microsoft_Word_2011</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::X, ModifierFlag::NONE, KeyCode::X, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Microsoft_Excel_2011</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::QUOTE, ModifierFlag::NONE, KeyCode::QUOTE, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Stickies</autogen>
+
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::V, ModifierFlag::NONE,
+        KeyCode::V,
+        KeyCode::VK_NONE,
+        KeyCode::VK_OPEN_URL_APP_Firefox,
+      </autogen>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::C, ModifierFlag::NONE,
+        KeyCode::C,
+        KeyCode::VK_NONE,
+        KeyCode::VK_OPEN_URL_APP_Google_Chrome,
+      </autogen>
+
+      <autogen>__HoldingKeyToKey__ KeyCode::Q, ModifierFlag::NONE, KeyCode::Q, KeyCode::VK_NONE,
         KeyCode::C, ModifierFlag::COMMAND_L,
         KeyCode::VK_WAIT_100MS,
-        KeyCode::F7, ModifierFlag::OPTION_L,
+        KeyCode::VK_OPEN_URL_APP_Dictionary,
         KeyCode::VK_WAIT_100MS,
         KeyCode::VK_WAIT_100MS,
         KeyCode::V, ModifierFlag::COMMAND_L,
-        Option::NOREPEAT</autogen>
+        Option::NOREPEAT
+      </autogen>
 
-      <autogen>--HoldingKeyToKey-- KeyCode::BRACKET_LEFT, ModifierFlag::NONE,
-        KeyCode::BRACKET_LEFT, KeyCode::VK_NONE,
-        KeyCode::F8, ModifierFlag::CONTROL_L, Option::NOREPEAT</autogen>
-      <autogen>--HoldingKeyToKey-- KeyCode::BRACKET_RIGHT, ModifierFlag::NONE,
-        KeyCode::BRACKET_RIGHT, KeyCode::VK_NONE,
-        KeyCode::F9, ModifierFlag::CONTROL_L, Option::NOREPEAT</autogen>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::Q, VK_SHIFT | ModifierFlag::NONE,
+        KeyCode::Q, VK_SHIFT,
+        KeyCode::VK_NONE,
+        KeyCode::VK_OPEN_URL_APP_Dictionary,
+      </autogen>
+
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::BRACKET_LEFT, ModifierFlag::NONE,
+        KeyCode::BRACKET_LEFT,
+        KeyCode::VK_NONE,
+        KeyCode::F17,
+        Option::NOREPEAT,
+      </autogen>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::BRACKET_RIGHT, ModifierFlag::NONE,
+        KeyCode::BRACKET_RIGHT,
+        KeyCode::VK_NONE,
+        KeyCode::F18,
+        Option::NOREPEAT,
+      </autogen>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::BACKSLASH, ModifierFlag::NONE,
+        KeyCode::BACKSLASH,
+        KeyCode::VK_NONE,
+        KeyCode::F19,
+        Option::NOREPEAT,
+      </autogen>
     </item>
   </list>
 
@@ -279,17 +410,17 @@
     <appendix>(+ When you type Command_L only, send EISUU)</appendix>
     <appendix>(+ When you type Shift+Command_L only, send ESCAPE)</appendix>
     <identifier>private.jis_commandL2controlL_eisuu_escape</identifier>
-    <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_L, VK_SHIFT, KeyCode::CONTROL_L, ModifierFlag::SHIFT_L, KeyCode::ESCAPE</autogen>
+    <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_L, VK_SHIFT, KeyCode::CONTROL_L, ModifierFlag::SHIFT_L, KeyCode::ESCAPE</autogen>
     <block>
       <only>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</only>
-      <autogen>--KeyToKey-- KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
     </block>
     <block>
       <not>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</not>
       <autogen>
-        --KeyOverlaidModifier--
+        __KeyOverlaidModifier__
         KeyCode::COMMAND_L, KeyCode::CONTROL_L,
-        KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH
+        KeyCode::VK_CHANGE_INPUTSOURCE_US,
       </autogen>
     </block>
   </item>
@@ -299,27 +430,25 @@
     <appendix>(+ When you type Command_R only, send KANA)</appendix>
     <appendix>(+ When you type Shift+Command_R only, send Return)</appendix>
     <identifier>private.jis_commandR2commandR_kana_return</identifier>
-    <autogen>--KeyOverlaidModifier-- KeyCode::COMMAND_R, VK_SHIFT, KeyCode::COMMAND_R, ModifierFlag::SHIFT_L, KeyCode::RETURN</autogen>
+    <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_R, VK_SHIFT, KeyCode::COMMAND_R, ModifierFlag::SHIFT_L, KeyCode::RETURN</autogen>
     <block>
       <only>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</only>
-      <autogen>--DoublePressModifier-- KeyCode::Q, VK_CONTROL | ModifierFlag::NONE,
+      <autogen>__DoublePressModifier__ KeyCode::Q, VK_CONTROL | ModifierFlag::NONE,
         KeyCode::VK_NONE,
         KeyCode::Q, VK_COMMAND
       </autogen>
-      <autogen>--KeyToKey-- KeyCode::COMMAND_R, KeyCode::CONTROL_R</autogen>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::CONTROL_R</autogen>
     </block>
     <block>
       <not>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</not>
       <autogen>
-        --KeyOverlaidModifier--
+        __KeyOverlaidModifier__
         KeyCode::COMMAND_R,
         KeyCode::COMMAND_R,
-        <!--
-            JIS_KANAを投げないと、ThunderbirdやFirefox、その他テキストエリアでの動作がおかしくなる。
-            やむを得ず、VK_CHANGE_INPUTSOURCE_JAPANESEではなくて、JIS_KANAを採用。
-            KeyCode::VK_CHANGE_INPUTSOURCE_JAPANESE
-          -->
-        KeyCode::JIS_KANA
+        <!-- Switching input source to the next of U.S. -->
+        KeyCode::VK_CHANGE_INPUTMODE_US,
+        KeyCode::VK_WAIT_100MS,
+        KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
       </autogen>
     </block>
   </item>
@@ -329,7 +458,7 @@
     <identifier>notsave.private_threefingermode</identifier>
     <block>
       <device_only>DeviceVendor::APPLE_INC,DeviceProduct::MAGIC_MOUSE</device_only>
-      <autogen>--PointingRelativeToScroll-- PointingButton::NONE, VK_MOD_ANY</autogen>
+      <autogen>__PointingRelativeToScroll__ PointingButton::NONE, VK_MOD_ANY</autogen>
     </block>
   </item>
 
@@ -337,50 +466,45 @@
     <name>Expose Hack</name>
     <appendix>F3 to Expose, Option</appendix>
     <identifier>private.expose_hack</identifier>
-    <autogen>--KeyToKey-- KeyCode::F3, KeyCode::EXPOSE_ALL, KeyCode::OPTION_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::F3, KeyCode::EXPOSE_ALL, KeyCode::OPTION_L</autogen>
+  </item>
+
+  <item>
+    <name>Paste Hack</name>
+    <identifier>private.stickies_hack</identifier>
+    <only>STICKIES,ADIUMX</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::V, VK_COMMAND | ModifierFlag::NONE,
+      KeyCode::V, VK_COMMAND | ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L
+    </autogen>
   </item>
 
   <item>
     <name>Drop Option+Space (Non-Breaking Space)</name>
     <identifier>private.option_space_to_space_without_emacs</identifier>
     <not>EMACS</not>
-    <autogen>--DropKeyAfterRemap-- KeyCode::SPACE, VK_OPTION | ModifierFlag::NONE</autogen>
-  </item>
-
-  <devicevendordef>
-    <vendorname>ELECOM</vendorname>
-    <vendorid>0x056e</vendorid>
-  </devicevendordef>
-
-  <deviceproductdef>
-    <productname>KATOKI_MOUSE</productname>
-    <productid>0x001e</productid>
-  </deviceproductdef>
-
-  <item>
-    <name>RightClick+CursorMove to ScrollWheel in Katoki Mouse</name>
-    <identifier>private.pointing_relative_rightclick_to_scroll</identifier>
-    <device_only>DeviceVendor::ELECOM, DeviceProduct::KATOKI_MOUSE</device_only>
-    <autogen>--PointingRelativeToScroll-- PointingButton::RIGHT</autogen>
+    <autogen>__DropKeyAfterRemap__ KeyCode::SPACE, VK_OPTION | ModifierFlag::NONE</autogen>
   </item>
 
   <item>
-    <name>セミコロン(;)などは常に半角</name>
+    <name>Japanese Hack</name>
+    <appendix>Switching input source temporarily for some characters.</appendix>
     <identifier>private.jis_semicolon_roman</identifier>
     <inputmode_only>JAPANESE</inputmode_only>
-    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::NONE, KeyCode::SEMICOLON,
+    <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::NONE, KeyCode::SEMICOLON,
       Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::JIS_EISUU,
       Option::KEYTOKEY_AFTER_KEYUP, KeyCode::JIS_KANA
     </autogen>
     <autogen>
-      --KeyToKey--
+      __KeyToKey__
       KeyCode::QUOTE, VK_SHIFT | ModifierFlag::NONE,
       KeyCode::QUOTE, VK_SHIFT,
       Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::JIS_EISUU, KeyCode::VK_WAIT_100MS,
       Option::KEYTOKEY_AFTER_KEYUP, KeyCode::VK_WAIT_100MS, KeyCode::JIS_KANA
     </autogen>
     <autogen>
-      --KeyToKey--
+      __KeyToKey__
       KeyCode::QUOTE, ModifierFlag::NONE,
       KeyCode::QUOTE,
       Option::KEYTOKEY_BEFORE_KEYDOWN, KeyCode::JIS_EISUU,
@@ -397,51 +521,62 @@
     <name>Language Switch</name>
     <appendix>Fn+1 to German</appendix>
     <identifier>notsave.private_language_switch1</identifier>
-    <autogen>--ShowStatusMessage-- Language Switch</autogen>
-    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, KeyCode::VK_CHANGE_INPUTSOURCE_BEPO</autogen>
-    <autogen>--KeyToKey-- KeyCode::KEY_1, KeyCode::VK_CHANGE_INPUTSOURCE_BRITISH_PC</autogen>
-    <autogen>--KeyToKey-- KeyCode::KEY_2, KeyCode::VK_CHANGE_INPUTSOURCE_SLOVENIAN</autogen>
-    <autogen>--KeyToKey-- KeyCode::KEY_3, KeyCode::VK_CHANGE_INPUTSOURCE_CZECH</autogen>
-    <autogen>--KeyToKey-- KeyCode::KEY_4, KeyCode::VK_CHANGE_INPUTSOURCE_BRITISH</autogen>
-    <autogen>--KeyToKey-- KeyCode::KEY_5, KeyCode::VK_CHANGE_INPUTSOURCE_BULGARIAN</autogen>
-    <autogen>--KeyToKey-- KeyCode::KEY_6, KeyCode::VK_CHANGE_INPUTSOURCE_SWISS</autogen>
-    <autogen>--KeyToKey-- KeyCode::KEY_7, KeyCode::VK_CHANGE_INPUTSOURCE_CROATIAN</autogen>
-    <autogen>--KeyToKey-- KeyCode::KEY_8, KeyCode::VK_CHANGE_INPUTSOURCE_HUNGARIAN</autogen>
-    <autogen>--KeyToKey-- KeyCode::KEY_9, KeyCode::VK_CHANGE_INPUTSOURCE_NORWEGIAN</autogen>
-    <autogen>--KeyToKey-- KeyCode::KEY_0, KeyCode::VK_CHANGE_INPUTSOURCE_SWEDISH_PRO</autogen>
-    <autogen>--KeyToKey-- KeyCode::MINUS, KeyCode::VK_CHANGE_INPUTSOURCE_MYSYMBOL</autogen>
-    <autogen>--KeyToKey-- KeyCode::EQUAL, KeyCode::VK_CHANGE_INPUTSOURCE_ITALIAN</autogen>
+    <autogen>__ShowStatusMessage__ -- Language Switch --</autogen>
 
-    <autogen>--KeyToKey-- KeyCode::Q, KeyCode::VK_CHANGE_INPUTSOURCE_JAPANESE</autogen>
-    <autogen>--KeyToKey-- KeyCode::W, KeyCode::VK_CHANGE_INPUTSOURCE_CANADIAN</autogen>
-    <autogen>--KeyToKey-- KeyCode::E, KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH</autogen>
-    <autogen>--KeyToKey-- KeyCode::R, KeyCode::VK_CHANGE_INPUTSOURCE_ESTONIAN</autogen>
-    <autogen>--KeyToKey-- KeyCode::T, KeyCode::VK_CHANGE_INPUTSOURCE_FINNISH</autogen>
-    <autogen>--KeyToKey-- KeyCode::Y, KeyCode::VK_CHANGE_INPUTSOURCE_FRENCH</autogen>
-    <autogen>--KeyToKey-- KeyCode::U, KeyCode::VK_CHANGE_INPUTSOURCE_GERMAN</autogen>
-    <autogen>--KeyToKey-- KeyCode::I, KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN</autogen>
-    <autogen>--KeyToKey-- KeyCode::O, KeyCode::VK_CHANGE_INPUTSOURCE_SWEDISH</autogen>
-    <autogen>--KeyToKey-- KeyCode::P, KeyCode::VK_CHANGE_INPUTSOURCE_THAI</autogen>
+    <autogen>__KeyToKey__ KeyCode::F1, KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_Profile0</autogen>
+    <autogen>__KeyToKey__ KeyCode::F2, KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_Profile1</autogen>
+    <autogen>__KeyToKey__ KeyCode::F3, KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_Profile2</autogen>
+    <autogen>__KeyToKey__ KeyCode::F4, KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_Profile3</autogen>
 
-    <autogen>--KeyToKey-- KeyCode::A, KeyCode::VK_CHANGE_INPUTSOURCE_COLEMAK</autogen>
-    <autogen>--KeyToKey-- KeyCode::S, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK</autogen>
-    <autogen>--KeyToKey-- KeyCode::D, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK_DEVANAGARI_PAUL</autogen>
-    <autogen>--KeyToKey-- KeyCode::F, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK_TRANSLIT_NEW</autogen>
-    <autogen>--KeyToKey-- KeyCode::G, KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH_TYPOGRAPHIC</autogen>
-    <autogen>--KeyToKey-- KeyCode::H, KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN_TYPOGRAPHIC</autogen>
-    <autogen>--KeyToKey-- KeyCode::J, KeyCode::VK_CHANGE_INPUTSOURCE_TRADITIONAL_CHINESE_YAHOO_KEYKEY</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::VK_CHANGE_INPUTSOURCE_BEPO</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_1, KeyCode::VK_CHANGE_INPUTSOURCE_BRITISH_PC</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_2, KeyCode::VK_CHANGE_INPUTSOURCE_SLOVENIAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_3, KeyCode::VK_CHANGE_INPUTSOURCE_CZECH</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_4, KeyCode::VK_CHANGE_INPUTSOURCE_BRITISH</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_5, KeyCode::VK_CHANGE_INPUTSOURCE_BULGARIAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_6, KeyCode::VK_CHANGE_INPUTSOURCE_SWISS</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_7, KeyCode::VK_CHANGE_INPUTSOURCE_CROATIAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_8, KeyCode::VK_CHANGE_INPUTSOURCE_HUNGARIAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_9, KeyCode::VK_CHANGE_INPUTSOURCE_NORWEGIAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_0, KeyCode::VK_CHANGE_INPUTSOURCE_SWEDISH_PRO</autogen>
+    <autogen>__KeyToKey__ KeyCode::MINUS, KeyCode::VK_CHANGE_INPUTSOURCE_MYSYMBOL</autogen>
+    <autogen>__KeyToKey__ KeyCode::EQUAL, KeyCode::VK_CHANGE_INPUTSOURCE_ITALIAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::DELETE, KeyCode::VK_CHANGE_INPUTSOURCE_GREEK</autogen>
 
-    <autogen>--KeyToKey-- KeyCode::K, KeyCode::VK_CHANGE_INPUTSOURCE_CHINESE_TRADITIONAL</autogen>
-    <autogen>--KeyToKey-- KeyCode::L, KeyCode::VK_CHANGE_INPUTSOURCE_CHINESE_SIMPLIFIED</autogen>
-    <autogen>--KeyToKey-- KeyCode::Z, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK_LEFT</autogen>
-    <autogen>--KeyToKey-- KeyCode::X, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK_QWERTYCMD</autogen>
-    <autogen>--KeyToKey-- KeyCode::C, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK_RIGHT</autogen>
-    <autogen>--KeyToKey-- KeyCode::V, KeyCode::VK_CHANGE_INPUTSOURCE_FRENCH_NUMERICAL</autogen>
-    <autogen>--KeyToKey-- KeyCode::B, KeyCode::VK_CHANGE_INPUTSOURCE_KOREAN</autogen>
-    <autogen>--KeyToKey-- KeyCode::N, KeyCode::VK_CHANGE_INPUTSOURCE_POLISH_PRO</autogen>
-    <autogen>--KeyToKey-- KeyCode::M, KeyCode::VK_CHANGE_INPUTSOURCE_POLISH</autogen>
+    <autogen>__KeyToKey__ KeyCode::Q, KeyCode::VK_CHANGE_INPUTSOURCE_JAPANESE</autogen>
+    <autogen>__KeyToKey__ KeyCode::W, KeyCode::VK_CHANGE_INPUTSOURCE_CANADIAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::E, KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH</autogen>
+    <autogen>__KeyToKey__ KeyCode::R, KeyCode::VK_CHANGE_INPUTSOURCE_ESTONIAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::T, KeyCode::VK_CHANGE_INPUTSOURCE_FINNISH</autogen>
+    <autogen>__KeyToKey__ KeyCode::Y, KeyCode::VK_CHANGE_INPUTSOURCE_FRENCH</autogen>
+    <autogen>__KeyToKey__ KeyCode::U, KeyCode::VK_CHANGE_INPUTSOURCE_GERMAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, KeyCode::VK_CHANGE_INPUTSOURCE_SWEDISH</autogen>
+    <autogen>__KeyToKey__ KeyCode::P, KeyCode::VK_CHANGE_INPUTSOURCE_THAI</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::VK_CHANGE_INPUTSOURCE_UKRAINIAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::VK_CHANGE_INPUTSOURCE_PORTUGUESE</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::VK_CHANGE_INPUTSOURCE_SWISS_GERMAN</autogen>
 
-    <autogen>--KeyToKey-- KeyCode::COMMA, KeyCode::VK_CHANGE_INPUTSOURCE_DANISH</autogen>
+    <autogen>__KeyToKey__ KeyCode::A, KeyCode::VK_CHANGE_INPUTSOURCE_COLEMAK</autogen>
+    <autogen>__KeyToKey__ KeyCode::S, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK</autogen>
+    <autogen>__KeyToKey__ KeyCode::D, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK_DEVANAGARI_PAUL</autogen>
+    <autogen>__KeyToKey__ KeyCode::F, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK_TRANSLIT_NEW</autogen>
+    <autogen>__KeyToKey__ KeyCode::G, KeyCode::VK_CHANGE_INPUTSOURCE_ENGLISH_TYPOGRAPHIC</autogen>
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::VK_CHANGE_INPUTSOURCE_RUSSIAN_TYPOGRAPHIC</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::VK_CHANGE_INPUTSOURCE_TRADITIONAL_CHINESE_YAHOO_KEYKEY</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::VK_CHANGE_INPUTSOURCE_CHINESE_TRADITIONAL</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::VK_CHANGE_INPUTSOURCE_CHINESE_SIMPLIFIED</autogen>
+    <autogen>__KeyToKey__ KeyCode::Z, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::X, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK_QWERTYCMD</autogen>
+    <autogen>__KeyToKey__ KeyCode::C, KeyCode::VK_CHANGE_INPUTSOURCE_DVORAK_RIGHT</autogen>
+    <autogen>__KeyToKey__ KeyCode::V, KeyCode::VK_CHANGE_INPUTSOURCE_FRENCH_NUMERICAL</autogen>
+    <autogen>__KeyToKey__ KeyCode::B, KeyCode::VK_CHANGE_INPUTSOURCE_KOREAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::N, KeyCode::VK_CHANGE_INPUTSOURCE_POLISH_PRO</autogen>
+    <autogen>__KeyToKey__ KeyCode::M, KeyCode::VK_CHANGE_INPUTSOURCE_POLISH</autogen>
+    <autogen>__KeyToKey__ KeyCode::COMMA, KeyCode::VK_CHANGE_INPUTSOURCE_DANISH</autogen>
+    <autogen>__KeyToKey__ KeyCode::DOT, KeyCode::VK_CHANGE_INPUTSOURCE_SPANISH</autogen>
+    <autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::VK_CHANGE_INPUTSOURCE_HUNGARIAN_PRO_PC</autogen>
   </item>
 
   <item>
@@ -449,12 +584,82 @@
     <identifier>private.pc_application_key_hack</identifier>
     <block>
       <only>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</only>
-      <autogen>--KeyToKey-- KeyCode::TAB,            KeyCode::CONTROL_L</autogen>
-      <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, KeyCode::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::TAB,        KeyCode::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::CONTROL_L</autogen>
     </block>
-    <autogen>--KeyToKey-- KeyCode::TAB,            KeyCode::COMMAND_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::PC_APPLICATION, KeyCode::COMMAND_L</autogen>
-    <autogen>--KeyToKey-- KeyCode::BACKQUOTE, KeyCode::F13</autogen>
+    <autogen>__KeyToKey__ KeyCode::TAB,        KeyCode::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE,  KeyCode::TAB, ModifierFlag::OPTION_L</autogen>
+  </item>
+
+  <item>
+    <name>VK_IOHIDPOSTEVENT Test</name>
+    <identifier>private.vk_iohidpostevent</identifier>
+    <autogen>__KeyToKey__ KeyCode::F1, KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::F2, KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::F8, KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_PLAY</autogen>
+  </item>
+
+  <item>
+    <name>SimultaneousKeyPresses</name>
+    <identifier>private.SimultaneousKeyPresses</identifier>
+    <autogen>
+      __SimultaneousKeyPresses__
+      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
+      Option::USE_SEPARATOR,
+      KeyCode::A, KeyCode::S, KeyCode::D,
+      Option::SEPARATOR,
+      KeyCode::PAGEDOWN,
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
+      Option::USE_SEPARATOR,
+      KeyCode::D, KeyCode::S, KeyCode::A,
+      Option::SEPARATOR,
+      KeyCode::PAGEUP,
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
+      Option::USE_SEPARATOR,
+      KeyCode::S, KeyCode::D, KeyCode::F,
+      Option::SEPARATOR,
+      KeyCode::END,
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
+      Option::USE_SEPARATOR,
+      KeyCode::F, KeyCode::D, KeyCode::S,
+      Option::SEPARATOR,
+      KeyCode::HOME,
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
+      Option::USE_SEPARATOR,
+      KeyCode::S, KeyCode::D, ModifierFlag::OPTION_L,
+      Option::SEPARATOR,
+      KeyCode::PAGEDOWN,
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
+      Option::USE_SEPARATOR,
+      KeyCode::D, KeyCode::S, ModifierFlag::OPTION_L,
+      Option::SEPARATOR,
+      KeyCode::PAGEUP,
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
   </item>
 
 </root>
