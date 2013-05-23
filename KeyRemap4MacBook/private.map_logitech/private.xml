@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <symbol_map type="KeyCode" name="BUTTON4" value="0x3" />
+  <symbol_map type="KeyCode" name="BUTTON5" value="0x4" />
+
+
+  <item>
+    <name>Map Logitech Mouse Side Buttons to Back/Forward</name>
+    <identifier>private.map_logitech</identifier>
+    <device_only>DeviceVendor::LOGITECH,DeviceProduct::ANY</device_only>
+    <not>VIRTUALMACHINE</not>
+    <!-- <autogen>__KeyToKey__ KeyCode::BUTTON4, ModifierFlag::COMMAND_L, KeyCode::CURSOR_LEFT</autogen>
+         <autogen>__KeyToKey__ KeyCode::BUTTON5, ModifierFlag::COMMAND_L, KeyCode::CURSOR_RIGHT</autogen> -->
+    <autogen>__PointingButtonToKey__ PointingButton::BUTTON4, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+    <autogen>__PointingButtonToKey__ PointingButton::BUTTON5, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+</root>
