@@ -9,6 +9,11 @@ static CGEventRef eventTapCallBack(CGEventTapProxy proxy, CGEventType type, CGEv
 
 - (void) applicationDidFinishLaunching:(NSNotification*)aNotification
 {
+  // Quartz Event Services has a bug:
+  //
+  // When we create CGEventTap with kCGAnnotatedSessionEventTap,
+  // media keys (brightness controls, volume controls) are disabled.
+
   CFMachPortRef eventTap = CGEventTapCreate(kCGAnnotatedSessionEventTap,
                                             kCGHeadInsertEventTap,
                                             kCGEventTapOptionDefault,

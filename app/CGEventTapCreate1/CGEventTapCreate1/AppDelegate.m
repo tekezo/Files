@@ -9,6 +9,11 @@ static CGEventRef eventTapCallBack(CGEventTapProxy proxy, CGEventType type, CGEv
 
 - (void) applicationDidFinishLaunching:(NSNotification*)aNotification
 {
+  // Quartz Event Services has a bug:
+  //
+  // When we create CGEventTap with kCGSessionEventTap and kCGEventMaskForAllEvents,
+  // look-up feature (tap trackpad with three-fingers) is disabled.
+
   CFMachPortRef eventTap = CGEventTapCreate(kCGSessionEventTap,
                                             kCGHeadInsertEventTap,
                                             kCGEventTapOptionDefault,
