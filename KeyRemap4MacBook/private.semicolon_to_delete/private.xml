@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Semicolon(;) to Delete</name>
+    <appendix>Shift+Semicolon(;) to Forward Delete</appendix>
+    <identifier>private.semicolon_to_delete</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, ModifierFlag::NONE,
+      KeyCode::DELETE,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::FORWARD_DELETE,
+    </autogen>
+  </item>
+
+</root>
