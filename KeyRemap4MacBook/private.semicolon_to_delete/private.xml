@@ -27,4 +27,61 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Change square brackets to left/right-arrow</name>
+    <appendix>(shift-brackets to beginning-of-line/end-of-line)</appendix>
+    <identifier>private.brackets_to_left_right</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_LEFT, ModifierFlag::NONE,
+      KeyCode::CURSOR_LEFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_RIGHT, ModifierFlag::NONE,
+      KeyCode::CURSOR_RIGHT,
+    </autogen>
+
+    <!-- ============================================================ -->
+    <!-- {} -->
+    <block>
+      <only>WORD, EXCEL, POWERPOINT, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        KeyCode::HOME,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        KeyCode::END,
+      </autogen>
+    </block>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::A, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::E, ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change left/right-arrow to brackets</name>
+    <identifier>private.left_right_to_brackets</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_LEFT,
+      KeyCode::BRACKET_LEFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_RIGHT,
+      KeyCode::BRACKET_RIGHT,
+    </autogen>
+  </item>
+
 </root>
