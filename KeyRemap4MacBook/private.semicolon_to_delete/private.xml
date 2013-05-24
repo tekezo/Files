@@ -17,4 +17,14 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Change Delete to Semicolon(;)</name>
+    <identifier>private.delete_to_delete</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::DELETE,
+      KeyCode::SEMICOLON,
+    </autogen>
+  </item>
+
 </root>
