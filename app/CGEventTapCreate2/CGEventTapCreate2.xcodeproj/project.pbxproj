@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		340A0C56174F63F10054D298 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 340A0C55174F63F10054D298 /* Cocoa.framework */; };
+		340A0C60174F63F10054D298 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 340A0C5E174F63F10054D298 /* InfoPlist.strings */; };
+		340A0C62174F63F10054D298 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 340A0C61174F63F10054D298 /* main.m */; };
+		340A0C66174F63F10054D298 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 340A0C64174F63F10054D298 /* Credits.rtf */; };
+		340A0C69174F63F10054D298 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 340A0C68174F63F10054D298 /* AppDelegate.m */; };
+		340A0C6C174F63F10054D298 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 340A0C6A174F63F10054D298 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		340A0C52174F63F10054D298 /* CGEventTapCreate2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CGEventTapCreate2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		340A0C55174F63F10054D298 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		340A0C58174F63F10054D298 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		340A0C59174F63F10054D298 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		340A0C5A174F63F10054D298 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		340A0C5D174F63F10054D298 /* CGEventTapCreate2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CGEventTapCreate2-Info.plist"; sourceTree = "<group>"; };
+		340A0C5F174F63F10054D298 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		340A0C61174F63F10054D298 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		340A0C63174F63F10054D298 /* CGEventTapCreate2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CGEventTapCreate2-Prefix.pch"; sourceTree = "<group>"; };
+		340A0C65174F63F10054D298 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		340A0C67174F63F10054D298 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		340A0C68174F63F10054D298 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		340A0C6B174F63F10054D298 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		340A0C4F174F63F10054D298 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				340A0C56174F63F10054D298 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		340A0C49174F63F10054D298 = {
+			isa = PBXGroup;
+			children = (
+				340A0C5B174F63F10054D298 /* CGEventTapCreate2 */,
+				340A0C54174F63F10054D298 /* Frameworks */,
+				340A0C53174F63F10054D298 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		340A0C53174F63F10054D298 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				340A0C52174F63F10054D298 /* CGEventTapCreate2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		340A0C54174F63F10054D298 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				340A0C55174F63F10054D298 /* Cocoa.framework */,
+				340A0C57174F63F10054D298 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		340A0C57174F63F10054D298 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				340A0C58174F63F10054D298 /* AppKit.framework */,
+				340A0C59174F63F10054D298 /* CoreData.framework */,
+				340A0C5A174F63F10054D298 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		340A0C5B174F63F10054D298 /* CGEventTapCreate2 */ = {
+			isa = PBXGroup;
+			children = (
+				340A0C67174F63F10054D298 /* AppDelegate.h */,
+				340A0C68174F63F10054D298 /* AppDelegate.m */,
+				340A0C6A174F63F10054D298 /* MainMenu.xib */,
+				340A0C5C174F63F10054D298 /* Supporting Files */,
+			);
+			path = CGEventTapCreate2;
+			sourceTree = "<group>";
+		};
+		340A0C5C174F63F10054D298 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				340A0C5D174F63F10054D298 /* CGEventTapCreate2-Info.plist */,
+				340A0C5E174F63F10054D298 /* InfoPlist.strings */,
+				340A0C61174F63F10054D298 /* main.m */,
+				340A0C63174F63F10054D298 /* CGEventTapCreate2-Prefix.pch */,
+				340A0C64174F63F10054D298 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		340A0C51174F63F10054D298 /* CGEventTapCreate2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 340A0C6F174F63F10054D298 /* Build configuration list for PBXNativeTarget "CGEventTapCreate2" */;
+			buildPhases = (
+				340A0C4E174F63F10054D298 /* Sources */,
+				340A0C4F174F63F10054D298 /* Frameworks */,
+				340A0C50174F63F10054D298 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CGEventTapCreate2;
+			productName = CGEventTapCreate2;
+			productReference = 340A0C52174F63F10054D298 /* CGEventTapCreate2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		340A0C4A174F63F10054D298 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Takayama Fumihiko";
+			};
+			buildConfigurationList = 340A0C4D174F63F10054D298 /* Build configuration list for PBXProject "CGEventTapCreate2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 340A0C49174F63F10054D298;
+			productRefGroup = 340A0C53174F63F10054D298 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				340A0C51174F63F10054D298 /* CGEventTapCreate2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		340A0C50174F63F10054D298 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				340A0C60174F63F10054D298 /* InfoPlist.strings in Resources */,
+				340A0C66174F63F10054D298 /* Credits.rtf in Resources */,
+				340A0C6C174F63F10054D298 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		340A0C4E174F63F10054D298 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				340A0C62174F63F10054D298 /* main.m in Sources */,
+				340A0C69174F63F10054D298 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		340A0C5E174F63F10054D298 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				340A0C5F174F63F10054D298 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		340A0C64174F63F10054D298 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				340A0C65174F63F10054D298 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		340A0C6A174F63F10054D298 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				340A0C6B174F63F10054D298 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		340A0C6D174F63F10054D298 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		340A0C6E174F63F10054D298 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		340A0C70174F63F10054D298 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CGEventTapCreate2/CGEventTapCreate2-Prefix.pch";
+				INFOPLIST_FILE = "CGEventTapCreate2/CGEventTapCreate2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		340A0C71174F63F10054D298 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CGEventTapCreate2/CGEventTapCreate2-Prefix.pch";
+				INFOPLIST_FILE = "CGEventTapCreate2/CGEventTapCreate2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		340A0C4D174F63F10054D298 /* Build configuration list for PBXProject "CGEventTapCreate2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				340A0C6D174F63F10054D298 /* Debug */,
+				340A0C6E174F63F10054D298 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		340A0C6F174F63F10054D298 /* Build configuration list for PBXNativeTarget "CGEventTapCreate2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				340A0C70174F63F10054D298 /* Debug */,
+				340A0C71174F63F10054D298 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 340A0C4A174F63F10054D298 /* Project object */;
+}
