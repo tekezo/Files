@@ -19,7 +19,7 @@
 
   <item>
     <name>Change Delete to Semicolon(;)</name>
-    <identifier>private.delete_to_delete</identifier>
+    <identifier>private.delete_to_semicolon</identifier>
     <autogen>
       __KeyToKey__
       KeyCode::DELETE,
