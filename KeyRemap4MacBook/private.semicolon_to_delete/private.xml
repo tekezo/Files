@@ -2,48 +2,49 @@
 <root>
 
   <item>
-    <name>Change Semicolon(;) to Delete</name>
-    <appendix>Shift+Semicolon(;) to Forward Delete</appendix>
+    <name>Change semicolon(;) to delete</name>
+    <appendix>shift-semicolon(;) to forward delete</appendix>
+    <appendix>command-semicolon(;) to semicolon(;)</appendix>
+    <appendix>(command-shift-semicolon to colon(:))</appendix>
     <identifier>private.semicolon_to_delete</identifier>
     <autogen>
       __KeyToKey__
-      KeyCode::SEMICOLON, ModifierFlag::NONE,
-      KeyCode::DELETE,
+      KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::SEMICOLON,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
       KeyCode::FORWARD_DELETE,
     </autogen>
-  </item>
-
-  <item>
-    <name>Change Delete to Semicolon(;)</name>
-    <identifier>private.delete_to_semicolon</identifier>
     <autogen>
       __KeyToKey__
-      KeyCode::DELETE,
       KeyCode::SEMICOLON,
+      KeyCode::DELETE,
     </autogen>
   </item>
 
   <item>
     <name>Change square brackets to left/right-arrow</name>
     <appendix>(shift-brackets to beginning-of-line/end-of-line)</appendix>
+    <appendix>(command-brackets to brackets)</appendix>
     <identifier>private.brackets_to_left_right</identifier>
+
+    <!-- ============================================================ -->
+    <!-- command-brackets -->
     <autogen>
       __KeyToKey__
-      KeyCode::BRACKET_LEFT, ModifierFlag::NONE,
-      KeyCode::CURSOR_LEFT,
+      KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::BRACKET_LEFT,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::BRACKET_RIGHT, ModifierFlag::NONE,
-      KeyCode::CURSOR_RIGHT,
+      KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::BRACKET_RIGHT,
     </autogen>
 
     <!-- ============================================================ -->
-    <!-- {} -->
+    <!-- shift-brackets -->
     <block>
       <only>WORD, EXCEL, POWERPOINT, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</only>
       <autogen>
@@ -67,20 +68,17 @@
       KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
       KeyCode::E, ModifierFlag::CONTROL_L,
     </autogen>
-  </item>
 
-  <item>
-    <name>Change left/right-arrow to brackets</name>
-    <identifier>private.left_right_to_brackets</identifier>
+    <!-- ============================================================ -->
     <autogen>
       __KeyToKey__
-      KeyCode::CURSOR_LEFT,
       KeyCode::BRACKET_LEFT,
+      KeyCode::CURSOR_LEFT,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::CURSOR_RIGHT,
       KeyCode::BRACKET_RIGHT,
+      KeyCode::CURSOR_RIGHT,
     </autogen>
   </item>
 
