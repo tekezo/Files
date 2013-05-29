@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right shift key to "i"</name>
+    <identifier>private.right_shift_to_i</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_R,
+      KeyCode::I,
+    </autogen>
+  </item>
+
+</root>
