@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change control-d to kill-line</name>
+    <identifier>private.control_d_to_kill_line</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+      KeyCode::DELETE,
+    </autogen>
+  </item>
+
+</root>
