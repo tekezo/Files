@@ -3,7 +3,8 @@
   <item>
     <name>Exchange Backslash and Less-Than</name>
     <identifier>private.italian_exchange_backslash_less_than</identifier>
-    <autogen>--KeyToKey-- KeyCode::ITALIAN_BACKSLASH, KeyCode::ITALIAN_LESS_THAN</autogen>
-    <autogen>--KeyToKey-- KeyCode::ITALIAN_LESS_THAN, KeyCode::ITALIAN_BACKSLASH</autogen>
+    <inputsource_only>ITALIAN</inputsource_only>
+    <autogen>__KeyToKey__ KeyCode::ITALIAN_BACKSLASH, KeyCode::ITALIAN_LESS_THAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::ITALIAN_LESS_THAN, KeyCode::ITALIAN_BACKSLASH</autogen>
   </item>
 </root>
