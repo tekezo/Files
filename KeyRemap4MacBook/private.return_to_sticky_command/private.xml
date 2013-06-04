@@ -837,7 +837,7 @@
     </autogen>
     <autogen>
       __KeyOverlaidModifier__
-      KeyCode::COMMAND_L,
+      KeyCode::RETURN,
       KeyCode::COMMAND_L,
       KeyCode::VK_STICKY_COMMAND_L,
     </autogen>
