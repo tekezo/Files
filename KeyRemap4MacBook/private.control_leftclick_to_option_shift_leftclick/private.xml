@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change control-leftclick to option-shift-leftclick</name>
+    <identifier>private.control_leftclick_to_option_shift_leftclick</identifier>
+    <autogen>
+      __PointingButtonToPointingButton__
+      PointingButton::LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      PointingButton::LEFT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+</root>
