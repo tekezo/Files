@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change control-leftclick to f13</name>
+    <identifier>private.control_leftclick_to_f13</identifier>
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::F13,
+    </autogen>
+  </item>
+</root>
