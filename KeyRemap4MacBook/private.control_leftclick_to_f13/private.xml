@@ -5,7 +5,7 @@
     <identifier>private.control_leftclick_to_f13</identifier>
     <autogen>
       __PointingButtonToKey__
-      PointingButton::LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      PointingButton::LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
       KeyCode::F13,
     </autogen>
   </item>
