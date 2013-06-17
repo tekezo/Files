@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use caps lock as unicode hex input</name>
+    <appendix>(You need to change caps lock key code to 110 by PCKeyboardHack.)</appendix>
+    <identifier>private.unicode_hex_input</identifier>
+    <autogen>
+      __KeyToKey__
+      <!--
+          KeyCode::PC_APPLICATION,
+        -->
+      KeyCode::UK_SECTION,
+      KeyCode::OPTION_L, ModifierFlag::EXTRA1,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      <!-- change input source to U.S. -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change caps lock+c to ⌘</name>
+    <appendix>(Use this setting with above setting.)</appendix>
+    <identifier>private.unicode_hex_input_command</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::C, ModifierFlag::EXTRA1,
+
+      <!-- 2318 -->
+      KeyCode::KEY_2, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+      KeyCode::KEY_1, ModifierFlag::OPTION_L,
+      KeyCode::KEY_8, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
