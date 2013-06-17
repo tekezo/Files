@@ -7,10 +7,7 @@
     <identifier>private.unicode_hex_input</identifier>
     <autogen>
       __KeyToKey__
-      <!--
-          KeyCode::PC_APPLICATION,
-        -->
-      KeyCode::UK_SECTION,
+      KeyCode::PC_APPLICATION,
       KeyCode::OPTION_L, ModifierFlag::EXTRA1,
 
       Option::KEYTOKEY_BEFORE_KEYDOWN,
