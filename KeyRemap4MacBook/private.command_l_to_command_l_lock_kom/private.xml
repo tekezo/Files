@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Lock left command key when you press only left command key.</name>
+    <identifier>private.command_l_to_command_l_lock_kom</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_L,
+      KeyCode::COMMAND_L,
+      KeyCode::VK_LOCK_COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
