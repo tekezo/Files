@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change window focus by command-left and command-right.</name>
+    <identifier>private.command_right_to_option_tab</identifier>
+
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::TAB, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      --KeyToKey--
+      KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::TAB, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
+
