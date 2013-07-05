@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change keypad clear key to keypad equal key.</name>
+    <identifier>private.keypad_clear_to_keypad_equal</identifier>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_CLEAR, KeyCode::KEYPAD_EQUAL</autogen>
+  </item>
+
+</root>
