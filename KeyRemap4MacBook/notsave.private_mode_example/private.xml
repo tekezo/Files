@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Mode Example</name>
+    <appendix>Switch apps by j/k</appendix>
+    <identifier>private.mode_example</identifier>
+    <config_only>notsave.private_mode_example</config_only>
+    <!-- Put __KeyToKey__ here: -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::J,
+      KeyCode::TAB, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::K,
+      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_mode_example</identifier>
+    <autogen>__ShowStatusMessage__ Mode Example</autogen>
+  </item>
+
+  <item>
+    <name>Activate mode by right command key.</name>
+    <identifier>privates.right_command_to_mode_example</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_mode_example,
+    </autogen>
+  </item>
+
+</root>
