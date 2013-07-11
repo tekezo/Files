@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Keypad Hack</name>
+    <appendix>Change 7 to Cut</appendix>
+    <appendix>Change 8 to Copy</appendix>
+    <appendix>Change 9 to Paste</appendix>
+    <appendix>Change 4 to Left Click</appendix>
+    <appendix>Change 5 to Middle Click</appendix>
+    <appendix>Change 6 to Right Click</appendix>
+    <appendix>Shift+8462 to Mouse Move</appendix>
+    <identifier>private.keypad_hack2</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_7, ModifierFlag::NONE,
+      KeyCode::X, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_8, ModifierFlag::NONE,
+      KeyCode::C, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_9, ModifierFlag::NONE,
+      KeyCode::V, ModifierFlag::COMMAND_L,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_4, ModifierFlag::NONE,
+      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_5, ModifierFlag::NONE,
+      KeyCode::VK_MOUSEKEY_BUTTON_MIDDLE,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_6, ModifierFlag::NONE,
+      KeyCode::VK_MOUSEKEY_BUTTON_RIGHT,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_8, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::VK_MOUSEKEY_UP,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::VK_MOUSEKEY_LEFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_6, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::VK_MOUSEKEY_RIGHT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_2, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::VK_MOUSEKEY_DOWN,
+    </autogen>
+  </item>
+
+</root>
