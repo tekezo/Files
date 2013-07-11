@@ -9,6 +9,7 @@
     <appendix>Change 4 to Left Click</appendix>
     <appendix>Change 5 to Middle Click</appendix>
     <appendix>Change 6 to Right Click</appendix>
+    <appendix>Change 3 to Double Left Click</appendix>
     <appendix>Shift+8462 to Mouse Move</appendix>
     <identifier>private.keypad_hack2</identifier>
     <autogen>
@@ -41,6 +42,13 @@
       __KeyToKey__
       KeyCode::KEYPAD_6, ModifierFlag::NONE,
       KeyCode::VK_MOUSEKEY_BUTTON_RIGHT,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_3, ModifierFlag::NONE,
+      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
     </autogen>
 
     <autogen>
