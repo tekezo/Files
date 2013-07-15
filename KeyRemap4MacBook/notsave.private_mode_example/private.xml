@@ -34,4 +34,40 @@
     </autogen>
   </item>
 
+  <!-- ============================================================ -->
+  <item>
+    <name>Mode Example2</name>
+    <appendix>Launch KeyRemap4MacBook Preferences and EventViewer by "0" key.</appendix>
+    <identifier>private.mode_example2</identifier>
+    <config_only>notsave.private_mode_example2</config_only>
+    <!-- Put __KeyToKey__ here: -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_0,
+      KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook,
+      KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_EventViewer,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_mode_example2
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_mode_example2
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_mode_example2</identifier>
+    <autogen>__ShowStatusMessage__ Mode Example2</autogen>
+  </item>
+
+  <item>
+    <name>Activate mode2 by right option key.</name>
+    <identifier>privates.right_option_to_mode_example2</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_mode_example2,
+    </autogen>
+  </item>
+
 </root>
