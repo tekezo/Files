@@ -10,7 +10,7 @@
     <appendix>(Control+C to Command_L+C)</appendix>
     <appendix>(Control+V to Command_L+V)</appendix>
     <appendix>(Control+X to Command_L+X)</appendix>
-    <identifier>private.pc_style_shortcus</identifier>
+    <identifier>private.pc_style_shortcuts</identifier>
 
     <not>FIREFOX, VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
 
