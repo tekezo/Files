@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <appdef>
+    <appname>VIRTUALMACHINE</appname>
+    <equal>com.vmware.fusion</equal>
+    <equal>com.parallels.desktop</equal>
+    <equal>com.parallels.vm</equal>
+    <equal>com.parallels.desktop.console</equal>
+    <equal>org.virtualbox.app.VirtualBoxVM</equal>
+    <prefix>com.vmware.proxyApp.</prefix>
+    <prefix>com.parallels.winapp.</prefix>
+
+    <!-- Force to recognize VNCs as Virtual Machine -->
+    <equal>com.geekspiff.chickenofthevnc</equal>
+    <prefix>de.jinx.JollysFastVNC</prefix>
+    <equal>BUNDLE_IDENTIFIER_OF_YOUR_VNC_APP</equal>
+  </appdef>
+
+  <item>
+    <name>Force to recognize VNCs as Virtual Machine.</name>
+  </item>
+
+</root>
