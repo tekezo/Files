@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change QWERTY to QWERF layout</name>
+    <identifier>private.qwerty2qwerf</identifier>
+    <autogen>__KeyToKey__ KeyCode::T, KeyCode::F</autogen>
+    <autogen>__KeyToKey__ KeyCode::Y, KeyCode::J</autogen>
+    <autogen>__KeyToKey__ KeyCode::U, KeyCode::Y</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::K</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, KeyCode::L</autogen>
+    <autogen>__KeyToKey__ KeyCode::P, KeyCode::SEMICOLON</autogen>
+    <autogen>__KeyToKey__ KeyCode::F, KeyCode::T</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::U</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::I</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::O</autogen>
+    <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::P</autogen>
+  </item>
+
+</root>
