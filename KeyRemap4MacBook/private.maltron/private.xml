@@ -14,8 +14,8 @@
 
     <autogen>__KeyToKey__ KeyCode::Y, KeyCode::V</autogen>
     <autogen>__KeyToKey__ KeyCode::U, KeyCode::M</autogen>
-    <autogen>__KeyToKey__ KeyCode::I, KeyCode::Z</autogen>
-    <autogen>__KeyToKey__ KeyCode::O, KeyCode::U</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::U</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, KeyCode::Z</autogen>
     <autogen>__KeyToKey__ KeyCode::P, KeyCode::L</autogen>
 
     <!-- ANISF DTHOR -->
