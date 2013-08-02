@@ -3,6 +3,7 @@
 
   <item>
     <name>Change QWERTY to Maltron layout</name>
+    <appendix>(Change left-command key to "E")</appendix>
     <identifier>private.maltron</identifier>
 
     <!-- QPYCB VMZUL -->
