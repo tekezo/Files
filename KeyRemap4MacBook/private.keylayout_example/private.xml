@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>new keyboard layout (1)</name>
+    <appendix>specify "notsave.private_keylayout_example1" on multi-touch extension.</appendix>
+    <identifier>notsave.private_keylayout_example1</identifier>
+
+    <!-- indicator -->
+    <autogen>
+      __ShowStatusMessage__ layout1
+    </autogen>
+
+    <!-- change "a" to "and" -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::A,
+      KeyCode::A, KeyCode::N, KeyCode::D,
+    </autogen>
+
+    <!-- change "s" to "the" -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::S,
+      KeyCode::T, KeyCode::H, KeyCode::E,
+    </autogen>
+
+    <!-- change "d" to "you" -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::D,
+      KeyCode::Y, KeyCode::O, KeyCode::U,
+    </autogen>
+  </item>
+
+  <!-- ============================================================ -->
+  <item>
+    <name>new keyboard layout (2)</name>
+    <appendix>specify "notsave.private_keylayout_example2" on multi-touch extension.</appendix>
+    <identifier>notsave.private_keylayout_example2</identifier>
+
+    <!-- indicator -->
+    <autogen>
+      __ShowStatusMessage__ layout2
+    </autogen>
+
+    <!-- change "a" to "with" -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::A,
+      KeyCode::W, KeyCode::I, KeyCode::T, KeyCode::H,
+    </autogen>
+  </item>
+
+</root>
