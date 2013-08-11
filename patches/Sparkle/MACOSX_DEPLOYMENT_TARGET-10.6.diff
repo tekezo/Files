@@ -1,0 +1,27 @@
+diff --git a/Sparkle.xcodeproj/project.pbxproj b/Sparkle.xcodeproj/project.pbxproj
+index 8a5362f..4c363d7 100644
+--- a/Sparkle.xcodeproj/project.pbxproj
++++ b/Sparkle.xcodeproj/project.pbxproj
+@@ -1380,12 +1380,14 @@
+ 		1DEB91B208733DA50010E9CD /* Debug */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 10.6;
+ 			};
+ 			name = Debug;
+ 		};
+ 		1DEB91B308733DA50010E9CD /* Release */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 10.6;
+ 			};
+ 			name = Release;
+ 		};
+@@ -1482,6 +1484,7 @@
+ 		61072EAD0DF263BD008FE88B /* Release (GC dual-mode; 10.5+) */ = {
+ 			isa = XCBuildConfiguration;
+ 			buildSettings = {
++				MACOSX_DEPLOYMENT_TARGET = 10.6;
+ 			};
+ 			name = "Release (GC dual-mode; 10.5+)";
+ 		};
