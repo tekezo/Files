@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Mouse Button5 to Click Lock</name>
+    <identifier>private.button5_to_click_lock</identifier>
+
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::BUTTON5,
+
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+    </autogen>
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::LEFT,
+
+      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
+    </autogen>
+  </item>
+
+</root>
