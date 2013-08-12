@@ -1,0 +1,12 @@
+diff --git a/SUHost.m b/SUHost.m
+index e12af60..ea84721 100644
+--- a/SUHost.m
++++ b/SUHost.m
+@@ -65,6 +65,7 @@
+     else
+         appSupportPath = [appSupportPaths objectAtIndex:0];
+     appSupportPath = [appSupportPath stringByAppendingPathComponent:[self name]];
++    appSupportPath = [appSupportPath stringByAppendingPathComponent:@".Sparkle"];
+     return appSupportPath;
+ }
+ 
