@@ -16,6 +16,8 @@
       PointingButton::LEFT,
 
       KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
     </autogen>
   </item>
@@ -35,6 +37,8 @@
       PointingButton::LEFT,
 
       KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
     </autogen>
   </item>
