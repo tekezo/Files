@@ -20,4 +20,23 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Change Right Click to Click Lock</name>
+    <identifier>private.right_click_to_click_lock</identifier>
+
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::RIGHT,
+
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+    </autogen>
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::LEFT,
+
+      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
+    </autogen>
+  </item>
+
 </root>
