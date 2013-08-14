@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change double-click to command-click.</name>
+    <identifier>private.double_click_to_command_click</identifier>
+
+    <lastpressedphysicalkey_only>PointingButton::LEFT</lastpressedphysicalkey_only>
+    <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::500</elapsedtimesincelastpressed_lessthan>
+
+    <autogen>
+      __PointingButtonToPointingButton__
+      PointingButton::LEFT,
+      PointingButton::LEFT, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+
+</root>
