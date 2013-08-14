@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change control-click + drag to copy text.</name>
+    <appendix>(Send command-c when you release control-click.)</appendix>
+    <identifier>private.control_click_to_copy</identifier>
+
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::C, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
