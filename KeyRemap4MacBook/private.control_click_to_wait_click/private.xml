@@ -3,6 +3,11 @@
 
   <item>
     <name>Change control-click to wait and option-click.</name>
+    <appendix>You can copy/paste text by:</appendix>
+    <appendix>1. Select text.</appendix>
+    <appendix>2. Hold control key.</appendix>
+    <appendix>3. Click selected text.</appendix>
+    <appendix>4. Drag text.</appendix>
     <identifier>private.control_click_to_wait_click</identifier>
 
     <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, VNC, TEAMVIEWER</not>
