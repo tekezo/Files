@@ -3,16 +3,26 @@
 
   <item>
     <name>Change control-click + drag to copy text.</name>
-    <appendix>(Send command-c when you release control-click.)</appendix>
+    <appendix>Usage:</appendix>
+    <appendix>1. Select text.</appendix>
+    <appendix>2. Hold control key.</appendix>
+    <appendix>3. Hold left button on mouse. (Then, selected text will be cut.)</appendix>
+    <appendix>4. Release left button where you want to insert text.</appendix>
     <identifier>private.control_click_to_copy</identifier>
+
+    <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, VNC, TEAMVIEWER</not>
 
     <autogen>
       __PointingButtonToKey__
       PointingButton::LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
-      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+      KeyCode::VK_NONE,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::X, ModifierFlag::COMMAND_L,
 
       Option::KEYTOKEY_AFTER_KEYUP,
-      KeyCode::C, ModifierFlag::COMMAND_L,
+      KeyCode::VK_MOUSEKEY_BUTTON_LEFT,
+      KeyCode::V, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
 
