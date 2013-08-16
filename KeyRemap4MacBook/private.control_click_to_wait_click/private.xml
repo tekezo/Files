@@ -2,8 +2,10 @@
 <root>
 
   <item>
-    <name>Change control-click to wait and click.</name>
+    <name>Change control-click to wait and option-click.</name>
     <identifier>private.control_click_to_wait_click</identifier>
+
+    <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, VNC, TEAMVIEWER</not>
 
     <autogen>
       __PointingButtonToKey__
@@ -12,6 +14,7 @@
 
       Option::KEYTOKEY_BEFORE_KEYDOWN,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+      KeyCode::VK_LOCK_OPTION_L_FORCE_ON,
       <!-- wait 150ms -->
       KeyCode::VK_WAIT_100MS,
       KeyCode::VK_WAIT_10MS,
@@ -22,6 +25,7 @@
 
       Option::KEYTOKEY_AFTER_KEYUP,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
+      KeyCode::VK_LOCK_OPTION_L_FORCE_OFF,
     </autogen>
   </item>
 
