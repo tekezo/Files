@@ -18,6 +18,7 @@
       KeyCode::VK_WAIT_10MS,
       KeyCode::VK_WAIT_10MS,
       KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS,
 
       Option::KEYTOKEY_AFTER_KEYUP,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
