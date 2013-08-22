@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <appdef>
+    <appname>AfterEffects</appname>
+    <equal>com.adobe.AfterEffects</equal>
+  </appdef>
+
+  <item>
+    <name>Change scroll up/down to page up/down</name>
+    <appendix>(Enable only on Magic Mouse.)</appendix>
+    <appendix>(Enable at only AfterEffects.)</appendix>
+    <identifier>private.scroll_to_pageup</identifier>
+    <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::MAGIC_MOUSE</device_only>
+    <only>AfterEffects</only>
+    <autogen>__ScrollWheelToKey__ ScrollWheel::UP, KeyCode::PAGEUP</autogen>
+    <autogen>__ScrollWheelToKey__ ScrollWheel::DOWN, KeyCode::PAGEDOWN</autogen>
+  </item>
+
+</root>
