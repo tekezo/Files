@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Expose Mode</name>
+    <identifier>private.expose_mode</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::EXPOSE_ALL, ModifierFlag::NONE,
+      KeyCode::EXPOSE_ALL,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_expose_mode,
+      Option::NOREPEAT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::EXPOSE_ALL, ModifierFlag::FN | ModifierFlag::NONE,
+      KeyCode::EXPOSE_ALL,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_expose_mode,
+      Option::NOREPEAT,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_expose_mode</identifier>
+    <autogen>
+      __ShowStatusMessage__
+      Expose Mode
+    </autogen>
+
+    <!-- put autogens -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::CURSOR_LEFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::CURSOR_RIGHT
+    </autogen>
+
+    <!-- turn expose mode off -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::RETURN,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_expose_mode,
+      KeyCode::RETURN,
+      Option::NOREPEAT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::ESCAPE,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_expose_mode,
+      KeyCode::ESCAPE,
+      Option::NOREPEAT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::EXPOSE_ALL,
+      KeyCode::EXPOSE_ALL,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_expose_mode,
+      Option::NOREPEAT,
+    </autogen>
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::LEFT,
+      KeyCode::VK_NONE,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_expose_mode,
+    </autogen>
+  </item>
+
+</root>
