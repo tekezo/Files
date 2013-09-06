@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Control_L to Control_L</name>
+    <appendix>(+ When you type Control_L only, send F18)</appendix>
+    <identifier>private.control_to_control_f18</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::CONTROL_L,
+      KeyCode::CONTROL_L,
+      KeyCode::F18,
+    </autogen>
+  </item>
+
+</root>
