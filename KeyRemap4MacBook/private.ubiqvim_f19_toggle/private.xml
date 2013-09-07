@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>F19 toggles Ubiquitous Vim Bindings</name>
+    <identifier>private.ubiqvim_f19_toggle</identifier>
+    <not>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</not>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19,
+      KeyCode::VK_LOCK_ALL_FORCE_OFF,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_ubiq_vimnormal,
+      {{ UBIQUITOUS_VIM_BINDINGS_CANCEL_OPERATOR_PENDING }}
+    </autogen>
+  </item>
+
+</root>
