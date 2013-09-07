@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use Japanse Keyboard as US Keyboard</name>
+    <appendix>（キーの変更版）</appendix>
+    <identifier>private.jis_to_us</identifier>
+
+    <!-- @ -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_2, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::JIS_ATMARK,
+    </autogen>
+  </item>
+
+</root>
