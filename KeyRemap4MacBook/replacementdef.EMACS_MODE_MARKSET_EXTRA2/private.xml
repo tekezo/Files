@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>EMACS_MODE_MARKSET_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+    <autogen>
+      __KeyToKey__
+      KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+
+      KeyCode::VK_LOCK_SHIFT_L_FORCE_OFF,
+      KeyCode::C,
+      ModifierFlag::COMMAND_L,
+      <!-- send escape after command-c -->
+      KeyCode::ESCAPE,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlSpace_core
+    </autogen>
+    ]]>
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Change M-w to command-c, escape in Emacs-Mode MarkSet.</name>
+  </item>
+
+</root>
