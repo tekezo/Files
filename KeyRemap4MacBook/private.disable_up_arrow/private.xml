@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Disable Up-Arrow</name>
+    <identifier>private.disable_up_arrow</identifier>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_UP, KeyCode::VK_NONE</autogen>
+  </item>
+</root>
