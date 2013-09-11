@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Send a delete key event when left shift key pressed alone.</name>
+    <identifier>private.shift_l_to_shift_delete</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      <!-- from -->
+      KeyCode::SHIFT_L,
+      <!-- to -->
+      KeyCode::SHIFT_L,
+      <!-- alone -->
+      KeyCode::DELETE,
+    </alone>
+  </item>
+
+  <item>
+    <name>Send a delete key event when right shift key pressed alone.</name>
+    <identifier>private.shift_r_to_shift_delete</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      <!-- from -->
+      KeyCode::SHIFT_R,
+      <!-- to -->
+      KeyCode::SHIFT_R,
+      <!-- alone -->
+      KeyCode::DELETE,
+    </alone>
+  </item>
+
+</root>
