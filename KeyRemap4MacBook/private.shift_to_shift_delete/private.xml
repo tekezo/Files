@@ -12,7 +12,7 @@
       KeyCode::SHIFT_L,
       <!-- alone -->
       KeyCode::DELETE,
-    </alone>
+    </autogen>
   </item>
 
   <item>
@@ -26,7 +26,7 @@
       KeyCode::SHIFT_R,
       <!-- alone -->
       KeyCode::DELETE,
-    </alone>
+    </autogen>
   </item>
 
 </root>
