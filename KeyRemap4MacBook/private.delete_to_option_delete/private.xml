@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change delete to option-delete</name>
+    <identifier>private.delete_to_option_delete</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::DELETE, ModifierFlag::NONE,
+      KeyCode::DELETE, ModifierFlag::OPTION_L
+    </autogen>
+  </item>
+
+</root>
