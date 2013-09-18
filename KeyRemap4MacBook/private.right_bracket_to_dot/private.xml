@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change ] to .</name>
+    <identifier>private.right_bracket_to_dot</identifier>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::DOT</autogen>
+  </item>
+
+</root>
