@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change left option key to left command key.</name>
+    <appendix>(Act as left option key when you hit left option key twice.)</appendix>
+    <identifier>private.option_to_command_with_double_option_to_option</identifier>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::OPTION_L</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>
+        Millisecond::RawValue::500
+        <!--
+            Please adjust this value.
+            Example: Millisecond::RawValue::200
+          -->
+      </elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::OPTION_L</autogen>
+    </block>
+
+    <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+  </item>
+
+</root>
