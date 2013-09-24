@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change control-y to command-v</name>
+    <identifier>private.emacsmode_control_y_terminal</identifier>
+    <only>TERMINAL</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::Y, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::V, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
