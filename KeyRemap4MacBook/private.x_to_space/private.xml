@@ -9,4 +9,13 @@
     <autogen>__KeyToKey__ KeyCode::X, KeyCode::SPACE</autogen>
   </item>
 
+  <item>
+    <name>Change "x" key to space key</name>
+    <appendix>(retain modifier-x such as command-x.)</appendix>
+    <appendix>(fn-x to "x")</appendix>
+    <identifier>private.x_to_space_nomodifier</identifier>
+    <autogen>__KeyToKey__ KeyCode::X, ModifierFlag::FN, KeyCode::X</autogen>
+    <autogen>__KeyToKey__ KeyCode::X, ModifierFlag::NONE, KeyCode::SPACE</autogen>
+  </item>
+
 </root>
