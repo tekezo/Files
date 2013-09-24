@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change "x" key to space key</name>
+    <appendix>(fn-x to "x")</appendix>
+    <identifier>private.x_to_space</identifier>
+    <autogen>__KeyToKey__ KeyCode::X, ModifierFlag::FN, KeyCode::X</autogen>
+    <autogen>__KeyToKey__ KeyCode::X, KeyCode::SPACE</autogen>
+  </item>
+
+</root>
