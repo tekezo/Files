@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Right hand copy and paste</name>
+    <appendix>(change command-n to command-v)</appendix>
+    <appendix>(change command-m to command-c)</appendix>
+    <appendix>(change command-, to command-x)</appendix>
+    <identifier>private.right_hand_copy_paste</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::N, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::M, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::C, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMA, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::X,     MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>
+  </item>
+
+</root>
