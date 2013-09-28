@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkchangeinputsourcedef>
+    <name>KeyCode::VK_CHANGE_INPUTSOURCE_BELGIAN</name>
+    <languagecode>nl</languagecode>
+  </vkchangeinputsourcedef>
+
+  <item>
+    <name>Change fn-5 to [</name>
+    <appendix>Enable U.S. and Belgian input source together.</appendix>
+    <identifier>private.belgian_bracket_hack</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_5, ModifierFlag::FN | ModifierFlag::NONE,
+
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+      <!-- wait until input source switched (60ms) -->
+      KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+
+      KeyCode::BRACKET_LEFT,
+
+      KeyCode::VK_CHANGE_INPUTSOURCE_BELGIAN,
+      <!-- wait until input source switched (60ms) -->
+      KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+
+      <!-- prevent key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+  </item>
+
+</root>
