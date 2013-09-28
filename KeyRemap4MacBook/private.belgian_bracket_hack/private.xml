@@ -8,7 +8,7 @@
 
   <item>
     <name>Change fn-5 to [</name>
-    <appendix>Enable U.S. and Belgian input source together.</appendix>
+    <appendix>(Enable U.S. and Belgian input sources together.)</appendix>
     <identifier>private.belgian_bracket_hack</identifier>
     <autogen>
       __KeyToKey__
