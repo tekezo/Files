@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Send a forward delete key event when right option key pressed alone.</name>
+    <identifier>private.right_option_to_option_forward_delete</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      <!-- from -->
+      KeyCode::OPTION_R,
+      <!-- to -->
+      KeyCode::OPTION_R,
+      <!-- alone -->
+      KeyCode::FORWARD_DELETE,
+    </autogen>
+  </item>
+
+</root>
