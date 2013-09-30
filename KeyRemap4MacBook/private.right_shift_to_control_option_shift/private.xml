@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right shift to control-option-shift.</name>
+    <identifier>private.right_shift_to_control_option_shift</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_R,
+      KeyCode::SHIFT_R, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
