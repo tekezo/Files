@@ -6,15 +6,20 @@
     <languagecode>nl</languagecode>
   </vkchangeinputsourcedef>
 
+  <vkchangeinputsourcedef>
+    <name>KeyCode::VK_CHANGE_INPUTSOURCE_USInternational_PC</name>
+    <inputsourceid_equal>com.apple.keylayout.USInternational-PC</inputsourceid_equal>
+  </vkchangeinputsourcedef>
+
   <item>
     <name>Change fn-5 to [</name>
-    <appendix>(Enable U.S. and Belgian input sources together.)</appendix>
+    <appendix>(Enable U.S. Internal PC and Belgian input sources together.)</appendix>
     <identifier>private.belgian_bracket_hack</identifier>
     <autogen>
       __KeyToKey__
       KeyCode::KEY_5, ModifierFlag::FN | ModifierFlag::NONE,
 
-      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+      KeyCode::VK_CHANGE_INPUTSOURCE_USInternational_PC,
       <!-- wait until input source switched (60ms) -->
       KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
       KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
