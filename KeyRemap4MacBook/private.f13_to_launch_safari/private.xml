@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Safari</name>
+    <url type="file">/Applications/Safari.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_TextEdit</name>
+    <url type="file">/Applications/TextEdit.app</url>
+  </vkopenurldef>
+
+  <item>
+    <name>Change f13 to open Safari</name>
+    <identifier>private.f13</identifier>
+    <autogen>__KeyToKey__ KeyCode::F13, KeyCode::VK_OPEN_URL_APP_Safari</autogen>
+  </item>
+
+  <item>
+    <name>Change f14 to open TextEdit</name>
+    <identifier>private.f14</identifier>
+    <autogen>__KeyToKey__ KeyCode::F14, KeyCode::VK_OPEN_URL_APP_TextEdit</autogen>
+  </item>
+
+</root>
