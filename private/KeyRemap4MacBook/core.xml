@@ -123,7 +123,7 @@
     </item>
 
     <item>
-      <name>My Word Hacks (effective only in Excel)</name>
+      <name>My Word Hacks (effective only in Word)</name>
       <identifier>private.myword</identifier>
       <only>WORD</only>
       <autogen>__ConsumerToKey__ ConsumerKeyCode::EJECT,
@@ -202,6 +202,21 @@
         KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
         KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
         KeyCode::VK_CHANGE_INPUTSOURCE_US,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::Q, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+        KeyCode::PAGEUP,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+        KeyCode::PAGEDOWN,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::H, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+        KeyCode::DELETE,
       </autogen>
     </item>
 
@@ -287,6 +302,11 @@
       <url>file://{{ ENV_HOME }}/Applications/CoRD.app</url>
     </vkopenurldef>
 
+    <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_iphonesimulator</name>
+      <url type="file">/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app</url>
+    </vkopenurldef>
+
     <item>
       <name>Application Switch Hacks</name>
       <appendix>Holding A to Activity Monitor.app</appendix>
@@ -310,7 +330,22 @@
       <identifier>private.appswitchhacks</identifier>
       <autogen>__HoldingKeyToKey__ KeyCode::A, ModifierFlag::NONE, KeyCode::A, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Activity_Monitor</autogen>
       <autogen>__HoldingKeyToKey__ KeyCode::B, ModifierFlag::NONE, KeyCode::B, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Thunderbird</autogen>
-      <autogen>__HoldingKeyToKey__ KeyCode::D, ModifierFlag::NONE, KeyCode::D, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Xcode</autogen>
+
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::D, ModifierFlag::NONE,
+        KeyCode::D,
+        KeyCode::VK_NONE,
+        KeyCode::VK_OPEN_URL_APP_Xcode,
+      </autogen>
+
+      <autogen>
+        __HoldingKeyToKey__
+        @begin KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE, @end
+        @begin KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT @end
+        @begin KeyCode::VK_OPEN_URL_APP_iphonesimulator, @end
+      </autogen>
+
       <autogen>__HoldingKeyToKey__ KeyCode::E, ModifierFlag::NONE, KeyCode::E, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Emacs</autogen>
       <autogen>__HoldingKeyToKey__ KeyCode::F, ModifierFlag::NONE, KeyCode::F, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Safari</autogen>
       <autogen>__HoldingKeyToKey__ KeyCode::I, ModifierFlag::NONE, KeyCode::I, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Adium</autogen>
@@ -327,6 +362,13 @@
         KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
         KeyCode::VK_NONE,
         KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_EventViewer,
+      </autogen>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+        KeyCode::VK_NONE,
+        KeyCode::VK_OPEN_URL_SHELL_kill_EventViewer,
       </autogen>
       <autogen>
         __HoldingKeyToKey__
@@ -413,7 +455,7 @@
     <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_L, VK_SHIFT, KeyCode::CONTROL_L, ModifierFlag::SHIFT_L, KeyCode::ESCAPE</autogen>
     <block>
       <only>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</only>
-      <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::VK_LAZY_CONTROL_L</autogen>
     </block>
     <block>
       <not>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</not>
@@ -448,7 +490,8 @@
         <!-- Switching input source to the next of U.S. -->
         KeyCode::VK_CHANGE_INPUTMODE_US,
         KeyCode::VK_WAIT_100MS,
-        KeyCode::SPACE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+        KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
+        KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
       </autogen>
     </block>
   </item>
@@ -456,6 +499,15 @@
   <item>
     <name>ThreeFinger Mode. (for multitouch extension)</name>
     <identifier>notsave.private_threefingermode</identifier>
+    <block>
+      <device_only>DeviceVendor::APPLE_INC,DeviceProduct::MAGIC_MOUSE</device_only>
+      <autogen>__PointingRelativeToScroll__ PointingButton::NONE, VK_MOD_ANY</autogen>
+    </block>
+  </item>
+
+  <item>
+    <name>ThreeFinger Mode. (for multitouch extension)</name>
+    <identifier>notsave.private_threefingermode2</identifier>
     <block>
       <device_only>DeviceVendor::APPLE_INC,DeviceProduct::MAGIC_MOUSE</device_only>
       <autogen>__PointingRelativeToScroll__ PointingButton::NONE, VK_MOD_ANY</autogen>
@@ -527,6 +579,9 @@
     <autogen>__KeyToKey__ KeyCode::F2, KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_Profile1</autogen>
     <autogen>__KeyToKey__ KeyCode::F3, KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_Profile2</autogen>
     <autogen>__KeyToKey__ KeyCode::F4, KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_Profile3</autogen>
+    <autogen>__KeyToKey__ KeyCode::F5, KeyCode::VK_OPEN_URL_FILE_Desktop</autogen>
+    <autogen>__KeyToKey__ KeyCode::F6, KeyCode::VK_OPEN_URL_SHELL_date_pbcopy</autogen>
+    <autogen>__KeyToKey__ KeyCode::F7, KeyCode::VK_OPEN_URL_SHELL_save_ps</autogen>
 
     <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::VK_CHANGE_INPUTSOURCE_BEPO</autogen>
     <autogen>__KeyToKey__ KeyCode::KEY_1, KeyCode::VK_CHANGE_INPUTSOURCE_BRITISH_PC</autogen>
@@ -605,58 +660,40 @@
     <identifier>private.SimultaneousKeyPresses</identifier>
     <autogen>
       __SimultaneousKeyPresses__
-      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
-      Option::USE_SEPARATOR,
-      KeyCode::A, KeyCode::S, KeyCode::D,
-      Option::SEPARATOR,
+      @begin KeyCode::A, KeyCode::S, KeyCode::D, @end
       KeyCode::PAGEDOWN,
       Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
     </autogen>
     <autogen>
       __SimultaneousKeyPresses__
-      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
-      Option::USE_SEPARATOR,
-      KeyCode::D, KeyCode::S, KeyCode::A,
-      Option::SEPARATOR,
+      @begin KeyCode::D, KeyCode::S, KeyCode::A, @end
       KeyCode::PAGEUP,
       Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
     </autogen>
 
     <autogen>
       __SimultaneousKeyPresses__
-      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
-      Option::USE_SEPARATOR,
-      KeyCode::S, KeyCode::D, KeyCode::F,
-      Option::SEPARATOR,
+      @begin KeyCode::S, KeyCode::D, KeyCode::F, @end
       KeyCode::END,
       Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
     </autogen>
     <autogen>
       __SimultaneousKeyPresses__
-      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
-      Option::USE_SEPARATOR,
-      KeyCode::F, KeyCode::D, KeyCode::S,
-      Option::SEPARATOR,
+      @begin KeyCode::F, KeyCode::D, KeyCode::S, @end
       KeyCode::HOME,
       Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
     </autogen>
 
     <autogen>
       __SimultaneousKeyPresses__
-      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
-      Option::USE_SEPARATOR,
-      KeyCode::S, KeyCode::D, ModifierFlag::OPTION_L,
-      Option::SEPARATOR,
+      @begin KeyCode::S, KeyCode::D, ModifierFlag::OPTION_L, @end
       KeyCode::PAGEDOWN,
       Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
     </autogen>
 
     <autogen>
       __SimultaneousKeyPresses__
-      <!-- You should specify Option::USE_SEPARATOR at first in order to use more than three keys. -->
-      Option::USE_SEPARATOR,
-      KeyCode::D, KeyCode::S, ModifierFlag::OPTION_L,
-      Option::SEPARATOR,
+      @begin KeyCode::D, KeyCode::S, ModifierFlag::OPTION_L, @end
       KeyCode::PAGEUP,
       Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
     </autogen>
