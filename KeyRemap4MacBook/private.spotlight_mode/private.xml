@@ -44,9 +44,11 @@
       <autogen>
         __KeyToKey__
         KeyCode::ESCAPE,
+
         KeyCode::ESCAPE,
         KeyCode::ESCAPE,
         KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_spotlight_mode,
+
         Option::NOREPEAT,
       </autogen>
     </block>
