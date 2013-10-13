@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Spotlight Mode</name>
+    <identifier>private.spotlight_mode</identifier>
+
+    <block>
+      <!-- When Spotlight Mode is deactive -->
+      <config_not>notsave.private_spotlight_mode</config_not>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+        KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::VK_CONFIG_FORCE_ON_notsave_private_spotlight_mode,
+        Option::NOREPEAT,
+      </autogen>
+    </block>
+
+    <block>
+      <!-- When Spotlight Mode is active -->
+      <config_only>notsave.private_spotlight_mode</config_only>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+        KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_spotlight_mode,
+        Option::NOREPEAT,
+      </autogen>
+
+      <!-- Spotlight Mode will be disabled by return -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::RETURN,
+        KeyCode::RETURN,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_spotlight_mode,
+        Option::NOREPEAT,
+      </autogen>
+
+      <!-- Close spotlight by escape -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::ESCAPE,
+        KeyCode::ESCAPE,
+        KeyCode::ESCAPE,
+        KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_spotlight_mode,
+        Option::NOREPEAT,
+      </autogen>
+    </block>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_spotlight_mode</identifier>
+    <autogen>__ShowStatusMessage__ Spotlight Mode</autogen>
+  </item>
+
+</root>
