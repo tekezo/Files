@@ -9,6 +9,7 @@
       <!-- When Spotlight Mode is deactive -->
       <config_not>notsave.private_spotlight_mode</config_not>
 
+      <!-- Turn Spotlight Mode on by command-space -->
       <autogen>
         __KeyToKey__
         KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
