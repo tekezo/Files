@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use f6 as scroll lock</name>
+    <appendix>(Toggle arrow keys behavior: "Normal Mode" and "Scroll Mode")</appendix>
+    <appendix></appendix>
+    <appendix>Please enable "Mouse Keys scroll direction: natural" in prepared settings</appendix>
+    <appendix>if you are using natural scroll direction on Trackpad.</appendix>
+    <identifier>private.f6_to_scroll_lock</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F6,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_private_scroll_lock_mode,
+    </autogen>
+
+    <block>
+      <config_only>notsave.private_scroll_lock_mode</config_only>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_DOWN,  KeyCode::VK_MOUSEKEY_SCROLL_DOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,  KeyCode::VK_MOUSEKEY_SCROLL_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::VK_MOUSEKEY_SCROLL_RIGHT</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_UP,    KeyCode::VK_MOUSEKEY_SCROLL_UP</autogen>
+    </block>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_scroll_lock_mode</identifier>
+    <autogen>__ShowStatusMessage__ Scroll Mode</autogen>
+  </item>
+
+</root>
