@@ -4,8 +4,8 @@
     <item>
       <name>Engelbart COMMAND</name>
       <appendix>Simultaneous home keys presses to COMMAND</appendix>
-      <appendix>(D+F to CONTROL_L)</appendix>
-      <appendix>(J+K to CONTROL_R)</appendix>
+      <appendix>(D+F to COMMAND_L)</appendix>
+      <appendix>(J+K to COMMAND_R)</appendix>
       <identifier>private.engelbart.home_row_to_command</identifier>
       <autogen>__SimultaneousKeyPresses__ KeyCode::D, KeyCode::F, KeyCode::COMMAND_L</autogen>
       <autogen>__SimultaneousKeyPresses__ KeyCode::J, KeyCode::K, KeyCode::COMMAND_R</autogen>
