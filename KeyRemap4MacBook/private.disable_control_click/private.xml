@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Control-leftclick to leftclick</name>
+    <identifier>private.control_leftclick_to_leftclick</identifier>
+    <autogen>
+      __PointingButtonToPointingButton__
+      PointingButton::LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      PointingButton::LEFT
+    </autogen>
+  </item>
+
+  <item>
+    <name>Disable control-leftclick</name>
+    <identifier>private.disable_control_leftclick</identifier>
+    <autogen>
+      __PointingButtonToKey__
+      PointingButton::LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::VK_NONE,
+    </autogen>
+  </item>
+
+</root>
