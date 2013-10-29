@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable left option key</name>
+    <identifier>private.disable_option_l</identifier>
+    <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::VK_NONE</autogen>
+  </item>
+
+  <item>
+    <name>Disable right option key</name>
+    <identifier>private.disable_option_r</identifier>
+    <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
