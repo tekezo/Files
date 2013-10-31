@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>take a screen shot by eject</name>
+    <identifier>private.take_screen_shot_by_eject</identifier>
+    <autogen>
+      __ConsumerToKey__
+      ConsumerKeyCode::EJECT, ModifierFlag::NONE,
+      KeyCode::KEY_3, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
