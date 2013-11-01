@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right command key to comma, right option key to dot.</name>
+    <identifier>private.right_command_option_to_comma_dot</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::COMMA</autogen>
+    <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::DOT</autogen>
+  </item>
+
+</root>
