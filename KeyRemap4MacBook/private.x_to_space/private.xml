@@ -18,4 +18,12 @@
     <autogen>__KeyToKey__ KeyCode::X, ModifierFlag::NONE, KeyCode::SPACE</autogen>
   </item>
 
+  <item>
+    <name>Change "[" key to "o"</name>
+    <appendix>(fn-[ to "[")</appendix>
+    <identifier>private.left_bracket_to_o</identifier>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::FN, KeyCode::BRACKET_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::O</autogen>
+  </item>
+
 </root>
