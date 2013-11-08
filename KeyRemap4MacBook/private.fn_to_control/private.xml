@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Example</name>
+    <identifier>private.example</identifier>
+    <!-- change fn key to control key -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::FN,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_fn_hack, ModifierFlag::CONTROL_L,
+    </autogen>
+    <block>
+      <config_only>notsave.private_fn_hack</config_only>
+      <autogen>__KeyToKey__ KeyCode::DELETE,       ModifierFlag::CONTROL_L, KeyCode::FORWARD_DELETE</autogen>
+      <autogen>__KeyToKey__ KeyCode::RETURN,       ModifierFlag::CONTROL_L, KeyCode::ENTER</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_UP,    ModifierFlag::CONTROL_L, KeyCode::PAGEUP</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_DOWN,  ModifierFlag::CONTROL_L, KeyCode::PAGEDOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,  ModifierFlag::CONTROL_L, KeyCode::HOME</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L, KeyCode::END</autogen>
+
+      <!-- f1 - f12 -->
+      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::BRIGHTNESS_DOWN, ModifierFlag::CONTROL_L, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::BRIGHTNESS_UP,   ModifierFlag::CONTROL_L, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+
+      <autogen>__KeyToKey__ KeyCode::MISSION_CONTROL, ModifierFlag::CONTROL_L, KeyCode::MISSION_CONTROL</autogen>
+      <autogen>__KeyToKey__ KeyCode::LAUNCHPAD,       ModifierFlag::CONTROL_L, KeyCode::LAUNCHPAD</autogen>
+      <autogen>__KeyToKey__ KeyCode::DASHBOARD,       ModifierFlag::CONTROL_L, KeyCode::DASHBOARD</autogen>
+
+      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::KEYBOARDLIGHT_LOW,  ModifierFlag::CONTROL_L, ConsumerKeyCode::KEYBOARDLIGHT_LOW,</autogen>
+      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::KEYBOARDLIGHT_HIGH, ModifierFlag::CONTROL_L, ConsumerKeyCode::KEYBOARDLIGHT_HIGH,</autogen>
+
+      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::MUSIC_PREV, ModifierFlag::CONTROL_L, ConsumerKeyCode::MUSIC_PREV</autogen>
+      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::MUSIC_PLAY, ModifierFlag::CONTROL_L, ConsumerKeyCode::MUSIC_PLAY</autogen>
+      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::MUSIC_NEXT, ModifierFlag::CONTROL_L, ConsumerKeyCode::MUSIC_NEXT</autogen>
+
+      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::VOLUME_MUTE, ModifierFlag::CONTROL_L, ConsumerKeyCode::VOLUME_MUTE</autogen>
+      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::VOLUME_DOWN, ModifierFlag::CONTROL_L, ConsumerKeyCode::VOLUME_DOWN</autogen>
+      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::VOLUME_UP,   ModifierFlag::CONTROL_L, ConsumerKeyCode::VOLUME_UP</autogen>
+    </block>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_fn_hack</identifier>
+  </item>
+</root>
