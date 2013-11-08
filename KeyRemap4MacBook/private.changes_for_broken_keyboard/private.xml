@@ -4,12 +4,38 @@
   <item>
     <name>Alphanumeric Mapping</name>
     <identifier>private.changes_for_broken_keyboard</identifier>
+
+    <!--
+        Command_9 to output "0"
+        Option_9 to output ")"
+        Command_- to output "="
+        Option_-to output "+"
+      -->
     <autogen>
       __KeyToKey__
       KeyCode::KEY_9, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
       KeyCode::KEY_0,
     </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_9, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::KEY_0, ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::MINUS, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::EQUAL,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::MINUS, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::EQUAL, ModifierFlag::SHIFT_L,
+    </autogen>
 
+    <!--
+        Option_up arrow key to be the down arrow key
+        Option_right arrow key to be the left arrow key?
+      -->
     <autogen>
       __KeyToKey__
       KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
