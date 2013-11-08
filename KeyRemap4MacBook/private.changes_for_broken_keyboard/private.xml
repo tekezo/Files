@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Alphanumeric Mapping</name>
+    <identifier>private.changes_for_broken_keyboard</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_9, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::KEY_0,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::CURSOR_DOWN,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::CURSOR_LEFT,
+    </autogen>
+  </item>
+
+</root>
