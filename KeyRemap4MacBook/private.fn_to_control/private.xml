@@ -2,8 +2,9 @@
 <root>
 
   <item>
-    <name>Example</name>
-    <identifier>private.example</identifier>
+    <name>fn key acts as a control key</name>
+    <appendix>(keep fn-delete, fn-return, fn-arrow keys, fn-fx keys.)</appendix>
+    <identifier>private.fn_to_control</identifier>
     <!-- change fn key to control key -->
     <autogen>
       __KeyToKey__
