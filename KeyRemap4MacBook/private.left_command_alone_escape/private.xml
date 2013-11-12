@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Send an escape key event when left command key is pressed alone.</name>
+    <identifier>private.left_command_alone_escape</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_L,
+      KeyCode::COMMAND_L,
+      KeyCode::ESCAPE,
+    </autogen>
+  </item>
+
+</root>
