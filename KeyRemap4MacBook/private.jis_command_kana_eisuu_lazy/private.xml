@@ -10,4 +10,21 @@
     <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_R, KeyCode::VK_LAZY_COMMAND_R, KeyCode::JIS_KANA</autogen>
   </item>
 
+  <item>
+    <name>コマンドキーの空打ちで「英数／かな」）</name>
+    <appendix>（コマンドキーを押している間に他のキーを打つと通常のコマンドキーとして動作）</appendix>
+    <appendix>（コマンドキーは他のキーを押すまでキーイベントを発生させない）</appendix>
+    <appendix>（仮想マシン上では、空打ちでF11、F12キーを送信する。）</appendix>
+    <identifier>private.jis_command_kana_eisuu_lazy_f11</identifier>
+
+    <block>
+      <only>VIRTUALMACHINE</only>
+      <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_L, KeyCode::VK_LAZY_COMMAND_L, KeyCode::F11</autogen>
+      <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_R, KeyCode::VK_LAZY_COMMAND_R, KeyCode::F12</autogen>
+    </block>
+
+    <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_L, KeyCode::VK_LAZY_COMMAND_L, KeyCode::JIS_EISUU</autogen>
+    <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_R, KeyCode::VK_LAZY_COMMAND_R, KeyCode::JIS_KANA</autogen>
+  </item>
+
 </root>
