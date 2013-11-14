@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Turn on Complete Vi Mode when left control key is pressed alone</name>
+    <identifier>private.left_control_alone_complete_vimode_on</identifier>
+
+    <config_not>notsave_complete_vimode</config_not>
+    <autogen>
+      __KeyOverlaidModifier__
+      <!-- from key -->
+      KeyCode::CONTROL_L,
+      <!-- to modifier key -->
+      KeyCode::CONTROL_L,
+      <!-- alone -->
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_complete_vimode,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Turn off Complete Vi Mode when left control key is pressed alone</name>
+    <identifier>private.left_control_alone_complete_vimode_off</identifier>
+
+    <config_only>notsave_complete_vimode</config_only>
+    <autogen>
+      __KeyOverlaidModifier__
+      <!-- from key -->
+      KeyCode::CONTROL_L,
+      <!-- to modifier key -->
+      KeyCode::CONTROL_L,
+      <!-- alone -->
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_complete_vimode,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Send escape key when left control key is pressed alone</name>
+    <identifier>private.left_control_alone_escape</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      <!-- from key -->
+      KeyCode::CONTROL_L,
+      <!-- to modifier key -->
+      KeyCode::CONTROL_L,
+      <!-- alone -->
+      KeyCode::ESCAPE,
+    </autogen>
+  </item>
+
+</root>
