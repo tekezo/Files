@@ -5,7 +5,7 @@
     <name>Exchange Command+Y and Command+Z</name>
     <appendix>(Effective only on German input sources.)</appendix>
     <appendix>(except for Microsoft applications which already have this built-in)</appendix>
-    <identifier>private.german_command_y_to_command_shift_z</identifier>
+    <identifier>private.german_exchange_command_y_command_z</identifier>
     <not>WORD, EXCEL, POWERPOINT, OUTLOOK, ENTOURAGE</not>
     <inputsource_only>GERMAN</inputsource_only>
     <autogen>
