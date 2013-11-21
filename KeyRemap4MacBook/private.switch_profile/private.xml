@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Switch to profile0 by Fn-tab</name>
+    <appendix>(Enable this setting on profile1)</appendix>
+    <identifier>private.switch_profile0</identifier>
+    <autogen>__KeyToKey__ KeyCode::TAB, ModifierFlag::FN, KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_Profile0</autogen>
+  </item>
+
+  <item>
+    <name>Switch to profile1 by Fn-tab</name>
+    <appendix>(Enable this setting on profile0)</appendix>
+    <identifier>private.switch_profile1</identifier>
+    <autogen>__KeyToKey__ KeyCode::TAB, ModifierFlag::FN, KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_Profile1</autogen>
+  </item>
+
+</root>
