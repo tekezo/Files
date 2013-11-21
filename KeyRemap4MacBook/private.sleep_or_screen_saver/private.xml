@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_ScreenSaverEngine</name>
+    <url type="file">/System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_sleep</name>
+    <url type="shell">
+      /usr/bin/osascript -e 'tell application "System Events" to sleep'
+    </url>
+  </vkopenurldef>
+
+  <item>
+    <name>Sleep by right shift key</name>
+    <appendix>(Run screen saver when you hold right shift key.)</appendix>
+    <identifier>private.sleep_or_screen_saver</identifier>
+
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::SHIFT_R,
+
+      @begin
+      KeyCode::VK_OPEN_URL_SHELL_sleep,
+      @end
+
+      @begin
+      KeyCode::VK_OPEN_URL_APP_ScreenSaverEngine,
+      @end
+    </autogen>
+  </item>
+
+</root>
