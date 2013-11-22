@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f13 to shift-f7</name>
+    <identifier>private.f13_to_shift_f7</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F13,
+      KeyCode::F7, ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+
+</root>
