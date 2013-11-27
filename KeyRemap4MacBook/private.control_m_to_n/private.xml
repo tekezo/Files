@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change control-m to n</name>
+    <identifier>private.control_m_to_n</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::M, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::N,
+    </autogen>
+  </item>
+
+</root>
