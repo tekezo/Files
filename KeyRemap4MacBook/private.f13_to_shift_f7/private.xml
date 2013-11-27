@@ -11,4 +11,20 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Change shift-f7 to f13</name>
+    <identifier>private.shift_f7_to_f13</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F7, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::F13,
+    </autogen>
+
+    <autogen>
+      __ConsumerToKey__
+      ConsumerKeyCode::VOLUME_MUTE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::F13,
+    </autogen>
+  </item>
+
 </root>
