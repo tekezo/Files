@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>THUMBSENSE_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+        ]]>
+    </replacementvalue>
+  </replacementdef>
+
+</root>
