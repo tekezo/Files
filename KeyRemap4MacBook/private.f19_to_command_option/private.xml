@@ -7,4 +7,24 @@
     <autogen>__KeyToKey__ KeyCode::F19, KeyCode::OPTION_L, ModifierFlag::COMMAND_L</autogen>
   </item>
 
+  <item>
+    <name>Change right option key to command-option</name>
+    <identifier>private.right_option_key_to_command_option</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R,
+      KeyCode::OPTION_R, ModifierFlag::COMMAND_L
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change right shift key to control+f11</name>
+    <identifier>private.right_shift_key_to_control_f11</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_R,
+      KeyCode::F11, ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
 </root>
