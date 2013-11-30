@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Down Arrow to left option key</name>
+    <identifier>private.down_arrow_to_left_option</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_DOWN,
+      KeyCode::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
