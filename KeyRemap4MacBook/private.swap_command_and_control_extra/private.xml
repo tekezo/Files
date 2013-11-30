@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>- Swap COMMAND and CONTROL in everything but the "new" MS RDC and any VMs</name>
+    <appendix>- But have COMMAND-LEFT and COMMAND-RIGHT do full screen switching</appendix>
+    <appendix>regardless of running app</appendix>
+    <appendix>- But have COMMAND-TAB do task switching regardless of running app</appendix>
+    <identifier>private.swap_command_and_control_extra</identifier>
+
+    <!-- Swap COMMAND and CONTROL in everything but the "new" MS RDC and any VMs -->
+    <block>
+      <not>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</not>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::CONTROL_R</autogen>
+      <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_R</autogen>
+
+      <!-- hack for command-tab -->
+      <autogen>__KeyToKey__ KeyCode::SHIFT_L, KeyCode::VK_LAZY_SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::VK_LAZY_SHIFT_R</autogen>
+    </block>
+
+    <!-- But have COMMAND-LEFT and COMMAND-RIGHT do full screen switching regardless of running app -->
+    <block>
+      <only>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L,
+      </autogen>
+
+      <!-- And, change control-arrow to command-arrow -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+      </autogen>
+    </block>
+
+    <!-- But have COMMAND-TAB do task switching regardless of running app -->
+    <block>
+      <not>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</not>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::TAB, ModifierFlag::COMMAND_L,
+      </autogen>
+
+      <!-- And, retain physical control-tab -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::TAB, ModifierFlag::CONTROL_L,
+      </autogen>
+    </block>
+  </item>
+
+</root>
