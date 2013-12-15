@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use right shift to toggle HHK compatible Arrow Keys Mode</name>
+    <identifier>private.toggle_hhkmode_by_right_shift</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SHIFT_R,
+      KeyCode::SHIFT_R,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_private_hhkmode,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_hhkmode</identifier>
+    <autogen>__ShowStatusMessage__ Arrow Keys</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::SEMICOLON,    KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::QUOTE,        KeyCode::CURSOR_RIGHT</autogen>
+    <autogen>__KeyToKey__ KeyCode::SLASH,        KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::L,            KeyCode::PAGEUP</autogen>
+    <autogen>__KeyToKey__ KeyCode::DOT,          KeyCode::PAGEDOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::K,            KeyCode::HOME</autogen>
+    <autogen>__KeyToKey__ KeyCode::COMMA,        KeyCode::END</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_1,        KeyCode::F1</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_2,        KeyCode::F2</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_3,        KeyCode::F3</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_4,        KeyCode::F4</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_5,        KeyCode::F5</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_6,        KeyCode::F6</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_7,        KeyCode::F7</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_8,        KeyCode::F8</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_9,        KeyCode::F9</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_0,        KeyCode::F10</autogen>
+    <autogen>__KeyToKey__ KeyCode::MINUS,        KeyCode::F11</autogen>
+    <autogen>__KeyToKey__ KeyCode::EQUAL,        KeyCode::F12</autogen>
+  </item>
+
+</root>
