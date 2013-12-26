@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change command-c to control-c on Terminal</name>
+    <identifier>private.terminal_control_c</identifier>
+
+    <only>TERMINAL</only>
+
+    <!-- change command-shift-c to command-c -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::C, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::C, ModifierFlag::COMMAND_L,
+    g</autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::C, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::C, ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
+</root>
