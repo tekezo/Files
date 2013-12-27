@@ -7,6 +7,9 @@
 
     <only>TERMINAL</only>
 
+    <!-- ============================================================ -->
+    <!-- command-c -->
+
     <!-- change command-shift-c to command-c -->
     <autogen>
       __KeyToKey__
@@ -18,6 +21,22 @@
       __KeyToKey__
       KeyCode::C, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
       KeyCode::C, ModifierFlag::CONTROL_L,
+    </autogen>
+
+    <!-- ============================================================ -->
+    <!-- command-v -->
+
+    <!-- change command-shift-v to command-v -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::V, ModifierFlag::COMMAND_L,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::V, ModifierFlag::CONTROL_L,
     </autogen>
   </item>
 
