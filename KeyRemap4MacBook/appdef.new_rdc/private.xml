@@ -10,4 +10,22 @@
     <equal>com.itap-mobile.qmote</equal>
   </appdef>
 
+  <item>
+    <name>Change command keys to lazy command keys. (only in RDC)</name>
+    <identifier>private.app_rdc_command_to_lazy</identifier>
+    <only>REMOTEDESKTOPCONNECTION</only>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_L,
+      KeyCode::VK_LAZY_COMMAND_L,
+      KeyCode::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_R,
+      KeyCode::VK_LAZY_COMMAND_R,
+      KeyCode::COMMAND_R,
+    </autogen>
+  </item>
+
 </root>
