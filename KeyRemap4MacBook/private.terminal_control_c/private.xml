@@ -1,6 +1,14 @@
 <?xml version="1.0"?>
 <root>
 
+  <appdef>
+    <appname>TERMINAL</appname>
+    <equal>com.apple.Terminal</equal>
+    <equal>iTerm</equal>
+    <equal>net.sourceforge.iTerm</equal>
+    <equal>com.googlecode.iterm2</equal>
+  </appdef>
+
   <item>
     <name>Change command-c to control-c on Terminal</name>
     <identifier>private.terminal_control_c</identifier>
