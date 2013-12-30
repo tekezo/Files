@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Mavericks functional keys hacks</name>
+    <appendix> Increase keyboard brightness => Mute</appendix>
+    <identifier>private.mavericks_fx_hacks</identifier>
+
+    <autogen>
+      __ConsumerToConsumer__
+      ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+      ConsumerKeyCode::VOLUME_MUTE,
+    </autogen>
+  </item>
+
+</root>
