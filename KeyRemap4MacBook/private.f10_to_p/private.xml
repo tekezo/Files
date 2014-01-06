@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Mute to P</name>
+    <identifier>private.mute_to_p</identifier>
+
+    <autogen>
+      __ConsumerToKey__
+      ConsumerKeyCode::VOLUME_MUTE,
+      KeyCode::P,
+    </autogen>
+  </item>
+
+  <item>
+    <name>F10 to P</name>
+    <identifier>private.f10_to_p</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F10,
+      KeyCode::P,
+    </autogen>
+  </item>
+
+</root>
