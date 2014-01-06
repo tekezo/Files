@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>A+S to X</name>
+    <identifier>private.a_s_to_x</identifier>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+
+      <!-- from -->
+      @begin
+      KeyCode::A, KeyCode::S,
+      @end
+
+      <!-- to -->
+      KeyCode::X,
+    </autogen>
+  </item>
+
+  <item>
+    <name>A+S to X (with strict key order)</name>
+    <identifier>private.a_s_to_x_strict_key_order</identifier>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+
+      <!-- from -->
+      @begin
+      KeyCode::A, KeyCode::S,
+      @end
+
+      <!-- to -->
+      KeyCode::X,
+
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
+  </item>
+
+  <!-- ============================================================ -->
+  <item>
+    <name>Use A,S as modifier</name>
+    <appendix>A+S to X</appendix>
+    <appendix>S+A to Y</appendix>
+    <identifier>private.modifier</identifier>
+
+    <block>
+      <config_only>notsave.private_flag_a</config_only>
+      <autogen>__KeyToKey__ KeyCode::S, KeyCode::X</autogen>
+    </block>
+    <block>
+      <config_only>notsave.private_flag_s</config_only>
+      <autogen>__KeyToKey__ KeyCode::A, KeyCode::Y</autogen>
+    </block>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::A,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_flag_a,
+      KeyCode::A,
+    </autogen>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::S,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_flag_s,
+      KeyCode::S,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_flag_a</identifier>
+  </item>
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_flag_s</identifier>
+  </item>
+
+</root>
