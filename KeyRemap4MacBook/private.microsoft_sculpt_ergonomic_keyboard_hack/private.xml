@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Microsoft Sculpt Ergonomic Keyboard Hack</name>
+    <appendix>Search button to Mission Control</appendix>
+    <appendix>Share button to Launchpad</appendix>
+    <appendix></appendix>
+    <appendix>Please decrease the following value in Key Repeat tab.</appendix>
+    <appendix>"Advanced Configurations &gt; Simultaneous Key Presses &gt; Delay Threshold of Key"</appendix>
+    <identifier>private.microsoft_sculpt_ergonomic_keyboard_hack</identifier>
+
+    <!-- Media 5 (Shift_L, Option_L) -->
+    <autogen>
+      __SimultaneousKeyPresses__
+
+      <!-- from -->
+      @begin
+      KeyCode::SHIFT_L, KeyCode::OPTION_L,
+      @end
+
+      <!-- to -->
+      KeyCode::MISSION_CONTROL,
+
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
+
+    <!-- Media 6 (Command_L, Option_L) -->
+    <autogen>
+      __SimultaneousKeyPresses__
+
+      <!-- from -->
+      @begin
+      KeyCode::COMMAND_L, KeyCode::OPTION_L,
+      @end
+
+      <!-- to -->
+      KeyCode::LAUNCHPAD,
+
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
+  </item>
+
+</root>
