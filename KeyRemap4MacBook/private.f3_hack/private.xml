@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>F3 hack</name>
+    <identifier>private.f3_hack</identifier>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::F3</lastpressedphysicalkey_only>
+      <autogen>__KeyToKey__ KeyCode::F3, KeyCode::F3, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L</autogen>
+    </block>
+
+    <!-- disable F3 key -->
+    <autogen>__KeyToKey__ KeyCode::F3, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
