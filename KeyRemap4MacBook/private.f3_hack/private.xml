@@ -7,6 +7,7 @@
 
     <block>
       <lastpressedphysicalkey_only>KeyCode::F3</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::1000</elapsedtimesincelastpressed_lessthan>
       <autogen>__KeyToKey__ KeyCode::F3, KeyCode::F3, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L</autogen>
     </block>
 
