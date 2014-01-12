@@ -3,12 +3,16 @@
 
   <item>
     <name>F3 hack</name>
+    <appendix>2 stroke keys:</appendix>
+    <appendix>F3-F3 -&gt; F3</appendix>
+    <appendix>F3-F4 -&gt; command-control-shift-F3</appendix>
     <identifier>private.f3_hack</identifier>
 
     <block>
       <lastpressedphysicalkey_only>KeyCode::F3</lastpressedphysicalkey_only>
       <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::1000</elapsedtimesincelastpressed_lessthan>
-      <autogen>__KeyToKey__ KeyCode::F3, KeyCode::F3, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::F3, KeyCode::F3</autogen>
+      <autogen>__KeyToKey__ KeyCode::F4, KeyCode::F3, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_L</autogen>
     </block>
 
     <!-- disable F3 key -->
