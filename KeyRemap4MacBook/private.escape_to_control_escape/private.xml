@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change escape key to left control key.</name>
+    <appendix>(Send an escape key event when escape key is pressed alone.)</appendix>
+    <identifier>private.escape_to_control_escape</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      <!-- from -->
+      KeyCode::ESCAPE,
+      <!-- to -->
+      KeyCode::CONTROL_L,
+      <!-- alone -->
+      KeyCode::ESCAPE,
+    </autogen>
+  </item>
+
+</root>
