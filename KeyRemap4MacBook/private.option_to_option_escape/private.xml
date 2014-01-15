@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Send a escape key event when left option key is pressed alone.</name>
+    <identifier>private.left_option_to_option_escape</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      <!-- from -->
+      KeyCode::OPTION_L,
+      <!-- to -->
+      KeyCode::OPTION_L,
+      <!-- alone -->
+      KeyCode::ESCAPE,
+    </autogen>
+  </item>
+  <item>
+    <name>Send a escape key event when right option key is pressed alone.</name>
+    <identifier>private.right_option_to_option_escape</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      <!-- from -->
+      KeyCode::OPTION_R,
+      <!-- to -->
+      KeyCode::OPTION_R,
+      <!-- alone -->
+      KeyCode::ESCAPE,
+    </autogen>
+  </item>
+</root>
