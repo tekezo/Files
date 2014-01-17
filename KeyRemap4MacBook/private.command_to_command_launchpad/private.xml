@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Launchpad</name>
+    <url type="file">/Applications/Launchpad.app</url>
+  </vkopenurldef>
+
+  <item>
+    <name>Open Launchpad when left command key is pressed alone.</name>
+    <identifier>remap.left_command_to_command_launchpad</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      <!-- from -->
+      KeyCode::COMMAND_L,
+      <!-- to -->
+      KeyCode::COMMAND_L,
+      <!-- alone -->
+      KeyCode::VK_OPEN_URL_APP_Launchpad,
+    </autogen>
+  </item>
+
+</root>
