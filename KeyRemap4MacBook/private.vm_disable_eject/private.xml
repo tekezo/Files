@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable eject key on Virtual Machine</name>
+    <identifier>private.vm_disable_eject</identifier>
+    <only>VIRTUALMACHINE</only>
+    <autogen>
+      __ConsumerToKey__
+      ConsumerKeyCode::EJECT,
+      KeyCode::VK_NONE
+    </autogen>
+  </item>
+
+  <item>
+    <name>Open KeyRemap4MacBook by fn-tab</name>
+    <identifier>private.fn_tab_open_keyremap4macbook</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::TAB, ModifierFlag::FN | ModifierFlag::NONE,
+      KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook,
+    </autogen>
+  </item>
+
+</root>
