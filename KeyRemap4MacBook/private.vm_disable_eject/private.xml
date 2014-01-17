@@ -8,7 +8,18 @@
     <autogen>
       __ConsumerToKey__
       ConsumerKeyCode::EJECT,
-      KeyCode::VK_NONE
+      KeyCode::VK_NONE,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Disable eject key on Virtual Machine</name>
+    <identifier>private.vm_disable_eject</identifier>
+    <only>VIRTUALMACHINE</only>
+    <autogen>
+      __ConsumerToKey__
+      ConsumerKeyCode::EJECT,
+      KeyCode::FORWARD_DELETE,
     </autogen>
   </item>
 
