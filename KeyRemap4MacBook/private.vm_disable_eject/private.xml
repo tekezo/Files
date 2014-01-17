@@ -13,8 +13,8 @@
   </item>
 
   <item>
-    <name>Disable eject key on Virtual Machine</name>
-    <identifier>private.vm_disable_eject</identifier>
+    <name>Change eject key to forward delete on Virtual Machine</name>
+    <identifier>private.vm_eject_to_forward_delete</identifier>
     <only>VIRTUALMACHINE</only>
     <autogen>
       __ConsumerToKey__
