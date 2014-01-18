@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change command-left/right arrow to option-left/right arrow</name>
+    <identifier>private.command_left_right_to_option_left_right</identifier>
+
+    <not>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
