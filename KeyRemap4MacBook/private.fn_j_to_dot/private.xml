@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Revive stopped keys</name>
+    <appendix>(Change fn+j to .)</appendix>
+    <appendix>(Change fn+k to ,)</appendix>
+    <appendix>(Change shift+volume down to brightness down)</appendix>
+    <appendix>(Change shift+volume up to brightness up)</appendix>
+    <appendix>(Change fn+escape to mute)</appendix>
+    <identifier>private.fn_j_to_dot</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::J, ModifierFlag::FN,
+      KeyCode::DOT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::K, ModifierFlag::FN,
+      KeyCode::COMMA,
+    </autogen>
+
+    <autogen>
+      __ConsumerToKey__
+      ConsumerKeyCode::VOLUME_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_DOWN,
+    </autogen>
+    <autogen>
+      __ConsumerToKey__
+      ConsumerKeyCode::VOLUME_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_UP,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::ESCAPE, ModifierFlag::FN,
+      KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_MUTE,
+    </autogen>
+  </item>
+
+</root>
