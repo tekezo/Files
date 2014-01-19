@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change ` to ё in Russian Input Source</name>
+    <identifier>private.russian_tilde_hack</identifier>
+
+    <inputsource_only>RUSSIAN</inputsource_only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKQUOTE, ModifierFlag::NONE,
+      KeyCode::BACKSLASH, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
