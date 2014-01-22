@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Open application switcher by Command-delete</name>
+    <identifier>private.command_tab_hack</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>
+  </item>
+
+</root>
