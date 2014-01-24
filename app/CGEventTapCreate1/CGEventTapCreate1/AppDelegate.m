@@ -2,9 +2,18 @@
 
 @implementation AppDelegate
 
-static CGEventRef eventTapCallBack(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void* refcon)
+static CGEventRef eventTapCallBack(CGEventTapProxy proxy, CGEventType type, CGEventRef cgEvent, void* refcon)
 {
-  return event;
+  if (! cgEvent) return cgEvent;
+
+  if (type == 14) {
+    NSEvent* event = [NSEvent eventWithCGEvent:cgEvent];
+    if (! event) return cgEvent;
+
+    NSLog(@"type:%ld, subtype:%hd, data1:%d", [event type], [event subtype], [event data1]);
+  }
+
+  return cgEvent;
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification*)aNotification

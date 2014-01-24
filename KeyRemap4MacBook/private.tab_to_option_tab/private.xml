@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change tab key to left option key.</name>
+    <appendix>Send a tab key event when tab key is pressed alone.</appendix>
+    <identifier>private.tab_to_option_tab</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::TAB,
+      KeyCode::OPTION_L,
+      KeyCode::TAB,
+    </autogen>
+  </item>
+
+</root>
