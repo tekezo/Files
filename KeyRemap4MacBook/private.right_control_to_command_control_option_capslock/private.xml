@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right control key to command-control-option.</name>
+    <appendix>Send a capslock key event when right control key is pressed alone.</appendix>
+    <identifier>private.right_control_to_command_control_option_capslock</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::CONTROL_R,
+      KeyCode::OPTION_R, ModifierFlag::COMMAND_R | ModifierFlag::CONTROL_R,
+      KeyCode::CAPSLOCK,
+    </autogen>
+  </item>
+
+</root>
