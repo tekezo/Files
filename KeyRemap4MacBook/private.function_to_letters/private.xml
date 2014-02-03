@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change function keys to letters</name>
+    <appendix>s key to fn5</appendix>
+    <appendix>w key to fn6</appendix>
+    <appendix>x key to fn13</appendix>
+    <appendix>@ key to fn14</appendix>
+    <appendix>left shift key to left control</appendix>
+    <identifier>private.function_to_letters</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::F5,  KeyCode::S</autogen>
+    <autogen>__KeyToKey__ KeyCode::F6,  KeyCode::W</autogen>
+    <autogen>__KeyToKey__ KeyCode::F13, KeyCode::X</autogen>
+    <autogen>__KeyToKey__ KeyCode::F14, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::SHIFT_L</autogen>
+  </item>
+
+</root>
