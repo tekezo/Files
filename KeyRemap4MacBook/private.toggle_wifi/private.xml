@@ -32,4 +32,15 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Toggle Wi-Fi by §</name>
+    <identifier>private.toggle_wifi_by_section</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::UK_SECTION,
+      KeyCode::VK_OPEN_URL_SHELL_toggle_wifi,
+    </autogen>
+  </item>
+
 </root>
