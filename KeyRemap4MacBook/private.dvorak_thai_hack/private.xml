@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Dvorak-Thai Hack</name>
+    <identifier>private.dvorak_thai_hack</identifier>
+    <inputsource_only>THAI</inputsource_only>
+
+    <!-- Dvorak D == Qwerty H -->
+    <autogen>
+      __KeyToKey__
+      <!-- Qwerty H -->
+      KeyCode::H, ModifierFlag::NONE,
+      <!-- Thai ด -->
+      KeyCode::F,
+    </autogen>
+
+
+    <!-- Dvorak Shift-D == Qwerty Shift-H -->
+    <autogen>
+      __KeyToKey__
+      <!-- Qwerty Shift-H -->
+      KeyCode::H, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      <!-- Thai ต -->
+      KeyCode::KEY_9,
+    </autogen>
+  </item>
+
+</root>
