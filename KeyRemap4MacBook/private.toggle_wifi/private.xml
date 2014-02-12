@@ -6,12 +6,16 @@
     <url type="shell">
       <![CDATA[
         CURRENT_DEVICE=`/usr/sbin/networksetup -listallhardwareports | /usr/bin/awk '$3=="Wi-Fi" {getline; print $2}'`;
-        if /usr/sbin/networksetup -getairportpower $CURRENT_DEVICE | /usr/bin/grep ': On'; then
-          /usr/sbin/networksetup -setairportpower $CURRENT_DEVICE off
-          /usr/bin/osascript -e 'display notification "Wi-Fi Off" with title "KeyRemap4MacBook"';
+        if [ -z "$CURRENT_DEVICE" ]; then
+          /usr/bin/osascript -e 'display notification "No Wi-Fi device" with title "KeyRemap4MacBook"';
         else
-          /usr/sbin/networksetup -setairportpower $CURRENT_DEVICE on
-          /usr/bin/osascript -e 'display notification "Wi-Fi On" with title "KeyRemap4MacBook"';
+          if /usr/sbin/networksetup -getairportpower $CURRENT_DEVICE | /usr/bin/grep ': On'; then
+            /usr/sbin/networksetup -setairportpower $CURRENT_DEVICE off
+            /usr/bin/osascript -e 'display notification "Wi-Fi Off" with title "KeyRemap4MacBook"';
+          else
+            /usr/sbin/networksetup -setairportpower $CURRENT_DEVICE on
+            /usr/bin/osascript -e 'display notification "Wi-Fi On" with title "KeyRemap4MacBook"';
+          fi
         fi
       ]]>
     </url>
