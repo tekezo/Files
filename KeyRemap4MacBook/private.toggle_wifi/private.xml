@@ -21,6 +21,20 @@
     </url>
   </vkopenurldef>
 
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_toggle_bluetooth</name>
+    <url type="shell">
+      <![CDATA[
+        /usr/bin/osascript -e 'display notification "Toggle Bluetooth" with title "KeyRemap4MacBook"';
+        if /usr/local/bin/blueutil status | grep -q ": on"; then
+          /usr/local/bin/blueutil off
+        else
+          /usr/local/bin/blueutil on
+        fi
+      ]]>
+    </url>
+  </vkopenurldef>
+
   <item>
     <name>Toggle Wi-Fi by fn-w</name>
     <identifier>private.toggle_wifi</identifier>
@@ -40,6 +54,17 @@
       __KeyToKey__
       KeyCode::UK_SECTION,
       KeyCode::VK_OPEN_URL_SHELL_toggle_wifi,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Toggle Bluetooth by fn-b</name>
+    <identifier>private.toggle_bluetooth</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::B, ModifierFlag::FN,
+      KeyCode::VK_OPEN_URL_SHELL_toggle_bluetooth,
     </autogen>
   </item>
 
