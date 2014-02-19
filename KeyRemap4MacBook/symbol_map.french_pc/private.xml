@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Overwrite symbol_map for French PC</name>
+  </item>
+
+  <symbol_map type="KeyCode" name="A" value="0xc" /> <!-- US:Q -->
+  <symbol_map type="KeyCode" name="Q" value="0x0" /> <!-- US:A -->
+  <symbol_map type="KeyCode" name="W" value="0x6" /> <!-- US:Z -->
+  <symbol_map type="KeyCode" name="Z" value="0xd" /> <!-- US:W -->
+
+</root>
