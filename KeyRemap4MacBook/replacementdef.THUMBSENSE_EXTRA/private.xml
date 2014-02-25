@@ -9,4 +9,12 @@
     </replacementvalue>
   </replacementdef>
 
+  <replacementdef>
+    <replacementname>THUMBSENSE_COPYANDPASTE_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+        ]]>
+    </replacementvalue>
+  </replacementdef>
+
 </root>
