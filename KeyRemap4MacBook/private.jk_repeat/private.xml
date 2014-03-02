@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>jk repeat</name>
+    <identifier>private.jk_repeat</identifier>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+
+      @begin
+      KeyCode::J, KeyCode::K
+      @end
+
+      @begin
+      KeyCode::J, KeyCode::K
+      @end
+
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
+    <autogen>
+      __SimultaneousKeyPresses__
+
+      @begin
+      KeyCode::K, KeyCode::J,
+      @end
+
+      @begin
+      KeyCode::K, KeyCode::J,
+      @end
+
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
+  </item>
+
+</root>
