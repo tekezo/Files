@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f19 key to caps lock</name>
+    <appendix>(+ Change f19 key to help key on virtual machine)</appendix>
+    <identifier>private.f19_to_capslock_help</identifier>
+
+    <block>
+      <only>VIRTUALMACHINE</only>
+      <autogen>__KeyToKey__ KeyCode::F19, KeyCode::HELP</autogen>
+    </block>
+    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::CAPSLOCK</autogen>
+  </item>
+
+</root>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Change fn key to right click</name>
+    <identifier>private.fn2rightclick</identifier>
+    <autogen>__KeyToKey__ KeyCode::FN, PointingButton::RIGHT</autogen>
+  </item>
+</root>
