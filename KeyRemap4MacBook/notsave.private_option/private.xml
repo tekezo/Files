@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Please set multi-touch extension configuration: "notsave.private_option"</name>
+    <identifier>notsave.private_option</identifier>
+    <autogen>
+      __KeyToKey__
+      PointingButton::LEFT,
+      PointingButton::LEFT, ModifierFlag::OPTION_L,
+    </autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_UP,    KeyCode::CURSOR_UP,    ModifierFlag::OPTION_L,</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_DOWN,  KeyCode::CURSOR_DOWN,  ModifierFlag::OPTION_L,</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,  KeyCode::CURSOR_LEFT,  ModifierFlag::OPTION_L,</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,</autogen>
+  </item>
+
+</root>
