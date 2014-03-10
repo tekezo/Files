@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change option-w to select word.</name>
+    <identifier>private.option_w_to_select_word</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::W, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+      KeyCode::CURSOR_RIGHT,
+      KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
