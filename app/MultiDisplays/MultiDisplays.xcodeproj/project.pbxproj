@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3434E46C18CEFCEB00693080 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3434E46B18CEFCEB00693080 /* Cocoa.framework */; };
+		3434E47618CEFCEB00693080 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3434E47418CEFCEB00693080 /* InfoPlist.strings */; };
+		3434E47818CEFCEB00693080 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3434E47718CEFCEB00693080 /* main.m */; };
+		3434E47C18CEFCEB00693080 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3434E47A18CEFCEB00693080 /* Credits.rtf */; };
+		3434E47F18CEFCEB00693080 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3434E47E18CEFCEB00693080 /* AppDelegate.m */; };
+		3434E48218CEFCEB00693080 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3434E48018CEFCEB00693080 /* MainMenu.xib */; };
+		3434E48418CEFCEB00693080 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3434E48318CEFCEB00693080 /* Images.xcassets */; };
+		3434E48B18CEFCEB00693080 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3434E48A18CEFCEB00693080 /* XCTest.framework */; };
+		3434E48C18CEFCEB00693080 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3434E46B18CEFCEB00693080 /* Cocoa.framework */; };
+		3434E49418CEFCEB00693080 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3434E49218CEFCEB00693080 /* InfoPlist.strings */; };
+		3434E49618CEFCEB00693080 /* MultiDisplaysTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3434E49518CEFCEB00693080 /* MultiDisplaysTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3434E48D18CEFCEB00693080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3434E46018CEFCEB00693080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3434E46718CEFCEB00693080;
+			remoteInfo = MultiDisplays;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3434E46818CEFCEB00693080 /* MultiDisplays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiDisplays.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3434E46B18CEFCEB00693080 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		3434E46E18CEFCEB00693080 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		3434E46F18CEFCEB00693080 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3434E47018CEFCEB00693080 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3434E47318CEFCEB00693080 /* MultiDisplays-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MultiDisplays-Info.plist"; sourceTree = "<group>"; };
+		3434E47518CEFCEB00693080 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3434E47718CEFCEB00693080 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3434E47918CEFCEB00693080 /* MultiDisplays-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultiDisplays-Prefix.pch"; sourceTree = "<group>"; };
+		3434E47B18CEFCEB00693080 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		3434E47D18CEFCEB00693080 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3434E47E18CEFCEB00693080 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3434E48118CEFCEB00693080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		3434E48318CEFCEB00693080 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3434E48918CEFCEB00693080 /* MultiDisplaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiDisplaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3434E48A18CEFCEB00693080 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3434E49118CEFCEB00693080 /* MultiDisplaysTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MultiDisplaysTests-Info.plist"; sourceTree = "<group>"; };
+		3434E49318CEFCEB00693080 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3434E49518CEFCEB00693080 /* MultiDisplaysTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiDisplaysTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3434E46518CEFCEB00693080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3434E46C18CEFCEB00693080 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3434E48618CEFCEB00693080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3434E48C18CEFCEB00693080 /* Cocoa.framework in Frameworks */,
+				3434E48B18CEFCEB00693080 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3434E45F18CEFCEA00693080 = {
+			isa = PBXGroup;
+			children = (
+				3434E47118CEFCEB00693080 /* MultiDisplays */,
+				3434E48F18CEFCEB00693080 /* MultiDisplaysTests */,
+				3434E46A18CEFCEB00693080 /* Frameworks */,
+				3434E46918CEFCEB00693080 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3434E46918CEFCEB00693080 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3434E46818CEFCEB00693080 /* MultiDisplays.app */,
+				3434E48918CEFCEB00693080 /* MultiDisplaysTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3434E46A18CEFCEB00693080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3434E46B18CEFCEB00693080 /* Cocoa.framework */,
+				3434E48A18CEFCEB00693080 /* XCTest.framework */,
+				3434E46D18CEFCEB00693080 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3434E46D18CEFCEB00693080 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3434E46E18CEFCEB00693080 /* AppKit.framework */,
+				3434E46F18CEFCEB00693080 /* CoreData.framework */,
+				3434E47018CEFCEB00693080 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		3434E47118CEFCEB00693080 /* MultiDisplays */ = {
+			isa = PBXGroup;
+			children = (
+				3434E47D18CEFCEB00693080 /* AppDelegate.h */,
+				3434E47E18CEFCEB00693080 /* AppDelegate.m */,
+				3434E48018CEFCEB00693080 /* MainMenu.xib */,
+				3434E48318CEFCEB00693080 /* Images.xcassets */,
+				3434E47218CEFCEB00693080 /* Supporting Files */,
+			);
+			path = MultiDisplays;
+			sourceTree = "<group>";
+		};
+		3434E47218CEFCEB00693080 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3434E47318CEFCEB00693080 /* MultiDisplays-Info.plist */,
+				3434E47418CEFCEB00693080 /* InfoPlist.strings */,
+				3434E47718CEFCEB00693080 /* main.m */,
+				3434E47918CEFCEB00693080 /* MultiDisplays-Prefix.pch */,
+				3434E47A18CEFCEB00693080 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3434E48F18CEFCEB00693080 /* MultiDisplaysTests */ = {
+			isa = PBXGroup;
+			children = (
+				3434E49518CEFCEB00693080 /* MultiDisplaysTests.m */,
+				3434E49018CEFCEB00693080 /* Supporting Files */,
+			);
+			path = MultiDisplaysTests;
+			sourceTree = "<group>";
+		};
+		3434E49018CEFCEB00693080 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3434E49118CEFCEB00693080 /* MultiDisplaysTests-Info.plist */,
+				3434E49218CEFCEB00693080 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3434E46718CEFCEB00693080 /* MultiDisplays */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3434E49918CEFCEB00693080 /* Build configuration list for PBXNativeTarget "MultiDisplays" */;
+			buildPhases = (
+				3434E46418CEFCEB00693080 /* Sources */,
+				3434E46518CEFCEB00693080 /* Frameworks */,
+				3434E46618CEFCEB00693080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultiDisplays;
+			productName = MultiDisplays;
+			productReference = 3434E46818CEFCEB00693080 /* MultiDisplays.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3434E48818CEFCEB00693080 /* MultiDisplaysTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3434E49C18CEFCEB00693080 /* Build configuration list for PBXNativeTarget "MultiDisplaysTests" */;
+			buildPhases = (
+				3434E48518CEFCEB00693080 /* Sources */,
+				3434E48618CEFCEB00693080 /* Frameworks */,
+				3434E48718CEFCEB00693080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3434E48E18CEFCEB00693080 /* PBXTargetDependency */,
+			);
+			name = MultiDisplaysTests;
+			productName = MultiDisplaysTests;
+			productReference = 3434E48918CEFCEB00693080 /* MultiDisplaysTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3434E46018CEFCEB00693080 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Takayama Fumihiko";
+				TargetAttributes = {
+					3434E48818CEFCEB00693080 = {
+						TestTargetID = 3434E46718CEFCEB00693080;
+					};
+				};
+			};
+			buildConfigurationList = 3434E46318CEFCEB00693080 /* Build configuration list for PBXProject "MultiDisplays" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3434E45F18CEFCEA00693080;
+			productRefGroup = 3434E46918CEFCEB00693080 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3434E46718CEFCEB00693080 /* MultiDisplays */,
+				3434E48818CEFCEB00693080 /* MultiDisplaysTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3434E46618CEFCEB00693080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3434E47618CEFCEB00693080 /* InfoPlist.strings in Resources */,
+				3434E48418CEFCEB00693080 /* Images.xcassets in Resources */,
+				3434E47C18CEFCEB00693080 /* Credits.rtf in Resources */,
+				3434E48218CEFCEB00693080 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3434E48718CEFCEB00693080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3434E49418CEFCEB00693080 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3434E46418CEFCEB00693080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3434E47F18CEFCEB00693080 /* AppDelegate.m in Sources */,
+				3434E47818CEFCEB00693080 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3434E48518CEFCEB00693080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3434E49618CEFCEB00693080 /* MultiDisplaysTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3434E48E18CEFCEB00693080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3434E46718CEFCEB00693080 /* MultiDisplays */;
+			targetProxy = 3434E48D18CEFCEB00693080 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3434E47418CEFCEB00693080 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3434E47518CEFCEB00693080 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3434E47A18CEFCEB00693080 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3434E47B18CEFCEB00693080 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		3434E48018CEFCEB00693080 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3434E48118CEFCEB00693080 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		3434E49218CEFCEB00693080 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3434E49318CEFCEB00693080 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3434E49718CEFCEB00693080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3434E49818CEFCEB00693080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3434E49A18CEFCEB00693080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MultiDisplays/MultiDisplays-Prefix.pch";
+				INFOPLIST_FILE = "MultiDisplays/MultiDisplays-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3434E49B18CEFCEB00693080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MultiDisplays/MultiDisplays-Prefix.pch";
+				INFOPLIST_FILE = "MultiDisplays/MultiDisplays-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3434E49D18CEFCEB00693080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MultiDisplays.app/Contents/MacOS/MultiDisplays";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MultiDisplays/MultiDisplays-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MultiDisplaysTests/MultiDisplaysTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3434E49E18CEFCEB00693080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MultiDisplays.app/Contents/MacOS/MultiDisplays";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MultiDisplays/MultiDisplays-Prefix.pch";
+				INFOPLIST_FILE = "MultiDisplaysTests/MultiDisplaysTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3434E46318CEFCEB00693080 /* Build configuration list for PBXProject "MultiDisplays" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3434E49718CEFCEB00693080 /* Debug */,
+				3434E49818CEFCEB00693080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3434E49918CEFCEB00693080 /* Build configuration list for PBXNativeTarget "MultiDisplays" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3434E49A18CEFCEB00693080 /* Debug */,
+				3434E49B18CEFCEB00693080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3434E49C18CEFCEB00693080 /* Build configuration list for PBXNativeTarget "MultiDisplaysTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3434E49D18CEFCEB00693080 /* Debug */,
+				3434E49E18CEFCEB00693080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3434E46018CEFCEB00693080 /* Project object */;
+}
