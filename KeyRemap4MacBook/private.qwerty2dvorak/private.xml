@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use Dvorak Keyboard Layout</name>
+    <appendix>(QWERTY to Dvorak)</appendix>
+    <identifier>private.qwerty2dvorak</identifier>
+
+    <!-- If ModifierFlag::FN is pressed, retain keys to convert Fn+jkl to 123 (numpad) -->
+    <modifier_not>ModifierFlag::FN</modifier_not>
+
+    <autogen>__KeyToKey__ KeyCode::Q, KeyCode::QUOTE</autogen>
+    <autogen>__KeyToKey__ KeyCode::W, KeyCode::COMMA</autogen>
+    <autogen>__KeyToKey__ KeyCode::E, KeyCode::DOT</autogen>
+    <autogen>__KeyToKey__ KeyCode::R, KeyCode::P</autogen>
+    <autogen>__KeyToKey__ KeyCode::T, KeyCode::Y</autogen>
+    <autogen>__KeyToKey__ KeyCode::Y, KeyCode::F</autogen>
+    <autogen>__KeyToKey__ KeyCode::U, KeyCode::G</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::C</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, KeyCode::R</autogen>
+    <autogen>__KeyToKey__ KeyCode::P, KeyCode::L</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::SLASH</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::EQUAL</autogen>
+    <autogen>__KeyToKey__ KeyCode::S, KeyCode::O</autogen>
+    <autogen>__KeyToKey__ KeyCode::D, KeyCode::E</autogen>
+    <autogen>__KeyToKey__ KeyCode::F, KeyCode::U</autogen>
+    <autogen>__KeyToKey__ KeyCode::G, KeyCode::I</autogen>
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::D</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::H</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::T</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::N</autogen>
+    <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::S</autogen>
+    <autogen>__KeyToKey__ KeyCode::QUOTE, KeyCode::MINUS</autogen>
+    <autogen>__KeyToKey__ KeyCode::Z, KeyCode::SEMICOLON</autogen>
+    <autogen>__KeyToKey__ KeyCode::X, KeyCode::Q</autogen>
+    <autogen>__KeyToKey__ KeyCode::C, KeyCode::J</autogen>
+    <autogen>__KeyToKey__ KeyCode::V, KeyCode::K</autogen>
+    <autogen>__KeyToKey__ KeyCode::B, KeyCode::X</autogen>
+    <autogen>__KeyToKey__ KeyCode::N, KeyCode::B</autogen>
+    <autogen>__KeyToKey__ KeyCode::COMMA, KeyCode::W</autogen>
+    <autogen>__KeyToKey__ KeyCode::DOT, KeyCode::V</autogen>
+    <autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::Z</autogen>
+    <autogen>__KeyToKey__ KeyCode::MINUS, KeyCode::BRACKET_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::EQUAL, KeyCode::BRACKET_RIGHT</autogen>
+
+  </item>
+</root>
