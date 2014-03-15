@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f16 key to delete.</name>
+    <identifier>private.f16_to_delete</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F16,
+      KeyCode::DELETE,
+    </autogen>
+  </item>
+
+</root>
