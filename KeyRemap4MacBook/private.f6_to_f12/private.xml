@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f6 to f12</name>
+    <identifier>private.f6_to_f12</identifier>
+    <autogen>__KeyToKey__ KeyCode::F6, KeyCode::F12</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::KEYBOARDLIGHT_HIGH, ConsumerKeyCode::VOLUME_UP</autogen>
+  </item>
+
+</root>
