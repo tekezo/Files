@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>fn-slash to keypad plus</name>
+    <identifier>private.fn_slash_to_plus</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SLASH, ModifierFlag::FN,
+      KeyCode::KEYPAD_PLUS,
+    </autogen>
+  </item>
+
+</root>
