@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f14 to left click</name>
+    <identifier>private.f14_to_left_click</identifier>
+    <autogen>__KeyToKey__ KeyCode::F14, PointingButton::LEFT</autogen>
+  </item>
+
+</root>
