@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f12 to Launchpad</name>
+    <identifier>private.f12_to_launchpad</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F12,
+      KeyCode::LAUNCHPAD,
+    </autogen>
+  </item>
+
+</root>
