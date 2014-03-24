@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Launchpad to Volume Down</name>
+    <identifier>private.launchpad_to_volume_down</identifier>
+    <autogen>
+      __KeyToConsumer__
+      KeyCode::LAUNCHPAD,
+      ConsumerKeyCode::VOLUME_DOWN,
+    </autogen>
+  </item>
+
+</root>
