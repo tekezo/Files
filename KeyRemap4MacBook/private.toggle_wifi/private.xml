@@ -26,11 +26,7 @@
     <url type="shell">
       <![CDATA[
         /usr/bin/osascript -e 'display notification "Toggle Bluetooth" with title "KeyRemap4MacBook"';
-        if /usr/local/bin/blueutil status | grep -q ": on"; then
-          /usr/local/bin/blueutil off
-        else
-          /usr/local/bin/blueutil on
-        fi
+        /Applications/KeyRemap4MacBook.app/Contents/Library/vendor/bin/blueutil toggle
       ]]>
     </url>
   </vkopenurldef>
@@ -40,7 +36,7 @@
     <url type="shell">
       <![CDATA[
         /usr/bin/osascript -e 'display notification "Bluetooth Off" with title "KeyRemap4MacBook"';
-        /usr/local/bin/blueutil off
+        /Applications/KeyRemap4MacBook.app/Contents/Library/vendor/bin/blueutil off
       ]]>
     </url>
   </vkopenurldef>
