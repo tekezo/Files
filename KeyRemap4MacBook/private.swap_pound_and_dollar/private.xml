@@ -2,7 +2,7 @@
 <root>
 
   <item>
-    <name>Swap $ and £ </name>
+    <name>Swap $ and £</name>
     <identifier>private.swap_pound_and_dollar</identifier>
     <autogen>
       __KeyToKey__
