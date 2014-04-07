@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the return key to the left command key.</name>
+    <appendix>(+ Send a return key event when the return key is pressed alone.</appendix>
+    <identifier>private.return_to_command_return</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::RETURN,
+      KeyCode::COMMAND_L,
+      KeyCode::RETURN,
+    </autogen>
+  </item>
+
+</root>
