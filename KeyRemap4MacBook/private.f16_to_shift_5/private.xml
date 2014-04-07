@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f16 key to % (shift+5)</name>
+    <identifier>private.f16_to_shift_5</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F16, ModifierFlag::NONE,
+      KeyCode::KEY_5, ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+
+</root>
