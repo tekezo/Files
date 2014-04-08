@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<root>
+
+  <inputsourcedef>
+    <name>BELGIAN</name>
+    <languagecode>nl</languagecode>
+  </inputsourcedef>
+
+  <vkchangeinputsourcedef>
+    <name>KeyCode::VK_CHANGE_INPUTSOURCE_BELGIAN</name>
+    <languagecode>nl</languagecode>
+  </vkchangeinputsourcedef>
+
+  <item>
+    <name>Change Option+^+2 to square sign.</name>
+    <appendix>Option+^+3 to cubic sign.</appendix>
+    <identifier>private.option_hat_2_to_square_sign</identifier>
+
+    <block>
+      <inputsource_only>BELGIAN</inputsource_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+        KeyCode::VK_MODIFIER_EXTRA1,
+
+        Option::KEYTOKEY_BEFORE_KEYDOWN,
+        KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+
+        Option::KEYTOKEY_AFTER_KEYUP,
+        KeyCode::VK_CHANGE_INPUTSOURCE_BELGIAN,
+      </autogen>
+    </block>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_2, ModifierFlag::EXTRA1,
+      <!-- U+00B2 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::B, ModifierFlag::OPTION_L,
+      KeyCode::KEY_2, ModifierFlag::OPTION_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_3, ModifierFlag::EXTRA1,
+      <!-- U+00B3 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::B, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
