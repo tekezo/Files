@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap keypad minus key and keypad plus key.</name>
+    <identifier>private.swap_keypad_minus_and_plus</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_MINUS,
+      KeyCode::KEYPAD_PLUS,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_PLUS,
+      KeyCode::KEYPAD_MINUS,
+    </autogen>
+  </item>
+
+</root>
