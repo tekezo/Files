@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change shift key x2 to caps lock.</name>
+    <identifier>private.shift_x2_to_capslock</identifier>
+
+    <block>
+      <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SHIFT_L,
+        KeyCode::SHIFT_L,
+        KeyCode::CAPSLOCK,
+      </autogen>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SHIFT_R,
+        KeyCode::SHIFT_R,
+        KeyCode::CAPSLOCK,
+      </autogen>
+    </block>
+
+    <autogen>
+      __DoublePressModifier__
+      KeyCode::SHIFT_L,
+      KeyCode::SHIFT_L,
+      KeyCode::CAPSLOCK,
+    </autogen>
+    <autogen>
+      __DoublePressModifier__
+      KeyCode::SHIFT_R,
+      KeyCode::SHIFT_R,
+      KeyCode::CAPSLOCK,
+    </autogen>
+  </item>
+
+</root>
