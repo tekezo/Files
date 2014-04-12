@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use PC Style Open</name>
+    <appendix>(Control+O to Command_L+O)</appendix>
+    <appendix></appendix>
+    <appendix>{{ PC_STYLE_BINDINGS_IGNORE_APPS_DESCRIPTION }}</appendix>
+    <identifier>private.pc_style_open</identifier>
+    <not>{{ PC_STYLE_BINDINGS_IGNORE_APPS }}</not>
+    <autogen>
+      __KeyToKey__
+      KeyCode::O, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::O, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
