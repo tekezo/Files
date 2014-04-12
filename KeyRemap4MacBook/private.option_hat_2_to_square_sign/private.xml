@@ -16,37 +16,43 @@
     <appendix>Option+^+3 to cubic sign.</appendix>
     <identifier>private.option_hat_2_to_square_sign</identifier>
 
-    <block>
-      <inputsource_only>BELGIAN</inputsource_only>
-      <autogen>
-        __KeyToKey__
-        KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
-        KeyCode::VK_MODIFIER_EXTRA1,
-
-        Option::KEYTOKEY_BEFORE_KEYDOWN,
-        KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
-
-        Option::KEYTOKEY_AFTER_KEYUP,
-        KeyCode::VK_CHANGE_INPUTSOURCE_BELGIAN,
-      </autogen>
-    </block>
+    <inputsource_only>BELGIAN</inputsource_only>
     <autogen>
       __KeyToKey__
-      KeyCode::KEY_2, ModifierFlag::EXTRA1,
+      KeyCode::KEY_2, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+
       <!-- U+00B2 -->
-      KeyCode::KEY_0, ModifierFlag::OPTION_L,
-      KeyCode::KEY_0, ModifierFlag::OPTION_L,
-      KeyCode::B, ModifierFlag::OPTION_L,
-      KeyCode::KEY_2, ModifierFlag::OPTION_L,
+      KeyCode::KEY_0, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::KEY_0, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::B,     MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::KEY_2, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+
+      KeyCode::VK_CHANGE_INPUTSOURCE_BELGIAN,
+
+      Option::NOREPEAT,
     </autogen>
+
     <autogen>
       __KeyToKey__
-      KeyCode::KEY_3, ModifierFlag::EXTRA1,
-      <!-- U+00B3 -->
-      KeyCode::KEY_0, ModifierFlag::OPTION_L,
-      KeyCode::KEY_0, ModifierFlag::OPTION_L,
-      KeyCode::B, ModifierFlag::OPTION_L,
-      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS, KeyCode::VK_WAIT_10MS,
+
+      <!-- U+00B2 -->
+      KeyCode::KEY_0, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::KEY_0, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::B,     MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::KEY_3, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+
+      KeyCode::VK_CHANGE_INPUTSOURCE_BELGIAN,
+
+      Option::NOREPEAT,
     </autogen>
   </item>
 
