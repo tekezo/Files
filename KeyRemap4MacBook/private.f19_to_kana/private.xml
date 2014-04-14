@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>F19キーをかなキーに変換</name>
+    <appendix>（仮想マシンやRDCはのぞく）</appendix>
+    <identifier>private.f19_to_kana</identifier>
+
+    <block>
+      <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION, VNC</not>
+      <autogen>__KeyToKey__ KeyCode::F19, KeyCode::JIS_KANA</autogen>
+    </block>
+  </item>
+
+</root>
