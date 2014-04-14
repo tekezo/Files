@@ -29,29 +29,122 @@
       <identifier>private.drop_command_space</identifier>
       <autogen>
         __KeyToKey__
+        @begin
         KeyCode::SPACE,   MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        @end
+        @begin
         KeyCode::SHIFT_L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        @end
+      </autogen>
+    </item>
+
+    <appdef>
+      <appname>
+        Activity Monitor
+      </appname>
+      <equal>
+        com.apple.ActivityMonitor
+      </equal>
+    </appdef>
+
+    <item>
+      <name>NetBeans Hack</name>
+      <identifier>private.netbeans_hack</identifier>
+      <only>NetBeans</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::G, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+        KeyCode::ESCAPE,
+      </autogen>
+
+      <!-- Run Test -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::T, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+        KeyCode::F6, ModifierFlag::COMMAND_L,
+      </autogen>
+      <!-- Run -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::R, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+        KeyCode::F6,
+      </autogen>
+      <!-- Build -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::B, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+        KeyCode::F11,
       </autogen>
     </item>
 
     <item>
-      <name>Mission Control Hacks</name>
-      <appendix>Move window to next/previous desktop by fn+[, fn+]</appendix>
-      <appendix>(Move mouse pointer to titlebar, and then press fn+[ or fn+])</appendix>
-      <identifier>private.my_mission_control_hacks</identifier>
+      <name>Toggle Wi-Fi by fn-w</name>
+      <identifier>private.toggle_wifi_by_fn_w</identifier>
       <autogen>
         __KeyToKey__
-        KeyCode::BRACKET_LEFT, ModifierFlag::FN,
-        KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
-        KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L,
-        KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+        KeyCode::W, ModifierFlag::FN | ModifierFlag::NONE,
+        KeyCode::VK_OPEN_URL_SHELL_toggle_wifi,
+      </autogen>
+    </item>
+
+    <item>
+      <name>Rapid arrows</name>
+      <identifier>notsave.private_rapid_arrows</identifier>
+      <!--
+      <autogen>__ShowStatusMessage__ Rapid arrows</autogen>
+      -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::H,
+        KeyCode::CURSOR_LEFT,
+        DelayUntilRepeat::RawValue::0, KeyRepeat::RawValue::0,
       </autogen>
       <autogen>
         __KeyToKey__
-        KeyCode::BRACKET_RIGHT, ModifierFlag::FN,
-        KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
-        KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L,
-        KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+        KeyCode::J,
+        KeyCode::CURSOR_DOWN,
+        DelayUntilRepeat::RawValue::0, KeyRepeat::RawValue::0,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::K,
+        KeyCode::CURSOR_UP,
+        DelayUntilRepeat::RawValue::0, KeyRepeat::RawValue::0,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::L,
+        KeyCode::CURSOR_RIGHT,
+        DelayUntilRepeat::RawValue::0, KeyRepeat::RawValue::0,
+      </autogen>
+    </item>
+
+    <item>
+      <name>take a screen shot by fn-eject</name>
+      <identifier>private.screen_shot_hack</identifier>
+      <autogen>
+        __ConsumerToKey__
+        ConsumerKeyCode::EJECT, ModifierFlag::FN | ModifierFlag::NONE,
+        KeyCode::KEY_3, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+      </autogen>
+      <autogen>
+        __ConsumerToKey__
+        ConsumerKeyCode::EJECT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        KeyCode::KEY_4, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::VK_WAIT_10MS,
+        KeyCode::SPACE,
       </autogen>
     </item>
 
@@ -153,12 +246,12 @@
 
     <item>
       <name>My Office Hacks</name>
-      <appendix>Change Control+A to Home</appendix>
-      <appendix>Change Control+E to End</appendix>
+      <appendix>Change control-a,e</appendix>
       <identifier>private.app_office_hack</identifier>
       <only>EXCEL, POWERPOINT, WORD</only>
-      <autogen>__KeyToKey__ KeyCode::A, VK_CONTROL, KeyCode::HOME</autogen>
-      <autogen>__KeyToKey__ KeyCode::E, VK_CONTROL, KeyCode::END</autogen>
+      <!-- Microsoft Word requires command-left arrow in the search field. -->
+      <autogen>__KeyToKey__ KeyCode::A, VK_CONTROL, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::E, VK_CONTROL, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
     </item>
 
     <item>
@@ -273,6 +366,11 @@
     </vkopenurldef>
 
     <vkopenurldef>
+      <name>KeyCode::VK_OPEN_URL_APP_iTerm2</name>
+      <url>file://{{ ENV_HOME }}/Applications/iTerm2.app</url>
+    </vkopenurldef>
+
+    <vkopenurldef>
       <name>KeyCode::VK_OPEN_URL_APP_Google_Chrome</name>
       <url>file://{{ ENV_HOME }}/Applications/Google%20Chrome.app</url>
     </vkopenurldef>
@@ -318,7 +416,7 @@
       <appendix>Holding P to Skype.app</appendix>
       <appendix>Holding I to Adium.app</appendix>
       <appendix>Holding X to Excel.app</appendix>
-      <appendix>Holding R to CoRD.app</appendix>
+      <appendix>Holding R to Microsoft Remote Desktop.app</appendix>
       <appendix>Holding W to Word.app</appendix>
       <appendix>Holding D to Xcode.app</appendix>
       <appendix>Holding T to iTunes.app</appendix>
@@ -341,7 +439,7 @@
 
       <autogen>
         __HoldingKeyToKey__
-        @begin KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE, @end
+        KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
         @begin KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT @end
         @begin KeyCode::VK_OPEN_URL_APP_iphonesimulator, @end
       </autogen>
@@ -377,15 +475,38 @@
         KeyCode::VK_NONE,
         KeyCode::VK_OPEN_URL_APP_KeyRemap4MacBook_ReloadXML,
       </autogen>
+      <autogen>
+        __HoldingKeyToKey__
+        KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        @begin
+        KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+        @end
+        @begin
+        KeyCode::VK_OPEN_URL_APP_iTerm2,
+        @end
+      </autogen>
+      <!--
+          <autogen>
+          __HoldingKeyToKey__
+          KeyCode::N, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+          @begin
+          KeyCode::N, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+          @end
+          @begin
+          KeyCode::VK_OPEN_URL_APP_NetBeans_7.4,
+          @end
+          </autogen>
+      -->
       <autogen>__HoldingKeyToKey__ KeyCode::L, ModifierFlag::NONE, KeyCode::L, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Terminal</autogen>
       <autogen>__HoldingKeyToKey__ KeyCode::M, ModifierFlag::NONE, KeyCode::M, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Mail</autogen>
       <autogen>__HoldingKeyToKey__ KeyCode::O, ModifierFlag::NONE, KeyCode::O, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Microsoft_PowerPoint_2011</autogen>
       <autogen>__HoldingKeyToKey__ KeyCode::P, ModifierFlag::NONE, KeyCode::P, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Skype</autogen>
-      <autogen>__HoldingKeyToKey__ KeyCode::R, ModifierFlag::NONE, KeyCode::R, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_CoRD</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::R, ModifierFlag::NONE, KeyCode::R, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Microsoft_Remote_Desktop</autogen>
       <autogen>__HoldingKeyToKey__ KeyCode::T, ModifierFlag::NONE, KeyCode::T, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_iTunes</autogen>
       <autogen>__HoldingKeyToKey__ KeyCode::W, ModifierFlag::NONE, KeyCode::W, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Microsoft_Word_2011</autogen>
       <autogen>__HoldingKeyToKey__ KeyCode::X, ModifierFlag::NONE, KeyCode::X, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Microsoft_Excel_2011</autogen>
       <autogen>__HoldingKeyToKey__ KeyCode::QUOTE, ModifierFlag::NONE, KeyCode::QUOTE, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_APP_Stickies</autogen>
+      <autogen>__HoldingKeyToKey__ KeyCode::DELETE, ModifierFlag::NONE, KeyCode::BACKQUOTE, KeyCode::VK_NONE, KeyCode::VK_OPEN_URL_SHELL_warp_mouse_cursor_position_front_window_top_left</autogen>
 
       <autogen>
         __HoldingKeyToKey__
@@ -483,16 +604,25 @@
     </block>
     <block>
       <not>REMOTEDESKTOPCONNECTION, VIRTUALMACHINE</not>
-      <autogen>
-        __KeyOverlaidModifier__
-        KeyCode::COMMAND_R,
-        KeyCode::COMMAND_R,
-        <!-- Switching input source to the next of U.S. -->
-        KeyCode::VK_CHANGE_INPUTMODE_US,
-        KeyCode::VK_WAIT_100MS,
-        KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
-        KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
-      </autogen>
+      <block>
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::COMMAND_R,
+          KeyCode::COMMAND_R,
+          <!-- Switching input source to the next of U.S. -->
+          KeyCode::VK_CHANGE_INPUTMODE_US,
+          KeyCode::VK_WAIT_100MS,
+          KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
+          KeyCode::SPACE, ModifierFlag::COMMAND_R | ModifierFlag::OPTION_L,
+        </autogen>
+      </block>
+      <block>
+        <autogen>
+          __KeyToKey__
+          KeyCode::COMMAND_R,
+          KeyCode::COMMAND_R,
+        </autogen>
+      </block>
     </block>
   </item>
 
@@ -500,7 +630,9 @@
     <name>ThreeFinger Mode. (for multitouch extension)</name>
     <identifier>notsave.private_threefingermode</identifier>
     <block>
+      <!--
       <device_only>DeviceVendor::APPLE_INC,DeviceProduct::MAGIC_MOUSE</device_only>
+      -->
       <autogen>__PointingRelativeToScroll__ PointingButton::NONE, VK_MOD_ANY</autogen>
     </block>
   </item>
@@ -509,7 +641,17 @@
     <name>ThreeFinger Mode. (for multitouch extension)</name>
     <identifier>notsave.private_threefingermode2</identifier>
     <block>
-      <device_only>DeviceVendor::APPLE_INC,DeviceProduct::MAGIC_MOUSE</device_only>
+      <!--
+          <device_only>DeviceVendor::APPLE_INC,DeviceProduct::MAGIC_MOUSE</device_only>
+          -->
+      <autogen>
+        __PointingRelativeToKey__
+        MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        PointingRelative::UP,    KeyCode::PAGEDOWN,
+        PointingRelative::DOWN,  KeyCode::PAGEUP,
+        PointingRelative::LEFT,  KeyCode::HOME,
+        PointingRelative::RIGHT, KeyCode::END,
+      </autogen>
       <autogen>__PointingRelativeToScroll__ PointingButton::NONE, VK_MOD_ANY</autogen>
     </block>
   </item>
@@ -650,8 +792,30 @@
   <item>
     <name>VK_IOHIDPOSTEVENT Test</name>
     <identifier>private.vk_iohidpostevent</identifier>
-    <autogen>__KeyToKey__ KeyCode::F1, KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_DOWN</autogen>
-    <autogen>__KeyToKey__ KeyCode::F2, KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_UP</autogen>
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::F1,
+
+      @begin
+      KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_DOWN,
+      @end
+
+      @begin
+      KeyCode::VK_OPEN_URL_SHELL_warp_mouse_cursor_position_screen_center_0,
+      @end
+    </autogen>
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::F2,
+
+      @begin
+      KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_UP
+      @end
+
+      @begin
+      KeyCode::VK_OPEN_URL_SHELL_warp_mouse_cursor_position_screen_center_1,
+      @end
+    </autogen>
     <autogen>__KeyToKey__ KeyCode::F8, KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_PLAY</autogen>
   </item>
 
@@ -696,6 +860,35 @@
       @begin KeyCode::D, KeyCode::S, ModifierFlag::OPTION_L, @end
       KeyCode::PAGEUP,
       Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+    </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      @begin ConsumerKeyCode::BRIGHTNESS_DOWN, ConsumerKeyCode::BRIGHTNESS_UP,
+      KeyCode::VK_OPEN_URL_APP_ScreenSaverEngine,
+    </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      @begin KeyCode::F11, KeyCode::F12, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT, @end
+      KeyCode::VK_OPEN_URL_APP_Disk_Utility,
+    </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      @begin KeyCode::F11, KeyCode::F12, @end
+      KeyCode::VK_CONSUMERKEY_VOLUME_MUTE,
+    </autogen>
+
+  </item>
+
+  <item>
+    <name>Eject to Launchpad</name>
+    <identifier>private.eject_to_launchpad</identifier>
+    <autogen>
+      __ConsumerToKey__
+      ConsumerKeyCode::EJECT, ModifierFlag::NONE,
+      KeyCode::VK_OPEN_URL_APP_Launchpad,
     </autogen>
   </item>
 
