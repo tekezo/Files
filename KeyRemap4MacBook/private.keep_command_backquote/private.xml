@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Keep command-backquote</name>
+    <identifier>private.keep_command_backquote</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKQUOTE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::BACKQUOTE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>
+  </item>
+
+</root>
