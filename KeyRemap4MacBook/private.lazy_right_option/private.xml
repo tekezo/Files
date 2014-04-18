@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right option key to lazy right option key.</name>
+    <identifier>private.lazy_right_option</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R,
+      KeyCode::VK_LAZY_OPTION_R,
+    </autogen>
+  </item>
+
+</root>
