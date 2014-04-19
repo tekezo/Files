@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f19 key to command-return.</name>
+    <identifier>private.f19_to_command_return</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19,
+      KeyCode::RETURN, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
