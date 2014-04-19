@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Using k as special modifier</name>
+    <identifier>private.k_modifier</identifier>
+
+    <!-- Turn ModifierFlag::K on -->
+    <autogen>
+      __KeyUpEventToKey__
+      @begin
+      KeyCode::K, ModifierFlag::NONE,
+      KeyCode::VK_LOCK_K_FORCE_ON, <!-- Lock ModifierFlag::K -->
+      @end
+
+      @begin
+      ModifierFlag::K, <!-- If ModifierFlag::K is still active -->
+      KeyCode::K,
+      KeyCode::VK_LOCK_K_FORCE_OFF,
+      @end
+    </autogen>
+
+    <!-- Change keys when K key is pressed. -->
+    <autogen>
+      __KeyUpEventToKey__
+      @begin
+      KeyCode::E, ModifierFlag::K,
+      @end
+
+      @begin
+      ModifierFlag::K,
+      KeyCode::MISSION_CONTROL,
+      KeyCode::VK_LOCK_K_FORCE_OFF, <!-- Unlock ModifierFlag::K in order to cancel "k" input. -->
+      @end
+
+      @begin
+      KeyCode::E,
+      @end
+    </autogen>
+    <autogen>
+      __KeyUpEventToKey__
+      @begin
+      KeyCode::D, ModifierFlag::K,
+      @end
+
+      @begin
+      ModifierFlag::K,
+      KeyCode::MISSION_CONTROL, ModifierFlag::COMMAND_L,
+      KeyCode::VK_LOCK_K_FORCE_OFF, <!-- Unlock ModifierFlag::K in order to cancel "k" input. -->
+      @end
+
+      @begin
+      KeyCode::D,
+      @end
+    </autogen>
+    <autogen>
+      __KeyUpEventToKey__
+      @begin
+      KeyCode::L, ModifierFlag::K,
+      @end
+
+      @begin
+      ModifierFlag::K,
+      KeyCode::LAUNCHPAD,
+      KeyCode::VK_LOCK_K_FORCE_OFF, <!-- Unlock ModifierFlag::K in order to cancel "k" input. -->
+      @end
+
+      @begin
+      KeyCode::L,
+      @end
+    </autogen>
+
+    <include file="register_all_keys_to_KeyUpEventToKey.xml">
+      <replacementdef>
+        <replacementname>MOD</replacementname>
+        <replacementvalue>ModifierFlag::K</replacementvalue>
+      </replacementdef>
+    </include>
+
+  </item>
+
+</root>

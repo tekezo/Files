@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<root>
+
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::A,             {{ MOD }} @end @begin KeyCode::A             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::B,             {{ MOD }} @end @begin KeyCode::B             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::C,             {{ MOD }} @end @begin KeyCode::C             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::D,             {{ MOD }} @end @begin KeyCode::D             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::E,             {{ MOD }} @end @begin KeyCode::E             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::F,             {{ MOD }} @end @begin KeyCode::F             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::G,             {{ MOD }} @end @begin KeyCode::G             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::H,             {{ MOD }} @end @begin KeyCode::H             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::I,             {{ MOD }} @end @begin KeyCode::I             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::J,             {{ MOD }} @end @begin KeyCode::J             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::K,             {{ MOD }} @end @begin KeyCode::K             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::L,             {{ MOD }} @end @begin KeyCode::L             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::M,             {{ MOD }} @end @begin KeyCode::M             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::N,             {{ MOD }} @end @begin KeyCode::N             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::O,             {{ MOD }} @end @begin KeyCode::O             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::P,             {{ MOD }} @end @begin KeyCode::P             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::Q,             {{ MOD }} @end @begin KeyCode::Q             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::R,             {{ MOD }} @end @begin KeyCode::R             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::S,             {{ MOD }} @end @begin KeyCode::S             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::T,             {{ MOD }} @end @begin KeyCode::T             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::U,             {{ MOD }} @end @begin KeyCode::U             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::V,             {{ MOD }} @end @begin KeyCode::V             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::W,             {{ MOD }} @end @begin KeyCode::W             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::X,             {{ MOD }} @end @begin KeyCode::X             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::Y,             {{ MOD }} @end @begin KeyCode::Y             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::Z,             {{ MOD }} @end @begin KeyCode::Z             @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::KEY_1,         {{ MOD }} @end @begin KeyCode::KEY_1         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::KEY_2,         {{ MOD }} @end @begin KeyCode::KEY_2         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::KEY_3,         {{ MOD }} @end @begin KeyCode::KEY_3         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::KEY_4,         {{ MOD }} @end @begin KeyCode::KEY_4         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::KEY_5,         {{ MOD }} @end @begin KeyCode::KEY_5         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::KEY_6,         {{ MOD }} @end @begin KeyCode::KEY_6         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::KEY_7,         {{ MOD }} @end @begin KeyCode::KEY_7         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::KEY_8,         {{ MOD }} @end @begin KeyCode::KEY_8         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::KEY_9,         {{ MOD }} @end @begin KeyCode::KEY_9         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::KEY_0,         {{ MOD }} @end @begin KeyCode::KEY_0         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::ESCAPE,        {{ MOD }} @end @begin KeyCode::ESCAPE        @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::BACKQUOTE,     {{ MOD }} @end @begin KeyCode::BACKQUOTE     @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::MINUS,         {{ MOD }} @end @begin KeyCode::MINUS         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::EQUAL,         {{ MOD }} @end @begin KeyCode::EQUAL         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::DELETE,        {{ MOD }} @end @begin KeyCode::DELETE        @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::BRACKET_LEFT,  {{ MOD }} @end @begin KeyCode::BRACKET_LEFT  @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::BRACKET_RIGHT, {{ MOD }} @end @begin KeyCode::BRACKET_RIGHT @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::BACKSLASH,     {{ MOD }} @end @begin KeyCode::BACKSLASH     @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::SEMICOLON,     {{ MOD }} @end @begin KeyCode::SEMICOLON     @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::QUOTE,         {{ MOD }} @end @begin KeyCode::QUOTE         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::RETURN,        {{ MOD }} @end @begin KeyCode::RETURN        @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::COMMA,         {{ MOD }} @end @begin KeyCode::COMMA         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::DOT,           {{ MOD }} @end @begin KeyCode::DOT           @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::SLASH,         {{ MOD }} @end @begin KeyCode::SLASH         @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::CURSOR_UP,     {{ MOD }} @end @begin KeyCode::CURSOR_UP     @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::CURSOR_DOWN,   {{ MOD }} @end @begin KeyCode::CURSOR_DOWN   @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::CURSOR_LEFT,   {{ MOD }} @end @begin KeyCode::CURSOR_LEFT   @end</autogen>
+  <autogen>__KeyUpEventToKey__ @begin KeyCode::CURSOR_RIGHT,  {{ MOD }} @end @begin KeyCode::CURSOR_RIGHT  @end</autogen>
+
+</root>
