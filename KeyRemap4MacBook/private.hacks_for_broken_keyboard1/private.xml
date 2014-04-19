@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Hacks for broken keyboard</name>
+    <identifier>private.hacks_for_broken_keyboard1</identifier>
+
+    <block>
+      <lastpressedphysicalkey>KeyCode::Q</lastpressedphysicalkey>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::KEY_1, KeyCode::VK_NONE</autogen>
+    </block>
+    <block>
+      <lastpressedphysicalkey>KeyCode::W</lastpressedphysicalkey>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::KEY_2, KeyCode::VK_NONE</autogen>
+    </block>
+  </item>
+
+</root>
