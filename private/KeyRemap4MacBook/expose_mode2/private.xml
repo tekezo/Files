@@ -2,8 +2,11 @@
 <root>
 
   <item>
-    <name>Using k as special modifier</name>
-    <identifier>private.k_modifier</identifier>
+    <name>Expose Mode2</name>
+    <appendix><![CDATA[  Mission Control: K down -> E down -> E up  ]]></appendix>
+    <appendix><![CDATA[  Show Desktop: K down -> D down -> D up  ]]></appendix>
+    <appendix><![CDATA[  Launchpad: K down -> L down -> L up  ]]></appendix>
+    <identifier>private.expose_mode2</identifier>
 
     <!-- Turn ModifierFlag::K on -->
     <autogen>
@@ -70,10 +73,10 @@
       @end
     </autogen>
 
-    <include file="register_all_keys_to_KeyUpEventToKey.xml">
+    <include path="register_all_keys_with_default_behavior.xml">
       <replacementdef>
-        <replacementname>MOD</replacementname>
-        <replacementvalue>ModifierFlag::K</replacementvalue>
+        <replacementname>MODIFIER_CHARACTER</replacementname>
+        <replacementvalue>K</replacementvalue>
       </replacementdef>
     </include>
 
