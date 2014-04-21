@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_eject_disc</name>
+    <url type="shell">
+      <![CDATA[
+               /usr/bin/osascript -e 'display notification "Ejecting disc" with title "KeyRemap4MacBook"';
+               /usr/bin/drutil eject
+      ]]>
+    </url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_eject_volumes</name>
+    <url type="shell">
+      <![CDATA[
+               /usr/bin/osascript -e 'display notification "Ejecting volumes" with title "KeyRemap4MacBook"';
+               for f in /Volumes/*; do /usr/sbin/diskutil unmount "$f"; done
+      ]]>
+    </url>
+  </vkopenurldef>
+
+  <item>
+    <name>Use eject key to eject volumes</name>
+    <appendix>fn-eject to eject disc</appendix>
+    <identifier>private.eject_volumes</identifier>
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::EJECT, ModifierFlag::NONE,
+      KeyCode::VK_OPEN_URL_SHELL_eject_volumes,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::EJECT, ModifierFlag::FN,
+      KeyCode::VK_OPEN_URL_SHELL_eject_disc,
+    </autogen>
+  </item>
+
+</root>
