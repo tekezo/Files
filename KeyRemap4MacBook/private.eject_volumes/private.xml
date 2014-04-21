@@ -12,10 +12,28 @@
   </vkopenurldef>
 
   <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_eject_disc_without_notification</name>
+    <url type="shell">
+      <![CDATA[
+               /usr/bin/drutil eject
+      ]]>
+    </url>
+  </vkopenurldef>
+
+  <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_SHELL_eject_volumes</name>
     <url type="shell">
       <![CDATA[
                /usr/bin/osascript -e 'display notification "Ejecting volumes" with title "KeyRemap4MacBook"';
+               for f in /Volumes/*; do /usr/sbin/diskutil unmount "$f"; done
+      ]]>
+    </url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_eject_volumes_without_notification</name>
+    <url type="shell">
+      <![CDATA[
                for f in /Volumes/*; do /usr/sbin/diskutil unmount "$f"; done
       ]]>
     </url>
@@ -34,6 +52,22 @@
       __KeyToKey__
       ConsumerKeyCode::EJECT, ModifierFlag::FN,
       KeyCode::VK_OPEN_URL_SHELL_eject_disc,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Use eject key to eject volumes (without notification)</name>
+    <appendix>fn-eject to eject disc</appendix>
+    <identifier>private.eject_volumes_without_notification</identifier>
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::EJECT, ModifierFlag::NONE,
+      KeyCode::VK_OPEN_URL_SHELL_eject_volumes_without_notification,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::EJECT, ModifierFlag::FN,
+      KeyCode::VK_OPEN_URL_SHELL_eject_disc_without_notification,
     </autogen>
   </item>
 
