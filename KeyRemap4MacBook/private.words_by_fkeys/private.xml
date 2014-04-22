@@ -7,11 +7,30 @@
     <autogen>
       __KeyToKey__
       KeyCode::F1,
-      <!-- send -->
-      KeyCode::S,
-      KeyCode::E,
-      KeyCode::N,
-      KeyCode::D,
+      <!-- ty0 -->
+      KeyCode::T,
+      KeyCode::Y,
+      KeyCode::KEY_0,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F2,
+      <!-- room3 -->
+      KeyCode::R,
+      KeyCode::O,
+      KeyCode::O,
+      KeyCode::M,
+      KeyCode::KEY_3,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F3,
+      <!-- mxx -->
+      KeyCode::M,
+      KeyCode::X,
+      KeyCode::X,
     </autogen>
   </item>
 
