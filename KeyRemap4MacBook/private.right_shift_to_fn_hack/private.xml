@@ -5,6 +5,7 @@
     <name>Right shift key hack.</name>
     <appendix>* Use the right Shift key as usual.</appendix>
     <appendix>* Press Shift, then Arrow (left/right) for "Home"/"End".</appendix>
+    <appendix>* Press Shift, then Arrow (up/down) for "Begin of Document"/"End of Document".</appendix>
     <appendix>* Press Shift, then Shift+Arrow for "Select to Beginning of line" / "Select to End of line".</appendix>
     <appendix>* Press Shift, Enter for FN-Enter.</appendix>
     <identifier>private.right_shift_to_fn_hack</identifier>
@@ -28,14 +29,23 @@
     <autogen>
       __KeyToKey__
       KeyCode::CURSOR_LEFT, ModifierFlag::EXTRA1,
-      KeyCode::HOME,
+      KeyCode::A, ModifierFlag::CONTROL_L,
     </autogen>
     <autogen>
       __KeyToKey__
       KeyCode::CURSOR_RIGHT, ModifierFlag::EXTRA1,
+      KeyCode::E, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_UP, ModifierFlag::EXTRA1,
+      KeyCode::HOME,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_DOWN, ModifierFlag::EXTRA1,
       KeyCode::END,
     </autogen>
-
     <autogen>
       __KeyToKey__
       KeyCode::RETURN, ModifierFlag::EXTRA1,
