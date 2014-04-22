@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Input words by fkeys.</name>
+    <identifier>private.words_by_fkeys</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F1,
+      <!-- send -->
+      KeyCode::S,
+      KeyCode::E,
+      KeyCode::N,
+      KeyCode::D,
+    </autogen>
+  </item>
+
+</root>

@@ -13,15 +13,10 @@
     @end
 
     @begin
-    ModifierFlag::{{ MODIFIER_CHARACTER }},
-    KeyCode::{{ MODIFIER_CHARACTER }},
     KeyCode::{{ KEY }},
-    KeyCode::VK_LOCK_{{ MODIFIER_CHARACTER }}_FORCE_OFF, <!-- Unlock ModifierFlag in order to avoid duplicated modifier charater input. -->
     @end
 
-    @begin
-    KeyCode::{{ KEY }},
-    @end
+    Option::KEYUPEVENTTOKEY_PRESERVE_KEYDOWN_ORDER,
   </autogen>
 
 </root>
