@@ -4,7 +4,7 @@
   <modifierdef>KEYUP_INPUT_MODE</modifierdef>
 
   <item>
-    <name>Expose Mode2</name>
+    <name>Expose Mode 2</name>
     <appendix><![CDATA[  Mission Control: K down -> E down -> E up  ]]></appendix>
     <appendix><![CDATA[  Show Desktop: K down -> D down -> D up  ]]></appendix>
     <appendix><![CDATA[  Launchpad: K down -> L down -> L up  ]]></appendix>
@@ -76,7 +76,10 @@
       @end
     </autogen>
 
-    <include path="register_all_keys_with_default_behavior.xml" />
+    <block>
+      <modifier_only>ModifierFlag::KEYUP_INPUT_MODE</modifier_only>
+      <include path="register_all_keys_with_default_behavior.xml" />
+    </block>
   </item>
 
 </root>
