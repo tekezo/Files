@@ -1,33 +1,23 @@
 <?xml version="1.0"?>
 <root>
 
+  <modifierdef>KEYUP_INPUT_MODE</modifierdef>
+
   <item>
     <name>SandS2</name>
     <identifier>private.sands2</identifier>
 
-    <!-- Turn ModifierFlag::SPACE on -->
     <autogen>
-      __KeyUpEventToKey__
-      @begin
+      __KeyOverlaidModifier__
       KeyCode::SPACE,
-      KeyCode::VK_LOCK_SPACE_FORCE_ON, <!-- Lock ModifierFlag::SPACE -->
-      KeyCode::SHIFT_L, <!-- Change space to shift -->
-      @end
-
-      @begin
-      ModifierFlag::SPACE, <!-- If ModifierFlag::SPACE is still active -->
+      KeyCode::SHIFT_L, ModifierFlag::KEYUP_INPUT_MODE,
       KeyCode::SPACE,
-      KeyCode::VK_LOCK_SPACE_FORCE_OFF,
-      @end
     </autogen>
 
-    <include path="register_all_keys_with_default_behavior.xml">
-      <replacementdef>
-        <replacementname>MODIFIER_CHARACTER</replacementname>
-        <replacementvalue>SPACE</replacementvalue>
-      </replacementdef>
-    </include>
-
+    <block>
+      <modifier_only>ModifierFlag::KEYUP_INPUT_MODE</modifier_only>
+      <include path="register_all_keys_with_default_behavior.xml" />
+    </block>
   </item>
 
 </root>
