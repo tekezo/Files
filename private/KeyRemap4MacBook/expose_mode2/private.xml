@@ -13,7 +13,7 @@
     <!-- Turn ModifierFlag::K on -->
     <autogen>
       __KeyOverlaidModifier__
-      KeyCode::K,
+      KeyCode::K, ModifierFlag::NONE,
       KeyCode::VK_MODIFIER_KEYUP_INPUT_MODE, ModifierFlag::K,
       KeyCode::K,
     </autogen>
