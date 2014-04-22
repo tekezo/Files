@@ -3,13 +3,13 @@
 
   <!--
       {{ KEY }} : A, B, C, etc.
-      {{ MODIFIER_CHARACTER }} : K at expose mode2, SPACE at sands2.
   -->
 
   <autogen>
     __KeyUpEventToKey__
     @begin
-    KeyCode::{{ KEY }}, ModifierFlag::{{ MODIFIER_CHARACTER }},
+    KeyCode::{{ KEY }}, ModifierFlag::KEYUP_INPUT_MODE,
+    KeyCode::VK_MODIFIER_KEYUP_INPUT_MODE,
     @end
 
     @begin
@@ -20,4 +20,3 @@
   </autogen>
 
 </root>
-
