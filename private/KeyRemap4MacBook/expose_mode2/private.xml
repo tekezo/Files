@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <root>
 
+  <modifierdef>KEYUP_INPUT_MODE</modifierdef>
+
   <item>
     <name>Expose Mode2</name>
     <appendix><![CDATA[  Mission Control: K down -> E down -> E up  ]]></appendix>
@@ -14,6 +16,7 @@
       @begin
       KeyCode::K, ModifierFlag::NONE,
       KeyCode::VK_LOCK_K_FORCE_ON, <!-- Lock ModifierFlag::K -->
+      KeyCode::VK_MODIFIER_KEYUP_INPUT_MODE,
       @end
 
       @begin
@@ -73,13 +76,7 @@
       @end
     </autogen>
 
-    <include path="register_all_keys_with_default_behavior.xml">
-      <replacementdef>
-        <replacementname>MODIFIER_CHARACTER</replacementname>
-        <replacementvalue>K</replacementvalue>
-      </replacementdef>
-    </include>
-
+    <include path="register_all_keys_with_default_behavior.xml" />
   </item>
 
 </root>
