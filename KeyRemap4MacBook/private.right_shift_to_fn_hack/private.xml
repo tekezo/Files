@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Right shift key hack.</name>
+    <appendix>* Use the right Shift key as usual.</appendix>
+    <appendix>* Press Shift, then Arrow (left/right) for "Home"/"End".</appendix>
+    <appendix>* Press Shift, then Shift+Arrow for "Select to Beginning of line" / "Select to End of line".</appendix>
+    <appendix>* Press Shift, Enter for FN-Enter.</appendix>
+    <identifier>private.right_shift_to_fn_hack</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SHIFT_R,
+      KeyCode::SHIFT_R,
+      KeyCode::VK_STICKY_EXTRA1,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_LEFT, ModifierFlag::EXTRA1 | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_RIGHT, ModifierFlag::EXTRA1 | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_LEFT, ModifierFlag::EXTRA1,
+      KeyCode::HOME,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_RIGHT, ModifierFlag::EXTRA1,
+      KeyCode::END,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::RETURN, ModifierFlag::EXTRA1,
+      KeyCode::ENTER,
+    </autogen>
+  </item>
+
+</root>
