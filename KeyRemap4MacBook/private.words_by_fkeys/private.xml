@@ -7,30 +7,36 @@
     <autogen>
       __KeyToKey__
       KeyCode::F1,
-      <!-- ty0 -->
+      <!-- :ty0 -->
+      KeyCode::SEMICOLON, ModifierFlag::SHIFT_L,
       KeyCode::T,
       KeyCode::Y,
       KeyCode::KEY_0,
+      KeyCode::RETURN,
     </autogen>
 
     <autogen>
       __KeyToKey__
       KeyCode::F2,
-      <!-- room3 -->
+      <!-- :room3 -->
+      KeyCode::SEMICOLON, ModifierFlag::SHIFT_L,
       KeyCode::R,
       KeyCode::O,
       KeyCode::O,
       KeyCode::M,
       KeyCode::KEY_3,
+      KeyCode::RETURN,
     </autogen>
 
     <autogen>
       __KeyToKey__
       KeyCode::F3,
-      <!-- mxx -->
+      <!-- :mxx -->
+      KeyCode::SEMICOLON, ModifierFlag::SHIFT_L,
       KeyCode::M,
       KeyCode::X,
       KeyCode::X,
+      KeyCode::RETURN,
     </autogen>
   </item>
 
