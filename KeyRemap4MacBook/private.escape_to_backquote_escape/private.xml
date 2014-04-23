@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the escape key to the backquote key.</name>
+    <appendix>(+ fn-escape to escape)</appendix>
+    <identifier>private.escape_to_backquote_escape</identifier>
+    <autogen>__KeyToKey__ KeyCode::ESCAPE, ModifierFlag::FN, KeyCode::ESCAPE</autogen>
+    <autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::BACKQUOTE</autogen>
+  </item>
+
+</root>
