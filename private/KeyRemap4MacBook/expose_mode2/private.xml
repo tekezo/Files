@@ -28,7 +28,6 @@
       @begin
       ModifierFlag::K,
       KeyCode::MISSION_CONTROL,
-      KeyCode::VK_LOCK_K_FORCE_OFF, <!-- Unlock ModifierFlag::K in order to cancel "k" input. -->
       @end
 
       @begin
@@ -44,7 +43,6 @@
       @begin
       ModifierFlag::K,
       KeyCode::MISSION_CONTROL, ModifierFlag::COMMAND_L,
-      KeyCode::VK_LOCK_K_FORCE_OFF, <!-- Unlock ModifierFlag::K in order to cancel "k" input. -->
       @end
 
       @begin
@@ -60,7 +58,6 @@
       @begin
       ModifierFlag::K,
       KeyCode::LAUNCHPAD,
-      KeyCode::VK_LOCK_K_FORCE_OFF, <!-- Unlock ModifierFlag::K in order to cancel "k" input. -->
       @end
 
       @begin
