@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>PageUp/PageDown to Left/Right</name>
+    <appendix>(This is effective only with "Kensington K33374 Wireless Presenter with Laser Pointer")</appendix>
+    <identifier>private.k33374_hack</identifier>
+
+    <!-- Kensington K33374 Hardware VendorID,ProductID == 0x047d,0x2012 -->
+    <!-- Kensington Hack 0x0,0x0 -->
+    <device_only>DeviceVendor::KENSINGTON,DeviceProduct::K33374, DeviceVendor::PSEUDO,DeviceProduct::PSEUDO</device_only>
+    <autogen>__KeyToKey__ FROMKEYCODE_PAGEUP,   KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ FROMKEYCODE_PAGEDOWN, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
+</root>
