@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>VIM_EMU_IGNORE_APPS</replacementname>
+    <replacementvalue>TERMINAL, VI, CATHODE, PASSWORD, FIREFOX, EMACS, LOGMEIN, SUBLIMETEXT</replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Sublime Text is ignored on Vim Emulation</name>
+  </item>
+
+</root>
