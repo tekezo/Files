@@ -1,2 +1,31 @@
 <?xml version="1.0"?>
 <root>
+
+  <item>
+    <name>Change option-{, option-} to multiple arrows</name>
+    <identifier>private.option_brackets_to_multiple_arrows</identifier>
+
+    <not>{{EMACS_MODE_IGNORE_APPS}}</not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::CURSOR_UP, KeyCode::CURSOR_UP,
+      KeyCode::CURSOR_UP, KeyCode::CURSOR_UP,
+      KeyCode::CURSOR_UP, KeyCode::CURSOR_UP,
+      KeyCode::CURSOR_UP, KeyCode::CURSOR_UP,
+      KeyCode::CURSOR_UP, KeyCode::CURSOR_UP,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN,
+      KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN,
+      KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN,
+      KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN,
+      KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN,
+    </autogen>
+  </item>
+
+</root>
