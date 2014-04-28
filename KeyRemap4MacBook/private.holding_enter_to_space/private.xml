@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Holding enter to space</name>
+    <identifier>private.holding_enter_to_space</identifier>
+
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::ENTER,
+
+      @begin
+      KeyCode::VK_MODIFIER_EXTRA1,
+      @end
+
+      @begin
+      KeyCode::SPACE,
+      @end
+    </autogen>
+  </item>
+
+</root>
