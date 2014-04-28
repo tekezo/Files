@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>EMACS_MODE_C_X_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+        <autogen>
+          __KeyToKey__
+          KeyCode::U, ModifierFlag::NONE,
+          KeyCode::Z, ModifierFlag::COMMAND_L,
+          KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlX_core,
+        </autogen>
+        ]]>
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>C-x u (Undo) is added.</name>
+  </item>
+
+</root>
