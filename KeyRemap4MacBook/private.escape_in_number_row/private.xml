@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Pressing backquote(`) and 1 key simultaneously sends a escape key event.</name>
+    <appendix>Pressing = and delete key simultaneously sends a forward delete key event.</appendix>
+    <identifier>private.escape_in_number_row</identifier>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      @begin
+      KeyCode::BACKQUOTE, KeyCode::KEY_1,
+      @end
+
+      KeyCode::ESCAPE,
+    </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      @begin
+      KeyCode::EQUAL, KeyCode::DELETE,
+      @end
+
+      KeyCode::FORWARD_DELETE,
+    </autogen>
+  </item>
+
+</root>
