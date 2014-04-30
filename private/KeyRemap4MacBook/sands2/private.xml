@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <root>
 
-  <modifierdef>KEYUP_INPUT_MODE</modifierdef>
-
   <item>
     <name>SandS2</name>
     <identifier>private.sands2</identifier>
@@ -10,13 +8,15 @@
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::SPACE,
-      KeyCode::SHIFT_L, ModifierFlag::KEYUP_INPUT_MODE,
+
+      KeyCode::SHIFT_L, ModifierFlag::SANDS2,
+
       KeyCode::SPACE,
     </autogen>
 
     <block>
-      <modifier_only>ModifierFlag::KEYUP_INPUT_MODE</modifier_only>
-      <include path="register_all_keys_with_default_behavior.xml" />
+      <modifier_only>ModifierFlag::SANDS2</modifier_only>
+      <autogen>__BlockUntilKeyUp__ KeyCode::SPACE</autogen>
     </block>
   </item>
 
