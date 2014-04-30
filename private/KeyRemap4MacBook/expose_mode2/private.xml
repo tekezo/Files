@@ -1,74 +1,50 @@
 <?xml version="1.0"?>
 <root>
 
-  <modifierdef>KEYUP_INPUT_MODE</modifierdef>
-
   <item>
     <name>Expose Mode 2</name>
     <appendix><![CDATA[  Mission Control: K down -> E down -> E up  ]]></appendix>
     <appendix><![CDATA[  Show Desktop: K down -> D down -> D up  ]]></appendix>
     <appendix><![CDATA[  Launchpad: K down -> L down -> L up  ]]></appendix>
     <identifier>private.expose_mode2</identifier>
-
-    <!-- Turn ModifierFlag::K on -->
     <autogen>
       __KeyOverlaidModifier__
       KeyCode::K, ModifierFlag::NONE,
-      KeyCode::VK_MODIFIER_KEYUP_INPUT_MODE, ModifierFlag::K,
+
+      @begin
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_expose_mode2,
+      @end
+
+      @begin
       KeyCode::K,
+      @end
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_expose_mode2</identifier>
+    <autogen>
+      __BlockUntilKeyUp__ KeyCode::K
     </autogen>
 
-    <!-- Change keys when K key is pressed. -->
     <autogen>
-      __KeyUpEventToKey__
-      @begin
-      KeyCode::E, ModifierFlag::K,
-      @end
-
-      @begin
-      ModifierFlag::K,
-      KeyCode::MISSION_CONTROL,
-      @end
-
-      @begin
+      __KeyToKey__
       KeyCode::E,
-      @end
+      KeyCode::MISSION_CONTROL,
+      Option::NOREPEAT,
     </autogen>
     <autogen>
-      __KeyUpEventToKey__
-      @begin
-      KeyCode::D, ModifierFlag::K,
-      @end
-
-      @begin
-      ModifierFlag::K,
-      KeyCode::MISSION_CONTROL, ModifierFlag::COMMAND_L,
-      @end
-
-      @begin
+      __KeyToKey__
       KeyCode::D,
-      @end
+      KeyCode::MISSION_CONTROL, ModifierFlag::COMMAND_L,
+      Option::NOREPEAT,
     </autogen>
     <autogen>
-      __KeyUpEventToKey__
-      @begin
-      KeyCode::L, ModifierFlag::K,
-      @end
-
-      @begin
-      ModifierFlag::K,
-      KeyCode::LAUNCHPAD,
-      @end
-
-      @begin
+      __KeyToKey__
       KeyCode::L,
-      @end
+      KeyCode::LAUNCHPAD,
+      Option::NOREPEAT,
     </autogen>
-
-    <block>
-      <modifier_only>ModifierFlag::KEYUP_INPUT_MODE</modifier_only>
-      <include path="register_all_keys_with_default_behavior.xml" />
-    </block>
   </item>
 
 </root>
