@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Tab to Forward Delete</name>
+    <identifier>private.tab_to_forward_delete</identifier>
+    <autogen>__KeyToKey__ KeyCode::TAB, KeyCode::FORWARD_DELETE</autogen>
+  </item>
+
+</root>
