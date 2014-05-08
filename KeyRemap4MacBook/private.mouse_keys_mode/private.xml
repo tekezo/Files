@@ -5,7 +5,7 @@
 
   <item>
     <name>Custom Mouse Keys Mode</name>
-    <appendix>Toggle Mouse Keys Mode by press S and D key simultaneously</appendix>
+    <appendix>Toggle Mouse Keys Mode by the right command+d.</appendix>
     <appendix></appendix>
     <appendix>Move cursor: hjkl</appendix>
     <appendix>Scroll: s+hjkl, left command+jk</appendix>
@@ -14,11 +14,8 @@
     <appendix>Warp: i</appendix>
     <identifier>private.mouse_keys_mode</identifier>
     <autogen>
-      __SimultaneousKeyPresses__
-      @begin
-      KeyCode::S, KeyCode::D, ModifierFlag::NONE,
-      @end
-
+      __KeyToKey__
+      KeyCode::D, ModifierFlag::COMMAND_R | ModifierFlag::NONE,
       KeyCode::VK_CONFIG_TOGGLE_notsave_private_mouse_keys_mode,
     </autogen>
   </item>
