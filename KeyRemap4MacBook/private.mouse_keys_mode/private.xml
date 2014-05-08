@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>CUSTOM_MOUSE_KEYS_MODE_SCROLL</modifierdef>
+
+  <item>
+    <name>Custom Mouse Keys Mode</name>
+    <appendix>Toggle Mouse Keys Mode by press S and D key simultaneously</appendix>
+    <appendix></appendix>
+    <appendix>Move cursor: hjkl</appendix>
+    <appendix>Scroll: s+hjkl, left command+jk</appendix>
+    <appendix>Fast: f+hjkl, f+s+hjkl</appendix>
+    <appendix>Click: vbn</appendix>
+    <appendix>Warp: i</appendix>
+    <identifier>private.mouse_keys_mode</identifier>
+    <autogen>
+      __SimultaneousKeyPresses__
+      @begin
+      KeyCode::S, KeyCode::D, ModifierFlag::NONE,
+      @end
+
+      KeyCode::VK_CONFIG_TOGGLE_notsave_private_mouse_keys_mode,
+    </autogen>
+  </item>
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_mouse_keys_mode</identifier>
+
+    <autogen>__ShowStatusMessage__ Mouse Keys</autogen>
+
+    <!-- scroll -->
+    <block>
+      <modifier_only>ModifierFlag::CUSTOM_MOUSE_KEYS_MODE_SCROLL</modifier_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::H,
+        KeyCode::VK_MOUSEKEY_SCROLL_LEFT,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::J,
+        KeyCode::VK_MOUSEKEY_SCROLL_DOWN,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::K,
+        KeyCode::VK_MOUSEKEY_SCROLL_UP,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::L,
+        KeyCode::VK_MOUSEKEY_SCROLL_RIGHT,
+      </autogen>
+    </block>
+
+    <!-- command-jk -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::J, ModifierFlag::COMMAND_L,
+      KeyCode::VK_MOUSEKEY_SCROLL_DOWN,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::K, ModifierFlag::COMMAND_L,
+      KeyCode::VK_MOUSEKEY_SCROLL_UP,
+    </autogen>
+
+    <!-- mouse move -->
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::VK_MOUSEKEY_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::VK_MOUSEKEY_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::VK_MOUSEKEY_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::VK_MOUSEKEY_RIGHT</autogen>
+
+    <!-- other -->
+    <autogen>__KeyToKey__ KeyCode::S, KeyCode::VK_MODIFIER_CUSTOM_MOUSE_KEYS_MODE_SCROLL</autogen>
+    <autogen>__KeyToKey__ KeyCode::F, KeyCode::VK_MOUSEKEY_HIGHSPEED</autogen>
+
+    <!-- click -->
+    <autogen>__KeyToKey__ KeyCode::V, PointingButton::LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::B, PointingButton::MIDDLE</autogen>
+    <autogen>__KeyToKey__ KeyCode::N, PointingButton::RIGHT</autogen>
+
+    <!-- warp cursor position -->
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::VK_OPEN_URL_SHELL_warp_mouse_cursor_position_front_window_center</autogen>
+  </item>
+
+</root>
