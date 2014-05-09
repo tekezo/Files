@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change numbers to keypad numbers.</name>
+    <appendix>(eg. Change normal 1 key to keypad 1 key.)</appendix>
+    <identifier>private.number_to_keypad</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::KEY_0, KeyCode::KEYPAD_0</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_1, KeyCode::KEYPAD_1</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_2, KeyCode::KEYPAD_2</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_3, KeyCode::KEYPAD_3</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_4, KeyCode::KEYPAD_4</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_5, KeyCode::KEYPAD_5</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_6, KeyCode::KEYPAD_6</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_7, KeyCode::KEYPAD_7</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_8, KeyCode::KEYPAD_8</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEY_9, KeyCode::KEYPAD_9</autogen>
+  </item>
+
+</root>
