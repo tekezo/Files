@@ -23,5 +23,12 @@
       <only>VNC</only>
       <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
     </item>
+
+    <item>
+      <name>Change the right control key to the right command key.</name>
+      <identifier>private.app_vnc_control_r_to_command_r</identifier>
+      <only>VNC</only>
+      <autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::COMMAND_R</autogen>
+    </item>
   </item>
 </root>
