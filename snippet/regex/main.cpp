@@ -5,6 +5,8 @@
 int
 main(void)
 {
+  // http://www.cplusplus.com/reference/regex/ECMAScript/
+
   std::string str = "Hello world";
   std::regex rx("^.+ello.+d$");
 
