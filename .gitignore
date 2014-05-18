@@ -6,3 +6,7 @@ a.out
 *.mode1
 *.mode1v3
 *.pbxuser
+
+### Emacs ###
+# flymake-mode
+*_flymake.*
