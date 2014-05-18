@@ -21,8 +21,8 @@
       <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L, KeyCode::END</autogen>
 
       <!-- f1 - f12 -->
-      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::BRIGHTNESS_DOWN, ModifierFlag::CONTROL_L, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
-      <autogen>__ConsumerToConsumer__ ConsumerKeyCode::BRIGHTNESS_UP,   ModifierFlag::CONTROL_L, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+      <autogen>__ConsumerToKey__ ConsumerKeyCode::BRIGHTNESS_DOWN, ModifierFlag::CONTROL_L, KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_DOWN</autogen>
+      <autogen>__ConsumerToKey__ ConsumerKeyCode::BRIGHTNESS_UP,   ModifierFlag::CONTROL_L, KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_UP</autogen>
 
       <autogen>__KeyToKey__ KeyCode::MISSION_CONTROL, ModifierFlag::CONTROL_L, KeyCode::MISSION_CONTROL</autogen>
       <autogen>__KeyToKey__ KeyCode::LAUNCHPAD,       ModifierFlag::CONTROL_L, KeyCode::LAUNCHPAD</autogen>
