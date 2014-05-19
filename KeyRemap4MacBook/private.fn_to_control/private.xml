@@ -44,4 +44,15 @@
   <item hidden="true">
     <identifier vk_config="true">notsave.private_fn_hack</identifier>
   </item>
+
+  <item>
+    <name>Assign Command+F2 to external monitor mode</name>
+    <identifier>private.command_f2_external_monitor_mode</identifier>
+    <autogen>
+      __KeyToConsumer__
+      KeyCode::F2, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      ConsumerKeyCode::BRIGHTNESS_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+    </autogen>
+  </item>
+
 </root>
