@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>LEFT_CLICK</modifierdef>
+
+  <replacementdef>
+    <replacementname>RECTANGULAR_SELECTION_RELEASE_ALL</replacementname>
+    <replacementvalue>
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
+      KeyCode::VK_LOCK_LEFT_CLICK_FORCE_OFF,
+      KeyCode::VK_NEGATIVE_LOCK_CONTROL_L_FORCE_OFF,
+      KeyCode::VK_NEGATIVE_LOCK_CONTROL_R_FORCE_OFF,
+      KeyCode::VK_NEGATIVE_LOCK_SHIFT_L_FORCE_OFF,
+      KeyCode::VK_NEGATIVE_LOCK_SHIFT_R_FORCE_OFF,
+    </replacementvalue>
+  </replacementdef>
+
+  <replacementdef>
+    <replacementname>RECTANGULAR_SELECTION_LOCK</replacementname>
+    <replacementvalue>
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+      KeyCode::VK_LOCK_LEFT_CLICK_FORCE_ON,
+      KeyCode::VK_NEGATIVE_LOCK_CONTROL_L_FORCE_ON,
+      KeyCode::VK_NEGATIVE_LOCK_CONTROL_R_FORCE_ON,
+      KeyCode::VK_NEGATIVE_LOCK_SHIFT_L_FORCE_ON,
+      KeyCode::VK_NEGATIVE_LOCK_SHIFT_R_FORCE_ON,
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>control-shift-arrow keys to rectangular selection</name>
+    <identifier>private.rectangular_selection</identifier>
+
+    <!-- Turn left button lock off when you released the control or shift key. -->
+    <autogen>
+      __KeyToKey__ KeyCode::CONTROL_L, KeyCode::CONTROL_L,
+      {{ RECTANGULAR_SELECTION_RELEASE_ALL }}
+    </autogen>
+    <autogen>
+      __KeyToKey__ KeyCode::CONTROL_R, KeyCode::CONTROL_R,
+      {{ RECTANGULAR_SELECTION_RELEASE_ALL }}
+    </autogen>
+    <autogen>
+      __KeyToKey__ KeyCode::SHIFT_L, KeyCode::SHIFT_L,
+      {{ RECTANGULAR_SELECTION_RELEASE_ALL }}
+    </autogen>
+    <autogen>
+      __KeyToKey__ KeyCode::SHIFT_R, KeyCode::SHIFT_R,
+      {{ RECTANGULAR_SELECTION_RELEASE_ALL }}
+    </autogen>
+
+    <!-- change arrow keys -->
+    <block>
+      <modifier_not>ModifierFlag::LEFT_CLICK</modifier_not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        {{ RECTANGULAR_SELECTION_LOCK }}
+        KeyCode::VK_MOUSEKEY_UP, ModifierFlag::OPTION_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        {{ RECTANGULAR_SELECTION_LOCK }}
+        KeyCode::VK_MOUSEKEY_DOWN, ModifierFlag::OPTION_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        {{ RECTANGULAR_SELECTION_LOCK }}
+        KeyCode::VK_MOUSEKEY_LEFT, ModifierFlag::OPTION_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_RIGHT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+        {{ RECTANGULAR_SELECTION_LOCK }}
+        KeyCode::VK_MOUSEKEY_RIGHT, ModifierFlag::OPTION_L,
+      </autogen>
+    </block>
+    <block>
+      <modifier_only>ModifierFlag::LEFT_CLICK</modifier_only>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_UP,    KeyCode::VK_MOUSEKEY_UP,    ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_DOWN,  KeyCode::VK_MOUSEKEY_DOWN,  ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,  KeyCode::VK_MOUSEKEY_LEFT,  ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::VK_MOUSEKEY_RIGHT, ModifierFlag::OPTION_L</autogen>
+    </block>
+  </item>
+
+</root>
