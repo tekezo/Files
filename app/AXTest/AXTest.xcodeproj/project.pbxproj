@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344E691F192B23330018C307 /* AXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 344E691E192B23330018C307 /* AXUtilities.m */; };
 		34DEE3AC1921EFA400C7836F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEE3AB1921EFA400C7836F /* Cocoa.framework */; };
 		34DEE3B61921EFA400C7836F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DEE3B41921EFA400C7836F /* InfoPlist.strings */; };
 		34DEE3B81921EFA400C7836F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEE3B71921EFA400C7836F /* main.m */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		344E691D192B23330018C307 /* AXUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXUtilities.h; path = Classes/AXUtilities.h; sourceTree = "<group>"; };
+		344E691E192B23330018C307 /* AXUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXUtilities.m; path = Classes/AXUtilities.m; sourceTree = "<group>"; };
 		34DEE3A81921EFA400C7836F /* AXTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DEE3AB1921EFA400C7836F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		34DEE3AE1921EFA400C7836F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -117,8 +120,10 @@
 			children = (
 				34DEE3BD1921EFA400C7836F /* AppDelegate.h */,
 				34DEE3BE1921EFA400C7836F /* AppDelegate.m */,
-				34DEE3C01921EFA400C7836F /* MainMenu.xib */,
+				344E691D192B23330018C307 /* AXUtilities.h */,
+				344E691E192B23330018C307 /* AXUtilities.m */,
 				34DEE3C31921EFA400C7836F /* Images.xcassets */,
+				34DEE3C01921EFA400C7836F /* MainMenu.xib */,
 				34DEE3B21921EFA400C7836F /* Supporting Files */,
 			);
 			path = AXTest;
@@ -254,6 +259,7 @@
 			files = (
 				34DEE3BF1921EFA400C7836F /* AppDelegate.m in Sources */,
 				34DEE3B81921EFA400C7836F /* main.m in Sources */,
+				344E691F192B23330018C307 /* AXUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +472,7 @@
 				34DEE3DB1921EFA400C7836F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34DEE3DC1921EFA400C7836F /* Build configuration list for PBXNativeTarget "AXTestTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +481,7 @@
 				34DEE3DE1921EFA400C7836F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
