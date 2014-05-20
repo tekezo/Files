@@ -5,8 +5,8 @@
     <name>Use PC Style Home/End #2</name>
     <appendix>(Change Home to Command+Left)</appendix>
     <appendix>(Change End to Command+Right)</appendix>
-    <appendix>(+ Change Home to Control+A in Emacs,Terminal,X11,Eclipse)</appendix>
-    <appendix>(+ Change End to Control+E in Emacs,Terminal,X11,Eclipse)</appendix>
+    <appendix>(+ Change Home to Control+A in Emacs,Terminal,Eclipse)</appendix>
+    <appendix>(+ Change End to Control+E in Emacs,Terminal,Eclipse)</appendix>
     <appendix></appendix>
     <appendix>{{ PC_STYLE_BINDINGS_IGNORE_APPS_DESCRIPTION }}</appendix>
     <identifier>private.pclikehomeend2</identifier>
