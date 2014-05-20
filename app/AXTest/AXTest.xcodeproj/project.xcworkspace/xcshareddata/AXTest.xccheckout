@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CB290C5E-F907-4855-9D53-3B80A582FD3F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AXTest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9F76DD83-0269-4E45-8B9A-5C1E6B13B0EC</key>
+		<string>ssh://github.com/tekezo/Files.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>app/AXTest/AXTest.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9F76DD83-0269-4E45-8B9A-5C1E6B13B0EC</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/tekezo/Files.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9F76DD83-0269-4E45-8B9A-5C1E6B13B0EC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9F76DD83-0269-4E45-8B9A-5C1E6B13B0EC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Files</string>
+		</dict>
+	</array>
+</dict>
+</plist>
