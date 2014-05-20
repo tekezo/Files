@@ -9,7 +9,7 @@
     <appendix>(+ Change End to Control+E in Emacs,Terminal,X11,Eclipse)</appendix>
     <appendix></appendix>
     <appendix>{{ PC_STYLE_BINDINGS_IGNORE_APPS_DESCRIPTION }}</appendix>
-    <identifier>private.pclikehomeend</identifier>
+    <identifier>private.pclikehomeend2</identifier>
 
     <!-- ignored apps -->
     <block>
