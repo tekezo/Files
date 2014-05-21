@@ -48,7 +48,11 @@ static void observerCallback(AXObserverRef observer, AXUIElementRef element, CFS
   BOOL accessibilityEnabled = AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
 
   if (! accessibilityEnabled) {
-    [[NSAlert alertWithError:@"Please permit the accessibility features."] runModal];
+    [[NSAlert alertWithMessageText:@"Please permit the accessibility features."
+                     defaultButton:nil
+                   alternateButton:nil
+                       otherButton:nil
+         informativeTextWithFormat:@""] runModal];
 
   } else {
     [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
