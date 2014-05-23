@@ -5,5 +5,6 @@
 @interface AXUtilities : NSObject
 
 + (NSString*) titleOfUIElement:(AXUIElementRef)element;
++ (NSString*) roleOfUIElement:(AXUIElementRef)element;
 
 @end

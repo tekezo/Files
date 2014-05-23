@@ -33,4 +33,9 @@
   return (NSString*)[AXUtilities valueOfAttribute:NSAccessibilityTitleAttribute ofUIElement:element];
 }
 
++ (NSString*) roleOfUIElement:(AXUIElementRef)element
+{
+  return (NSString*)[AXUtilities valueOfAttribute:NSAccessibilityRoleAttribute ofUIElement:element];
+}
+
 @end
