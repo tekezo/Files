@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change short press of s to f19.</name>
+    <identifier>private.short_press_s_to_f19</identifier>
+
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::S, ModifierFlag::NONE,
+
+      @begin
+      KeyCode::F19,
+      @end
+
+      @begin
+      KeyCode::S
+      @end
+
+      Option::NOREPEAT,
+    </autogen>
+  </item>
+
+</root>
