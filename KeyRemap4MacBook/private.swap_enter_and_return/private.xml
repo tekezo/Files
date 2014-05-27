@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap enter and return.</name>
+    <identifier>private.swap_enter_and_return</identifier>
+
+    <!-- send return by fn-return -->
+    <autogen>__KeyToKey__ KeyCode::RETURN, ModifierFlag::FN, KeyCode::RETURN</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::ENTER, KeyCode::RETURN</autogen>
+    <autogen>__KeyToKey__ KeyCode::RETURN, KeyCode::ENTER</autogen>
+  </item>
+
+</root>
