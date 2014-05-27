@@ -78,8 +78,16 @@ finish:
 
 - (void) observer_NSWorkspaceDidActivateApplicationNotification:(NSNotification*)notification
 {
-  NSRunningApplication* runningApplication = [notification userInfo][NSWorkspaceApplicationKey];
-  [self registerApplication:runningApplication];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      NSRunningApplication* runningApplication = [notification userInfo][NSWorkspaceApplicationKey];
+      [self registerApplication:runningApplication];
+
+      AXUIElementRef element = AXUIElementCreateSystemWide();
+      if (element) {
+        NSLog(@"AXUIElementCreateSystemWide role of element: %@", [AXUtilities roleOfUIElement:element]);
+        CFRelease(element);
+      }
+  });
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification*)aNotification

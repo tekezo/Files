@@ -4,6 +4,8 @@
 
 + (NSArray*) attributeNamesOfUIElement:(AXUIElementRef)element
 {
+  if (! element) return nil;
+
   CFArrayRef attrNames = NULL;
 
   AXUIElementCopyAttributeNames(element, &attrNames);
@@ -14,6 +16,9 @@
 
 + (id) valueOfAttribute:(NSString*)attribute ofUIElement:(AXUIElementRef)element
 {
+  if (! attribute) return nil;
+  if (! element) return nil;
+
   NSArray* attributeNames = [AXUtilities attributeNamesOfUIElement:element];
 
   if (! attributeNames) return nil;
@@ -30,11 +35,13 @@
 
 + (NSString*) titleOfUIElement:(AXUIElementRef)element
 {
+  if (! element) return nil;
   return (NSString*)[AXUtilities valueOfAttribute:NSAccessibilityTitleAttribute ofUIElement:element];
 }
 
 + (NSString*) roleOfUIElement:(AXUIElementRef)element
 {
+  if (! element) return nil;
   return (NSString*)[AXUtilities valueOfAttribute:NSAccessibilityRoleAttribute ofUIElement:element];
 }
 
