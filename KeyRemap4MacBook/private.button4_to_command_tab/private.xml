@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>BUTTON4</modifierdef>
+
+  <item>
+    <name>Button 4 for Application Switching (Alt-Tab)</name>
+    <identifier>private.button4_for_app_switch</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      PointingButton::BUTTON4, ModifierFlag::NONE,
+
+      @begin
+      KeyCode::COMMAND_L, ModifierFlag::BUTTON4,
+      @end
+
+      @begin
+      KeyCode::TAB, ModifierFlag::COMMAND_L,
+      <!-- a hack to release the command key -->
+      KeyCode::VK_MODIFIER_BUTTON4,
+      @end
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      PointingButton::LEFT, ModifierFlag::BUTTON4,
+      KeyCode::TAB,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      PointingButton::RIGHT, ModifierFlag::BUTTON4,
+      KeyCode::TAB, ModifierFlag::SHIFT_L,
+    </autogen>
+
+    <!-- example: button4+button5 to warp mouse cursor. -->
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON5, ModifierFlag::BUTTON4,
+      KeyCode::VK_OPEN_URL_SHELL_warp_mouse_cursor_position_front_window_center,
+    </autogen>
+  </item>
+
+</root>
