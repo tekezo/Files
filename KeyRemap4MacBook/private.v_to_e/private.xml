@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change v to e</name>
+    <identifier>private.v_to_e</identifier>
+    <autogen>__KeyToKey__ KeyCode::V, KeyCode::E</autogen>
+  </item>
+
+</root>
