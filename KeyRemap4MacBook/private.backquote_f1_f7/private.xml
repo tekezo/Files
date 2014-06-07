@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the backquote (`) key to f1,...,f7</name>
+    <identifier>private.backquote_f1_f7</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKQUOTE, ModifierFlag::NONE,
+      KeyCode::F1,
+      KeyCode::F2,
+      KeyCode::F3,
+      KeyCode::F4,
+      KeyCode::F5,
+      KeyCode::F6,
+      KeyCode::F7,
+    </autogen>
+  </item>
+
+</root>
