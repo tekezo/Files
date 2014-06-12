@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>EMACS_MODE_MARKSET_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+    <autogen>
+      __KeyToKey__
+      KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+
+      KeyCode::VK_LOCK_SHIFT_L_FORCE_OFF,
+      KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_emacsmode_ex_controlSpace_core
+    </autogen>
+    ]]>
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Pass through command-w in MarkSet</name>
+  </item>
+
+</root>
