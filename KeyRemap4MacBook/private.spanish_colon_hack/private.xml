@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change ç key to colon (:).</name>
+    <appendix>shift-ç to backslash(\).</appendix>
+    <identifier>private.spanish_colon_hack</identifier>
+    <inputsource_only>SPANISH</inputsource_only>
+
+    <!-- ç to colon (:) -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::SLASH, ModifierFlag::NONE,
+      KeyCode::QUOTE, ModifierFlag::SHIFT_L,
+    </autogen>
+
+    <!-- shift-ç to backslash(\) -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::SLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::KEY_6, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
