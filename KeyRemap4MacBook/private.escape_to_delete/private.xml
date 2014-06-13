@@ -1,8 +1,15 @@
 <?xml version="1.0"?>
 <root>
+
+  <appdef>
+    <appname>Audition</appname>
+    <prefix>com.adobe.Audition.</prefix>
+  </appdef>
+
   <item>
-    <name>Change escape key to delete key</name>
+    <name>Change escape key to delete key in Audition</name>
     <identifier>private.escape_to_delete</identifier>
+    <only>Audition</only>
     <autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::DELETE</autogen>
   </item>
 </root>
