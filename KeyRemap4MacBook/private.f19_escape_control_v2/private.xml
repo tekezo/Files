@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>F19</modifierdef>
+
+  <item>
+    <name>F19 to Escape and Control v2</name>
+    <appendix>Tap F19 for Escape, Hold F19 for Control</appendix>
+    <appendix>Works well with using Seil to remap CapsLock to F19(code 80).</appendix>
+    <appendix></appendix>
+    <appendix>Send a escape key event when the caps lock key is released before another key is released.</appendix>
+    <appendix>For example:</appendix>
+    <appendix><![CDATA[  caps lock down -> T down -> T up => control+T  ]]></appendix>
+    <appendix><![CDATA[  caps lock down -> T down -> caps lock up => escape,T  ]]></appendix>
+
+    <identifier>private.f19_escape_control_v2</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::F19,
+      KeyCode::CONTROL_L, ModifierFlag::F19,
+      KeyCode::ESCAPE
+    </autogen>
+    <block>
+      <modifier_only>ModifierFlag::F19</modifier_only>
+      <autogen>__BlockUntilKeyUp__ KeyCode::F19</autogen>
+    </block>
+  </item>
+</root>
