@@ -1,9 +1,24 @@
 #import "AppDelegate.h"
 #import "AXUtilities.h"
 
+@interface Observer : NSObject
+@property AXObserverRef observer;
+@property AXUIElementRef application;
+- (AXObserverRef*) getRef;
+@end
+
+@implementation Observer
+
+- (AXObserverRef*) getRef
+{
+  return &_observer;
+}
+
+@end
+
 @interface AppDelegate ()
 {
-  AXObserverRef observer_;
+  NSMutableDictionary* observers_;
 }
 @end
 
@@ -26,13 +41,17 @@ static void observerCallback(AXObserverRef observer, AXUIElementRef element, CFS
 {
   // ----------------------------------------
   // unregister
-  if (observer_) {
-    CFRunLoopRemoveSource(CFRunLoopGetCurrent(),
-                          AXObserverGetRunLoopSource(observer_),
-                          kCFRunLoopDefaultMode);
+  pid_t pid = [runningApplication processIdentifier];
 
-    CFRelease(observer_);
-    observer_ = NULL;
+  {
+    Observer* o = observers_[@(pid)];
+    if (o) {
+      CFRunLoopRemoveSource(CFRunLoopGetCurrent(),
+                            AXObserverGetRunLoopSource(o.observer),
+                            kCFRunLoopDefaultMode);
+      CFRelease(o.observer);
+      [observers_ removeObjectForKey:@(pid)];
+    }
   }
 
   // ----------------------------------------
@@ -42,9 +61,10 @@ static void observerCallback(AXObserverRef observer, AXUIElementRef element, CFS
   AXError error = kAXErrorSuccess;
   AXUIElementRef application = NULL;
 
-  pid_t pid = [runningApplication processIdentifier];
+  Observer* o = [Observer new];
+  observers_[@(pid)] = o;
 
-  error = AXObserverCreate(pid, observerCallback, &observer_);
+  error = AXObserverCreate(pid, observerCallback, [o getRef]);
   if (error != kAXErrorSuccess) {
     NSLog(@"AXObserverCreate is failed. pid:%d error:%d", pid, error);
     goto finish;
@@ -56,42 +76,38 @@ static void observerCallback(AXObserverRef observer, AXUIElementRef element, CFS
     goto finish;
   }
 
-  error = AXObserverAddNotification(observer_, application, kAXTitleChangedNotification,            (__bridge void*)self);
-  error = AXObserverAddNotification(observer_, application, kAXWindowCreatedNotification,           (__bridge void*)self);
-  error = AXObserverAddNotification(observer_, application, kAXFocusedWindowChangedNotification,    (__bridge void*)self);
-  error = AXObserverAddNotification(observer_, application, kAXFocusedUIElementChangedNotification, (__bridge void*)self);
+  error = AXObserverAddNotification(o.observer, application, kAXTitleChangedNotification,            (__bridge void*)self);
+  error = AXObserverAddNotification(o.observer, application, kAXWindowCreatedNotification,           (__bridge void*)self);
+  error = AXObserverAddNotification(o.observer, application, kAXFocusedWindowChangedNotification,    (__bridge void*)self);
+  error = AXObserverAddNotification(o.observer, application, kAXFocusedUIElementChangedNotification, (__bridge void*)self);
   if (error != kAXErrorSuccess) {
     NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
     goto finish;
   }
 
   CFRunLoopAddSource(CFRunLoopGetCurrent(),
-                     AXObserverGetRunLoopSource(observer_),
+                     AXObserverGetRunLoopSource(o.observer),
                      kCFRunLoopDefaultMode);
 
 finish:
-  if (application) {
-    CFRelease(application);
-    application = NULL;
-  }
+  // Do not release application til you do not need notifications.
+  NSLog(@"registered %@", runningApplication);
 }
 
 - (void) observer_NSWorkspaceDidActivateApplicationNotification:(NSNotification*)notification
 {
+#if 0
   dispatch_async(dispatch_get_main_queue(), ^{
       NSRunningApplication* runningApplication = [notification userInfo][NSWorkspaceApplicationKey];
       [self registerApplication:runningApplication];
-
-      AXUIElementRef element = AXUIElementCreateSystemWide();
-      if (element) {
-        NSLog(@"AXUIElementCreateSystemWide role of element: %@", [AXUtilities roleOfUIElement:element]);
-        CFRelease(element);
-      }
   });
+#endif
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification*)aNotification
 {
+  observers_ = [NSMutableDictionary new];
+
   NSDictionary* options = @{ (__bridge NSString*)(kAXTrustedCheckOptionPrompt): @YES };
   BOOL accessibilityEnabled = AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
 
@@ -107,6 +123,10 @@ finish:
                                                          selector:@selector(observer_NSWorkspaceDidActivateApplicationNotification:)
                                                              name:NSWorkspaceDidActivateApplicationNotification
                                                            object:nil];
+
+  for (NSRunningApplication* runningApplication in [[NSWorkspace sharedWorkspace] runningApplications]) {
+    [self registerApplication:runningApplication];
+  }
 }
 
 @end
