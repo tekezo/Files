@@ -70,6 +70,10 @@ static void observerCallback(AXObserverRef observer, AXUIElementRef element, CFS
     goto finish;
   }
 
+  CFRunLoopAddSource(CFRunLoopGetCurrent(),
+                     AXObserverGetRunLoopSource(o.observer),
+                     kCFRunLoopDefaultMode);
+
   application = AXUIElementCreateApplication(pid);
   if (! application) {
     NSLog(@"AXUIElementCreateApplication is failed. pid:%d", pid);
@@ -77,17 +81,25 @@ static void observerCallback(AXObserverRef observer, AXUIElementRef element, CFS
   }
 
   error = AXObserverAddNotification(o.observer, application, kAXTitleChangedNotification,            (__bridge void*)self);
+  if (error != kAXErrorSuccess) {
+    NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
+  }
   error = AXObserverAddNotification(o.observer, application, kAXWindowCreatedNotification,           (__bridge void*)self);
+  if (error != kAXErrorSuccess) {
+    NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
+  }
   error = AXObserverAddNotification(o.observer, application, kAXFocusedWindowChangedNotification,    (__bridge void*)self);
+  if (error != kAXErrorSuccess) {
+    NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
+  }
   error = AXObserverAddNotification(o.observer, application, kAXFocusedUIElementChangedNotification, (__bridge void*)self);
   if (error != kAXErrorSuccess) {
     NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
-    goto finish;
   }
-
-  CFRunLoopAddSource(CFRunLoopGetCurrent(),
-                     AXObserverGetRunLoopSource(o.observer),
-                     kCFRunLoopDefaultMode);
+  error = AXObserverAddNotification(o.observer, application, kAXApplicationActivatedNotification,    (__bridge void*)self);
+  if (error != kAXErrorSuccess) {
+    NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
+  }
 
 finish:
   // Do not release application til you do not need notifications.
@@ -96,12 +108,16 @@ finish:
 
 - (void) observer_NSWorkspaceDidActivateApplicationNotification:(NSNotification*)notification
 {
-#if 0
   dispatch_async(dispatch_get_main_queue(), ^{
+#if 0
       NSRunningApplication* runningApplication = [notification userInfo][NSWorkspaceApplicationKey];
       [self registerApplication:runningApplication];
-  });
+#else
+      for (NSRunningApplication* runningApplication in [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.apple.dock"]) {
+        [self registerApplication:runningApplication];
+      }
 #endif
+  });
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification*)aNotification
@@ -124,7 +140,7 @@ finish:
                                                              name:NSWorkspaceDidActivateApplicationNotification
                                                            object:nil];
 
-  for (NSRunningApplication* runningApplication in [[NSWorkspace sharedWorkspace] runningApplications]) {
+  for (NSRunningApplication* runningApplication in [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.apple.dock"]) {
     [self registerApplication:runningApplication];
   }
 }
