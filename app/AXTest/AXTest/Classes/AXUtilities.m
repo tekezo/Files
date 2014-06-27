@@ -2,6 +2,46 @@
 
 @implementation AXUtilities
 
++ (AXUIElementRef) copyFocusedUIElement
+{
+  if (! AXIsProcessTrusted()) return NULL;
+
+  AXUIElementRef result = NULL;
+  AXUIElementRef systemWideElement = NULL;
+  AXError error = kAXErrorSuccess;
+
+  systemWideElement = AXUIElementCreateSystemWide();
+  if (! systemWideElement) goto finish;
+
+  error = AXUIElementCopyAttributeValue(systemWideElement,
+                                        kAXFocusedUIElementAttribute,
+                                        (CFTypeRef*)(&result));
+  if (error != kAXErrorSuccess) {
+    result = NULL;
+    goto finish;
+  }
+
+finish:
+  if (systemWideElement) {
+    CFRelease(systemWideElement);
+    systemWideElement = NULL;
+  }
+  return result;
+}
+
++ (AXUIElementRef) copyFocusedWindow:(AXUIElementRef)applicationElement
+{
+  AXUIElementRef result = NULL;
+  AXError error = AXUIElementCopyAttributeValue(applicationElement,
+                                                kAXFocusedWindowAttribute,
+                                                (CFTypeRef*)(&result));
+  if (error != kAXErrorSuccess) {
+    NSLog(@"copyFocusedWindow is failed. error:%d", error);
+    return NULL;
+  }
+  return result;
+}
+
 + (NSArray*) attributeNamesOfUIElement:(AXUIElementRef)element
 {
   if (! element) return nil;
@@ -43,6 +83,12 @@
 {
   if (! element) return nil;
   return (NSString*)[AXUtilities valueOfAttribute:NSAccessibilityRoleAttribute ofUIElement:element];
+}
+
++ (NSString*) subroleOfUIElement:(AXUIElementRef)element
+{
+  if (! element) return nil;
+  return (NSString*)[AXUtilities valueOfAttribute:NSAccessibilitySubroleAttribute ofUIElement:element];
 }
 
 @end
