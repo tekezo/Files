@@ -101,6 +101,16 @@ static void observerCallback(AXObserverRef observer, AXUIElementRef element, CFS
     NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
   }
 
+  AXUIElementRef focusedWindowElement = [AXUtilities copyFocusedWindow:application];
+  if (! focusedWindowElement) {
+    NSLog(@"no focusedWindowElement");
+  } else {
+    error = AXObserverAddNotification(o.observer, focusedWindowElement, kAXTitleChangedNotification, (__bridge void*)self);
+    if (error != kAXErrorSuccess) {
+      NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
+    }
+  }
+
 finish:
   // Do not release application til you do not need notifications.
   NSLog(@"registered %@", runningApplication);
@@ -113,7 +123,10 @@ finish:
       NSRunningApplication* runningApplication = [notification userInfo][NSWorkspaceApplicationKey];
       [self registerApplication:runningApplication];
 #else
-      for (NSRunningApplication* runningApplication in [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.apple.dock"]) {
+      NSString* bundleIdentifier = @"com.apple.dock";
+      //NSString* bundleIdentifier = @"com.apple.launchpad";
+      //NSString* bundleIdentifier = @"com.apple.systemuiserver";
+      for (NSRunningApplication* runningApplication in [NSRunningApplication runningApplicationsWithBundleIdentifier:bundleIdentifier]) {
         [self registerApplication:runningApplication];
       }
 #endif
