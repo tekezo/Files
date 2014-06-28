@@ -14,7 +14,6 @@
 @property NSString* title;
 @property NSString* role;
 
-- (void) registerTitleChangedNotification;
 - (void) updateTitle;
 - (void) updateRole:(AXUIElementRef)element;
 
@@ -38,8 +37,8 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
     }
     if (CFStringCompare(notification, kAXFocusedWindowChangedNotification, 0) == kCFCompareEqualTo) {
       // ----------------------------------------
-      // refresh notification.
-      [self registerTitleChangedNotification];
+      // refresh observer.
+      [self observeTitleChangedNotification];
 
       [self updateTitle];
       [self postNotification];
@@ -152,7 +151,7 @@ finish:
   return YES;
 }
 
-- (void) unregisterTitleChangedNotification
+- (void) unobserveTitleChangedNotification
 {
   if (focusedWindowElementForAXTitleChangedNotification_) {
     [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
@@ -163,11 +162,11 @@ finish:
   }
 }
 
-- (void) registerTitleChangedNotification
+- (void) observeTitleChangedNotification
 {
   if (! applicationElement_) return;
 
-  [self unregisterTitleChangedNotification];
+  [self unobserveTitleChangedNotification];
 
   focusedWindowElementForAXTitleChangedNotification_ = [AXUtilities copyFocusedWindow:applicationElement_];
   if (! focusedWindowElementForAXTitleChangedNotification_) return;
