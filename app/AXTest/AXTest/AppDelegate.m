@@ -16,7 +16,7 @@
   dispatch_async(dispatch_get_main_queue(), ^{
     @synchronized(self) {
       for (NSNumber* pid in observers_) {
-        [observers_[pid] unregisterTitleChangedNotification];
+        [observers_[pid] unobserveTitleChangedNotification];
       }
 
       NSRunningApplication* runningApplication = [notification userInfo][NSWorkspaceApplicationKey];
@@ -25,7 +25,7 @@
       AXApplicationObserver* o = [[AXApplicationObserver alloc] initWithRunningApplication:runningApplication];
       observers_[@(pid)] = o;
 
-      [o registerTitleChangedNotification];
+      [o observeTitleChangedNotification];
       [o postNotification];
     }
   });
@@ -70,7 +70,7 @@
 
   pid_t pid = [[[NSWorkspace sharedWorkspace] frontmostApplication] processIdentifier];
   AXApplicationObserver* o = observers_[@(pid)];
-  [o registerTitleChangedNotification];
+  [o observeTitleChangedNotification];
   [o postNotification];
 }
 

@@ -5,8 +5,12 @@
 @interface AXApplicationObserver : NSObject
 
 - (instancetype) initWithRunningApplication:(NSRunningApplication*)runningApplication;
-- (void) unregisterTitleChangedNotification;
-- (void) registerTitleChangedNotification;
+
+// You have to observe kAXTitleChangedNotification by hand because
+// you generally want to observe the notification only in the front application.
+- (void) unobserveTitleChangedNotification;
+- (void) observeTitleChangedNotification;
+
 - (void) postNotification;
 
 @end
