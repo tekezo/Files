@@ -29,10 +29,12 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
   @synchronized(self) {
     if (CFStringCompare(notification, kAXTitleChangedNotification, 0) == kCFCompareEqualTo) {
       [self updateTitle];
+      [self postNotification];
     }
     if (CFStringCompare(notification, kAXFocusedUIElementChangedNotification, 0) == kCFCompareEqualTo) {
       [self updateTitle];
       [self updateRole:element];
+      [self postNotification];
     }
     if (CFStringCompare(notification, kAXFocusedWindowChangedNotification, 0) == kCFCompareEqualTo) {
       // ----------------------------------------
@@ -40,15 +42,8 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
       [self registerTitleChangedNotification];
 
       [self updateTitle];
+      [self postNotification];
     }
-
-    NSDictionary* userInfo = @{
-      @"runningApplication" : self.runningApplication,
-      @"notification" : (__bridge NSString*)(notification),
-      @"title": self.title,
-      @"role": self.role,
-    };
-    [[NSNotificationCenter defaultCenter] postNotificationName:kFocusedUIElementChanged object:self userInfo:userInfo];
   }
 }
 
@@ -218,6 +213,16 @@ finish:
     }
     CFRelease(element);
   }
+}
+
+- (void) postNotification
+{
+  NSDictionary* userInfo = @{
+    @"bundleIdentifier" : [self.runningApplication bundleIdentifier],
+    @"title": self.title,
+    @"role": self.role,
+  };
+  [[NSNotificationCenter defaultCenter] postNotificationName:kFocusedUIElementChanged object:self userInfo:userInfo];
 }
 
 @end
