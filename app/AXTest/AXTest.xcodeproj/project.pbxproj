@@ -35,6 +35,7 @@
 /* Begin PBXFileReference section */
 		344E691D192B23330018C307 /* AXUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXUtilities.h; path = Classes/AXUtilities.h; sourceTree = "<group>"; };
 		344E691E192B23330018C307 /* AXUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXUtilities.m; path = Classes/AXUtilities.m; sourceTree = "<group>"; };
+		3472F055195E903500188CA5 /* NotificationKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationKeys.h; path = Classes/NotificationKeys.h; sourceTree = "<group>"; };
 		349CEEBB195E87DA00EE2D08 /* AXApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXApplication.h; path = Classes/AXApplication.h; sourceTree = "<group>"; };
 		349CEEBC195E87DA00EE2D08 /* AXApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXApplication.m; path = Classes/AXApplication.m; sourceTree = "<group>"; };
 		34DEE3A81921EFA400C7836F /* AXTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +130,7 @@
 				344E691E192B23330018C307 /* AXUtilities.m */,
 				34DEE3C31921EFA400C7836F /* Images.xcassets */,
 				34DEE3C01921EFA400C7836F /* MainMenu.xib */,
+				3472F055195E903500188CA5 /* NotificationKeys.h */,
 				34DEE3B21921EFA400C7836F /* Supporting Files */,
 			);
 			path = AXTest;
