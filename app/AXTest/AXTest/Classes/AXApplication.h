@@ -4,8 +4,7 @@
 
 @interface AXApplication : NSObject
 
-@property NSRunningApplication* runningApplication;
-
 - (instancetype) initWithRunningApplication:(NSRunningApplication*)runningApplication;
+- (void) unregisterTitleChangedNotification;
 
 @end
