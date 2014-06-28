@@ -7,5 +7,6 @@
 - (instancetype) initWithRunningApplication:(NSRunningApplication*)runningApplication;
 - (void) unregisterTitleChangedNotification;
 - (void) registerTitleChangedNotification;
+- (void) postNotification;
 
 @end
