@@ -14,9 +14,17 @@
 - (void) observer_NSWorkspaceDidActivateApplicationNotification:(NSNotification*)notification
 {
   dispatch_async(dispatch_get_main_queue(), ^{
+      for (AXApplication* app in observers_) {
+        [app unregisterTitleChangedNotification];
+      }
+
     NSRunningApplication* runningApplication = [notification userInfo][NSWorkspaceApplicationKey];
     pid_t pid = [runningApplication processIdentifier];
-    observers_[@(pid)] = [[AXApplication alloc] initWithRunningApplication:runningApplication];
+
+    AXApplication* app = [[AXApplication alloc] initWithRunningApplication:runningApplication];
+    [app registerTitleChangedNotification];
+
+    observers_[@(pid)] = app;
   });
 }
 
@@ -52,8 +60,11 @@
 
   for (NSRunningApplication* runningApplication in [[NSWorkspace sharedWorkspace] runningApplications]) {
     pid_t pid = [runningApplication processIdentifier];
-    observers_[@(pid)] = [[AXApplication alloc] initWithRunningApplication:runningApplication];
+    AXApplication* app = [[AXApplication alloc] initWithRunningApplication:runningApplication];
+    observers_[@(pid)] = app;
   }
+
+  [observers_[@([[[NSWorkspace sharedWorkspace] frontmostApplication] processIdentifier])] registerTitleChangedNotification];
 }
 
 @end
