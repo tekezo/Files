@@ -1,4 +1,15 @@
 #import "AXApplication.h"
+#import "AXUtilities.h"
+#import "NotificationKeys.h"
+
+@interface AXApplication ()
+{
+  AXUIElementRef applicationElement_;
+  AXUIElementRef focusedWindowElementForAXTitleChangedNotification_;
+  AXObserverRef observer_;
+}
+- (void) registerTitleChangedNotification;
+@end
 
 static void
 observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef notification, void* refcon)
@@ -6,15 +17,16 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
   AXApplication* self = (__bridge AXApplication*)(refcon);
   if (! self) return;
 
-  NSLog(@"observerCallback %@ %@", self.runningApplication, (__bridge NSString*)(notification));
-}
+  if (CFStringCompare(notification, kAXTitleChangedNotification, 0) == kCFCompareEqualTo) {}
+  if (CFStringCompare(notification, kAXFocusedUIElementChangedNotification, 0) == kCFCompareEqualTo) {}
+  if (CFStringCompare(notification, kAXFocusedWindowChangedNotification, 0) == kCFCompareEqualTo) {
+    // ----------------------------------------
+    // refresh notification.
+    [self registerTitleChangedNotification];
+  }
 
-@interface AXApplication ()
-{
-  AXUIElementRef applicationElement_;
-  AXObserverRef observer_;
+  [[NSNotificationCenter defaultCenter] postNotificationName:kFocusedUIElementChanged object:nil];
 }
-@end
 
 @implementation AXApplication
 
@@ -77,8 +89,8 @@ finish:
 
 - (BOOL) observeAXNotification:(AXUIElementRef)element notification:(CFStringRef)notification add:(BOOL)add
 {
-  if (! observer_) return YES;
   if (! element) return YES;
+  if (! observer_) return YES;
 
   if (add) {
     AXError error = AXObserverAddNotification(observer_,
@@ -112,6 +124,25 @@ finish:
   }
 
   return YES;
+}
+
+- (void) registerTitleChangedNotification
+{
+  if (! applicationElement_) return;
+  if (! observer_) return;
+
+  if (focusedWindowElementForAXTitleChangedNotification_) {
+    [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
+                   notification:kAXTitleChangedNotification
+                            add:NO];
+  }
+
+  focusedWindowElementForAXTitleChangedNotification_ = [AXUtilities copyFocusedWindow:applicationElement_];
+  if (! focusedWindowElementForAXTitleChangedNotification_) return;
+
+  [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
+                 notification:kAXTitleChangedNotification
+                          add:YES];
 }
 
 @end
