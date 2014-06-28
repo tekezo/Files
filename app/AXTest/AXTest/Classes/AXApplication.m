@@ -3,12 +3,19 @@
 #import "NotificationKeys.h"
 
 @interface AXApplication ()
+
 {
   AXUIElementRef applicationElement_;
   AXUIElementRef focusedWindowElementForAXTitleChangedNotification_;
   AXObserverRef observer_;
 }
+
+@property NSRunningApplication* runningApplication;
+@property NSString* title;
+
 - (void) registerTitleChangedNotification;
+- (void) updateTitle;
+
 @end
 
 static void
@@ -17,19 +24,28 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
   AXApplication* self = (__bridge AXApplication*)(refcon);
   if (! self) return;
 
-  if (CFStringCompare(notification, kAXTitleChangedNotification, 0) == kCFCompareEqualTo) {}
-  if (CFStringCompare(notification, kAXFocusedUIElementChangedNotification, 0) == kCFCompareEqualTo) {}
-  if (CFStringCompare(notification, kAXFocusedWindowChangedNotification, 0) == kCFCompareEqualTo) {
-    // ----------------------------------------
-    // refresh notification.
-    [self registerTitleChangedNotification];
-  }
+  @synchronized(self) {
+    if (CFStringCompare(notification, kAXTitleChangedNotification, 0) == kCFCompareEqualTo) {
+      [self updateTitle];
+    }
+    if (CFStringCompare(notification, kAXFocusedUIElementChangedNotification, 0) == kCFCompareEqualTo) {
+      [self updateTitle];
+    }
+    if (CFStringCompare(notification, kAXFocusedWindowChangedNotification, 0) == kCFCompareEqualTo) {
+      // ----------------------------------------
+      // refresh notification.
+      [self registerTitleChangedNotification];
 
-  NSDictionary* userInfo = @{
-    @"runningApplication" : self.runningApplication,
-    @"notification" : (__bridge NSString*)(notification),
-  };
-  [[NSNotificationCenter defaultCenter] postNotificationName:kFocusedUIElementChanged object:self userInfo:userInfo];
+      [self updateTitle];
+    }
+
+    NSDictionary* userInfo = @{
+      @"runningApplication" : self.runningApplication,
+      @"notification" : (__bridge NSString*)(notification),
+      @"title": self.title,
+    };
+    [[NSNotificationCenter defaultCenter] postNotificationName:kFocusedUIElementChanged object:self userInfo:userInfo];
+  }
 }
 
 @implementation AXApplication
@@ -40,6 +56,7 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
 
   if (self) {
     self.runningApplication = runningApplication;
+    self.title = @"";
 
     pid_t pid = [self.runningApplication processIdentifier];
 
@@ -61,15 +78,17 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
       goto finish;
     }
 
-    CFRunLoopAddSource(CFRunLoopGetCurrent(),
-                       AXObserverGetRunLoopSource(observer_),
-                       kCFRunLoopDefaultMode);
-
     // ----------------------------------------
     // Observe notifications
+
     [self observeAXNotification:applicationElement_ notification:kAXFocusedUIElementChangedNotification add:YES];
     [self observeAXNotification:applicationElement_ notification:kAXFocusedWindowChangedNotification add:YES];
     [self registerTitleChangedNotification];
+
+    // ----------------------------------------
+    CFRunLoopAddSource(CFRunLoopGetCurrent(),
+                       AXObserverGetRunLoopSource(observer_),
+                       kCFRunLoopDefaultMode);
   }
 
 finish:
@@ -133,30 +152,43 @@ finish:
 
 - (void) unregisterTitleChangedNotification
 {
-  @synchronized(self) {
-    if (focusedWindowElementForAXTitleChangedNotification_) {
-      [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
-                     notification:kAXTitleChangedNotification
-                              add:NO];
+  if (focusedWindowElementForAXTitleChangedNotification_) {
+    [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
+                   notification:kAXTitleChangedNotification
+                            add:NO];
 
-      focusedWindowElementForAXTitleChangedNotification_ = NULL;
-    }
+    focusedWindowElementForAXTitleChangedNotification_ = NULL;
   }
 }
 
 - (void) registerTitleChangedNotification
 {
-  @synchronized(self) {
-    if (! applicationElement_) return;
+  if (! applicationElement_) return;
 
-    [self unregisterTitleChangedNotification];
+  [self unregisterTitleChangedNotification];
 
-    focusedWindowElementForAXTitleChangedNotification_ = [AXUtilities copyFocusedWindow:applicationElement_];
-    if (! focusedWindowElementForAXTitleChangedNotification_) return;
+  focusedWindowElementForAXTitleChangedNotification_ = [AXUtilities copyFocusedWindow:applicationElement_];
+  if (! focusedWindowElementForAXTitleChangedNotification_) return;
 
-    [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
-                   notification:kAXTitleChangedNotification
-                            add:YES];
+  [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
+                 notification:kAXTitleChangedNotification
+                          add:YES];
+}
+
+- (void) updateTitle
+{
+  if (! applicationElement_) return;
+
+  self.title = @"";
+
+  // Do not cache focusedWindowElement.
+  // We need to get new focusedWindowElement because
+  // getting title will be failed with cached focusedWindowElement on Finder.app.
+
+  AXUIElementRef focusedWindowElement = [AXUtilities copyFocusedWindow:applicationElement_];
+  if (focusedWindowElement) {
+    self.title = [AXUtilities titleOfUIElement:focusedWindowElement];
+    CFRelease(focusedWindowElement);
   }
 }
 
