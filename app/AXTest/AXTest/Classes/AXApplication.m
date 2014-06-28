@@ -46,6 +46,7 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
       @"runningApplication" : self.runningApplication,
       @"notification" : (__bridge NSString*)(notification),
       @"title": self.title,
+      @"role": self.role,
     };
     [[NSNotificationCenter defaultCenter] postNotificationName:kFocusedUIElementChanged object:self userInfo:userInfo];
   }
@@ -87,7 +88,6 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
 
     [self observeAXNotification:applicationElement_ notification:kAXFocusedUIElementChangedNotification add:YES];
     [self observeAXNotification:applicationElement_ notification:kAXFocusedWindowChangedNotification add:YES];
-    [self registerTitleChangedNotification];
 
     [self updateTitle];
     [self updateRole:NULL];
