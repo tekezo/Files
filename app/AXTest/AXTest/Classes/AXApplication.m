@@ -69,6 +69,7 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
     // Observe notifications
     [self observeAXNotification:applicationElement_ notification:kAXFocusedUIElementChangedNotification add:YES];
     [self observeAXNotification:applicationElement_ notification:kAXFocusedWindowChangedNotification add:YES];
+    [self registerTitleChangedNotification];
   }
 
 finish:
@@ -156,6 +157,8 @@ finish:
     [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
                    notification:kAXTitleChangedNotification
                             add:YES];
+
+    NSLog(@"%@ %@", @"registerTitleChangedNotification", self.runningApplication);
   }
 }
 
