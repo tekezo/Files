@@ -1,21 +1,7 @@
 #import "AXApplication.h"
 #import "AXUtilities.h"
 #import "AppDelegate.h"
-
-@interface Observer : NSObject
-@property AXObserverRef observer;
-@property AXUIElementRef application;
-- (AXObserverRef*) getRef;
-@end
-
-@implementation Observer
-
-- (AXObserverRef*) getRef
-{
-  return &_observer;
-}
-
-@end
+#import "NotificationKeys.h"
 
 @interface AppDelegate ()
 {
@@ -32,6 +18,11 @@
     pid_t pid = [runningApplication processIdentifier];
     observers_[@(pid)] = [[AXApplication alloc] initWithRunningApplication:runningApplication];
   });
+}
+
+- (void) observer_kFocusedUIElementChanged:(NSNotification*)notification
+{
+  NSLog(@"%@", [notification userInfo]);
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification*)aNotification
@@ -53,6 +44,11 @@
                                                          selector:@selector(observer_NSWorkspaceDidActivateApplicationNotification:)
                                                              name:NSWorkspaceDidActivateApplicationNotification
                                                            object:nil];
+
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(observer_kFocusedUIElementChanged:)
+                                               name:kFocusedUIElementChanged
+                                             object:nil];
 
   for (NSRunningApplication* runningApplication in [[NSWorkspace sharedWorkspace] runningApplications]) {
     pid_t pid = [runningApplication processIdentifier];

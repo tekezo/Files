@@ -25,7 +25,11 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
     [self registerTitleChangedNotification];
   }
 
-  [[NSNotificationCenter defaultCenter] postNotificationName:kFocusedUIElementChanged object:nil];
+  NSDictionary* userInfo = @{
+    @"runningApplication" : self.runningApplication,
+    @"notification" : (__bridge NSString*)(notification),
+  };
+  [[NSNotificationCenter defaultCenter] postNotificationName:kFocusedUIElementChanged object:self userInfo:userInfo];
 }
 
 @implementation AXApplication
