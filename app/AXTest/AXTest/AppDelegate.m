@@ -54,7 +54,7 @@
                                                              name:NSWorkspaceDidActivateApplicationNotification
                                                            object:nil];
 
-  for (NSRunningApplication* runningApplication in [NSRunningApplication runningApplicationsWithBundleIdentifier : @"com.apple.dock"]) {
+  for (NSRunningApplication* runningApplication in [[NSWorkspace sharedWorkspace] runningApplications]) {
     pid_t pid = [runningApplication processIdentifier];
     observers_[@(pid)] = [[AXApplication alloc] initWithRunningApplication:runningApplication];
   }

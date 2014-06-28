@@ -3,6 +3,7 @@ CONFIGURATION = Release
 
 all:
 	xcodebuild -alltargets -configuration $(CONFIGURATION) build
+	./codesign.sh build
 
 clean:
 	rm -rf build
@@ -17,4 +18,6 @@ xcode:
 	open *.xcodeproj
 
 run:
-	./build/Release/AXTest.app/Contents/MacOS/AXTest
+	-killall AXTest
+	open ./build/Release/AXTest.app
+	tail -f /var/log/system.log
