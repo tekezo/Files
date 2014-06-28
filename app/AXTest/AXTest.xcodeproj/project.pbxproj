@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3448D927195EBB5E00A4D38A /* WindowObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3448D926195EBB5E00A4D38A /* WindowObserver.m */; };
 		344E691F192B23330018C307 /* AXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 344E691E192B23330018C307 /* AXUtilities.m */; };
 		345689AF195EB74F006960B2 /* AXApplicationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 345689AE195EB74F006960B2 /* AXApplicationObserver.m */; };
 		34DEE3AC1921EFA400C7836F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEE3AB1921EFA400C7836F /* Cocoa.framework */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3448D925195EBB5E00A4D38A /* WindowObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowObserver.h; path = Classes/WindowObserver.h; sourceTree = "<group>"; };
+		3448D926195EBB5E00A4D38A /* WindowObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowObserver.m; path = Classes/WindowObserver.m; sourceTree = "<group>"; };
 		344E691D192B23330018C307 /* AXUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXUtilities.h; path = Classes/AXUtilities.h; sourceTree = "<group>"; };
 		344E691E192B23330018C307 /* AXUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXUtilities.m; path = Classes/AXUtilities.m; sourceTree = "<group>"; };
 		345689AD195EB74F006960B2 /* AXApplicationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXApplicationObserver.h; path = Classes/AXApplicationObserver.h; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				34DEE3C01921EFA400C7836F /* MainMenu.xib */,
 				3472F055195E903500188CA5 /* NotificationKeys.h */,
 				34DEE3B21921EFA400C7836F /* Supporting Files */,
+				3448D925195EBB5E00A4D38A /* WindowObserver.h */,
+				3448D926195EBB5E00A4D38A /* WindowObserver.m */,
 			);
 			path = AXTest;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 			files = (
 				34DEE3BF1921EFA400C7836F /* AppDelegate.m in Sources */,
 				34DEE3B81921EFA400C7836F /* main.m in Sources */,
+				3448D927195EBB5E00A4D38A /* WindowObserver.m in Sources */,
 				344E691F192B23330018C307 /* AXUtilities.m in Sources */,
 				345689AF195EB74F006960B2 /* AXApplicationObserver.m in Sources */,
 			);
