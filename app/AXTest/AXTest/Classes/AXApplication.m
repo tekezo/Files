@@ -3,12 +3,14 @@
 static void
 observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef notification, void* refcon)
 {
-  NSLog(@"observerCallback %@", (__bridge NSString*)(notification));
+  AXApplication* self = (__bridge AXApplication*)(refcon);
+  if (! self) return;
+
+  NSLog(@"observerCallback %@ %@", self.runningApplication, (__bridge NSString*)(notification));
 }
 
 @interface AXApplication ()
 {
-  NSRunningApplication* runningApplication_;
   AXUIElementRef applicationElement_;
   AXObserverRef observer_;
 }
@@ -21,16 +23,16 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
   self = [super init];
 
   if (self) {
-    runningApplication_ = runningApplication;
+    self.runningApplication = runningApplication;
 
-    pid_t pid = [runningApplication_ processIdentifier];
+    pid_t pid = [self.runningApplication processIdentifier];
 
     // ----------------------------------------
     // Create applicationElement_
 
     applicationElement_ = AXUIElementCreateApplication(pid);
     if (! applicationElement_) {
-      NSLog(@"AXUIElementCreateApplication is failed. %@", runningApplication_);
+      NSLog(@"AXUIElementCreateApplication is failed. %@", self.runningApplication);
       goto finish;
     }
 
@@ -39,7 +41,7 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
 
     AXError error = AXObserverCreate(pid, observerCallback, &observer_);
     if (error != kAXErrorSuccess) {
-      NSLog(@"AXObserverCreate is failed. error:%d %@", error, runningApplication_);
+      NSLog(@"AXObserverCreate is failed. error:%d %@", error, self.runningApplication);
       goto finish;
     }
 
@@ -89,7 +91,7 @@ finish:
         // We ignore this error.
         return YES;
       }
-      NSLog(@"AXObserverAddNotification is failed: error:%d %@", error, runningApplication_);
+      NSLog(@"AXObserverAddNotification is failed: error:%d %@", error, self.runningApplication);
       return NO;
     }
 
@@ -104,7 +106,7 @@ finish:
         // We ignore this error.
         return YES;
       }
-      NSLog(@"AXObserverRemoveNotification is failed: error:%d %@", error, runningApplication_);
+      NSLog(@"AXObserverRemoveNotification is failed: error:%d %@", error, self.runningApplication);
       return NO;
     }
   }
