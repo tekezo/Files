@@ -1,4 +1,4 @@
-#import "AXApplication.h"
+#import "AXApplicationObserver.h"
 #import "AXUtilities.h"
 #import "AppDelegate.h"
 #import "NotificationKeys.h"
@@ -22,11 +22,11 @@
       NSRunningApplication* runningApplication = [notification userInfo][NSWorkspaceApplicationKey];
       pid_t pid = [runningApplication processIdentifier];
 
-      AXApplication* app = [[AXApplication alloc] initWithRunningApplication:runningApplication];
-      observers_[@(pid)] = app;
+      AXApplicationObserver* o = [[AXApplicationObserver alloc] initWithRunningApplication:runningApplication];
+      observers_[@(pid)] = o;
 
-      [app registerTitleChangedNotification];
-      [app postNotification];
+      [o registerTitleChangedNotification];
+      [o postNotification];
     }
   });
 }
@@ -63,15 +63,15 @@
 
   for (NSRunningApplication* runningApplication in [[NSWorkspace sharedWorkspace] runningApplications]) {
     pid_t pid = [runningApplication processIdentifier];
-    AXApplication* app = [[AXApplication alloc] initWithRunningApplication:runningApplication];
+    AXApplicationObserver* app = [[AXApplicationObserver alloc] initWithRunningApplication:runningApplication];
     observers_[@(pid)] = app;
     NSLog(@"observe %@", runningApplication);
   }
 
   pid_t pid = [[[NSWorkspace sharedWorkspace] frontmostApplication] processIdentifier];
-  AXApplication* app = observers_[@(pid)];
-  [app registerTitleChangedNotification];
-  [app postNotification];
+  AXApplicationObserver* o = observers_[@(pid)];
+  [o registerTitleChangedNotification];
+  [o postNotification];
 }
 
 @end
