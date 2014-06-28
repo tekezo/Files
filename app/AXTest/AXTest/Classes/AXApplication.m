@@ -130,23 +130,33 @@ finish:
   return YES;
 }
 
+- (void) unregisterTitleChangedNotification
+{
+  @synchronized(self) {
+    if (focusedWindowElementForAXTitleChangedNotification_) {
+      [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
+                     notification:kAXTitleChangedNotification
+                              add:NO];
+
+      focusedWindowElementForAXTitleChangedNotification_ = NULL;
+    }
+  }
+}
+
 - (void) registerTitleChangedNotification
 {
-  if (! applicationElement_) return;
-  if (! observer_) return;
+  @synchronized(self) {
+    if (! applicationElement_) return;
 
-  if (focusedWindowElementForAXTitleChangedNotification_) {
+    [self unregisterTitleChangedNotification];
+
+    focusedWindowElementForAXTitleChangedNotification_ = [AXUtilities copyFocusedWindow:applicationElement_];
+    if (! focusedWindowElementForAXTitleChangedNotification_) return;
+
     [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
                    notification:kAXTitleChangedNotification
-                            add:NO];
+                            add:YES];
   }
-
-  focusedWindowElementForAXTitleChangedNotification_ = [AXUtilities copyFocusedWindow:applicationElement_];
-  if (! focusedWindowElementForAXTitleChangedNotification_) return;
-
-  [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
-                 notification:kAXTitleChangedNotification
-                          add:YES];
 }
 
 @end
