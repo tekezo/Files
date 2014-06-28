@@ -46,10 +46,14 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
     CFRunLoopAddSource(CFRunLoopGetCurrent(),
                        AXObserverGetRunLoopSource(observer_),
                        kCFRunLoopDefaultMode);
+
+    // ----------------------------------------
+    // Observe notifications
+    [self observeAXNotification:applicationElement_ notification:kAXFocusedUIElementChangedNotification add:YES];
+    [self observeAXNotification:applicationElement_ notification:kAXFocusedWindowChangedNotification add:YES];
   }
 
 finish:
-
   return self;
 }
 
@@ -67,6 +71,45 @@ finish:
     CFRelease(applicationElement_);
     applicationElement_ = NULL;
   }
+}
+
+- (BOOL) observeAXNotification:(AXUIElementRef)element notification:(CFStringRef)notification add:(BOOL)add
+{
+  if (! observer_) return YES;
+  if (! element) return YES;
+
+  if (add) {
+    AXError error = AXObserverAddNotification(observer_,
+                                              element,
+                                              notification,
+                                              (__bridge void*)self);
+    if (error != kAXErrorSuccess) {
+      if (error == kAXErrorNotificationUnsupported ||
+          error == kAXErrorNotificationAlreadyRegistered) {
+        // We ignore this error.
+        return YES;
+      }
+      NSLog(@"AXObserverAddNotification is failed: error:%d %@", error, runningApplication_);
+      return NO;
+    }
+
+  } else {
+    AXError error = AXObserverRemoveNotification(observer_,
+                                                 element,
+                                                 notification);
+    if (error != kAXErrorSuccess) {
+      // Note: Ignore kAXErrorInvalidUIElement because it is expected error when focused window is closed.
+      if (error == kAXErrorInvalidUIElement ||
+          error == kAXErrorNotificationNotRegistered) {
+        // We ignore this error.
+        return YES;
+      }
+      NSLog(@"AXObserverRemoveNotification is failed: error:%d %@", error, runningApplication_);
+      return NO;
+    }
+  }
+
+  return YES;
 }
 
 @end
