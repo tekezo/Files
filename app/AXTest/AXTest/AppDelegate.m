@@ -1,5 +1,6 @@
-#import "AppDelegate.h"
+#import "AXApplication.h"
 #import "AXUtilities.h"
+#import "AppDelegate.h"
 
 @interface Observer : NSObject
 @property AXObserverRef observer;
@@ -24,112 +25,12 @@
 
 @implementation AppDelegate
 
-static void observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef notification, void* refcon)
-{
-  NSLog(@"observerCallback %@", (__bridge NSString*)(notification));
-
-  if (CFStringCompare(notification, kAXTitleChangedNotification, 0) == kCFCompareEqualTo) {
-    NSLog(@"title changed: %@", [AXUtilities titleOfUIElement:element]);
-  } else if (CFStringCompare(notification, kAXFocusedWindowChangedNotification, 0) == kCFCompareEqualTo) {
-    NSLog(@"focused window changed: %@", [AXUtilities titleOfUIElement:element]);
-  } else if (CFStringCompare(notification, kAXFocusedUIElementChangedNotification, 0) == kCFCompareEqualTo) {
-    NSLog(@"role of element: %@", [AXUtilities roleOfUIElement:element]);
-  }
-}
-
-- (void) registerApplication:(NSRunningApplication*)runningApplication
-{
-  // ----------------------------------------
-  // unregister
-  pid_t pid = [runningApplication processIdentifier];
-
-  {
-    Observer* o = observers_[@(pid)];
-    if (o) {
-      CFRunLoopRemoveSource(CFRunLoopGetCurrent(),
-                            AXObserverGetRunLoopSource(o.observer),
-                            kCFRunLoopDefaultMode);
-      CFRelease(o.observer);
-      [observers_ removeObjectForKey:@(pid)];
-    }
-  }
-
-  // ----------------------------------------
-  if (! AXIsProcessTrusted()) return;
-
-  // ----------------------------------------
-  AXError error = kAXErrorSuccess;
-  AXUIElementRef application = NULL;
-
-  Observer* o = [Observer new];
-  observers_[@(pid)] = o;
-
-  error = AXObserverCreate(pid, observerCallback, [o getRef]);
-  if (error != kAXErrorSuccess) {
-    NSLog(@"AXObserverCreate is failed. pid:%d error:%d", pid, error);
-    goto finish;
-  }
-
-  CFRunLoopAddSource(CFRunLoopGetCurrent(),
-                     AXObserverGetRunLoopSource(o.observer),
-                     kCFRunLoopDefaultMode);
-
-  application = AXUIElementCreateApplication(pid);
-  if (! application) {
-    NSLog(@"AXUIElementCreateApplication is failed. pid:%d", pid);
-    goto finish;
-  }
-
-  error = AXObserverAddNotification(o.observer, application, kAXTitleChangedNotification,            (__bridge void*)self);
-  if (error != kAXErrorSuccess) {
-    NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
-  }
-  error = AXObserverAddNotification(o.observer, application, kAXWindowCreatedNotification,           (__bridge void*)self);
-  if (error != kAXErrorSuccess) {
-    NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
-  }
-  error = AXObserverAddNotification(o.observer, application, kAXFocusedWindowChangedNotification,    (__bridge void*)self);
-  if (error != kAXErrorSuccess) {
-    NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
-  }
-  error = AXObserverAddNotification(o.observer, application, kAXFocusedUIElementChangedNotification, (__bridge void*)self);
-  if (error != kAXErrorSuccess) {
-    NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
-  }
-  error = AXObserverAddNotification(o.observer, application, kAXApplicationActivatedNotification,    (__bridge void*)self);
-  if (error != kAXErrorSuccess) {
-    NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
-  }
-
-  AXUIElementRef focusedWindowElement = [AXUtilities copyFocusedWindow:application];
-  if (! focusedWindowElement) {
-    NSLog(@"no focusedWindowElement");
-  } else {
-    error = AXObserverAddNotification(o.observer, focusedWindowElement, kAXTitleChangedNotification, (__bridge void*)self);
-    if (error != kAXErrorSuccess) {
-      NSLog(@"AXObserverAddNotification is failed: pid:%d error:%d", pid, error);
-    }
-  }
-
-finish:
-  // Do not release application til you do not need notifications.
-  NSLog(@"registered %@", runningApplication);
-}
-
 - (void) observer_NSWorkspaceDidActivateApplicationNotification:(NSNotification*)notification
 {
   dispatch_async(dispatch_get_main_queue(), ^{
-#if 0
-      NSRunningApplication* runningApplication = [notification userInfo][NSWorkspaceApplicationKey];
-      [self registerApplication:runningApplication];
-#else
-      NSString* bundleIdentifier = @"com.apple.dock";
-      //NSString* bundleIdentifier = @"com.apple.launchpad";
-      //NSString* bundleIdentifier = @"com.apple.systemuiserver";
-      for (NSRunningApplication* runningApplication in [NSRunningApplication runningApplicationsWithBundleIdentifier:bundleIdentifier]) {
-        [self registerApplication:runningApplication];
-      }
-#endif
+    NSRunningApplication* runningApplication = [notification userInfo][NSWorkspaceApplicationKey];
+    pid_t pid = [runningApplication processIdentifier];
+    observers_[@(pid)] = [[AXApplication alloc] initWithRunningApplication:runningApplication];
   });
 }
 
@@ -153,8 +54,9 @@ finish:
                                                              name:NSWorkspaceDidActivateApplicationNotification
                                                            object:nil];
 
-  for (NSRunningApplication* runningApplication in [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.apple.dock"]) {
-    [self registerApplication:runningApplication];
+  for (NSRunningApplication* runningApplication in [NSRunningApplication runningApplicationsWithBundleIdentifier : @"com.apple.dock"]) {
+    pid_t pid = [runningApplication processIdentifier];
+    observers_[@(pid)] = [[AXApplication alloc] initWithRunningApplication:runningApplication];
   }
 }
 
