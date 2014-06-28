@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		344E691F192B23330018C307 /* AXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 344E691E192B23330018C307 /* AXUtilities.m */; };
+		349CEEBD195E87DA00EE2D08 /* AXApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 349CEEBC195E87DA00EE2D08 /* AXApplication.m */; };
 		34DEE3AC1921EFA400C7836F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEE3AB1921EFA400C7836F /* Cocoa.framework */; };
 		34DEE3B61921EFA400C7836F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DEE3B41921EFA400C7836F /* InfoPlist.strings */; };
 		34DEE3B81921EFA400C7836F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEE3B71921EFA400C7836F /* main.m */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		344E691D192B23330018C307 /* AXUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXUtilities.h; path = Classes/AXUtilities.h; sourceTree = "<group>"; };
 		344E691E192B23330018C307 /* AXUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXUtilities.m; path = Classes/AXUtilities.m; sourceTree = "<group>"; };
+		349CEEBB195E87DA00EE2D08 /* AXApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXApplication.h; path = Classes/AXApplication.h; sourceTree = "<group>"; };
+		349CEEBC195E87DA00EE2D08 /* AXApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXApplication.m; path = Classes/AXApplication.m; sourceTree = "<group>"; };
 		34DEE3A81921EFA400C7836F /* AXTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DEE3AB1921EFA400C7836F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		34DEE3AE1921EFA400C7836F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,8 @@
 			children = (
 				34DEE3BD1921EFA400C7836F /* AppDelegate.h */,
 				34DEE3BE1921EFA400C7836F /* AppDelegate.m */,
+				349CEEBB195E87DA00EE2D08 /* AXApplication.h */,
+				349CEEBC195E87DA00EE2D08 /* AXApplication.m */,
 				344E691D192B23330018C307 /* AXUtilities.h */,
 				344E691E192B23330018C307 /* AXUtilities.m */,
 				34DEE3C31921EFA400C7836F /* Images.xcassets */,
@@ -260,6 +265,7 @@
 				34DEE3BF1921EFA400C7836F /* AppDelegate.m in Sources */,
 				34DEE3B81921EFA400C7836F /* main.m in Sources */,
 				344E691F192B23330018C307 /* AXUtilities.m in Sources */,
+				349CEEBD195E87DA00EE2D08 /* AXApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
