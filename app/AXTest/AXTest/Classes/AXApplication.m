@@ -12,9 +12,11 @@
 
 @property NSRunningApplication* runningApplication;
 @property NSString* title;
+@property NSString* role;
 
 - (void) registerTitleChangedNotification;
 - (void) updateTitle;
+- (void) updateRole:(AXUIElementRef)element;
 
 @end
 
@@ -30,6 +32,7 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
     }
     if (CFStringCompare(notification, kAXFocusedUIElementChangedNotification, 0) == kCFCompareEqualTo) {
       [self updateTitle];
+      [self updateRole:element];
     }
     if (CFStringCompare(notification, kAXFocusedWindowChangedNotification, 0) == kCFCompareEqualTo) {
       // ----------------------------------------
@@ -57,6 +60,7 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
   if (self) {
     self.runningApplication = runningApplication;
     self.title = @"";
+    self.role = @"";
 
     pid_t pid = [self.runningApplication processIdentifier];
 
@@ -84,6 +88,9 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
     [self observeAXNotification:applicationElement_ notification:kAXFocusedUIElementChangedNotification add:YES];
     [self observeAXNotification:applicationElement_ notification:kAXFocusedWindowChangedNotification add:YES];
     [self registerTitleChangedNotification];
+
+    [self updateTitle];
+    [self updateRole:NULL];
 
     // ----------------------------------------
     CFRunLoopAddSource(CFRunLoopGetCurrent(),
@@ -177,9 +184,9 @@ finish:
 
 - (void) updateTitle
 {
-  if (! applicationElement_) return;
-
   self.title = @"";
+
+  if (! applicationElement_) return;
 
   // Do not cache focusedWindowElement.
   // We need to get new focusedWindowElement because
@@ -187,8 +194,29 @@ finish:
 
   AXUIElementRef focusedWindowElement = [AXUtilities copyFocusedWindow:applicationElement_];
   if (focusedWindowElement) {
-    self.title = [AXUtilities titleOfUIElement:focusedWindowElement];
+    NSString* title = [AXUtilities titleOfUIElement:focusedWindowElement];
+    if (title) {
+      self.title = title;
+    }
     CFRelease(focusedWindowElement);
+  }
+}
+
+- (void) updateRole:(AXUIElementRef)element
+{
+  self.role = @"";
+
+  if (element) {
+    CFRetain(element);
+  } else {
+    element = [AXUtilities copyFocusedUIElement];
+  }
+  if (element) {
+    NSString* role = [AXUtilities roleOfUIElement:element];
+    if (role) {
+      self.role = role;
+    }
+    CFRelease(element);
   }
 }
 
