@@ -2,7 +2,7 @@
 
 @import Cocoa;
 
-@interface AXApplication : NSObject
+@interface AXApplicationObserver : NSObject
 
 - (instancetype) initWithRunningApplication:(NSRunningApplication*)runningApplication;
 - (void) unregisterTitleChangedNotification;

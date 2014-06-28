@@ -1,8 +1,8 @@
-#import "AXApplication.h"
+#import "AXApplicationObserver.h"
 #import "AXUtilities.h"
 #import "NotificationKeys.h"
 
-@interface AXApplication ()
+@interface AXApplicationObserver ()
 
 {
   AXUIElementRef applicationElement_;
@@ -23,7 +23,7 @@
 static void
 observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef notification, void* refcon)
 {
-  AXApplication* self = (__bridge AXApplication*)(refcon);
+  AXApplicationObserver* self = (__bridge AXApplicationObserver*)(refcon);
   if (! self) return;
 
   @synchronized(self) {
@@ -47,7 +47,7 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
   }
 }
 
-@implementation AXApplication
+@implementation AXApplicationObserver
 
 - (instancetype) initWithRunningApplication:(NSRunningApplication*)runningApplication
 {
