@@ -157,8 +157,6 @@ finish:
     [self observeAXNotification:focusedWindowElementForAXTitleChangedNotification_
                    notification:kAXTitleChangedNotification
                             add:YES];
-
-    NSLog(@"%@ %@", @"registerTitleChangedNotification", self.runningApplication);
   }
 }
 
