@@ -3,7 +3,7 @@
 static void
 observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef notification, void* refcon)
 {
-  NSLog(@"%@", (__bridge NSString*)(notification));
+  NSLog(@"observerCallback %@", (__bridge NSString*)(notification));
 }
 
 @interface AXApplication ()
