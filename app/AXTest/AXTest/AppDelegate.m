@@ -2,10 +2,12 @@
 #import "AXUtilities.h"
 #import "AppDelegate.h"
 #import "NotificationKeys.h"
+#import "WindowObserver.h"
 
 @interface AppDelegate ()
 {
   NSMutableDictionary* observers_;
+  WindowObserver* windowObserver_;
 }
 @end
 
@@ -39,6 +41,7 @@
 - (void) applicationDidFinishLaunching:(NSNotification*)aNotification
 {
   observers_ = [NSMutableDictionary new];
+  windowObserver_ = [WindowObserver new];
 
   NSDictionary* options = @{ (__bridge NSString*)(kAXTrustedCheckOptionPrompt): @YES };
   BOOL accessibilityEnabled = AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)options);
