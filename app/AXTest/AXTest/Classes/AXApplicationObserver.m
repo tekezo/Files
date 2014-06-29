@@ -105,7 +105,6 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
                        kCFRunLoopDefaultMode);
   }
 
-finish:
   return self;
 }
 
