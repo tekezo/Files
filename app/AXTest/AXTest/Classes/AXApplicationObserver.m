@@ -72,19 +72,29 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
     // ----------------------------------------
     // Create observer_
 
-    AXError error = AXObserverCreate(pid, observerCallback, &observer_);
-    if (error != kAXErrorSuccess) {
-      @throw [NSException exceptionWithName:@"AXApplicationObserverException"
-                                     reason:@"AXObserverCreate is failed."
-                                   userInfo:@{ @"runningApplication" : self.runningApplication, @"error": @(error) }];
+    {
+      AXError error = AXObserverCreate(pid, observerCallback, &observer_);
+      if (error != kAXErrorSuccess) {
+        @throw [NSException exceptionWithName:@"AXApplicationObserverException"
+                                       reason:@"AXObserverCreate is failed."
+                                     userInfo:@{ @"runningApplication" : self.runningApplication, @"error": @(error) }];
+      }
     }
 
     // ----------------------------------------
     // Observe notifications
 
     // AXObserverAddNotification might be failed when just application launched.
-    if (! [self observeAXNotification:applicationElement_ notification:kAXFocusedUIElementChangedNotification add:YES] ||
-        ! [self observeAXNotification:applicationElement_ notification:kAXFocusedWindowChangedNotification add:YES]) {}
+    if (! [self observeAXNotification:applicationElement_ notification:kAXFocusedUIElementChangedNotification add:YES]) {
+      @throw [NSException exceptionWithName:@"AXApplicationObserverException"
+                                     reason:@"Failed to observe kAXFocusedUIElementChangedNotification."
+                                   userInfo:@{ @"runningApplication" : self.runningApplication }];
+    }
+    if (! [self observeAXNotification:applicationElement_ notification:kAXFocusedWindowChangedNotification add:YES]) {
+      @throw [NSException exceptionWithName:@"AXApplicationObserverException"
+                                     reason:@"Failed to observe kAXFocusedWindowChangedNotification."
+                                   userInfo:@{ @"runningApplication" : self.runningApplication }];
+    }
 
     [self updateTitle];
     [self updateRole:NULL];
