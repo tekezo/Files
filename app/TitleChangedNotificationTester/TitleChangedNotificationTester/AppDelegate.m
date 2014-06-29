@@ -34,4 +34,9 @@
                                   repeats:YES];
 }
 
+- (IBAction) refreshWindow1Title:(id)sender
+{
+  [self.window1 setTitle:[NSString stringWithFormat:@"window1 %@", [NSDate date]]];
+}
+
 @end
