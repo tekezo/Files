@@ -78,7 +78,6 @@
     pid_t pid = [runningApplication processIdentifier];
     AXApplicationObserver* app = [[AXApplicationObserver alloc] initWithRunningApplication:runningApplication];
     observers_[@(pid)] = app;
-    NSLog(@"observe %@", runningApplication);
   }
 
   pid_t pid = [[[NSWorkspace sharedWorkspace] frontmostApplication] processIdentifier];
