@@ -4,6 +4,8 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (assign) IBOutlet NSWindow* window;
+@property (assign) IBOutlet NSWindow* window1;
+@property (assign) IBOutlet NSWindow* window2;
+@property (assign) IBOutlet NSWindow* window3;
 
 @end
