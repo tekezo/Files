@@ -64,8 +64,9 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
 
     applicationElement_ = AXUIElementCreateApplication(pid);
     if (! applicationElement_) {
-      NSLog(@"AXUIElementCreateApplication is failed. %@", self.runningApplication);
-      goto finish;
+      @throw [NSException exceptionWithName:@"AXApplicationObserverException"
+                                     reason:@"AXUIElementCreateApplication is failed."
+                                   userInfo:@{ @"runningApplication" : self.runningApplication }];
     }
 
     // ----------------------------------------
@@ -73,15 +74,17 @@ observerCallback(AXObserverRef observer, AXUIElementRef element, CFStringRef not
 
     AXError error = AXObserverCreate(pid, observerCallback, &observer_);
     if (error != kAXErrorSuccess) {
-      NSLog(@"AXObserverCreate is failed. error:%d %@", error, self.runningApplication);
-      goto finish;
+      @throw [NSException exceptionWithName:@"AXApplicationObserverException"
+                                     reason:@"AXObserverCreate is failed."
+                                   userInfo:@{ @"runningApplication" : self.runningApplication, @"error": @(error) }];
     }
 
     // ----------------------------------------
     // Observe notifications
 
-    [self observeAXNotification:applicationElement_ notification:kAXFocusedUIElementChangedNotification add:YES];
-    [self observeAXNotification:applicationElement_ notification:kAXFocusedWindowChangedNotification add:YES];
+    // AXObserverAddNotification might be failed when just application launched.
+    if (! [self observeAXNotification:applicationElement_ notification:kAXFocusedUIElementChangedNotification add:YES] ||
+        ! [self observeAXNotification:applicationElement_ notification:kAXFocusedWindowChangedNotification add:YES]) {}
 
     [self updateTitle];
     [self updateRole:NULL];
