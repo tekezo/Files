@@ -16,8 +16,6 @@
 		34D2D883195FE16600E1CBE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D2D882195FE16600E1CBE9 /* Images.xcassets */; };
 		34D2D88A195FE16600E1CBE9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D2D889195FE16600E1CBE9 /* XCTest.framework */; };
 		34D2D88B195FE16600E1CBE9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D2D86A195FE16600E1CBE9 /* Cocoa.framework */; };
-		34D2D893195FE16600E1CBE9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34D2D891195FE16600E1CBE9 /* InfoPlist.strings */; };
-		34D2D895195FE16600E1CBE9 /* TitleChangedNotificationTesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2D894195FE16600E1CBE9 /* TitleChangedNotificationTesterTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +45,6 @@
 		34D2D882195FE16600E1CBE9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		34D2D888195FE16600E1CBE9 /* TitleChangedNotificationTesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitleChangedNotificationTesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D2D889195FE16600E1CBE9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		34D2D890195FE16600E1CBE9 /* TitleChangedNotificationTesterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TitleChangedNotificationTesterTests-Info.plist"; sourceTree = "<group>"; };
-		34D2D892195FE16600E1CBE9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		34D2D894195FE16600E1CBE9 /* TitleChangedNotificationTesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleChangedNotificationTesterTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				34D2D870195FE16600E1CBE9 /* TitleChangedNotificationTester */,
-				34D2D88E195FE16600E1CBE9 /* TitleChangedNotificationTesterTests */,
 				34D2D869195FE16600E1CBE9 /* Frameworks */,
 				34D2D868195FE16600E1CBE9 /* Products */,
 			);
@@ -132,24 +126,6 @@
 				34D2D876195FE16600E1CBE9 /* main.m */,
 				34D2D878195FE16600E1CBE9 /* TitleChangedNotificationTester-Prefix.pch */,
 				34D2D879195FE16600E1CBE9 /* Credits.rtf */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		34D2D88E195FE16600E1CBE9 /* TitleChangedNotificationTesterTests */ = {
-			isa = PBXGroup;
-			children = (
-				34D2D894195FE16600E1CBE9 /* TitleChangedNotificationTesterTests.m */,
-				34D2D88F195FE16600E1CBE9 /* Supporting Files */,
-			);
-			path = TitleChangedNotificationTesterTests;
-			sourceTree = "<group>";
-		};
-		34D2D88F195FE16600E1CBE9 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				34D2D890195FE16600E1CBE9 /* TitleChangedNotificationTesterTests-Info.plist */,
-				34D2D891195FE16600E1CBE9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -241,7 +217,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D2D893195FE16600E1CBE9 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +236,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D2D895195FE16600E1CBE9 /* TitleChangedNotificationTesterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,14 +272,6 @@
 				34D2D880195FE16600E1CBE9 /* Base */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		34D2D891195FE16600E1CBE9 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				34D2D892195FE16600E1CBE9 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -466,6 +432,7 @@
 				34D2D89A195FE16600E1CBE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		34D2D89B195FE16600E1CBE9 /* Build configuration list for PBXNativeTarget "TitleChangedNotificationTesterTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +441,7 @@
 				34D2D89D195FE16600E1CBE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
