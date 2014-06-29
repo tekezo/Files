@@ -14,19 +14,7 @@
 		34D2D87E195FE16600E1CBE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D2D87D195FE16600E1CBE9 /* AppDelegate.m */; };
 		34D2D881195FE16600E1CBE9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34D2D87F195FE16600E1CBE9 /* MainMenu.xib */; };
 		34D2D883195FE16600E1CBE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34D2D882195FE16600E1CBE9 /* Images.xcassets */; };
-		34D2D88A195FE16600E1CBE9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D2D889195FE16600E1CBE9 /* XCTest.framework */; };
-		34D2D88B195FE16600E1CBE9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D2D86A195FE16600E1CBE9 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		34D2D88C195FE16600E1CBE9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34D2D85F195FE16500E1CBE9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 34D2D866195FE16500E1CBE9;
-			remoteInfo = TitleChangedNotificationTester;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		34D2D867195FE16600E1CBE9 /* TitleChangedNotificationTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TitleChangedNotificationTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,8 +31,6 @@
 		34D2D87D195FE16600E1CBE9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		34D2D880195FE16600E1CBE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		34D2D882195FE16600E1CBE9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		34D2D888195FE16600E1CBE9 /* TitleChangedNotificationTesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TitleChangedNotificationTesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		34D2D889195FE16600E1CBE9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,15 +39,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				34D2D86B195FE16600E1CBE9 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34D2D885195FE16600E1CBE9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34D2D88B195FE16600E1CBE9 /* Cocoa.framework in Frameworks */,
-				34D2D88A195FE16600E1CBE9 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				34D2D867195FE16600E1CBE9 /* TitleChangedNotificationTester.app */,
-				34D2D888195FE16600E1CBE9 /* TitleChangedNotificationTesterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,7 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				34D2D86A195FE16600E1CBE9 /* Cocoa.framework */,
-				34D2D889195FE16600E1CBE9 /* XCTest.framework */,
 				34D2D86C195FE16600E1CBE9 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -150,24 +125,6 @@
 			productReference = 34D2D867195FE16600E1CBE9 /* TitleChangedNotificationTester.app */;
 			productType = "com.apple.product-type.application";
 		};
-		34D2D887195FE16600E1CBE9 /* TitleChangedNotificationTesterTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 34D2D89B195FE16600E1CBE9 /* Build configuration list for PBXNativeTarget "TitleChangedNotificationTesterTests" */;
-			buildPhases = (
-				34D2D884195FE16600E1CBE9 /* Sources */,
-				34D2D885195FE16600E1CBE9 /* Frameworks */,
-				34D2D886195FE16600E1CBE9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				34D2D88D195FE16600E1CBE9 /* PBXTargetDependency */,
-			);
-			name = TitleChangedNotificationTesterTests;
-			productName = TitleChangedNotificationTesterTests;
-			productReference = 34D2D888195FE16600E1CBE9 /* TitleChangedNotificationTesterTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,12 +132,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "pqrs.org";
-				TargetAttributes = {
-					34D2D887195FE16600E1CBE9 = {
-						TestTargetID = 34D2D866195FE16500E1CBE9;
-					};
-				};
+				ORGANIZATIONNAME = pqrs.org;
 			};
 			buildConfigurationList = 34D2D862195FE16500E1CBE9 /* Build configuration list for PBXProject "TitleChangedNotificationTester" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -196,7 +148,6 @@
 			projectRoot = "";
 			targets = (
 				34D2D866195FE16500E1CBE9 /* TitleChangedNotificationTester */,
-				34D2D887195FE16600E1CBE9 /* TitleChangedNotificationTesterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -213,13 +164,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34D2D886195FE16600E1CBE9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -232,22 +176,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34D2D884195FE16600E1CBE9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		34D2D88D195FE16600E1CBE9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 34D2D866195FE16500E1CBE9 /* TitleChangedNotificationTester */;
-			targetProxy = 34D2D88C195FE16600E1CBE9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		34D2D873195FE16600E1CBE9 /* InfoPlist.strings */ = {
@@ -373,46 +302,6 @@
 			};
 			name = Release;
 		};
-		34D2D89C195FE16600E1CBE9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TitleChangedNotificationTester.app/Contents/MacOS/TitleChangedNotificationTester";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TitleChangedNotificationTester/TitleChangedNotificationTester-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "TitleChangedNotificationTesterTests/TitleChangedNotificationTesterTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		34D2D89D195FE16600E1CBE9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TitleChangedNotificationTester.app/Contents/MacOS/TitleChangedNotificationTester";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TitleChangedNotificationTester/TitleChangedNotificationTester-Prefix.pch";
-				INFOPLIST_FILE = "TitleChangedNotificationTesterTests/TitleChangedNotificationTesterTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -430,15 +319,6 @@
 			buildConfigurations = (
 				34D2D899195FE16600E1CBE9 /* Debug */,
 				34D2D89A195FE16600E1CBE9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		34D2D89B195FE16600E1CBE9 /* Build configuration list for PBXNativeTarget "TitleChangedNotificationTesterTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				34D2D89C195FE16600E1CBE9 /* Debug */,
-				34D2D89D195FE16600E1CBE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
