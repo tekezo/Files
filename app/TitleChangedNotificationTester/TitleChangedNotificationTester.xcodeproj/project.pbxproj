@@ -175,7 +175,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Takayama Fumihiko";
+				ORGANIZATIONNAME = "pqrs.org";
 				TargetAttributes = {
 					34D2D887195FE16600E1CBE9 = {
 						TestTargetID = 34D2D866195FE16500E1CBE9;
