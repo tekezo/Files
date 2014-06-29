@@ -678,7 +678,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQO-Hi-2px">
-                        <rect key="frame" x="91" y="83" width="119" height="32"/>
+                        <rect key="frame" x="141" y="83" width="119" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Refresh Title" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mjw-3X-Gvd">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
