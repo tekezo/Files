@@ -38,6 +38,11 @@
   NSLog(@"%@", [notification userInfo]);
 }
 
+- (void) observer_kWindowVisibilityChanged:(NSNotification*)notification
+{
+  NSLog(@"%@", [notification userInfo]);
+}
+
 - (void) applicationDidFinishLaunching:(NSNotification*)aNotification
 {
   observers_ = [NSMutableDictionary new];
@@ -62,6 +67,11 @@
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(observer_kFocusedUIElementChanged:)
                                                name:kFocusedUIElementChanged
+                                             object:nil];
+
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(observer_kWindowVisibilityChanged:)
+                                               name:kWindowVisibilityChanged
                                              object:nil];
 
   for (NSRunningApplication* runningApplication in [[NSWorkspace sharedWorkspace] runningApplications]) {

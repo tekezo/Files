@@ -1,3 +1,4 @@
+#import "NotificationKeys.h"
 #import "WindowObserver.h"
 
 @interface WindowObserver ()
@@ -70,6 +71,7 @@
 {
   NSDictionary* userInfo = @{
     @"windowName": windowName,
+    @"visibility": @(visibility),
   };
   [[NSNotificationCenter defaultCenter] postNotificationName:kWindowVisibilityChanged object:self userInfo:userInfo];
 }
