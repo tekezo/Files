@@ -684,6 +684,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="refreshWindow1Title:" target="Voe-Tx-rLC" id="1sh-Wp-YXZ"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
