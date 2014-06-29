@@ -8,10 +8,35 @@
 {
   NSMutableDictionary* observers_;
   WindowObserver* windowObserver_;
+  NSTimer* timer_;
+  NSRunningApplication* runningApplicationForAXApplicationObserver_;
 }
 @end
 
 @implementation AppDelegate
+
+- (void) timerFireMethod:(NSTimer*)timer
+{
+  dispatch_async(dispatch_get_main_queue(), ^{
+    @synchronized(self) {
+      if (runningApplicationForAXApplicationObserver_) {
+        @try {
+          AXApplicationObserver* o = [[AXApplicationObserver alloc] initWithRunningApplication:runningApplicationForAXApplicationObserver_];
+          pid_t pid = [runningApplicationForAXApplicationObserver_ processIdentifier];
+          observers_[@(pid)] = o;
+
+          [o observeTitleChangedNotification];
+          [o postNotification];
+
+          runningApplicationForAXApplicationObserver_ = nil;
+
+        } @catch (NSException* e) {
+          NSLog(@"%@", e);
+        }
+      }
+    }
+  });
+}
 
 - (void) observer_NSWorkspaceDidActivateApplicationNotification:(NSNotification*)notification
 {
@@ -21,14 +46,8 @@
         [observers_[pid] unobserveTitleChangedNotification];
       }
 
-      NSRunningApplication* runningApplication = [notification userInfo][NSWorkspaceApplicationKey];
-      pid_t pid = [runningApplication processIdentifier];
-
-      AXApplicationObserver* o = [[AXApplicationObserver alloc] initWithRunningApplication:runningApplication];
-      observers_[@(pid)] = o;
-
-      [o observeTitleChangedNotification];
-      [o postNotification];
+      runningApplicationForAXApplicationObserver_ = [notification userInfo][NSWorkspaceApplicationKey];
+      [timer_ fire];
     }
   });
 }
@@ -75,15 +94,22 @@
                                              object:nil];
 
   for (NSRunningApplication* runningApplication in [[NSWorkspace sharedWorkspace] runningApplications]) {
-    pid_t pid = [runningApplication processIdentifier];
-    AXApplicationObserver* app = [[AXApplicationObserver alloc] initWithRunningApplication:runningApplication];
-    observers_[@(pid)] = app;
+    @try {
+      pid_t pid = [runningApplication processIdentifier];
+      AXApplicationObserver* app = [[AXApplicationObserver alloc] initWithRunningApplication:runningApplication];
+      observers_[@(pid)] = app;
+    } @catch (NSException* e) {
+      NSLog(@"%@", e);
+    }
   }
 
-  pid_t pid = [[[NSWorkspace sharedWorkspace] frontmostApplication] processIdentifier];
-  AXApplicationObserver* o = observers_[@(pid)];
-  [o observeTitleChangedNotification];
-  [o postNotification];
+  timer_ = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                            target:self
+                                          selector:@selector(timerFireMethod:)
+                                          userInfo:nil
+                                           repeats:YES];
+  runningApplicationForAXApplicationObserver_ = [[NSWorkspace sharedWorkspace] frontmostApplication];
+  [timer_ fire];
 }
 
 @end
