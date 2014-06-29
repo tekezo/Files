@@ -10,6 +10,7 @@
 		3448D927195EBB5E00A4D38A /* WindowObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 3448D926195EBB5E00A4D38A /* WindowObserver.m */; };
 		344E691F192B23330018C307 /* AXUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 344E691E192B23330018C307 /* AXUtilities.m */; };
 		345689AF195EB74F006960B2 /* AXApplicationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 345689AE195EB74F006960B2 /* AXApplicationObserver.m */; };
+		349909BC1960684400058C5F /* AXApplicationObserverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 349909BB1960684400058C5F /* AXApplicationObserverManager.m */; };
 		34DEE3AC1921EFA400C7836F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DEE3AB1921EFA400C7836F /* Cocoa.framework */; };
 		34DEE3B61921EFA400C7836F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34DEE3B41921EFA400C7836F /* InfoPlist.strings */; };
 		34DEE3B81921EFA400C7836F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DEE3B71921EFA400C7836F /* main.m */; };
@@ -41,6 +42,8 @@
 		345689AD195EB74F006960B2 /* AXApplicationObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXApplicationObserver.h; path = Classes/AXApplicationObserver.h; sourceTree = "<group>"; };
 		345689AE195EB74F006960B2 /* AXApplicationObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXApplicationObserver.m; path = Classes/AXApplicationObserver.m; sourceTree = "<group>"; };
 		3472F055195E903500188CA5 /* NotificationKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationKeys.h; path = Classes/NotificationKeys.h; sourceTree = "<group>"; };
+		349909BA1960684400058C5F /* AXApplicationObserverManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXApplicationObserverManager.h; path = Classes/AXApplicationObserverManager.h; sourceTree = "<group>"; };
+		349909BB1960684400058C5F /* AXApplicationObserverManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXApplicationObserverManager.m; path = Classes/AXApplicationObserverManager.m; sourceTree = "<group>"; };
 		34DEE3A81921EFA400C7836F /* AXTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DEE3AB1921EFA400C7836F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		34DEE3AE1921EFA400C7836F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -129,6 +132,8 @@
 				34DEE3BE1921EFA400C7836F /* AppDelegate.m */,
 				345689AD195EB74F006960B2 /* AXApplicationObserver.h */,
 				345689AE195EB74F006960B2 /* AXApplicationObserver.m */,
+				349909BA1960684400058C5F /* AXApplicationObserverManager.h */,
+				349909BB1960684400058C5F /* AXApplicationObserverManager.m */,
 				344E691D192B23330018C307 /* AXUtilities.h */,
 				344E691E192B23330018C307 /* AXUtilities.m */,
 				34DEE3C31921EFA400C7836F /* Images.xcassets */,
@@ -270,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34DEE3BF1921EFA400C7836F /* AppDelegate.m in Sources */,
+				349909BC1960684400058C5F /* AXApplicationObserverManager.m in Sources */,
 				34DEE3B81921EFA400C7836F /* main.m in Sources */,
 				3448D927195EBB5E00A4D38A /* WindowObserver.m in Sources */,
 				344E691F192B23330018C307 /* AXUtilities.m in Sources */,
