@@ -13,7 +13,7 @@ enum {
   NSMutableDictionary* shown_;
 
   CGWindowID rawWindowIDs_[WINDOWID__END__];
-  CFArrayRef* windowIDs_;
+  CFArrayRef windowIDs_;
 }
 @end
 
