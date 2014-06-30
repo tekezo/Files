@@ -58,8 +58,8 @@
       if (! shown_[@"Launchpad"]) {
         shown_[@"Launchpad"] = [[NSRunningApplication runningApplicationWithProcessIdentifier:windowOwnerPID] bundleIdentifier];
         [self postNotification:@"Launchpad" bundleIdentifier:shown_[@"Launchpad"] visibility:YES];
-        return;
       }
+      return;
     }
   }
 
