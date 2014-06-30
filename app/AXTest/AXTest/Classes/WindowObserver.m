@@ -50,9 +50,11 @@
   // Check windows state in priority order.
   for (NSDictionary* window in windows) {
     pid_t windowOwnerPID = [window[(__bridge NSString*)(kCGWindowOwnerPID)] intValue];
+    NSString* windowOwnerName = window[(__bridge NSString*)(kCGWindowOwnerName)];
+    NSString* windowName = window[(__bridge NSString*)(kCGWindowName)];
 
-    if ([window[(__bridge NSString*)(kCGWindowOwnerName)] isEqualToString:@"Dock"] &&
-        [window[(__bridge NSString*)(kCGWindowName)] isEqualToString:@"Launchpad"]) {
+    if ([windowOwnerName isEqualToString:@"Dock"] &&
+        [windowName isEqualToString:@"Widget Launchpad"]) {
       if (! shown_[@"Launchpad"]) {
         shown_[@"Launchpad"] = [[NSRunningApplication runningApplicationWithProcessIdentifier:windowOwnerPID] bundleIdentifier];
         [self postNotification:@"Launchpad" bundleIdentifier:shown_[@"Launchpad"] visibility:YES];
