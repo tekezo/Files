@@ -101,11 +101,14 @@
 {
   dispatch_async(dispatch_get_main_queue(), ^{
     @synchronized(self) {
+    retry:
       for (NSString* key in systemApplicationObservers_) {
         AXApplicationObserver* o = systemApplicationObservers_[key];
         NSRunningApplication* runningApplication = o.runningApplication;
         if (! runningApplication || runningApplication.terminated) {
+          NSLog(@"Remove %@ from systemApplicationObservers_", key);
           [systemApplicationObservers_ removeObjectForKey:key];
+          goto retry;
         }
       }
 
@@ -184,7 +187,7 @@
                                                              object:nil];
 
     // ----------------------------------------
-    systemApplicationObserversRefreshTimer_ = [NSTimer scheduledTimerWithTimeInterval:0.5
+    systemApplicationObserversRefreshTimer_ = [NSTimer scheduledTimerWithTimeInterval:10
                                                                                target:self
                                                                              selector:@selector(systemApplicationObserversRefreshTimerFireMethod:)
                                                                              userInfo:nil
