@@ -85,6 +85,10 @@
 @interface AXApplicationObserverManager ()
 {
   NSMutableDictionary* systemApplicationObservers_;
+
+  // We need to observe frontmostApplication only because
+  // kAXFocusedWindowChangedNotification will be sent from apps which are not frontmost.
+  // (You can confirm it by WindowChangedNotificationTester.app.)
   AXApplicationObserver* observer_;
 
   NSTimer* timer_;
@@ -101,21 +105,20 @@
 {
   dispatch_async(dispatch_get_main_queue(), ^{
     @synchronized(self) {
-    retry:
-      for (NSString* key in systemApplicationObservers_) {
-        AXApplicationObserver* o = systemApplicationObservers_[key];
-        NSRunningApplication* runningApplication = o.runningApplication;
-        if (! runningApplication || runningApplication.terminated) {
-          NSLog(@"Remove %@ from systemApplicationObservers_", key);
-          [systemApplicationObservers_ removeObjectForKey:key];
-          goto retry;
+      for (NSString* bundleIdentifier in @[@"com.apple.systemuiserver",
+                                           @"com.apple.notificationcenterui"]) {
+        {
+          // Remove if terminated.
+          AXApplicationObserver* o = systemApplicationObservers_[bundleIdentifier];
+          if (o) {
+            NSRunningApplication* runningApplication = o.runningApplication;
+            if (! runningApplication || runningApplication.terminated) {
+              NSLog(@"Remove %@ from systemApplicationObservers_", bundleIdentifier);
+              [systemApplicationObservers_ removeObjectForKey:bundleIdentifier];
+            }
+          }
         }
-      }
 
-      NSArray* bundleIdentifiers = @[@"com.apple.systemuiserver",
-                                     @"com.apple.notificationcenterui",
-                                   ];
-      for (NSString* bundleIdentifier in bundleIdentifiers) {
         if (! systemApplicationObservers_[bundleIdentifier]) {
           NSArray* runningApplications = [NSRunningApplication runningApplicationsWithBundleIdentifier:bundleIdentifier];
           if ([runningApplications count] > 0) {
@@ -187,11 +190,12 @@
                                                              object:nil];
 
     // ----------------------------------------
-    systemApplicationObserversRefreshTimer_ = [NSTimer scheduledTimerWithTimeInterval:10
+    systemApplicationObserversRefreshTimer_ = [NSTimer scheduledTimerWithTimeInterval:3
                                                                                target:self
                                                                              selector:@selector(systemApplicationObserversRefreshTimerFireMethod:)
                                                                              userInfo:nil
                                                                               repeats:YES];
+    [systemApplicationObserversRefreshTimer_ fire];
 
     timer_ = [NSTimer scheduledTimerWithTimeInterval:0.5
                                               target:self
