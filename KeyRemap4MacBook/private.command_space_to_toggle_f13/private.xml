@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change control-space to f13.</name>
+    <appendix>Toggle this behavior by command-space.</appendix>
+    <identifier>private.command_space_to_toggle_f13</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_private_command_space_to_toggle_f13_through,
+    </autogen>
+
+    <block>
+      <config_only>notsave.private.command_space_to_toggle_f13_through</config_only>
+    </block>
+
+    <block>
+      <config_not>notsave.private.command_space_to_toggle_f13_through</config_not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+        KeyCode::F13,
+      </autogen>
+    </block>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private.command_space_to_toggle_f13_through</identifier>
+    <autogen>__ShowStatusMessage__ pass through control-space</autogen>
+  </item>
+
+</root>
+
