@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use Danish æøå in U.S. input source</name>
+    <identifier>private.danish_symbols_in_us</identifier>
+    <inputsource_only>ENGLISH</inputsource_only>
+
+    <!-- ø -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::QUOTE, ModifierFlag::NONE,
+      KeyCode::O, ModifierFlag::OPTION_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::QUOTE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::O, ModifierFlag::OPTION_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+    </autogen>
+
+    <!-- æ -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, ModifierFlag::NONE,
+      KeyCode::QUOTE, ModifierFlag::OPTION_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::QUOTE, ModifierFlag::OPTION_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+    </autogen>
+
+    <!-- å -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_LEFT, ModifierFlag::NONE,
+      KeyCode::A, ModifierFlag::OPTION_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::A, ModifierFlag::OPTION_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+    </autogen>
+
+  </item>
+
+</root>
