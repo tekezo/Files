@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Open shut down dialog by fn-escape</name>
+    <identifier>private.fn_escape_to_shutdown_dialog</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::ESCAPE, ModifierFlag::FN,
+      KeyCode::VK_IOHIDPOSTEVENT_NX_POWER_KEY,
+    </autogen>
+  </item>
+
+</root>
