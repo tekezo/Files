@@ -2,7 +2,7 @@
 <root>
 
   <item>
-    <name>Send control-t when control key is pressed alone in Emacs.</name>
+    <name>Send C-c t when control key is pressed alone in Emacs.</name>
     <identifier>private.control_alone_to_control_t</identifier>
     <only>EMACS</only>
     <autogen>
@@ -14,13 +14,14 @@
       @end
 
       @begin
-      KeyCode::T, ModifierFlag::CONTROL_L,
+      KeyCode::C, ModifierFlag::CONTROL_L,
+      KeyCode::T,
       @end
     </autogen>
   </item>
 
   <item>
-    <name>Send control-t when control key is released in Emacs.</name>
+    <name>Send C-c t when control key is released in Emacs.</name>
     <identifier>private.control_up_to_control_t</identifier>
     <only>EMACS</only>
     <autogen>
@@ -29,7 +30,8 @@
       KeyCode::CONTROL_L,
 
       Option::KEYTOKEY_AFTER_KEYUP,
-      KeyCode::T, ModifierFlag::CONTROL_L,
+      KeyCode::C, ModifierFlag::CONTROL_L,
+      KeyCode::T,
     </autogen>
   </item>
 
