@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change control-f19 to caps lock.</name>
+    <name>(+ disable f19 key.)</name>
+    <identifier>private.control_f19_to_capslock</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19, ModifierFlag::CONTROL_L,
+      KeyCode::CAPSLOCK,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19,
+      KeyCode::VK_NONE,
+    </autogen>
+  </item>
+
+</root>
