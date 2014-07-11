@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Force numlock on for Quickfire TKL 6keys</name>
+    <identifier>private.force_numlock_on_quickfire_tkl_6keys</identifier>
+    <autogen>
+      __ForceNumLockOn__
+      DeviceVendor::RawValue::0x2516,
+      DeviceProduct::RawValue::0x0011,
+    </autogen>
+  </item>
+
+</root>
