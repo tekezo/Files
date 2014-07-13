@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>SIMULTANEOUS_VI_MODE_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+               <autogen>
+                 __KeyToKey__
+                 KeyCode::O, ModifierFlag::NONE,
+                 KeyCode::E, ModifierFlag::CONTROL_L,
+                 KeyCode::RETURN,
+                 KeyCode::VK_CONFIG_FORCE_OFF_notsave_simultaneouskeypresses_vimode,
+                 Option::NOREPEAT,
+               </autogen>
+      ]]>
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Simultaneous Vi Mode enhancement</name>
+  </item>
+
+</root>
