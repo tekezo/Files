@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Backslash(\) to Forward Delete</name>
+    <appendix>(+ Fn+Backslash(\) to Backslash(\))</appendix>
+    <appendix>(+ Command+Backslash to delete word)</appendix>
+    <identifier>private.backslash_to_forward_delete</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKSLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::FORWARD_DELETE, ModifierFlag::OPTION_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKSLASH, ModifierFlag::FN,
+      KeyCode::BACKSLASH
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKSLASH,
+      KeyCode::FORWARD_DELETE,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Delete word by command-delete.</name>
+    <identifier>private.command_delete_to_delete_word</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::DELETE, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
