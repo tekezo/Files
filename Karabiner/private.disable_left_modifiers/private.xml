@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable left modifiers (command, option and control).</name>
+    <identifier>private.disable_left_modifiers</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
