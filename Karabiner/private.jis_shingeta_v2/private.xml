@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>新下駄配列 v2（ローマ字入力）</name>
+    <identifier>private.jis_shingeta_v2</identifier>
+    <inputsource_only>JAPANESE</inputsource_only>
+
+    <!-- D+K （れ） -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::K, ModifierFlag::D,
+      KeyCode::R, KeyCode::E,
+      KeyCode::VK_MODIFIER_K,
+    </autogen>
+    <!-- K+D （れ） -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::D, ModifierFlag::K,
+      KeyCode::R, KeyCode::E,
+      KeyCode::VK_MODIFIER_D,
+    </autogen>
+
+    <!-- D （か） -->
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::D,
+
+      @begin
+      KeyCode::VK_MODIFIER_D,
+      @end
+
+      @begin
+      KeyCode::K, KeyCode::A, KeyCode::VK_NONE,
+      Option::NOREPEAT,
+      @end
+    </autogen>
+    <block><modifier_only>ModifierFlag::D</modifier_only><autogen>__BlockUntilKeyUp__ KeyCode::D</autogen></block>
+
+    <!-- K （い） -->
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::K,
+
+      @begin
+      KeyCode::VK_MODIFIER_K,
+      @end
+
+      @begin
+      KeyCode::I, KeyCode::VK_NONE,
+      Option::NOREPEAT,
+      @end
+    </autogen>
+    <block><modifier_only>ModifierFlag::K</modifier_only><autogen>__BlockUntilKeyUp__ KeyCode::K</autogen></block>
+  </item>
+
+</root>
