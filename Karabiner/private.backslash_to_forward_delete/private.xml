@@ -39,6 +39,16 @@
   <item>
     <name>Delete word by command-delete.</name>
     <identifier>private.command_delete_to_delete_word</identifier>
+    <block>
+      <!-- preserve command-delete at delete-selected-files in Finder -->
+      <only>FINDER</only>
+      <uielementrole_not>{{ UIELEMENTROLES_EDITING_IN_FINDER }}</uielementrole_not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      </autogen>
+    </block>
     <autogen>
       __KeyToKey__
       KeyCode::DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
