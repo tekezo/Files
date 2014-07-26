@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Enter Full Screen by f19. (Change f19 key to command-control-f.)</name>
+    <identifier>remap.f19_to_full_screen</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19, ModifierFlag::NONE,
+      KeyCode::F, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
+</root>
