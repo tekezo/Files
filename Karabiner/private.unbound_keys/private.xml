@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Unbound keys</name>
+    <identifier>private.unbound_keys</identifier>
+
+    <block>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <lastpressedphysicalkey_only>KeyCode::A</lastpressedphysicalkey_only>
+      <autogen>__KeyToKey__ KeyCode::A, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <block>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <lastpressedphysicalkey_only>KeyCode::B</lastpressedphysicalkey_only>
+      <autogen>__KeyToKey__ KeyCode::B, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <!-- C...Z and other keys -->
+  </item>
+
+</root>
