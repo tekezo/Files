@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Send keypad 0 when you press fn key alone</name>
+    <identifier>private.fn_to_keypad0</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::FN,
+      KeyCode::FN,
+      KeyCode::KEYPAD_0,
+    </autogen>
+  </item>
+
+</root>
