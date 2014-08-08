@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change option-L to control-option-Q in RDC.</name>
+    <identifier>private.rdc_option_l_to_control_option_q</identifier>
+
+    <only>REMOTEDESKTOPCONNECTION</only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::Q, ModifierFlag::CONTROL_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+    </autogen>
+  </item>
+
+</root>
