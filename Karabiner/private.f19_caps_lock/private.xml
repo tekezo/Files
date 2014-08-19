@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f19 key to caps lock.</name>
+    <appendix>(turn caps lock off when you press caps lock twice.)</appendix>
+    <identifier>private.f19_caps_lock</identifier>
+
+    <block>
+      <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
+      <autogen>
+        __DoublePressModifier__
+        KeyCode::F19,
+        KeyCode::VK_NONE,
+        KeyCode::CAPSLOCK
+      </autogen>
+    </block>
+    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::CAPSLOCK</autogen>
+  </item>
+
+</root>
