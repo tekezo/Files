@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>MOUSE_KEYS_MODE_2_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+               <block>
+                 <modifier_only>ModifierFlag::MOUSE_KEYS_MODE_2_SCROLL</modifier_only>
+                 <autogen>__KeyToKey__ KeyCode::J, KeyCode::VK_MOUSEKEY_SCROLL_LEFT</autogen>
+                 <autogen>__KeyToKey__ KeyCode::K, KeyCode::VK_MOUSEKEY_SCROLL_DOWN</autogen>
+                 <autogen>__KeyToKey__ KeyCode::I, KeyCode::VK_MOUSEKEY_SCROLL_UP</autogen>
+                 <autogen>__KeyToKey__ KeyCode::L, KeyCode::VK_MOUSEKEY_SCROLL_RIGHT</autogen>
+               </block>
+
+               <autogen>__KeyToKey__ KeyCode::J, KeyCode::VK_MOUSEKEY_LEFT</autogen>
+               <autogen>__KeyToKey__ KeyCode::K, KeyCode::VK_MOUSEKEY_DOWN</autogen>
+               <autogen>__KeyToKey__ KeyCode::I, KeyCode::VK_MOUSEKEY_UP</autogen>
+               <autogen>__KeyToKey__ KeyCode::L, KeyCode::VK_MOUSEKEY_RIGHT</autogen>
+
+               <autogen>__KeyToKey__ KeyCode::H, KeyCode::VK_OPEN_URL_SHELL_warp_mouse_cursor_position_front_window_center</autogen>
+      ]]>
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Mouse Keys Mode v2 is modified.</name>
+    <appendix>move cursor by IJKL.</appendix>
+    <appendix>Warp cursor position by H.</appendix>
+  </item>
+
+</root>
