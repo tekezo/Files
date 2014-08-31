@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>SHORTCAT</modifierdef>
+
+  <item>
+    <name>Shortcat Hack</name>
+    <identifier>private.shortcat_hack</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19,
+      KeyCode::F13, KeyCode::VK_NONE,
+      Option::NOREPEAT,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::DOT,
+      KeyCode::VK_LOCK_CONTROL_L_FORCE_ON,
+      KeyCode::VK_LOCK_SHORTCAT_FORCE_ON,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::RETURN, ModifierFlag::SHORTCAT,
+      KeyCode::VK_LOCK_SHORTCAT_FORCE_OFF,
+      KeyCode::VK_LOCK_CONTROL_L_FORCE_OFF,
+      KeyCode::RETURN,
+      Option::NOREPEAT,
+    </autogen>
+
+  </item>
+
+</root>
