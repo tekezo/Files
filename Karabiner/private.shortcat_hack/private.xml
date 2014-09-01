@@ -28,6 +28,15 @@
       Option::NOREPEAT,
     </autogen>
 
+    <autogen>
+      __KeyToKey__
+      KeyCode::ESCAPE, ModifierFlag::SHORTCAT,
+      KeyCode::VK_LOCK_SHORTCAT_FORCE_OFF,
+      KeyCode::VK_LOCK_CONTROL_L_FORCE_OFF,
+      KeyCode::ESCAPE,
+      Option::NOREPEAT,
+    </autogen>
+
   </item>
 
 </root>
