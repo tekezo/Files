@@ -9,6 +9,10 @@
       DeviceProduct::RawValue::0xc52b,
     </device_only>
     <autogen>__KeyToKey__ KeyCode::COMMAND_L, PointingButton::MIDDLE</autogen>
+
+    <autogen>__KeyToKey__ PointingButton::BUTTON4, PointingButton::MIDDLE</autogen>
+    <autogen>__KeyToKey__ PointingButton::BUTTON5, PointingButton::MIDDLE</autogen>
+    <autogen>__KeyToKey__ PointingButton::BUTTON6, PointingButton::MIDDLE</autogen>
   </item>
 
 </root>
