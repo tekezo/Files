@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change left command key to middle click on unifying devices.</name>
+    <identifier>private.left_command_to_middle_click_on_unifying</identifier>
+    <device_only>
+      DeviceVendor::RawValue::0x046d,
+      DeviceProduct::RawValue::0xc52b,
+    </device_only>
+    <autogen>__KeyToKey__ KeyCode::COMMAND_L, PointingButton::MIDDLE</autogen>
+  </item>
+
+</root>
