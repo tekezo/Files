@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <appdef>
+    <appname>conkeror</appname>
+    <!--
+        Please modify bundle identifier for your environment.
+        You can confirm it by EventViewer.
+        https://pqrs.org/osx/karabiner/xml.html.en#appdef-steps
+    -->
+    <equal>org.pqrs.unknownapp.conkeror</equal>
+  </appdef>
+
+  <item>
+    <name>Disable all settings while you are using conkeror.</name>
+    <identifier>private.ignore_conkeror</identifier>
+    <only>conkeror</only>
+    <autogen>__PassThrough__</autogen>
+  </item>
+
+</root>
