@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <appdef>
+    <appname>IntelliJ_IDEA</appname>
+    <!--
+        Please modify bundle identifier for your environment.
+        You can confirm it by EventViewer.
+        https://pqrs.org/osx/karabiner/xml.html.en#appdef-steps
+    -->
+    <equal>com.jetbrains.intellij</equal>
+  </appdef>
+
+  <item>
+    <name>Disable all settings while you are using IntelliJ IDEA.</name>
+    <identifier>private.ignore_IDEA</identifier>
+    <only>IntelliJ_IDEA</only>
+    <autogen>__PassThrough__</autogen>
+  </item>
+
+</root>
