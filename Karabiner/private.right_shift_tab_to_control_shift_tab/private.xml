@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the right shift-tab to control-shift-tab.</name>
+    <identifier>private.right_shift_tab_to_control_shift_tab</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::TAB, ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+      KeyCode::TAB, ModifierFlag::CONTROL_L | ModifierFlag::SHIFT_R,
+    </autogen>
+  </item>
+
+</root>
