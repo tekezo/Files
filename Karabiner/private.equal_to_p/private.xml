@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change equal to p</name>
+    <appendix>(+ fn-equal to equal)</appendix>
+    <identifier>private.equal_to_p</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::EQUAL, ModifierFlag::FN,
+      KeyCode::EQUAL,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::EQUAL,
+      KeyCode::P,
+    </autogen>
+  </item>
+
+</root>
