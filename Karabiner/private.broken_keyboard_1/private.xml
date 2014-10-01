@@ -7,9 +7,40 @@
 
     <autogen>
       __SimultaneousKeyPresses__
+      __{ KeyCode::Z, ConsumerKeyCode::VOLUME_UP, }__
+      __{ KeyCode::Z, }__
+    </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      __{ KeyCode::X, KeyCode::BACKQUOTE, }__
+      __{ KeyCode::X, }__
+    </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
       __{ KeyCode::C, KeyCode::UK_SECTION, }__
       __{ KeyCode::C, }__
     </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      __{ KeyCode::V, KeyCode::BRACKET_RIGHT, }__
+      __{ KeyCode::V, }__
+    </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      __{ KeyCode::B, KeyCode::BRACKET_LEFT, }__
+      __{ KeyCode::B, }__
+    </autogen>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      __{ KeyCode::N, KeyCode::EQUAL, }__
+      __{ KeyCode::N, }__
+    </autogen>
+
   </item>
 
 </root>
