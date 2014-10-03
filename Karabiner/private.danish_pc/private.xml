@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>PC Danish layout</name>
+    <identifier>private.danish_pc</identifier>
+
+    <inputsource_only>DANISH</inputsource_only>
+
+    <!-- alt gr + 2 => @ -->
+    <!-- @: alt + ' (KeyCode::BACKSLASH) -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_2, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::BACKSLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+    </autogen>
+
+  </item>
+
+</root>
