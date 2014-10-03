@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Move to Trash by control-1</name>
+    <identifier>private.control_1_to_move_to_trash</identifier>
+    <only>FINDER</only>
+    <uielementrole_not>{{ UIELEMENTROLES_EDITING_IN_FINDER }}</uielementrole_not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_1, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>
+  </item>
+
+</root>
