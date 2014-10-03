@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Ignore backslash if backslash and return key pressed simultaneously.</name>
+    <identifier>private.backslash_and_return</identifier>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      __{ KeyCode::BACKSLASH, KeyCode::RETURN, }__
+      KeyCode::RETURN,
+    </autogen>
+  </item>
+
+</root>
