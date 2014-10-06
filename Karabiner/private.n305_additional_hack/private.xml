@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Logitech N305 additional hack</name>
+    <appendix>(Use this with `Logitech N305 hack / FILCO FKBT22MB hack` together.)</appendix>
+    <identifier>private.n305_additional_hack</identifier>
+    <autogen>__ForceNumLockOn__ DeviceVendor::LOGITECH, DeviceProduct::LOGITECH_UNIFYING_0xc52b</autogen>
+  </item>
+
+</root>
