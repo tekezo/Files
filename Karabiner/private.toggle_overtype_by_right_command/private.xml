@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Toggle Pseudo Overtype Mode by the right command key</name>
+    <identifier>private.toggle_overtype_by_right_command</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_pseudo_overtype_mode,
+    </autogen>
+  </item>
+
+</root>
