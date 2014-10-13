@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap semicolon and colon in Belgian.</name>
+    <identifier>private.belgian_swap_semicolon_and_colon</identifier>
+    <inputsource_only>BELGIAN</inputsource_only>
+    <autogen>__KeyToKey__ KeyCode::COMMA, ModifierFlag::NONE, KeyCode::DOT</autogen>
+    <autogen>__KeyToKey__ KeyCode::DOT,   ModifierFlag::NONE, KeyCode::COMMA</autogen>
+  </item>
+
+</root>
