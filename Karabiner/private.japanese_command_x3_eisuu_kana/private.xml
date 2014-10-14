@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef notify="false">L1</modifierdef>
+  <modifierdef notify="false">L2</modifierdef>
+  <modifierdef notify="false">R1</modifierdef>
+  <modifierdef notify="false">R2</modifierdef>
+
+  <item>
+    <name>Change The left/right command key x3 to EISUU/KANA</name>
+    <identifier>private.japanese_command_x3_eisuu_kana</identifier>
+
+    <!-- ============================================================ -->
+    <!-- COMMAND_L x3 => EISUU -->
+    <block>
+      <modifierstuck_only>ModifierFlag::L2</modifierstuck_only>
+      <lastpressedphysicalkey_only>KeyCode::COMMAND_L</lastpressedphysicalkey_only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::COMMAND_L,
+        @begin
+        KeyCode::COMMAND_L,
+        @end
+
+        @begin
+        KeyCode::VK_STICKY_L1_FORCE_OFF,
+        KeyCode::VK_STICKY_L2_FORCE_OFF,
+        KeyCode::JIS_EISUU,
+        @end
+      </autogen>
+    </block>
+    <block>
+      <modifierstuck_only>ModifierFlag::L1</modifierstuck_only>
+      <lastpressedphysicalkey_only>KeyCode::COMMAND_L</lastpressedphysicalkey_only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::COMMAND_L,
+        @begin
+        KeyCode::COMMAND_L,
+        @end
+
+        @begin
+        KeyCode::VK_STICKY_L1_FORCE_OFF,
+        KeyCode::VK_STICKY_L2_FORCE_ON,
+        @end
+      </autogen>
+    </block>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_L,
+
+      @begin
+      KeyCode::COMMAND_L,
+      @end
+
+      @begin
+      KeyCode::VK_STICKY_L1_FORCE_ON,
+      KeyCode::VK_STICKY_L2_FORCE_OFF,
+      @end
+    </autogen>
+
+    <!-- ============================================================ -->
+    <!-- COMMAND_R x3 => KANA -->
+    <block>
+      <modifierstuck_only>ModifierFlag::R2</modifierstuck_only>
+      <lastpressedphysicalkey_only>KeyCode::COMMAND_R</lastpressedphysicalkey_only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::COMMAND_R,
+        @begin
+        KeyCode::COMMAND_R,
+        @end
+
+        @begin
+        KeyCode::VK_STICKY_R1_FORCE_OFF,
+        KeyCode::VK_STICKY_R2_FORCE_OFF,
+        KeyCode::JIS_KANA,
+        @end
+      </autogen>
+    </block>
+    <block>
+      <modifierstuck_only>ModifierFlag::R1</modifierstuck_only>
+      <lastpressedphysicalkey_only>KeyCode::COMMAND_R</lastpressedphysicalkey_only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::COMMAND_R,
+        @begin
+        KeyCode::COMMAND_R,
+        @end
+
+        @begin
+        KeyCode::VK_STICKY_R1_FORCE_OFF,
+        KeyCode::VK_STICKY_R2_FORCE_ON,
+        @end
+      </autogen>
+    </block>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_R,
+
+      @begin
+      KeyCode::COMMAND_R,
+      @end
+
+      @begin
+      KeyCode::VK_STICKY_R1_FORCE_ON,
+      KeyCode::VK_STICKY_R2_FORCE_OFF,
+      @end
+    </autogen>
+
+  </item>
+
+</root>
