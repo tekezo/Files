@@ -17,4 +17,10 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Disable physical y key</name>
+    <identifier>private.disable_y</identifier>
+    <autogen>__KeyToKey__ KeyCode::Y, KeyCode::VK_NONE</autogen>
+  </item>
+
 </root>
