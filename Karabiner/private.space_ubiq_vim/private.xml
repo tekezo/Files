@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use space to activate Ubiquitous Vim Bindings</name>
+    <identifier>private.space_ubiq_vim</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_ubiq_vimnormal,
+      KeyCode::SPACE,
+    </autogen>
+
+    <block>
+      <config_only>notsave.ubiq_vimnormal</config_only>
+      <autogen>
+        __BlockUntilKeyUp__ KeyCode::SPACE
+      </autogen>
+    </block>
+  </item>
+
+</root>
