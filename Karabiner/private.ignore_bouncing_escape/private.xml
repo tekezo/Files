@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Command_R to Escape</name>
+    <identifier>private.ignore_bouncing_escape</identifier>
+
+    <!-- ignore bouncing event -->
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::COMMAND_R</lastpressedphysicalkey_only>
+      <!-- please adjust `200` (ms) for your environment. -->
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::200</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::ESCAPE</autogen>
+  </item>
+
+</root>
