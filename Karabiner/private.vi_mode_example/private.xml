@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use space to activate Vi Mode</name>
+    <identifier>private.vi_mode</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_vi_mode,
+      KeyCode::SPACE,
+    </autogen>
+
+    <block>
+      <config_only>notsave.private_vi_mode</config_only>
+      <autogen>
+        __BlockUntilKeyUp__ KeyCode::SPACE
+      </autogen>
+    </block>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_vi_mode</identifier>
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
+
+</root>
