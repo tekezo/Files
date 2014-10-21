@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable fn key</name>
+    <identifier>private.disable_fn</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::FN,
+      KeyCode::VK_NONE,
+    </autogen>
+  </item>
+
+</root>
