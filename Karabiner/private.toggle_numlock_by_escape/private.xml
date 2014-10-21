@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Toggle numlock led by holding escape key</name>
+    <identifier>private.toggle_numlock_by_escape</identifier>
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::ESCAPE,
+      __{ KeyCode::ESCAPE }__
+      __{ KeyCode::VK_IOHIKEYBOARD_TOGGLE_NUMLOCK }__
+    </autogen>
+  </item>
+
+</root>
