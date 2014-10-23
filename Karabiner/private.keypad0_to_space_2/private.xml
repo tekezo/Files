@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change keypad0 to " 2"</name>
+    <identifier>private.keypad0_to_space_2</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_0,
+      KeyCode::SPACE, KeyCode::KEYPAD_2,
+    </autogen>
+  </item>
+
+</root>
