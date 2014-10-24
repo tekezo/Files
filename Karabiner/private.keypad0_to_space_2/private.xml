@@ -7,7 +7,13 @@
     <autogen>
       __KeyToKey__
       KeyCode::KEYPAD_0,
-      KeyCode::SPACE, KeyCode::KEYPAD_2,
+      KeyCode::KEYPAD_2,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::SPACE,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_PARTIAL_KEYUP, KeyCode::SPACE,
     </autogen>
   </item>
 
