@@ -9,6 +9,8 @@
       KeyCode::KEYPAD_0,
       KeyCode::KEYPAD_2,
 
+      Option::NOREPEAT,
+
       Option::KEYTOKEY_BEFORE_KEYDOWN,
       KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::SPACE,
 
