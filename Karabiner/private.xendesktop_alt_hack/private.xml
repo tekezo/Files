@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+
+  <appdef>
+    <appname>XenDesktop</appname>
+    <!-- *** Replace "com.citrix.XenDesktop" with properly bundle identifier of XenDesktop *** -->
+    <equal>com.citrix.XenDesktop</equal>
+  </appdef>
+
+  <item>
+    <name>Change alt to cmd+alt in XenDesktop</name>
+    <identifier>private.xendesktop_alt_hack</identifier>
+    <only>XenDesktop</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_L,
+      KeyCode::OPTION_L, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R,
+      KeyCode::OPTION_R, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
