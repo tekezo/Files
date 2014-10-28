@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Hold [RIGHT] to repeat [RIGHT]</name>
+    <identifier>private.repeat_arrow_right</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_RIGHT,
+
+      KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS,
+    </autogen>
+
+  </item>
+
+</root>
