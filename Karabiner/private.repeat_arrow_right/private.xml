@@ -12,11 +12,9 @@
       KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::CURSOR_RIGHT,
       KeyCode::VK_WAIT_10MS,
       KeyCode::VK_PARTIAL_KEYUP, KeyCode::CURSOR_RIGHT,
-      KeyCode::VK_WAIT_10MS,
-      KeyCode::VK_WAIT_10MS,
-      KeyCode::VK_WAIT_10MS,
-      KeyCode::VK_WAIT_10MS,
-      KeyCode::VK_WAIT_10MS,
+
+      <!-- 50 millisecond -->
+      KeyRepeat::RawValue::50,
     </autogen>
 
   </item>
