@@ -23,4 +23,20 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Change command to cmd+alt in XenDesktop</name>
+    <identifier>private.xendesktop_alt_hack_command</identifier>
+    <only>XenDesktop</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_L,
+      KeyCode::OPTION_L, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_L,
+      KeyCode::OPTION_R, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
 </root>
