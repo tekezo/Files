@@ -39,4 +39,20 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Change alt to command in XenDesktop</name>
+    <identifier>private.xendesktop_alt_hack_alt</identifier>
+    <only>XenDesktop</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_L,
+      KeyCode::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R,
+      KeyCode::COMMAND_R,
+    </autogen>
+  </item>
+
 </root>
