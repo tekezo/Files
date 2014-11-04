@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right command key to option key</name>
+    <identifier>private.command_to_option_apple</identifier>
+
+    <device_only>
+      DeviceVendor::APPLE_INC,
+      <!-- Replace 0x0245 with your device's product id. -->
+      DeviceProduct::RawValue::0x0245,
+    </device_only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::OPTION_R,
+    </autogen>
+  </item>
+
+</root>
