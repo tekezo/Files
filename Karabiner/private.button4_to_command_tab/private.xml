@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Button4 to command-tab</name>
+    <identifier>private.button4_to_command_tab</identifier>
+
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON4,
+      KeyCode::TAB, ModifierFlag::COMMAND_L,
+      KeyCode::VK_STICKY_COMMAND_L
+    </autogen>
+  </item>
+
+</root>
