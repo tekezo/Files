@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>FILCO Number Pad Hack</name>
+    <appendix>Force turn NumLock on at FILCO keyboards.</appendix>
+    <identifier>private.cypress_hack</identifier>
+    <autogen>
+      __ForceNumLockOn__
+      DeviceVendor::RawValue::0x04b4,
+      DeviceProduct::ANY,
+    </autogen>
+  </item>
+
+</root>
