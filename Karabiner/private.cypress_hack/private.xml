@@ -8,7 +8,7 @@
     <autogen>
       __ForceNumLockOn__
       DeviceVendor::RawValue::0x04b4,
-      DeviceProduct::ANY,
+      DeviceProduct::RawValue::0x0101,
     </autogen>
   </item>
 
