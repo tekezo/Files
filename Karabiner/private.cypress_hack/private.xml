@@ -12,4 +12,16 @@
     </autogen>
   </item>
 
+  <item>
+    <name>1 Key Hack</name>
+    <identifier>private.1keyhack</identifier>
+    <device_only>
+      DeviceVendor::RawValue::0x04b4,
+      DeviceProduct::RawValue::0x0101,
+    </device_only>
+
+    <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::KEYPAD_1</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::VK_NONE</autogen>
+  </item>
+
 </root>
