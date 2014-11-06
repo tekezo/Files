@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change pc application key to command.</name>
+    <name>+ Change pc application key to option in Terminal.</name>
+    <name>+ Send escape key event when you pressed pc application key alone.</name>
+    <identifier>private.pc_application_to_command</identifier>
+
+    <block>
+      <only>TERMINAL</only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::PC_APPLICATION,
+        KeyCode::OPTION_L,
+        KeyCode::ESCAPE,
+      </autogen>
+    </block>
+    <block>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::PC_APPLICATION,
+        KeyCode::COMMAND_L,
+        KeyCode::ESCAPE,
+      </autogen>
+    </block>
+  </item>
+
+</root>
