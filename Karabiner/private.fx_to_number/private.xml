@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f1..f10 to number.</name>
+    <appendix>+ Change option+f1..f10 to f1..f10</appendix>
+    <appendix>+ Change control+f1..f10 to brightness control, etc.</appendix>
+    <appendix></appendix>
+    <appendix>(Use this setting with "Use all F1, F2, etc. keys as standard function keys.")</appendix>
+    <identifier>private.fx_to_number</identifier>
+
+    <!-- option+f1 -->
+    <autogen>__KeyToKey__ KeyCode::F1,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F1</autogen>
+    <autogen>__KeyToKey__ KeyCode::F2,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F2</autogen>
+    <autogen>__KeyToKey__ KeyCode::F3,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F3</autogen>
+    <autogen>__KeyToKey__ KeyCode::F4,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F4</autogen>
+    <autogen>__KeyToKey__ KeyCode::F5,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F5</autogen>
+    <autogen>__KeyToKey__ KeyCode::F6,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F6</autogen>
+    <autogen>__KeyToKey__ KeyCode::F7,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F7</autogen>
+    <autogen>__KeyToKey__ KeyCode::F8,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F8</autogen>
+    <autogen>__KeyToKey__ KeyCode::F9,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F9</autogen>
+    <autogen>__KeyToKey__ KeyCode::F10, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F10</autogen>
+
+    <!-- control+f1 -->
+    <autogen>__KeyToKey__ KeyCode::F1,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::F2,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::F3,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::MISSION_CONTROL</autogen>
+    <autogen>__KeyToKey__ KeyCode::F4,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::LAUNCHPAD</autogen>
+    <autogen>__KeyToKey__ KeyCode::F5,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, ConsumerKeyCode::KEYBOARDLIGHT_LOW</autogen>
+    <autogen>__KeyToKey__ KeyCode::F6,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, ConsumerKeyCode::KEYBOARDLIGHT_HIGH</autogen>
+    <autogen>__KeyToKey__ KeyCode::F7,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, ConsumerKeyCode::MUSIC_PREV</autogen>
+    <autogen>__KeyToKey__ KeyCode::F8,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, ConsumerKeyCode::MUSIC_PLAY</autogen>
+    <autogen>__KeyToKey__ KeyCode::F9,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, ConsumerKeyCode::MUSIC_NEXT</autogen>
+    <autogen>__KeyToKey__ KeyCode::F10, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, ConsumerKeyCode::VOLUME_MUTE</autogen>
+
+    <!-- f1 -->
+    <autogen>__KeyToKey__ KeyCode::F1,  KeyCode::KEY_1</autogen>
+    <autogen>__KeyToKey__ KeyCode::F2,  KeyCode::KEY_2</autogen>
+    <autogen>__KeyToKey__ KeyCode::F3,  KeyCode::KEY_3</autogen>
+    <autogen>__KeyToKey__ KeyCode::F4,  KeyCode::KEY_4</autogen>
+    <autogen>__KeyToKey__ KeyCode::F5,  KeyCode::KEY_5</autogen>
+    <autogen>__KeyToKey__ KeyCode::F6,  KeyCode::KEY_6</autogen>
+    <autogen>__KeyToKey__ KeyCode::F7,  KeyCode::KEY_7</autogen>
+    <autogen>__KeyToKey__ KeyCode::F8,  KeyCode::KEY_8</autogen>
+    <autogen>__KeyToKey__ KeyCode::F9,  KeyCode::KEY_9</autogen>
+    <autogen>__KeyToKey__ KeyCode::F10, KeyCode::KEY_0</autogen>
+  </item>
+
+</root>
