@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Command_L to Control_L</name>
+    <appendix>Except: TeamViewer,EMACS,X11,Citrix Viewer, VNC</appendix>
+    <identifier>private.command_to_control</identifier>
+
+    <not>TEAMVIEWER, EMACS, X11, CITRIX_ONLINE_PLUG_IN, CITRIX_XEN_APP_VIEWER, VNC</not>
+    
+    <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::COMMAND_L</autogen>
+  </item>
+
+</root>
