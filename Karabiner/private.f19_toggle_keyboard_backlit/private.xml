@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Toggle keyboard backlit by f19</name>
+    <identifier>private.f19_toggle_keyboard_backlit</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19,
+      ConsumerKeyCode::KEYBOARDLIGHT_OFF
+    </autogen>
+  </item>
+
+</root>
