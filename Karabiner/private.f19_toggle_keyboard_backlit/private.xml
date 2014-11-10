@@ -5,11 +5,67 @@
     <name>Toggle keyboard backlit by f19</name>
     <identifier>private.f19_toggle_keyboard_backlit</identifier>
 
-    <autogen>
-      __KeyToKey__
-      KeyCode::F19,
-      ConsumerKeyCode::KEYBOARDLIGHT_OFF
-    </autogen>
+    <block>
+      <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
+
+      <!-- turn off capslock -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::F19,
+        KeyCode::CAPSLOCK,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+        Option::NOREPEAT,
+      </autogen>
+    </block>
+
+    <block>
+      <!-- turn on capslock -->
+      <autogen>
+        __KeyToKey__
+        KeyCode::F19,
+        KeyCode::CAPSLOCK,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        ConsumerKeyCode::KEYBOARDLIGHT_HIGH,
+        Option::NOREPEAT,
+      </autogen>
+    </block>
   </item>
 
 </root>
