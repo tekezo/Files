@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>LITESWITCH</modifierdef>
+
+  <item>
+    <name>LiteSwitch X</name>
+    <identifier>private.liteswitch</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMA, ModifierFlag::LITESWITCH,
+      KeyCode::TAB, ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::DOT, ModifierFlag::LITESWITCH,
+      KeyCode::TAB,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::Q, ModifierFlag::LITESWITCH,
+      KeyCode::Q,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::LITESWITCH,
+      KeyCode::RETURN,
+      KeyCode::VK_WAIT_100MS,
+      KeyCode::VK_WAIT_100MS,
+      KeyCode::VK_WAIT_100MS,
+      KeyCode::H, ModifierFlag::OPTION_L,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_LOCK_LITESWITCH_FORCE_ON,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_L,
+      KeyCode::COMMAND_L,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_LOCK_LITESWITCH_FORCE_OFF,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::COMMAND_R,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_LOCK_LITESWITCH_FORCE_OFF,
+    </autogen>
+
+  </item>
+
+</root>
