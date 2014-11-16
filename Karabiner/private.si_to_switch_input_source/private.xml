@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Switch input source by S down, I down, I up</name>
+    <identifier>private.si_to_switch_input_source</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::S,
+
+      KeyCode::VK_MODIFIER_S,
+
+      KeyCode::S,
+    </autogen>
+
+    <block>
+      <modifier_only>ModifierFlag::S</modifier_only>
+      <autogen>__BlockUntilKeyUp__ KeyCode::S</autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::I,
+        KeyCode::SPACE, ModifierFlag::COMMAND_L,
+      </autogen>
+    </block>
+  </item>
+
+</root>
