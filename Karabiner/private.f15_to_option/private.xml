@@ -2,7 +2,7 @@
 <root>
 
   <item>
-    <name>Example</name>
+    <name>Change f15/f16 key to option/command key</name>
     <identifier>private.f15_to_option</identifier>
 
     <autogen>__KeyToKey__ KeyCode::F15, KeyCode::OPTION_L</autogen>
