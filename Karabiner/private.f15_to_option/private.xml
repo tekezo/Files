@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Example</name>
+    <identifier>private.f15_to_option</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::F15, KeyCode::OPTION_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::F16, KeyCode::COMMAND_L</autogen>
+  </item>
+
+</root>
