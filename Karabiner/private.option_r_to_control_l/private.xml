@@ -2,7 +2,7 @@
 <root>
 
   <item>
-    <name>Change Option_R Key to Control_L Key</name>
+    <name>Change Option_R Key to Control_L Key v1</name>
     <appendix>+ Change Option_R + Shift_R Keys to Option_L + Control_L Keys</appendix>
     <appendix>(== Change Control_L + Shift_R Keys to Option_L + Control_L Keys)</appendix>
     <identifier>private.option_r_to_control_l</identifier>
