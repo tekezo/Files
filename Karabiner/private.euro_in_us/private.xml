@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Input € by alt+e</name>
+    <identifier>private.euro_in_us</identifier>
+    <inputsource_only>ENGLISH</inputsource_only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::KEY_2, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
