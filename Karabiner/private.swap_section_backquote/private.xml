@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Backquote(`) to Section(§) except US input source</name>
+    <identifier>private.swap_section_backquote</identifier>
+    <inputsource_not>ENGLISH</inputsource_not>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::UK_SECTION</autogen>
+    <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
+  </item>
+
+</root>
