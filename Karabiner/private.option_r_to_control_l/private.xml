@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Option_R Key to Control_L Key</name>
+    <appendix>+ Change Option_R + Shift_R Keys to Option_L + Control_L Keys</appendix>
+    <appendix>(== Change Control_L + Shift_R Keys to Option_L + Control_L Keys)</appendix>
+    <identifier>private.option_r_to_control_l</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_R, ModifierFlag::CONTROL_L,
+      KeyCode::OPTION_L, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R,
+      KeyCode::CONTROL_L,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change Option_R Key to Control_L Key v2</name>
+    <appendix>+ Change Option_R + Shift_R Keys to Option_L + Control_L Keys</appendix>
+    <appendix>(This setting does not change physical Control_L + Shift_R.)</appendix>
+    <identifier>private.option_r_to_control_l_v2</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_R, ModifierFlag::CONTROL_L | ModifierFlag::EXTRA1,
+      KeyCode::OPTION_L, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R,
+      KeyCode::CONTROL_L, ModifierFlag::EXTRA1,
+    </autogen>
+  </item>
+
+</root>
