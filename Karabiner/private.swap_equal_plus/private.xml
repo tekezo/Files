@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap = and +</name>
+    <identifier>private.swap_equal_plus</identifier>
+
+    <inputsource_only>ENGLISH</inputsource_only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::EQUAL, ModifierFlag::NONE,
+      KeyCode::EQUAL, ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::EQUAL, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::EQUAL,
+    </autogen>
+  </item>
+
+</root>
