@@ -1,11 +1,19 @@
 <?xml version="1.0"?>
 <root>
 
+  <appdef>
+    <appname>Avid_MediaComposer</appname>
+    <equal>com.avid.mediacomposer</equal>
+  </appdef>
+
   <item>
     <name>Change Option_R Key to Control_L Key v1</name>
     <appendix>+ Change Option_R + Shift_R Keys to Option_L + Control_L Keys</appendix>
     <appendix>(== Change Control_L + Shift_R Keys to Option_L + Control_L Keys)</appendix>
     <identifier>private.option_r_to_control_l</identifier>
+
+    <only>Avid_MediaComposer</only>
+
     <autogen>
       __KeyToKey__
       KeyCode::SHIFT_R, ModifierFlag::CONTROL_L,
@@ -23,6 +31,9 @@
     <appendix>+ Change Option_R + Shift_R Keys to Option_L + Control_L Keys</appendix>
     <appendix>(This setting does not change physical Control_L + Shift_R.)</appendix>
     <identifier>private.option_r_to_control_l_v2</identifier>
+
+    <only>Avid_MediaComposer</only>
+
     <autogen>
       __KeyToKey__
       KeyCode::SHIFT_R, ModifierFlag::CONTROL_L | ModifierFlag::EXTRA1,
@@ -39,6 +50,8 @@
     <name>Change Control_L to Option_R</name>
     <appendix>+ Change Option_L + Control_L to Option_R + Shift_R</appendix>
     <identifier>private.control_l_to_option_r</identifier>
+
+    <only>Avid_MediaComposer</only>
 
     <!-- press left control key with left option key -->
     <autogen>
