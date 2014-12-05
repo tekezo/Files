@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change shift-space to f19</name>
+    <identifier>private.shift_space_to_f19</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::F19,
+    </autogen>
+  </item>
+
+</root>
