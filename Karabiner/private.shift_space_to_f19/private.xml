@@ -12,4 +12,16 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Change shift-space to f19 (no repeat)</name>
+    <identifier>private.shift_space_to_f19_norepeat</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::F19,
+      Option::NOREPEAT,
+    </autogen>
+  </item>
+
 </root>
