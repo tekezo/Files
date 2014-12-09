@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>THUMBSENSE_COPYANDPASTE_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+               <autogen>__KeyToKey__ KeyCode::C, ModifierFlag::NONE, PointingButton::LEFT</autogen>
+      ]]>
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>ThumbSense has been extended.</name>
+  </item>
+
+</root>
