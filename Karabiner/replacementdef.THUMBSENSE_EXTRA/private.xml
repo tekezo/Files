@@ -6,6 +6,8 @@
     <replacementvalue>
       <![CDATA[
                <autogen>__KeyToKey__ KeyCode::C, ModifierFlag::NONE, PointingButton::LEFT</autogen>
+               <autogen>__KeyToKey__ KeyCode::S, ModifierFlag::NONE, PointingButton::MIDDLE</autogen>
+               <autogen>__KeyToKey__ KeyCode::A, ModifierFlag::NONE, PointingButton::RIGHT</autogen>               
       ]]>
     </replacementvalue>
   </replacementdef>
