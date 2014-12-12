@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f13 to shift+2</name>
+    <name>+ Change shift-f13 to shift+3</name>
+    <identifier>private.f13_to_shift_2</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F13, ModifierFlag::NONE,
+      KeyCode::KEY_2, ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F13, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::KEY_3, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
