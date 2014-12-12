@@ -5,7 +5,9 @@
     <replacementname>THUMBSENSE_COPYANDPASTE_EXTRA</replacementname>
     <replacementvalue>
       <![CDATA[
-               <autogen>__KeyToKey__ KeyCode::C, ModifierFlag::NONE, PointingButton::LEFT</autogen>
+               <autogen>__KeyToKey__ KeyCode::C, PointingButton::LEFT</autogen>
+               <autogen>__KeyToKey__ KeyCode::S, PointingButton::MIDDLE</autogen>
+               <autogen>__KeyToKey__ KeyCode::A, PointingButton::RIGHT</autogen>               
       ]]>
     </replacementvalue>
   </replacementdef>
