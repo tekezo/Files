@@ -2,7 +2,7 @@
 <root>
 
   <item>
-    <name>Change command-espcae to command-backquote(`)</name>
+    <name>Change command-escape to command-backquote(`)</name>
     <identifier>private.command_escape_to_command_backquote</identifier>
 
     <autogen>
