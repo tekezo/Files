@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change left command key to left control key.</name>
+    <appendix>Send a escape key event when left command key is pressed alone.</appendix>
+    <identifier>private.command_control_escape</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_L,
+      KeyCode::CONTROL_L,
+      KeyCode::ESCAPE,
+    </autogen>
+  </item>
+
+</root>
