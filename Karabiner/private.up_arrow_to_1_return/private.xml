@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change up-arrow to 1+RETURN</name>
+    <identifier>private.up_arrow_to_1_return</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_UP, ModifierFlag::NONE,
+
+      KeyCode::RETURN,
+      KeyCode::KEY_1,
+
+      Option::NOREPEAT,
+    </autogen>
+  </item>
+
+</root>
