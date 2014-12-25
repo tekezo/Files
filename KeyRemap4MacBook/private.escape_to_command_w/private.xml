@@ -4,14 +4,17 @@
     <name>Escape to Command+W</name>
     <appendix>Fn+Escape to Escape</appendix>
     <identifier>private.escape_to_command_w</identifier>
-    <autogen>--KeyToKey-- KeyCode::ESCAPE, ModifierFlag::FN,   KeyCode::ESCAPE</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::ESCAPE, ModifierFlag::FN, KeyCode::ESCAPE</autogen>
+
     <block>
       <only>VIRTUALMACHINE</only>
-      <autogen>--KeyToKey-- KeyCode::ESCAPE, ModifierFlag::NONE, KeyCode::W, ModifierFlag::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::ESCAPE, ModifierFlag::NONE, KeyCode::W, ModifierFlag::CONTROL_L</autogen>
     </block>
     <block>
       <not>VIRTUALMACHINE</not>
-      <autogen>--KeyToKey-- KeyCode::ESCAPE, ModifierFlag::NONE, KeyCode::W, ModifierFlag::COMMAND_L</autogen>
+      <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
+      <autogen>__KeyToKey__ KeyCode::ESCAPE, ModifierFlag::NONE, KeyCode::W, ModifierFlag::COMMAND_L</autogen>
     </block>
   </item>
 </root>
