@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change control-space to f16 except in Sublime Text, Eclipse, Emacs.</name>
+    <identifier>private.control_space_to_f16</identifier>
+
+    <not>SUBLIMETEXT, ECLIPSE, EMACS</not>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::F16,
+    </autogen>
+  </item>
+
+</root>
