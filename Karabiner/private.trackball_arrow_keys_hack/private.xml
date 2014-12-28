@@ -1,6 +1,21 @@
 <?xml version="1.0"?>
 <root>
 
+  <item>
+    <name>Change button4/button5 to down/up arrow key.</name>
+    <identifier>private.button4_to_down_arrow_key</identifier>
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON4,
+      KeyCode::CURSOR_DOWN,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON5,
+      KeyCode::CURSOR_UP,
+    </autogen>
+  </item>
+
   <modifierdef>TRACKBALL_ARROW_KEYS_HACK</modifierdef>
 
   <item>
@@ -22,21 +37,6 @@
       PointingRelative::DOWN,  KeyCode::CURSOR_DOWN,
       PointingRelative::LEFT,  KeyCode::CURSOR_LEFT,
       PointingRelative::RIGHT, KeyCode::CURSOR_RIGHT,
-    </autogen>
-  </item>
-
-  <item>
-    <name>Change button4/button5 to down/up arrow key.</name>
-    <identifier>private.button4_to_down_arrow_key</identifier>
-    <autogen>
-      __KeyToKey__
-      PointingButton::BUTTON4,
-      KeyCode::CURSOR_DOWN,
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      PointingButton::BUTTON5,
-      KeyCode::CURSOR_UP,
     </autogen>
   </item>
 
