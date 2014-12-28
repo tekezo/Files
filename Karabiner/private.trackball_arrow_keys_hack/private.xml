@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>TRACKBALL_ARROW_KEYS_HACK</modifierdef>
+
+  <item>
+    <name>Change trackball to arrow keys while you are pressing button4.</name>
+    <appendix>Please decrease "PointingRelative to Key &gt; Detection interval" to 10 or your favorite value.</appendix>
+    <identifier>private.trackball_arrow_keys_hack</identifier>
+
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON4,
+      KeyCode::VK_MODIFIER_TRACKBALL_ARROW_KEYS_HACK,
+    </autogen>
+
+    <autogen>
+      __PointingRelativeToKey__
+      ModifierFlag::TRACKBALL_ARROW_KEYS_HACK,
+
+      PointingRelative::UP,    KeyCode::CURSOR_UP,
+      PointingRelative::DOWN,  KeyCode::CURSOR_DOWN,
+      PointingRelative::LEFT,  KeyCode::CURSOR_LEFT,
+      PointingRelative::RIGHT, KeyCode::CURSOR_RIGHT,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change button4/button5 to down/up arrow key.</name>
+    <identifier>private.button4_to_down_arrow_key</identifier>
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON4,
+      KeyCode::CURSOR_DOWN,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON5,
+      KeyCode::CURSOR_UP,
+    </autogen>
+  </item>
+
+</root>
