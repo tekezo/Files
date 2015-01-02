@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Launchpad key to f19</name>
+    <identifier>private.launchpad_to_f19</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::LAUNCHPAD, KeyCode::F19</autogen>
+  </item>
+
+</root>
