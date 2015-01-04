@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>EISUU x2 to EISUU (単発での英数キーは無視する)</name>
+    <identifier>private.japanese_eisuu_x2_to_toggle_eisuu_kana</identifier>
+    <autogen>
+      __DoublePressModifier__
+      KeyCode::JIS_EISUU,
+      KeyCode::VK_NONE,
+      KeyCode::VK_JIS_TOGGLE_EISUU_KANA,
+    </autogen>
+  </item>
+
+</root>
