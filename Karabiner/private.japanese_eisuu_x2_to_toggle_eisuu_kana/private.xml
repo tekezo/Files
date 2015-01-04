@@ -2,7 +2,7 @@
 <root>
 
   <item>
-    <name>EISUU x2 to EISUU (単発での英数キーは無視する)</name>
+    <name>EISUU x2 でかなと英数を切り替え (単発での英数キーは無視する)</name>
     <identifier>private.japanese_eisuu_x2_to_toggle_eisuu_kana</identifier>
     <autogen>
       __DoublePressModifier__
