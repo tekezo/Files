@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change å key to \ key</name>
+    <identifier>private.finnish_section_to_backslash</identifier>
+
+    <inputsource_only>FINNISH</inputsource_only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_LEFT, ModifierFlag::NONE,
+      KeyCode::KEY_7, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
