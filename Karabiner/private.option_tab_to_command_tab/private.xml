@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use Option+Tab as "Switch application"</name>
+    <identifier>private.option_tab_to_command_tab</identifier>
+
+    <not>VIRTUALMACHINE</not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_L,
+      KeyCode::OPTION_L,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_NEGATIVE_LOCK_OPTION_L_FORCE_OFF,
+      KeyCode::VK_LOCK_COMMAND_L_FORCE_OFF,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R,
+      KeyCode::OPTION_R,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_NEGATIVE_LOCK_OPTION_R_FORCE_OFF,
+      KeyCode::VK_LOCK_COMMAND_L_FORCE_OFF,
+    </autogen>
+
+    <block>
+      <modifier_not>
+        ModifierFlag::COMMAND_L,
+        ModifierFlag::COMMAND_R,
+        ModifierFlag::CONTROL_L,
+        ModifierFlag::CONTROL_R,
+        ModifierFlag::FN,
+      </modifier_not>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB, ModifierFlag::OPTION_L,
+        KeyCode::TAB,
+
+        Option::KEYTOKEY_BEFORE_KEYDOWN,
+        KeyCode::VK_NEGATIVE_LOCK_OPTION_L_FORCE_ON,
+        KeyCode::VK_LOCK_COMMAND_L_FORCE_ON,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB, ModifierFlag::OPTION_R,
+        KeyCode::TAB,
+
+        Option::KEYTOKEY_BEFORE_KEYDOWN,
+        KeyCode::VK_NEGATIVE_LOCK_OPTION_R_FORCE_ON,
+        KeyCode::VK_LOCK_COMMAND_L_FORCE_ON,
+      </autogen>
+    </block>
+  </item>
+
+</root>
