@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use PC Style Undo for AZERTY</name>
+    <appendix></appendix>
+    <appendix>{{ PC_STYLE_BINDINGS_IGNORE_APPS_DESCRIPTION }}</appendix>
+    <identifier>private.azerty_pc_style_undo</identifier>
+    <not>{{ PC_STYLE_BINDINGS_IGNORE_APPS }}</not>
+    {{ PC_STYLE_BINDINGS_IGNORE_EXTRA }}
+    <autogen>__KeyToKey__ KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::W, ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+  <item>
+    <name>Use PC Style Select All for AZERTY</name>
+    <appendix></appendix>
+    <appendix>{{ PC_STYLE_BINDINGS_IGNORE_APPS_DESCRIPTION }}</appendix>
+    <identifier>private.azerty_pc_style_select_all</identifier>
+    <not>{{ PC_STYLE_BINDINGS_IGNORE_APPS }}</not>
+    {{ PC_STYLE_BINDINGS_IGNORE_EXTRA }}
+    <autogen>__KeyToKey__ KeyCode::Q, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::Q, ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+</root>
