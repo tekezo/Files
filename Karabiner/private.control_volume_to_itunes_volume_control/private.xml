@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Control iTunes volume by control-volume down,up</name>
+    <identifier>private.control_volume_to_itunes_volume_control</identifier>
+
+    <block>
+      <only>ITUNES</only>
+
+      <autogen>
+        __KeyToKey__
+        ConsumerKeyCode::VOLUME_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+        KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        ConsumerKeyCode::VOLUME_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+        KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L,
+      </autogen>
+
+      <autogen>
+        __KeyToKey__
+        ConsumerKeyCode::VOLUME_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::FN | ModifierFlag::NONE,
+        KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        ConsumerKeyCode::VOLUME_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::FN | ModifierFlag::NONE,
+        KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L,
+      </autogen>
+    </block>
+
+    <block>
+      <not>ITUNES</not>
+      <autogen>
+        __KeyToKey__
+        ConsumerKeyCode::VOLUME_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::VK_OPEN_URL_APP_iTunes,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        ConsumerKeyCode::VOLUME_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+        KeyCode::VK_OPEN_URL_APP_iTunes,
+      </autogen>
+    </block>
+  </item>
+
+</root>
