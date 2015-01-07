@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap ` (backquote) and \ (backslash) keys.</name>
+    <identifier>private.uk_swap_backslash_and_backquote</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::UK_SECTION</autogen>
+  </item>
+
+</root>
+
