@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable backslash key</name>
+    <identifier>private.backslash</identifier>
+
+    <autogen>
+      __KeyToKey__ KeyCode::BACKSLASH, KeyCode::VK_NONE
+    </autogen>
+  </item>
+
+</root>
