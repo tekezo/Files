@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>MacBook Air 2010 Hack</name>
+    <identifier>private.macbook_air_2010_hack</identifier>
+
+    <autogen>__KeyToKey__ ConsumerKeyCode::VOLUME_DOWN, ConsumerKeyCode::VOLUME_MUTE</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::VOLUME_UP,   ConsumerKeyCode::VOLUME_DOWN</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::EJECT,       ConsumerKeyCode::VOLUME_UP</autogen>
+  </item>
+
+</root>
