@@ -2,7 +2,7 @@
 <root>
 
   <item>
-    <name>Change KeyPad Comma(,) to Dot(.) in Canadian French input source</name>
+    <name>Swap KeyPad Comma(,) to Dot(.) in Canadian French input source</name>
     <identifier>private.keypad_comma_to_dot</identifier>
     <inputsource_only>CANADIAN</inputsource_only>
     <autogen>
