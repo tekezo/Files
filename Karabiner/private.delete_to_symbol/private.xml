@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change backspace to symbol.</name>
+    <identifier>private.delete_to_symbol</identifier>
+
+    <!-- backspace -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::DELETE, ModifierFlag::NONE,
+      KeyCode::BACKQUOTE, ModifierFlag::OPTION_L,
+      KeyCode::A,
+    </autogen>
+    <!-- shift+backspace -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::DELETE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::BACKQUOTE, ModifierFlag::OPTION_L,
+      KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+    </autogen>
+  </item>
+
+</root>
