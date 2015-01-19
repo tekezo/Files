@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Slow command-z</name>
+    <identifier>private.slow_command_z</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::Z, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::Z, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+
+      DelayUntilRepeat::RawValue::1000,
+      KeyRepeat::RawValue::500,
+    </autogen>
+  </item>
+
+</root>
