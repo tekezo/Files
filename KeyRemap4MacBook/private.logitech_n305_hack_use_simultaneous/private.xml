@@ -4,37 +4,53 @@
     <name>Logitech N305 Hack</name>
     <identifier>private.logitech_n305_hack_use_simultaneous</identifier>
 
-    <!-- Equal -->
-    <autogen>
-      __SimultaneousKeyPresses__
-      Option::USE_SEPARATOR,
-      KeyCode::OPTION_L,
-      KeyCode::KEYPAD_6,
-      KeyCode::KEYPAD_1,
-      Option::SEPARATOR,
-      KeyCode::KEY_0, ModifierFlag::SHIFT_L,
-    </autogen>
+    <block>
+      <inputsource_only>FRENCH</inputsource_only>
 
-    <!-- Left Parenthesis -->
-    <autogen>
-      __SimultaneousKeyPresses__
-      Option::USE_SEPARATOR,
-      KeyCode::OPTION_L,
-      KeyCode::KEYPAD_4,
-      KeyCode::KEYPAD_0,
-      Option::SEPARATOR,
-      KeyCode::KEY_8, ModifierFlag::SHIFT_L,
-    </autogen>
+      <!-- Equal -->
+      <autogen>
+        __SimultaneousKeyPresses__
+        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_6, KeyCode::KEYPAD_1, }__
+        KeyCode::KEYPAD_EQUAL,
+      </autogen>
 
-    <!-- Right Parenthesis -->
-    <autogen>
-      __SimultaneousKeyPresses__
-      Option::USE_SEPARATOR,
-      KeyCode::OPTION_L,
-      KeyCode::KEYPAD_4,
-      KeyCode::KEYPAD_1,
-      Option::SEPARATOR,
-      KeyCode::KEY_9, ModifierFlag::SHIFT_L,
-    </autogen>
+      <!-- Left Parenthesis -->
+      <autogen>
+        __SimultaneousKeyPresses__
+        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_4, KeyCode::KEYPAD_0, }__
+        KeyCode::KEY_5,
+      </autogen>
+
+      <!-- Right Parenthesis -->
+      <autogen>
+        __SimultaneousKeyPresses__
+        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_4, KeyCode::KEYPAD_1, }__
+        KeyCode::MINUS,
+      </autogen>
+    </block>
+
+    <block>
+      <!-- Equal -->
+      <autogen>
+        __SimultaneousKeyPresses__
+        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_6, KeyCode::KEYPAD_1, }__
+        KeyCode::KEYPAD_EQUAL,
+      </autogen>
+
+      <!-- Left Parenthesis -->
+      <autogen>
+        __SimultaneousKeyPresses__
+        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_4, KeyCode::KEYPAD_0, }__
+        KeyCode::KEY_8, ModifierFlag::SHIFT_L,
+      </autogen>
+
+      <!-- Right Parenthesis -->
+      <autogen>
+        __SimultaneousKeyPresses__
+        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_4, KeyCode::KEYPAD_1, }__
+        KeyCode::KEY_9, ModifierFlag::SHIFT_L,
+      </autogen>
+    </block>
+
   </item>
 </root>
