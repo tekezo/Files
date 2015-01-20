@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap backslash and delete key.</name>
+    <appendix>+ Change fn-backslash to backquote.</appendix>
+    <identifier>private.backslash_to_delete</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, ModifierFlag::FN, KeyCode::BACKQUOTE</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::DELETE</autogen>
+    <autogen>__KeyToKey__ KeyCode::DELETE,    KeyCode::BACKSLASH</autogen>
+  </item>
+
+</root>
