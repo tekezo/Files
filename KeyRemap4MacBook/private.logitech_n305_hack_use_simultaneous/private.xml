@@ -10,21 +10,27 @@
       <!-- Equal -->
       <autogen>
         __SimultaneousKeyPresses__
-        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_6, KeyCode::KEYPAD_1, }__
+        @begin
+        KeyCode::OPTION_L, KeyCode::KEYPAD_6, KeyCode::KEYPAD_1,
+        @end
         KeyCode::KEYPAD_EQUAL,
       </autogen>
 
       <!-- Right Parenthesis -->
       <autogen>
         __SimultaneousKeyPresses__
-        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_4, KeyCode::KEYPAD_1, }__
+        @begin
+        KeyCode::OPTION_L, KeyCode::KEYPAD_4, KeyCode::KEYPAD_1,
+        @end
         KeyCode::MINUS,
       </autogen>
 
       <!-- Left Parenthesis -->
       <autogen>
         __SimultaneousKeyPresses__
-        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_4, }__
+        @begin
+        KeyCode::OPTION_L, KeyCode::KEYPAD_4,
+        @end
         KeyCode::KEY_5,
       </autogen>
 
@@ -34,21 +40,27 @@
       <!-- Equal -->
       <autogen>
         __SimultaneousKeyPresses__
-        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_6, KeyCode::KEYPAD_1, }__
+        @begin
+        KeyCode::OPTION_L, KeyCode::KEYPAD_6, KeyCode::KEYPAD_1,
+        @end
         KeyCode::KEYPAD_EQUAL,
       </autogen>
 
       <!-- Right Parenthesis -->
       <autogen>
         __SimultaneousKeyPresses__
-        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_4, KeyCode::KEYPAD_1, }__
+        @begin
+        KeyCode::OPTION_L, KeyCode::KEYPAD_4, KeyCode::KEYPAD_1,
+        @end
         KeyCode::KEY_9, ModifierFlag::SHIFT_L,
       </autogen>
 
       <!-- Left Parenthesis -->
       <autogen>
         __SimultaneousKeyPresses__
-        __{ KeyCode::OPTION_L, KeyCode::KEYPAD_4, }__
+        @begin
+        KeyCode::OPTION_L, KeyCode::KEYPAD_4,
+        @end
         KeyCode::KEY_8, ModifierFlag::SHIFT_L,
       </autogen>
     </block>
