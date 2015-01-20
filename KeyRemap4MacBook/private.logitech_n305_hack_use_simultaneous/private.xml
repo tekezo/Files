@@ -4,6 +4,13 @@
     <name>Logitech N305 Hack</name>
     <identifier>private.logitech_n305_hack_use_simultaneous</identifier>
 
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_0, ModifierFlag::EXTRA1,
+      KeyCode::VK_NONE,
+      KeyCode::VK_STICKY_EXTRA1_FORCE_OFF,
+    </autogen>
+
     <block>
       <inputsource_only>FRENCH</inputsource_only>
 
@@ -32,6 +39,7 @@
         KeyCode::OPTION_L, KeyCode::KEYPAD_4,
         @end
         KeyCode::KEY_5,
+        KeyCode::VK_STICKY_EXTRA1_FORCE_ON,
       </autogen>
 
     </block>
@@ -52,7 +60,7 @@
         @begin
         KeyCode::OPTION_L, KeyCode::KEYPAD_4, KeyCode::KEYPAD_1,
         @end
-        KeyCode::KEY_9, ModifierFlag::SHIFT_L,
+        KeyCode::KEY_0, ModifierFlag::SHIFT_L,
       </autogen>
 
       <!-- Left Parenthesis -->
@@ -61,7 +69,8 @@
         @begin
         KeyCode::OPTION_L, KeyCode::KEYPAD_4,
         @end
-        KeyCode::KEY_8, ModifierFlag::SHIFT_L,
+        KeyCode::KEY_9, ModifierFlag::SHIFT_L,
+        KeyCode::VK_STICKY_EXTRA1_FORCE_ON,
       </autogen>
     </block>
 
