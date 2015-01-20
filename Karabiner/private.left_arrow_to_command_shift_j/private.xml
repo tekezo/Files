@@ -21,6 +21,21 @@
       KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
       KeyCode::CURSOR_LEFT,
     </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::CURSOR_RIGHT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::CURSOR_DOWN,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::CURSOR_UP,
+    </autogen>
   </item>
 
 </root>
