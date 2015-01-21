@@ -4,7 +4,7 @@
   <item>
     <name>Return to Command_L</name>
     <appendix>(+ When you type Return only, send Return)</appendix>
-    <identifier>remap.return2commandL_return</identifier>
+    <identifier>private.return2commandL_return</identifier>
     <autogen>__KeyOverlaidModifier__ KeyCode::RETURN, KeyCode::COMMAND_L, KeyCode::RETURN</autogen>
   </item>
 
