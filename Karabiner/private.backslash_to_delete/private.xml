@@ -3,10 +3,10 @@
 
   <item>
     <name>Swap backslash and delete key.</name>
-    <appendix>+ Change fn-backslash to backquote.</appendix>
+    <appendix>+ Change fn-delete to backquote.</appendix>
     <identifier>private.backslash_to_delete</identifier>
 
-    <autogen>__KeyToKey__ KeyCode::BACKSLASH, ModifierFlag::FN, KeyCode::BACKQUOTE</autogen>
+    <autogen>__KeyToKey__ KeyCode::DELETE, ModifierFlag::FN, KeyCode::BACKQUOTE</autogen>
     <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::DELETE</autogen>
     <autogen>__KeyToKey__ KeyCode::DELETE,    KeyCode::BACKSLASH</autogen>
   </item>
