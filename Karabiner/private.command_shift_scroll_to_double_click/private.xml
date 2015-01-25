@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Command+Shift+ScrollWheel down and up to double-click</name>
+    <identifier>private.command_shift_scroll_to_double_click</identifier>
+
+    <autogen>
+      __ScrollWheelToKey__
+      ScrollWheel::UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      PointingButton::LEFT,
+      PointingButton::LEFT,
+    </autogen>
+    <autogen>
+      __ScrollWheelToKey__
+      ScrollWheel::DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      PointingButton::LEFT,
+      PointingButton::LEFT,
+    </autogen>
+  </item>
+
+</root>
