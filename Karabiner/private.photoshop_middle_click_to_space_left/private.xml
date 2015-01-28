@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use middle mouse button as hand tool</name>
+    <identifier>private.photoshop_middle_click_to_space_left</identifier>
+
+    <only>PHOTOSHOP</only>
+
+    <autogen>
+      __KeyToKey__
+      PointingButton::MIDDLE, ModifierFlag::NONE,
+      PointingButton::LEFT,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::SPACE,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_PARTIAL_KEYUP, KeyCode::SPACE,
+    </autogen>
+  </item>
+
+</root>
