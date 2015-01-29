@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change PC application key to command-space.</name>
+    <identifier>private.application_to_command_space</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::PC_APPLICATION,
+      KeyCode::SPACE, ModifierFlag::COMMAND_R,
+    </autogen>
+  </item>
+
+</root>
