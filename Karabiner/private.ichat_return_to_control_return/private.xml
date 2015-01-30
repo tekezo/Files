@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Insert a new line by return key in Messages.app</name>
+    <identifier>private.ichat_return_to_control_return</identifier>
+
+    <only>ICHAT</only>
+    <uielementrole_only>AXTextArea</uielementrole_only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::RETURN, ModifierFlag::NONE,
+      KeyCode::RETURN, ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Send a message by escape key</name>
+    <identifier>private.ichat_escape_to_return</identifier>
+
+    <only>ICHAT</only>
+    <uielementrole_only>AXTextArea</uielementrole_only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::ESCAPE, ModifierFlag::NONE,
+      KeyCode::RETURN,
+    </autogen>
+  </item>
+
+</root>
