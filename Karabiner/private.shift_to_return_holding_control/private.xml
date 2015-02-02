@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change holding-shift key to control key.</name>
+    <name>+ Change shift x2 to return.</name>
+    <identifier>private.shift_to_return_holding_control</identifier>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::SHIFT_L</lastpressedphysicalkey_only>
+      <!-- The threshold is 500ms. Adjust `500` value. -->
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::500</elapsedtimesincelastpressed_lessthan>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SHIFT_L,
+        KeyCode::RETURN,
+      </autogen>
+    </block>
+
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::SHIFT_L,
+      __{ KeyCode::SHIFT_L }__
+      __{ KeyCode::CONTROL_L }__
+    </autogen>
+  </item>
+
+</root>
