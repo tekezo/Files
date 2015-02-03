@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change tab and shift-tab to forward,back in Preview.app with Swedish input source.</name>
+    <identifier>private.swedish_preview_back_forward</identifier>
+
+    <only>PREVIEW</only>
+    <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
+    <inputsource_only>SWEDISH</inputsource_only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::TAB, ModifierFlag::NONE,
+      KeyCode::KEY_9, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::KEY_8, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
