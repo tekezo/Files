@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change keypad number to control-number.</name>
+    <identifier>private.keypad_to_control_number</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_0, KeyCode::KEY_0, ModifierFlag::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_1, KeyCode::KEY_1, ModifierFlag::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_2, KeyCode::KEY_2, ModifierFlag::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_3, KeyCode::KEY_3, ModifierFlag::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_4, KeyCode::KEY_4, ModifierFlag::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_5, KeyCode::KEY_5, ModifierFlag::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_6, KeyCode::KEY_6, ModifierFlag::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_7, KeyCode::KEY_7, ModifierFlag::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_8, KeyCode::KEY_8, ModifierFlag::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_9, KeyCode::KEY_9, ModifierFlag::CONTROL_L</autogen>
+  </item>
+
+</root>
