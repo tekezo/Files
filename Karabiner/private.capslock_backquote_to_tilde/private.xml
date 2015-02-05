@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change capslock-backquote(`) to ~</name>
+    <identifier>private.capslock_backquote_to_tilde</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKQUOTE, ModifierFlag::CAPSLOCK | ModifierFlag::NONE,
+      KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Swap backtick ` and tilde ~</name>
+    <identifier>private.programmer.backtick_tilde</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKQUOTE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::BACKQUOTE,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKQUOTE, ModifierFlag::NONE,
+      KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
