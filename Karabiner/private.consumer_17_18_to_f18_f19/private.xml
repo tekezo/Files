@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Logitech H800 wireless headset with media controls to f18,f19</name>
+    <identifier>private.consumer_17_18_to_f18_f19</identifier>
+
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::MUSIC_NEXT_17,
+      KeyCode::F19,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::MUSIC_PREV_18,
+      KeyCode::F18,
+    </autogen>
+  </item>
+
+</root>
