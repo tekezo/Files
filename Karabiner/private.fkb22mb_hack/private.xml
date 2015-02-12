@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Turn off NumLock in Filco keyboards automatically.</name>
+    <identifier>private.fkb22mb_hack</identifier>
+    <autogen>
+      __ForceNumLockOn__
+      DeviceVendor::FILCO, DeviceProduct::ANY,
+      Option::FORCENUMLOCKON_FORCE_OFF,
+    </autogen>
+  </item>
+
+</root>
