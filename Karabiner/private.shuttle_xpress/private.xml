@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Repeated arrow keys to another key</name>
+    <identifier>private.shuttle_xpress</identifier>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::CURSOR_LEFT</lastpressedphysicalkey_only>
+      <!-- if fast (300ms) -->
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::300</elapsedtimesincelastpressed_lessthan>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_LEFT, KeyCode::F18,
+      </autogen>
+    </block>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::CURSOR_RIGHT</lastpressedphysicalkey_only>
+      <!-- if fast (300ms) -->
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::300</elapsedtimesincelastpressed_lessthan>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::CURSOR_RIGHT, KeyCode::F19,
+      </autogen>
+    </block>
+  </item>
+
+</root>
