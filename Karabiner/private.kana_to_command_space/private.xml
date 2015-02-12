@@ -8,7 +8,7 @@
     <autogen>
       __KeyToKey__
       KeyCode::JIS_KANA,
-      KeyCode::Space, ModifierFlag::COMMAND_L,
+      KeyCode::SPACE, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
 
