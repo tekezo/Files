@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change KANA key to command-space</name>
+    <identifier>private.kana_to_command_space</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::JIS_KANA,
+      KeyCode::Space, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
