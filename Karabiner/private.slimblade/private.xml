@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Enhance Kensington Slimblade</name>
+    <appendix>MiddleClick+Trackball:</appendix>
+    <appendix>Control+Trackball:</appendix>
+    <appendix>* Up: Mission Control</appendix>
+    <appendix>* Down: App Expose</appendix>
+    <appendix>* Left: Move right a space</appendix>
+    <appendix>* Right: Move left a space</appendix>
+    <appendix></appendix>
+    <identifier>remap.slimblade</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      PointingButton::MIDDLE,
+      KeyCode::VK_MODIFIER_BUTTON3,
+      PointingButton::MIDDLE,
+    </autogen>
+
+    <autogen>
+      __PointingRelativeToKey__
+      ModifierFlag::BUTTON3,
+
+      PointingRelative::UP,    KeyCode::MISSION_CONTROL,
+      PointingRelative::DOWN,  KeyCode::MISSION_CONTROL, ModifierFlag::CONTROL_L,
+      PointingRelative::LEFT,  KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L,
+      PointingRelative::RIGHT, KeyCode::CURSOR_LEFT,  ModifierFlag::CONTROL_L,
+    </autogen>
+
+    <autogen>
+      __PointingRelativeToKey__
+      ModifierFlag::CONTROL_L,
+
+      PointingRelative::UP,    KeyCode::MISSION_CONTROL,
+      PointingRelative::DOWN,  KeyCode::MISSION_CONTROL, ModifierFlag::CONTROL_L,
+      PointingRelative::LEFT,  KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L,
+      PointingRelative::RIGHT, KeyCode::CURSOR_LEFT,  ModifierFlag::CONTROL_L,
+    </autogen>
+
+  </item>
+
+</root>
