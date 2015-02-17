@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>PHYSICAL_COMMAND_L</modifierdef>
+
+  <item>
+    <name>Change left command key to left control key (only in Terminal)</name>
+    <appendix>+ Retain command-space</appendix>
+    <identifier>remap.left_command_to_left_control_terminal</identifier>
+    <only>TERMINAL</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_L,
+      KeyCode::CONTROL_L, ModifierFlag::PHYSICAL_COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SPACE, ModifierFlag::CONTROL_L | ModifierFlag::PHYSICAL_COMMAND_L,
+      KeyCode::SPACE, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
