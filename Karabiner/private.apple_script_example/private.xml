@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_AppleScript_hello_world</name>
+    <url type="shell">
+      <![CDATA[
+               /usr/bin/osascript -e 'display notification "hello world" with title "Karabiner"';
+      ]]>
+    </url>
+  </vkopenurldef>
+
+  <item>
+    <name>Apple Script example</name>
+    <appendix>Show notification by fn-h.</appendix>
+    <identifier>private.apple_script_example</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::H, ModifierFlag::FN,
+      KeyCode::VK_OPEN_URL_AppleScript_hello_world,
+    </autogen>
+  </item>
+
+</root>
