@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use shift keys as sticky shift</name>
+    <identifier>private.force_sticky_shift</identifier>
+    <autogen>__KeyToKey__ KeyCode::SHIFT_L, KeyCode::VK_STICKY_SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::VK_STICKY_SHIFT_R</autogen>
+  </item>
+
+</root>
