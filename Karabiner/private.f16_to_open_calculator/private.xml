@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Calculator</name>
+    <url type="file">/Applications/Calculator.app</url>
+  </vkopenurldef>
+
+  <item>
+    <name>Open calculator by f16</name>
+    <identifier>private.f16_to_open_calculator</identifier>
+    <autogen>__KeyToKey__ KeyCode::F16, ModifierFlag::NONE, KeyCode::VK_OPEN_URL_APP_Calculator</autogen>
+  </item>
+
+</root>
