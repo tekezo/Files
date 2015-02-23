@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>PC Style Print screen and Alt+Print screen</name>
+    <appendix>Please enable Screen Shot shortcuts (command-shift-3, command-shift-4) together</appendix>
+    <appendix>from System Preferences &gt; Keyboard &gt; Shortcuts.</appendix>
+    <identifier>private.pc_style_printscreen</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::PC_PRINTSCREEN, ModifierFlag::NONE,
+      KeyCode::KEY_3, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::PC_PRINTSCREEN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::KEY_4, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
