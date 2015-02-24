@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use right command key to special key</name>
+    <identifier>private.command_r_special</identifier>
+    
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_command_r_special,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_command_r_special</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::J,
+      KeyCode::SHIFT_R,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::K,
+      KeyCode::COMMAND_R,
+    </autogen>
+  </item>
+
+</root>
