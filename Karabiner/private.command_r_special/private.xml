@@ -2,9 +2,9 @@
 <root>
 
   <item>
-    <name>Use right command key to special key</name>
+    <name>Use right command key to special key #1</name>
     <identifier>private.command_r_special</identifier>
-    
+
     <autogen>
       __KeyToKey__
       KeyCode::COMMAND_R,
@@ -23,6 +23,32 @@
       __KeyToKey__
       KeyCode::K,
       KeyCode::COMMAND_R,
+    </autogen>
+  </item>
+
+  <!-- ============================================================ -->
+
+  <modifierdef>SPECIAL</modifierdef>
+
+  <item>
+    <name>Use right command key to special key #2</name>
+    <identifier>private.command_r_special_2</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::VK_MODIFIER_SPECIAL,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::J, ModifierFlag::SPECIAL,
+      KeyCode::SHIFT_R, ModifierFlag::SPECIAL,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::K, ModifierFlag::SPECIAL,
+      KeyCode::COMMAND_R, ModifierFlag::SPECIAL,
     </autogen>
   </item>
 
