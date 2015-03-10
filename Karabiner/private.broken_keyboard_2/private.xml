@@ -12,11 +12,11 @@
       <autogen>__KeyToKey__ KeyCode::L, KeyCode::VK_NONE</autogen>
     </block>
 
-    <!-- ignore y after o -->
+    <!-- ignore o after y -->
     <block>
-      <lastpressedphysicalkey_only>KeyCode::O</lastpressedphysicalkey_only>
+      <lastpressedphysicalkey_only>KeyCode::Y</lastpressedphysicalkey_only>
       <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
-      <autogen>__KeyToKey__ KeyCode::Y, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::O, KeyCode::VK_NONE</autogen>
     </block>
   </item>
 
