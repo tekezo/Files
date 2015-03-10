@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change brackets [] to page up/down</name>
+    <identifier>private.brackets_to_pageupdown</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_LEFT,
+      KeyCode::PAGEUP,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_RIGHT,
+      KeyCode::PAGEDOWN,
+    </autogen>
+  </item>
+
+</root>
+
