@@ -2,12 +2,23 @@
 <root>
 
   <item>
-    <name>Lock screen by control-L </name>
+    <name>Lock screen by control-L</name>
     <identifier>private.control_l_to_lock_screen</identifier>
 
     <autogen>
       __KeyToKey__
       KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      ConsumerKeyCode::POWER, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Lock screen by command-L</name>
+    <identifier>private.command_l_to_lock_screen</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
       ConsumerKeyCode::POWER, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
     </autogen>
   </item>
