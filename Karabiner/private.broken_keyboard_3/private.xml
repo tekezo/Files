@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change @ to 、right shift key to 。 in JIS keyboard.</name>
+    <identifier>private.broken_keyboard_3</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::JIS_ATMARK,
+      KeyCode::COMMA,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_R,
+      KeyCode::DOT,
+    </autogen>
+  </item>
+
+</root>
