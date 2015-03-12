@@ -13,11 +13,19 @@
     </block>
 
     <!-- ignore o after y -->
+    <autogen>
+      __SimultaneousKeyPresses__
+      __{ KeyCode::O, KeyCode::Y, }__
+      __{ KeyCode::F19, }__
+      Option::SIMULTANEOUSKEYPRESSES_STRICT_KEY_ORDER,
+      Option::SIMULTANEOUSKEYPRESSES_RAW,
+    </autogen>
     <block>
-      <lastpressedphysicalkey_only>KeyCode::Y</lastpressedphysicalkey_only>
+      <lastpressedphysicalkey_only>KeyCode::F19</lastpressedphysicalkey_only>
       <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
-      <autogen>__KeyToKey__ KeyCode::O, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::F19, KeyCode::VK_NONE</autogen>
     </block>
+    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::Y</autogen>
   </item>
 
 </root>
