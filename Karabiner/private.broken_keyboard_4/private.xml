@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change \ to p.</name>
+    <identifier>private.broken_keyboard_4</identifier>
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::P</autogen>
+  </item>
+
+</root>
