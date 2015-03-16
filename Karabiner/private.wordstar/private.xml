@@ -7,6 +7,7 @@
     <name>WORDSTAR</name>
     <identifier>private.wordstar</identifier>
 
+    <!-- Q -->
     <autogen>
       __KeyToKey__
       KeyCode::S, ModifierFlag::WORDSTAR_Q,
@@ -23,6 +24,7 @@
       KeyCode::VK_STICKY_WORDSTAR_Q,
     </autogen>
 
+    <!-- Normal -->
     <autogen>
       __KeyToKey__
       KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
