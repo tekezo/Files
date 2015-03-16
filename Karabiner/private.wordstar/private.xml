@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>WORDSTAR_Q</modifierdef>
+
+  <item>
+    <name>WORDSTAR</name>
+    <identifier>private.wordstar</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::WORDSTAR_Q,
+      KeyCode::A, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::D, ModifierFlag::WORDSTAR_Q,
+      KeyCode::E, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::Q, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::VK_STICKY_WORDSTAR_Q,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::CURSOR_UP,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::CURSOR_LEFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::CURSOR_RIGHT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::X, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::CURSOR_DOWN,
+    </autogen>
+  </item>
+
+</root>
