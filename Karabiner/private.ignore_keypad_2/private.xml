@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Ignore keypad 2</name>
+    <identifier>private.ignore_keypad_2</identifier>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_2, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
