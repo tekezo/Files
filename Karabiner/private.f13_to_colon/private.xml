@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f13 to colon</name>
+    <identifier>private.f13_to_colon</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F13,
+      KeyCode::SEMICOLON, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
