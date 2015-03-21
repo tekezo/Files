@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Enter @ by option-2 in Danish input source with external keyboards.</name>
+    <identifier>private.danish_atmark</identifier>
+
+    <inputsource_only>DANISH</inputsource_only>
+    <device_not>DeviceVendor::APPLE_INC</device_not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_2, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::BACKSLASH, ModifierFlag::OPTION_L,
+    </autogen>
+
+  </item>
+
+</root>
