@@ -6,9 +6,7 @@
   <item>
     <name>Magic Mouse Hack</name>
     <identifier>private.magic_mouse_hack</identifier>
-    <!--
-        <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::MAGIC_MOUSE</device_only>
-        -->
+    <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::MAGIC_MOUSE</device_only>
     <block>
       <modifier_not>ModifierFlag::MAGIC_MOUSE</modifier_not>
       <autogen>__DropScrollWheel__</autogen>
