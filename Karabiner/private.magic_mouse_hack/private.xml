@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>MAGIC_MOUSE</modifierdef>
+
+  <item>
+    <name>Magic Mouse Hack</name>
+    <identifier>private.magic_mouse_hack</identifier>
+    <!--
+        <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::MAGIC_MOUSE</device_only>
+        -->
+    <block>
+      <modifier_not>ModifierFlag::MAGIC_MOUSE</modifier_not>
+      <autogen>__DropScrollWheel__</autogen>
+    </block>
+    <autogen>__KeyToKey__ PointingButton::LEFT,  PointingButton::LEFT,  ModifierFlag::MAGIC_MOUSE</autogen>
+    <autogen>__KeyToKey__ PointingButton::RIGHT, PointingButton::RIGHT, ModifierFlag::MAGIC_MOUSE</autogen>
+  </item>
+
+</root>
