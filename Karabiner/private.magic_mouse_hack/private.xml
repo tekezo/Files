@@ -8,7 +8,7 @@
     <identifier>private.magic_mouse_hack</identifier>
     <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::MAGIC_MOUSE</device_only>
     <block>
-      <modifier_not>ModifierFlag::MAGIC_MOUSE</modifier_not>
+      <modifier_only>ModifierFlag::MAGIC_MOUSE</modifier_only>
       <autogen>__DropScrollWheel__</autogen>
     </block>
     <autogen>__KeyToKey__ PointingButton::LEFT,  PointingButton::LEFT,  ModifierFlag::MAGIC_MOUSE</autogen>
