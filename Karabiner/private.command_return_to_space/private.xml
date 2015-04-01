@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change command-return to space</name>
+    <identifier>private.command_return_to_space</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::RETURN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::SPACE,
+    </autogen>
+  </item>
+
+</root>
