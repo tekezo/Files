@@ -9,36 +9,45 @@
     <appendix>Change right alt+s to ß</appendix>
     <identifier>private.german_in_us_keylayout</identifier>
 
-    <autogen>__KeyToKey__
-    KeyCode::O, ModifierFlag::OPTION_R | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
-    KeyCode::U, ModifierFlag::OPTION_R, KeyCode::O, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+    <inputsource_only>ENGLISH</inputsource_only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::O, ModifierFlag::OPTION_R | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::U, ModifierFlag::OPTION_R, KeyCode::O, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
     </autogen>
-    <autogen>__KeyToKey__
-    KeyCode::O, ModifierFlag::OPTION_R | ModifierFlag::NONE,
-    KeyCode::U, ModifierFlag::OPTION_R, KeyCode::O
+    <autogen>
+      __KeyToKey__
+      KeyCode::O, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+      KeyCode::U, ModifierFlag::OPTION_R, KeyCode::O
     </autogen>
 
-    <autogen>__KeyToKey__
-    KeyCode::A, ModifierFlag::OPTION_R | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
-    KeyCode::U, ModifierFlag::OPTION_R, KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::OPTION_R | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::U, ModifierFlag::OPTION_R, KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
     </autogen>
-    <autogen>__KeyToKey__
-    KeyCode::A, ModifierFlag::OPTION_R | ModifierFlag::NONE,
-    KeyCode::U, ModifierFlag::OPTION_R, KeyCode::A
-    </autogen>
-
-    <autogen>__KeyToKey__
-    KeyCode::U, ModifierFlag::OPTION_R | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
-    KeyCode::U, ModifierFlag::OPTION_R, KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
-    </autogen>
-    <autogen>__KeyToKey__
-    KeyCode::U, ModifierFlag::OPTION_R | ModifierFlag::NONE,
-    KeyCode::U, ModifierFlag::OPTION_R, KeyCode::U
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+      KeyCode::U, ModifierFlag::OPTION_R, KeyCode::A
     </autogen>
 
-    <autogen>__KeyToKey__
-    KeyCode::S, ModifierFlag::OPTION_R | ModifierFlag::NONE,
-    KeyCode::S, ModifierFlag::OPTION_R
+    <autogen>
+      __KeyToKey__
+      KeyCode::U, ModifierFlag::OPTION_R | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::U, ModifierFlag::OPTION_R, KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::U, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+      KeyCode::U, ModifierFlag::OPTION_R, KeyCode::U
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+      KeyCode::S, ModifierFlag::OPTION_R
     </autogen>
   </item>
 
