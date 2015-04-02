@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the right shift key to escape,0,shift-p</name>
+    <identifier>private.right_shift_to_escape_0_P</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_R,
+      KeyCode::ESCAPE,
+      KeyCode::KEY_0,
+      KeyCode::P, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
