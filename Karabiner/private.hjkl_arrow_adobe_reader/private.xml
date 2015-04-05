@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use "hjkl" keys as arrow keys in Adobe Reader.</name>
+    <identifier>private.hjkl_arrow_adobe_reader</identifier>
+    <only>ADOBE</only>
+    <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
+    <modifier_only>
+      ModifierFlag::NONE,
+      ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+      ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+    </modifier_only>
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
+
+</root>
