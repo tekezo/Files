@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change command-shift-U to command-left arrow</name>
+    <identifier>private.command_shift_u_to_command_left_arrow</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
