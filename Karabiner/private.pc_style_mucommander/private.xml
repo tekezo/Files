@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Do not change Home/End/PageUp/PageDown in muCommander</name>
+    <identifier>private.pc_style_mucommander</identifier>
+
+    <only>muCommander</only>
+
+    <autogen>__KeyToKey__ FROMKEYCODE_HOME,     KeyCode::HOME</autogen>
+    <autogen>__KeyToKey__ FROMKEYCODE_END,      KeyCode::END</autogen>
+    <autogen>__KeyToKey__ FROMKEYCODE_PAGEUP,   KeyCode::PAGEUP</autogen>
+    <autogen>__KeyToKey__ FROMKEYCODE_PAGEDOWN, KeyCode::PAGEDOWN</autogen>
+  </item>
+
+</root>
