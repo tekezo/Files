@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable all settings on Apple devices.</name>
+    <identifier>private.passthrough_apple_devices</identifier>
+    <device_only>DeviceVendor::APPLE_INC, DeviceProduct::ANY</device_only>
+    <autogen>__PassThrough__</autogen>
+  </item>
+
+</root>
