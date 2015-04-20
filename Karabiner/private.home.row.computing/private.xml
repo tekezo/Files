@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>HOMEROWCOMPUTING</modifierdef>
+
+  <item>
+    <name>!Home Row Computing</name>
+    <identifier>private.home.row.computing</identifier>
+    <autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::VK_LOCK_HOMEROWCOMPUTING</autogen>
+
+    <block>
+      <modifier_only>ModifierFlag::HOMEROWCOMPUTING</modifier_only>
+      <!-- Vim-style arrow navigation -->
+      <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+      <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+
+      <!-- Easy delete (backspace in PC) and forward delete -->
+      <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::DELETE</autogen>
+      <autogen>__KeyToKey__ KeyCode::QUOTE, KeyCode::FORWARD_DELETE</autogen>
+
+      <!-- Special Keys -->
+      <autogen>__KeyToKey__ KeyCode::E, KeyCode::ESCAPE</autogen>
+    </block>
+  </item>
+
+</root>
