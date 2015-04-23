@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_terminal_spawn</name>
+    <url type="shell">
+      <![CDATA[
+               osascript -e 'tell app "Terminal"' -e 'if it is running then do script ""' -e activate -e end if end tell -e 'open /Applications/Utilities/Terminal.app'
+      ]]>
+    </url>
+  </vkopenurldef>
+
+  <item>
+    <name>Spawn terminal by right command-T</name>
+    <identifier>private.spawn_terminal</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::T, ModifierFlag::COMMAND_R,
+      KeyCode::VK_OPEN_URL_SHELL_terminal_spawn,
+    </autogen>
+  </item>
+
+</root>
