@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Adjust keyboard backlit by f7,f8</name>
+    <identifier>private.f7_f8_keyboard_backlit</identifier>
+    <autogen>__KeyToKey__ KeyCode::F7, ConsumerKeyCode::KEYBOARDLIGHT_LOW</autogen>
+    <autogen>__KeyToKey__ KeyCode::F8, ConsumerKeyCode::KEYBOARDLIGHT_HIGH</autogen>
+  </item>
+
+</root>
