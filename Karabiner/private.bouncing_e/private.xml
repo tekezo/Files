@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Fix bouncing E key</name>
+    <identifier>private.bouncing_e</identifier>
+
+    <lastpressedphysicalkey_only>KeyCode::E</lastpressedphysicalkey_only>
+    <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::500</elapsedtimesincelastpressed_lessthan>
+
+    <autogen>__KeyToKey__ KeyCode::E, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
