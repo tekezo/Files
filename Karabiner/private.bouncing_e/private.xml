@@ -11,4 +11,15 @@
     <autogen>__KeyToKey__ KeyCode::E, KeyCode::VK_NONE</autogen>
   </item>
 
+  <item>
+    <name>Change F4 to X, X to E</name>
+    <identifier>private.bouncing_e_2</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::F4, KeyCode::X</autogen>
+    <autogen>__KeyToKey__ KeyCode::LAUNCHPAD, KeyCode::X</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::X, KeyCode::E</autogen>
+    <autogen>__KeyToKey__ KeyCode::E, KeyCode::VK_NONE</autogen>
+  </item>
+
 </root>
