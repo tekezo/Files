@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable O key.</name>
+    <appendix>Change fn key to O key.</appendix>
+    <identifier>private.disable_o</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::O, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::FN, KeyCode::O</autogen>
+  </item>
+
+</root>
