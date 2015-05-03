@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_move_mail_list</name>
+    <url type="shell">
+      <![CDATA[
+               /Applications/Karabiner.app/Contents/Library/utilities/bin/warp-mouse-cursor-position front_window top 200 left 200
+      ]]>
+    </url>
+  </vkopenurldef>
+
+
+  <item>
+    <name>Improve PageUp in Mail</name>
+    <identifier>private.command_click_in_mail</identifier>
+
+    <only>MAIL</only>
+
+    <autogen>
+      __KeyToKey__
+      FROMKEYCODE_PAGEUP,
+      KeyCode::PAGEUP,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_OPEN_URL_SHELL_move_mail_list,
+      PointingButton::LEFT,
+      PointingButton::LEFT, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      FROMKEYCODE_PAGEDOWN,
+      KeyCode::PAGEDOWN,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_OPEN_URL_SHELL_move_mail_list,
+      PointingButton::LEFT,
+      PointingButton::LEFT, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
