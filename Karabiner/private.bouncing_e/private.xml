@@ -12,6 +12,13 @@
   </item>
 
   <item>
+    <name>Disable E key repeat</name>
+    <identifier>private.disable_e_repeat</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::E, KeyCode::E, Option::NOREPEAT</autogen>
+  </item>
+
+  <item>
     <name>Change F4 to X, X to E</name>
     <identifier>private.bouncing_e_2</identifier>
 

@@ -10,6 +10,11 @@
     </url>
   </vkopenurldef>
 
+  <!--
+      ModifierFlag::IN_MAIL_LIST will be on while we press page up or page down.
+      (We use the modifier as sticky modifier to do this.)
+  -->
+  <modifierdef>IN_MAIL_LIST</modifierdef>
 
   <item>
     <name>Improve PageUp in Mail</name>
@@ -17,26 +22,51 @@
 
     <only>MAIL</only>
 
-    <autogen>
-      __KeyToKey__
-      FROMKEYCODE_PAGEUP,
-      KeyCode::PAGEUP,
+    <block>
+      <modifier_not>ModifierFlag::IN_MAIL_LIST</modifier_not>
 
-      Option::KEYTOKEY_BEFORE_KEYDOWN,
-      KeyCode::VK_OPEN_URL_SHELL_move_mail_list,
-      PointingButton::LEFT,
-      PointingButton::LEFT, ModifierFlag::COMMAND_L,
-    </autogen>
-    <autogen>
-      __KeyToKey__
-      FROMKEYCODE_PAGEDOWN,
-      KeyCode::PAGEDOWN,
+      <autogen>
+        __KeyToKey__
+        FROMKEYCODE_PAGEUP,
+        KeyCode::PAGEUP,
+        KeyCode::VK_STICKY_IN_MAIL_LIST_FORCE_ON,
 
-      Option::KEYTOKEY_BEFORE_KEYDOWN,
-      KeyCode::VK_OPEN_URL_SHELL_move_mail_list,
-      PointingButton::LEFT,
-      PointingButton::LEFT, ModifierFlag::COMMAND_L,
-    </autogen>
+        Option::KEYTOKEY_BEFORE_KEYDOWN,
+        KeyCode::VK_OPEN_URL_SHELL_move_mail_list,
+        KeyCode::VK_WAIT_100MS,
+        PointingButton::LEFT,
+        PointingButton::LEFT, ModifierFlag::COMMAND_L,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        FROMKEYCODE_PAGEDOWN,
+        KeyCode::PAGEDOWN,
+        KeyCode::VK_STICKY_IN_MAIL_LIST_FORCE_ON,
+
+        Option::KEYTOKEY_BEFORE_KEYDOWN,
+        KeyCode::VK_OPEN_URL_SHELL_move_mail_list,
+        KeyCode::VK_WAIT_100MS,
+        PointingButton::LEFT,
+        PointingButton::LEFT, ModifierFlag::COMMAND_L,
+      </autogen>
+    </block>
+
+    <block>
+      <modifier_only>ModifierFlag::IN_MAIL_LIST</modifier_only>
+
+      <autogen>
+        __KeyToKey__
+        FROMKEYCODE_PAGEUP,
+        KeyCode::PAGEUP,
+        KeyCode::VK_STICKY_IN_MAIL_LIST_FORCE_ON,
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        FROMKEYCODE_PAGEDOWN,
+        KeyCode::PAGEDOWN,
+        KeyCode::VK_STICKY_IN_MAIL_LIST_FORCE_ON,
+      </autogen>
+    </block>
   </item>
 
 </root>
