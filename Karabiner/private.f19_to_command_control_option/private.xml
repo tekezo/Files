@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f19 to command-control-option</name>
+    <identifier>private.f19_to_command_control_option</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19,
+      KeyCode::OPTION_L, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
+</root>
