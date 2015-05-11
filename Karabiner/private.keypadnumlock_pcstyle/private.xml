@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Enable KeyPad as Arrow</name>
+    <identifier>private.keypadnumlock_pcstyle</identifier>
+
+    <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_CLEAR, KeyCode::VK_CONFIG_TOGGLE_notsave_private_keypadnumlock_pcstyle</autogen>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_keypadnumlock_pcstyle</identifier>
+
+    <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
+
+    <autogen>__ShowStatusMessage__ KeyPadArrow</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_0, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_5, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_COMMA, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_2, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_4, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_6, KeyCode::CURSOR_RIGHT</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_8, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_1, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_7, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_DOT, KeyCode::FORWARD_DELETE</autogen>
+
+    <!-- page down/up -->
+    <block>
+      <only>BLUEFISH,WORD,EXCEL,POWERPOINT</only>
+      <autogen>__KeyToKey__ KeyCode::KEYPAD_3, KeyCode::PAGEDOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEYPAD_9, KeyCode::PAGEUP</autogen>
+    </block>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_3, KeyCode::PAGEDOWN, ModifierFlag::OPTION_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_9, KeyCode::PAGEUP, ModifierFlag::OPTION_L</autogen>
+  </item>
+</root>
