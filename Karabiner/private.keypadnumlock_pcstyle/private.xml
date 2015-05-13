@@ -15,6 +15,26 @@
     <not>VIRTUALMACHINE, REMOTEDESKTOPCONNECTION</not>
 
     <autogen>__ShowStatusMessage__ KeyPadArrow</autogen>
+
+    <!-- control+insert = copy -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_0, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::C, ModifierFlag::COMMAND_L,
+    </autogen>
+    <!-- shift+insert = paste -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_0, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::V, ModifierFlag::COMMAND_L,
+    </autogen>
+    <!-- shift+delete = cut -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_DOT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::X, ModifierFlag::COMMAND_L,
+    </autogen>
+
     <autogen>__KeyToKey__ KeyCode::KEYPAD_0, KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::KEYPAD_5, KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::KEYPAD_COMMA, KeyCode::VK_NONE</autogen>
