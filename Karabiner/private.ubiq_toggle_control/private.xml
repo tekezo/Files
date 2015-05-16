@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Toggle Ubiquitous Vim Bindings by hitting the left control key alone.</name>
+    <identifier>private.ubiq_toggle_control</identifier>
+    <not>{{UBIQUITOUS_VIM_BINDINGS_IGNORE_APPS}}</not>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::CONTROL_L,
+
+      KeyCode::CONTROL_L,
+
+      KeyCode::VK_LOCK_ALL_FORCE_OFF,
+      KeyCode::VK_CONFIG_TOGGLE_notsave_ubiq_vimnormal,
+      {{ UBIQUITOUS_VIM_BINDINGS_CANCEL_OPERATOR_PENDING }}
+    </autogen>
+  </item>
+
+</root>
