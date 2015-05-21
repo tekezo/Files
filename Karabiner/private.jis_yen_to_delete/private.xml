@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>JIS Yen(¥) to Delete</name>
+    <identifier>private.jis_yen_to_delete</identifier>
+    <autogen>__KeyToKey__ KeyCode::JIS_YEN, KeyCode::DELETE</autogen>
+  </item>
+
+</root>
