@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change command key to control key in RDC.</name>
+    <appendix>+ Keep command-tab to command-tab.</appendix>
+    <appendix>+ Send Windows key event when you pressed the command key alone.</appendix>
+    <identifier>private.app_rdc_command_to_control</identifier>
+    <only>REMOTEDESKTOPCONNECTION</only>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_L,
+
+      @begin
+      KeyCode::CONTROL_L, ModifierFlag::RDC_COMMAND,
+      @end
+
+      @begin
+      KeyCode::COMMAND_L,
+      @end
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_NEGATIVE_LOCK_ALL_FORCE_OFF,
+      KeyCode::VK_LOCK_COMMAND_L_FORCE_OFF,
+    </autogen>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_R,
+
+      @begin
+      KeyCode::CONTROL_R, ModifierFlag::RDC_COMMAND,
+      @end
+
+      @begin
+      KeyCode::COMMAND_R,
+      @end
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_NEGATIVE_LOCK_ALL_FORCE_OFF,
+      KeyCode::VK_LOCK_COMMAND_L_FORCE_OFF,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::TAB, ModifierFlag::RDC_COMMAND,
+      KeyCode::TAB, ModifierFlag::COMMAND_L | ModifierFlag::RDC_COMMAND,
+      KeyCode::VK_LOCK_COMMAND_L_FORCE_ON,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_NEGATIVE_LOCK_CONTROL_L_FORCE_ON,
+      KeyCode::VK_NEGATIVE_LOCK_CONTROL_R_FORCE_ON,
+    </autogen>
+  </item>
+
+</root>
