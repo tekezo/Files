@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Setting for Editors Keys</name>
+    <identifier>private.editorskeys</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R</autogen>
+    <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R</autogen>
+    <autogen>__KeyToKey__ KeyCode::F3, KeyCode::MISSION_CONTROL</autogen>
+    <autogen>__KeyToKey__ KeyCode::F4, KeyCode::LAUNCHPAD</autogen>
+  </item>
+
+</root>
