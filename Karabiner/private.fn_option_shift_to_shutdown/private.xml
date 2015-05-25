@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Shutdown by holding fn-option-shift</name>
+    <identifier>private.fn_option_shift_to_shutdown</identifier>
+
+    <!-- fn -->
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::FN, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+
+      <!-- short press -->
+      @begin
+      KeyCode::FN, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+      @end
+
+      <!-- holding -->
+      @begin
+      ConsumerKeyCode::POWER, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
+      @end
+
+      <!-- 3000 milli seconds -->
+      ThresholdMillisecond::RawValue::3000,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_fn_option_shift_to_shutdown,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_fn_option_shift_to_shutdown,
+    </autogen>
+
+    <!-- option -->
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::OPTION_L, ModifierFlag::FN | ModifierFlag::SHIFT_L,
+
+      <!-- short press -->
+      @begin
+      KeyCode::OPTION_L, ModifierFlag::FN | ModifierFlag::SHIFT_L,
+      @end
+
+      <!-- holding -->
+      @begin
+      ConsumerKeyCode::POWER, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
+      @end
+
+      <!-- 3000 milli seconds -->
+      ThresholdMillisecond::RawValue::3000,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_fn_option_shift_to_shutdown,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_fn_option_shift_to_shutdown,
+    </autogen>
+
+    <!-- shift -->
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::SHIFT_L, ModifierFlag::OPTION_L | ModifierFlag::FN,
+
+      <!-- short press -->
+      @begin
+      KeyCode::SHIFT_L, ModifierFlag::OPTION_L | ModifierFlag::FN,
+      @end
+
+      <!-- holding -->
+      @begin
+      ConsumerKeyCode::POWER, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
+      @end
+
+      <!-- 3000 milli seconds -->
+      ThresholdMillisecond::RawValue::3000,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_fn_option_shift_to_shutdown,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_CONFIG_FORCE_OFF_notsave_private_fn_option_shift_to_shutdown,
+    </autogen>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_fn_option_shift_to_shutdown</identifier>
+    <autogen>__ShowStatusMessage__ shutdown</autogen>
+  </item>
+
+</root>
