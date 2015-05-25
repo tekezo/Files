@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Option_R+Arrow to PageUp/PageDown/Home/End</name>
+    <identifier>private.right_option_arrow_to_pageup</identifier>
+    <modifier_not>ModifierFlag::COMMAND_L, ModifierFlag::COMMAND_R</modifier_not>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_UP, ModifierFlag::OPTION_R, KeyCode::PAGEUP</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_R, KeyCode::PAGEDOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_R, KeyCode::HOME</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_R, KeyCode::END</autogen>
+  </item>
+
+</root>
