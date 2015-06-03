@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change § to a</name>
+    <identifier>private.uk_section_to_a</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::UK_SECTION,
+      KeyCode::A,
+    </autogen>
+  </item>
+
+</root>
