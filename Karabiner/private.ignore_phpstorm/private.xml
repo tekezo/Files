@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <appdef>
+    <appname>PhpStorm</appname>
+    <prefix>com.jetbrains.PhpStorm</prefix>
+  </appdef>
+
+  <item>
+    <name>Disable all settings while you are using PhpStorm.</name>
+    <identifier>private.ignore_phpstorm</identifier>
+    <only>PhpStorm</only>
+    <autogen>__PassThrough__</autogen>
+  </item>
+
+</root>
