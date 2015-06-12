@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the space key to the control key (v2)</name>
+    <appendix>* Change the space key to the left control key.</appendix>
+    <appendix>* Send a space key event when the space key is pressed alone.</appendix>
+    <appendix></appendix>
+    <appendix>* Send a space key event when the space key is released before another key is released.</appendix>
+    <appendix>For example:</appendix>
+    <appendix><![CDATA[  Space down -> T down -> T up => Control+T  ]]></appendix>
+    <appendix><![CDATA[  Space down -> T down -> Space up => Space,T  ]]></appendix>
+    <identifier>private.space_to_control_v2</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+
+      KeyCode::CONTROL_L, ModifierFlag::SANDS2,
+
+      KeyCode::SPACE,
+    </autogen>
+
+    <block>
+      <modifier_only>ModifierFlag::SANDS2</modifier_only>
+      <autogen>__BlockUntilKeyUp__ KeyCode::SPACE</autogen>
+    </block>
+  </item>
+
+</root>
