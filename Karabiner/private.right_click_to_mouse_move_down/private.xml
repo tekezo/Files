@@ -8,16 +8,6 @@
       __KeyToKey__
       PointingButton::RIGHT,
       KeyCode::VK_MOUSEKEY_DOWN,
-    </autogen>
-  </item>
-
-  <item>
-    <name>Change right click to mouse move down (2)</name>
-    <identifier>private.left_click_to_mouse_move_down</identifier>
-    <autogen>
-      __KeyToKey__
-      PointingButton::RIGHT,
-      KeyCode::VK_MOUSEKEY_DOWN,
 
       Option::KEYTOKEY_BEFORE_KEYDOWN,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
