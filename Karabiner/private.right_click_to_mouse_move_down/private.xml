@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right click to mouse move down</name>
+    <identifier>private.right_click_to_mouse_move_down</identifier>
+    <autogen>
+      __KeyToKey__
+      PointingButton::RIGHT,
+      KeyCode::VK_MOUSEKEY_DOWN,
+    </autogen>
+  </item>
+
+</root>
