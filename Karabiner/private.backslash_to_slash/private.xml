@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the backslash key to the slash key.</name>
+    <identifier>private.backslash_to_slash</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKSLASH,
+      KeyCode::SLASH,
+    </autogen>
+  </item>
+
+</root>
