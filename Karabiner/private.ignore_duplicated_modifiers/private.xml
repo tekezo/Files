@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Ignore duplicated modifier keys</name>
+    <identifier>private.ignore_duplicated_modifiers</identifier>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::COMMAND_L</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::COMMAND_R</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::CONTROL_L</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::CONTROL_R</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::OPTION_L</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::OPTION_R</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::SHIFT_L</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::SHIFT_L, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::SHIFT_R</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::VK_NONE</autogen>
+    </block>
+  </item>
+
+</root>
