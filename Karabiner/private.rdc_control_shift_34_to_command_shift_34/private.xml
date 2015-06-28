@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change control-shift-3/4 to command-shift-3/4 in Remote Desktop.</name>
+    <identifier>private.rdc_control_shift_34_to_command_shift_34</identifier>
+    <only>REMOTEDESKTOPCONNECTION</only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_3, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::KEY_3, ModifierFlag::COMMAND_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::KEY_4, ModifierFlag::COMMAND_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+    </autogen>
+  </item>
+
+</root>
