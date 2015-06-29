@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>SCROLL_MODE</modifierdef>
+
+  <item>
+    <name>MiddleClick+CursorMove to ScrollWheel</name>
+    <identifier>private.pointing_relative_middleclick_to_scroll_with_lock</identifier>
+    <autogen>
+      __KeyToKey__
+      PointingButton::MIDDLE,
+      KeyCode::VK_LOCK_SCROLL_MODE,
+    </autogen>
+    <autogen>
+      __PointingRelativeToScroll__ ModifierFlag::SCROLL_MODE
+    </autogen>
+  </item>
+
+</root>
