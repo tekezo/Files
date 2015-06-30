@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change button4 to command-option, button5 to control-command-option</name>
+    <identifier>private.button4_to_option_command</identifier>
+
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON4,
+      KeyCode::COMMAND_L, ModifierFlag::OPTION_L,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON5,
+      KeyCode::COMMAND_L, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
