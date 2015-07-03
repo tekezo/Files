@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable the push to talk hotkey in Skype.</name>
+    <identifier>private.disable_skype_call</identifier>
+
+    <only>SKYPE</only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::VK_NONE,
+    </autogen>
+  </item>
+
+</root>
