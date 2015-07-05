@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change arrows to f1,f2,f3,f4</name>
+    <identifier>private.arrows_to_f1</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::CURSOR_UP,    KeyCode::F1</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,  KeyCode::F2</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_DOWN,  KeyCode::F3</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::F4</autogen>
+  </item>
+
+</root>
