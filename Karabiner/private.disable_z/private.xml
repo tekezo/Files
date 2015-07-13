@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable Z key.</name>
+    <identifier>private.disable_z</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::Z, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
