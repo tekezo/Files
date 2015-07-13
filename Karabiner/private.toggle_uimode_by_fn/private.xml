@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Full Keyboard Access while fn is pressed.</name>
+    <identifier>private.toggle_uimode_by_fn</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::FN,
+
+      KeyCode::FN,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::F7, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::F7, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+    </autogen>
+  </item>
+
+</root>
