@@ -7,15 +7,15 @@
 
     <autogen>
       __KeyToKey__
-      KeyCode::FN,
+      KeyCode::TAB, ModifierFlag::FN,
 
-      KeyCode::FN,
+      KeyCode::TAB,
 
       Option::KEYTOKEY_BEFORE_KEYDOWN,
-      KeyCode::F7, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::F7, ModifierFlag::CONTROL_L,
 
       Option::KEYTOKEY_AFTER_KEYUP,
-      KeyCode::F7, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::F7, ModifierFlag::CONTROL_L,
     </autogen>
   </item>
 
