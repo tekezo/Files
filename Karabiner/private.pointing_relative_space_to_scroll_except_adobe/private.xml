@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Space+CursorMove to ScrollWheel</name>
+    <identifier>private.pointing_relative_space_to_scroll_except_adobe</identifier>
+    <not>PHOTOSHOP, ILLUSTRATOR</not>
+    <autogen>__KeyOverlaidModifier__ KeyCode::SPACE, KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_pointing_relative_to_scroll, KeyCode::SPACE</autogen>
+  </item>
+
+</root>
