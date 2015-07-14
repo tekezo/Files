@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>MY_VI_MODE</modifierdef>
+
+  <item>
+    <name>Change Control x2 to enter vi mode</name>
+    <identifier>private.double_control_vi_mode</identifier>
+
+    <block>
+      <modifier_only>ModifierFlag::MY_VI_MODE</modifier_only>
+      <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+      <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+      <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::VK_LOCK_MY_VI_MODE_FORCE_OFF</autogen>
+    </block>
+
+    <autogen>
+      __DoublePressModifier__
+      KeyCode::CONTROL_L,
+
+      @begin
+      KeyCode::CONTROL_L,
+      @end
+
+      @begin
+      KeyCode::VK_LOCK_MY_VI_MODE_FORCE_ON,
+      @end
+    </autogen>
+  </item>
+
+</root>
