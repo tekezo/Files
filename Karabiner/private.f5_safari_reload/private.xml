@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f5 to reload in Safari</name>
+    <identifier>private.f5_safari_reload</identifier>
+
+    <only>SAFARI</only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F5,
+      KeyCode::R, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __ConsumerToKey__
+      ConsumerKeyCode::KEYBOARDLIGHT_LOW,
+      KeyCode::R, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
