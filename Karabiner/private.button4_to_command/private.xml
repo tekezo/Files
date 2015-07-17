@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change button4 to command</name>
+    <appendix>Change button5 to option</appendix>
+    <identifier>private.button4_to_command</identifier>
+
+    <autogen>__KeyToKey__ PointingButton::BUTTON4, KeyCode::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ PointingButton::BUTTON5, KeyCode::OPTION_L</autogen>
+  </item>
+
+</root>
