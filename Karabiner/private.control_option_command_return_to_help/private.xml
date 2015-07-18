@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change command-control-option-return to the `help` key which will be the insert key in VMware.</name>
+    <identifier>private.control_option_command_return_to_help</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::RETURN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::HELP,
+    </autogen>
+
+  </item>
+
+</root>
