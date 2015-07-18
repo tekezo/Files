@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef><name>KeyCode::VK_OPEN_URL_APP_Photoshop</name><url type="file">/Applications/Adobe Photoshop CC 2015/Adobe Photoshop CC 2015.app</url></vkopenurldef>
+  <vkopenurldef><name>KeyCode::VK_OPEN_URL_APP_Safari</name><url type="file">/Applications/Safari.app</url></vkopenurldef>
+  <vkopenurldef><name>KeyCode::VK_OPEN_URL_APP_Chrome</name><url type="file">/Applications/Google Chrome.app</url></vkopenurldef>
+  <vkopenurldef><name>KeyCode::VK_OPEN_URL_APP_uTorrent</name><url type="file">/Applications/uTorrent.app</url></vkopenurldef>
+  <vkopenurldef><name>KeyCode::VK_OPEN_URL_APP_Skype</name><url type="file">/Applications/Skype.app</url></vkopenurldef>
+
+  <modifierdef>CLEAR_W</modifierdef>
+
+  <item>
+
+    <name>Keystrokes sequence</name>
+    <appendix>KeyCode::KEYPAD_CLEAR</appendix>
+
+    <identifier>private.key remember_hack</identifier>
+
+    <!-- clear-w -->
+    <block>
+      <modifier_only>ModifierFlag::CLEAR_W</modifier_only>
+      <autogen>__KeyToKey__ KeyCode::S, KeyCode::VK_OPEN_URL_APP_Safari</autogen>
+      <autogen>__KeyToKey__ KeyCode::G, KeyCode::VK_OPEN_URL_APP_Chrome</autogen>
+      <autogen>__KeyToKey__ KeyCode::B, KeyCode::VK_OPEN_URL_APP_uTorrent</autogen>
+      <autogen>__KeyToKey__ KeyCode::A, KeyCode::VK_OPEN_URL_APP_Skype</autogen>
+    </block>
+
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::KEYPAD_CLEAR</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::1000</elapsedtimesincelastpressed_lessthan>
+
+      <autogen>__KeyToKey__ KeyCode::W, KeyCode::VK_STICKY_CLEAR_W_FORCE_ON</autogen>
+
+      <autogen>__KeyToKey__ KeyCode::P, KeyCode::VK_OPEN_URL_APP_Photoshop</autogen>
+      <autogen>__KeyToKey__ KeyCode::KEYPAD_CLEAR, KeyCode::M, ModifierFlag::COMMAND_R</autogen>
+    </block>
+  </item>
+
+</root>
