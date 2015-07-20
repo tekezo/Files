@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change option-shift and shift-option to control-h.</name>
+    <identifier>private.option_shift_to_control_h</identifier>
+
+    <!-- shift-option -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::H, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::H, ModifierFlag::CONTROL_L,
+    </autogen>
+
+    <!-- option-shift -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::H, ModifierFlag::CONTROL_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_R, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::H, ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
+</root>
