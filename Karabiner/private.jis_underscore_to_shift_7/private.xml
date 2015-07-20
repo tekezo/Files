@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap jis underscore and shift-7</name>
+    <identifier>private.jis_underscore_to_shift_7</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::JIS_UNDERSCORE, ModifierFlag::NONE,
+      KeyCode::KEY_7, ModifierFlag::SHIFT_L,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_7, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::JIS_UNDERSCORE,
+    </autogen>
+  </item>
+
+</root>
