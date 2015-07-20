@@ -7,24 +7,28 @@
 
     <!-- shift-option -->
     <autogen>
-      __KeyToKey__
+      __KeyOverlaidModifier__
+      KeyCode::OPTION_L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
       KeyCode::OPTION_L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
       KeyCode::H, ModifierFlag::CONTROL_L,
     </autogen>
     <autogen>
-      __KeyToKey__
+      __KeyOverlaidModifier__
+      KeyCode::OPTION_R, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
       KeyCode::OPTION_R, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
       KeyCode::H, ModifierFlag::CONTROL_L,
     </autogen>
 
     <!-- option-shift -->
     <autogen>
-      __KeyToKey__
+      __KeyOverlaidModifier__
+      KeyCode::SHIFT_L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
       KeyCode::SHIFT_L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
       KeyCode::H, ModifierFlag::CONTROL_L,
     </autogen>
     <autogen>
-      __KeyToKey__
+      __KeyOverlaidModifier__
+      KeyCode::SHIFT_R, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
       KeyCode::SHIFT_R, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
       KeyCode::H, ModifierFlag::CONTROL_L,
     </autogen>
