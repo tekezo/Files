@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right arrow x2 to command-right arrow</name>
+    <identifier>private.double_press_right_arrow_to_command_right</identifier>
+
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::CURSOR_RIGHT,
+
+      <!-- ======================================== -->
+      <!-- normal press -->
+      @begin
+      KeyCode::VK_NONE,
+
+      Option::KEYTOKEY_DELAYED_ACTION,
+      KeyCode::CURSOR_RIGHT,
+
+      Option::KEYTOKEY_DELAYED_ACTION_CANCELED_BY, KeyCode::CURSOR_RIGHT,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+      KeyCode::VK_KEYTOKEY_DELAYED_ACTION_DROP_EVENT,
+      @end
+
+      <!-- ======================================== -->
+      <!-- holding -->
+      @begin
+      KeyCode::CURSOR_RIGHT,
+      @end
+    </autogen>
+  </item>
+
+</root>
