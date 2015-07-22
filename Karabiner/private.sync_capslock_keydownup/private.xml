@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Synchronize caps lock state with physical key state.</name>
+    <appendix>Please change caps lock key code to 80 by Seil together.</appendix>
+    <identifier>private.sync_capslock_keydownup</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19,
+      KeyCode::VK_NONE,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_LOCK_CAPSLOCK_FORCE_ON,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_LOCK_CAPSLOCK_FORCE_OFF,
+    </autogen>
+  </item>
+
+</root>
