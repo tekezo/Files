@@ -8,7 +8,7 @@
     <autogen>--KeyToKey-- KeyCode::KEY_3, VK_COMMAND | ModifierFlag::NONE, KeyCode::VK_CHANGE_INPUTMODE_TRADITIONAL_CHINESE_YAHOO_KEYKEY</autogen>
 
     <block>
-      <inputmodedetail_only>CHINESE_TRADITIONAL_YAHOO_KEYKEY</inputmodedetail_only>
+      <inputsource_only>CHINESE_TRADITIONAL_YAHOO_KEYKEY</inputsource_only>
       <autogen>--KeyToKey-- KeyCode::SHIFT_R, KeyCode::JIS_EISUU</autogen>
     </block>
     <block>
