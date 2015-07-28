@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change '|' key to 'K' key.</name>
+    <identifier>private.backslash_to_k</identifier>
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::K</autogen>
+  </item>
+
+</root>
