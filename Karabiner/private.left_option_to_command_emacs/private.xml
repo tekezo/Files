@@ -3,7 +3,7 @@
 
   <item>
     <name>Option_L to Command_L (only in Emacs)</name>
-    <identifier>private.optionL2commandL_emacs</identifier>
+    <identifier>private.left_option_to_command_emacs</identifier>
     <only>EMACS</only>
     <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::COMMAND_L</autogen>
   </item>
