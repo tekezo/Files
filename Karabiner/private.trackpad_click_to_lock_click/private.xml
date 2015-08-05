@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change left click to lock left click in Trackpad.</name>
+    <identifier>private.trackpad_click_to_lock_click</identifier>
+
+    <device_only>DeviceVendor::APPLE_INC, DeviceProduct::ANY</device_only>
+
+    <autogen>
+      __KeyToKey__
+      PointingButton::LEFT,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+    </autogen>
+  </item>
+
+</root>
