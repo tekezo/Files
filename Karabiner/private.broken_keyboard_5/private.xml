@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Broken keyboard hack</name>
+    <appendix>Change backquote (`) to P</appendix>
+    <identifier>private.broken_keyboard_5</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::P</autogen>
+  </item>
+
+</root>
