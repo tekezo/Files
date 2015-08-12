@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Option Hack</name>
+    <appendix>Change option-e to command-control-e</appendix>
+    <appendix>Change option-r to command-control-r</appendix>
+    <identifier>private.option_e_to_command_control_e</identifier>
+
+    <!-- Please put only filter to enable this setting in specific apps.
+         https://pqrs.org/osx/karabiner/xml.html.en#appdef -->
+
+    <!-- <only>YOUR_IDE</only> -->
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::E, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::R, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+      KeyCode::R, ModifierFlag::COMMAND_L | ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
+</root>
