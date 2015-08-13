@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right command-A to Application Windows</name>
+    <identifier>private.right_command_a_to_application_windows</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::COMMAND_R,
+      KeyCode::MISSION_CONTROL, ModifierFlag::CONTROL_L,
+    </autogen>
+  </item>
+
+</root>
