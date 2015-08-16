@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change volume control to mission control in Compx devices</name>
+    <identifier>private.compx_hack</identifier>
+
+    <device_only>
+      DeviceVendor::RawValue::0x1d57,
+      DeviceProduct::RawValue::0xfa60,
+    </device_only>
+
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::VOLUME_DOWN,
+      KeyCode::MISSION_CONTROL,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::VOLUME_UP,
+      KeyCode::MISSION_CONTROL,
+    </autogen>
+  </item>
+
+</root>
