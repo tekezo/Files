@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change backslash(\) to zero(0).</name>
+    <name>+ option-backslash to backslash.</name>
+    <identifier>private.backslash_to_zero</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::BACKSLASH</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::KEY_0</autogen>
+  </item>
+
+</root>
