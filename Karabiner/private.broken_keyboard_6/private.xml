@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change \ to o.</name>
+    <identifier>private.broken_keyboard_6</identifier>
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::O</autogen>
+  </item>
+
+</root>
