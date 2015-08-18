@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change ; to comma.</name>
+    <appendix>Change \ to period.</appendix>
+    <identifier>private.broken_keyboard_7</identifier>
+    <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::COMMA</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::DOT</autogen>
+  </item>
+
+</root>
