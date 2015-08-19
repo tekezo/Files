@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>PHYSICAL_COMMAND_L</modifierdef>
+
+  <item>
+    <name>Change the left command key to control key.</name>
+    <appendix>Retain command-q and command-w</appendix>
+    <identifier>private.rdc_left_command_to_control</identifier>
+
+    <only>REMOTEDESKTOPCONNECTION</only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_L,
+      KeyCode::CONTROL_L, ModifierFlag::PHYSICAL_COMMAND_L,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::Q, ModifierFlag::CONTROL_L | ModifierFlag::PHYSICAL_COMMAND_L,
+      KeyCode::Q, ModifierFlag::COMMAND_L,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::W, ModifierFlag::CONTROL_L | ModifierFlag::PHYSICAL_COMMAND_L,
+      KeyCode::W, ModifierFlag::COMMAND_L,
+    </autogen>
+
+  </item>
+
+</root>
