@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Brightness Control 1</name>
+    <identifier>private.brightness_control_1</identifier>
+    <autogen>__KeyToKey__ KeyCode::F1, KeyCode::BRIGHTNESS_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::F2, KeyCode::BRIGHTNESS_UP</autogen>
+  </item>
+
+  <item>
+    <name>Brightness Control 2</name>
+    <identifier>private.brightness_control_2</identifier>
+    <autogen>__KeyToKey__ KeyCode::F1, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::F2, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+  </item>
+
+  <item>
+    <name>Brightness Control 3</name>
+    <identifier>private.brightness_control_3</identifier>
+    <autogen>__KeyToKey__ KeyCode::F1, KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::F2, KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_UP</autogen>
+  </item>
+
+</root>
