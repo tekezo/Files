@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>SPANISH_ACCENTS</modifierdef>
+
+  <item>
+    <name>Change ´c to ç in Spanish - ISO input source</name>
+    <identifier>private.spanish_c</identifier>
+
+    <inputsource_only>SPANISH_ISO</inputsource_only>
+
+    <!-- spanish ´ -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::QUOTE, ModifierFlag::NONE,
+      KeyCode::QUOTE, KeyCode::VK_STICKY_SPANISH_ACCENTS_FORCE_ON,
+      Option::NOREPEAT,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::C, ModifierFlag::SPANISH_ACCENTS,
+      KeyCode::DELETE,
+      KeyCode::BACKSLASH, <!-- ç -->
+    </autogen>
+  </item>
+
+</root>
