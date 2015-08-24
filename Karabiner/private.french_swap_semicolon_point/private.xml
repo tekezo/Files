@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap ; and . in French input sources.</name>
+    <identifier>private.french_swap_semicolon_point</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMA, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::COMMA,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMA,
+      KeyCode::COMMA, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
