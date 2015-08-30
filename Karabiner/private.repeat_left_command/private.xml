@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Repeat the left command key</name>
+    <identifier>private.repeat_left_command</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_L,
+      KeyCode::COMMAND_L, KeyCode::VK_NONE,
+    </autogen>
+  </item>
+
+</root>
