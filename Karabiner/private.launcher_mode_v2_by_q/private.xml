@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Launcher Mode v2 by Q</name>
+    <identifier>private.launcher_mode_v2_by_q</identifier>
+
+    <pressingphysicalkeys_lessthan>2</pressingphysicalkeys_lessthan>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::Q, ModifierFlag::NONE,
+
+      @begin
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_launcher_mode_v2, ModifierFlag::LAUNCHER_MODE_V2,
+      @end
+
+      @begin
+      KeyCode::Q,
+      @end
+    </autogen>
+  </item>
+
+</root>
