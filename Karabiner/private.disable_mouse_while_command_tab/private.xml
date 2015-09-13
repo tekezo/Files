@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>COMMAND_TAB</modifierdef>
+
+  <item>
+    <name>Disable mouse while command-tab is active.</name>
+    <identifier>private.disable_mouse_while_command_tab</identifier>
+
+    <!-- turn off COMMAND_TAB modifier when the command key is released. -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_L,
+      KeyCode::COMMAND_L,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_LOCK_COMMAND_TAB_FORCE_OFF,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::COMMAND_R,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_LOCK_COMMAND_TAB_FORCE_OFF,
+    </autogen>
+
+    <!-- turn on COMMAND_TAB modifier when command-tab. -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+
+      Option::KEYTOKEY_BEFORE_KEYDOWN,
+      KeyCode::VK_LOCK_COMMAND_TAB_FORCE_ON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+    </autogen>
+
+    <!-- disable mouse while COMMAND_TAB is active. -->
+    <block>
+      <modifier_only>ModifierFlag::COMMAND_TAB</modifier_only>
+      <autogen>__DropPointingRelativeCursorMove__</autogen>
+    </block>
+  </item>
+
+</root>
