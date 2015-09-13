@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Pages</name>
+    <url type="file">/Applications/Pages.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Numbers</name>
+    <url type="file">/Applications/Numbers.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Preview</name>
+    <url type="file">/Applications/Preview.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Reminders</name>
+    <url type="file">/Applications/Reminders.app</url>
+  </vkopenurldef>
+
+  <item>
+    <name>Launcher Mode v2 custom</name>
+    <appendix>O+P: Pages</appendix>
+    <appendix>O+N: Numbers</appendix>
+    <appendix>O+V: Preview</appendix>
+    <appendix>O+R: Reminders</appendix>
+  </item>
+
+  <replacementdef>
+    <replacementname>LAUNCHER_MODE_V2_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::P,
+          KeyCode::VK_OPEN_URL_APP_Pages,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::N,
+          KeyCode::VK_OPEN_URL_APP_Numbers,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::V,
+          KeyCode::VK_OPEN_URL_APP_Preview,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::R,
+          KeyCode::VK_OPEN_URL_APP_Reminders,
+        </autogen>
+        ]]>
+    </replacementvalue>
+  </replacementdef>
+
+</root>
