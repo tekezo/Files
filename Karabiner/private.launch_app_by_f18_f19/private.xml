@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_myapp1</name>
+    <!-- Please change app file path. -->
+    <url type="file">/Applications/Utilities/Activity Monitor.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_myapp2</name>
+    <!-- Please change app file path. -->
+    <url type="file">/Applications/TextEdit.app</url>
+  </vkopenurldef>
+
+  <item>
+    <name>Launch app by f18,f19</name>
+    <identifier>private.launch_app_by_f18_f19</identifier>
+    <autogen>__KeyToKey__ KeyCode::F18, KeyCode::VK_OPEN_URL_APP_myapp1</autogen>
+    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::VK_OPEN_URL_APP_myapp2</autogen>
+  </item>
+
+</root>
