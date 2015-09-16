@@ -21,6 +21,16 @@
     <url type="file">/Applications/Reminders.app</url>
   </vkopenurldef>
 
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Contacts</name>
+    <url type="file">/Applications/Contacts.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Notes</name>
+    <url type="file">/Applications/Notes.app</url>
+  </vkopenurldef>
+
   <item>
     <name>Launcher Mode v2 custom</name>
     <appendix>O+P: Pages</appendix>
@@ -55,6 +65,18 @@
           __KeyDownUpToKey__
           KeyCode::R,
           KeyCode::VK_OPEN_URL_APP_Reminders,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::C,
+          KeyCode::VK_OPEN_URL_APP_Contacts,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::T,
+          KeyCode::VK_OPEN_URL_APP_Notes,
         </autogen>
         ]]>
     </replacementvalue>
