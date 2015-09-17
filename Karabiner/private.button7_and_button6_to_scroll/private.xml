@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change button7 and button6 to horizontal scroll</name>
+    <identifier>private.button7_and_button6_to_scroll</identifier>
+    <autogen>__KeyToKey__ PointingButton::BUTTON7, KeyCode::VK_MOUSEKEY_SCROLL_LEFT</autogen>
+    <autogen>__KeyToKey__ PointingButton::BUTTON6, KeyCode::VK_MOUSEKEY_SCROLL_RIGHT</autogen>
+  </item>
+
+  <item>
+    <name>Change button7 and button6 to horizontal scroll (fixed distance)</name>
+    <identifier>private.button7_and_button6_to_scroll_fixed</identifier>
+    <autogen>__KeyToKey__ PointingButton::BUTTON7, KeyCode::VK_MOUSEKEY_FIXED_DISTANCE_SCROLL_LEFT</autogen>
+    <autogen>__KeyToKey__ PointingButton::BUTTON6, KeyCode::VK_MOUSEKEY_FIXED_DISTANCE_SCROLL_RIGHT</autogen>
+  </item>
+
+</root>
