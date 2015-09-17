@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f19 key to alt-3 (#)</name>
+    <identifier>private.f19_to_alt_3</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
