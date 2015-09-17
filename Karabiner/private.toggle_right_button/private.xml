@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Toggle right button</name>
+    <identifier>private.toggle_right_button</identifier>
+    <autogen>__KeyToKey__ PointingButton::RIGHT, KeyCode::VK_MOUSEKEY_LOCK_BUTTON_RIGHT</autogen>
+  </item>
+
+  <item>
+    <name>Lock right button by holding right button</name>
+    <identifier>private.toggle_right_button_holding</identifier>
+    <autogen>
+      __HoldingKeyToKey__
+      PointingButton::RIGHT,
+
+      @begin
+      PointingButton::RIGHT,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
+      @end
+
+      @begin
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_RIGHT
+      @end
+    </autogen>
+  </item>
+
+</root>
