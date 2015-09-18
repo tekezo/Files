@@ -3,12 +3,12 @@
 
   <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_APP_Pages</name>
-    <url type="file">/Applications/Pages.app</url>
+    <url type="file">/Applications/iWork '09/Pages.app</url>
   </vkopenurldef>
 
   <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_APP_Numbers</name>
-    <url type="file">/Applications/Numbers.app</url>
+    <url type="file">/Applications/iWork '09/Numbers.app</url>
   </vkopenurldef>
 
   <vkopenurldef>
@@ -29,6 +29,21 @@
   <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_APP_Notes</name>
     <url type="file">/Applications/Notes.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Karabiner</name>
+    <url type="file">/Applications/Karabiner.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Photo_Booth</name>
+    <url type="file">/Applications/Photo Booth.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Google_Chrome</name>
+    <url type="file">/Applications/Google Chrome.app</url>
   </vkopenurldef>
 
   <item>
@@ -77,6 +92,24 @@
           __KeyDownUpToKey__
           KeyCode::T,
           KeyCode::VK_OPEN_URL_APP_Notes,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::K,
+          KeyCode::VK_OPEN_URL_APP_Karabiner,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::B,
+          KeyCode::VK_OPEN_URL_APP_Photo_Booth,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::H,
+          KeyCode::VK_OPEN_URL_APP_Google_Chrome,
         </autogen>
         ]]>
     </replacementvalue>
