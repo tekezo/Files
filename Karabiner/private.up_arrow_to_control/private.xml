@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change up arrow to control key.</name>
+    <identifier>private.up_arrow_to_control</identifier>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_UP, KeyCode::CONTROL_L</autogen>
+  </item>
+
+</root>
