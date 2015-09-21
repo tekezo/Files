@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change slash to up arrow.</name>
+    <identifier>private.slash_to_up_arrow</identifier>
+    <autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::CURSOR_UP</autogen>
+  </item>
+
+</root>
