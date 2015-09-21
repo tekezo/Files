@@ -5,6 +5,7 @@
     <name>Change slash to up arrow.</name>
     <identifier>private.slash_to_up_arrow</identifier>
     <autogen>__KeyToKey__ KeyCode::CURSOR_UP, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::SLASH, ModifierFlag::SHIFT_R, KeyCode::SLASH, ModifierFlag::SHIFT_R</autogen>
     <autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::CURSOR_UP</autogen>
   </item>
 
