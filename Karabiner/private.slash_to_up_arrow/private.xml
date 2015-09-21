@@ -9,4 +9,10 @@
     <autogen>__KeyToKey__ KeyCode::SLASH, KeyCode::CURSOR_UP</autogen>
   </item>
 
+  <item>
+    <name>Change the right option to up arrow.</name>
+    <identifier>private.right_option_to_up_arrow</identifier>
+    <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::CURSOR_UP</autogen>
+  </item>
+
 </root>
