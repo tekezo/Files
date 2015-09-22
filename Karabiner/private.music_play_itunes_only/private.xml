@@ -15,4 +15,13 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Disable the music play key except in iTunes</name>
+    <identifier>private.disable_music_play_except_itunes</identifier>
+
+    <not>ITUNES</not>
+
+    <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PLAY, KeyCode::VK_NONE</autogen>
+  </item>
+
 </root>
