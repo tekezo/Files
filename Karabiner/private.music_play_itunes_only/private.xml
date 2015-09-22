@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>The music play key always controls iTunes.</name>
+    <identifier>private.music_play_itunes_only</identifier>
+
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::MUSIC_PLAY,
+
+      KeyCode::VK_OPEN_URL_APP_iTunes,
+      KeyCode::VK_WAIT_100MS,
+      ConsumerKeyCode::MUSIC_PLAY,
+    </autogen>
+  </item>
+
+</root>
