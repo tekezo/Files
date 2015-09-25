@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_JXA_keystroke_text1</name>
+    <url type="shell">
+      osascript -l JavaScript -e "Application('System Events').keystroke('ssh user@IP');"
+    </url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_JXA_keystroke_text2</name>
+    <url type="shell">
+      osascript -l JavaScript -e "Application('System Events').keystroke('ls');"
+    </url>
+  </vkopenurldef>
+
+  <item>
+    <name>Input text by f16, f17</name>
+    <identifier>private.f16_to_text</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::F16, KeyCode::VK_OPEN_URL_JXA_keystroke_text1</autogen>
+    <autogen>__KeyToKey__ KeyCode::F17, KeyCode::VK_OPEN_URL_JXA_keystroke_text2</autogen>
+
+  </item>
+
+</root>
