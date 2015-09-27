@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Unicode input</name>
+    <identifier>private.unicode_input1</identifier>
+
+    <!-- option-shift-a -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::OPTION_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- 0391 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+      KeyCode::KEY_9, ModifierFlag::OPTION_L,
+      KeyCode::KEY_1, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+
+    <!-- option-a -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- 03B1 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+      KeyCode::B,     ModifierFlag::OPTION_L,
+      KeyCode::KEY_1, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+
+    <!-- option-shift-b -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::B, ModifierFlag::OPTION_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- 0392 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+      KeyCode::KEY_9, ModifierFlag::OPTION_L,
+      KeyCode::KEY_2, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+
+    <!-- option-b -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::B, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- 03B2 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+      KeyCode::B,     ModifierFlag::OPTION_L,
+      KeyCode::KEY_2, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+
+    <!-- option-shift-d -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::D, ModifierFlag::OPTION_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- 0394 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+      KeyCode::KEY_9, ModifierFlag::OPTION_L,
+      KeyCode::KEY_4, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+
+    <!-- option-d -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::D, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- 03B4 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+      KeyCode::B,     ModifierFlag::OPTION_L,
+      KeyCode::KEY_4, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+
+    <!-- option-shift-w -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::W, ModifierFlag::OPTION_L | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- 03A9 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+      KeyCode::A,     ModifierFlag::OPTION_L,
+      KeyCode::KEY_9, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+
+    <!-- option-w -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::W, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- 03C9 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
+      KeyCode::C,     ModifierFlag::OPTION_L,
+      KeyCode::KEY_9, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+
+    <!-- option-up arrow -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_UP, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- 2191 -->
+      KeyCode::KEY_2, ModifierFlag::OPTION_L,
+      KeyCode::KEY_1, ModifierFlag::OPTION_L,
+      KeyCode::KEY_9, ModifierFlag::OPTION_L,
+      KeyCode::KEY_1, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+
+    <!-- option-right arrow -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- 2192 -->
+      KeyCode::KEY_2, ModifierFlag::OPTION_L,
+      KeyCode::KEY_1, ModifierFlag::OPTION_L,
+      KeyCode::KEY_9, ModifierFlag::OPTION_L,
+      KeyCode::KEY_2, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+
+  </item>
+
+</root>
