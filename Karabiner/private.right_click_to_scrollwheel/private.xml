@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>SCROLL</modifierdef>
+
+  <item>
+    <name>RightClick+CursorMove to ScrollWheel</name>
+    <identifier>private.right_click_to_scrollwheel</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      PointingButton::RIGHT,
+
+      @begin
+      KeyCode::VK_CONFIG_SYNC_KEYDOWNUP_notsave_private_right_click_to_scrollwheel_indicator, ModifierFlag::SCROLL,
+      @end
+
+      @begin
+      PointingButton::RIGHT,
+      @end
+    </autogen>
+    <autogen>__PointingRelativeToScroll__ ModifierFlag::SCROLL</autogen>
+  </item>
+
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_right_click_to_scrollwheel_indicator</identifier>
+    <autogen>__ShowStatusMessage__ scroll</autogen>
+  </item>
+
+</root>

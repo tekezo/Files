@@ -3,7 +3,7 @@
 
   <item>
     <name>LeftClick+CursorMove to ScrollWheel</name>
-    <identifier>remap.left_click_to_scrollwheel</identifier>
+    <identifier>private.left_click_to_scrollwheel</identifier>
     <autogen>__PointingRelativeToScroll__ PointingButton::LEFT</autogen>
   </item>
 
