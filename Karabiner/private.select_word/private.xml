@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Select word by command-d</name>
+    <identifier>private.select_word</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::D, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
+      KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
