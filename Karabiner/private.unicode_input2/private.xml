@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Unicode input</name>
+    <identifier>private.unicode_input2</identifier>
+
+    <!-- option-§ -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::UK_SECTION, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- U+00D7 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::D,     ModifierFlag::OPTION_L,
+      KeyCode::KEY_7, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+
+  </item>
+
+</root>
