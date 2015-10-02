@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>FINDER_CUT</modifierdef>
+
+  <item>
+    <name>Cut file by command-x in Finder</name>
+    <identifier>private.cut_in_finder</identifier>
+
+    <only>FINDER</only>
+    <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::X, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::C, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::VK_LOCK_FINDER_CUT_FORCE_ON,
+      Option::NOREPEAT,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::FINDER_CUT | ModifierFlag::NONE,
+      KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::OPTION_L,
+      KeyCode::VK_LOCK_FINDER_CUT_FORCE_OFF,
+      Option::NOREPEAT,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::ESCAPE, ModifierFlag::FINDER_CUT,
+      KeyCode::VK_LOCK_FINDER_CUT_FORCE_OFF,
+      Option::NOREPEAT,
+    </autogen>
+
+  </item>
+</root>
