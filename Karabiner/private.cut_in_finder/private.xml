@@ -20,6 +20,14 @@
 
     <autogen>
       __KeyToKey__
+      KeyCode::C, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::FINDER_CUT | ModifierFlag::NONE,
+      KeyCode::C, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::VK_LOCK_FINDER_CUT_FORCE_OFF,
+      Option::NOREPEAT,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
       KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::FINDER_CUT | ModifierFlag::NONE,
       KeyCode::V, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::OPTION_L,
       KeyCode::VK_LOCK_FINDER_CUT_FORCE_OFF,
