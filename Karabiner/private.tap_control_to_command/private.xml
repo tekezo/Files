@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the left control key tapping to sticky command key.</name>
+    <identifier>private.tap_control_to_command_left</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::CONTROL_L,
+      KeyCode::CONTROL_L,
+      KeyCode::VK_STICKY_COMMAND_L,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change the right control key tapping to sticky command key.</name>
+    <identifier>private.tap_control_to_command_right</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::CONTROL_R,
+      KeyCode::CONTROL_R,
+      KeyCode::VK_STICKY_COMMAND_R,
+    </autogen>
+  </item>
+
+</root>
