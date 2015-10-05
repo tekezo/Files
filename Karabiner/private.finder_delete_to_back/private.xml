@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Back by the delete key in Finder</name>
+    <identifier>private.finder_delete_to_back</identifier>
+
+    <only>FINDER</only>
+    <uielementrole_not>{{ UIELEMENTROLES_EDITING_IN_FINDER }}</uielementrole_not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::DELETE, ModifierFlag::NONE,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
