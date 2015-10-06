@@ -8,6 +8,15 @@
     <only>FINDER</only>
     <uielementrole_not>{{ UIELEMENTROLES_EDITING_IN_FINDER }}</uielementrole_not>
 
+    <block>
+      <inputsource_only>GERMAN</inputsource_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::DELETE, ModifierFlag::NONE,
+        KeyCode::KEY_5, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+      </autogen>
+    </block>
+
     <autogen>
       __KeyToKey__
       KeyCode::DELETE, ModifierFlag::NONE,
