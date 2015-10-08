@@ -3,7 +3,7 @@
 
   <item>
     <name>Change the right option key to down arrow</name>
-    <identifier>private.right_option_to_down_arrow</identifier>
+    <identifier>private.right_option_down_arrow</identifier>
 
     <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::CURSOR_DOWN</autogen>
   </item>
