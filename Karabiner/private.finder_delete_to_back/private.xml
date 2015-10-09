@@ -2,25 +2,16 @@
 <root>
 
   <item>
-    <name>Back by the delete key in Finder</name>
+    <name>Enclosing Folder by the delete key in Finder</name>
     <identifier>private.finder_delete_to_back</identifier>
 
     <only>FINDER</only>
     <uielementrole_not>{{ UIELEMENTROLES_EDITING_IN_FINDER }}</uielementrole_not>
 
-    <block>
-      <inputsource_only>GERMAN</inputsource_only>
-      <autogen>
-        __KeyToKey__
-        KeyCode::DELETE, ModifierFlag::NONE,
-        KeyCode::KEY_5, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
-      </autogen>
-    </block>
-
     <autogen>
       __KeyToKey__
       KeyCode::DELETE, ModifierFlag::NONE,
-      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L,
+      KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L,
     </autogen>
   </item>
 
