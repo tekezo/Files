@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable keypad</name>
+    <identifier>private.disable_keypad</identifier>
+    <autogen>__KeyToKey__ KeyCode::F16, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::F17, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::F18, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::VK_NONE</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_CLEAR, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_EQUAL, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_SLASH, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_MULTIPLY, KeyCode::VK_NONE</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_7, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_8, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_9, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_MINUS, KeyCode::VK_NONE</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_4, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_5, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_6, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_PLUS, KeyCode::VK_NONE</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_1, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_2, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_3, KeyCode::VK_NONE</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_0, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_DOT, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::ENTER, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
