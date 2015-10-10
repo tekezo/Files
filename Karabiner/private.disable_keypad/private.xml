@@ -2,8 +2,11 @@
 <root>
 
   <item>
-    <name>Disable keypad</name>
+    <name>Disable keypad in Apple keyboards</name>
     <identifier>private.disable_keypad</identifier>
+
+    <device_only>DeviceVendor::APPLE_INC, DeviceProduct::ANY</device_only>
+
     <autogen>__KeyToKey__ KeyCode::F16, KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::F17, KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::F18, KeyCode::VK_NONE</autogen>
@@ -30,6 +33,7 @@
 
     <autogen>__KeyToKey__ KeyCode::KEYPAD_0, KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::KEYPAD_DOT, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_COMMA, KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::ENTER, KeyCode::VK_NONE</autogen>
   </item>
 
