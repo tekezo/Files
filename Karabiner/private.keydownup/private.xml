@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Send key down up when you press keys.</name>
+    <identifier>private.keydownup</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::A, KeyCode::A, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::B, KeyCode::B, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::C, KeyCode::C, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::D, KeyCode::D, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::E, KeyCode::E, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::F, KeyCode::F, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::G, KeyCode::G, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::H, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::I, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::J, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::K, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::L, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::M, KeyCode::M, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::N, KeyCode::N, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::O, KeyCode::O, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::P, KeyCode::P, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::Q, KeyCode::Q, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::R, KeyCode::R, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::S, KeyCode::S, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::T, KeyCode::T, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::U, KeyCode::U, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::V, KeyCode::V, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::W, KeyCode::W, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::X, KeyCode::X, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::Y, KeyCode::Y, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::Z, KeyCode::Z, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
