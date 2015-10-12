@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the delete key to "Move to Trash" in Finder.</name>
+    <identifier>private.finder_delete_to_move_to_trash</identifier>
+    <only>FINDER</only>
+    <uielementrole_not>{{ UIELEMENTROLES_EDITING_IN_FINDER }}</uielementrole_not>
+    <autogen>
+      __KeyToKey__
+      KeyCode::DELETE, ModifierFlag::NONE,
+      KeyCode::DELETE, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
