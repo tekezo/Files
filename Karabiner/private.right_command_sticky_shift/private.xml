@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use the right command key as sticky shift. (without lock)</name>
+    <identifier>private.right_command_sticky_shift</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_R,
+      KeyCode::SHIFT_L,
+      KeyCode::VK_STICKY_ACTIVE_MODIFIERS_FORCE_ON,
+      KeyCode::VK_STICKY_SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
