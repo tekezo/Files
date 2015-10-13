@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Fix French Logitech K310</name>
+    <identifier>private.french_fix_logitech_k310</identifier>
+
+    <inputsource_only>FRENCH</inputsource_only>
+    <device_only>DeviceVendor::LOGITECH, DeviceProduct::ANY</device_only>
+
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::UK_SECTION</autogen>
+    <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
+  </item>
+
+</root>
