@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <windownamedef>
+    <name>Chrome_Remote_Desktop</name>
+    <!-- Please adjust this regex for your environment. -->
+    <regex>^Chrome Remote Desktop$</regex>
+  </windownamedef>
+
+  <item>
+    <name>Enable Control+X</name>
+    <identifier>private.emacsmode_control_x_custom1</identifier>
+    <not>{{EMACS_MODE_IGNORE_APPS}}</not>
+
+    <windowname_not>Chrome_Remote_Desktop</windowname_not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::X, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_emacsmode_ex_controlX_core,
+    </autogen>
+  </item>
+
+</root>
