@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change function keys</name>
+    <identifier>private.function1</identifier>
+
+    <!-- fn+f1 -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::BRIGHTNESS_DOWN, ModifierFlag::FN, ConsumerKeyCode::BRIGHTNESS_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRIGHTNESS_DOWN,         ModifierFlag::FN, KeyCode::BRIGHTNESS_DOWN</autogen>
+    <!-- fn+f2 -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::BRIGHTNESS_UP,   ModifierFlag::FN, ConsumerKeyCode::BRIGHTNESS_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRIGHTNESS_UP,           ModifierFlag::FN, KeyCode::BRIGHTNESS_UP</autogen>
+    <!-- fn+f3,f4 -->
+    <autogen>__KeyToKey__ KeyCode::EXPOSE_ALL, ModifierFlag::FN, KeyCode::EXPOSE_ALL</autogen>
+    <autogen>__KeyToKey__ KeyCode::DASHBOARD,  ModifierFlag::FN, KeyCode::DASHBOARD</autogen>
+    <autogen>__KeyToKey__ KeyCode::LAUNCHPAD,  ModifierFlag::FN, KeyCode::LAUNCHPAD</autogen>
+    <!-- fn+f10,f11,f12 -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::VOLUME_MUTE, ModifierFlag::FN, KeyCode::F10</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::VOLUME_DOWN, ModifierFlag::FN, KeyCode::F11</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::VOLUME_UP,   ModifierFlag::FN, KeyCode::F12</autogen>
+
+    <!-- f1 -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::BRIGHTNESS_DOWN, KeyCode::F1</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRIGHTNESS_DOWN,         KeyCode::F1</autogen>
+    <!-- f2 -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::BRIGHTNESS_UP,   KeyCode::F2</autogen>
+    <autogen>__KeyToKey__ KeyCode::BRIGHTNESS_UP,           KeyCode::F2</autogen>
+    <!-- f3,f4 -->
+    <autogen>__KeyToKey__ KeyCode::EXPOSE_ALL, KeyCode::F3</autogen>
+    <autogen>__KeyToKey__ KeyCode::DASHBOARD,  KeyCode::F4</autogen>
+    <autogen>__KeyToKey__ KeyCode::LAUNCHPAD,  KeyCode::F4</autogen>
+  </item>
+
+</root>
