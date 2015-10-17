@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the right option key to shift-f10 in Microsoft Word</name>
+    <identifier>private.option_r_to_shift_f10_in_word</identifier>
+
+    <only>WORD</only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::OPTION_R,
+      KeyCode::F10, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
