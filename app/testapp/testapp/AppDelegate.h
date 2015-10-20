@@ -1,15 +1,7 @@
-//
-//  AppDelegate.h
-//  testapp
-//
-//  Created by Takayama Fumihiko on 10/20/15.
-//  Copyright © 2015 Takayama Fumihiko. All rights reserved.
-//
+// -*- Mode: objc -*-
 
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-
 @end
-
