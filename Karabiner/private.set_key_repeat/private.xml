@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>KEYREPEAT</replacementname>
+    <replacementvalue>
+      DelayUntilRepeat::RawValue::500,
+      KeyRepeat::RawValue::30,
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Set key repeat rate for arrow keys</name>
+    <identifier>private.set_key_repeat</identifier>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, {{ KEYREPEAT }}</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT, KeyCode::CURSOR_LEFT, {{ KEYREPEAT }}</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::CURSOR_RIGHT, {{ KEYREPEAT }}</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, {{ KEYREPEAT }}</autogen>
+    <autogen>__KeyToKey__ KeyCode::RETURN, KeyCode::RETURN, {{ KEYREPEAT }}</autogen>
+    <autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::SPACE, {{ KEYREPEAT }}</autogen>
+    <autogen>__KeyToKey__ KeyCode::DELETE, KeyCode::DELETE, {{ KEYREPEAT }}</autogen>
+  </item>
+
+</root>
