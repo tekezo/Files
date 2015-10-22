@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>my homerow mode</name>
+    <identifier>notsave.private_homerow</identifier>
+    <autogen>__ShowStatusMessage__ Home Row Arrow</autogen>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::I, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
+
+</root>
