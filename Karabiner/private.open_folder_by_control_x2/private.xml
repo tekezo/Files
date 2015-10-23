@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_FILE_Desktop</name>
+    <!-- Change the file path -->
+    <url type="file">{{ ENV_HOME }}/Desktop</url>
+  </vkopenurldef>
+
+  <item>
+    <name>Open folder by control x 2</name>
+    <identifier>private.open_folder_by_control_x2</identifier>
+    <autogen>
+      __DoublePressModifier__
+      KeyCode::CONTROL_L,
+
+      @begin
+      KeyCode::CONTROL_L,
+      @end
+
+      @begin
+      KeyCode::VK_OPEN_URL_FILE_Desktop,
+      @end
+    </autogen>
+  </item>
+
+</root>
