@@ -11,8 +11,8 @@
 
 - (void)timerFireMethod:(NSTimer *)timer {
   NSDictionary *defaults = [[NSUserDefaults standardUserDefaults] persistentDomainForName:NSGlobalDomain];
-  //NSLog(@"%@", defaults[@"InitialKeyRepeat"]);
-  //NSLog(@"%@", defaults[@"KeyRepeat"]);
+  NSLog(@"%@", defaults[@"InitialKeyRepeat"]);
+  NSLog(@"%@", defaults[@"KeyRepeat"]);
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {

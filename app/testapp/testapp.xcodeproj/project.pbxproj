@@ -245,6 +245,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = testapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = org.pqrs.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -257,6 +258,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = testapp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = org.pqrs.testapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -281,6 +283,7 @@
 				340EB8841BD6703700948ECC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
