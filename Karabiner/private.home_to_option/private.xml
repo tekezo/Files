@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the home key to option key.</name>
+    <identifier>private.home_to_option</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::HOME,
+      KeyCode::OPTION_R,
+    </autogen>
+  </item>
+
+</root>
