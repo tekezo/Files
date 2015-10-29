@@ -2,15 +2,15 @@
 <root>
 
   <item>
-    <name>Change £ to # in British-PC input source.</name>
+    <name>Change £ to # in British input source.</name>
     <identifier>private.british_pound_to_hash</identifier>
 
     <inputsource_only>BRITISH</inputsource_only>
 
     <autogen>
       __KeyToKey__
-      KeyCode::KEY_3, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
-      KeyCode::BACKSLASH,
+      KeyCode::KEY_3, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::KEY_3, ModifierFlag::OPTION_L,
     </autogen>
   </item>
 
