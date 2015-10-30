@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change v,command to f1</name>
+    <identifier>private.delayed_action1</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::V,
+      KeyCode::VK_NONE,
+
+      Option::KEYTOKEY_DELAYED_ACTION,
+      KeyCode::V,
+
+      Option::KEYTOKEY_DELAYED_ACTION_CANCELED_BY, KeyCode::COMMAND_L,
+      KeyCode::F1,
+      KeyCode::VK_KEYTOKEY_DELAYED_ACTION_DROP_EVENT,
+    </autogen>
+
+  </item>
+
+</root>
