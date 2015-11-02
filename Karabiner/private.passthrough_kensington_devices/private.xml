@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable all settings on Kensington devices.</name>
+    <identifier>private.passthrough_kensington_devices</identifier>
+    <device_only>DeviceVendor::KENSINGTON, DeviceProduct::ANY</device_only>
+    <autogen>__PassThrough__</autogen>
+  </item>
+
+</root>
