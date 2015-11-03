@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Sleep by right shift + right command + Q</name>
+    <identifier>private.right_shift_right_command_q_to_sleep</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::Q, ModifierFlag::COMMAND_R | ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+      KeyCode::VK_OPEN_URL_SHELL_sleep,
+    </autogen>
+  </item>
+
+</root>
