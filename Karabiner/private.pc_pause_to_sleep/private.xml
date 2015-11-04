@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Sleep by pause/break</name>
+    <identifier>private.pc_pause_to_sleep</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F15,
+      KeyCode::VK_OPEN_URL_SHELL_sleep,
+    </autogen>
+  </item>
+
+</root>
