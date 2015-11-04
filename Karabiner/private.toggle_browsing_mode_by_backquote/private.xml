@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Toggle Browsing Mode by `</name>
+    <identifier>private.toggle_browsing_mode_by_backquote</identifier>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::VK_CONFIG_TOGGLE_notsave_browsingmode</autogen>
+  </item>
+
+</root>
