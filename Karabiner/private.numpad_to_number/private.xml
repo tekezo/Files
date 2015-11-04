@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Numpad 0-9 to Normal 0-9</name>
+    <identifier>private.numpad_to_number</identifier>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_0, KeyCode::KEY_0</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_1, KeyCode::KEY_1</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_2, KeyCode::KEY_2</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_3, KeyCode::KEY_3</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_4, KeyCode::KEY_4</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_5, KeyCode::KEY_5</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_6, KeyCode::KEY_6</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_7, KeyCode::KEY_7</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_8, KeyCode::KEY_8</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_9, KeyCode::KEY_9</autogen>
+  </item>
+
+</root>
