@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use PC Style Lock Screen for Dvorak (Lock screen by command-L)</name>
+    <identifier>private.dvorak_pc_style_lock_screen</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::N, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      ConsumerKeyCode::POWER, ModifierFlag::CONTROL_L, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
