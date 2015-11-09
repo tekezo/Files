@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>change ` to @</name>
+    <appendix>(+ change F3 to #)</appendix>
+    <identifier>private.backquote_to_at</identifier>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, ModifierFlag::NONE, KeyCode::KEY_2, ModifierFlag::SHIFT_L</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::F3, ModifierFlag::NONE, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::EXPOSE_ALL, ModifierFlag::NONE, KeyCode::KEY_3, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+  <item>
+    <name>Swap Semicolon and Colon</name>
+    <identifier>private.swapcolons</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::SEMICOLON,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON,
+      KeyCode::SEMICOLON, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change ] to ?</name>
+    <identifier>private.bracket_close_to_question</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_RIGHT, ModifierFlag::NONE,
+      KeyCode::SLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change [ to —</name>
+    <identifier>private.bracket_open_to_emdash</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_LEFT, ModifierFlag::NONE,
+      KeyCode::MINUS, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change = to –</name>
+    <identifier>private.equal_to_</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::EQUAL, ModifierFlag::NONE,
+      KeyCode::MINUS, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
