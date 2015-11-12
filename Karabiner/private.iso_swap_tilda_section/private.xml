@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap the Tilde(~) key with Section (§) in English</name>
+    <identifier>private.iso_swap_tilda_section</identifier>
+
+    <inputsource_only>ENGLISH</inputsource_only>
+
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE,  KeyCode::UK_SECTION</autogen>
+    <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
+  </item>
+
+  <item>
+    <name>Backquote(`) to Paragraph(§) in Russian</name>
+    <identifier>remap.russian_backquote2paragraph</identifier>
+
+    <inputsource_only>RUSSIAN</inputsource_only>
+
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::RUSSIAN_PARAGRAPH</autogen>
+    <autogen>__KeyToKey__ KeyCode::RUSSIAN_PARAGRAPH, KeyCode::BACKQUOTE</autogen>
+  </item>
+
+</root>
