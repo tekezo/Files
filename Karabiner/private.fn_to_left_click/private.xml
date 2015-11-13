@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change fn to left click</name>
+    <identifier>private.fn_to_left_click</identifier>
+    <autogen>__KeyToKey__ KeyCode::FN, PointingButton::LEFT</autogen>
+  </item>
+
+</root>
