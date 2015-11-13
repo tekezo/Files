@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change "left click + scroll wheel" to command + f12</name>
+    <identifier>private.left_click_scroll_wheel_to_command_f12</identifier>
+
+    <autogen>
+      __KeyToKey__
+      PointingButton::LEFT,
+      PointingButton::LEFT, ModifierFlag::BUTTON1,
+    </autogen>
+
+    <autogen>
+      __ScrollWheelToKey__
+      ScrollWheel::UP, ModifierFlag::BUTTON1,
+      KeyCode::F12, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __ScrollWheelToKey__
+      ScrollWheel::DOWN, ModifierFlag::BUTTON1,
+      KeyCode::F12, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
