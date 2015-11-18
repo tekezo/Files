@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>swap ~ and ±</name>
+    <identifier>private.swap_tilde_and_plusminus</identifier>
+
+    <device_only>
+      DeviceVendor::APPLE_INC,
+      DeviceProduct::ANY,
+    </device_only>
+
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::UK_SECTION</autogen>
+    <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
+  </item>
+
+</root>
