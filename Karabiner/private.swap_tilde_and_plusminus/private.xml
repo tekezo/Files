@@ -10,8 +10,8 @@
       DeviceProduct::ANY,
     </device_only>
 
-    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::UK_SECTION</autogen>
-    <autogen>__KeyToKey__ KeyCode::UK_SECTION, KeyCode::BACKQUOTE</autogen>
+    <autogen>__KeyToKey__ KeyCode::RawValue::0x32, KeyCode::RawValue::0xa</autogen>
+    <autogen>__KeyToKey__ KeyCode::RawValue::0xa, KeyCode::RawValue::0x32</autogen>
   </item>
 
 </root>
