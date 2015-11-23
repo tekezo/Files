@@ -9,6 +9,7 @@
       __KeyToKey__
       KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL | ModifierFlag::NONE,
       ConsumerKeyCode::POWER, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+      Option::NOREPEAT,
     </autogen>
   </item>
 
@@ -20,6 +21,7 @@
       __KeyToKey__
       KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
       ConsumerKeyCode::POWER, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+      Option::NOREPEAT,
     </autogen>
   </item>
 
