@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Scroll by f3,f4</name>
+    <identifier>private.f3f4_to_scroll</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::MISSION_CONTROL,
+      KeyCode::VK_MOUSEKEY_SCROLL_UP,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::LAUNCHPAD,
+      KeyCode::VK_MOUSEKEY_SCROLL_DOWN,
+    </autogen>
+  </item>
+
+</root>
