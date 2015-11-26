@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change fn+8 to keypad *</name>
+    <identifier>private.fn_8_to_keypad_multiply</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_8, ModifierFlag::FN,
+      KeyCode::KEYPAD_MULTIPLY,
+    </autogen>
+  </item>
+
+</root>
