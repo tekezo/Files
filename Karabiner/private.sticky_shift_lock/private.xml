@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use the left shift key as sticky modifier. (with lock)</name>
+    <identifier>private.sticky_shift_lock</identifier>
+
+    <!-- when modifier is locked. -->
+    <block>
+      <modifierlocked_only>ModifierFlag::SHIFT_L</modifierlocked_only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SHIFT_L,
+
+        @begin
+        KeyCode::SHIFT_L,
+        @end
+
+        @begin
+        KeyCode::VK_LOCK_SHIFT_L_FORCE_OFF,
+        KeyCode::VK_STICKY_SHIFT_L_FORCE_OFF,
+        @end
+      </autogen>
+    </block>
+
+    <!-- when modifier is pressed twice. -->
+    <block>
+      <modifierstuck_only>ModifierFlag::SHIFT_L</modifierstuck_only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SHIFT_L,
+
+        @begin
+        KeyCode::SHIFT_L,
+        @end
+
+        @begin
+        KeyCode::VK_STICKY_ACTIVE_MODIFIERS_FORCE_ON,
+        KeyCode::VK_LOCK_SHIFT_L_FORCE_ON,
+        KeyCode::VK_STICKY_SHIFT_L_FORCE_OFF,
+        @end
+      </autogen>
+    </block>
+
+    <block>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SHIFT_L,
+
+        @begin
+        KeyCode::SHIFT_L,
+        @end
+
+        @begin
+        KeyCode::VK_STICKY_ACTIVE_MODIFIERS_FORCE_ON,
+        KeyCode::VK_STICKY_SHIFT_L_FORCE_ON,
+        @end
+      </autogen>
+    </block>
+  </item>
+
+</root>
