@@ -17,4 +17,36 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Change f1,f2 to brightness control.</name>
+    <appendix>(Using KeyCode::BRIGHTNESS_UP.)</appendix>
+    <identifier>private.f1_to_keycode_brightness_down</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F1,
+      KeyCode::BRIGHTNESS_DOWN,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F2,
+      KeyCode::BRIGHTNESS_UP,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change f1,f2 to brightness control.</name>
+    <appendix>(Using ConsumerKeyCode::BRIGHTNESS_UP.)</appendix>
+    <identifier>private.f1_to_consumerkeycode_brightness_down</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F1,
+      ConsumerKeyCode::BRIGHTNESS_DOWN,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F2,
+      ConsumerKeyCode::BRIGHTNESS_UP,
+    </autogen>
+  </item>
+
 </root>
