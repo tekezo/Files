@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the pause key to shift+f12</name>
+    <identifier>private.pc_pause_to_shift_f12</identifier>
+    <autogen>__KeyToKey__ KeyCode::PC_PAUSE, KeyCode::F12, ModifierFlag::SHIFT_L</autogen>
+  </item>
+
+</root>
