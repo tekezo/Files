@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Section(§) and Less-Than(&lt;)</name>
+    <appendix>(except in virtual machine)</appendix>
+    <identifier>private.swedish_swap_section_lessthan_not_vm</identifier>
+
+    <!-- not virtual machine -->
+    <not>VIRTUALMACHINE</not>
+
+    <!-- only in swedish input source -->
+    <inputsource_only>SWEDISH</inputsource_only>
+
+    <autogen>__KeyToKey__ KeyCode::SWEDISH_SECTION, KeyCode::SWEDISH_LESS_THAN</autogen>
+    <autogen>__KeyToKey__ KeyCode::SWEDISH_LESS_THAN, KeyCode::SWEDISH_SECTION</autogen>
+  </item>
+
+</root>
