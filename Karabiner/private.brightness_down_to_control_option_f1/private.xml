@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change brightness down to control-option-f1</name>
+    <identifier>private.brightness_down_to_control_option_f1</identifier>
+
+    <!-- for internal keyboard -->
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::BRIGHTNESS_DOWN,
+      KeyCode::F1, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
+    </autogen>
+
+    <!-- for external keyboard -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRIGHTNESS_DOWN,
+      KeyCode::F1, ModifierFlag::CONTROL_L | ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
