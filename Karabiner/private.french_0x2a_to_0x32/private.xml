@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change *μ to &lt;&gt; in French keyboard</name>
+    <identifier>private.french_0x2a_to_0xa</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::RawValue::0x2a,
+      KeyCode::RawValue::0x32,
+    </autogen>
+  </item>
+
+</root>
