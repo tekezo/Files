@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change ñ to t</name>
+    <identifier>private.broken_keyboard_8_1</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SEMICOLON,
+      KeyCode::T,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Change ç to t</name>
+    <identifier>private.broken_keyboard_8_2</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SLASH,
+      KeyCode::T,
+    </autogen>
+  </item>
+
+</root>
