@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap $ and €</name>
+    <identifier>remap.german_swap_euro_and_dollar</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEY_4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::E, ModifierFlag::OPTION_R,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::KEY_4, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
