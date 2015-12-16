@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Open Force Quit window by command-shift-escape</name>
+    <identifier>private.command_shift_escape_to_force_quit</identifier>
+
+    <modifier_not>
+      ModifierFlag::CONTROL_L,
+      ModifierFlag::CONTROL_R,
+      ModifierFlag::OPTION_L,
+      ModifierFlag::OPTION_R,
+    </modifier_not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::ESCAPE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::ESCAPE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+    </autogen>
+  </item>
+
+</root>
