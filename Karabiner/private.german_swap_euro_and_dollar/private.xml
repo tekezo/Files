@@ -15,11 +15,11 @@
     <autogen>
       __KeyToKey__
       KeyCode::X, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
-      KeyCode::7, ModifierFlag::SHIFT_L,
+      KeyCode::KEY_7, ModifierFlag::SHIFT_L,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::7, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::KEY_7, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
       KeyCode::X, ModifierFlag::OPTION_R,
     </autogen>
   </item>
