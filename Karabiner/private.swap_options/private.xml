@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap left and right options in Emacs</name>
+    <identifier>private.swap_options</identifier>
+
+    <only>EMACS</only>
+
+    <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::OPTION_R</autogen>
+    <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::OPTION_L</autogen>
+  </item>
+
+</root>
