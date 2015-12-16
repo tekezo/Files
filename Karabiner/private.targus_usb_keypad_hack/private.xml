@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change TAB / * BACK to CLEAR = / * on Targus USB keypad</name>
+    <identifier>private.targus_usb_keypad_hack</identifier>
+
+    <device_only>
+      DeviceVendor::RawValue::0x05a4,
+      DeviceProduct::RawValue::0x9840,
+    </device_only>
+
+    <autogen>__KeyToKey__ KeyCode::TAB,             KeyCode::KEYPAD_CLEAR</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_SLASH,    KeyCode::KEYPAD_EQUAL</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_MULTIPLY, KeyCode::KEYPAD_SLASH</autogen>
+    <autogen>__KeyToKey__ KeyCode::DELETE,          KeyCode::KEYPAD_MULTIPLY</autogen>
+  </item>
+
+</root>
