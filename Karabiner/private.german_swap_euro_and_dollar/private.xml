@@ -1,19 +1,26 @@
 <?xml version="1.0"?>
 <root>
 
+  <inputsourcedef>
+    <name>DeutschNeo2</name>
+    <inputsourceid_equal>org.unknown.keylayout.DeutschNeo2</inputsourceid_equal>
+  </inputsourcedef>
+
   <item>
     <name>Swap $ and €</name>
     <identifier>remap.german_swap_euro_and_dollar</identifier>
 
+    <inputsource_only>DeutschNeo2</inputsource_only>
+
     <autogen>
       __KeyToKey__
-      KeyCode::KEY_4, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
-      KeyCode::E, ModifierFlag::OPTION_R,
+      KeyCode::X, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::7, ModifierFlag::SHIFT_L,
     </autogen>
     <autogen>
       __KeyToKey__
-      KeyCode::E, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
-      KeyCode::KEY_4, ModifierFlag::SHIFT_L,
+      KeyCode::7, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+      KeyCode::X, ModifierFlag::OPTION_R,
     </autogen>
   </item>
 
