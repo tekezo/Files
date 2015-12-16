@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Return Key opens a file in Finder</name>
+    <appendix>(rename file by control-f2)</appendix>
+
+    <only>FINDER</only>
+    <uielementrole_not>{{ UIELEMENTROLES_EDITING_IN_FINDER }}</uielementrole_not>
+
+    <identifier>private.finder_return_to_open</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::RETURN,
+      KeyCode::O, ModifierFlag::COMMAND_L,
+      Option::NOREPEAT,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F2, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::RETURN,
+      Option::NOREPEAT,
+    </autogen>
+  </item>
+
+</root>
