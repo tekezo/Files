@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change command-u to ü, command-a to ä, command-o to ö, command-s to ß</name>
+    <identifier>private.german_input_hack</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::U, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::U, ModifierFlag::OPTION_L,
+      KeyCode::U,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::U, ModifierFlag::OPTION_L,
+      KeyCode::A,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::O, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::U, ModifierFlag::OPTION_L,
+      KeyCode::O,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | ModifierFlag::NONE,
+      KeyCode::S, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
