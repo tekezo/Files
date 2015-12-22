@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change option-shift-slash to U+00A6</name>
+    <appendix>You must enable Unicode Hex Input input source together.</appendix>
+    <identifier>private.option_shift_slash_to_U00A6</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::SLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT | ModifierFlag::NONE,
+
+      <!-- change input source to Unicode Hex Input -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_UNICODEHEXINPUT,
+      <!-- wait until input source will be changed -->
+      KeyCode::VK_WAIT_100MS,
+      <!-- 00A6 -->
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::KEY_0, ModifierFlag::OPTION_L,
+      KeyCode::A, ModifierFlag::OPTION_L,
+      KeyCode::KEY_6, ModifierFlag::OPTION_L,
+
+      <!-- restore input source -->
+      <!-- *** please change keycode to a suitable input source on your environment *** -->
+      KeyCode::VK_CHANGE_INPUTSOURCE_US,
+
+      <!-- suppress key repeat -->
+      Option::NOREPEAT,
+    </autogen>
+  </item>
+
+</root>
