@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>MY_SPACE</modifierdef>
+
+  <item>
+    <name>Change space as modifier</name>
+    <identifier>private.space_as_modifier</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SPACE,
+      KeyCode::VK_MODIFIER_MY_SPACE,
+      KeyCode::SPACE,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::Q, ModifierFlag::MY_SPACE,
+      KeyCode::P,
+    </autogen>
+  </item>
+
+</root>
