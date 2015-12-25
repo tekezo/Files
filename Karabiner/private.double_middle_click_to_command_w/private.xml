@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change double-middle-click to command-w</name>
+    <identifier>private.double_middle_click_to_command_w</identifier>
+
+    <autogen>
+      __DoublePressModifier__
+      PointingButton::MIDDLE,
+      PointingButton::MIDDLE,
+      KeyCode::W, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
