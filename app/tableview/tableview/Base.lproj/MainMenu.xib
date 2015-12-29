@@ -706,7 +706,7 @@
                                                     <rect key="frame" x="1" y="1" width="441" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49G-cU-y62">
+                                                        <textField identifier="myview" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49G-cU-y62">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="W30-Wz-UvY">
                                                                 <font key="font" metaFont="system"/>
@@ -722,6 +722,10 @@
                                             </prototypeCellViews>
                                         </tableColumn>
                                     </tableColumns>
+                                    <connections>
+                                        <outlet property="dataSource" destination="Voe-Tx-rLC" id="lpW-Tv-dUO"/>
+                                        <outlet property="delegate" destination="Voe-Tx-rLC" id="EDc-sY-rxz"/>
+                                    </connections>
                                 </outlineView>
                             </subviews>
                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
