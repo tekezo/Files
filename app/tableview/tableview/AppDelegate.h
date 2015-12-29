@@ -4,4 +4,6 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+- (IBAction)reload:(id)sender;
+
 @end

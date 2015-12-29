@@ -14,6 +14,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="outlineView" destination="NLn-Hh-BT5" id="Lmn-q6-Lrr"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -677,13 +678,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrs-2S-meW">
-                        <rect key="frame" x="17" y="17" width="446" height="333"/>
+                        <rect key="frame" x="17" y="40" width="446" height="310"/>
                         <clipView key="contentView" id="efM-cq-ePw">
-                            <rect key="frame" x="1" y="23" width="444" height="309"/>
+                            <rect key="frame" x="1" y="23" width="444" height="286"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="nvf-Ha-Vpw" viewBased="YES" indentationPerLevel="16" outlineTableColumn="rwv-mV-xDE" id="NLn-Hh-BT5">
-                                    <rect key="frame" x="0.0" y="0.0" width="444" height="309"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="444" height="286"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -702,13 +703,13 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView id="nlW-sl-tS8">
+                                                <tableCellView identifier="mycellview" id="nlW-sl-tS8">
                                                     <rect key="frame" x="1" y="1" width="441" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField identifier="myview" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49G-cU-y62">
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49G-cU-y62">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
-                                                            <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="W30-Wz-UvY">
+                                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Table View Cell" id="W30-Wz-UvY">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -723,7 +724,7 @@
                                         </tableColumn>
                                     </tableColumns>
                                     <connections>
-                                        <outlet property="dataSource" destination="Voe-Tx-rLC" id="lpW-Tv-dUO"/>
+                                        <outlet property="dataSource" destination="m2l-fa-HJf" id="ggB-WM-NUX"/>
                                         <outlet property="delegate" destination="Voe-Tx-rLC" id="EDc-sY-rxz"/>
                                     </connections>
                                 </outlineView>
@@ -743,14 +744,27 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1o4-GT-16p">
+                        <rect key="frame" x="11" y="7" width="78" height="32"/>
+                        <buttonCell key="cell" type="push" title="reload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2cK-Sr-mSl">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="reload:" target="Voe-Tx-rLC" id="b9T-Mt-I8i"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="wrs-2S-meW" secondAttribute="bottom" constant="17" id="9np-CL-NBy"/>
+                    <constraint firstItem="1o4-GT-16p" firstAttribute="top" secondItem="wrs-2S-meW" secondAttribute="bottom" constant="5" id="2jK-Ul-wII"/>
+                    <constraint firstAttribute="bottom" secondItem="wrs-2S-meW" secondAttribute="bottom" constant="40" id="9np-CL-NBy"/>
                     <constraint firstItem="wrs-2S-meW" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="10" id="HHy-Xy-vwI"/>
                     <constraint firstAttribute="trailing" secondItem="wrs-2S-meW" secondAttribute="trailing" constant="17" id="OC4-8R-v8N"/>
                     <constraint firstItem="wrs-2S-meW" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="17" id="d4X-mq-Jpz"/>
+                    <constraint firstItem="1o4-GT-16p" firstAttribute="leading" secondItem="wrs-2S-meW" secondAttribute="leading" id="iBJ-AM-res"/>
                 </constraints>
             </view>
         </window>
+        <customObject id="m2l-fa-HJf" customClass="DataSource"/>
     </objects>
 </document>
