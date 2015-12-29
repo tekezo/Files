@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change fn to option-shift</name>
+    <identifier>private.fn_to_option_shift</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::FN,
+      KeyCode::OPTION_L, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
