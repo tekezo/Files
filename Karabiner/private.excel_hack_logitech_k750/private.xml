@@ -11,9 +11,9 @@
     <device_only>DeviceVendor::LOGITECH, DeviceProduct::ANY</device_only>
 
     <!-- f2 -->
-    <autogen>__KeyToKey__ KeyCode::F15, ModifierFlag::NONE, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::RawValue::0x0071, ModifierFlag::NONE, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
     <!-- f4 -->
-    <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::NONE, KeyCode::T, ModifierFlag::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ KeyCode::RawValue::0x006f, ModifierFlag::NONE, KeyCode::T, ModifierFlag::COMMAND_L</autogen>
   </item>
 
 </root>
