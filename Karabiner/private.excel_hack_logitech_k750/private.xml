@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Enable Excel hack in Logitech K750</name>
+    <appendix>Change F2 to Control+U</appendix>
+    <appendix>Change F4 to Command+T</appendix>
+    <identifier>private.excel_hack_logitech_k750</identifier>
+
+    <only>EXCEL</only>
+    <device_only>DeviceVendor::LOGITECH, DeviceProduct::ANY</device_only>
+
+    <!-- f2 -->
+    <autogen>__KeyToKey__ KeyCode::F15, ModifierFlag::NONE, KeyCode::U, ModifierFlag::CONTROL_L</autogen>
+    <!-- f4 -->
+    <autogen>__KeyToKey__ KeyCode::F12, ModifierFlag::NONE, KeyCode::T, ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+</root>

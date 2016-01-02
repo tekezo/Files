@@ -2,6 +2,7 @@
 
 @interface AppDelegate ()
 @property(weak) IBOutlet NSWindow* window;
+@property(weak) IBOutlet NSTextFieldCell* wrappedTextHeightCalculator;
 @property(weak) IBOutlet NSOutlineView* outlineView;
 @end
 
@@ -37,6 +38,10 @@
 }
 
 - (CGFloat)outlineView:(NSOutlineView*)outlineView heightOfRowByItem:(id)item {
+
+  NSTableColumn* column = [outlineView outlineTableColumn];
+  NSLog(@"column %@", column);
+
   NSInteger height = [item[@"height"] integerValue];
   if (height == 0) {
     return [outlineView rowHeight];

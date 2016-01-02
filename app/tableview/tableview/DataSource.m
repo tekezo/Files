@@ -15,7 +15,18 @@
     for (int i = 0; i < 5; ++i) {
       NSMutableDictionary* dict = [NSMutableDictionary new];
       dict[@"index"] = @(i);
+      dict[@"level"] = @(0);
       [self.dataSource addObject:dict];
+
+      if (i > 0) {
+        dict[@"children"] = [NSMutableArray new];
+        for (int j = 0; j < i; ++j) {
+          NSMutableDictionary* d = [NSMutableDictionary new];
+          d[@"index"] = @(j);
+          d[@"level"] = @(1);
+          [dict[@"children"] addObject:d];
+        }
+      }
     }
   }
 
