@@ -7,7 +7,7 @@
   </appdef>
 
   <item>
-    <name>Change return to shift-return x2</name>
+    <name>Change return to shift-return x2 in Author</name>
     <identifier>private.author_return_hack</identifier>
 
     <only>Author</only>
