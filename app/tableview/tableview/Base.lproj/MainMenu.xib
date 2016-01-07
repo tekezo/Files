@@ -16,7 +16,7 @@
             <connections>
                 <outlet property="outlineView" destination="NLn-Hh-BT5" id="Lmn-q6-Lrr"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
-                <outlet property="wrappedTextHeightCalculator" destination="Vv8-W7-Zn8" id="r1x-dS-QrP"/>
+                <outlet property="wrappedTextHeightCalculator" destination="u3n-Vw-fnZ" id="00N-ud-y4d"/>
             </connections>
         </customObject>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
@@ -681,7 +681,7 @@
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrs-2S-meW">
                         <rect key="frame" x="17" y="40" width="446" height="310"/>
                         <clipView key="contentView" id="efM-cq-ePw">
-                            <rect key="frame" x="1" y="23" width="444" height="286"/>
+                            <rect key="frame" x="1" y="0.0" width="444" height="309"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="nvf-Ha-Vpw" viewBased="YES" indentationPerLevel="16" outlineTableColumn="rwv-mV-xDE" id="NLn-Hh-BT5">

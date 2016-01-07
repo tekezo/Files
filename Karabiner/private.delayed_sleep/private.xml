@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_delayed_sleep</name>
+    <url type="shell">
+      <![CDATA[
+        sleep 1 && /usr/bin/osascript -e 'tell application "System Events" to sleep'
+      ]]>
+    </url>
+  </vkopenurldef>
+
+  <item>
+    <name>Add a delay to command-option-eject</name>
+    <identifier>private.delayed_sleep</identifier>
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::EJECT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION | ModifierFlag::NONE,
+      KeyCode::VK_OPEN_URL_SHELL_delayed_sleep,
+    </autogen>
+  </item>
+
+</root>

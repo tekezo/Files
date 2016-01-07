@@ -12,10 +12,11 @@
   if (self) {
     self.dataSource = [NSMutableArray new];
 
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < 50; ++i) {
       NSMutableDictionary* dict = [NSMutableDictionary new];
       dict[@"index"] = @(i);
       dict[@"level"] = @(0);
+      dict[@"text"] = [self text:i];
       [self.dataSource addObject:dict];
 
       if (i > 0) {
@@ -24,6 +25,7 @@
           NSMutableDictionary* d = [NSMutableDictionary new];
           d[@"index"] = @(j);
           d[@"level"] = @(1);
+          dict[@"text"] = [self text:j];
           [dict[@"children"] addObject:d];
         }
       }
@@ -31,6 +33,10 @@
   }
 
   return self;
+}
+
+- (NSString*)text:(NSInteger)index {
+  return [NSString stringWithFormat:@"index is %ld. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", (long)(index)];
 }
 
 - (NSInteger)outlineView:(NSOutlineView*)outlineView numberOfChildrenOfItem:(id)item {
