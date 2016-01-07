@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <appdef>
+    <appname>Author</appname>
+    <equal>com.unitedflags.author</equal>
+  </appdef>
+
+  <item>
+    <name>Change return to shift-return x2</name>
+    <identifier>private.author_return_hack</identifier>
+
+    <only>Author</only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::RETURN, ModifierFlag::NONE,
+      KeyCode::RETURN, ModifierFlag::SHIFT_L,
+      KeyCode::RETURN, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
