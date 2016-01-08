@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change backslash key to fn key.</name>
+    <appendix>Send a backslash key event when backslash key is pressed alone.</appendix>
+    <identifier>private.backslash_to_fn_backslash</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      <!-- from -->
+      KeyCode::BACKSLASH,
+      <!-- to -->
+      KeyCode::FN,
+      <!-- alone -->
+      KeyCode::BACKSLASH,
+    </autogen>
+  </item>
+
+</root>
