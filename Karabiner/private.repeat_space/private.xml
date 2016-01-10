@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Set the space key repeat rate</name>
+    <identifier>private.repeat_space</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::SPACE,
+      KeyCode::SPACE,
+
+      <!-- 300 millisecond -->
+      DelayUntilRepeat::RawValue::300,
+      <!-- 30 millisecond -->
+      KeyRepeat::RawValue::30,
+    </autogen>
+  </item>
+
+  <item>
+    <name>Set the arrow keys repeat rate</name>
+    <identifier>private.repeat_arrows</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_UP,
+      KeyCode::CURSOR_UP,
+
+      <!-- 300 millisecond -->
+      DelayUntilRepeat::RawValue::300,
+      <!-- 30 millisecond -->
+      KeyRepeat::RawValue::30,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_DOWN,
+      KeyCode::CURSOR_DOWN,
+
+      <!-- 300 millisecond -->
+      DelayUntilRepeat::RawValue::300,
+      <!-- 30 millisecond -->
+      KeyRepeat::RawValue::30,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_LEFT,
+      KeyCode::CURSOR_LEFT,
+
+      <!-- 300 millisecond -->
+      DelayUntilRepeat::RawValue::300,
+      <!-- 30 millisecond -->
+      KeyRepeat::RawValue::30,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_RIGHT,
+      KeyCode::CURSOR_RIGHT,
+
+      <!-- 300 millisecond -->
+      DelayUntilRepeat::RawValue::300,
+      <!-- 30 millisecond -->
+      KeyRepeat::RawValue::30,
+    </autogen>
+  </item>
+
+</root>
