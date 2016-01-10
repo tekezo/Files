@@ -17,10 +17,6 @@
 - (void)applicationWillTerminate:(NSNotification*)aNotification {
 }
 
-//- (id)outlineView:(NSOutlineView*)outlineView objectValueForTableColumn:(NSTableColumn*)tableColumn byItem:(id)item {
-//  return [NSString stringWithFormat:@"index is %@", item[@"index"]];
-//}
-
 - (NSView*)outlineView:(NSOutlineView*)outlineView viewForTableColumn:(NSTableColumn*)tableColumn item:(id)item {
   NSTableCellView* result = [outlineView makeViewWithIdentifier:@"mycellview" owner:self];
 
@@ -57,7 +53,8 @@
 
     NSSize size = [self.wrappedTextHeightCalculator fittingSize];
     NSLog(@"size: %f,%f", size.width, size.height);
-    item[@"height"] = @(size.height);
+    NSInteger margin = 2;
+    item[@"height"] = @(size.height + margin * 2);
   }
 
   NSInteger height = [item[@"height"] integerValue];

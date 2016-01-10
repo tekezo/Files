@@ -25,7 +25,7 @@
           NSMutableDictionary* d = [NSMutableDictionary new];
           d[@"index"] = @(j);
           d[@"level"] = @(1);
-          dict[@"text"] = [self text:j];
+          d[@"text"] = [self text:j];
           [dict[@"children"] addObject:d];
         }
       }
@@ -36,7 +36,13 @@
 }
 
 - (NSString*)text:(NSInteger)index {
-  return [NSString stringWithFormat:@"index is %ld. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", (long)(index)];
+  if (index % 3 == 0) {
+    return [NSString stringWithFormat:@"index is %ld. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", (long)(index)];
+  } else if (index % 3 == 1) {
+    return [NSString stringWithFormat:@"index is %ld.\nLorem ipsum dolor sit amet,\nconsectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", (long)(index)];
+  } else {
+    return [NSString stringWithFormat:@"index is %ld.", (long)(index)];
+  }
 }
 
 - (NSInteger)outlineView:(NSOutlineView*)outlineView numberOfChildrenOfItem:(id)item {
