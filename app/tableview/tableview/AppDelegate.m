@@ -13,6 +13,10 @@
 - (void)applicationWillTerminate:(NSNotification*)aNotification {
 }
 
+- (void)windowDidResize:(NSNotification*)notification {
+  [self reload:self];
+}
+
 - (IBAction)reload:(id)sender {
   [self.outlineView reloadData];
 }

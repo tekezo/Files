@@ -770,6 +770,9 @@
                     <constraint firstItem="1o4-GT-16p" firstAttribute="leading" secondItem="wrs-2S-meW" secondAttribute="leading" id="iBJ-AM-res"/>
                 </constraints>
             </view>
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="rlA-ck-PSd"/>
+            </connections>
         </window>
         <customObject id="m2l-fa-HJf" customClass="DataSource"/>
         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" id="u3n-Vw-fnZ">
