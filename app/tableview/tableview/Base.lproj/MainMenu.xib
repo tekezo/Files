@@ -731,7 +731,7 @@
                                     </tableColumns>
                                     <connections>
                                         <outlet property="dataSource" destination="m2l-fa-HJf" id="ggB-WM-NUX"/>
-                                        <outlet property="delegate" destination="Voe-Tx-rLC" id="EDc-sY-rxz"/>
+                                        <outlet property="delegate" destination="QeK-rz-leG" id="0q1-a4-iTL"/>
                                     </connections>
                                 </outlineView>
                             </subviews>
@@ -782,5 +782,10 @@
             </textFieldCell>
             <point key="canvasLocation" x="370" y="701.5"/>
         </textField>
+        <customObject id="QeK-rz-leG" customClass="OutlineViewDelegate">
+            <connections>
+                <outlet property="wrappedTextHeightCalculator" destination="u3n-Vw-fnZ" id="UwH-pG-T23"/>
+            </connections>
+        </customObject>
     </objects>
 </document>

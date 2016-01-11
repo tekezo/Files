@@ -12,6 +12,7 @@
 		3454F7231C32B0F1005D2C62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3454F7221C32B0F1005D2C62 /* Assets.xcassets */; };
 		3454F7261C32B0F1005D2C62 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3454F7241C32B0F1005D2C62 /* MainMenu.xib */; };
 		3454F72F1C32C8F2005D2C62 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454F72E1C32C8F2005D2C62 /* DataSource.m */; };
+		34CB80241C43F4760007DE3A /* OutlineViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CB80231C43F4760007DE3A /* OutlineViewDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		3454F7271C32B0F1005D2C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3454F72D1C32C8F2005D2C62 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		3454F72E1C32C8F2005D2C62 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
+		34CB80221C43F4760007DE3A /* OutlineViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewDelegate.h; sourceTree = "<group>"; };
+		34CB80231C43F4760007DE3A /* OutlineViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				3454F72E1C32C8F2005D2C62 /* DataSource.m */,
 				3454F7271C32B0F1005D2C62 /* Info.plist */,
 				3454F7241C32B0F1005D2C62 /* MainMenu.xib */,
+				34CB80221C43F4760007DE3A /* OutlineViewDelegate.h */,
+				34CB80231C43F4760007DE3A /* OutlineViewDelegate.m */,
 				3454F71F1C32B0F1005D2C62 /* Supporting Files */,
 			);
 			path = tableview;
@@ -147,6 +152,7 @@
 			files = (
 				3454F7211C32B0F1005D2C62 /* main.m in Sources */,
 				3454F71E1C32B0F1005D2C62 /* AppDelegate.m in Sources */,
+				34CB80241C43F4760007DE3A /* OutlineViewDelegate.m in Sources */,
 				3454F72F1C32C8F2005D2C62 /* DataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
