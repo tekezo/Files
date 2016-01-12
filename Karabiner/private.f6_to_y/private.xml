@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f6 to y</name>
+    <identifier>private.f6_to_y</identifier>
+    <autogen>__KeyToKey__ KeyCode::F6, KeyCode::Y</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::KEYBOARDLIGHT_HIGH, KeyCode::Y</autogen>
+  </item>
+
+</root>
