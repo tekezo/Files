@@ -14,4 +14,18 @@
     <autogen>__KeyToKey__ KeyCode::F19, KeyCode::VK_OPEN_URL_JXA_keystroke_my_text</autogen>
   </item>
 
+  <item>
+    <name>Change f19 to input text (key sequence)</name>
+    <identifier>private.f19_hello_key_sequence</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19,
+      KeyCode::H, ModifierFlag::SHIFT_L,
+      KeyCode::E,
+      KeyCode::L,
+      KeyCode::L,
+      KeyCode::O,
+    </autogen>
+  </item>
+
 </root>
