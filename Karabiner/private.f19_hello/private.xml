@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_JXA_keystroke_my_text</name>
+    <url type="shell">
+      osascript -l JavaScript -e "Application('System Events').keystroke('Hello World');"
+    </url>
+  </vkopenurldef>
+
+  <item>
+    <name>Change f19 to input text</name>
+    <identifier>private.f19_hello</identifier>
+    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::VK_OPEN_URL_JXA_keystroke_my_text</autogen>
+  </item>
+
+</root>
