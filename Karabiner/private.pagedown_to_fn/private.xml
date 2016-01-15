@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change pagedown to fn</name>
+    <identifier>private.pagedown_to_fn</identifier>
+    <autogen>__KeyToKey__ KeyCode::PAGEDOWN, KeyCode::FN</autogen>
+  </item>
+
+</root>
