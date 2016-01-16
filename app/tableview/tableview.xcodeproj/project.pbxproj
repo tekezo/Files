@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3445B3511C4921F200233523 /* CheckboxCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3445B3501C4921F200233523 /* CheckboxCellView.m */; };
+		3445B3541C4A21F300233523 /* OutlineViewDelegateText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3445B3531C4A21F300233523 /* OutlineViewDelegateText.m */; };
 		3454F71E1C32B0F1005D2C62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454F71D1C32B0F1005D2C62 /* AppDelegate.m */; };
 		3454F7211C32B0F1005D2C62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454F7201C32B0F1005D2C62 /* main.m */; };
 		3454F7231C32B0F1005D2C62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3454F7221C32B0F1005D2C62 /* Assets.xcassets */; };
 		3454F7261C32B0F1005D2C62 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3454F7241C32B0F1005D2C62 /* MainMenu.xib */; };
 		3454F72F1C32C8F2005D2C62 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454F72E1C32C8F2005D2C62 /* DataSource.m */; };
-		34CB80241C43F4760007DE3A /* OutlineViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CB80231C43F4760007DE3A /* OutlineViewDelegate.m */; };
+		34CB80241C43F4760007DE3A /* OutlineViewDelegateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CB80231C43F4760007DE3A /* OutlineViewDelegateButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3445B34F1C4921F200233523 /* CheckboxCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckboxCellView.h; sourceTree = "<group>"; };
+		3445B3501C4921F200233523 /* CheckboxCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckboxCellView.m; sourceTree = "<group>"; };
+		3445B3521C4A21F300233523 /* OutlineViewDelegateText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewDelegateText.h; sourceTree = "<group>"; };
+		3445B3531C4A21F300233523 /* OutlineViewDelegateText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewDelegateText.m; sourceTree = "<group>"; };
 		3454F7191C32B0F1005D2C62 /* tableview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3454F71C1C32B0F1005D2C62 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3454F71D1C32B0F1005D2C62 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -25,8 +31,8 @@
 		3454F7271C32B0F1005D2C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3454F72D1C32C8F2005D2C62 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		3454F72E1C32C8F2005D2C62 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
-		34CB80221C43F4760007DE3A /* OutlineViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewDelegate.h; sourceTree = "<group>"; };
-		34CB80231C43F4760007DE3A /* OutlineViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewDelegate.m; sourceTree = "<group>"; };
+		34CB80221C43F4760007DE3A /* OutlineViewDelegateButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewDelegateButton.h; sourceTree = "<group>"; };
+		34CB80231C43F4760007DE3A /* OutlineViewDelegateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewDelegateButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,10 @@
 		3454F71B1C32B0F1005D2C62 /* tableview */ = {
 			isa = PBXGroup;
 			children = (
+				3445B3521C4A21F300233523 /* OutlineViewDelegateText.h */,
+				3445B3531C4A21F300233523 /* OutlineViewDelegateText.m */,
+				3445B34F1C4921F200233523 /* CheckboxCellView.h */,
+				3445B3501C4921F200233523 /* CheckboxCellView.m */,
 				3454F71C1C32B0F1005D2C62 /* AppDelegate.h */,
 				3454F71D1C32B0F1005D2C62 /* AppDelegate.m */,
 				3454F7221C32B0F1005D2C62 /* Assets.xcassets */,
@@ -66,8 +76,8 @@
 				3454F72E1C32C8F2005D2C62 /* DataSource.m */,
 				3454F7271C32B0F1005D2C62 /* Info.plist */,
 				3454F7241C32B0F1005D2C62 /* MainMenu.xib */,
-				34CB80221C43F4760007DE3A /* OutlineViewDelegate.h */,
-				34CB80231C43F4760007DE3A /* OutlineViewDelegate.m */,
+				34CB80221C43F4760007DE3A /* OutlineViewDelegateButton.h */,
+				34CB80231C43F4760007DE3A /* OutlineViewDelegateButton.m */,
 				3454F71F1C32B0F1005D2C62 /* Supporting Files */,
 			);
 			path = tableview;
@@ -151,9 +161,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3454F7211C32B0F1005D2C62 /* main.m in Sources */,
+				3445B3511C4921F200233523 /* CheckboxCellView.m in Sources */,
 				3454F71E1C32B0F1005D2C62 /* AppDelegate.m in Sources */,
-				34CB80241C43F4760007DE3A /* OutlineViewDelegate.m in Sources */,
+				34CB80241C43F4760007DE3A /* OutlineViewDelegateButton.m in Sources */,
 				3454F72F1C32C8F2005D2C62 /* DataSource.m in Sources */,
+				3445B3541C4A21F300233523 /* OutlineViewDelegateText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
