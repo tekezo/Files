@@ -2,5 +2,5 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface OutlineViewText : NSOutlineView
+@interface CheckboxOutlineView : NSOutlineView
 @end

@@ -1,16 +1,12 @@
 #import "CheckboxCellView.h"
-#import "OutlineViewText.h"
+#import "CheckboxOutlineView.h"
 
-@implementation OutlineViewText
+@implementation CheckboxOutlineView
 
-- (BOOL)validateProposedFirstResponder:(NSResponder *)responder forEvent:(NSEvent *)event {
-  return YES;
-}
-
-- (void)mouseDown:(NSEvent *)theEvent {
+- (void)mouseDown:(NSEvent*)theEvent {
   [super mouseDown:theEvent];
 
-  // Forward the click to the row's cell view
+  // toggle checkbox
   NSPoint point = [self convertPoint:theEvent.locationInWindow fromView:nil];
   NSInteger row = [self rowAtPoint:point];
   if (row >= 0) {

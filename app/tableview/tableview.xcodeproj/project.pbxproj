@@ -15,7 +15,7 @@
 		3454F7261C32B0F1005D2C62 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3454F7241C32B0F1005D2C62 /* MainMenu.xib */; };
 		3454F72F1C32C8F2005D2C62 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454F72E1C32C8F2005D2C62 /* DataSource.m */; };
 		3471722E1C4A7637009D1C2E /* CheckboxLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3471722D1C4A7637009D1C2E /* CheckboxLabelView.m */; };
-		347172311C4A8418009D1C2E /* OutlineViewText.m in Sources */ = {isa = PBXBuildFile; fileRef = 347172301C4A8418009D1C2E /* OutlineViewText.m */; };
+		347172341C4A8E7B009D1C2E /* CheckboxOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 347172331C4A8E7B009D1C2E /* CheckboxOutlineView.m */; };
 		34CB80241C43F4760007DE3A /* OutlineViewDelegateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CB80231C43F4760007DE3A /* OutlineViewDelegateButton.m */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +35,8 @@
 		3454F72E1C32C8F2005D2C62 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 		3471722C1C4A7637009D1C2E /* CheckboxLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckboxLabelView.h; sourceTree = "<group>"; };
 		3471722D1C4A7637009D1C2E /* CheckboxLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckboxLabelView.m; sourceTree = "<group>"; };
-		3471722F1C4A8418009D1C2E /* OutlineViewText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewText.h; sourceTree = "<group>"; };
-		347172301C4A8418009D1C2E /* OutlineViewText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewText.m; sourceTree = "<group>"; };
+		347172321C4A8E7B009D1C2E /* CheckboxOutlineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckboxOutlineView.h; sourceTree = "<group>"; };
+		347172331C4A8E7B009D1C2E /* CheckboxOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckboxOutlineView.m; sourceTree = "<group>"; };
 		34CB80221C43F4760007DE3A /* OutlineViewDelegateButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewDelegateButton.h; sourceTree = "<group>"; };
 		34CB80231C43F4760007DE3A /* OutlineViewDelegateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewDelegateButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +71,8 @@
 		3454F71B1C32B0F1005D2C62 /* tableview */ = {
 			isa = PBXGroup;
 			children = (
+				347172321C4A8E7B009D1C2E /* CheckboxOutlineView.h */,
+				347172331C4A8E7B009D1C2E /* CheckboxOutlineView.m */,
 				3454F71C1C32B0F1005D2C62 /* AppDelegate.h */,
 				3454F71D1C32B0F1005D2C62 /* AppDelegate.m */,
 				3454F7221C32B0F1005D2C62 /* Assets.xcassets */,
@@ -86,8 +88,6 @@
 				34CB80231C43F4760007DE3A /* OutlineViewDelegateButton.m */,
 				3445B3521C4A21F300233523 /* OutlineViewDelegateText.h */,
 				3445B3531C4A21F300233523 /* OutlineViewDelegateText.m */,
-				3471722F1C4A8418009D1C2E /* OutlineViewText.h */,
-				347172301C4A8418009D1C2E /* OutlineViewText.m */,
 				3454F71F1C32B0F1005D2C62 /* Supporting Files */,
 			);
 			path = tableview;
@@ -174,8 +174,8 @@
 				3445B3511C4921F200233523 /* CheckboxCellView.m in Sources */,
 				3454F71E1C32B0F1005D2C62 /* AppDelegate.m in Sources */,
 				34CB80241C43F4760007DE3A /* OutlineViewDelegateButton.m in Sources */,
-				347172311C4A8418009D1C2E /* OutlineViewText.m in Sources */,
 				3471722E1C4A7637009D1C2E /* CheckboxLabelView.m in Sources */,
+				347172341C4A8E7B009D1C2E /* CheckboxOutlineView.m in Sources */,
 				3454F72F1C32C8F2005D2C62 /* DataSource.m in Sources */,
 				3445B3541C4A21F300233523 /* OutlineViewDelegateText.m in Sources */,
 			);
