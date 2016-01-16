@@ -10,6 +10,10 @@
   return YES;
 }
 
+- (BOOL)acceptsFirstResponder {
+  return YES;
+}
+
 - (void)mouseUp:(NSEvent *)theEvent {
   NSLog(@"mouseUp");
   if (self.checkbox) {

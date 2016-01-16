@@ -4,4 +4,6 @@
 
 @interface CheckboxCellView : NSTableCellView
 @property(weak) IBOutlet NSButton* checkbox;
+
+- (void) toggleCheckboxState;
 @end
