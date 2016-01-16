@@ -686,13 +686,13 @@
                                     <rect key="frame" x="10" y="33" width="440" height="280"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="126" horizontalPageScroll="10" verticalLineScroll="126" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrs-2S-meW">
+                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrs-2S-meW">
                                             <rect key="frame" x="5" y="5" width="430" height="270"/>
                                             <clipView key="contentView" id="efM-cq-ePw">
                                                 <rect key="frame" x="1" y="0.0" width="428" height="269"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="124" rowSizeStyle="automatic" headerView="nvf-Ha-Vpw" viewBased="YES" indentationPerLevel="16" outlineTableColumn="rwv-mV-xDE" id="NLn-Hh-BT5">
+                                                    <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="nvf-Ha-Vpw" viewBased="YES" indentationPerLevel="16" outlineTableColumn="rwv-mV-xDE" id="NLn-Hh-BT5">
                                                         <rect key="frame" x="0.0" y="0.0" width="428" height="246"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
@@ -760,11 +760,11 @@
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="cYj-sF-pkl">
-                                                <rect key="frame" x="-6.5" y="8" width="0.0" height="15"/>
+                                                <rect key="frame" x="-7" y="8" width="0.0" height="15"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="fAD-QO-7aO">
-                                                <rect key="frame" x="-14" y="15.5" width="15" height="0.0"/>
+                                                <rect key="frame" x="-14" y="15" width="15" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <tableHeaderView key="headerView" id="nvf-Ha-Vpw">
@@ -789,7 +789,7 @@
                                         <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coU-en-DIq">
                                             <rect key="frame" x="5" y="5" width="430" height="270"/>
                                             <clipView key="contentView" id="NvC-YH-g8n">
-                                                <rect key="frame" x="1" y="23" width="428" height="246"/>
+                                                <rect key="frame" x="1" y="0.0" width="428" height="269"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="jIm-FZ-1kB" viewBased="YES" indentationPerLevel="16" outlineTableColumn="NL3-UN-itl" id="Gya-av-F9b">
