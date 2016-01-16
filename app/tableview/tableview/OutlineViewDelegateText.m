@@ -46,7 +46,7 @@
       self.wrappedTextHeightCalculator.preferredMaxLayoutWidth = preferredMaxLayoutWidth;
 
       NSSize size = [self.wrappedTextHeightCalculator fittingSize];
-      NSInteger margin = 8;
+      NSInteger margin = 2;
       item[@"height"] = @(size.height + margin * 2);
     });
   }

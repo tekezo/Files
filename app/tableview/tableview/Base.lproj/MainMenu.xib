@@ -686,13 +686,13 @@
                                     <rect key="frame" x="10" y="33" width="440" height="280"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrs-2S-meW">
+                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="23" horizontalPageScroll="10" verticalLineScroll="23" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrs-2S-meW">
                                             <rect key="frame" x="5" y="5" width="430" height="270"/>
                                             <clipView key="contentView" id="efM-cq-ePw">
                                                 <rect key="frame" x="1" y="0.0" width="428" height="269"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="nvf-Ha-Vpw" viewBased="YES" indentationPerLevel="16" outlineTableColumn="rwv-mV-xDE" id="NLn-Hh-BT5">
+                                                    <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="21" rowSizeStyle="automatic" headerView="nvf-Ha-Vpw" viewBased="YES" indentationPerLevel="16" outlineTableColumn="rwv-mV-xDE" id="NLn-Hh-BT5">
                                                         <rect key="frame" x="0.0" y="0.0" width="428" height="246"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
@@ -713,11 +713,11 @@
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                 <prototypeCellViews>
                                                                     <tableCellView identifier="OutlineViewDelegateTextCellView" id="nlW-sl-tS8" customClass="CheckboxCellView">
-                                                                        <rect key="frame" x="1" y="1" width="425" height="17"/>
+                                                                        <rect key="frame" x="1" y="1" width="425" height="21"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="11v-EY-bLN">
-                                                                                <rect key="frame" x="3" y="-1" width="18" height="18"/>
+                                                                                <rect key="frame" x="3" y="1" width="18" height="18"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="14" id="mLW-4a-lSi"/>
                                                                                 </constraints>
@@ -727,7 +727,7 @@
                                                                                 </buttonCell>
                                                                             </button>
                                                                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="97l-Py-SRC">
-                                                                                <rect key="frame" x="22" y="0.0" width="405" height="17"/>
+                                                                                <rect key="frame" x="22" y="2" width="405" height="17"/>
                                                                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Multiline Label" id="sly-QE-K3l">
                                                                                     <font key="font" metaFont="system"/>
                                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -736,8 +736,8 @@
                                                                             </textField>
                                                                         </subviews>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="bottom" secondItem="97l-Py-SRC" secondAttribute="bottom" id="8Rx-7h-Znd"/>
-                                                                            <constraint firstItem="97l-Py-SRC" firstAttribute="top" secondItem="nlW-sl-tS8" secondAttribute="top" id="Jyf-qm-cDE"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="97l-Py-SRC" secondAttribute="bottom" constant="2" id="8Rx-7h-Znd"/>
+                                                                            <constraint firstItem="97l-Py-SRC" firstAttribute="top" secondItem="nlW-sl-tS8" secondAttribute="top" constant="2" id="Jyf-qm-cDE"/>
                                                                             <constraint firstItem="11v-EY-bLN" firstAttribute="centerY" secondItem="nlW-sl-tS8" secondAttribute="centerY" id="PaM-EN-4Ov"/>
                                                                             <constraint firstItem="97l-Py-SRC" firstAttribute="leading" secondItem="nlW-sl-tS8" secondAttribute="leading" constant="24" id="kuV-AQ-siW"/>
                                                                             <constraint firstItem="11v-EY-bLN" firstAttribute="leading" secondItem="nlW-sl-tS8" secondAttribute="leading" constant="5" id="tGt-G3-i2a"/>
