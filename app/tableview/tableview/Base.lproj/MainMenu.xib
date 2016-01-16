@@ -786,13 +786,13 @@
                                     <rect key="frame" x="10" y="33" width="440" height="280"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="20" horizontalPageScroll="10" verticalLineScroll="20" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coU-en-DIq">
+                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coU-en-DIq">
                                             <rect key="frame" x="5" y="5" width="430" height="270"/>
                                             <clipView key="contentView" id="NvC-YH-g8n">
                                                 <rect key="frame" x="1" y="23" width="428" height="246"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowHeight="18" rowSizeStyle="automatic" headerView="jIm-FZ-1kB" viewBased="YES" indentationPerLevel="16" outlineTableColumn="NL3-UN-itl" id="Gya-av-F9b">
+                                                    <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="jIm-FZ-1kB" viewBased="YES" indentationPerLevel="16" outlineTableColumn="NL3-UN-itl" id="Gya-av-F9b">
                                                         <rect key="frame" x="0.0" y="0.0" width="428" height="246"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
@@ -816,14 +816,20 @@
                                                                         <rect key="frame" x="1" y="1" width="425" height="17"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
-                                                                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MjK-Tj-pCS">
-                                                                                <rect key="frame" x="0.0" y="-1" width="425" height="18"/>
+                                                                            <button translatesAutoresizingMaskIntoConstraints="NO" id="MjK-Tj-pCS">
+                                                                                <rect key="frame" x="-2" y="-2" width="429" height="21"/>
                                                                                 <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="EQj-hR-BfX">
                                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                     <font key="font" metaFont="system"/>
                                                                                 </buttonCell>
                                                                             </button>
                                                                         </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="MjK-Tj-pCS" secondAttribute="trailing" id="7aL-UT-nhz"/>
+                                                                            <constraint firstItem="MjK-Tj-pCS" firstAttribute="leading" secondItem="bxI-E1-bYP" secondAttribute="leading" id="G9V-Yu-YSK"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="MjK-Tj-pCS" secondAttribute="bottom" id="Xde-KZ-YZY"/>
+                                                                            <constraint firstItem="MjK-Tj-pCS" firstAttribute="top" secondItem="bxI-E1-bYP" secondAttribute="top" id="yJ8-uw-RLJ"/>
+                                                                        </constraints>
                                                                         <connections>
                                                                             <outlet property="checkbox" destination="MjK-Tj-pCS" id="aH2-bA-exO"/>
                                                                         </connections>
