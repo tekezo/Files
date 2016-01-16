@@ -5,6 +5,7 @@
   dispatch_queue_t textsHeightQueue_;
 }
 @property(weak) IBOutlet NSTextField* wrappedTextHeightCalculator;
+@property NSFont* font;
 @end
 
 @implementation OutlineViewDelegateButton
@@ -14,6 +15,7 @@
 
   if (self) {
     textsHeightQueue_ = dispatch_queue_create("org.pqrs.Karabiner.OutlineViewDelegateButton.textsHeightQueue_", NULL);
+    self.font = [NSFont systemFontOfSize:[NSFont smallSystemFontSize]];
   }
 
   return self;
@@ -22,6 +24,7 @@
 - (NSView*)outlineView:(NSOutlineView*)outlineView viewForTableColumn:(NSTableColumn*)tableColumn item:(id)item {
   CheckboxCellView* result = [outlineView makeViewWithIdentifier:@"OutlineViewDelegateButtonCellView" owner:self];
   result.checkbox.title = item[@"text"];
+  result.checkbox.font = self.font;
   return result;
 }
 
@@ -39,6 +42,7 @@
       item[@"preferredMaxLayoutWidth"] = @(preferredMaxLayoutWidth);
 
       self.wrappedTextHeightCalculator.stringValue = item[@"text"];
+      self.wrappedTextHeightCalculator.font = self.font;
       self.wrappedTextHeightCalculator.preferredMaxLayoutWidth = preferredMaxLayoutWidth;
 
       NSSize size = [self.wrappedTextHeightCalculator fittingSize];

@@ -69,4 +69,12 @@
   }
 }
 
+- (id)outlineView:(NSOutlineView*)outlineView objectValueForTableColumn:(NSTableColumn*)tableColumn byItem:(id)item {
+  return @1;
+}
+
+- (void)outlineView:(NSOutlineView*)outlineView setObjectValue:(id)object forTableColumn:(NSTableColumn*)tableColumn byItem:(id)item {
+  NSLog(@"setObjectValue: %@", item[@"index"]);
+}
+
 @end
