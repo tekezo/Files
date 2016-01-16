@@ -20,7 +20,7 @@
 }
 
 - (NSView*)outlineView:(NSOutlineView*)outlineView viewForTableColumn:(NSTableColumn*)tableColumn item:(id)item {
-  CheckboxCellView* result = [outlineView makeViewWithIdentifier:@"mycellview" owner:self];
+  CheckboxCellView* result = [outlineView makeViewWithIdentifier:@"OutlineViewDelegateTextCellView" owner:self];
   result.textField.stringValue = item[@"text"];
   return result;
 }
