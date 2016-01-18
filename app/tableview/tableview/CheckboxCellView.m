@@ -2,14 +2,6 @@
 
 @implementation CheckboxCellView
 
-- (BOOL)validateProposedFirstResponder:(NSResponder *)responder forEvent:(NSEvent *)event {
-  return YES;
-}
-
-- (IBAction)labelClicked:(id)sender {
-  NSLog(@"labelClicked");
-}
-
 - (void)toggleCheckboxState {
   if (self.checkbox.enabled) {
     if (self.checkbox.state == NSOnState) {
@@ -17,7 +9,12 @@
     } else {
       self.checkbox.state = NSOnState;
     }
+    [self valueChanged:self];
   }
+}
+
+- (IBAction)valueChanged:(id)sender {
+  NSLog(@"valueChanged");
 }
 
 @end

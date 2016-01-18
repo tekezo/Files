@@ -726,8 +726,11 @@
                                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                                     <font key="font" metaFont="system"/>
                                                                                 </buttonCell>
+                                                                                <connections>
+                                                                                    <action selector="valueChanged:" target="nlW-sl-tS8" id="XAh-IU-rk4"/>
+                                                                                </connections>
                                                                             </button>
-                                                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="97l-Py-SRC" customClass="CheckboxLabelView">
+                                                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="97l-Py-SRC">
                                                                                 <rect key="frame" x="22" y="2" width="405" height="17"/>
                                                                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Multiline Label" id="sly-QE-K3l">
                                                                                     <font key="font" metaFont="system"/>
@@ -735,7 +738,6 @@
                                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                                 </textFieldCell>
                                                                                 <connections>
-                                                                                    <action selector="labelClicked:" target="nlW-sl-tS8" id="8df-1J-FYT"/>
                                                                                     <outlet property="checkbox" destination="11v-EY-bLN" id="S2Y-nx-8QV"/>
                                                                                 </connections>
                                                                             </textField>
