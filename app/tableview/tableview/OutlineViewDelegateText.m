@@ -25,6 +25,7 @@
   CheckboxCellView* result = [outlineView makeViewWithIdentifier:@"OutlineViewDelegateTextCellView" owner:self];
   result.textField.stringValue = item[@"text"];
   result.textField.font = self.font;
+  result.settingIdentifier = [NSString stringWithFormat:@"private.setting%@", item[@"index"]];
   return result;
 }
 

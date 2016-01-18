@@ -14,7 +14,7 @@
 }
 
 - (IBAction)valueChanged:(id)sender {
-  NSLog(@"valueChanged");
+  NSLog(@"valueChanged: %@", self.settingIdentifier);
 }
 
 @end
