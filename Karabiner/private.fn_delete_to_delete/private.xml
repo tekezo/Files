@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change fn-delete to delete</name>
+    <identifier>private.fn_delete_to_delete</identifier>
+    <autogen>__KeyToKey__ KeyCode::DELETE, ModifierFlag::FN, KeyCode::DELETE</autogen>
+  </item>
+
+  <item>
+    <name>Change forward delete to delete</name>
+    <identifier>private.forward_delete_to_delete</identifier>
+    <autogen>__KeyToKey__ KeyCode::FORWARD_DELETE, KeyCode::DELETE</autogen>
+  </item>
+
+</root>
