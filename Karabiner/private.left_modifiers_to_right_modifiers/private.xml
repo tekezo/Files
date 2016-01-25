@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change left modifiers to right modifiers</name>
+    <identifier>private.left_modifiers_to_right_modifiers</identifier>
+    <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::COMMAND_R</autogen>
+    <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::CONTROL_R</autogen>
+    <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::OPTION_R</autogen>
+    <autogen>__KeyToKey__ KeyCode::SHIFT_L, KeyCode::SHIFT_R</autogen>
+  </item>
+
+</root>
