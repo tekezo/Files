@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_eject_disc</name>
+    <url type="shell">
+      <![CDATA[
+               (/usr/bin/drutil status | /usr/bin/grep 'Type: No Media Inserted' > /dev/null) || /usr/bin/drutil eject
+      ]]>
+    </url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_eject_disc_external</name>
+    <url type="shell">
+      <![CDATA[
+               (/usr/bin/drutil -drive external status | /usr/bin/grep 'Type: No Media Inserted' > /dev/null) || /usr/bin/drutil -drive external eject
+      ]]>
+    </url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_eject_volumes</name>
+    <url type="shell">
+      <![CDATA[
+               for f in /Volumes/*; do /usr/sbin/diskutil unmount "$f"; done
+      ]]>
+    </url>
+  </vkopenurldef>
+
+</root>
