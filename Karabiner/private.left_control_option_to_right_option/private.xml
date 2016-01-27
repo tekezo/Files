@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change left control+option to right option in Remote Desktop Connection</name>
+    <identifier>private.left_control_option_to_right_option</identifier>
+
+    <only>REMOTEDESKTOPCONNECTION</only>
+
+    <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::OPTION_L, KeyCode::OPTION_R</autogen>
+    <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::CONTROL_L, KeyCode::OPTION_R</autogen>
+  </item>
+
+</root>
