@@ -11,4 +11,13 @@
     <autogen>__KeyToKey__ KeyCode::OPTION_L, ModifierFlag::CONTROL_L, KeyCode::OPTION_R</autogen>
   </item>
 
+  <item>
+    <name>Change right option to left control+option in Remote Desktop Connection</name>
+    <identifier>private.right_option_to_left_control_option</identifier>
+
+    <only>REMOTEDESKTOPCONNECTION</only>
+
+    <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::OPTION_L, ModifierFlag::CONTROL_L</autogen>
+  </item>
+
 </root>
