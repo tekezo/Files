@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change control-home/end to beginning/end-of-file</name>
+    <identifier>private.control_home_end_to_beginning_end_of_file</identifier>
+
+    <modifier_not>
+      ModifierFlag::COMMAND_L,
+      ModifierFlag::COMMAND_R,
+      ModifierFlag::OPTION_L,
+      ModifierFlag::OPTION_R,
+    </modifier_not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::HOME, ModifierFlag::CONTROL_L,
+      KeyCode::CURSOR_UP, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::END, ModifierFlag::CONTROL_L,
+      KeyCode::CURSOR_DOWN, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
