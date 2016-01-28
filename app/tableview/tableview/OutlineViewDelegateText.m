@@ -60,4 +60,14 @@
   }
 }
 
+- (void)outlineView:(NSOutlineView*)outlineView
+      didAddRowView:(NSTableRowView*)rowView
+             forRow:(NSInteger)row {
+  NSDictionary* item = [outlineView itemAtRow:row];
+  if (item && [item[@"index"] integerValue] == 2) {
+    // BUG: This backgroundColor will be reset when you expand/collapse tree.
+    rowView.backgroundColor = [NSColor redColor];
+  }
+}
+
 @end
