@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the eject key to "force quit app" (command-option-escape)</name>
+    <identifier>private.eject_to_force_quit_app</identifier>
+
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::EJECT,
+      KeyCode::ESCAPE, ModifierFlag::COMMAND_L | ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
