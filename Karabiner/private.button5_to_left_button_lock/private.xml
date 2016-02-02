@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change button5 click to lock left click.</name>
+    <identifier>private.button5_to_left_button_lock</identifier>
+
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON5,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
+    </autogen>
+  </item>
+
+</root>
