@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change [ to O</name>
+    <identifier>private.broken_keyboard_10</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRACKET_LEFT,
+      KeyCode::O,
+    </autogen>
+
+  </item>
+
+</root>
