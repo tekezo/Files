@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change 4 to e, 3 to s</name>
+    <appendix>fn+4 to 4, fn+3 to s</appendix>
+    <identifier>private.broken_keyboard_9</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::4, ModifierFlag::FN, KeyCode::4</autogen>
+    <autogen>__KeyToKey__ KeyCode::4, KeyCode::E</autogen>
+    <autogen>__KeyToKey__ KeyCode::3, ModifierFlag::FN, KeyCode::3</autogen>
+    <autogen>__KeyToKey__ KeyCode::3, KeyCode::S</autogen>
+  </item>
+
+</root>
