@@ -10,6 +10,15 @@
       PointingButton::BUTTON5,
       KeyCode::VK_MOUSEKEY_LOCK_BUTTON_LEFT,
     </autogen>
+
+    <autogen>
+      __KeyToKey__
+      PointingButton::LEFT,
+      PointingButton::LEFT,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_MOUSEKEY_LOCK_BUTTON_ALL_FORCE_OFF,
+    </autogen>
   </item>
 
 </root>
