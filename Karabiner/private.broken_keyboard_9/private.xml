@@ -10,6 +10,9 @@
     <autogen>__KeyToKey__ KeyCode::4, KeyCode::E</autogen>
     <autogen>__KeyToKey__ KeyCode::3, ModifierFlag::FN, KeyCode::3</autogen>
     <autogen>__KeyToKey__ KeyCode::3, KeyCode::S</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::E, KeyCode::4</autogen>
+    <autogen>__KeyToKey__ KeyCode::S, KeyCode::3</autogen>
   </item>
 
 </root>
