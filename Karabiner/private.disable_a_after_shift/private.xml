@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable a key after right shift key</name>
+    <identifier>private.disable_a_after_shift</identifier>
+
+    <lastpressedphysicalkey_only>KeyCode::SHIFT_R</lastpressedphysicalkey_only>
+    <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
+
+    <autogen>__KeyToKey__ KeyCode::A, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
