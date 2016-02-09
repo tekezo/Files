@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use F-keys as standard function keys</name>
+    <appendix>+ Change menu key to fn key</appendix>
+    <identifier>private.kinesis_freestyle2_blue_mac_keyboard</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::PC_APPLICATION, KeyCode::FN</autogen>
+
+    <block>
+      <modifier_not>ModifierFlag::FN</modifier_not>
+      <autogen>__KeyToKey__ KeyCode::RawValue::0x0071, KeyCode::F2</autogen>
+
+      <block>
+        <lastpressedphysicalkey_only>KeyCode::RawValue::0x003b</lastpressedphysicalkey_only>
+        <elapsedtimesincelastpressed_greaterthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_greaterthan>
+        <autogen>__KeyToKey__ KeyCode::RawValue::0x007d, KeyCode::F11</autogen>
+      </block>
+    </block>
+  </item>
+
+</root>
