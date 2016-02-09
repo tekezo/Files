@@ -13,8 +13,10 @@
       <autogen>__KeyToKey__ KeyCode::RawValue::0x0071, KeyCode::F2</autogen>
 
       <block>
+        <!-- only after 0x003b -->
         <lastpressedphysicalkey_only>KeyCode::RawValue::0x003b</lastpressedphysicalkey_only>
-        <elapsedtimesincelastpressed_greaterthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_greaterthan>
+        <!-- elapsed time since last pressed less than 100 ms -->
+        <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_lessthan>
         <autogen>__KeyToKey__ KeyCode::RawValue::0x007d, KeyCode::F11</autogen>
       </block>
     </block>
