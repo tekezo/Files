@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Satechi Bluetooth Remote</name>
+    <appendix>Send command-N by play button</appendix>
+    <identifier>private.satechi_bluetooth_remote1</identifier>
+    <device_only>DeviceVendor::Satechi, DeviceProduct::Satechi_Bluetooth_Remote</device_only>
+    <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PLAY, KeyCode::N, ModifierFlag::COMMAND_L</autogen> <!-- Play button -->
+  </item>
+
+</root>
