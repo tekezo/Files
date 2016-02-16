@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Satechi Media Button</name>
+    <identifier>private.satechi_media_button</identifier>
+    <device_only>
+      DeviceVendor::Broadcom, DeviceProduct::Satechi_Media_Button,
+    </device_only>
+    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x0000, KeyCode::A</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x0001, KeyCode::B</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x0011, KeyCode::C</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x0012, KeyCode::D</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x0010, KeyCode::E</autogen>
+  </item>
+
+</root>
