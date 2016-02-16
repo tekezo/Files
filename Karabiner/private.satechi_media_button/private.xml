@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <root>
 
+  <devicevendordef>
+    <vendorname>Broadcom</vendorname>
+    <vendorid>0x0a5c</vendorid>
+  </devicevendordef>
+
+  <deviceproductdef>
+    <productname>Satechi_Media_Button</productname>
+    <productid>0x4502</productid>
+  </deviceproductdef>
+
   <item>
     <name>Satechi Media Button</name>
     <identifier>private.satechi_media_button</identifier>
