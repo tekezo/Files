@@ -868,8 +868,8 @@
                             </tabViewItem>
                         </tabViewItems>
                     </tabView>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1o4-GT-16p">
-                        <rect key="frame" x="11" y="7" width="78" height="32"/>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1o4-GT-16p">
+                        <rect key="frame" x="11" y="3" width="78" height="32"/>
                         <buttonCell key="cell" type="push" title="reload" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2cK-Sr-mSl">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -878,10 +878,24 @@
                             <action selector="reload:" target="Voe-Tx-rLC" id="b9T-Mt-I8i"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IyE-hJ-2J8">
+                        <rect key="frame" x="87" y="3" width="167" height="32"/>
+                        <buttonCell key="cell" type="push" title="New another window" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6Si-bN-ir9">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="newAnotherWindow:" target="Voe-Tx-rLC" id="kYz-Mp-U0t"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="1o4-GT-16p" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="17" id="0oQ-Gz-L6v"/>
                     <constraint firstItem="LrP-1x-ejj" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="17" id="36r-Mk-FcL"/>
+                    <constraint firstItem="IyE-hJ-2J8" firstAttribute="centerY" secondItem="1o4-GT-16p" secondAttribute="centerY" id="5uw-lx-rYk"/>
+                    <constraint firstItem="IyE-hJ-2J8" firstAttribute="leading" secondItem="1o4-GT-16p" secondAttribute="trailing" constant="10" id="9OK-Sf-PwI"/>
                     <constraint firstItem="LrP-1x-ejj" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="10" id="XYr-nf-DQk"/>
+                    <constraint firstAttribute="bottom" secondItem="1o4-GT-16p" secondAttribute="bottom" constant="10" id="ihV-Me-XSA"/>
                     <constraint firstAttribute="trailing" secondItem="LrP-1x-ejj" secondAttribute="trailing" constant="17" id="oUY-mk-SQK"/>
                     <constraint firstAttribute="bottom" secondItem="LrP-1x-ejj" secondAttribute="bottom" constant="40" id="w1a-hb-8fa"/>
                 </constraints>

@@ -16,6 +16,9 @@
 		3454F72F1C32C8F2005D2C62 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 3454F72E1C32C8F2005D2C62 /* DataSource.m */; };
 		347172341C4A8E7B009D1C2E /* CheckboxOutlineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 347172331C4A8E7B009D1C2E /* CheckboxOutlineView.m */; };
 		34CB80241C43F4760007DE3A /* OutlineViewDelegateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CB80231C43F4760007DE3A /* OutlineViewDelegateButton.m */; };
+		34DB98031C74572A00D90368 /* AnotherWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34DB98021C74572A00D90368 /* AnotherWindow.xib */; };
+		34DB98071C74578B00D90368 /* AnotherWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DB98061C74578B00D90368 /* AnotherWindowController.m */; };
+		34DB980A1C74711D00D90368 /* AnotherWindowObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DB98091C74711D00D90368 /* AnotherWindowObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,11 @@
 		347172331C4A8E7B009D1C2E /* CheckboxOutlineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckboxOutlineView.m; sourceTree = "<group>"; };
 		34CB80221C43F4760007DE3A /* OutlineViewDelegateButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineViewDelegateButton.h; sourceTree = "<group>"; };
 		34CB80231C43F4760007DE3A /* OutlineViewDelegateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineViewDelegateButton.m; sourceTree = "<group>"; };
+		34DB98021C74572A00D90368 /* AnotherWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnotherWindow.xib; sourceTree = "<group>"; };
+		34DB98051C74578B00D90368 /* AnotherWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnotherWindowController.h; path = AnotherWindow/AnotherWindowController.h; sourceTree = "<group>"; };
+		34DB98061C74578B00D90368 /* AnotherWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnotherWindowController.m; path = AnotherWindow/AnotherWindowController.m; sourceTree = "<group>"; };
+		34DB98081C74711D00D90368 /* AnotherWindowObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnotherWindowObject.h; path = AnotherWindow/AnotherWindowObject.h; sourceTree = "<group>"; };
+		34DB98091C74711D00D90368 /* AnotherWindowObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnotherWindowObject.m; path = AnotherWindow/AnotherWindowObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 		3454F71B1C32B0F1005D2C62 /* tableview */ = {
 			isa = PBXGroup;
 			children = (
+				34DB98041C74578000D90368 /* AnotherWindow */,
 				347172321C4A8E7B009D1C2E /* CheckboxOutlineView.h */,
 				347172331C4A8E7B009D1C2E /* CheckboxOutlineView.m */,
 				3454F71C1C32B0F1005D2C62 /* AppDelegate.h */,
@@ -84,6 +93,7 @@
 				3445B3521C4A21F300233523 /* OutlineViewDelegateText.h */,
 				3445B3531C4A21F300233523 /* OutlineViewDelegateText.m */,
 				3454F71F1C32B0F1005D2C62 /* Supporting Files */,
+				34DB98021C74572A00D90368 /* AnotherWindow.xib */,
 			);
 			path = tableview;
 			sourceTree = "<group>";
@@ -94,6 +104,17 @@
 				3454F7201C32B0F1005D2C62 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		34DB98041C74578000D90368 /* AnotherWindow */ = {
+			isa = PBXGroup;
+			children = (
+				34DB98081C74711D00D90368 /* AnotherWindowObject.h */,
+				34DB98091C74711D00D90368 /* AnotherWindowObject.m */,
+				34DB98051C74578B00D90368 /* AnotherWindowController.h */,
+				34DB98061C74578B00D90368 /* AnotherWindowController.m */,
+			);
+			name = AnotherWindow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34DB98031C74572A00D90368 /* AnotherWindow.xib in Resources */,
 				3454F7231C32B0F1005D2C62 /* Assets.xcassets in Resources */,
 				3454F7261C32B0F1005D2C62 /* MainMenu.xib in Resources */,
 			);
@@ -166,6 +188,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3454F7211C32B0F1005D2C62 /* main.m in Sources */,
+				34DB98071C74578B00D90368 /* AnotherWindowController.m in Sources */,
+				34DB980A1C74711D00D90368 /* AnotherWindowObject.m in Sources */,
 				3445B3511C4921F200233523 /* CheckboxCellView.m in Sources */,
 				3454F71E1C32B0F1005D2C62 /* AppDelegate.m in Sources */,
 				34CB80241C43F4760007DE3A /* OutlineViewDelegateButton.m in Sources */,
