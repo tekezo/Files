@@ -9,7 +9,21 @@
 
 @implementation AppDelegate
 
+- (void)observer_NSWindowWillCloseNotification:(NSNotification*)notification {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    NSWindow* window = [notification object];
+    if (self.anotherWindowController &&
+        self.anotherWindowController.window == window) {
+      self.anotherWindowController = nil;
+    }
+  });
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification*)aNotification {
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(observer_NSWindowWillCloseNotification:)
+                                               name:NSWindowWillCloseNotification
+                                             object:nil];
 }
 
 - (void)applicationWillTerminate:(NSNotification*)aNotification {
