@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use Button4 and Button5 as Forward and Back</name>
+    <identifier>private.japanese_button45_back_forward</identifier>
+    <autogen>__KeyToKey__ PointingButton::BUTTON4, KeyCode::JIS_BRACKET_RIGHT, ModifierFlag::COMMAND_L</autogen>
+    <autogen>__KeyToKey__ PointingButton::BUTTON5, KeyCode::JIS_BRACKET_LEFT, ModifierFlag::COMMAND_L</autogen>
+  </item>
+
+</root>
