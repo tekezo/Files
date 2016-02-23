@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change numlock to VK_IOHIKEYBOARD_TOGGLE_NUMLOCK</name>
+    <identifier>private.numlock_to_VK_IOHIKEYBOARD_TOGGLE_NUMLOCK</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::KEYPAD_CLEAR,
+      KeyCode::VK_IOHIKEYBOARD_TOGGLE_NUMLOCK,
+    </autogen>
+  </item>
+
+</root>
