@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Pass through home and end keys in terminal</name>
+    <identifier>private.terminal_pass_through_home_end</identifier>
+
+    <only>TERMINAL</only>
+
+    <!--
+        <autogen>__KeyToKey__ FROMKEYCODE_HOME, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+        <autogen>__KeyToKey__ FROMKEYCODE_END,  KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
+    -->
+
+    <autogen>__KeyToKey__ FROMKEYCODE_HOME, KeyCode::HOME</autogen>
+    <autogen>__KeyToKey__ FROMKEYCODE_END,  KeyCode::END</autogen>
+  </item>
+
+</root>
