@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f19 to control. (Send caps lock when f19 is pressed alone.)</name>
+    <identifier>private.f19_control_caps</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::F19,
+      KeyCode::CONTROL_L,
+      KeyCode::CAPSLOCK,
+    </autogen>
+  </item>
+
+</root>
