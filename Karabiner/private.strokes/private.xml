@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>STROKES</modifierdef>
+  <modifierdef>C</modifierdef>
+
+  <item>
+    <name>Strokes</name>
+    <identifier>private.strokes</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_2, KeyCode::VK_LOCK_STROKES</autogen>
+
+    <autogen>__KeyToKey__ KeyCode::C, KeyCode::VK_STICKY_C</autogen>
+
+    <block>
+      <modifierstuck_only>ModifierFlag::C</modifierstuck_only>
+      <autogen>__KeyToKey__ KeyCode::P, KeyCode::O, ModifierFlag::CONTROL_L</autogen>
+    </block>
+
+    <autogen>
+      __DropAllKeys__
+      ModifierFlag::STROKES,
+      Option::DROPALLKEYS_DROP_KEY,
+    </autogen>
+  </item>
+
+</root>
