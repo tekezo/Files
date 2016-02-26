@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use PC Style Home/End #2</name>
+    <appendix>(Use Home and End key to beginning-of-line/end-of-line.)</appendix>
+    <appendix>(Actually, change Home/End key to Command+Left/Right.)</appendix>
+    <appendix></appendix>
+    <appendix>(+ Change Home to Control+A in Emacs,Terminal,X11)</appendix>
+    <appendix>(+ Change End to Control+E in Emacs,Terminal,X11)</appendix>
+    <appendix></appendix>
+    <appendix>{{ PC_STYLE_BINDINGS_IGNORE_APPS_DESCRIPTION }}</appendix>
+    <identifier>remap.pclikehomeend</identifier>
+    <include path="/Applications/Karabiner.app/Contents/Resources/include/checkbox/snippets/pcstyle_homeend_ignore_apps.xml" />
+
+    <block>
+      <only>TERMINAL</only>
+      <autogen>__KeyToKey__ FROMKEYCODE_HOME, KeyCode::HOME</autogen>
+      <autogen>__KeyToKey__ FROMKEYCODE_END,  KeyCode::END</autogen>
+    </block>
+
+    <block>
+      <only>EMACS, X11</only>
+      <autogen>__KeyToKey__ FROMKEYCODE_HOME, KeyCode::A, ModifierFlag::CONTROL_L</autogen>
+      <autogen>__KeyToKey__ FROMKEYCODE_END,  KeyCode::E, ModifierFlag::CONTROL_L</autogen>
+    </block>
+
+    <block>
+      <not>{{ PC_STYLE_BINDINGS_IGNORE_APPS }}</not>
+      {{ PC_STYLE_BINDINGS_IGNORE_EXTRA }}
+      <autogen>__KeyToKey__ FROMKEYCODE_HOME, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::CURSOR_UP,    ModifierFlag::COMMAND_L</autogen>
+      <autogen>__KeyToKey__ FROMKEYCODE_HOME, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_UP,    ModifierFlag::COMMAND_L</autogen>
+      <autogen>__KeyToKey__ FROMKEYCODE_END,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::CURSOR_DOWN,  ModifierFlag::COMMAND_L</autogen>
+      <autogen>__KeyToKey__ FROMKEYCODE_END,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::CURSOR_DOWN,  ModifierFlag::COMMAND_L</autogen>
+      <autogen>__KeyToKey__ FROMKEYCODE_HOME, KeyCode::CURSOR_LEFT,  ModifierFlag::COMMAND_L</autogen>
+      <autogen>__KeyToKey__ FROMKEYCODE_END,  KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L</autogen>
+    </block>
+  </item>
+
+</root>
