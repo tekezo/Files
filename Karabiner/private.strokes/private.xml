@@ -8,7 +8,7 @@
     <name>Strokes</name>
     <identifier>private.strokes</identifier>
 
-    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::VK_LOCK_STROKES</autogen>
+    <autogen>__KeyToKey__ KeyCode::KEYPAD_2, KeyCode::VK_LOCK_STROKES</autogen>
 
     <block>
       <modifier_only>ModifierFlag::STROKES</modifier_only>
