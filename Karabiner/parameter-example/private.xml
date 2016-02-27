@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<root>
+
+  <!-- define KeyCode::VK_OPEN_URL_WEB_karabiner_foo -->
+  <include path="vkopenurldef.xml">
+    <replacementdef>
+      <replacementname>QUERY</replacementname>
+      <replacementvalue>foo</replacementvalue>
+    </replacementdef>
+  </include>
+
+  <!-- define KeyCode::VK_OPEN_URL_WEB_karabiner_bar -->
+  <include path="vkopenurldef.xml">
+    <replacementdef>
+      <replacementname>QUERY</replacementname>
+      <replacementvalue>bar</replacementvalue>
+    </replacementdef>
+  </include>
+
+  <!-- define KeyCode::VK_OPEN_URL_WEB_karabiner_baz -->
+  <include path="vkopenurldef.xml">
+    <replacementdef>
+      <replacementname>QUERY</replacementname>
+      <replacementvalue>baz</replacementvalue>
+    </replacementdef>
+  </include>
+
+  <!-- ============================================================ -->
+  <item>
+    <name>Open URLs by right-shift+A,S,D</name>
+    <identifier>private.parameter-example</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::SHIFT_R,
+      KeyCode::VK_OPEN_URL_WEB_karabiner_foo,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::SHIFT_R,
+      KeyCode::VK_OPEN_URL_WEB_karabiner_bar,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::D, ModifierFlag::SHIFT_R,
+      KeyCode::VK_OPEN_URL_WEB_karabiner_baz,
+    </autogen>
+  </item>
+
+</root>
