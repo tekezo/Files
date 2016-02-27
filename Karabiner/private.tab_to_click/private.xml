@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_warp_mouse_cursor_position</name>
+    <url type="shell">
+      <![CDATA[
+        /Applications/Karabiner.app/Contents/Library/utilities/bin/warp-mouse-cursor-position screen 0 top 800 left 170
+      ]]>
+    </url>
+  </vkopenurldef>
+
+  <item>
+    <name>Change tab key to left click at 800,170</name>
+    <identifier>private.tab_to_click</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::TAB,
+      KeyCode::VK_OPEN_URL_SHELL_warp_mouse_cursor_position,
+      KeyCode::VK_WAIT_50MS,
+      PointingButton::LEFT,
+      Option::NOREPEAT,
+    </autogen>
+  </item>
+
+</root>
