@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f19 to the right control key</name>
+    <identifier>private.f19_to_right_control</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::CONTROL_R</autogen>
+  </item>
+
+</root>
