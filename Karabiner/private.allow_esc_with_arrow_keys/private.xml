@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>ARROW</modifierdef>
+
+  <replacementdef>
+    <replacementname>ARROW_KEYTOKEY_OPTIONS</replacementname>
+    <replacementvalue>
+      Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+      ModifierFlag::ARROW,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_STICKY_ARROW_FORCE_ON,
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Allow Shift+WASD keys to behave like arrow keys</name>
+    <identifier>private.allow_esc_with_arrow_keys</identifier>
+
+    <!-- first type -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::W, ModifierFlag::SHIFT_L,
+      KeyCode::CURSOR_UP,
+
+      {{ ARROW_KEYTOKEY_OPTIONS }}
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::SHIFT_L,
+      KeyCode::CURSOR_LEFT,
+
+      {{ ARROW_KEYTOKEY_OPTIONS }}
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::S, ModifierFlag::SHIFT_L,
+      KeyCode::CURSOR_DOWN,
+
+      {{ ARROW_KEYTOKEY_OPTIONS }}
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::D, ModifierFlag::SHIFT_L,
+      KeyCode::CURSOR_RIGHT,
+
+      {{ ARROW_KEYTOKEY_OPTIONS }}
+    </autogen>
+
+    <!-- second type -->
+    <block>
+      <modifier_only>ModifierFlag::ARROW</modifier_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::W,
+        KeyCode::CURSOR_UP,
+
+        {{ ARROW_KEYTOKEY_OPTIONS }}
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::A,
+        KeyCode::CURSOR_LEFT,
+
+        {{ ARROW_KEYTOKEY_OPTIONS }}
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::S,
+        KeyCode::CURSOR_DOWN,
+
+        {{ ARROW_KEYTOKEY_OPTIONS }}
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::D,
+        KeyCode::CURSOR_RIGHT,
+
+        {{ ARROW_KEYTOKEY_OPTIONS }}
+      </autogen>
+    </block>
+
+    <!-- cancel by escape key -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::ESCAPE, ModifierFlag::ARROW,
+      KeyCode::VK_STICKY_ARROW_FORCE_OFF,
+    </autogen>
+
+  </item>
+</root>
