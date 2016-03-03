@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use "jkl;" keys as arrow keys if you are not editing text.</name>
+
+    <item>
+      <name>Enable in some standard apps.</name>
+      <appendix>Supported Applications:</appendix>
+      <appendix>- Finder, iPhoto, iTunes, Mail.app.</appendix>
+      <appendix>- Activity Monitor.</appendix>
+      <appendix>- System Preferences, Karabiner, Seil.</appendix>
+      <identifier>private.jkl_arrow</identifier>
+
+      <block>
+        <only>
+          FINDER, IPHOTO, ITUNES, SYSTEM_PREFERENCES,
+          Activity_Monitor,
+          Karabiner, Seil,
+        </only>
+        <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
+        <modifier_only>
+          ModifierFlag::NONE,
+          ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+          ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+        </modifier_only>
+        <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_DOWN</autogen>
+        <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_UP</autogen>
+        <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::CURSOR_RIGHT</autogen>
+      </block>
+
+      <block>
+        <only>MAIL</only>
+        <!-- Mail body editor is AXWebArea -->
+        <uielementrole_not>AXTextField, AXTextArea, AXWebArea</uielementrole_not>
+        <modifier_only>
+          ModifierFlag::NONE,
+          ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+          ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+        </modifier_only>
+        <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_DOWN</autogen>
+        <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_UP</autogen>
+        <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::CURSOR_RIGHT</autogen>
+      </block>
+    </item>
+
+    <item>
+      <name>Enable in Xcode.</name>
+      <identifier>private.jkl_arrow_xcode</identifier>
+      <only>XCODE</only>
+      <uielementrole_not>
+        AXTextField,
+        AXTextArea,
+        AXComboBox,
+      </uielementrole_not>
+      <modifier_only>
+        ModifierFlag::NONE,
+        ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+      </modifier_only>
+      <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_UP</autogen>
+      <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::CURSOR_RIGHT</autogen>
+    </item>
+
+    <item>
+      <name>Enable in Twitter.</name>
+      <identifier>private.jkl_arrow_twitter</identifier>
+      <only>Twitter</only>
+      <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
+      <modifier_only>
+        ModifierFlag::NONE,
+        ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+      </modifier_only>
+      <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_UP</autogen>
+      <autogen>__KeyToKey__ KeyCode::SEMICOLON, KeyCode::CURSOR_RIGHT</autogen>
+    </item>
+  </item>
+
+  <item>
+    <name>Fn+jkl; to Left/Down/Up/Right</name>
+    <identifier>private.vimode_fn_hjkl</identifier>
+    <autogen>__KeyToKey__ KeyCode::J, ModifierFlag::FN, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::FN, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, ModifierFlag::FN, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::FN, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
+
+</root>
