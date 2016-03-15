@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Escape to fn</name>
+    <appendix>Send the escape key event when the escape key is pressed alone.</appendix>
+    <identifier>private.escape_escape_fn</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::ESCAPE,
+      KeyCode::FN,
+      KeyCode::ESCAPE,
+    </autogen>
+  </item>
+
+</root>
