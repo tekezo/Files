@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change eject to * in RDC</name>
+    <identifier>private.eject_to_keypad_multiply</identifier>
+
+    <only>REMOTEDESKTOPCONNECTION</only>
+
+    <autogen>
+      __KeyToKey__
+      ConsumerKeyCode::EJECT,
+      KeyCode::KEYPAD_MULTIPLY,
+    </autogen>
+  </item>
+
+</root>
