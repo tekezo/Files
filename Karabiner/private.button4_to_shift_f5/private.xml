@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change button4,button5 shift-f5</name>
+    <identifier>private.button4_to_shift_f5</identifier>
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON4,
+      KeyCode::F5, ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      PointingButton::BUTTON5,
+      KeyCode::F5, ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
