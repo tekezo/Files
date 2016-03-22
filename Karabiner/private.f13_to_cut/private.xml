@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f13,f14,f15 to command-x,c,v</name>
+    <identifier>private.f13_to_cut</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F13,
+      KeyCode::X, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F14,
+      KeyCode::C, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F15,
+      KeyCode::V, ModifierFlag::COMMAND_L,
+    </autogen>
+  </item>
+
+</root>
