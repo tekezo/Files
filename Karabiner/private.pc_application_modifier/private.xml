@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>PC_APPLICATION</modifierdef>
+
+  <item>
+    <name>tenkeyless Numberpad</name>
+    <identifier>private.thenkeyless_number_pad</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::PC_APPLICATION,
+      KeyCode::VK_MODIFIER_PC_APPLICATION,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F13, ModifierFlag::PC_APPLICATION,
+      KeyCode::KEY_7,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F14, ModifierFlag::PC_APPLICATION,
+      KeyCode::KEY_8,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F15, ModifierFlag::PC_APPLICATION,
+      KeyCode::KEY_9,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::HELP, ModifierFlag::PC_APPLICATION,
+      KeyCode::KEY_4,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::HOME, ModifierFlag::PC_APPLICATION,
+      KeyCode::KEY_5,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::PAGEUP, ModifierFlag::PC_APPLICATION,
+      KeyCode::KEY_6,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::FORWARD_DELETE, ModifierFlag::PC_APPLICATION,
+      KeyCode::KEY_1,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::END, ModifierFlag::PC_APPLICATION,
+      KeyCode::KEY_2,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::PAGEDOWN, ModifierFlag::PC_APPLICATION,
+      KeyCode::KEY_3,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_UP, ModifierFlag::PC_APPLICATION,
+      KeyCode::KEY_0,
+    </autogen>
+  </item>
+
+</root>
