@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>MY_FN</modifierdef>
+
+  <item>
+    <name>Toggle fn key by f19 key</name>
+    <identifier>private.f19_to_fn_functional</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::F19,
+      KeyCode::VK_LOCK_MY_FN,
+    </autogen>
+
+    <block>
+      <modifier_only>ModifierFlag::MY_FN</modifier_only>
+
+      <autogen>__KeyToKey__ KeyCode::F1,  KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_DOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::F2,  KeyCode::VK_IOHIDPOSTEVENT_NX_KEYTYPE_BRIGHTNESS_UP</autogen>
+      <autogen>__KeyToKey__ KeyCode::F3,  KeyCode::MISSION_CONTROL</autogen>
+      <autogen>__KeyToKey__ KeyCode::F4,  KeyCode::LAUNCHPAD</autogen>
+      <autogen>__KeyToKey__ KeyCode::F7,  ConsumerKeyCode::MUSIC_PREV</autogen>
+      <autogen>__KeyToKey__ KeyCode::F8,  ConsumerKeyCode::MUSIC_PLAY</autogen>
+      <autogen>__KeyToKey__ KeyCode::F9,  ConsumerKeyCode::MUSIC_NEXT</autogen>
+      <autogen>__KeyToKey__ KeyCode::F10, ConsumerKeyCode::VOLUME_MUTE</autogen>
+      <autogen>__KeyToKey__ KeyCode::F11, ConsumerKeyCode::VOLUME_DOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::F12, ConsumerKeyCode::VOLUME_UP</autogen>
+    </block>
+  </item>
+
+</root>
