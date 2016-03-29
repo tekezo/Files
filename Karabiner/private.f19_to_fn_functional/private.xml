@@ -8,8 +8,9 @@
     <identifier>private.f19_to_fn_functional</identifier>
 
     <autogen>
-      __KeyToKey__
+      __KeyOverlaidModifier__
       KeyCode::F19,
+      KeyCode::VK_MODIFIER_MY_FN,
       KeyCode::VK_LOCK_MY_FN,
     </autogen>
 
