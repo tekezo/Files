@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f19 key to escape (holding f19 to capslock)</name>
+    <identifier>private.f19_escape_capslock</identifier>
+
+    <!-- send command-w when the escape key is pressed and held down. -->
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::F19,
+
+      <!-- short press -->
+      @begin
+      KeyCode::ESCAPE,
+      @end
+
+      <!-- hold -->
+      @begin
+      KeyCode::CAPSLOCK,
+      @end
+    </autogen>
+  </item>
+
+</root>
