@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Fix broken keyboard</name>
+    <identifier>private.broken_keyboard_11</identifier>
+
+    <!-- KeyboardEventCallback [ caught]: eventType 10, flags 0x80000000, key 0x0035, kbdType  43, repeat = 0 -->
+    <!-- KeyboardEventCallback [ caught]: eventType 10, flags 0x80000000, key 0x001b, kbdType  43, repeat = 0 -->
+    <!-- KeyboardEventCallback [ caught]: eventType 10, flags 0x80000000, key 0x0029, kbdType  43, repeat = 0 -->
+    <!-- KeyboardSpecialEventCallBack [ caught]: eventType 10, flags 0x00000000, key 0x0001, flavor    1, guid -1, repeat = 0 -->
+    <!-- KeyboardEventCallback [ caught]: eventType 10, flags 0x80000000, key 0x0068, kbdType  43, repeat = 0 -->
+    <!-- KeyboardEventCallback [ caught]: eventType 10, flags 0x80000000, key 0x0066, kbdType  43, repeat = 0 -->
+
+    <!-- disable 0x0035 -->
+    <autogen>__KeyToKey__ KeyCode::RawValue::0x0035, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::ESCAPE</autogen>
+
+    <!-- disable 0x001b -->
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::RawValue::0x0035</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::10</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::RawValue::0x001b, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <!-- disable 0x0029 -->
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::RawValue::0x001b</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::10</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::RawValue::0x0029, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <!-- disable 0x0001 -->
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::RawValue::0x0029</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::10</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x0001, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <!-- disable 0x0068 -->
+    <block>
+      <lastpressedphysicalkey_only>ConsumerKeyCode::RawValue::0x0001</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::10</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::RawValue::0x0068, KeyCode::VK_NONE</autogen>
+    </block>
+
+    <!-- change 0x0066 to return -->
+    <block>
+      <lastpressedphysicalkey_only>KeyCode::RawValue::0x0068</lastpressedphysicalkey_only>
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::10</elapsedtimesincelastpressed_lessthan>
+      <autogen>__KeyToKey__ KeyCode::RawValue::0x0066, KeyCode::RETURN</autogen>
+    </block>
+  </item>
+
+</root>
