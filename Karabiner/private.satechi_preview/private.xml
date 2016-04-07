@@ -9,10 +9,10 @@
       DeviceVendor::Broadcom, DeviceProduct::Satechi_Media_Button,
     </device_only>
     <only>PREVIEW, ADOBE</only>
-    <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PLAY, KeyCode::CURSOR_DOWN</autogen> <!-- Play button -->
-    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x11, KeyCode::PAGEDOWN</autogen><!-- Next button -->
-    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x12, KeyCode::PAGEUP</autogen><!-- Previous button -->
-    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x0e, KeyCode::CURSOR_UP</autogen><!-- Keyboard button -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PLAY, KeyCode::PAGEDOWN</autogen> <!-- Play button -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x11, KeyCode::CURSOR_DOWN</autogen><!-- Next button -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x12, KeyCode::CURSOR_UP</autogen><!-- Previous button -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x0e, KeyCode::PAGEUP</autogen><!-- Keyboard button -->
   </item>
 
 </root>
