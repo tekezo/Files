@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Configure Satechi devices for Preview, Acrobat</name>
+    <identifier>private.satechi_preview</identifier>
+    <device_only>
+      DeviceVendor::Satechi, DeviceProduct::Satechi_Bluetooth_Remote,
+      DeviceVendor::Broadcom, DeviceProduct::Satechi_Media_Button,
+    </device_only>
+    <only>PREVIEW, ADOBE</only>
+    <autogen>__KeyToKey__ ConsumerKeyCode::MUSIC_PLAY, KeyCode::CURSOR_DOWN</autogen> <!-- Play button -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x11, KeyCode::PAGEDOWN</autogen><!-- Next button -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x12, KeyCode::PAGEUP</autogen><!-- Previous button -->
+    <autogen>__KeyToKey__ ConsumerKeyCode::RawValue::0x0e, KeyCode::CURSOR_UP</autogen><!-- Keyboard button -->
+  </item>
+
+</root>
