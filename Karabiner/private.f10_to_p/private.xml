@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f10 to P</name>
+    <identifier>private.f10_to_p</identifier>
+    <autogen>__KeyToKey__ KeyCode::F10, KeyCode::P</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::VOLUME_MUTE, KeyCode::P</autogen>
+  </item>
+
+  <item>
+    <name>Change control-[ to p</name>
+    <identifier>private.control_left_bracket_to_p</identifier>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL, KeyCode::P</autogen>
+  </item>
+
+</root>
