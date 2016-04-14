@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+
+    <item>
+      <name>Use PC Style Control+Up/Down/Left/Right</name>
+      <appendix>(Change Command+Arrow to Option+Arrow)</appendix>
+      <appendix></appendix>
+      <appendix>{{ PC_STYLE_BINDINGS_IGNORE_APPS_DESCRIPTION }}</appendix>
+      <identifier>private.pclikecontrolarrow_except_vm</identifier>
+      <modifier_not>
+        ModifierFlag::CONTROL_L,
+        ModifierFlag::CONTROL_R,
+        ModifierFlag::OPTION_L,
+        ModifierFlag::OPTION_L,
+      </modifier_not>
+      <not>{{ PC_STYLE_BINDINGS_IGNORE_APPS }}</not>
+      {{ PC_STYLE_BINDINGS_IGNORE_EXTRA }}
+      <autogen>__KeyToKey__ KeyCode::CURSOR_UP,     MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::CURSOR_UP,    ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_DOWN,   MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::CURSOR_DOWN,  ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,   MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::CURSOR_LEFT,  ModifierFlag::OPTION_L</autogen>
+      <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L</autogen>
+    </item>
+
+</root>
