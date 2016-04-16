@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Broken Keyboard Crap</name>
+    <identifier>private.swap_[_and_P</identifier>
+    <autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::P</autogen>
+    <autogen>__KeyToKey__ KeyCode::MINUS, KeyCode::0</autogen>
+  </item>
+
+</root>
