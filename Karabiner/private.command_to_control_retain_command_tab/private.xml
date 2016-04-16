@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change the left command key to the left control key</name>
+    <appendix>(Preserve command+tab to application switching)</appendix>
+    <identifier>private.command_to_control_retain_command_tab</identifier>
+    <include path="{{ ENV_Karabiner_Resources }}/include/checkbox/snippets/modifier_tab_to_command_tab.xml">
+      <replacementdef>
+        <replacementname>FROM_MODIFIER</replacementname>
+        <replacementvalue>COMMAND_L</replacementvalue>
+      </replacementdef>
+      <replacementdef>
+        <replacementname>TO_MODIFIER</replacementname>
+        <replacementvalue>CONTROL_L</replacementvalue>
+      </replacementdef>
+    </include>
+  </item>
+
+</root>
