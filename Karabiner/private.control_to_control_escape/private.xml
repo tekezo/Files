@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Send a escape key event when left control key is pressed alone. (another version)</name>
+    <appendix>This version sends escape key event if you release the control key before another key is released.</appendix>
+    <identifier>private.control_to_control_escape</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::CONTROL_L,
+
+      KeyCode::CONTROL_L,
+
+      KeyCode::ESCAPE,
+    </autogen>
+
+    <block>
+      <modifier_only>ModifierFlag::CONTROL_L</modifier_only>
+      <autogen>__BlockUntilKeyUp__ KeyCode::CONTROL_L</autogen>
+    </block>
+  </item>
+
+</root>
