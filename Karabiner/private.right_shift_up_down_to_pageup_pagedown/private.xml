@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change right shift-up arrow,down arrow to pageup,pagedown</name>
+    <identifier>private.right_shift_up_down_to_pageup_pagedown</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_UP, ModifierFlag::SHIFT_R,
+      KeyCode::PAGEUP,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_DOWN, ModifierFlag::SHIFT_R,
+      KeyCode::PAGEDOWN,
+    </autogen>
+  </item>
+
+</root>
