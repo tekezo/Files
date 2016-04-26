@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>NAGA_1</modifierdef>
+  <modifierdef>NAGA_2</modifierdef>
+  <modifierdef>NAGA_3</modifierdef>
+  <modifierdef>NAGA_4</modifierdef>
+  <modifierdef>NAGA_5</modifierdef>
+  <modifierdef>NAGA_6</modifierdef>
+  <modifierdef>NAGA_7</modifierdef>
+  <modifierdef>NAGA_8</modifierdef>
+  <modifierdef>NAGA_9</modifierdef>
+  <modifierdef>NAGA_0</modifierdef>
+
+  <item>
+    <name>Razer naga hack</name>
+    <identifier>private.razer_naga_hack</identifier>
+
+    <!-- 1+2 -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::1, ModifierFlag::NAGA_2,
+      KeyCode::A, ModifierFlag::COMMAND_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::2, ModifierFlag::NAGA_1,
+      KeyCode::A, ModifierFlag::COMMAND_L,
+    </autogen>
+
+    <!-- 3+Click -->
+    <autogen>
+      __KeyToKey__
+      PointingButton::LEFT, ModifierFlag::NAGA_3,
+      KeyCode::A, ModifierFlag::COMMAND_L,
+    </autogen>
+
+    <!-- change keys to modifiers -->
+    <autogen>__KeyToKey__ KeyCode::1, KeyCode::VK_MODIFIER_NAGA_1</autogen>
+    <autogen>__KeyToKey__ KeyCode::2, KeyCode::VK_MODIFIER_NAGA_2</autogen>
+    <autogen>__KeyToKey__ KeyCode::3, KeyCode::VK_MODIFIER_NAGA_3</autogen>
+    <autogen>__KeyToKey__ KeyCode::4, KeyCode::VK_MODIFIER_NAGA_4</autogen>
+    <autogen>__KeyToKey__ KeyCode::5, KeyCode::VK_MODIFIER_NAGA_5</autogen>
+    <autogen>__KeyToKey__ KeyCode::6, KeyCode::VK_MODIFIER_NAGA_6</autogen>
+    <autogen>__KeyToKey__ KeyCode::7, KeyCode::VK_MODIFIER_NAGA_7</autogen>
+    <autogen>__KeyToKey__ KeyCode::8, KeyCode::VK_MODIFIER_NAGA_8</autogen>
+    <autogen>__KeyToKey__ KeyCode::9, KeyCode::VK_MODIFIER_NAGA_9</autogen>
+    <autogen>__KeyToKey__ KeyCode::0, KeyCode::VK_MODIFIER_NAGA_0</autogen>
+  </item>
+
+</root>
