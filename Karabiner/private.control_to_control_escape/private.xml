@@ -9,9 +9,17 @@
       __KeyOverlaidModifier__
       KeyCode::CONTROL_L,
 
+      @begin
       KeyCode::CONTROL_L,
+      @end
 
-      KeyCode::ESCAPE,
+      @begin
+      KeyCode::VK_PARTIAL_KEYDOWN, KeyCode::ESCAPE,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_WAIT_10MS,
+      KeyCode::VK_PARTIAL_KEYUP, KeyCode::ESCAPE,
+      @end
     </autogen>
 
     <block>
