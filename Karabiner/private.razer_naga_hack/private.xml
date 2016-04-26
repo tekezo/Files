@@ -16,6 +16,11 @@
     <name>Razer naga hack</name>
     <identifier>private.razer_naga_hack</identifier>
 
+    <device_only>
+      DeviceVendor::Razer,
+      DeviceProduct::ANY,
+    </device_only>
+
     <!-- 1+2 -->
     <autogen>
       __KeyToKey__
