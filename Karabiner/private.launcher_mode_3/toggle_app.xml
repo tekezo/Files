@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+
+  <!-- http://brettterpstra.com/2011/01/22/quick-tip-applescript-application-toggle/ -->
+  <vkopenurldef>
+    <name>{{ KEY_CODE }}</name>
+    <url type="shell">
+      <![CDATA[
+/usr/bin/osascript -e '
+set appName to "{{ APP_NAME }}"
+
+set appID to bundle identifier of (info for (path to application appName))
+tell application "System Events"
+  if not (exists process appName) then
+    tell application appID to activate
+  else
+    if frontmost of process appName then
+      set visible of process appName to false
+    else
+      set frontmost of process appName to true
+    end if
+  end if
+end tell
+'
+      ]]>
+    </url>
+  </vkopenurldef>
+
+</root>

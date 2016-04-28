@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>MY_LAUNCHER_MODE</modifierdef>
+
+  <!-- FaceTime -->
+  <include path="toggle_app.xml">
+    <replacementdef>
+      <replacementname>KEY_CODE</replacementname>
+      <replacementvalue>KeyCode::VK_OPEN_URL_Toggle_App_FaceTime</replacementvalue>
+    </replacementdef>
+    <replacementdef>
+      <replacementname>APP_NAME</replacementname>
+      <replacementvalue>FaceTime</replacementvalue>
+    </replacementdef>
+  </include>
+
+  <!-- Safari -->
+  <include path="toggle_app.xml">
+    <replacementdef>
+      <replacementname>KEY_CODE</replacementname>
+      <replacementvalue>KeyCode::VK_OPEN_URL_Toggle_App_Safari</replacementvalue>
+    </replacementdef>
+    <replacementdef>
+      <replacementname>APP_NAME</replacementname>
+      <replacementvalue>Safari</replacementvalue>
+    </replacementdef>
+  </include>
+
+  <item>
+    <name>Launcher mode by command-space</name>
+    <identifier>private.launcher_mode_3</identifier>
+
+    <block>
+      <modifier_not>
+        ModifierFlag::CONTROL_L,
+        ModifierFlag::CONTROL_R,
+        ModifierFlag::FN,
+        ModifierFlag::OPTION_L,
+        ModifierFlag::OPTION_R,
+        ModifierFlag::SHIFT_L,
+        ModifierFlag::SHIFT_R,
+      </modifier_not>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::VK_LOCK_MY_LAUNCHER_MODE,
+      </autogen>
+    </block>
+
+    <block>
+      <modifier_only>ModifierFlag::MY_LAUNCHER_MODE</modifier_only>
+
+      <autogen>__KeyToKey__ KeyCode::F, KeyCode::VK_OPEN_URL_Toggle_App_FaceTime, KeyCode::VK_LOCK_MY_LAUNCHER_MODE_FORCE_OFF</autogen>
+      <autogen>__KeyToKey__ KeyCode::S, KeyCode::VK_OPEN_URL_Toggle_App_Safari, KeyCode::VK_LOCK_MY_LAUNCHER_MODE_FORCE_OFF</autogen>
+    </block>
+
+  </item>
+
+</root>
