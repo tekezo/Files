@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap mouse left and right buttons</name>
+    <identifier>private.swap_mouse_buttons</identifier>
+
+    <autogen>__KeyToKey__ PointingButton::LEFT, PointingButton::RIGHT</autogen>
+    <autogen>__KeyToKey__ PointingButton::RIGHT, PointingButton::LEFT</autogen>
+  </item>
+
+</root>
