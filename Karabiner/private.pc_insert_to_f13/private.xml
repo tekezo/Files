@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change insert key to f13</name>
+    <identifier>private.pc_insert_to_f13</identifier>
+    <autogen>__KeyToKey__ KeyCode::PC_INSERT, KeyCode::F13</autogen>
+  </item>
+
+</root>
