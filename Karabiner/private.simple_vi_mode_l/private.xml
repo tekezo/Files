@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>SIMPLE_VI_MODE_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+               <autogen>__KeyToKey__ KeyCode::0, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+      ]]>
+    </replacementvalue>
+  </replacementdef>
+
+  <modifierdef>SIMPLE_VI_MODE_2_L</modifierdef>
+
+  <item>
+    <name>Simple Vi Mode v2 l</name>
+    <identifier>private.simple_vi_mode_l</identifier>
+
+    {{ SIMPLE_VI_MODE_CONDITION }}
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::L,
+
+      <!--
+          Use notsave.simple_vi_mode in order to be higher priority.
+          Use ModifierFlag::SIMPLE_VI_MODE_2 for __DropAllKeys__.
+      -->
+      @begin
+      KeyCode::VK_CONFIG_FORCE_ON_notsave_private_simple_vi_mode_l,
+      KeyCode::VK_MODIFIER_SIMPLE_VI_MODE_2_L,
+      @end
+
+      @begin
+      KeyCode::L,
+      @end
+    </autogen>
+  </item>
+  <item hidden="true">
+    <identifier vk_config="true">notsave.private_simple_vi_mode_l</identifier>
+    <modifier_only>ModifierFlag::SIMPLE_VI_MODE_2_L</modifier_only>
+
+    {{ SIMPLE_VI_MODE_EXTRA }}
+
+    <autogen>
+      __BlockUntilKeyUp__ KeyCode::L
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::E,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_L,
+
+      Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+      ModifierFlag::SIMPLE_VI_MODE_2_L,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::B,
+      KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L,
+
+      Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+      ModifierFlag::SIMPLE_VI_MODE_2_L,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::4,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_L,
+
+      Option::KEYTOKEY_INCREASE_MODIFIER_FLAGS,
+      ModifierFlag::SIMPLE_VI_MODE_2_L,
+    </autogen>
+
+    <autogen>
+      __DropAllKeys__
+      ModifierFlag::SIMPLE_VI_MODE_2,
+
+      Option::DROPALLKEYS_DROP_KEY,
+    </autogen>
+  </item>
+
+</root>
