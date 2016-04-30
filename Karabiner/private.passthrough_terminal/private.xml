@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable all settings while you are using terminal.</name>
+    <identifier>private.passthrough_terminal</identifier>
+    <only>TERMINAL</only>
+    <autogen>__PassThrough__</autogen>
+  </item>
+
+</root>
