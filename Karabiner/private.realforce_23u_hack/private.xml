@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Realforce 23u Hack</name>
+    <appendix>Force turn NumLock on at Realforce 23u.</appendix>
+    <identifier>private.realforce_23u</identifier>
+
+    <autogen>
+      __ForceNumLockOn__
+      DeviceVendor::RawValue::0x04fe, <!-- Please replace DeviceVendor value for your device. -->
+      DeviceProduct::RawValue::0x0203, <!-- Please replace DeviceProduct value for your device. -->
+    </autogen>
+  </item>
+
+</root>
