@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Button4+Wheel to cycle tabs</name>
+    <identifier>private.wheel_to_cycle_tabs</identifier>
+
+    <autogen>__KeyToKey__ PointingButton::BUTTON4, KeyCode::VK_MODIFIER_BUTTON4</autogen>
+    <autogen>
+      __ScrollWheelToKey__
+      ScrollWheel::UP, ModifierFlag::BUTTON4,
+      KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __ScrollWheelToKey__
+      ScrollWheel::DOWN, ModifierFlag::BUTTON4,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L,
+    </autogen>
+  </item>
+
+</root>
