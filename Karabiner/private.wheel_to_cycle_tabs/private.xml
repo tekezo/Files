@@ -5,7 +5,13 @@
     <name>Button4+Wheel to cycle tabs</name>
     <identifier>private.wheel_to_cycle_tabs</identifier>
 
-    <autogen>__KeyToKey__ PointingButton::BUTTON4, KeyCode::VK_MODIFIER_BUTTON4</autogen>
+    <autogen>
+      __KeyOverlaidModifier__
+      PointingButton::BUTTON4,
+      KeyCode::VK_MODIFIER_BUTTON4,
+      PointingButton::BUTTON4,
+    </autogen>
+
     <autogen>
       __ScrollWheelToKey__
       ScrollWheel::UP, ModifierFlag::BUTTON4,
