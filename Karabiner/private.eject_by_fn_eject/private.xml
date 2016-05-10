@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable eject key</name>
+    <appendix>(Eject disc by fn-eject)</appendix>
+    <identifier>private.eject_by_fn_eject</identifier>
+    <autogen>__KeyToKey__ ConsumerKeyCode::EJECT, ModifierFlag::FN, ConsumerKeyCode::EJECT</autogen>
+    <autogen>__KeyToKey__ ConsumerKeyCode::EJECT, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>
