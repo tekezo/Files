@@ -6,6 +6,7 @@
     <replacementvalue>
       <![CDATA[
                <autogen>__KeyToKey__ KeyCode::0, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+               <autogen>__KeyToKey__ KeyCode::I, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
       ]]>
     </replacementvalue>
   </replacementdef>
