@@ -7,7 +7,7 @@
       <![CDATA[
                <autogen>__KeyToKey__ KeyCode::0, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
                <autogen>__KeyToKey__ KeyCode::I, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
-      ]]>
+               ]]>
     </replacementvalue>
   </replacementdef>
 
@@ -80,6 +80,12 @@
 
       Option::DROPALLKEYS_DROP_KEY,
     </autogen>
+  </item>
+
+  <item>
+    <name>Simultaneous Key Presses [S,L] to toggle Vi Mode</name>
+    <identifier>private.vimode_toggle_sl</identifier>
+    <autogen>__SimultaneousKeyPresses__ KeyCode::S, KeyCode::L, KeyCode::VK_CONFIG_TOGGLE_notsave_complete_vimode</autogen>
   </item>
 
 </root>
