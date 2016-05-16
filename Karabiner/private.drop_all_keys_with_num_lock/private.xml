@@ -9,7 +9,8 @@
 
     <autogen>
       __KeyToKey__
-      KeyCode::PC_KEYPAD_NUMLOCK,
+<!--      KeyCode::PC_KEYPAD_NUMLOCK, -->
+KeyCode::F19,
       KeyCode::VK_LOCK_MY_NUMLOCK,
     </autogen>
 
