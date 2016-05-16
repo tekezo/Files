@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable all settings on HHKB.</name>
+    <identifier>private.passthrough_hhkb</identifier>
+    <device_only>
+      DeviceVendor::PFU,
+      DeviceProduct::ANY,
+    </device_only>
+    <autogen>__PassThrough__</autogen>
+  </item>
+
+</root>
