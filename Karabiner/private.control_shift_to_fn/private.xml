@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Control_L+Shift_L to Fn (keep them pressed together to make Fn)</name>
+    <identifier>private.control_shift_to_fn</identifier>
+    <autogen>__KeyToKey__ KeyCode::CONTROL_L, ModifierFlag::SHIFT_L, KeyCode::FN</autogen>
+    <autogen>__KeyToKey__ KeyCode::SHIFT_L, ModifierFlag::CONTROL_L, KeyCode::FN</autogen>
+  </item>
+
+  <item>
+    <name>CapsLockOn+Control_L to Fn (toggle the Caps Lock on, then Control_L will become Fn; toggle it off, and Control_L will be Control again).</name>
+    <identifier>private.capslock_control_to_fn</identifier>
+    <block>
+      ModifierFlag::CAPSLOCK,
+    </block>
+    <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::FN</autogen>
+  </item>
+
+</root>
