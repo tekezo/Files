@@ -11,7 +11,7 @@
 
     <!-- option+f1 -->
     <autogen>__KeyToKey__ KeyCode::F1,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F1</autogen>
-    <autogen>__KeyToKey__ KeyCode::F2,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F2</autogen>
+    <autogen>__KeyToKey__ KeyCode::F2,  ModifierFlag::OPTION_L, KeyCode::F2</autogen>
     <autogen>__KeyToKey__ KeyCode::F3,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F3</autogen>
     <autogen>__KeyToKey__ KeyCode::F4,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F4</autogen>
     <autogen>__KeyToKey__ KeyCode::F5,  MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION, KeyCode::F5</autogen>
