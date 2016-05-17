@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change fn to caps</name>
+    <appendix>+ f19 to caps</appendix>
+    <identifier>private.fn_to_caps</identifier>
+    <autogen>__KeyToKey__ KeyCode::FN, KeyCode::CAPSLOCK</autogen>
+    <autogen>__KeyToKey__ KeyCode::F19, KeyCode::FN</autogen>
+  </item>
+
+</root>
