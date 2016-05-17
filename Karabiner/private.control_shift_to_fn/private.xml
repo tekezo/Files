@@ -11,9 +11,9 @@
   <item>
     <name>CapsLockOn+Control_L to Fn (toggle the Caps Lock on, then Control_L will become Fn; toggle it off, and Control_L will be Control again).</name>
     <identifier>private.capslock_control_to_fn</identifier>
-    <block>
+    <modifier_only>
       ModifierFlag::CAPSLOCK,
-    </block>
+    </modifier_only>
     <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::FN</autogen>
   </item>
 
