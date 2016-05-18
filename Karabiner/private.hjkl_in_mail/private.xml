@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use "hjkl" keys as arrow keys if you are not editing text in Mail.</name>
+    <identifier>private.hjkl_in_mail</identifier>
+    <only>MAIL</only>
+
+    <uielementrole_only>AXTable</uielementrole_only>
+    <modifier_only>
+      ModifierFlag::NONE,
+      ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+      ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+    </modifier_only>
+    <autogen>__KeyToKey__ {{ VI_H }}, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ {{ VI_J }}, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ {{ VI_K }}, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ {{ VI_L }}, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
+
+</root>
