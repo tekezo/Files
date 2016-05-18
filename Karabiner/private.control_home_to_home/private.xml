@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change control-home/end to home/end</name>
+    <identifier>private.control_home_to_home</identifier>
+
+    <not>{{ PC_STYLE_BINDINGS_IGNORE_APPS }}</not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::HOME, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::HOME,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::END, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::END,
+    </autogen>
+  </item>
+
+</root>
