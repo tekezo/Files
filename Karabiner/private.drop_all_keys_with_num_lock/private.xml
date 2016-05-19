@@ -21,6 +21,19 @@
       Option::DROPALLKEYS_DROP_CONSUMERKEY,
       Option::DROPALLKEYS_DROP_POINTINGBUTTON,
     </autogen>
+
+    <block>
+      <modifier_only>ModifierFlag::MY_NUMLOCK</modifier_only>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_L, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::COMMAND_R, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::CONTROL_L, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::CONTROL_R, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::FN, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::OPTION_L, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::SHIFT_L, KeyCode::VK_NONE</autogen>
+      <autogen>__KeyToKey__ KeyCode::SHIFT_R, KeyCode::VK_NONE</autogen>
+    </block>
   </item>
 
 </root>
