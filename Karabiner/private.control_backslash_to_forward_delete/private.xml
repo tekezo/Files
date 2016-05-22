@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change control-backslash to forward delete</name>
+    <identifier>private.control_backslash_to_forward_delete</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::BACKSLASH, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::FORWARD_DELETE,
+    </autogen>
+  </item>
+
+</root>
