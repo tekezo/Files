@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>LAUNCHER_MODE_V2_KEY</replacementname>
+    <replacementvalue>KeyCode::OPTION_R</replacementvalue>
+  </replacementdef>
+
+  <replacementdef>
+    <replacementname>LAUNCHER_MODE_V2_CONDITION</replacementname>
+    <replacementvalue>
+      <![CDATA[
+               <pressingphysicalkeys_lessthan>2</pressingphysicalkeys_lessthan>
+               <modifier_not>
+                 ModifierFlag::COMMAND_L,
+                 ModifierFlag::COMMAND_R,
+                 ModifierFlag::CONTROL_L,
+                 ModifierFlag::CONTROL_R,
+                 ModifierFlag::FN,
+                 ModifierFlag::OPTION_L,
+                 ModifierFlag::SHIFT_L,
+                 ModifierFlag::SHIFT_R,
+               </modifier_not>
+      ]]>
+    </replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Launcher mode v2 trigger key is changed to the right option key.</name>
+    <appendix>This setting is enabled automatically.</appendix>
+  </item>
+
+</root>
