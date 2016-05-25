@@ -3,7 +3,7 @@
 
   <replacementdef>
     <replacementname>LAUNCHER_MODE_V2_KEY</replacementname>
-    <replacementvalue>KeyCode::OPTION_R</replacementvalue>
+    <replacementvalue>KeyCode::FN</replacementvalue>
   </replacementdef>
 
   <replacementdef>
@@ -16,8 +16,8 @@
                  ModifierFlag::COMMAND_R,
                  ModifierFlag::CONTROL_L,
                  ModifierFlag::CONTROL_R,
-                 ModifierFlag::FN,
                  ModifierFlag::OPTION_L,
+                 ModifierFlag::OPTION_R,
                  ModifierFlag::SHIFT_L,
                  ModifierFlag::SHIFT_R,
                </modifier_not>
