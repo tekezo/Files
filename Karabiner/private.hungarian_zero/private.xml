@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Enable 0 in Hungarian</name>
+    <identifier>private.hungarian_zero</identifier>
+
+    <inputsource_only>HUNGARIAN</inputsource_only>
+
+    <device_only>
+      DeviceVendor::RawValue::0x04fe,
+      DeviceProduct::RawValue::0x0203,
+    </device_only>
+
+    <autogen>__KeyToKey__ KeyCode::0, KeyCode::RawValue::0xa</autogen>
+  </item>
+
+</root>
