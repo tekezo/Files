@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change ^ to z</name>
+    <identifier>private.hat_to_z</identifier>
+    <autogen>__KeyToKey__ KeyCode::RawValue::0xa, KeyCode::Z</autogen>
+  </item>
+
+</root>
