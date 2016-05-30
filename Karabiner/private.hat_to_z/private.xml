@@ -7,4 +7,10 @@
     <autogen>__KeyToKey__ KeyCode::RawValue::0xa, KeyCode::Z</autogen>
   </item>
 
+  <item>
+    <name>Disable the physical z key</name>
+    <identifier>private.disable_z</identifier>
+    <autogen>__KeyToKey__ KeyCode::Z, KeyCode::VK_NONE</autogen>
+  </item>
+
 </root>
