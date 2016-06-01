@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change z to shift-return</name>
+    <appendix>Change shift to option-space</appendix>
+    <identifier>private.z_to_shift_return</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::Z, ModifierFlag::NONE,
+      KeyCode::RETURN, ModifierFlag::SHIFT_L,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::SHIFT_L, ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+      KeyCode::SPACE, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
