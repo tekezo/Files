@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+
+  <inputsourcedef>
+    <name>US_International</name>
+    <inputsourceid_equal>com.apple.keylayout.USInternational-PC</inputsourceid_equal>
+  </inputsourcedef>
+
+  <item>
+    <name>Use double-quote dead key as normal key in U.S. International input source</name>
+    <identifier>private.disable_dead_key</identifier>
+
+    <inputsource_only>US_International</inputsource_only>
+    <modifier_not>
+      ModifierFlag::COMMAND_L,
+      ModifierFlag::COMMAND_R,
+      ModifierFlag::CONTROL_L,
+      ModifierFlag::CONTROL_R,
+      ModifierFlag::OPTION_L,
+      ModifierFlag::OPTION_R,
+    </modifier_not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::QUOTE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::QUOTE, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_SHIFT,
+      KeyCode::SPACE,
+    </autogen>
+  </item>
+
+</root>
