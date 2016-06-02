@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change § to £</name>
+    <identifier>private.section_to_pound</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::DANISH_DOLLAR, ModifierFlag::NONE,
+      KeyCode::3, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
