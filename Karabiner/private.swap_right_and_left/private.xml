@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Swap Right and Left keys</name>
+    <identifier>private.swap_right_and_left</identifier>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT, KeyCode::CURSOR_RIGHT</autogen>
+    <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::CURSOR_LEFT</autogen>
+  </item>
+
+</root>
