@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Use the left shift key as sticky shift and caps lock</name>
+    <identifier>private.shift_l_sticky_caps</identifier>
+
+    <block>
+      <!-- double tap -->
+      <lastpressedphysicalkey_only>KeyCode::SHIFT_L</lastpressedphysicalkey_only>
+      <!-- threshold is 500 ms -->
+      <elapsedtimesincelastpressed_lessthan>Millisecond::RawValue::500</elapsedtimesincelastpressed_lessthan>
+
+      <!-- normal + double -->
+      <block>
+        <modifierstuck_only>ModifierFlag::SHIFT_L</modifierstuck_only>
+        <autogen>
+          __KeyOverlaidModifier__
+          KeyCode::SHIFT_L,
+          @begin
+          KeyCode::SHIFT_L,
+          @end
+
+          @begin
+          KeyCode::VK_STICKY_SHIFT_L_FORCE_OFF,
+          KeyCode::CAPSLOCK,
+          @end
+        </autogen>
+      </block>
+      <!-- other double -->
+      <block>
+        <autogen>
+          __KeyToKey__
+          KeyCode::SHIFT_L,
+          KeyCode::SHIFT_L,
+        </autogen>
+      </block>
+    </block>
+
+    <!-- capslock + single -->
+    <block>
+      <modifier_only>ModifierFlag::CAPSLOCK</modifier_only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SHIFT_L,
+
+        @begin
+        KeyCode::SHIFT_L,
+        @end
+
+        @begin
+        KeyCode::VK_STICKY_SHIFT_L_FORCE_OFF,
+        KeyCode::CAPSLOCK,
+        @end
+      </autogen>
+    </block>
+
+    <!-- sticky shift + single -->
+    <block>
+      <modifierstuck_only>ModifierFlag::SHIFT_L</modifierstuck_only>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::SHIFT_L,
+
+        @begin
+        KeyCode::SHIFT_L,
+        @end
+
+        @begin
+        KeyCode::VK_STICKY_SHIFT_L_FORCE_OFF,
+        @end
+      </autogen>
+    </block>
+
+    <!-- normal -->
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SHIFT_L,
+
+      @begin
+      KeyCode::SHIFT_L,
+      @end
+
+      @begin
+      KeyCode::VK_STICKY_ACTIVE_MODIFIERS_FORCE_ON,
+      KeyCode::VK_STICKY_SHIFT_L_FORCE_ON,
+      @end
+    </autogen>
+  </item>
+
+</root>
