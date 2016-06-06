@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change f13 to command-shift-4</name>
+    <identifier>private.f13_to_command_shift_4</identifier>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F13, ModifierFlag::NONE,
+      KeyCode::4, ModifierFlag::COMMAND_L | ModifierFlag::SHIFT_L
+    </autogen>
+  </item>
+
+</root>
