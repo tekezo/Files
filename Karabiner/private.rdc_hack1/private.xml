@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>RDC mapping</name>
+    <appendix>* Change backslash to backtick</appendix>
+    <identifier>private.rdc_hack1</identifier>
+
+    <only>REMOTEDESKTOPCONNECTION</only>
+
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::BACKQUOTE</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::DANISH_DOLLAR</autogen>
+  </item>
+
+</root>
