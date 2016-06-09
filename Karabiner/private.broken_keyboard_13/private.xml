@@ -2,8 +2,15 @@
 <root>
 
   <item>
+    <name>Change \ to return</name>
+    <identifier>private.broken_keyboard_13_1</identifier>
+    <autogen>__KeyToKey__ KeyCode::RETURN, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKSLASH, KeyCode::RETURN</autogen>
+  </item>
+
+  <item>
     <name>Change ' to return</name>
-    <identifier>private.broken_keyboard_13</identifier>
+    <identifier>private.broken_keyboard_13_2</identifier>
     <autogen>__KeyToKey__ KeyCode::RETURN, KeyCode::VK_NONE</autogen>
     <autogen>__KeyToKey__ KeyCode::QUOTE, KeyCode::RETURN</autogen>
   </item>
