@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change ' to return</name>
+    <identifier>private.broken_keyboard_13</identifier>
+    <autogen>__KeyToKey__ KeyCode::RETURN, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::QUOTE, KeyCode::RETURN</autogen>
+  </item>
+
+</root>
