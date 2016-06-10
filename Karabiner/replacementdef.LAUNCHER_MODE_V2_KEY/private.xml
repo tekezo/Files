@@ -25,8 +25,21 @@
     </replacementvalue>
   </replacementdef>
 
+  <replacementdef>
+    <replacementname>LAUNCHER_MODE_V2_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+               <autogen>__KeyToKey__ KeyCode::CURSOR_UP,    KeyCode::PAGEUP</autogen>
+               <autogen>__KeyToKey__ KeyCode::CURSOR_DOWN,  KeyCode::PAGEDOWN</autogen>
+               <autogen>__KeyToKey__ KeyCode::CURSOR_LEFT,  KeyCode::HOME</autogen>
+               <autogen>__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::END</autogen>
+               <autogen>__KeyToKey__ KeyCode::DELETE,       KeyCode::FORWARD_DELETE</autogen>
+               ]]>
+    </replacementvalue>
+  </replacementdef>
+
   <item>
-    <name>Launcher mode v2 trigger key is changed to the right option key.</name>
+    <name>Launcher mode v2 trigger key is changed to the fn key.</name>
     <appendix>This setting is enabled automatically.</appendix>
   </item>
 
