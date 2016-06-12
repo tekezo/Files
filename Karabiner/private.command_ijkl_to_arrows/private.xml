@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>MY_RAW_MODE</modifierdef>
+
+  <item>
+    <name>Change command+ijkl to arrow keys</name>
+    <identifier>private.command_ijkl_to_arrows</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::F13, KeyCode::VK_STICKY_MY_RAW_MODE</autogen>
+
+    <block>
+      <modifier_not>ModifierFlag::MY_RAW_MODE</modifier_not>
+      <autogen>__KeyToKey__ KeyCode::I, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::CURSOR_UP</autogen>
+      <autogen>__KeyToKey__ KeyCode::J, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::CURSOR_LEFT</autogen>
+      <autogen>__KeyToKey__ KeyCode::K, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::CURSOR_DOWN</autogen>
+      <autogen>__KeyToKey__ KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND, KeyCode::CURSOR_RIGHT</autogen>
+    </block>
+  </item>
+
+</root>
