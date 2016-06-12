@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>MY_FOO</replacementname>
+    <replacementvalue>Lorem ipsum</replacementvalue>
+  </replacementdef>
+
+  <include path="sub.xml">
+    <replacementdef>
+      <replacementname>MY_FOO_BAR</replacementname>
+      <replacementvalue>{{ MY_FOO }} dolor</replacementvalue>
+    </replacementdef>
+  </include>
+
+</root>

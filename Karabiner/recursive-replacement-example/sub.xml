@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>{{ MY_FOO_BAR }}</name>
+  </item>
+
+</root>
