@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<root>
+
+  <appdef>
+    <appname>SKETCH</appname>
+    <equal>com.bohemiancoding.sketch3</equal>
+  </appdef>
+
+  <modifierdef>IN_COMMAND_TAB</modifierdef>
+
+  <item>
+    <name>Fix scrollwheel zoom direction in Sketch</name>
+    <identifier>remap.sketch_zoom</identifier>
+    <only>SKETCH</only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_L,
+      KeyCode::COMMAND_L,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_LOCK_IN_COMMAND_TAB_FORCE_OFF,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::COMMAND_R,
+      KeyCode::COMMAND_R,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_LOCK_IN_COMMAND_TAB_FORCE_OFF,
+    </autogen>
+
+    <block>
+      <modifier_not>ModifierFlag::IN_COMMAND_TAB</modifier_not>
+
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+        KeyCode::TAB, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+
+        Option::KEYTOKEY_BEFORE_KEYDOWN,
+        KeyCode::VK_LOCK_IN_COMMAND_TAB_FORCE_ON,
+      </autogen>
+
+      <autogen>
+        __PointingRelativeToScroll__
+        MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND | MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION,
+        Option::FLIPSCROLLWHEEL_VERTICAL
+      </autogen>
+      <autogen>
+        __PointingRelativeToScroll__
+        MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND
+      </autogen>
+      <autogen>
+        __PointingRelativeToScroll__
+        MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_OPTION
+      </autogen>
+    </block>
+  </item>
+</root>
