@@ -7,6 +7,10 @@
     <name>Change command+ijkl to arrow keys</name>
     <identifier>private.command_ijkl_to_arrows</identifier>
 
+    <block>
+      <only>JetBrainsApps</only>
+      <autogen>__KeyToKey__ KeyCode::F13, KeyCode::F13, KeyCode::VK_STICKY_MY_RAW_MODE</autogen>
+    </block>
     <autogen>__KeyToKey__ KeyCode::F13, KeyCode::VK_STICKY_MY_RAW_MODE</autogen>
 
     <block>
