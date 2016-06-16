@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Fix broken keyboard</name>
+    <identifier>private.broken_keyboard_14</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::A</autogen>
+  </item>
+
+</root>
