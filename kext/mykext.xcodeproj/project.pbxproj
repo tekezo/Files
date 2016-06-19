@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		34D210DA1D1637AB005AF893 /* mykext.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34D210D91D1637AB005AF893 /* mykext.hpp */; };
 		34D210DC1D1637AB005AF893 /* mykext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34D210DB1D1637AB005AF893 /* mykext.cpp */; };
+		34D210E41D16392F005AF893 /* diagnostic_macros.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34D210E31D16392F005AF893 /* diagnostic_macros.hpp */; };
+		34D210E71D16399F005AF893 /* IOLogWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34D210E51D16399F005AF893 /* IOLogWrapper.cpp */; };
+		34D210E81D16399F005AF893 /* IOLogWrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34D210E61D16399F005AF893 /* IOLogWrapper.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +19,9 @@
 		34D210D91D1637AB005AF893 /* mykext.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mykext.hpp; sourceTree = "<group>"; };
 		34D210DB1D1637AB005AF893 /* mykext.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mykext.cpp; sourceTree = "<group>"; };
 		34D210DD1D1637AB005AF893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34D210E31D16392F005AF893 /* diagnostic_macros.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = diagnostic_macros.hpp; sourceTree = "<group>"; };
+		34D210E51D16399F005AF893 /* IOLogWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOLogWrapper.cpp; sourceTree = "<group>"; };
+		34D210E61D16399F005AF893 /* IOLogWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IOLogWrapper.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,9 +54,12 @@
 		34D210D81D1637AB005AF893 /* mykext */ = {
 			isa = PBXGroup;
 			children = (
-				34D210D91D1637AB005AF893 /* mykext.hpp */,
-				34D210DB1D1637AB005AF893 /* mykext.cpp */,
+				34D210E31D16392F005AF893 /* diagnostic_macros.hpp */,
 				34D210DD1D1637AB005AF893 /* Info.plist */,
+				34D210E51D16399F005AF893 /* IOLogWrapper.cpp */,
+				34D210E61D16399F005AF893 /* IOLogWrapper.hpp */,
+				34D210DB1D1637AB005AF893 /* mykext.cpp */,
+				34D210D91D1637AB005AF893 /* mykext.hpp */,
 			);
 			path = mykext;
 			sourceTree = "<group>";
@@ -62,6 +71,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D210E41D16392F005AF893 /* diagnostic_macros.hpp in Headers */,
+				34D210E81D16399F005AF893 /* IOLogWrapper.hpp in Headers */,
 				34D210DA1D1637AB005AF893 /* mykext.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34D210E71D16399F005AF893 /* IOLogWrapper.cpp in Sources */,
 				34D210DC1D1637AB005AF893 /* mykext.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
