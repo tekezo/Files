@@ -67,11 +67,39 @@ void org_pqrs_driver_mykext::stop(IOService* provider) {
 }
 
 bool org_pqrs_driver_mykext::gIOMatchedNotification_callback(void* target, void* refCon, IOService* newService, IONotifier* notifier) {
-  IOLOG_INFO("gIOMatchedNotification_callback %p\n", newService);
+  IOHIDEventDriver* driver = OSDynamicCast(IOHIDEventDriver, newService);
+  if (!driver) {
+    IOLOG_INFO("gIOMatchedNotification_callback failed to OSDynamicCast\n");
+    return true;
+  }
+
+  if (driver->_keyboardNub) {
+    IOLOG_INFO("gIOMatchedNotification_callback driver->_keyboardNub is not nullptr\n");
+    if (driver->_keyboardNub->_keyboardEventAction) {
+      IOLOG_INFO("_keyboardEventAction is not nullptr\n");
+    }
+  }
+  if (driver->_pointingNub) {
+    IOLOG_INFO("gIOMatchedNotification_callback driver->_pointingNub is not nullptr\n");
+    //    if (driver->_pointingNub->_relativePointerEventAction) {
+    IOLOG_INFO("_relativePointerEventAction is not nullptr\n");
+    //    }
+  }
+  if (driver->_consumerNub) {
+    IOLOG_INFO("gIOMatchedNotification_callback driver->_consumerNub is not nullptr\n");
+  }
+
+  IOLOG_INFO("gIOMatchedNotification_callback driver is valid\n");
   return true;
 }
 
 bool org_pqrs_driver_mykext::gIOTerminatedNotification_callback(void* target, void* refCon, IOService* newService, IONotifier* notifier) {
-  IOLOG_INFO("gIOTerminatedNotification_callback %p\n", newService);
+  IOHIDEventDriver* driver = OSDynamicCast(IOHIDEventDriver, newService);
+  if (!driver) {
+    IOLOG_INFO("gIOTerminatedNotification_callback failed to OSDynamicCast\n");
+    return true;
+  }
+
+  IOLOG_INFO("gIOTerminatedNotification_callback driver is valid\n");
   return true;
 }
