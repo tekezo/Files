@@ -195,9 +195,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0.0d1;
 				INFOPLIST_FILE = mykext/Info.plist;
-				MODULE_NAME = org.pqrs.mykext;
+				MODULE_NAME = org.pqrs.driver.mykext;
 				MODULE_VERSION = 1.0.0d1;
-				PRODUCT_BUNDLE_IDENTIFIER = org.pqrs.mykext;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pqrs.driver.mykext;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = kext;
 			};
