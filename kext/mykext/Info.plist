@@ -20,19 +20,15 @@
     <string>????</string>
     <key>CFBundleVersion</key>
     <string>1</string>
+    <key>IOKitPersonalities</key>
+    <dict/>
     <key>NSHumanReadableCopyright</key>
     <string>Copyright © 2016 Takayama Fumihiko. All rights reserved.</string>
     <key>OSBundleLibraries</key>
     <dict>
       <key>com.apple.iokit.IOHIDFamily</key>
       <string>1.6.0</string>
-      <key>com.apple.kpi.bsd</key>
-      <string>10.0.0</string>
       <key>com.apple.kpi.iokit</key>
-      <string>10.0.0</string>
-      <key>com.apple.kpi.libkern</key>
-      <string>10.0.0</string>
-      <key>com.apple.kpi.mach</key>
       <string>10.0.0</string>
     </dict>
   </dict>
