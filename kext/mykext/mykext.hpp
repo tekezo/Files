@@ -8,8 +8,8 @@ BEGIN_IOKIT_INCLUDE;
 #include <IOKit/hidsystem/IOHIKeyboard.h>
 END_IOKIT_INCLUDE;
 
-class org_pqrs_mykext : public IOService {
-  OSDeclareDefaultStructors(org_pqrs_mykext);
+class org_pqrs_driver_mykext : public IOService {
+  OSDeclareDefaultStructors(org_pqrs_driver_mykext);
 
 public:
   virtual bool init(OSDictionary* dictionary = 0) override;

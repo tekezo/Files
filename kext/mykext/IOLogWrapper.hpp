@@ -2,52 +2,52 @@
 
 #define IOLOG_DEBUG(...)                               \
   {                                                    \
-    if (!org_pqrs_Seil::IOLogWrapper::suppressed()) {  \
+    if (!org_pqrs_mykext::IOLogWrapper::suppressed()) {  \
       if (Config::get_debug()) {                       \
-        IOLog("org.pqrs.Seil --Debug-- " __VA_ARGS__); \
+        IOLog("org.pqrs.mykext --Debug-- " __VA_ARGS__); \
       }                                                \
     }                                                  \
   }
 #define IOLOG_DEBUG_POINTING(...)                      \
   {                                                    \
-    if (!org_pqrs_Seil::IOLogWrapper::suppressed()) {  \
+    if (!org_pqrs_mykext::IOLogWrapper::suppressed()) {  \
       if (Config::get_debug_pointing()) {              \
-        IOLog("org.pqrs.Seil --Debug-- " __VA_ARGS__); \
+        IOLog("org.pqrs.mykext --Debug-- " __VA_ARGS__); \
       }                                                \
     }                                                  \
   }
 #define IOLOG_DEVEL(...)                               \
   {                                                    \
-    if (!org_pqrs_Seil::IOLogWrapper::suppressed()) {  \
+    if (!org_pqrs_mykext::IOLogWrapper::suppressed()) {  \
       if (Config::get_debug_devel()) {                 \
-        IOLog("org.pqrs.Seil --Devel-- " __VA_ARGS__); \
+        IOLog("org.pqrs.mykext --Devel-- " __VA_ARGS__); \
       }                                                \
     }                                                  \
   }
 
 #define IOLOG_ERROR(...)                              \
   {                                                   \
-    if (!org_pqrs_Seil::IOLogWrapper::suppressed()) { \
-      IOLog("org.pqrs.Seil --Error-- " __VA_ARGS__);  \
+    if (!org_pqrs_mykext::IOLogWrapper::suppressed()) { \
+      IOLog("org.pqrs.mykext --Error-- " __VA_ARGS__);  \
     }                                                 \
   }
 
 #define IOLOG_INFO(...)                               \
   {                                                   \
-    if (!org_pqrs_Seil::IOLogWrapper::suppressed()) { \
-      IOLog("org.pqrs.Seil --Info-- " __VA_ARGS__);   \
+    if (!org_pqrs_mykext::IOLogWrapper::suppressed()) { \
+      IOLog("org.pqrs.mykext --Info-- " __VA_ARGS__);   \
     }                                                 \
   }
 
 #define IOLOG_WARN(...)                               \
   {                                                   \
-    if (!org_pqrs_Seil::IOLogWrapper::suppressed()) { \
-      IOLog("org.pqrs.Seil --Warn-- " __VA_ARGS__);   \
+    if (!org_pqrs_mykext::IOLogWrapper::suppressed()) { \
+      IOLog("org.pqrs.mykext --Warn-- " __VA_ARGS__);   \
     }                                                 \
   }
 
 // ------------------------------------------------------------
-namespace org_pqrs_Seil {
+namespace org_pqrs_mykext {
 class IOLogWrapper {
 public:
   static bool suppressed(void) { return suppressed_; }

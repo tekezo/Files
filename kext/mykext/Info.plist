@@ -28,7 +28,13 @@
     <dict>
       <key>com.apple.iokit.IOHIDFamily</key>
       <string>1.6.0</string>
+      <key>com.apple.kpi.bsd</key>
+      <string>10.0.0</string>
       <key>com.apple.kpi.iokit</key>
+      <string>10.0.0</string>
+      <key>com.apple.kpi.libkern</key>
+      <string>10.0.0</string>
+      <key>com.apple.kpi.mach</key>
       <string>10.0.0</string>
     </dict>
   </dict>
