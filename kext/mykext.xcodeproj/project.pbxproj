@@ -1,0 +1,273 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		34BF61C71D1630CD00A25FD4 /* mykext.c in Sources */ = {isa = PBXBuildFile; fileRef = 34BF61C61D1630CD00A25FD4 /* mykext.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		34BF61C31D1630CD00A25FD4 /* mykext.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mykext.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		34BF61C61D1630CD00A25FD4 /* mykext.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mykext.c; sourceTree = "<group>"; };
+		34BF61C81D1630CD00A25FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		34BF61BF1D1630CD00A25FD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		34BF61B91D1630CD00A25FD4 = {
+			isa = PBXGroup;
+			children = (
+				34BF61C51D1630CD00A25FD4 /* mykext */,
+				34BF61C41D1630CD00A25FD4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		34BF61C41D1630CD00A25FD4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34BF61C31D1630CD00A25FD4 /* mykext.kext */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		34BF61C51D1630CD00A25FD4 /* mykext */ = {
+			isa = PBXGroup;
+			children = (
+				34BF61C61D1630CD00A25FD4 /* mykext.c */,
+				34BF61C81D1630CD00A25FD4 /* Info.plist */,
+			);
+			path = mykext;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		34BF61C01D1630CD00A25FD4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		34BF61C21D1630CD00A25FD4 /* mykext */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 34BF61CB1D1630CD00A25FD4 /* Build configuration list for PBXNativeTarget "mykext" */;
+			buildPhases = (
+				34BF61BE1D1630CD00A25FD4 /* Sources */,
+				34BF61BF1D1630CD00A25FD4 /* Frameworks */,
+				34BF61C01D1630CD00A25FD4 /* Headers */,
+				34BF61C11D1630CD00A25FD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mykext;
+			productName = mykext;
+			productReference = 34BF61C31D1630CD00A25FD4 /* mykext.kext */;
+			productType = "com.apple.product-type.kernel-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		34BF61BA1D1630CD00A25FD4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Takayama Fumihiko";
+				TargetAttributes = {
+					34BF61C21D1630CD00A25FD4 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 34BF61BD1D1630CD00A25FD4 /* Build configuration list for PBXProject "mykext" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 34BF61B91D1630CD00A25FD4;
+			productRefGroup = 34BF61C41D1630CD00A25FD4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				34BF61C21D1630CD00A25FD4 /* mykext */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		34BF61C11D1630CD00A25FD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		34BF61BE1D1630CD00A25FD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34BF61C71D1630CD00A25FD4 /* mykext.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		34BF61C91D1630CD00A25FD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		34BF61CA1D1630CD00A25FD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		34BF61CC1D1630CD00A25FD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID";
+				INFOPLIST_FILE = mykext/Info.plist;
+				MODULE_NAME = org.pqrs.mykext;
+				MODULE_START = mykext_start;
+				MODULE_STOP = mykext_stop;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pqrs.mykext;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		34BF61CD1D1630CD00A25FD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Developer ID";
+				INFOPLIST_FILE = mykext/Info.plist;
+				MODULE_NAME = org.pqrs.mykext;
+				MODULE_START = mykext_start;
+				MODULE_STOP = mykext_stop;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pqrs.mykext;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		34BF61BD1D1630CD00A25FD4 /* Build configuration list for PBXProject "mykext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34BF61C91D1630CD00A25FD4 /* Debug */,
+				34BF61CA1D1630CD00A25FD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		34BF61CB1D1630CD00A25FD4 /* Build configuration list for PBXNativeTarget "mykext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				34BF61CC1D1630CD00A25FD4 /* Debug */,
+				34BF61CD1D1630CD00A25FD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 34BF61BA1D1630CD00A25FD4 /* Project object */;
+}
