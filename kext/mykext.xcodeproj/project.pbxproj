@@ -136,50 +136,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		34BF61C91D1630CD00A25FD4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
 		34BF61CA1D1630CD00A25FD4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -217,25 +173,10 @@
 			};
 			name = Release;
 		};
-		34BF61CC1D1630CD00A25FD4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Developer ID";
-				INFOPLIST_FILE = mykext/Info.plist;
-				MODULE_NAME = org.pqrs.mykext;
-				MODULE_START = mykext_start;
-				MODULE_STOP = mykext_stop;
-				MODULE_VERSION = 1.0.0d1;
-				PRODUCT_BUNDLE_IDENTIFIER = org.pqrs.mykext;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = kext;
-			};
-			name = Debug;
-		};
 		34BF61CD1D1630CD00A25FD4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Developer ID";
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = mykext/Info.plist;
 				MODULE_NAME = org.pqrs.mykext;
 				MODULE_START = mykext_start;
@@ -253,7 +194,6 @@
 		34BF61BD1D1630CD00A25FD4 /* Build configuration list for PBXProject "mykext" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				34BF61C91D1630CD00A25FD4 /* Debug */,
 				34BF61CA1D1630CD00A25FD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -262,10 +202,10 @@
 		34BF61CB1D1630CD00A25FD4 /* Build configuration list for PBXNativeTarget "mykext" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				34BF61CC1D1630CD00A25FD4 /* Debug */,
 				34BF61CD1D1630CD00A25FD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
