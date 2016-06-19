@@ -14,6 +14,7 @@ BEGIN_IOKIT_INCLUDE;
 #include "IOHIDKeyboard.h"
 END_IOKIT_INCLUDE;
 #undef protected
+#undef private
 
 class org_pqrs_driver_mykext : public IOService {
   OSDeclareDefaultStructors(org_pqrs_driver_mykext);
