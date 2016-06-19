@@ -17,4 +17,11 @@ public:
   virtual IOService* probe(IOService* provider, SInt32* score) override;
   virtual bool start(IOService* provider) override;
   virtual void stop(IOService* provider) override;
+
+  static bool gIOMatchedNotification_callback(void* target, void* refCon, IOService* newService, IONotifier* notifier);
+  static bool gIOTerminatedNotification_callback(void* target, void* refCon, IOService* newService, IONotifier* notifier);
+
+private:
+  IONotifier* matchedNotifier_;
+  IONotifier* terminatedNotifier_;
 };
