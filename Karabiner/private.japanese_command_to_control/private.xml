@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change command to control.</name>
+    <appendix>+ Change input source when the command key is pressed alone.</appendix>
+    <identifier>private.japanese_command_to_control</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_L,
+      KeyCode::CONTROL_L,
+      KeyCode::JIS_EISUU,
+    </autogen>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::COMMAND_R,
+      KeyCode::CONTROL_R,
+      KeyCode::JIS_KANA,
+    </autogen>
+  </item>
+
+</root>
