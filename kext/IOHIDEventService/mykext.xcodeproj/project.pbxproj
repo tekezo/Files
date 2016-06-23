@@ -12,9 +12,6 @@
 		34D210E41D16392F005AF893 /* diagnostic_macros.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34D210E31D16392F005AF893 /* diagnostic_macros.hpp */; };
 		34D210E71D16399F005AF893 /* IOLogWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34D210E51D16399F005AF893 /* IOLogWrapper.cpp */; };
 		34D210E81D16399F005AF893 /* IOLogWrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34D210E61D16399F005AF893 /* IOLogWrapper.hpp */; };
-		34D210ED1D16783C005AF893 /* IOHIDConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = 34D210EA1D16783C005AF893 /* IOHIDConsumer.h */; };
-		34D210EE1D16783C005AF893 /* IOHIDFamilyPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 34D210EB1D16783C005AF893 /* IOHIDFamilyPrivate.h */; };
-		34D210EF1D16783C005AF893 /* IOHIDKeyboard.h in Headers */ = {isa = PBXBuildFile; fileRef = 34D210EC1D16783C005AF893 /* IOHIDKeyboard.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +22,6 @@
 		34D210E31D16392F005AF893 /* diagnostic_macros.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = diagnostic_macros.hpp; sourceTree = "<group>"; };
 		34D210E51D16399F005AF893 /* IOLogWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOLogWrapper.cpp; sourceTree = "<group>"; };
 		34D210E61D16399F005AF893 /* IOLogWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IOLogWrapper.hpp; sourceTree = "<group>"; };
-		34D210EA1D16783C005AF893 /* IOHIDConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IOHIDConsumer.h; path = include/IOHIDConsumer.h; sourceTree = SOURCE_ROOT; };
-		34D210EB1D16783C005AF893 /* IOHIDFamilyPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IOHIDFamilyPrivate.h; path = include/IOHIDFamilyPrivate.h; sourceTree = SOURCE_ROOT; };
-		34D210EC1D16783C005AF893 /* IOHIDKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IOHIDKeyboard.h; path = include/IOHIDKeyboard.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +54,6 @@
 		34D210D81D1637AB005AF893 /* mykext */ = {
 			isa = PBXGroup;
 			children = (
-				34D210E91D167830005AF893 /* include */,
 				34D210E31D16392F005AF893 /* diagnostic_macros.hpp */,
 				34D210DD1D1637AB005AF893 /* Info.plist */,
 				34D210E51D16399F005AF893 /* IOLogWrapper.cpp */,
@@ -71,16 +64,6 @@
 			path = mykext;
 			sourceTree = "<group>";
 		};
-		34D210E91D167830005AF893 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				34D210EA1D16783C005AF893 /* IOHIDConsumer.h */,
-				34D210EB1D16783C005AF893 /* IOHIDFamilyPrivate.h */,
-				34D210EC1D16783C005AF893 /* IOHIDKeyboard.h */,
-			);
-			name = include;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -88,12 +71,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D210EE1D16783C005AF893 /* IOHIDFamilyPrivate.h in Headers */,
 				34D210E41D16392F005AF893 /* diagnostic_macros.hpp in Headers */,
 				34D210E81D16399F005AF893 /* IOLogWrapper.hpp in Headers */,
-				34D210ED1D16783C005AF893 /* IOHIDConsumer.h in Headers */,
 				34D210DA1D1637AB005AF893 /* mykext.hpp in Headers */,
-				34D210EF1D16783C005AF893 /* IOHIDKeyboard.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
