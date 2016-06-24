@@ -2,6 +2,7 @@ CONFIGURATION = Release
 
 all:
 	xcodebuild -alltargets -configuration $(CONFIGURATION) build
+	bash ../../script/codesign.sh build
 
 clean:
 	rm -rf build
