@@ -3,6 +3,8 @@
 #include "diagnostic_macros.hpp"
 
 BEGIN_IOKIT_INCLUDE;
+#include <IOKit/IOLib.h>
+#include <IOKit/IOService.h>
 #include <IOKit/hid/IOHIDInterface.h>
 END_IOKIT_INCLUDE;
 
@@ -17,5 +19,5 @@ public:
       IOMemoryDescriptor* report,
       IOHIDReportType reportType,
       UInt32 reportID,
-      IOOptionBits options = 0);
+      IOOptionBits options = 0) override;
 };

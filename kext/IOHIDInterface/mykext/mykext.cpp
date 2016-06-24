@@ -23,7 +23,7 @@ void org_pqrs_driver_mykext::handleReport(
     IOMemoryDescriptor* report,
     IOHIDReportType reportType,
     UInt32 reportID,
-    IOOptionBits options = 0) {
+    IOOptionBits options) {
   IOLOG_INFO("handleReport 0x%x\n", reportID);
   super::handleReport(timeStamp, report, reportType, reportID, options);
 }
