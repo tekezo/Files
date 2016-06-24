@@ -33,7 +33,7 @@
         <key>IOMatchCategory</key>
         <string>org_pqrs_driver_mykext</string>
         <key>IOProviderClass</key>
-        <string>IOHIDEventDriver</string>
+        <string>IOHIDInterface</string>
         <key>IOResourceMatch</key>
         <string>IOKit</string>
       </dict>
