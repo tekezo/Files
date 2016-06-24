@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable semicolon key</name>
+    <identifier>private.disable_semicolon</identifier>
+
+    <autogen>
+      __KeyToKey__ KeyCode::SEMICOLON, KeyCode::VK_NONE
+    </autogen>
+  </item>
+
+</root>
