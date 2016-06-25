@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_SHELL_pmset_displaysleepnow</name>
+    <url type="shell">
+      <![CDATA[
+               pmset displaysleepnow
+      ]]>
+    </url>
+  </vkopenurldef>
+
+  <item>
+    <name>Change the eject key to switch off monitor</name>
+    <appendix>Sleep computer when the escape key is held down.</appendix>
+    <identifier>private.escape_to_sleep</identifier>
+
+    <autogen>__KeyToKey__ ConsumerKeyCode::EJECT, KeyCode::VK_OPEN_URL_SHELL_pmset_displaysleepnow</autogen>
+
+    <autogen>
+      __HoldingKeyToKey__
+      KeyCode::ESCAPE, ModifierFlag::NONE,
+
+      <!-- short press -->
+      @begin
+      KeyCode::ESCAPE,
+      @end
+
+      <!-- hold -->
+      @begin
+      KeyCode::VK_OPEN_URL_SHELL_sleep,
+      @end
+
+      Option::NOREPEAT,
+      ThresholdMillisecond::RawValue::2000,
+    </autogen>
+  </item>
+
+</root>
