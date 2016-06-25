@@ -9,6 +9,27 @@ int counter_;
 }
 
 bool org_pqrs_driver_mykext::start(IOService* provider) {
+  {
+    if (IOHIDSystem::_keyboardEvent) {
+      IOLOG_INFO("start _keyboardEvent is not null\n");
+    }
+
+    IOHIDSystem* hidsystem = IOHIDSystem::instance();
+    if (hidsystem) {
+      OSIterator* sources = hidsystem->getProviderIterator();
+      if (sources) {
+        OSObject* source;
+        while ((source = sources->getNextObject())) {
+          if (OSDynamicCast(IOHIKeyboard, source)) {
+            IOLOG_INFO("start IOHIKeyboard is found\n");
+          }
+        }
+
+        sources->release();
+      }
+    }
+  }
+
   bool result = false;
   if (counter_ < 10) {
     result = true;

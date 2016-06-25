@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344148E01D1EC38F00C8ECFC /* IOHIDWorkLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 344148DF1D1EC38F00C8ECFC /* IOHIDWorkLoop.h */; };
+		344148E41D1EC59500C8ECFC /* IOReporter.h in Headers */ = {isa = PBXBuildFile; fileRef = 344148E31D1EC59500C8ECFC /* IOReporter.h */; };
 		34D210DA1D1637AB005AF893 /* mykext.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34D210D91D1637AB005AF893 /* mykext.hpp */; };
 		34D210DC1D1637AB005AF893 /* mykext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34D210DB1D1637AB005AF893 /* mykext.cpp */; };
 		34D210E41D16392F005AF893 /* diagnostic_macros.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34D210E31D16392F005AF893 /* diagnostic_macros.hpp */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		344148DF1D1EC38F00C8ECFC /* IOHIDWorkLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDWorkLoop.h; sourceTree = "<group>"; };
+		344148E31D1EC59500C8ECFC /* IOReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IOReporter.h; path = IOKit/IOReporter.h; sourceTree = "<group>"; };
 		34D210D61D1637AB005AF893 /* mykext.signed.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mykext.signed.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D210D91D1637AB005AF893 /* mykext.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mykext.hpp; sourceTree = "<group>"; };
 		34D210DB1D1637AB005AF893 /* mykext.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mykext.cpp; sourceTree = "<group>"; };
@@ -35,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		344148E21D1EC58F00C8ECFC /* IOKit */ = {
+			isa = PBXGroup;
+			children = (
+				344148E31D1EC59500C8ECFC /* IOReporter.h */,
+			);
+			name = IOKit;
+			sourceTree = "<group>";
+		};
 		34D210CC1D1637AA005AF893 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +66,8 @@
 		34D210D81D1637AB005AF893 /* mykext */ = {
 			isa = PBXGroup;
 			children = (
+				344148E21D1EC58F00C8ECFC /* IOKit */,
+				344148DF1D1EC38F00C8ECFC /* IOHIDWorkLoop.h */,
 				34D210E31D16392F005AF893 /* diagnostic_macros.hpp */,
 				34D210DD1D1637AB005AF893 /* Info.plist */,
 				34D210E51D16399F005AF893 /* IOLogWrapper.cpp */,
@@ -73,7 +87,9 @@
 			files = (
 				34D210E41D16392F005AF893 /* diagnostic_macros.hpp in Headers */,
 				34D210E81D16399F005AF893 /* IOLogWrapper.hpp in Headers */,
+				344148E41D1EC59500C8ECFC /* IOReporter.h in Headers */,
 				34D210DA1D1637AB005AF893 /* mykext.hpp in Headers */,
+				344148E01D1EC38F00C8ECFC /* IOHIDWorkLoop.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +171,6 @@
 		34D210DF1D1637AB005AF893 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -183,9 +198,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "mykext/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "./**";
 			};
 			name = Release;
 		};
