@@ -15,3 +15,6 @@ clean:
 
 xcode:
 	open *.xcodeproj
+
+run:
+	open build/Release/EventTapDev.app

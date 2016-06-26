@@ -11,6 +11,7 @@
 		344148F61D1F760700C8ECFC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 344148F51D1F760700C8ECFC /* main.m */; };
 		344148F81D1F760700C8ECFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 344148F71D1F760700C8ECFC /* Assets.xcassets */; };
 		344148FB1D1F760700C8ECFC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 344148F91D1F760700C8ECFC /* MainMenu.xib */; };
+		344149051D20123D00C8ECFC /* AXProcessTrustedObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 344149041D20123D00C8ECFC /* AXProcessTrustedObserver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,9 @@
 		344148F71D1F760700C8ECFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		344148FA1D1F760700C8ECFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		344148FC1D1F760700C8ECFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		344149031D20123D00C8ECFC /* AXProcessTrustedObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXProcessTrustedObserver.h; path = Classes/AXProcessTrustedObserver.h; sourceTree = "<group>"; };
+		344149041D20123D00C8ECFC /* AXProcessTrustedObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXProcessTrustedObserver.m; path = Classes/AXProcessTrustedObserver.m; sourceTree = "<group>"; };
+		344149071D20133900C8ECFC /* weakify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = weakify.h; path = Classes/weakify.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 		344148F01D1F760700C8ECFC /* EventTapDev */ = {
 			isa = PBXGroup;
 			children = (
+				344149021D20123300C8ECFC /* Classes */,
 				344148F11D1F760700C8ECFC /* AppDelegate.h */,
 				344148F21D1F760700C8ECFC /* AppDelegate.m */,
 				344148F71D1F760700C8ECFC /* Assets.xcassets */,
@@ -69,6 +74,16 @@
 				344148F51D1F760700C8ECFC /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		344149021D20123300C8ECFC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				344149031D20123D00C8ECFC /* AXProcessTrustedObserver.h */,
+				344149041D20123D00C8ECFC /* AXProcessTrustedObserver.m */,
+				344149071D20133900C8ECFC /* weakify.h */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				344148F61D1F760700C8ECFC /* main.m in Sources */,
+				344149051D20123D00C8ECFC /* AXProcessTrustedObserver.m in Sources */,
 				344148F31D1F760700C8ECFC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
