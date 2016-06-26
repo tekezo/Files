@@ -2,6 +2,7 @@ CONFIGURATION = Release
 
 all:
 	xcodebuild -alltargets -configuration $(CONFIGURATION) build
+	../../script/codesign.sh build
 
 clean:
 	rm -rf build
@@ -14,6 +15,3 @@ clean:
 
 xcode:
 	open *.xcodeproj
-
-run:
-	./build/Release/EventTap.app/Contents/MacOS/EventTap
