@@ -8,6 +8,7 @@
 @property(weak) IBOutlet AXProcessTrustedObserver* axProcessTrustedObserver;
 
 @property NSMutableArray* observers;
+@property CFMachPortRef eventTap;
 
 @end
 
@@ -19,15 +20,16 @@
   {
     @weakify(self);
 
-    id observer = [[NSNotificationCenter defaultCenter] addObserverForName:kProcessTrustedNotification
-                                                                    object:nil
-                                                                     queue:[NSOperationQueue mainQueue]
-                                                                usingBlock:^(NSNotification* notification) {
-                                                                  @strongify(self);
-                                                                  if (!self) return;
+    id observer = [[NSNotificationCenter defaultCenter]
+        addObserverForName:kProcessTrustedNotification
+                    object:nil
+                     queue:[NSOperationQueue mainQueue]
+                usingBlock:^(NSNotification* notification) {
+                  @strongify(self);
+                  if (!self) return;
 
-                                                                  NSLog(@"Process Trusted");
-                                                                }];
+                  [self setupEventTap];
+                }];
     if (observer) {
       [self.observers addObject:observer];
     }
@@ -42,6 +44,42 @@
   for (id observer in self.observers) {
     [[NSNotificationCenter defaultCenter] removeObserver:observer];
   }
+}
+
+static CGEventRef eventTapCallBack(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void* refcon) {
+  switch (type) {
+  case kCGEventKeyDown:
+    NSLog(@"kCGEventKeyDown");
+    break;
+  case kCGEventKeyUp:
+    NSLog(@"kCGEventKeyUp");
+  default:
+    NSLog(@"eventTapCallBack: type:%d", type);
+    break;
+  }
+  return event;
+}
+
+- (BOOL)setupEventTap {
+  self.eventTap = CGEventTapCreate(kCGSessionEventTap,
+                                   kCGHeadInsertEventTap,
+                                   kCGEventTapOptionDefault,
+                                   CGEventMaskBit(kCGEventKeyDown) | CGEventMaskBit(kCGEventKeyUp),
+                                   eventTapCallBack,
+                                   NULL);
+  if (!self.eventTap) {
+    NSLog(@"CGEventTapCreate is failed");
+    return NO;
+  }
+
+  CFRunLoopSourceRef runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault, self.eventTap, 0);
+  CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoopSource, kCFRunLoopCommonModes);
+
+  CGEventTapEnable(self.eventTap, 1);
+
+  CFRelease(runLoopSource);
+
+  return YES;
 }
 
 @end
