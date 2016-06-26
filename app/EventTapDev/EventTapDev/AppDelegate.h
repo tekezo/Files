@@ -1,15 +1,6 @@
-//
-//  AppDelegate.h
-//  EventTapDev
-//
-//  Created by Takayama Fumihiko on 6/26/16.
-//
-//
+// -*- Mode: objc -*-
 
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-
-
 @end
-
