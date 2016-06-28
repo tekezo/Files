@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Barcode reader</name>
+    <identifier>private.barcode_reader</identifier>
+
+    <!-- You have to replace the following values with your device's DeviceVendor and DeviceProduct. -->
+    <device_only>
+      DeviceVendor::RawValue::0x04fe,
+      DeviceProduct::RawValue::0x0203,
+    </device_only>
+
+    <elapsedtimesincelastpressed_greaterthan>Millisecond::RawValue::100</elapsedtimesincelastpressed_greaterthan>
+    <autogen>__KeyToKey__ KeyCode::S, KeyCode::VK_NONE</autogen>
+  </item>
+
+</root>

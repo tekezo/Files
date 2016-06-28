@@ -17,4 +17,4 @@ xcode:
 	open *.xcodeproj
 
 run:
-	open build/Release/EventTapDev.app
+	sudo ./build/Release/eventhook
