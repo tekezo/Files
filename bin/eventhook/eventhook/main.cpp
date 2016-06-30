@@ -1,4 +1,5 @@
 #include <CoreGraphics/CoreGraphics.h>
+#include <IOKit/hid/IOHIDDevice.h>
 #include <IOKit/hid/IOHIDManager.h>
 #include <iostream>
 
@@ -7,19 +8,19 @@ public:
   IOHIDManagerObserver(void) {
     manager_ = IOHIDManagerCreate(kCFAllocatorDefault, kIOHIDOptionsTypeNone);
     if (manager_) {
-      IOReturn result = IOHIDManagerOpen(manager_, kIOHIDOptionsTypeNone);
-      IOHIDManagerScheduleWithRunLoop(manager_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
-      IOHIDManagerRegisterDeviceMatchingCallback(manager_, Handle_DeviceMatchingCallback, nullptr);
-
       CFDictionaryRef matchingCFDictRef = hu_CreateDeviceMatchingDictionary(kHIDPage_GenericDesktop, kHIDUsage_GD_Keyboard);
       if (matchingCFDictRef) {
         // set the HID device matching dictionary
         IOHIDManagerSetDeviceMatching(manager_, matchingCFDictRef);
 
+        IOHIDManagerRegisterDeviceMatchingCallback(manager_, Handle_DeviceMatchingCallback, nullptr);
+        IOHIDManagerRegisterDeviceRemovalCallback(manager_, Handle_RemovalCallback, nullptr);
+        IOHIDManagerScheduleWithRunLoop(manager_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+
+        IOReturn result = IOHIDManagerOpen(manager_, kIOHIDOptionsTypeNone);
         if (result == kIOReturnSuccess) {
           std::cout << "opened" << std::endl;
           IOHIDManagerRegisterInputValueCallback(manager_, inputValueCallback, nullptr);
-          IOHIDManagerClose(manager_, kIOHIDOptionsTypeNone);
         }
         CFRelease(matchingCFDictRef);
       }
@@ -33,6 +34,58 @@ public:
       manager_ = nullptr;
     }
   }
+
+  static void Handle_DeviceMatchingCallback(
+      void* inContext,                // context from IOHIDManagerRegisterDeviceMatchingCallback
+      IOReturn inResult,              // the result of the matching operation
+      void* inSender,                 // the IOHIDManagerRef for the new device
+      IOHIDDeviceRef inIOHIDDeviceRef // the new HID device
+      ) {
+    printf("%s(context: %p, result: %d, sender: %p, device: %p).\n",
+           __PRETTY_FUNCTION__, inContext, inResult, inSender, (void*)inIOHIDDeviceRef);
+  } // Handle_DeviceMatchingCallback
+
+  // this will be called when a HID device is removed (unplugged)
+  static void Handle_RemovalCallback(
+      void* inContext,                // context from IOHIDManagerRegisterDeviceMatchingCallback
+      IOReturn inResult,              // the result of the removing operation
+      void* inSender,                 // the IOHIDManagerRef for the device being removed
+      IOHIDDeviceRef inIOHIDDeviceRef // the removed HID device
+      ) {
+    printf("%s(context: %p, result: %d, sender: %p, device: %p).\n",
+           __PRETTY_FUNCTION__, inContext, inResult, inSender, (void*)inIOHIDDeviceRef);
+  } // Handle_RemovalCallback
+
+  // Get a HID device's vendor ID (long)
+  static long IOHIDDevice_GetVendorID(IOHIDDeviceRef inIOHIDDeviceRef) {
+    long result = 0;
+    IOHIDDevice_GetLongProperty(inIOHIDDeviceRef, CFSTR(kIOHIDVendorIDKey), &result);
+    return result;
+  } // IOHIDDevice_GetVendorID
+
+  // Get a HID device's product ID (long)
+  static long IOHIDDevice_GetProductID(IOHIDDeviceRef inIOHIDDeviceRef) {
+    long result = 0;
+    IOHIDDevice_GetLongProperty(inIOHIDDeviceRef, CFSTR(kIOHIDProductIDKey), &result);
+    return result;
+  } // IOHIDDevice_GetProductID
+
+  static Boolean IOHIDDevice_GetLongProperty(
+      IOHIDDeviceRef inDeviceRef, // the HID device reference
+      CFStringRef inKey,          // the kIOHIDDevice key (as a CFString)
+      long* outValue) {
+    Boolean result = FALSE;
+
+    CFTypeRef tCFTypeRef = IOHIDDeviceGetProperty(inDeviceRef, inKey);
+    if (tCFTypeRef) {
+      // if this is a number
+      if (CFNumberGetTypeID() == CFGetTypeID(tCFTypeRef)) {
+        // get its value
+        result = CFNumberGetValue((CFNumberRef)tCFTypeRef, kCFNumberSInt32Type, outValue);
+      }
+    }
+    return result;
+  } // IOHIDDevice_GetLongProperty
 
   static CFMutableDictionaryRef hu_CreateDeviceMatchingDictionary(UInt32 inUsagePage, UInt32 inUsage) {
     // create a dictionary to add usage page/usages to
@@ -77,17 +130,6 @@ private:
       IOHIDValueRef value) {
     std::cout << value << std::endl;
   }
-
-  // this will be called when the HID Manager matches a new (hot plugged) HID device
-  static void Handle_DeviceMatchingCallback(
-      void* inContext,                // context from IOHIDManagerRegisterDeviceMatchingCallback
-      IOReturn inResult,              // the result of the matching operation
-      void* inSender,                 // the IOHIDManagerRef for the new device
-      IOHIDDeviceRef inIOHIDDeviceRef // the new HID device
-      ) {
-    printf("%s(context: %p, result: %d, sender: %p, device: %p).\n",
-           __PRETTY_FUNCTION__, inContext, inResult, inSender, inIOHIDDeviceRef);
-  } // Handle_DeviceMatchingCallback
 
   IOHIDManagerRef manager_;
 };
