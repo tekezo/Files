@@ -55,37 +55,6 @@ public:
            __PRETTY_FUNCTION__, inContext, inResult, inSender, (void*)inIOHIDDeviceRef);
   } // Handle_RemovalCallback
 
-  // Get a HID device's vendor ID (long)
-  static long IOHIDDevice_GetVendorID(IOHIDDeviceRef inIOHIDDeviceRef) {
-    long result = 0;
-    IOHIDDevice_GetLongProperty(inIOHIDDeviceRef, CFSTR(kIOHIDVendorIDKey), &result);
-    return result;
-  } // IOHIDDevice_GetVendorID
-
-  // Get a HID device's product ID (long)
-  static long IOHIDDevice_GetProductID(IOHIDDeviceRef inIOHIDDeviceRef) {
-    long result = 0;
-    IOHIDDevice_GetLongProperty(inIOHIDDeviceRef, CFSTR(kIOHIDProductIDKey), &result);
-    return result;
-  } // IOHIDDevice_GetProductID
-
-  static Boolean IOHIDDevice_GetLongProperty(
-      IOHIDDeviceRef inDeviceRef, // the HID device reference
-      CFStringRef inKey,          // the kIOHIDDevice key (as a CFString)
-      long* outValue) {
-    Boolean result = FALSE;
-
-    CFTypeRef tCFTypeRef = IOHIDDeviceGetProperty(inDeviceRef, inKey);
-    if (tCFTypeRef) {
-      // if this is a number
-      if (CFNumberGetTypeID() == CFGetTypeID(tCFTypeRef)) {
-        // get its value
-        result = CFNumberGetValue((CFNumberRef)tCFTypeRef, kCFNumberSInt32Type, outValue);
-      }
-    }
-    return result;
-  } // IOHIDDevice_GetLongProperty
-
 private:
   CFDictionaryRef createDeviceMatchingDictionary(uint32_t inUsagePage, uint32_t inUsage) {
     auto deviceMatchingDictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
