@@ -8,10 +8,10 @@ public:
   IOHIDManagerObserver(void) {
     manager_ = IOHIDManagerCreate(kCFAllocatorDefault, kIOHIDOptionsTypeNone);
     if (manager_) {
-      CFDictionaryRef matchingCFDictRef = hu_CreateDeviceMatchingDictionary(kHIDPage_GenericDesktop, kHIDUsage_GD_Keyboard);
-      if (matchingCFDictRef) {
-        // set the HID device matching dictionary
-        IOHIDManagerSetDeviceMatching(manager_, matchingCFDictRef);
+      auto deviceMatchingDictionaryArray = createDeviceMatchingDictionaryArray();
+      if (deviceMatchingDictionaryArray) {
+        IOHIDManagerSetDeviceMatchingMultiple(manager_, deviceMatchingDictionaryArray);
+        CFRelease(deviceMatchingDictionaryArray);
 
         IOHIDManagerRegisterDeviceMatchingCallback(manager_, Handle_DeviceMatchingCallback, nullptr);
         IOHIDManagerRegisterDeviceRemovalCallback(manager_, Handle_RemovalCallback, nullptr);
@@ -22,7 +22,6 @@ public:
           std::cout << "opened" << std::endl;
           IOHIDManagerRegisterInputValueCallback(manager_, inputValueCallback, nullptr);
         }
-        CFRelease(matchingCFDictRef);
       }
     }
   }
@@ -87,48 +86,74 @@ public:
     return result;
   } // IOHIDDevice_GetLongProperty
 
-  static CFMutableDictionaryRef hu_CreateDeviceMatchingDictionary(UInt32 inUsagePage, UInt32 inUsage) {
-    // create a dictionary to add usage page/usages to
-    CFMutableDictionaryRef result = CFDictionaryCreateMutable(
-        kCFAllocatorDefault, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
-    if (result) {
-      if (inUsagePage) {
-        // Add key for device type to refine the matching dictionary.
-        CFNumberRef pageCFNumberRef = CFNumberCreate(
-            kCFAllocatorDefault, kCFNumberIntType, &inUsagePage);
-        if (pageCFNumberRef) {
-          CFDictionarySetValue(result, CFSTR(kIOHIDDeviceUsagePageKey), pageCFNumberRef);
-          CFRelease(pageCFNumberRef);
-
-          // note: the usage is only valid if the usage page is also defined
-          if (inUsage) {
-            CFNumberRef usageCFNumberRef = CFNumberCreate(
-                kCFAllocatorDefault, kCFNumberIntType, &inUsage);
-            if (usageCFNumberRef) {
-              CFDictionarySetValue(result,
-                                   CFSTR(kIOHIDDeviceUsageKey), usageCFNumberRef);
-              CFRelease(usageCFNumberRef);
-            } else {
-              fprintf(stderr, "%s: CFNumberCreate(usage) failed.", __PRETTY_FUNCTION__);
-            }
-          }
-        } else {
-          fprintf(stderr, "%s: CFNumberCreate(usage page) failed.", __PRETTY_FUNCTION__);
-        }
-      }
-    } else {
-      fprintf(stderr, "%s: CFDictionaryCreateMutable failed.", __PRETTY_FUNCTION__);
-    }
-    return result;
-  } // hu_CreateDeviceMatchingDictionary
-
 private:
+  CFDictionaryRef createDeviceMatchingDictionary(uint32_t inUsagePage, uint32_t inUsage) {
+    auto deviceMatchingDictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+    if (!deviceMatchingDictionary) {
+      goto finish;
+    }
+
+    // inUsagePage
+    if (!inUsagePage) {
+      goto finish;
+    } else {
+      auto usagePage = CFNumberCreate(kCFAllocatorDefault, kCFNumberIntType, &inUsagePage);
+      if (!usagePage) {
+        goto finish;
+      }
+      CFDictionarySetValue(deviceMatchingDictionary, CFSTR(kIOHIDDeviceUsagePageKey), usagePage);
+      CFRelease(usagePage);
+    }
+
+    // inUsage (The usage is only valid if the usage page is also defined)
+    if (!inUsage) {
+      goto finish;
+    } else {
+      auto usage = CFNumberCreate(kCFAllocatorDefault, kCFNumberIntType, &inUsage);
+      if (!usage) {
+        goto finish;
+      }
+      CFDictionarySetValue(deviceMatchingDictionary, CFSTR(kIOHIDDeviceUsageKey), usage);
+      CFRelease(usage);
+    }
+
+  finish:
+    return deviceMatchingDictionary;
+  }
+
+  CFArrayRef createDeviceMatchingDictionaryArray(void) {
+    auto deviceMatchingDictionaryArray = CFArrayCreateMutable(kCFAllocatorDefault, 0, &kCFTypeArrayCallBacks);
+    if (!deviceMatchingDictionaryArray) {
+      return nullptr;
+    }
+
+    // kHIDUsage_GD_Keyboard
+    {
+      auto deviceMatchingDictionary = createDeviceMatchingDictionary(kHIDPage_GenericDesktop, kHIDUsage_GD_Keyboard);
+      if (deviceMatchingDictionary) {
+        CFArrayAppendValue(deviceMatchingDictionaryArray, deviceMatchingDictionary);
+        CFRelease(deviceMatchingDictionary);
+      }
+    }
+
+    // kHIDUsage_GD_Mouse
+    {
+      auto deviceMatchingDictionary = createDeviceMatchingDictionary(kHIDPage_GenericDesktop, kHIDUsage_GD_Mouse);
+      if (deviceMatchingDictionary) {
+        CFArrayAppendValue(deviceMatchingDictionaryArray, deviceMatchingDictionary);
+        CFRelease(deviceMatchingDictionary);
+      }
+    }
+
+    return deviceMatchingDictionaryArray;
+  }
+
   static void inputValueCallback(
       void* _Nullable context,
       IOReturn result,
       void* _Nullable sender,
       IOHIDValueRef value) {
-    std::cout << value << std::endl;
+    std::cout << "inputValueCallback" << value << std::endl;
   }
 
   IOHIDManagerRef manager_;
