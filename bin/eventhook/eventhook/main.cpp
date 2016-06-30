@@ -1,7 +1,72 @@
 #include <CoreGraphics/CoreGraphics.h>
 #include <IOKit/hid/IOHIDDevice.h>
 #include <IOKit/hid/IOHIDManager.h>
+#include <IOKit/hidsystem/IOHIDShared.h>
+#include <IOKit/hidsystem/ev_keymap.h>
 #include <iostream>
+
+class IOHIDPostEventWrapper final {
+public:
+  IOHIDPostEventWrapper(void) : eventDriver_(IO_OBJECT_NULL) {
+    mach_port_t masterPort = IO_OBJECT_NULL;
+    mach_port_t service = 0;
+    mach_port_t iter = 0;
+    mach_port_t ev = 0;
+    kern_return_t kr;
+
+    // Getting master device port
+    kr = IOMasterPort(bootstrap_port, &masterPort);
+    if (KERN_SUCCESS != kr) {
+      goto finish;
+    }
+
+    kr = IOServiceGetMatchingServices(masterPort, IOServiceMatching(kIOHIDSystemClass), &iter);
+    if (KERN_SUCCESS != kr) {
+      goto finish;
+    }
+
+    service = IOIteratorNext(iter);
+    if (!service) {
+      goto finish;
+    }
+
+    kr = IOServiceOpen(service, mach_task_self(), kIOHIDParamConnectType, &ev);
+    if (KERN_SUCCESS != kr) {
+      goto finish;
+    }
+
+    eventDriver_ = ev;
+
+  finish:
+    if (service) {
+      IOObjectRelease(service);
+    }
+    if (iter) {
+      IOObjectRelease(iter);
+    }
+  }
+
+  void postAuxKey(uint8_t auxKeyCode) {
+    if (!eventDriver_) {
+      return;
+    }
+
+    uint32_t keydownup[] = {NX_KEYDOWN, NX_KEYUP};
+
+    for (size_t i = 0; i < sizeof(keydownup) / sizeof(keydownup[0]); ++i) {
+      NXEventData event;
+      bzero(&event, sizeof(event));
+      event.compound.subType = NX_SUBTYPE_AUX_CONTROL_BUTTONS;
+      event.compound.misc.L[0] = (auxKeyCode << 16 | keydownup[i] << 8);
+
+      IOGPoint loc = {0, 0};
+      IOHIDPostEvent(eventDriver_, NX_SYSDEFINED, loc, &event, kNXEventDataVersion, 0, 0);
+    }
+  }
+
+private:
+  mach_port_t eventDriver_;
+};
 
 class IOHIDManagerObserver final {
 public:
@@ -13,14 +78,14 @@ public:
         IOHIDManagerSetDeviceMatchingMultiple(manager_, deviceMatchingDictionaryArray);
         CFRelease(deviceMatchingDictionaryArray);
 
-        IOHIDManagerRegisterDeviceMatchingCallback(manager_, Handle_DeviceMatchingCallback, nullptr);
-        IOHIDManagerRegisterDeviceRemovalCallback(manager_, Handle_RemovalCallback, nullptr);
+        IOHIDManagerRegisterDeviceMatchingCallback(manager_, Handle_DeviceMatchingCallback, this);
+        IOHIDManagerRegisterDeviceRemovalCallback(manager_, Handle_RemovalCallback, this);
         IOHIDManagerScheduleWithRunLoop(manager_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
 
         IOReturn result = IOHIDManagerOpen(manager_, kIOHIDOptionsTypeNone);
         if (result == kIOReturnSuccess) {
           std::cout << "opened" << std::endl;
-          IOHIDManagerRegisterInputValueCallback(manager_, inputValueCallback, nullptr);
+          IOHIDManagerRegisterInputValueCallback(manager_, inputValueCallback, this);
         }
       }
     }
@@ -122,6 +187,12 @@ private:
       IOReturn result,
       void* _Nullable sender,
       IOHIDValueRef value) {
+    if (!context) {
+      return;
+    }
+
+    IOHIDManagerObserver* self = static_cast<IOHIDManagerObserver*>(context);
+
     if (value) {
       auto element = IOHIDValueGetElement(value);
       auto usagePage = IOHIDElementGetUsagePage(element);
@@ -129,24 +200,29 @@ private:
       auto integerValue = IOHIDValueGetIntegerValue(value);
 
       switch (usagePage) {
-        case kHIDPage_KeyboardOrKeypad:
-          if (usage == kHIDUsage_KeyboardErrorRollOver ||
-              usage == kHIDUsage_KeyboardPOSTFail ||
-              usage == kHIDUsage_KeyboardErrorUndefined ||
-              usage >= kHIDUsage_GD_Reserved) {
-            // do nothing
-          } else {
-            std::cout << "inputValueCallback usagePage:" << usagePage << " usage:" << usage << " value:" << integerValue << std::endl;
+      case kHIDPage_KeyboardOrKeypad:
+        if (usage == kHIDUsage_KeyboardErrorRollOver ||
+            usage == kHIDUsage_KeyboardPOSTFail ||
+            usage == kHIDUsage_KeyboardErrorUndefined ||
+            usage >= kHIDUsage_GD_Reserved) {
+          // do nothing
+        } else {
+          std::cout << "inputValueCallback usagePage:" << usagePage << " usage:" << usage << " value:" << integerValue << std::endl;
+          if (usage == kHIDUsage_KeyboardCapsLock) {
+            std::cout << "post" << std::endl;
+            (self->postEventWrapper_).postAuxKey(NX_KEYTYPE_MUTE);
           }
-          break;
+        }
+        break;
 
-        default:
-          std::cout << "inputValueCallback unknown usagePage:" << usagePage << " usage:" << usage << std::endl;
+      default:
+        std::cout << "inputValueCallback unknown usagePage:" << usagePage << " usage:" << usage << std::endl;
       }
     }
   }
 
   IOHIDManagerRef manager_;
+  IOHIDPostEventWrapper postEventWrapper_;
 };
 
 class EventHook {
