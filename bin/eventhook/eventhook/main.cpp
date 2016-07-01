@@ -180,6 +180,28 @@ private:
     return deviceMatchingDictionaryArray;
   }
 
+  bool getLongProperty(const IOHIDDeviceRef device, const CFStringRef key, long& value) {
+    auto property = IOHIDDeviceGetProperty(device, key);
+    if (property) {
+      if (CFNumberGetTypeID() == CFGetTypeID(property)) {
+        return CFNumberGetValue(static_cast<CFNumberRef>(property), kCFNumberLongType, &value);
+      }
+    }
+    return false;
+  }
+
+  long getVendorID(IOHIDDeviceRef device) {
+    long value = 0;
+    getLongProperty(device, CFSTR(kIOHIDVendorIDKey), value);
+    return value;
+  }
+
+  long getProductID(IOHIDDeviceRef device) {
+    long value = 0;
+    getLongProperty(device, CFSTR(kIOHIDProductIDKey), value);
+    return value;
+  }
+
   static void inputValueCallback(
       void* _Nullable context,
       IOReturn result,
