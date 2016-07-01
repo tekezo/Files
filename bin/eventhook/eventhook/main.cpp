@@ -2,6 +2,7 @@
 #include <IOKit/hid/IOHIDDevice.h>
 #include <IOKit/hid/IOHIDManager.h>
 #include <IOKit/hidsystem/IOHIDShared.h>
+#include <IOKit/hidsystem/IOLLEvent.h>
 #include <IOKit/hidsystem/ev_keymap.h>
 #include <iostream>
 
@@ -62,6 +63,26 @@ public:
       IOGPoint loc = {0, 0};
       IOHIDPostEvent(eventDriver_, NX_SYSDEFINED, loc, &event, kNXEventDataVersion, 0, 0);
     }
+  }
+
+  void postKey(uint8_t keyCode, bool keyDown) {
+    if (!eventDriver_) {
+      return;
+    }
+
+    NXEventData event;
+    bzero(&event, sizeof(event));
+    event.key.repeat = FALSE;
+    event.key.keyCode = keyCode;
+    event.key.charSet = NX_ASCIISET;
+    event.key.charCode = 0;
+    event.key.origCharSet = NX_ASCIISET;
+    event.key.origCharCode = 0;
+
+    UInt32 eventType = keyDown ? NX_KEYDOWN : NX_KEYUP;
+
+    IOGPoint loc = {0, 0};
+    IOHIDPostEvent(eventDriver_, eventType, loc, &event, kNXEventDataVersion, 0, 0);
   }
 
 private:
@@ -207,10 +228,12 @@ private:
             usage >= kHIDUsage_GD_Reserved) {
           // do nothing
         } else {
+          bool keyDown = (integerValue == 1);
           std::cout << "inputValueCallback usagePage:" << usagePage << " usage:" << usage << " value:" << integerValue << std::endl;
           if (usage == kHIDUsage_KeyboardCapsLock) {
             std::cout << "post" << std::endl;
-            (self->postEventWrapper_).postAuxKey(NX_KEYTYPE_MUTE);
+            //(self->postEventWrapper_).postAuxKey(NX_KEYTYPE_MUTE);
+            (self->postEventWrapper_).postKey(0x33, keyDown);
           }
         }
         break;

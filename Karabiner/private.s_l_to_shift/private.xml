@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Simultaneous s and l keys as shift</name>
+    <identifier>private.s_l_to_shift</identifier>
+
+    <autogen>
+      __SimultaneousKeyPresses__
+      __{ KeyCode::S, KeyCode::L, }__
+      __{ KeyCode::SHIFT_L }__
+    </autogen>
+  </item>
+
+</root>
