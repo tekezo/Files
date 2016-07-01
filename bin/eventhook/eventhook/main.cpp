@@ -212,6 +212,9 @@ private:
             //(self->postEventWrapper_).postAuxKey(NX_KEYTYPE_MUTE);
             (self->postEventWrapper_).postKey(0x33, keyDown);
           }
+          if (usage == kHIDUsage_KeyboardEscape) {
+            exit(0);
+          }
         }
         break;
 
