@@ -99,11 +99,9 @@ public:
         IOHIDManagerSetDeviceMatchingMultiple(manager_, deviceMatchingDictionaryArray);
         CFRelease(deviceMatchingDictionaryArray);
 
-        IOHIDManagerRegisterDeviceMatchingCallback(manager_, Handle_DeviceMatchingCallback, this);
-        IOHIDManagerRegisterDeviceRemovalCallback(manager_, Handle_RemovalCallback, this);
         IOHIDManagerScheduleWithRunLoop(manager_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
 
-        IOReturn result = IOHIDManagerOpen(manager_, kIOHIDOptionsTypeNone);
+        IOReturn result = IOHIDManagerOpen(manager_, kIOHIDOptionsTypeSeizeDevice);
         if (result == kIOReturnSuccess) {
           std::cout << "opened" << std::endl;
           IOHIDManagerRegisterInputValueCallback(manager_, inputValueCallback, this);
@@ -119,27 +117,6 @@ public:
       manager_ = nullptr;
     }
   }
-
-  static void Handle_DeviceMatchingCallback(
-      void* inContext,                // context from IOHIDManagerRegisterDeviceMatchingCallback
-      IOReturn inResult,              // the result of the matching operation
-      void* inSender,                 // the IOHIDManagerRef for the new device
-      IOHIDDeviceRef inIOHIDDeviceRef // the new HID device
-      ) {
-    printf("%s(context: %p, result: %d, sender: %p, device: %p).\n",
-           __PRETTY_FUNCTION__, inContext, inResult, inSender, (void*)inIOHIDDeviceRef);
-  } // Handle_DeviceMatchingCallback
-
-  // this will be called when a HID device is removed (unplugged)
-  static void Handle_RemovalCallback(
-      void* inContext,                // context from IOHIDManagerRegisterDeviceMatchingCallback
-      IOReturn inResult,              // the result of the removing operation
-      void* inSender,                 // the IOHIDManagerRef for the device being removed
-      IOHIDDeviceRef inIOHIDDeviceRef // the removed HID device
-      ) {
-    printf("%s(context: %p, result: %d, sender: %p, device: %p).\n",
-           __PRETTY_FUNCTION__, inContext, inResult, inSender, (void*)inIOHIDDeviceRef);
-  } // Handle_RemovalCallback
 
 private:
   CFDictionaryRef createDeviceMatchingDictionary(uint32_t inUsagePage, uint32_t inUsage) {
