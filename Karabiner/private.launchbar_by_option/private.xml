@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Open LaunchBar by option keys.</name>
+    <identifier>private.launchbar_by_option</identifier>
+    <not>LAUNCHBAR</not>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::OPTION_L, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+      KeyCode::OPTION_L, ModifierFlag::OPTION_L | ModifierFlag::NONE,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_OPEN_URL_APP_Launchbar,
+    </autogen>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::OPTION_R, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+      KeyCode::OPTION_R, ModifierFlag::OPTION_R | ModifierFlag::NONE,
+
+      Option::KEYTOKEY_AFTER_KEYUP,
+      KeyCode::VK_OPEN_URL_APP_Launchbar,
+    </autogen>
+  </item>
+
+</root>
