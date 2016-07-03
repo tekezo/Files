@@ -47,22 +47,20 @@ public:
     }
   }
 
-  void postAuxKey(uint8_t auxKeyCode) {
+  void postAuxKey(uint8_t auxKeyCode, bool keyDown) {
     if (!eventDriver_) {
       return;
     }
 
-    uint32_t keydownup[] = {NX_KEYDOWN, NX_KEYUP};
+    UInt32 eventType = keyDown ? NX_KEYDOWN : NX_KEYUP;
 
-    for (size_t i = 0; i < sizeof(keydownup) / sizeof(keydownup[0]); ++i) {
-      NXEventData event;
-      bzero(&event, sizeof(event));
-      event.compound.subType = NX_SUBTYPE_AUX_CONTROL_BUTTONS;
-      event.compound.misc.L[0] = (auxKeyCode << 16 | keydownup[i] << 8);
+    NXEventData event;
+    bzero(&event, sizeof(event));
+    event.compound.subType = NX_SUBTYPE_AUX_CONTROL_BUTTONS;
+    event.compound.misc.L[0] = (auxKeyCode << 16 | eventType);
 
-      IOGPoint loc = {0, 0};
-      IOHIDPostEvent(eventDriver_, NX_SYSDEFINED, loc, &event, kNXEventDataVersion, 0, 0);
-    }
+    IOGPoint loc = {0, 0};
+    IOHIDPostEvent(eventDriver_, NX_SYSDEFINED, loc, &event, kNXEventDataVersion, kIOHIDPostHIDManagerEvent, 0);
   }
 
   void postKey(uint8_t keyCode, bool keyDown) {
@@ -82,7 +80,7 @@ public:
     UInt32 eventType = keyDown ? NX_KEYDOWN : NX_KEYUP;
 
     IOGPoint loc = {0, 0};
-    IOHIDPostEvent(eventDriver_, eventType, loc, &event, kNXEventDataVersion, 0, 0);
+    IOHIDPostEvent(eventDriver_, eventType, loc, &event, kNXEventDataVersion, 0, kIOHIDPostHIDManagerEvent);
   }
 
 private:
@@ -231,8 +229,8 @@ private:
           std::cout << "inputValueCallback usagePage:" << usagePage << " usage:" << usage << " value:" << integerValue << std::endl;
           if (usage == kHIDUsage_KeyboardCapsLock) {
             std::cout << "post" << std::endl;
-            //(self->postEventWrapper_).postAuxKey(NX_KEYTYPE_MUTE);
-            (self->postEventWrapper_).postKey(0x33, keyDown);
+            (self->postEventWrapper_).postAuxKey(NX_KEYTYPE_MUTE, keyDown);
+            //(self->postEventWrapper_).postKey(0x33, keyDown);
           }
           if (usage == kHIDUsage_KeyboardEscape) {
             exit(0);
@@ -297,7 +295,7 @@ private:
 int main(int argc, const char* argv[]) {
   //IOHIDQueueInterfaceHook hook1;
   IOHIDManagerObserver observer;
-  EventHook hook2;
+  //EventHook hook2;
   CFRunLoopRun();
   return 0;
 }
