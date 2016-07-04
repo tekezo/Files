@@ -28,6 +28,7 @@
 		344149111D212A1600C8ECFC /* eventhook */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = eventhook; sourceTree = BUILT_PRODUCTS_DIR; };
 		344149141D212A1600C8ECFC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		34BB0F0A1D22853700372174 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		34E450281D2AB18B00C5AC13 /* event_grabber.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = event_grabber.hpp; path = include/event_grabber.hpp; sourceTree = "<group>"; };
 		34E9F62E1D2134770007AE90 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -64,6 +65,7 @@
 		344149131D212A1600C8ECFC /* eventhook */ = {
 			isa = PBXGroup;
 			children = (
+				34E450271D2AB18400C5AC13 /* include */,
 				344149141D212A1600C8ECFC /* main.cpp */,
 			);
 			path = eventhook;
@@ -76,6 +78,14 @@
 				34E9F62E1D2134770007AE90 /* Carbon.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34E450271D2AB18400C5AC13 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				34E450281D2AB18B00C5AC13 /* event_grabber.hpp */,
+			);
+			name = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
