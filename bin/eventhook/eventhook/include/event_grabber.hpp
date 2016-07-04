@@ -14,6 +14,7 @@ public:
       CFRelease(device_matching_dictionaries);
 
       IOHIDManagerRegisterDeviceMatchingCallback(manager_, device_matching_callback, this);
+      IOHIDManagerRegisterDeviceRemovalCallback(manager_, device_removal_callback, this);
 
       IOHIDManagerScheduleWithRunLoop(manager_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
 
@@ -112,7 +113,27 @@ private:
     auto vendor_id = self->get_vendor_id(device);
     auto product_id = self->get_product_id(device);
 
-    std::cout << "vendor_id:0x" << std::hex << vendor_id << " product_id:0x" << std::hex << product_id << std::endl;
+    std::cout << "matching vendor_id:0x" << std::hex << vendor_id << " product_id:0x" << std::hex << product_id << std::endl;
+  }
+
+  static void device_removal_callback(void* _Nullable context, IOReturn result, void* _Nullable sender, IOHIDDeviceRef _Nonnull device) {
+    if (result != kIOReturnSuccess) {
+      return;
+    }
+
+    auto self = static_cast<event_grabber*>(context);
+    if (!self) {
+      return;
+    }
+
+    if (!device) {
+      return;
+    }
+
+    auto vendor_id = self->get_vendor_id(device);
+    auto product_id = self->get_product_id(device);
+
+    std::cout << "removal vendor_id:0x" << std::hex << vendor_id << " product_id:0x" << std::hex << product_id << std::endl;
   }
 
   bool get_long_property(const IOHIDDeviceRef _Nonnull device, const CFStringRef _Nonnull key, long& value) {
