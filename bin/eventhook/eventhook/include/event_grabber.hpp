@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 class event_grabber final {
 public:
   event_grabber(void) {
@@ -113,7 +115,11 @@ private:
     auto vendor_id = self->get_vendor_id(device);
     auto product_id = self->get_product_id(device);
 
-    std::cout << "matching vendor_id:0x" << std::hex << vendor_id << " product_id:0x" << std::hex << product_id << std::endl;
+    std::cout << "matching vendor_id:0x" << std::hex << vendor_id
+              << " product_id:0x" << std::hex << product_id
+              << " " << self->get_manufacturer(device)
+              << " " << self->get_product(device)
+              << std::endl;
   }
 
   static void device_removal_callback(void* _Nullable context, IOReturn result, void* _Nullable sender, IOHIDDeviceRef _Nonnull device) {
@@ -153,6 +159,29 @@ private:
     return CFNumberGetValue(static_cast<CFNumberRef>(property), kCFNumberLongType, &value);
   }
 
+  bool get_string_property(const IOHIDDeviceRef _Nonnull device, const CFStringRef _Nonnull key, std::string& value) {
+    if (!device) {
+      return false;
+    }
+
+    auto property = IOHIDDeviceGetProperty(device, key);
+    if (!property) {
+      return false;
+    }
+
+    if (CFStringGetTypeID() != CFGetTypeID(property)) {
+      return false;
+    }
+
+    auto p = CFStringGetCStringPtr(static_cast<CFStringRef>(property), kCFStringEncodingUTF8);
+    if (!p) {
+      value.clear();
+    } else {
+      value = p;
+    }
+    return true;
+  }
+
   long get_vendor_id(IOHIDDeviceRef _Nonnull device) {
     long value = 0;
     get_long_property(device, CFSTR(kIOHIDVendorIDKey), value);
@@ -162,6 +191,18 @@ private:
   long get_product_id(IOHIDDeviceRef _Nonnull device) {
     long value = 0;
     get_long_property(device, CFSTR(kIOHIDProductIDKey), value);
+    return value;
+  }
+
+  std::string get_manufacturer(IOHIDDeviceRef _Nonnull device) {
+    std::string value;
+    get_string_property(device, CFSTR(kIOHIDManufacturerKey), value);
+    return value;
+  }
+
+  std::string get_product(IOHIDDeviceRef _Nonnull device) {
+    std::string value;
+    get_string_property(device, CFSTR(kIOHIDProductKey), value);
     return value;
   }
 
