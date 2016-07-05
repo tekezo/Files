@@ -112,11 +112,9 @@ private:
       return;
     }
 
-    auto vendor_id = self->get_vendor_id(device);
-    auto product_id = self->get_product_id(device);
-
-    std::cout << "matching vendor_id:0x" << std::hex << vendor_id
-              << " product_id:0x" << std::hex << product_id
+    std::cout << "matching vendor_id:0x" << std::hex << self->get_vendor_id(device)
+              << " product_id:0x" << std::hex << self->get_product_id(device)
+              << " location_id:0x" << std::hex << self->get_location_id(device)
               << " " << self->get_manufacturer(device)
               << " " << self->get_product(device)
               << std::endl;
@@ -191,6 +189,12 @@ private:
   long get_product_id(IOHIDDeviceRef _Nonnull device) {
     long value = 0;
     get_long_property(device, CFSTR(kIOHIDProductIDKey), value);
+    return value;
+  }
+
+  long get_location_id(IOHIDDeviceRef _Nonnull device) {
+    long value = 0;
+    get_long_property(device, CFSTR(kIOHIDLocationIDKey), value);
     return value;
   }
 
