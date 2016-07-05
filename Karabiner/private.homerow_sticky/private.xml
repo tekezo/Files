@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<root>
+
+  <modifierdef>MY_HOMEROW</modifierdef>
+
+  <item>
+    <name>Homerow sticky</name>
+    <identifier>private.homerow_sticky</identifier>
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::SHIFT_L,
+      KeyCode::SHIFT_L,
+      KeyCode::VK_STICKY_MY_HOMEROW,
+    </autogen>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::D, ModifierFlag::MY_HOMEROW,
+      KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F, ModifierFlag::MY_HOMEROW,
+      KeyCode::BRACKET_LEFT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::G, ModifierFlag::MY_HOMEROW,
+      KeyCode::9, ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::H, ModifierFlag::MY_HOMEROW,
+      KeyCode::0, ModifierFlag::SHIFT_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::J, ModifierFlag::MY_HOMEROW,
+      KeyCode::BRACKET_RIGHT,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::K, ModifierFlag::MY_HOMEROW,
+      KeyCode::BRACKET_RIGHT, ModifierFlag::SHIFT_L,
+    </autogen>
+
+  </item>
+
+</root>
