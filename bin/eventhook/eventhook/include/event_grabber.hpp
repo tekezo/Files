@@ -32,7 +32,7 @@ public:
       return;
     }
 
-    IOHIDDeviceRegisterInputValueCallback(device_, inputValueCallback, this);
+    IOHIDDeviceRegisterInputValueCallback(device_, input_value_callback, this);
 
     grabbed_ = true;
   }
@@ -45,6 +45,8 @@ public:
     if (!grabbed_) {
       return;
     }
+
+    IOHIDDeviceRegisterInputValueCallback(device_, nullptr, nullptr);
 
     IOReturn r = IOHIDDeviceClose(device_, kIOHIDOptionsTypeSeizeDevice);
     if (r != kIOReturnSuccess) {
@@ -126,22 +128,7 @@ private:
     return true;
   }
 
-  static void Handle_ValueAvailableCallback(
-      void* _Nullable inContext,   // context from IOHIDQueueRegisterValueAvailableCallback
-      IOReturn inResult, // the inResult
-      void* _Nonnull inSender     // IOHIDQueueRef of the queue
-      ) {
-    std::cout << "Handle_ValueAvailableCallback" << std::endl;
-
-    do {
-      IOHIDValueRef valueRef = IOHIDQueueCopyNextValueWithTimeout((IOHIDQueueRef)inSender, 0.);
-      if (!valueRef) break;
-      // process the HID value reference
-      CFRelease(valueRef); // Don't forget to release our HID value reference
-    } while (1);
-  } // Handle_ValueAvailableCallback
-
-  static void inputValueCallback(
+  static void input_value_callback(
       void* _Nullable context,
       IOReturn result,
       void* _Nullable sender,
