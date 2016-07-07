@@ -7,13 +7,52 @@
 class hid_device final {
 public:
   hid_device(IOHIDDeviceRef _Nonnull device) : device_(device),
-                                               queue_(nullptr) {
+                                               queue_(nullptr),
+                                               grabbed_(false) {
   }
 
   ~hid_device(void) {
     if (queue_) {
       CFRelease(queue_);
     }
+  }
+
+  void grab(void) {
+    if (!device_) {
+      return;
+    }
+
+    if (grabbed_) {
+      ungrab();
+    }
+
+    IOReturn r = IOHIDDeviceOpen(device_, kIOHIDOptionsTypeSeizeDevice);
+    if (r != kIOReturnSuccess) {
+      std::cerr << "Failed to IOHIDDeviceOpen: " << std::hex << r << std::endl;
+      return;
+    }
+
+    IOHIDDeviceRegisterInputValueCallback(device_, inputValueCallback, this);
+
+    grabbed_ = true;
+  }
+
+  void ungrab(void) {
+    if (!device_) {
+      return;
+    }
+
+    if (!grabbed_) {
+      return;
+    }
+
+    IOReturn r = IOHIDDeviceClose(device_, kIOHIDOptionsTypeSeizeDevice);
+    if (r != kIOReturnSuccess) {
+      std::cerr << "Failed to IOHIDDeviceClose: " << std::hex << r << std::endl;
+      return;
+    }
+
+    grabbed_ = false;
   }
 
   long get_vendor_id(void) {
@@ -85,6 +124,60 @@ private:
       value = p;
     }
     return true;
+  }
+
+  static void Handle_ValueAvailableCallback(
+      void* _Nullable inContext,   // context from IOHIDQueueRegisterValueAvailableCallback
+      IOReturn inResult, // the inResult
+      void* _Nonnull inSender     // IOHIDQueueRef of the queue
+      ) {
+    std::cout << "Handle_ValueAvailableCallback" << std::endl;
+
+    do {
+      IOHIDValueRef valueRef = IOHIDQueueCopyNextValueWithTimeout((IOHIDQueueRef)inSender, 0.);
+      if (!valueRef) break;
+      // process the HID value reference
+      CFRelease(valueRef); // Don't forget to release our HID value reference
+    } while (1);
+  } // Handle_ValueAvailableCallback
+
+  static void inputValueCallback(
+      void* _Nullable context,
+      IOReturn result,
+      void* _Nullable sender,
+      IOHIDValueRef _Nullable value) {
+    if (!context) {
+      return;
+    }
+
+    // auto self = static_cast<event_grabber*>(context);
+
+    if (value) {
+      auto element = IOHIDValueGetElement(value);
+      auto usagePage = IOHIDElementGetUsagePage(element);
+      auto usage = IOHIDElementGetUsage(element);
+      auto integerValue = IOHIDValueGetIntegerValue(value);
+
+      switch (usagePage) {
+      case kHIDPage_KeyboardOrKeypad:
+        if (usage == kHIDUsage_KeyboardErrorRollOver ||
+            usage == kHIDUsage_KeyboardPOSTFail ||
+            usage == kHIDUsage_KeyboardErrorUndefined ||
+            usage >= kHIDUsage_GD_Reserved) {
+          // do nothing
+        } else {
+          // bool keyDown = (integerValue == 1);
+          std::cout << "inputValueCallback usagePage:" << usagePage << " usage:" << usage << " value:" << integerValue << std::endl;
+          if (usage == kHIDUsage_KeyboardEscape) {
+            exit(0);
+          }
+        }
+        break;
+
+      default:
+        std::cout << "inputValueCallback unknown usagePage:" << usagePage << " usage:" << usage << std::endl;
+      }
+    }
   }
 
   IOHIDDeviceRef _Nonnull device_;
@@ -205,6 +298,9 @@ private:
     }
 
     auto dev = std::make_shared<hid_device>(device);
+    if (!dev) {
+      return;
+    }
 
     std::cout << "matching vendor_id:0x" << std::hex << dev->get_vendor_id()
               << " product_id:0x" << std::hex << dev->get_product_id()
@@ -212,6 +308,10 @@ private:
               << " " << dev->get_manufacturer()
               << " " << dev->get_product()
               << std::endl;
+
+    if (dev->get_product() == "HHKB Professional JP") {
+      dev->grab();
+    }
 
     (self->hid_devices_)[device] = dev;
   }
@@ -238,45 +338,6 @@ private:
       if (dev) {
         std::cout << "removal vendor_id:0x" << std::hex << dev->get_vendor_id() << " product_id:0x" << std::hex << dev->get_product_id() << std::endl;
         (self->hid_devices_).erase(it);
-      }
-    }
-  }
-
-  static void inputValueCallback(
-      void* _Nullable context,
-      IOReturn result,
-      void* _Nullable sender,
-      IOHIDValueRef _Nullable value) {
-    if (!context) {
-      return;
-    }
-
-    // auto self = static_cast<event_grabber*>(context);
-
-    if (value) {
-      auto element = IOHIDValueGetElement(value);
-      auto usagePage = IOHIDElementGetUsagePage(element);
-      auto usage = IOHIDElementGetUsage(element);
-      auto integerValue = IOHIDValueGetIntegerValue(value);
-
-      switch (usagePage) {
-      case kHIDPage_KeyboardOrKeypad:
-        if (usage == kHIDUsage_KeyboardErrorRollOver ||
-            usage == kHIDUsage_KeyboardPOSTFail ||
-            usage == kHIDUsage_KeyboardErrorUndefined ||
-            usage >= kHIDUsage_GD_Reserved) {
-          // do nothing
-        } else {
-          // bool keyDown = (integerValue == 1);
-          std::cout << "inputValueCallback usagePage:" << usagePage << " usage:" << usage << " value:" << integerValue << std::endl;
-          if (usage == kHIDUsage_KeyboardEscape) {
-            exit(0);
-          }
-        }
-        break;
-
-      default:
-        std::cout << "inputValueCallback unknown usagePage:" << usagePage << " usage:" << usage << std::endl;
       }
     }
   }
