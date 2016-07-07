@@ -16,7 +16,77 @@ public:
     }
   }
 
+  long get_vendor_id(void) {
+    long value = 0;
+    get_long_property_(CFSTR(kIOHIDVendorIDKey), value);
+    return value;
+  }
+
+  long get_product_id(void) {
+    long value = 0;
+    get_long_property_(CFSTR(kIOHIDProductIDKey), value);
+    return value;
+  }
+
+  long get_location_id(void) {
+    long value = 0;
+    get_long_property_(CFSTR(kIOHIDLocationIDKey), value);
+    return value;
+  }
+
+  std::string get_manufacturer(void) {
+    std::string value;
+    get_string_property_(CFSTR(kIOHIDManufacturerKey), value);
+    return value;
+  }
+
+  std::string get_product(void) {
+    std::string value;
+    get_string_property_(CFSTR(kIOHIDProductKey), value);
+    return value;
+  }
+
 private:
+  bool get_long_property_(const CFStringRef _Nonnull key, long& value) {
+    if (!device_) {
+      return false;
+    }
+
+    auto property = IOHIDDeviceGetProperty(device_, key);
+    if (!property) {
+      return false;
+    }
+
+    if (CFNumberGetTypeID() != CFGetTypeID(property)) {
+      return false;
+    }
+
+    return CFNumberGetValue(static_cast<CFNumberRef>(property), kCFNumberLongType, &value);
+  }
+
+  bool get_string_property_(const CFStringRef _Nonnull key, std::string& value) {
+    if (!device_) {
+      return false;
+    }
+
+    auto property = IOHIDDeviceGetProperty(device_, key);
+    if (!property) {
+      return false;
+    }
+
+    if (CFStringGetTypeID() != CFGetTypeID(property)) {
+      return false;
+    }
+
+    auto p = CFStringGetCStringPtr(static_cast<CFStringRef>(property), kCFStringEncodingUTF8);
+    if (!p) {
+      value.clear();
+    } else {
+      value = p;
+    }
+    return true;
+  }
+
   IOHIDDeviceRef _Nonnull device_;
   IOHIDQueueRef _Nullable queue_;
   bool grabbed_;
@@ -134,14 +204,16 @@ private:
       return;
     }
 
-    std::cout << "matching vendor_id:0x" << std::hex << self->get_vendor_id(device)
-              << " product_id:0x" << std::hex << self->get_product_id(device)
-              << " location_id:0x" << std::hex << self->get_location_id(device)
-              << " " << self->get_manufacturer(device)
-              << " " << self->get_product(device)
+    auto dev = std::make_shared<hid_device>(device);
+
+    std::cout << "matching vendor_id:0x" << std::hex << dev->get_vendor_id()
+              << " product_id:0x" << std::hex << dev->get_product_id()
+              << " location_id:0x" << std::hex << dev->get_location_id()
+              << " " << dev->get_manufacturer()
+              << " " << dev->get_product()
               << std::endl;
 
-    (self->hid_devices_)[device] = std::make_shared<hid_device>(device);
+    (self->hid_devices_)[device] = dev;
   }
 
   static void device_removal_callback(void* _Nullable context, IOReturn result, void* _Nullable sender, IOHIDDeviceRef _Nonnull device) {
@@ -158,82 +230,16 @@ private:
       return;
     }
 
-    auto vendor_id = self->get_vendor_id(device);
-    auto product_id = self->get_product_id(device);
-
-    std::cout << "removal vendor_id:0x" << std::hex << vendor_id << " product_id:0x" << std::hex << product_id << std::endl;
-
-    (self->hid_devices_).erase(device);
-  }
-
-  bool get_long_property(const IOHIDDeviceRef _Nonnull device, const CFStringRef _Nonnull key, long& value) {
-    if (!device) {
-      return false;
-    }
-
-    auto property = IOHIDDeviceGetProperty(device, key);
-    if (!property) {
-      return false;
-    }
-
-    if (CFNumberGetTypeID() != CFGetTypeID(property)) {
-      return false;
-    }
-
-    return CFNumberGetValue(static_cast<CFNumberRef>(property), kCFNumberLongType, &value);
-  }
-
-  bool get_string_property(const IOHIDDeviceRef _Nonnull device, const CFStringRef _Nonnull key, std::string& value) {
-    if (!device) {
-      return false;
-    }
-
-    auto property = IOHIDDeviceGetProperty(device, key);
-    if (!property) {
-      return false;
-    }
-
-    if (CFStringGetTypeID() != CFGetTypeID(property)) {
-      return false;
-    }
-
-    auto p = CFStringGetCStringPtr(static_cast<CFStringRef>(property), kCFStringEncodingUTF8);
-    if (!p) {
-      value.clear();
+    auto it = (self->hid_devices_).find(device);
+    if (it == (self->hid_devices_).end()) {
+      std::cout << "unknown device has been removed" << std::endl;
     } else {
-      value = p;
+      auto dev = it->second;
+      if (dev) {
+        std::cout << "removal vendor_id:0x" << std::hex << dev->get_vendor_id() << " product_id:0x" << std::hex << dev->get_product_id() << std::endl;
+        (self->hid_devices_).erase(it);
+      }
     }
-    return true;
-  }
-
-  long get_vendor_id(IOHIDDeviceRef _Nonnull device) {
-    long value = 0;
-    get_long_property(device, CFSTR(kIOHIDVendorIDKey), value);
-    return value;
-  }
-
-  long get_product_id(IOHIDDeviceRef _Nonnull device) {
-    long value = 0;
-    get_long_property(device, CFSTR(kIOHIDProductIDKey), value);
-    return value;
-  }
-
-  long get_location_id(IOHIDDeviceRef _Nonnull device) {
-    long value = 0;
-    get_long_property(device, CFSTR(kIOHIDLocationIDKey), value);
-    return value;
-  }
-
-  std::string get_manufacturer(IOHIDDeviceRef _Nonnull device) {
-    std::string value;
-    get_string_property(device, CFSTR(kIOHIDManufacturerKey), value);
-    return value;
-  }
-
-  std::string get_product(IOHIDDeviceRef _Nonnull device) {
-    std::string value;
-    get_string_property(device, CFSTR(kIOHIDProductKey), value);
-    return value;
   }
 
   static void inputValueCallback(
