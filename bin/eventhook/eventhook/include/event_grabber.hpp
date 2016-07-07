@@ -33,6 +33,7 @@ public:
     }
 
     IOHIDDeviceRegisterInputValueCallback(device_, input_value_callback, this);
+    IOHIDDeviceScheduleWithRunLoop(device_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
 
     grabbed_ = true;
   }
@@ -46,6 +47,7 @@ public:
       return;
     }
 
+    IOHIDDeviceUnscheduleFromRunLoop(device_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
     IOHIDDeviceRegisterInputValueCallback(device_, nullptr, nullptr);
 
     IOReturn r = IOHIDDeviceClose(device_, kIOHIDOptionsTypeSeizeDevice);
