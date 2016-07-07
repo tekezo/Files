@@ -1,6 +1,26 @@
 #pragma once
 
+#include <memory>
 #include <string>
+#include <unordered_map>
+
+class hid_device final {
+public:
+  hid_device(IOHIDDeviceRef _Nonnull device) : device_(device),
+                                               queue_(nullptr) {
+  }
+
+  ~hid_device(void) {
+    if (queue_) {
+      CFRelease(queue_);
+    }
+  }
+
+private:
+  IOHIDDeviceRef _Nonnull device_;
+  IOHIDQueueRef _Nullable queue_;
+  bool grabbed_;
+};
 
 class event_grabber final {
 public:
@@ -20,11 +40,13 @@ public:
 
       IOHIDManagerScheduleWithRunLoop(manager_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
 
+#if 0
       IOReturn result = IOHIDManagerOpen(manager_, kIOHIDOptionsTypeSeizeDevice);
       if (result == kIOReturnSuccess) {
         std::cout << "opened" << std::endl;
         IOHIDManagerRegisterInputValueCallback(manager_, inputValueCallback, this);
       }
+#endif
     }
   }
 
@@ -118,6 +140,8 @@ private:
               << " " << self->get_manufacturer(device)
               << " " << self->get_product(device)
               << std::endl;
+
+    (self->hid_devices_)[device] = std::make_shared<hid_device>(device);
   }
 
   static void device_removal_callback(void* _Nullable context, IOReturn result, void* _Nullable sender, IOHIDDeviceRef _Nonnull device) {
@@ -138,6 +162,8 @@ private:
     auto product_id = self->get_product_id(device);
 
     std::cout << "removal vendor_id:0x" << std::hex << vendor_id << " product_id:0x" << std::hex << product_id << std::endl;
+
+    (self->hid_devices_).erase(device);
   }
 
   bool get_long_property(const IOHIDDeviceRef _Nonnull device, const CFStringRef _Nonnull key, long& value) {
@@ -250,4 +276,5 @@ private:
   }
 
   IOHIDManagerRef _Nullable manager_;
+  std::unordered_map<IOHIDDeviceRef, std::shared_ptr<hid_device>> hid_devices_;
 };
