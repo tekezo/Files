@@ -22,16 +22,16 @@
     <string>1</string>
     <key>IOKitPersonalities</key>
     <dict>
-      <key>mykext</key>
+      <key>VirtualHIDKeyboard</key>
       <dict>
         <key>CFBundleIdentifier</key>
-        <string>org.pqrs.driver.mykext</string>
+        <string>org.pqrs.driver.VirtualHIDKeyboard</string>
         <key>IOClass</key>
-        <string>org_pqrs_driver_mykext</string>
+        <string>org_pqrs_driver_VirtualHIDKeyboard</string>
         <key>IOKitDebug</key>
         <integer>0</integer>
         <key>IOMatchCategory</key>
-        <string>org_pqrs_driver_mykext</string>
+        <string>org_pqrs_driver_VirtualHIDKeyboard</string>
         <key>IOProviderClass</key>
         <string>IOHIDDevice</string>
         <key>IOResourceMatch</key>

@@ -3,27 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		344148E01D1EC38F00C8ECFC /* IOHIDWorkLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 344148DF1D1EC38F00C8ECFC /* IOHIDWorkLoop.h */; };
-		34D210DA1D1637AB005AF893 /* mykext.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34D210D91D1637AB005AF893 /* mykext.hpp */; };
-		34D210DC1D1637AB005AF893 /* mykext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34D210DB1D1637AB005AF893 /* mykext.cpp */; };
-		34D210E41D16392F005AF893 /* diagnostic_macros.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34D210E31D16392F005AF893 /* diagnostic_macros.hpp */; };
-		34D210E71D16399F005AF893 /* IOLogWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34D210E51D16399F005AF893 /* IOLogWrapper.cpp */; };
-		34D210E81D16399F005AF893 /* IOLogWrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34D210E61D16399F005AF893 /* IOLogWrapper.hpp */; };
+		34E4502C1D2F3EF300C5AC13 /* diagnostic_macros.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34E4502B1D2F3EF300C5AC13 /* diagnostic_macros.hpp */; };
+		34E4502F1D2F41D700C5AC13 /* IOLogWrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34E4502E1D2F41D700C5AC13 /* IOLogWrapper.hpp */; };
+		34E450311D2F41DE00C5AC13 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34E450301D2F41DE00C5AC13 /* Info.plist */; };
+		34E450341D2F41F400C5AC13 /* VirtualHIDKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E450321D2F41F400C5AC13 /* VirtualHIDKeyboard.cpp */; };
+		34E450351D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34E450331D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		344148DF1D1EC38F00C8ECFC /* IOHIDWorkLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHIDWorkLoop.h; sourceTree = "<group>"; };
-		34D210D61D1637AB005AF893 /* VirtualHIDKeyboard. */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualHIDKeyboard.; sourceTree = BUILT_PRODUCTS_DIR; };
-		34D210D91D1637AB005AF893 /* mykext.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mykext.hpp; sourceTree = "<group>"; };
-		34D210DB1D1637AB005AF893 /* mykext.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mykext.cpp; sourceTree = "<group>"; };
-		34D210DD1D1637AB005AF893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34D210E31D16392F005AF893 /* diagnostic_macros.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = diagnostic_macros.hpp; sourceTree = "<group>"; };
-		34D210E51D16399F005AF893 /* IOLogWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOLogWrapper.cpp; sourceTree = "<group>"; };
-		34D210E61D16399F005AF893 /* IOLogWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = IOLogWrapper.hpp; sourceTree = "<group>"; };
+		34D210D61D1637AB005AF893 /* VirtualHIDKeyboard.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualHIDKeyboard.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		34E4502B1D2F3EF300C5AC13 /* diagnostic_macros.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = diagnostic_macros.hpp; path = share/diagnostic_macros.hpp; sourceTree = SOURCE_ROOT; };
+		34E4502E1D2F41D700C5AC13 /* IOLogWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IOLogWrapper.hpp; path = VirtualHIDKeyboard/IOLogWrapper.hpp; sourceTree = SOURCE_ROOT; };
+		34E450301D2F41DE00C5AC13 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = VirtualHIDKeyboard/Info.plist; sourceTree = SOURCE_ROOT; };
+		34E450321D2F41F400C5AC13 /* VirtualHIDKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VirtualHIDKeyboard.cpp; path = VirtualHIDKeyboard/VirtualHIDKeyboard.cpp; sourceTree = SOURCE_ROOT; };
+		34E450331D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VirtualHIDKeyboard.hpp; path = VirtualHIDKeyboard/VirtualHIDKeyboard.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +37,8 @@
 		34D210CC1D1637AA005AF893 = {
 			isa = PBXGroup;
 			children = (
-				34D210D81D1637AB005AF893 /* mykext */,
+				34E4502D1D2F41C300C5AC13 /* share */,
+				34D210D81D1637AB005AF893 /* VirtualHIDKeyboard */,
 				34D210D71D1637AB005AF893 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,23 +46,28 @@
 		34D210D71D1637AB005AF893 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				34D210D61D1637AB005AF893 /* VirtualHIDKeyboard. */,
+				34D210D61D1637AB005AF893 /* VirtualHIDKeyboard.kext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		34D210D81D1637AB005AF893 /* mykext */ = {
+		34D210D81D1637AB005AF893 /* VirtualHIDKeyboard */ = {
 			isa = PBXGroup;
 			children = (
-				344148DF1D1EC38F00C8ECFC /* IOHIDWorkLoop.h */,
-				34D210E31D16392F005AF893 /* diagnostic_macros.hpp */,
-				34D210DD1D1637AB005AF893 /* Info.plist */,
-				34D210E51D16399F005AF893 /* IOLogWrapper.cpp */,
-				34D210E61D16399F005AF893 /* IOLogWrapper.hpp */,
-				34D210DB1D1637AB005AF893 /* mykext.cpp */,
-				34D210D91D1637AB005AF893 /* mykext.hpp */,
+				34E450321D2F41F400C5AC13 /* VirtualHIDKeyboard.cpp */,
+				34E450331D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp */,
+				34E450301D2F41DE00C5AC13 /* Info.plist */,
+				34E4502E1D2F41D700C5AC13 /* IOLogWrapper.hpp */,
 			);
-			path = mykext;
+			path = VirtualHIDKeyboard;
+			sourceTree = "<group>";
+		};
+		34E4502D1D2F41C300C5AC13 /* share */ = {
+			isa = PBXGroup;
+			children = (
+				34E4502B1D2F3EF300C5AC13 /* diagnostic_macros.hpp */,
+			);
+			name = share;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,10 +77,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D210E41D16392F005AF893 /* diagnostic_macros.hpp in Headers */,
-				34D210E81D16399F005AF893 /* IOLogWrapper.hpp in Headers */,
-				34D210DA1D1637AB005AF893 /* mykext.hpp in Headers */,
-				344148E01D1EC38F00C8ECFC /* IOHIDWorkLoop.h in Headers */,
+				34E4502C1D2F3EF300C5AC13 /* diagnostic_macros.hpp in Headers */,
+				34E4502F1D2F41D700C5AC13 /* IOLogWrapper.hpp in Headers */,
+				34E450351D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +100,8 @@
 			dependencies = (
 			);
 			name = VirtualHIDKeyboard;
-			productName = mykext;
-			productReference = 34D210D61D1637AB005AF893 /* VirtualHIDKeyboard. */;
+			productName = VirtualHIDKeyboard;
+			productReference = 34D210D61D1637AB005AF893 /* VirtualHIDKeyboard.kext */;
 			productType = "com.apple.product-type.kernel-extension";
 		};
 /* End PBXNativeTarget section */
@@ -117,7 +119,7 @@
 				};
 			};
 			buildConfigurationList = 34D210D01D1637AA005AF893 /* Build configuration list for PBXProject "VirtualHIDDevice" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -138,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34E450311D2F41DE00C5AC13 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,8 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D210E71D16399F005AF893 /* IOLogWrapper.cpp in Sources */,
-				34D210DC1D1637AB005AF893 /* mykext.cpp in Sources */,
+				34E450341D2F41F400C5AC13 /* VirtualHIDKeyboard.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,11 +188,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "mykext/**";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "./**";
 			};
 			name = Release;
 		};
@@ -199,10 +199,10 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0.0d1;
-				INFOPLIST_FILE = mykext/Info.plist;
-				MODULE_NAME = org.pqrs.driver.mykext;
+				INFOPLIST_FILE = VirtualHIDKeyboard/Info.plist;
+				MODULE_NAME = org.pqrs.driver.VirtualHIDKeyboard;
 				MODULE_VERSION = 1.0.0d1;
-				PRODUCT_BUNDLE_IDENTIFIER = org.pqrs.driver.mykext;
+				PRODUCT_BUNDLE_IDENTIFIER = org.pqrs.driver.VirtualHIDKeyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
