@@ -4,14 +4,14 @@
 #include <string>
 #include <unordered_map>
 
-class hid_device final {
+class human_interface_device final {
 public:
-  hid_device(IOHIDDeviceRef _Nonnull device) : device_(device),
-                                               queue_(nullptr),
-                                               grabbed_(false) {
+  human_interface_device(IOHIDDeviceRef _Nonnull device) : device_(device),
+                                                           queue_(nullptr),
+                                                           grabbed_(false) {
   }
 
-  ~hid_device(void) {
+  ~human_interface_device(void) {
     if (queue_) {
       CFRelease(queue_);
     }
@@ -286,7 +286,7 @@ private:
       return;
     }
 
-    auto dev = std::make_shared<hid_device>(device);
+    auto dev = std::make_shared<human_interface_device>(device);
     if (!dev) {
       return;
     }
@@ -302,7 +302,7 @@ private:
       dev->grab();
     }
 
-    (self->hid_devices_)[device] = dev;
+    (self->hids_)[device] = dev;
   }
 
   static void device_removal_callback(void* _Nullable context, IOReturn result, void* _Nullable sender, IOHIDDeviceRef _Nonnull device) {
@@ -319,18 +319,18 @@ private:
       return;
     }
 
-    auto it = (self->hid_devices_).find(device);
-    if (it == (self->hid_devices_).end()) {
+    auto it = (self->hids_).find(device);
+    if (it == (self->hids_).end()) {
       std::cout << "unknown device has been removed" << std::endl;
     } else {
       auto dev = it->second;
       if (dev) {
         std::cout << "removal vendor_id:0x" << std::hex << dev->get_vendor_id() << " product_id:0x" << std::hex << dev->get_product_id() << std::endl;
-        (self->hid_devices_).erase(it);
+        (self->hids_).erase(it);
       }
     }
   }
 
   IOHIDManagerRef _Nullable manager_;
-  std::unordered_map<IOHIDDeviceRef, std::shared_ptr<hid_device>> hid_devices_;
+  std::unordered_map<IOHIDDeviceRef, std::shared_ptr<human_interface_device>> hids_;
 };
