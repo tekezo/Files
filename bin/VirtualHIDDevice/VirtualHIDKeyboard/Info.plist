@@ -38,8 +38,6 @@
         <string>IOKit</string>
       </dict>
     </dict>
-    <key>NSHumanReadableCopyright</key>
-    <string>Copyright © 2016 Takayama Fumihiko. All rights reserved.</string>
     <key>OSBundleLibraries</key>
     <dict>
       <key>com.apple.iokit.IOHIDFamily</key>
