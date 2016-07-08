@@ -33,7 +33,7 @@
         <key>IOMatchCategory</key>
         <string>org_pqrs_driver_VirtualHIDKeyboard</string>
         <key>IOProviderClass</key>
-        <string>IOHIDDevice</string>
+        <string>IOResources</string>
         <key>IOResourceMatch</key>
         <string>IOKit</string>
       </dict>

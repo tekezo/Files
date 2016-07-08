@@ -3,10 +3,13 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin; export PATH
 
 # --------------------------------------------------
-sudo rm -rf /tmp/mykext
-mkdir /tmp/mykext
+targetdir=/tmp/org.pqrs.driver.VirtualHIDKeyboard
 
-cp -R build/Release/mykext.signed.kext /tmp/mykext/mykext.signed.kext
-sudo chown -R root:wheel /tmp/mykext
+sudo rm -rf $targetdir
+mkdir $targetdir
 
-sudo kextutil -t /tmp/mykext/mykext.signed.kext
+cp -R build/Release/VirtualHIDKeyboard.kext $targetdir/VirtualHIDKeyboard.signed.kext
+bash ../../script/codesign.sh $targetdir
+sudo chown -R root:wheel $targetdir
+
+sudo kextutil -t $targetdir/VirtualHIDKeyboard.signed.kext

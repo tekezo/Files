@@ -6,5 +6,8 @@ OSDefineMetaClassAndStructors(org_pqrs_driver_VirtualHIDKeyboard, IOHIKeyboard);
 
 bool org_pqrs_driver_VirtualHIDKeyboard::start(IOService* provider) {
     bool res = super::start(provider);
+
+    IOLOG_INFO("start\n");
+
     return res;
 }

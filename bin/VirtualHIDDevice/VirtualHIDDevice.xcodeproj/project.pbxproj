@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		34E4502C1D2F3EF300C5AC13 /* diagnostic_macros.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34E4502B1D2F3EF300C5AC13 /* diagnostic_macros.hpp */; };
 		34E4502F1D2F41D700C5AC13 /* IOLogWrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34E4502E1D2F41D700C5AC13 /* IOLogWrapper.hpp */; };
-		34E450311D2F41DE00C5AC13 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34E450301D2F41DE00C5AC13 /* Info.plist */; };
 		34E450341D2F41F400C5AC13 /* VirtualHIDKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E450321D2F41F400C5AC13 /* VirtualHIDKeyboard.cpp */; };
 		34E450351D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34E450331D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp */; };
 /* End PBXBuildFile section */
@@ -140,7 +139,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34E450311D2F41DE00C5AC13 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +197,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				INFOPLIST_FILE = VirtualHIDKeyboard/Info.plist;
 				MODULE_NAME = org.pqrs.driver.VirtualHIDKeyboard;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.pqrs.driver.VirtualHIDKeyboard;
