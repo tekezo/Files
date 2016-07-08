@@ -1,15 +1,8 @@
-#include "diagnostic_macros.hpp"
-
-BEGIN_IOKIT_INCLUDE;
-#include <IOKit/hid/IOHIDDevice.h>
-#include <IOKit/hidsystem/IOHIKeyboard.h>
-END_IOKIT_INCLUDE;
-
-#include "IOLogWrapper.hpp"
 #include "VirtualHIDKeyboard.hpp"
+#include "IOLogWrapper.hpp"
 
-#define super IOHIKeyboard
-OSDefineMetaClassAndStructors(org_pqrs_driver_VirtualHIDKeyboard, IOHIKeyboard);
+#define super IOHIDEventDriver
+OSDefineMetaClassAndStructors(org_pqrs_driver_VirtualHIDKeyboard, IOHIDEventDriver);
 
 bool org_pqrs_driver_VirtualHIDKeyboard::start(IOService* provider) {
   IOLOG_INFO("start\n");
