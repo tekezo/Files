@@ -1,24 +1,38 @@
-#include "VirtualHIDKeyboard.hpp"
+#include "diagnostic_macros.hpp"
+
+BEGIN_IOKIT_INCLUDE;
+#include <IOKit/hid/IOHIDDevice.h>
+#include <IOKit/hidsystem/IOHIKeyboard.h>
+END_IOKIT_INCLUDE;
+
 #include "IOLogWrapper.hpp"
+#include "VirtualHIDKeyboard.hpp"
 
 #define super IOHIKeyboard
 OSDefineMetaClassAndStructors(org_pqrs_driver_VirtualHIDKeyboard, IOHIKeyboard);
 
-bool org_pqrs_driver_VirtualHIDKeyboard::init(OSDictionary* dictionary = 0) {
-  bool res = super::init(dictionary);
-  return res;
-}
-
 bool org_pqrs_driver_VirtualHIDKeyboard::start(IOService* provider) {
-  bool res = super::start(provider);
-
   IOLOG_INFO("start\n");
 
-  AbsoluteTime ts;
-  clock_get_uptime(&ts);
+  // set kIOHIDDeviceUsagePageKey
+  {
+    OSNumber* usagePage = OSNumber::withNumber(kHIDPage_GenericDesktop, 32);
+    if (usagePage) {
+      setProperty(kIOHIDDeviceUsagePageKey, usagePage);
+      usagePage->release();
+    }
+  }
 
-  dispatchKeyboardEvent(0xa0, true, ts);
-  dispatchKeyboardEvent(0xa0, false, ts);
+  // set kIOHIDDeviceUsageKey
+  {
+    OSNumber* usage = OSNumber::withNumber(kHIDUsage_GD_Keyboard, 32);
+    if (usage) {
+      setProperty(kIOHIDDeviceUsageKey, usage);
+      usage->release();
+    }
+  }
 
-  return res;
+  setProperty(kIOHIDVirtualHIDevice, kOSBooleanTrue);
+
+  return super::start(provider);
 }
