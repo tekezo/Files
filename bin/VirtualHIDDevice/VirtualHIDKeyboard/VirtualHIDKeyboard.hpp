@@ -11,5 +11,6 @@ class org_pqrs_driver_VirtualHIDKeyboard : public IOHIKeyboard {
   OSDeclareDefaultStructors(org_pqrs_driver_VirtualHIDKeyboard);
 
 public:
+  virtual bool init(OSDictionary* dictionary = 0) override;
   virtual bool start(IOService* provider) override;
 };
