@@ -9,5 +9,11 @@ bool org_pqrs_driver_VirtualHIDKeyboard::start(IOService* provider) {
 
     IOLOG_INFO("start\n");
 
+    AbsoluteTime ts;
+    clock_get_uptime(&ts);
+
+    dispatchKeyboardEvent(0xa0, true, ts);
+    dispatchKeyboardEvent(0xa0, false, ts);
+
     return res;
 }
