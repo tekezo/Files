@@ -95,3 +95,8 @@ OSString* org_pqrs_driver_VirtualHIDKeyboard::newSerialNumberString() const {
 OSNumber* org_pqrs_driver_VirtualHIDKeyboard::newLocationIDNumber() const {
   return OSNumber::withNumber(static_cast<uint32_t>(0), 32);
 }
+
+IOReturn org_pqrs_driver_VirtualHIDKeyboard::setReport(IOMemoryDescriptor* report, IOHIDReportType reportType, IOOptionBits options) {
+  IOLOG_INFO("setReport\n");
+  return kIOReturnSuccess;
+}

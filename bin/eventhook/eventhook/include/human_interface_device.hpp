@@ -85,6 +85,12 @@ public:
     return value;
   }
 
+  std::string get_serial_number_string(void) {
+    std::string value;
+    get_string_property_(CFSTR(kIOHIDSerialNumberKey), value);
+    return value;
+  }
+
 private:
   bool get_long_property_(const CFStringRef _Nonnull key, long& value) {
     if (!device_) {

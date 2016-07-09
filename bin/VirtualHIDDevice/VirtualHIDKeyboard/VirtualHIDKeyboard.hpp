@@ -18,5 +18,6 @@ public:
   virtual OSNumber* newProductIDNumber() const override;
   virtual IOReturn newReportDescriptor(IOMemoryDescriptor** descriptor) const override;
   virtual OSString* newSerialNumberString() const override;
-  virtual OSNumber * newLocationIDNumber() const override;
+  virtual OSNumber* newLocationIDNumber() const override;
+  virtual IOReturn setReport(IOMemoryDescriptor* report, IOHIDReportType reportType, IOOptionBits options = 0) override;
 };

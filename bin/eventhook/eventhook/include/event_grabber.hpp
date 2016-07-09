@@ -126,6 +126,7 @@ private:
     std::cout << "matching vendor_id:0x" << std::hex << dev->get_vendor_id()
               << " product_id:0x" << std::hex << dev->get_product_id()
               << " location_id:0x" << std::hex << dev->get_location_id()
+              << " serial_number:" << dev->get_serial_number_string()
               << " " << dev->get_manufacturer()
               << " " << dev->get_product()
               << std::endl;
