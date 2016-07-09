@@ -131,7 +131,7 @@ private:
               << "  " << dev->get_manufacturer() << std::endl
               << "  " << dev->get_product() << std::endl;
 
-    if (dev->get_product() == "HHKB Professional JP") {
+    if (dev->get_manufacturer() != "pqrs.org") {
       dev->grab();
     }
 

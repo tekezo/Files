@@ -5,12 +5,15 @@ public:
   human_interface_device(IOHIDDeviceRef _Nonnull device) : device_(device),
                                                            queue_(nullptr),
                                                            grabbed_(false) {
+    CFRetain(device_);
   }
 
   ~human_interface_device(void) {
     if (queue_) {
       CFRelease(queue_);
     }
+
+    CFRelease(device_);
   }
 
   void grab(void) {
@@ -145,28 +148,33 @@ private:
 
     if (value) {
       auto element = IOHIDValueGetElement(value);
-      auto usagePage = IOHIDElementGetUsagePage(element);
-      auto usage = IOHIDElementGetUsage(element);
       auto integerValue = IOHIDValueGetIntegerValue(value);
 
-      switch (usagePage) {
-      case kHIDPage_KeyboardOrKeypad:
-        if (usage == kHIDUsage_KeyboardErrorRollOver ||
-            usage == kHIDUsage_KeyboardPOSTFail ||
-            usage == kHIDUsage_KeyboardErrorUndefined ||
-            usage >= kHIDUsage_GD_Reserved) {
-          // do nothing
-        } else {
-          // bool keyDown = (integerValue == 1);
-          std::cout << "inputValueCallback usagePage:" << usagePage << " usage:" << usage << " value:" << integerValue << std::endl;
-          if (usage == kHIDUsage_KeyboardEscape) {
-            exit(0);
-          }
-        }
-        break;
+      if (element) {
+        auto usagePage = IOHIDElementGetUsagePage(element);
+        auto usage = IOHIDElementGetUsage(element);
 
-      default:
-        std::cout << "inputValueCallback unknown usagePage:" << usagePage << " usage:" << usage << std::endl;
+        std::cout << "type: " << IOHIDElementGetType(element) << std::endl;
+
+        switch (usagePage) {
+        case kHIDPage_KeyboardOrKeypad:
+          if (usage == kHIDUsage_KeyboardErrorRollOver ||
+              usage == kHIDUsage_KeyboardPOSTFail ||
+              usage == kHIDUsage_KeyboardErrorUndefined ||
+              usage >= kHIDUsage_GD_Reserved) {
+            // do nothing
+          } else {
+            // bool keyDown = (integerValue == 1);
+            std::cout << "inputValueCallback usagePage:" << usagePage << " usage:" << usage << " value:" << integerValue << std::endl;
+            if (usage == kHIDUsage_KeyboardEscape) {
+              exit(0);
+            }
+          }
+          break;
+
+        default:
+          std::cout << "inputValueCallback unknown usagePage:" << usagePage << " usage:" << usage << std::endl;
+        }
       }
     }
   }
