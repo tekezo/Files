@@ -23,14 +23,6 @@ public:
       IOHIDManagerRegisterDeviceRemovalCallback(manager_, device_removal_callback, this);
 
       IOHIDManagerScheduleWithRunLoop(manager_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
-
-#if 0
-      IOReturn result = IOHIDManagerOpen(manager_, kIOHIDOptionsTypeSeizeDevice);
-      if (result == kIOReturnSuccess) {
-        std::cout << "opened" << std::endl;
-        IOHIDManagerRegisterInputValueCallback(manager_, inputValueCallback, this);
-      }
-#endif
     }
   }
 
