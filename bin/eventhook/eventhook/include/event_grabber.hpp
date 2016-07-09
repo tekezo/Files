@@ -123,13 +123,13 @@ private:
       return;
     }
 
-    std::cout << "matching vendor_id:0x" << std::hex << dev->get_vendor_id()
-              << " product_id:0x" << std::hex << dev->get_product_id()
-              << " location_id:0x" << std::hex << dev->get_location_id()
-              << " serial_number:" << dev->get_serial_number_string()
-              << " " << dev->get_manufacturer()
-              << " " << dev->get_product()
-              << std::endl;
+    std::cout << "matching: " << std::endl
+              << "  vendor_id:0x" << std::hex << dev->get_vendor_id() << std::endl
+              << "  product_id:0x" << std::hex << dev->get_product_id() << std::endl
+              << "  location_id:0x" << std::hex << dev->get_location_id() << std::endl
+              << "  serial_number:" << dev->get_serial_number_string() << std::endl
+              << "  " << dev->get_manufacturer() << std::endl
+              << "  " << dev->get_product() << std::endl;
 
     if (dev->get_product() == "HHKB Professional JP") {
       dev->grab();
