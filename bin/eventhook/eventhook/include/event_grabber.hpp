@@ -128,8 +128,9 @@ private:
               << "  " << dev->get_manufacturer() << std::endl
               << "  " << dev->get_product() << std::endl;
 
-    if (dev->get_manufacturer() != "pqrs.org") {
-      dev->grab();
+    //if (dev->get_manufacturer() != "pqrs.org") {
+    if (dev->get_manufacturer() == "Apple Inc.") {
+      dev->grab(input_report_callback, self);
     }
 
     (self->hids_)[device] = dev;
@@ -159,6 +160,57 @@ private:
         (self->hids_).erase(it);
       }
     }
+  }
+
+  static void input_report_callback(
+      void* _Nullable context,
+      IOReturn result,
+      void* _Nullable sender,
+      IOHIDReportType type,
+      uint32_t reportID,
+      uint8_t* _Nonnull report,
+      CFIndex reportLength) {
+    if (!context) {
+      return;
+    }
+
+    std::cout << "input_report_callback" << std::endl;
+
+// auto self = static_cast<event_grabber*>(context);
+
+#if 0
+    if (value) {
+      auto element = IOHIDValueGetElement(value);
+      auto integerValue = IOHIDValueGetIntegerValue(value);
+
+      if (element) {
+        auto usagePage = IOHIDElementGetUsagePage(element);
+        auto usage = IOHIDElementGetUsage(element);
+
+        std::cout << "type: " << IOHIDElementGetType(element) << std::endl;
+
+        switch (usagePage) {
+        case kHIDPage_KeyboardOrKeypad:
+          if (usage == kHIDUsage_KeyboardErrorRollOver ||
+              usage == kHIDUsage_KeyboardPOSTFail ||
+              usage == kHIDUsage_KeyboardErrorUndefined ||
+              usage >= kHIDUsage_GD_Reserved) {
+            // do nothing
+          } else {
+            // bool keyDown = (integerValue == 1);
+            std::cout << "inputValueCallback usagePage:" << usagePage << " usage:" << usage << " value:" << integerValue << std::endl;
+            if (usage == kHIDUsage_KeyboardEscape) {
+              exit(0);
+            }
+          }
+          break;
+
+        default:
+          std::cout << "inputValueCallback unknown usagePage:" << usagePage << " usage:" << usage << std::endl;
+        }
+      }
+    }
+#endif
   }
 
   IOHIDManagerRef _Nullable manager_;

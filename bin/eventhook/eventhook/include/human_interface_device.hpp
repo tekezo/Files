@@ -3,6 +3,8 @@
 class human_interface_device final {
 public:
   human_interface_device(IOHIDDeviceRef _Nonnull device) : device_(device),
+                                                           report_buffer_(nullptr),
+                                                           report_buffer_size_(0),
                                                            queue_(nullptr),
                                                            grabbed_(false) {
     CFRetain(device_);
@@ -16,7 +18,7 @@ public:
     CFRelease(device_);
   }
 
-  void grab(void) {
+  void grab(IOHIDReportCallback _Nonnull report_callback, void* _Nullable report_callback_context) {
     if (!device_) {
       return;
     }
@@ -31,7 +33,12 @@ public:
       return;
     }
 
-    IOHIDDeviceRegisterInputValueCallback(device_, input_value_callback, this);
+    report_buffer_size_ = get_max_input_report_size();
+    if (report_buffer_size_ > 0) {
+      report_buffer_ = new uint8_t[report_buffer_size_];
+      IOHIDDeviceRegisterInputReportCallback(device_, report_buffer_, report_buffer_size_, report_callback, report_callback_context);
+    }
+
     IOHIDDeviceScheduleWithRunLoop(device_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
 
     grabbed_ = true;
@@ -47,7 +54,7 @@ public:
     }
 
     IOHIDDeviceUnscheduleFromRunLoop(device_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
-    IOHIDDeviceRegisterInputValueCallback(device_, nullptr, nullptr);
+    IOHIDDeviceRegisterInputReportCallback(device_, nullptr, 0, nullptr, nullptr);
 
     IOReturn r = IOHIDDeviceClose(device_, kIOHIDOptionsTypeSeizeDevice);
     if (r != kIOReturnSuccess) {
@@ -55,7 +62,18 @@ public:
       return;
     }
 
+    if (report_buffer_) {
+      delete[] report_buffer_;
+      report_buffer_size_ = 0;
+    }
+
     grabbed_ = false;
+  }
+
+  long get_max_input_report_size(void) {
+    long value = 0;
+    get_long_property_(CFSTR(kIOHIDMaxInputReportSizeKey), value);
+    return value;
   }
 
   long get_vendor_id(void) {
@@ -92,6 +110,13 @@ public:
     std::string value;
     get_string_property_(CFSTR(kIOHIDSerialNumberKey), value);
     return value;
+  }
+
+  IOReturn set_report(IOHIDReportType reportType,
+                      CFIndex reportID,
+                      const uint8_t* _Nonnull report,
+                      CFIndex reportLength) {
+    return IOHIDDeviceSetReport(device_, reportType, reportID, report, reportLength);
   }
 
 private:
@@ -135,51 +160,10 @@ private:
     return true;
   }
 
-  static void input_value_callback(
-      void* _Nullable context,
-      IOReturn result,
-      void* _Nullable sender,
-      IOHIDValueRef _Nullable value) {
-    if (!context) {
-      return;
-    }
-
-    // auto self = static_cast<event_grabber*>(context);
-
-    if (value) {
-      auto element = IOHIDValueGetElement(value);
-      auto integerValue = IOHIDValueGetIntegerValue(value);
-
-      if (element) {
-        auto usagePage = IOHIDElementGetUsagePage(element);
-        auto usage = IOHIDElementGetUsage(element);
-
-        std::cout << "type: " << IOHIDElementGetType(element) << std::endl;
-
-        switch (usagePage) {
-        case kHIDPage_KeyboardOrKeypad:
-          if (usage == kHIDUsage_KeyboardErrorRollOver ||
-              usage == kHIDUsage_KeyboardPOSTFail ||
-              usage == kHIDUsage_KeyboardErrorUndefined ||
-              usage >= kHIDUsage_GD_Reserved) {
-            // do nothing
-          } else {
-            // bool keyDown = (integerValue == 1);
-            std::cout << "inputValueCallback usagePage:" << usagePage << " usage:" << usage << " value:" << integerValue << std::endl;
-            if (usage == kHIDUsage_KeyboardEscape) {
-              exit(0);
-            }
-          }
-          break;
-
-        default:
-          std::cout << "inputValueCallback unknown usagePage:" << usagePage << " usage:" << usage << std::endl;
-        }
-      }
-    }
-  }
-
   IOHIDDeviceRef _Nonnull device_;
+  uint8_t* _Nullable report_buffer_;
+  CFIndex report_buffer_size_;
   IOHIDQueueRef _Nullable queue_;
+
   bool grabbed_;
 };
