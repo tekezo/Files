@@ -115,6 +115,11 @@ private:
       return;
     }
 
+    {
+      CFArrayRef elementCFArrayRef = IOHIDDeviceCopyMatchingElements(device, nullptr, kIOHIDOptionsTypeNone);
+      std::cout << "elementCFArrayRef count: " << CFArrayGetCount(elementCFArrayRef) << std::endl;
+    }
+
     std::cout << "matching: " << std::endl
               << "  vendor_id:0x" << std::hex << dev->get_vendor_id() << std::endl
               << "  product_id:0x" << std::hex << dev->get_product_id() << std::endl
