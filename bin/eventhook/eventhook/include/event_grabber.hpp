@@ -115,11 +115,6 @@ private:
       return;
     }
 
-    {
-      CFArrayRef elementCFArrayRef = IOHIDDeviceCopyMatchingElements(device, nullptr, kIOHIDOptionsTypeNone);
-      std::cout << "elementCFArrayRef count: " << CFArrayGetCount(elementCFArrayRef) << std::endl;
-    }
-
     std::cout << "matching: " << std::endl
               << "  vendor_id:0x" << std::hex << dev->get_vendor_id() << std::endl
               << "  product_id:0x" << std::hex << dev->get_product_id() << std::endl
@@ -127,6 +122,11 @@ private:
               << "  serial_number:" << dev->get_serial_number_string() << std::endl
               << "  " << dev->get_manufacturer() << std::endl
               << "  " << dev->get_product() << std::endl;
+
+    if (dev->get_serial_number_string() == "org.pqrs.driver.VirtualHIDKeyboard") {
+      dev->open();
+      self->virtual_keyboard_ = dev;
+    }
 
     //if (dev->get_manufacturer() != "pqrs.org") {
     if (dev->get_manufacturer() == "Apple Inc.") {
@@ -175,8 +175,18 @@ private:
     }
 
     std::cout << "input_report_callback" << std::endl;
+    std::cout << "  type:" << type << std::endl;
+    std::cout << "  reportID:" << reportID << std::endl;
+    std::cout << "  reportLength:" << reportLength << std::endl;
 
-// auto self = static_cast<event_grabber*>(context);
+    if (result == kIOReturnSuccess) {
+      auto self = static_cast<event_grabber*>(context);
+
+      if (auto vk = self->virtual_keyboard_.lock()) {
+        IOReturn r = vk->set_report(type, reportID, report, reportLength);
+        std::cout << "IOReturn " << r << std::endl;
+      }
+    }
 
 #if 0
     if (value) {
@@ -215,4 +225,5 @@ private:
 
   IOHIDManagerRef _Nullable manager_;
   std::unordered_map<IOHIDDeviceRef, std::shared_ptr<human_interface_device>> hids_;
+  std::weak_ptr<human_interface_device> virtual_keyboard_;
 };

@@ -11,11 +11,25 @@ public:
   }
 
   ~human_interface_device(void) {
+    if (grabbed_) {
+      ungrab();
+    } else {
+      close();
+    }
+
     if (queue_) {
       CFRelease(queue_);
     }
 
     CFRelease(device_);
+  }
+
+  IOReturn open(IOOptionBits options = kIOHIDOptionsTypeNone) {
+    return IOHIDDeviceOpen(device_, options);
+  }
+
+  IOReturn close(void) {
+    return IOHIDDeviceClose(device_, kIOHIDOptionsTypeNone);
   }
 
   void grab(IOHIDReportCallback _Nonnull report_callback, void* _Nullable report_callback_context) {
@@ -27,7 +41,7 @@ public:
       ungrab();
     }
 
-    IOReturn r = IOHIDDeviceOpen(device_, kIOHIDOptionsTypeSeizeDevice);
+    IOReturn r = open(kIOHIDOptionsTypeSeizeDevice);
     if (r != kIOReturnSuccess) {
       std::cerr << "Failed to IOHIDDeviceOpen: " << std::hex << r << std::endl;
       return;
@@ -56,7 +70,7 @@ public:
     IOHIDDeviceUnscheduleFromRunLoop(device_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
     IOHIDDeviceRegisterInputReportCallback(device_, nullptr, 0, nullptr, nullptr);
 
-    IOReturn r = IOHIDDeviceClose(device_, kIOHIDOptionsTypeSeizeDevice);
+    IOReturn r = close();
     if (r != kIOReturnSuccess) {
       std::cerr << "Failed to IOHIDDeviceClose: " << std::hex << r << std::endl;
       return;
