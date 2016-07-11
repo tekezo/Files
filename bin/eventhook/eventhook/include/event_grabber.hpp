@@ -177,7 +177,9 @@ private:
     std::cout << "input_report_callback" << std::endl;
     std::cout << "  type:" << type << std::endl;
     std::cout << "  reportID:" << reportID << std::endl;
-    std::cout << "  reportLength:" << reportLength << std::endl;
+    for (CFIndex i = 0; i < reportLength; ++i) {
+      std::cout << "  report[" << i << "]:0x" << std::hex << static_cast<int>(report[i]) << std::endl;
+    }
 
     if (result == kIOReturnSuccess) {
       auto self = static_cast<event_grabber*>(context);
