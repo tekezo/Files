@@ -16,6 +16,8 @@ public:
   virtual OSString* newProductString() const override;
   virtual OSNumber* newVendorIDNumber() const override;
   virtual OSNumber* newProductIDNumber() const override;
+  virtual OSNumber* newPrimaryUsageNumber() const override;
+  virtual OSNumber* newPrimaryUsagePageNumber() const override;
   virtual IOReturn newReportDescriptor(IOMemoryDescriptor** descriptor) const override;
   virtual OSString* newSerialNumberString() const override;
   virtual OSNumber* newLocationIDNumber() const override;

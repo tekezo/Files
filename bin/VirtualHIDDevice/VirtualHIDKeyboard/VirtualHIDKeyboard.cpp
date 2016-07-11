@@ -1,5 +1,4 @@
 #include "VirtualHIDKeyboard.hpp"
-#include "IOLogWrapper.hpp"
 
 #define super IOHIDDevice
 OSDefineMetaClassAndStructors(org_pqrs_driver_VirtualHIDKeyboard, IOHIDDevice);
@@ -42,8 +41,6 @@ uint8_t reportDescriptor_[] = {
 }
 
 bool org_pqrs_driver_VirtualHIDKeyboard::start(IOService* provider) {
-  IOLOG_INFO("start\n");
-
   // set kIOHIDDeviceUsagePageKey
   {
     OSNumber* usagePage = OSNumber::withNumber(kHIDPage_GenericDesktop, 32);
@@ -61,6 +58,9 @@ bool org_pqrs_driver_VirtualHIDKeyboard::start(IOService* provider) {
       usage->release();
     }
   }
+
+  // http://lists.apple.com/archives/usb/2005/Mar/msg00122.html
+  setProperty("HIDDefaultBehavior", "Keyboard");
 
   setProperty(kIOHIDVirtualHIDevice, kOSBooleanTrue);
 
@@ -83,6 +83,14 @@ OSNumber* org_pqrs_driver_VirtualHIDKeyboard::newProductIDNumber() const {
   return OSNumber::withNumber(static_cast<uint32_t>(0), 32);
 }
 
+OSNumber* org_pqrs_driver_VirtualHIDKeyboard::newPrimaryUsageNumber() const {
+  return OSNumber::withNumber(static_cast<uint32_t>(kHIDPage_GenericDesktop), 32);
+}
+
+OSNumber* org_pqrs_driver_VirtualHIDKeyboard::newPrimaryUsagePageNumber() const {
+  return OSNumber::withNumber(static_cast<uint32_t>(kHIDUsage_GD_Keyboard), 32);
+}
+
 IOReturn org_pqrs_driver_VirtualHIDKeyboard::newReportDescriptor(IOMemoryDescriptor** descriptor) const {
   *descriptor = IOBufferMemoryDescriptor::withBytes(reportDescriptor_, sizeof(reportDescriptor_), kIODirectionNone);
   return kIOReturnSuccess;
@@ -97,6 +105,6 @@ OSNumber* org_pqrs_driver_VirtualHIDKeyboard::newLocationIDNumber() const {
 }
 
 IOReturn org_pqrs_driver_VirtualHIDKeyboard::setReport(IOMemoryDescriptor* report, IOHIDReportType reportType, IOOptionBits options) {
-  IOLOG_INFO("setReport\n");
-  return kIOReturnSuccess;
+  IOReturn r = handleReport(report, reportType, options);
+  return r;
 }

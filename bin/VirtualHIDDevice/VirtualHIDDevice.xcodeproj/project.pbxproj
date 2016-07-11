@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		34E4502C1D2F3EF300C5AC13 /* diagnostic_macros.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34E4502B1D2F3EF300C5AC13 /* diagnostic_macros.hpp */; };
-		34E4502F1D2F41D700C5AC13 /* IOLogWrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34E4502E1D2F41D700C5AC13 /* IOLogWrapper.hpp */; };
 		34E450341D2F41F400C5AC13 /* VirtualHIDKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E450321D2F41F400C5AC13 /* VirtualHIDKeyboard.cpp */; };
 		34E450351D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 34E450331D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp */; };
 /* End PBXBuildFile section */
@@ -17,7 +16,6 @@
 		3491159E1D31263400FE93B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34D210D61D1637AB005AF893 /* VirtualHIDKeyboard.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualHIDKeyboard.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		34E4502B1D2F3EF300C5AC13 /* diagnostic_macros.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = diagnostic_macros.hpp; path = share/diagnostic_macros.hpp; sourceTree = SOURCE_ROOT; };
-		34E4502E1D2F41D700C5AC13 /* IOLogWrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IOLogWrapper.hpp; path = VirtualHIDKeyboard/IOLogWrapper.hpp; sourceTree = SOURCE_ROOT; };
 		34E450321D2F41F400C5AC13 /* VirtualHIDKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VirtualHIDKeyboard.cpp; path = VirtualHIDKeyboard/VirtualHIDKeyboard.cpp; sourceTree = SOURCE_ROOT; };
 		34E450331D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VirtualHIDKeyboard.hpp; path = VirtualHIDKeyboard/VirtualHIDKeyboard.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -56,7 +54,6 @@
 				3491159E1D31263400FE93B7 /* Info.plist */,
 				34E450321D2F41F400C5AC13 /* VirtualHIDKeyboard.cpp */,
 				34E450331D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp */,
-				34E4502E1D2F41D700C5AC13 /* IOLogWrapper.hpp */,
 			);
 			path = VirtualHIDKeyboard;
 			sourceTree = "<group>";
@@ -77,7 +74,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				34E4502C1D2F3EF300C5AC13 /* diagnostic_macros.hpp in Headers */,
-				34E4502F1D2F41D700C5AC13 /* IOLogWrapper.hpp in Headers */,
 				34E450351D2F41F400C5AC13 /* VirtualHIDKeyboard.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
