@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Play music by middle button</name>
+    <identifier>private.middle_click_to_play</identifier>
+    <autogen>__KeyToKey__ PointingButton::MIDDLE, ConsumerKeyCode::MUSIC_PLAY</autogen>
+  </item>
+
+  <item>
+    <name>tilt to switch workspace</name>
+    <identifier>private.tilt_to_switch_workspace</identifier>
+
+    <device_only>DeviceVendor::LOGITECH, DeviceProduct::ANY</device_only>
+
+    <autogen>
+      __ScrollWheelToKey__
+      ScrollWheel::LEFT,
+      KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+    </autogen>
+    <autogen>
+      __ScrollWheelToKey__
+      ScrollWheel::RIGHT,
+      KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+    </autogen>
+  </item>
+
+</root>
