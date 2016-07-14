@@ -12,4 +12,33 @@
     </autogen>
   </item>
 
+  <item>
+    <name>Use S and L as shift</name>
+    <identifier>private.s_l_to_shift2</identifier>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::L,
+      KeyCode::SHIFT_L, ModifierFlag::L,
+      KeyCode::L,
+    </autogen>
+
+    <block>
+      <modifier_only>ModifierFlag::L</modifier_only>
+      <autogen>__BlockUntilKeyUp__ KeyCode::L</autogen>
+    </block>
+
+    <autogen>
+      __KeyOverlaidModifier__
+      KeyCode::S,
+      KeyCode::SHIFT_L, ModifierFlag::S,
+      KeyCode::S,
+    </autogen>
+
+    <block>
+      <modifier_only>ModifierFlag::S</modifier_only>
+      <autogen>__BlockUntilKeyUp__ KeyCode::S</autogen>
+    </block>
+  </item>
+
 </root>
