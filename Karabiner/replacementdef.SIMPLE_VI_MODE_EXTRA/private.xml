@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>SIMPLE_VI_MODE_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+               <!-- send command-tab by m -->
+               <autogen>
+                 __KeyToKey__
+                 KeyCode::M,
+                 KeyCode::TAB, ModifierFlag::COMMAND_L,
+                 <!-- release command key to commit command-tab -->
+                 KeyCode::COMMAND_L,
+               </autogen>
+               ]]>
+    </replacementvalue>
+  </replacementdef>
+
+</root>

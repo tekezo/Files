@@ -61,7 +61,7 @@ static CGEventRef eventTapCallBack(CGEventTapProxy proxy, CGEventType type, CGEv
 }
 
 - (BOOL)setupEventTap {
-  self.eventTap = CGEventTapCreate(kCGSessionEventTap,
+  self.eventTap = CGEventTapCreate(kCGHIDEventTap,
                                    kCGHeadInsertEventTap,
                                    kCGEventTapOptionDefault,
                                    CGEventMaskBit(kCGEventKeyDown) | CGEventMaskBit(kCGEventKeyUp),
