@@ -3,7 +3,7 @@
 
   <item>
     <name>Disable T key.</name>
-    <appendix>(Change backquote to T key)</appendix>
+    <appendix>(+ Change backquote to T key)</appendix>
     <identifier>private.disable_t</identifier>
 
     <autogen>__KeyToKey__ KeyCode::T, KeyCode::VK_NONE</autogen>
