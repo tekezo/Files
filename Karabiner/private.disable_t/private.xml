@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable T key.</name>
+    <appendix>(Change backquote to T key)</appendix>
+    <identifier>private.disable_t</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::T, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::BACKQUOTE, KeyCode::T</autogen>
+  </item>
+
+</root>
