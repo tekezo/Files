@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change command-up,down arrow to option-up,down</name>
+    <identifier>private.command_up_to_option_up</identifier>
+
+    <modifier_not>
+      ModifierFlag::CONTROL_L,
+      ModifierFlag::CONTROL_R,
+      ModifierFlag::FN,
+      ModifierFlag::OPTION_L,
+      ModifierFlag::OPTION_R,
+    </modifier_not>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_UP, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::CURSOR_UP, ModifierFlag::OPTION_L,
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::CURSOR_DOWN, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::CURSOR_DOWN, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+
+</root>
