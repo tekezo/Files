@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>SIMPLE_VI_MODE_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+               <autogen>
+                 __KeyToKey__
+                 KeyCode::V,
+                 KeyCode::SHIFT_L,
+               </autogen>
+               ]]>
+    </replacementvalue>
+  </replacementdef>
+
+</root>
