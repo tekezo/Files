@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change space to control</name>
+    <appendix>+ Change space to alt in VM,RDC</appendix>
+    <appendix>+ Change right option + space to space (for key repeat)</appendix>
+    <identifier>private.space_to_control</identifier>
+
+    <!-- right option + space to space -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::SPACE, ModifierFlag::OPTION_R,
+      KeyCode::SPACE,
+    </autogen>
+
+    <!-- VM, RDC -->
+    <block>
+      <only>
+        VIRTUALMACHINE,
+        REMOTEDESKTOPCONNECTION,
+        VNC,
+        TEAMVIEWER,
+        CITRIX_XEN_APP_VIEWER,
+        NoMachine,
+      </only>
+
+      <autogen>__KeyOverlaidModifier__ KeyCode::SPACE, KeyCode::OPTION_L, KeyCode::SPACE</autogen>
+    </block>
+
+    <!-- other apps -->
+    <autogen>__KeyOverlaidModifier__ KeyCode::SPACE, KeyCode::CONTROL_L, KeyCode::SPACE</autogen>
+  </item>
+
+</root>
