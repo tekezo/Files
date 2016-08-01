@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Fix broken keyboard</name>
+    <identifier>private.broken_keyboard_15</identifier>
+
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::VK_NONE</autogen>
+    <autogen>__KeyToKey__ KeyCode::OPTION_R, KeyCode::L</autogen>
+  </item>
+
+</root>
