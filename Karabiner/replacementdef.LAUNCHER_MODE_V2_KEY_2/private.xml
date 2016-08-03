@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+
+  <replacementdef>
+    <replacementname>LAUNCHER_MODE_V2_KEY</replacementname>
+    <replacementvalue>KeyCode::P</replacementvalue>
+  </replacementdef>
+
+  <item>
+    <name>Launcher mode v2 trigger key is changed to the p key.</name>
+    <appendix>This setting is enabled automatically.</appendix>
+  </item>
+
+</root>
