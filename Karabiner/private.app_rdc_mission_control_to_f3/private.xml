@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Change Mission Control to F3 in RDC</name>
+    <identifier>private.app_rdc_mission_control_to_f3</identifier>
+
+    <only>REMOTEDESKTOPCONNECTION</only>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::MISSION_CONTROL, KeyCode::F3,
+    </autogen>
+  </item>
+
+</root>
