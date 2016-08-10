@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Disable command+f1 in external keyboard</name>
+    <identifier>private.disable_command_f1_in_external_keyboard</identifier>
+
+    <autogen>
+      __KeyToKey__
+      KeyCode::BRIGHTNESS_DOWN, ModifierFlag::COMMAND_L,
+      KeyCode::VK_NONE,
+    </autogen>
+  </item>
+
+</root>
