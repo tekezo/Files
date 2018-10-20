@@ -1,4 +1,5 @@
 #include <Carbon/Carbon.h>
+@import Cocoa;
 
 CGEventRef callback(CGEventTapProxy proxy,
                     CGEventType type,
@@ -9,9 +10,12 @@ CGEventRef callback(CGEventTapProxy proxy,
 }
 
 int main(void) {
+  [NSApplication sharedApplication];
+  [NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
+
   CGEventMask eventMask = CGEventMaskBit(kCGEventFlagsChanged);
 
-  CFMachPortRef eventTap = CGEventTapCreate(kCGHIDEventTap,
+  CFMachPortRef eventTap = CGEventTapCreate(kCGAnnotatedSessionEventTap,
                                             kCGTailAppendEventTap,
                                             kCGEventTapOptionListenOnly,
                                             eventMask,
@@ -33,7 +37,8 @@ int main(void) {
 
   CGEventTapEnable(eventTap, true);
 
-  CFRunLoopRun();
+  [NSApp run];
+  //  CFRunLoopRun();
 
   return 0;
 }

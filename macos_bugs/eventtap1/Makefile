@@ -1,5 +1,8 @@
 all:
-	cc main.c -framework Carbon
+	mkdir -p build_xcode \
+		&& cd build_xcode \
+		&& cmake -G Xcode .. \
+		&& xcodebuild -configuration Release SYMROOT="$(CURDIR)/build_xcode/build"
 
 run:
-	./a.out
+	./build_xcode/build/Release/EventTapTest.app/Contents/MacOS/EventTapTest
