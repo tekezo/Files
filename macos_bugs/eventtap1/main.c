@@ -9,9 +9,7 @@ CGEventRef callback(CGEventTapProxy proxy,
 }
 
 int main(void) {
-  CGEventMask eventMask = CGEventMaskBit(kCGEventLeftMouseDown) |
-                          CGEventMaskBit(kCGEventLeftMouseUp) |
-                          CGEventMaskBit(kCGEventMouseMoved);
+  CGEventMask eventMask = CGEventMaskBit(kCGEventFlagsChanged);
 
   CFMachPortRef eventTap = CGEventTapCreate(kCGHIDEventTap,
                                             kCGTailAppendEventTap,
