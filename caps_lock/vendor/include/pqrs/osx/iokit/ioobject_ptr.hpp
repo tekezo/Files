@@ -1,0 +1,1 @@
+../../../../cget/pkg/pqrs-org__cpp-osx-iokit-ioobject_ptr/install/include/pqrs/osx/iokit/ioobject_ptr.hpp
