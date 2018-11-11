@@ -1,1 +1,0 @@
-../../../../../cget/pkg/pqrs-org__cpp-osx-iokit-types/install/include/pqrs/osx/iokit/types/registry_entry_id.hpp
