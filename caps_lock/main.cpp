@@ -16,26 +16,30 @@ int main(int argc, const char* argv[]) {
     service_monitor = std::make_unique<pqrs::osx::iokit_service_monitor>(pqrs::dispatcher::extra::get_shared_dispatcher(),
                                                                          matching_dictionary);
 
-    service_monitor->service_detected.connect([](auto&& registry_entry_id, auto&& service) {
+    service_monitor->service_detected.connect([](auto&& registry_entry_id, auto&& service_ptr) {
       std::cout << "service_detected " << registry_entry_id << std::endl;
 
       int32_t value = 2109;
       if (auto number = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &value)) {
-        pqrs::osx::iokit_return r = IORegistryEntrySetCFProperty(*service, CFSTR("CapsLockDelay"), number);
+        pqrs::osx::iokit_return r = IORegistryEntrySetCFProperty(*service_ptr, CFSTR("CapsLockDelay"), number);
         std::cout << "CapsLockDelay " << r << " " << std::endl;
         CFRelease(number);
       }
 
       value = 4321;
       if (auto number = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt32Type, &value)) {
-        pqrs::osx::iokit_return r = IORegistryEntrySetCFProperty(*service, CFSTR("CapsLockDelayOverride"), number);
+        pqrs::osx::iokit_return r = IORegistryEntrySetCFProperty(*service_ptr, CFSTR("CapsLockDelayOverride"), number);
         std::cout << "CapsLockDelayOverride " << r << " " << std::endl;
         CFRelease(number);
       }
+
+      std::cout << std::endl;
     });
 
     service_monitor->service_removed.connect([](auto&& registry_entry_id) {
       std::cout << "service_removed " << registry_entry_id << std::endl;
+
+      std::cout << std::endl;
     });
 
     service_monitor->async_start();
