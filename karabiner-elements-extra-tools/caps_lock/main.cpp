@@ -1,8 +1,16 @@
-#include <pqrs/dispatcher.hpp>
+#include <csignal>
 #include <pqrs/osx/iokit_service_monitor.hpp>
+
+namespace {
+auto global_wait = pqrs::make_thread_wait();
+}
 
 int main(int argc, const char* argv[]) {
   pqrs::dispatcher::extra::initialize_shared_dispatcher();
+
+  std::signal(SIGINT, [](int) {
+    global_wait->notify();
+  });
 
   std::unique_ptr<pqrs::osx::iokit_service_monitor> service_monitor;
 
@@ -49,13 +57,15 @@ int main(int argc, const char* argv[]) {
 
   // ------------------------------------------------------------
 
-  CFRunLoopRun();
+  global_wait->wait_notice();
 
   // ------------------------------------------------------------
 
   service_monitor = nullptr;
 
   pqrs::dispatcher::extra::terminate_shared_dispatcher();
+
+  std::cout << "finished" << std::endl;
 
   return 0;
 }
