@@ -1,10 +1,2 @@
-foonathan/type_safe@v0.2 --cmake header
-fr00b0/nod@v0.5.0 --cmake header
-pqrs-org/cpp-cf_ptr@v1.3.0 --cmake header
-pqrs-org/cpp-cf_run_loop_thread@v1.3.0 --cmake header
-pqrs-org/cpp-dispatcher@v2.1.0 --cmake header
-pqrs-org/cpp-osx-iokit_object_ptr@v2.1.0 --cmake header
-pqrs-org/cpp-osx-iokit_return@v1.1.0 --cmake header
-pqrs-org/cpp-osx-iokit_service_monitor@v2.1.0 --cmake header
-pqrs-org/cpp-osx-iokit_types@v2.0.0 --cmake header
-pqrs-org/cpp-thread_wait@v1.2.0 --cmake header
+pqrs-org/cpp-cf_number
+pqrs-org/cpp-osx-iokit_hid_manager
