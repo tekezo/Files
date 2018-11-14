@@ -12,7 +12,7 @@ static void device_matching_callback(void* _Nullable context,
                                      IOReturn result,
                                      void* _Nullable sender,
                                      IOHIDDeviceRef _Nonnull device) {
-  std::cout << "d" << std::flush;
+  std::cout << "m" << std::flush;
 }
 } // namespace
 
