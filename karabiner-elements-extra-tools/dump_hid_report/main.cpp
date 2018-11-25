@@ -5,7 +5,7 @@
 #include <unordered_map>
 
 namespace {
-class hid_report_handler final : pqrs::dispatcher::extra::dispatcher_client {
+class hid_report_handler final : public pqrs::dispatcher::extra::dispatcher_client {
 public:
   // Signals (invoked from the shared dispatcher thread)
 
