@@ -30,7 +30,7 @@ public:
     // Resize report_buffer_
 
     size_t buffer_size = 32; // use this provisional value if we cannot get max input report size from device.
-    if (auto size = hid_device_->find_number_property(CFSTR(kIOHIDMaxInputReportSizeKey))) {
+    if (auto size = hid_device_->find_max_input_report_size()) {
       buffer_size = static_cast<size_t>(*size);
     }
 
@@ -168,7 +168,7 @@ public:
     hid_manager_ = std::make_unique<pqrs::osx::iokit_hid_manager>(pqrs::dispatcher::extra::get_shared_dispatcher(),
                                                                   matching_dictionaries);
 
-    hid_manager_->device_detected.connect([this](auto&& registry_entry_id, auto&& device_ptr) {
+    hid_manager_->device_matched.connect([this](auto&& registry_entry_id, auto&& device_ptr) {
       if (device_ptr) {
         auto handler = std::make_shared<hid_report_handler>(*device_ptr);
         hid_report_handlers_[registry_entry_id] = handler;
@@ -186,7 +186,7 @@ public:
       }
     });
 
-    hid_manager_->device_removed.connect([this](auto&& registry_entry_id) {
+    hid_manager_->device_terminated.connect([this](auto&& registry_entry_id) {
       hid_report_handlers_.erase(registry_entry_id);
     });
 
