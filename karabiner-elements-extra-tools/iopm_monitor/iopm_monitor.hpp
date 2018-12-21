@@ -18,7 +18,7 @@ public:
                        notification_port_(nullptr),
                        notifier_(IO_OBJECT_NULL),
                        connect_(IO_OBJECT_NULL) {
-    cf_run_loop_thread_ = std::make_unique<pqrs::cf_run_loop_thread>();
+    cf_run_loop_thread_ = std::make_unique<pqrs::cf::run_loop_thread>();
   }
 
   virtual ~iopm_monitor(void) {
@@ -114,7 +114,7 @@ private:
     });
   }
 
-  std::unique_ptr<pqrs::cf_run_loop_thread> cf_run_loop_thread_;
+  std::unique_ptr<pqrs::cf::run_loop_thread> cf_run_loop_thread_;
   IONotificationPortRef notification_port_;
   io_object_t notifier_;
   io_connect_t connect_;

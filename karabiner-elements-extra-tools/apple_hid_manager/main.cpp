@@ -3,8 +3,8 @@
 #include <IOKit/hid/IOHIDLib.h>
 #include <IOKit/hid/IOHIDManager.h>
 #include <iostream>
-#include <pqrs/cf_number.hpp>
-#include <pqrs/cf_run_loop_thread.hpp>
+#include <pqrs/cf/number.hpp>
+#include <pqrs/cf/run_loop_thread.hpp>
 #include <pqrs/osx/iokit_return.hpp>
 
 namespace {
@@ -17,7 +17,7 @@ static void device_matching_callback(void* _Nullable context,
 } // namespace
 
 int main(int argc, const char* argv[]) {
-  auto cf_run_loop_thread = std::make_unique<pqrs::cf_run_loop_thread>();
+  auto cf_run_loop_thread = std::make_unique<pqrs::cf::run_loop_thread>();
 
   for (int i = 0; i < 10000; ++i) {
     std::cout << "." << std::flush;
@@ -26,12 +26,12 @@ int main(int argc, const char* argv[]) {
 
     if (auto matching_dictionaries = CFArrayCreateMutable(kCFAllocatorDefault, 0, &kCFTypeArrayCallBacks)) {
       if (auto matching_dictionary = IOServiceMatching(kIOHIDDeviceKey)) {
-        if (auto number = pqrs::make_cf_number(static_cast<int32_t>(kHIDPage_GenericDesktop))) {
+        if (auto number = pqrs::cf::make_cf_number(static_cast<int32_t>(kHIDPage_GenericDesktop))) {
           CFDictionarySetValue(matching_dictionary,
                                CFSTR(kIOHIDDeviceUsagePageKey),
                                *number);
         }
-        if (auto number = pqrs::make_cf_number(static_cast<int32_t>(kHIDUsage_GD_Keyboard))) {
+        if (auto number = pqrs::cf::make_cf_number(static_cast<int32_t>(kHIDUsage_GD_Keyboard))) {
           CFDictionarySetValue(matching_dictionary,
                                CFSTR(kIOHIDDeviceUsageKey),
                                *number);

@@ -1,5 +1,5 @@
 #include <csignal>
-#include <pqrs/cf_run_loop_thread.hpp>
+#include <pqrs/cf/run_loop_thread.hpp>
 #include <pqrs/osx/iokit_hid_device.hpp>
 #include <pqrs/osx/iokit_hid_manager.hpp>
 #include <unordered_map>
@@ -16,7 +16,7 @@ public:
   hid_report_handler(IOHIDDeviceRef device) : dispatcher_client(),
                                               opened_(false),
                                               scheduled_(false) {
-    cf_run_loop_thread_ = std::make_unique<pqrs::cf_run_loop_thread>();
+    cf_run_loop_thread_ = std::make_unique<pqrs::cf::run_loop_thread>();
 
     hid_device_ = std::make_shared<pqrs::osx::iokit_hid_device>(device);
 
@@ -135,7 +135,7 @@ private:
     });
   }
 
-  std::unique_ptr<pqrs::cf_run_loop_thread> cf_run_loop_thread_;
+  std::unique_ptr<pqrs::cf::run_loop_thread> cf_run_loop_thread_;
   std::shared_ptr<pqrs::osx::iokit_hid_device> hid_device_;
   std::vector<uint8_t> report_buffer_;
   bool opened_;
@@ -148,7 +148,7 @@ public:
   dump_hid_report(const dump_hid_report&) = delete;
 
   dump_hid_report(void) : dispatcher_client() {
-    std::vector<pqrs::cf_ptr<CFDictionaryRef>> matching_dictionaries{
+    std::vector<pqrs::cf::cf_ptr<CFDictionaryRef>> matching_dictionaries{
         pqrs::osx::iokit_hid_manager::make_matching_dictionary(
             pqrs::osx::iokit_hid_usage_page_generic_desktop,
             pqrs::osx::iokit_hid_usage_generic_desktop_keyboard),
