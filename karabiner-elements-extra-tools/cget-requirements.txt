@@ -1,3 +1,3 @@
-pqrs-org/cpp-cf_number
+pqrs-org/cpp-cf-number
 pqrs-org/cpp-osx-iokit_hid_device
 pqrs-org/cpp-osx-iokit_hid_manager
