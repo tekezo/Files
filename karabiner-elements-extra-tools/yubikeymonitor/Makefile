@@ -8,8 +8,4 @@ clean:
 	rm -rf build
 
 run:
-	./build/example
-
-update_vendor:
-	rm -rf vendor
-	cget install -f cget-requirements.txt --prefix vendor
+	./build/yubikeymonitor
