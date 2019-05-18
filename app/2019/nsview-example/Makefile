@@ -8,4 +8,4 @@ clean:
 	rm -rf build_xcode
 
 run:
-	open build_xcode/build/Release/nsevent-example.app
+	open build_xcode/build/Release/nsview-example.app

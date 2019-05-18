@@ -1,9 +1,9 @@
 cmake_minimum_required (VERSION 3.9)
-project(nsevent-example)
+project(nsview-example)
 enable_language(Swift)
 
 add_executable(
-  nsevent-example
+  nsview-example
   MACOSX_BUNDLE
   src/AppDelegate.swift
   src/ExampleView.swift
@@ -21,14 +21,14 @@ set_source_files_properties(
 )
 
 set_target_properties(
-  nsevent-example
+  nsview-example
   PROPERTIES
   MACOSX_BUNDLE_INFO_PLIST
   ${CMAKE_CURRENT_LIST_DIR}/Resources/Info.plist
 )
 
 set_target_properties(
-  nsevent-example
+  nsview-example
   PROPERTIES
   XCODE_ATTRIBUTE_LD_RUNPATH_SEARCH_PATHS
   "@loader_path @loader_path/../Frameworks"
