@@ -56,7 +56,7 @@
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="YwP-ZS-m81"/>
                         </constraints>
                         <textFieldCell key="cell" selectable="YES" refusesFirstResponder="YES" title="---" id="qR9-do-ly3">
-                            <font key="font" usesAppearanceFont="YES"/>
+                            <font key="font" size="13" name="Menlo-Regular"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>

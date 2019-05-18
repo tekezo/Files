@@ -3,6 +3,7 @@ import Cocoa
 class ExampleView: NSView {
   @IBOutlet private var text: NSTextField!
   private var eventStrings: [String] = []
+  private var counter: UInt64 = 0
 
   override var acceptsFirstResponder: Bool { return true }
 
@@ -19,8 +20,10 @@ class ExampleView: NSView {
   }
 
   private func updateEventStrings(_ string: String) {
-    eventStrings.append(string)
-    while eventStrings.count > 8 {
+    counter += 1
+    eventStrings.append(String(format: "%06d    %@", counter, string))
+
+    while eventStrings.count > 16 {
       eventStrings.remove(at: 0)
     }
 
