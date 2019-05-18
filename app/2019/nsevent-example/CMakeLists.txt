@@ -6,6 +6,7 @@ add_executable(
   nsevent-example
   MACOSX_BUNDLE
   src/AppDelegate.swift
+  src/ExampleView.swift
   Resources/MainMenu.xib
   Resources/Assets.xcassets
   nsevent_example.entitlements
