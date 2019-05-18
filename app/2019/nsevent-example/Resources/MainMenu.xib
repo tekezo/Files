@@ -43,10 +43,10 @@
         <window title="NSEvent-example" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="240"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
-            <view key="contentView" wantsLayer="YES" misplaced="YES" id="EiT-Mj-1SZ" customClass="ExampleView" customModule="nsevent_example" customModuleProvider="target">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ" customClass="ExampleView" customModule="nsevent_example" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jMb-oT-Qq1">
@@ -55,7 +55,7 @@
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="8he-GK-def"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="YwP-ZS-m81"/>
                         </constraints>
-                        <textFieldCell key="cell" selectable="YES" title="---" id="qR9-do-ly3">
+                        <textFieldCell key="cell" selectable="YES" refusesFirstResponder="YES" title="---" id="qR9-do-ly3">
                             <font key="font" usesAppearanceFont="YES"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -73,6 +73,7 @@
                     <outlet property="text" destination="jMb-oT-Qq1" id="ZBo-mr-UUU"/>
                 </connections>
             </view>
+            <point key="canvasLocation" x="132" y="200"/>
         </window>
     </objects>
 </document>
