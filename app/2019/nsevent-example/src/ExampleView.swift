@@ -4,6 +4,8 @@ class ExampleView: NSView {
   @IBOutlet private var text: NSTextField!
   private var eventStrings: [String] = []
 
+  override var acceptsFirstResponder: Bool { return true }
+
   override func keyDown(with event: NSEvent) {
     updateEventStrings(String(format: "keyDown %d", event.keyCode))
   }
