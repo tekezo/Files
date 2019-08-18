@@ -1,3 +1,8 @@
+// How to build and run this program.
+//
+// $ c++ -std=c++17 main.cpp -framework SystemConfiguration -framework CoreFoundation
+// $ ./a.out
+
 #include <SystemConfiguration/SystemConfiguration.h>
 #include <iostream>
 
