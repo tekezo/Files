@@ -1,5 +1,3 @@
 #!/bin/sh
 
-for v in $(find /Volumes/macos_* -type d -maxdepth 1); do
-  diskutil unmount "$v"
-done
+find /Volumes/macos_* -type d -maxdepth 0 -print 0 | xargs -0 diskutil unmount
