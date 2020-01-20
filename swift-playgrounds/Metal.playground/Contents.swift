@@ -41,7 +41,7 @@ public class MetalView: NSObject, MTKViewDelegate {
     let device: MTLDevice!
     let cps: MTLComputePipelineState!
     private var startDate: Date = Date()
-    
+
     public init?(mtkView: MTKView) {
         view = mtkView
         view.clearColor = MTLClearColorMake(0.5, 0.5, 0.5, 1)
@@ -49,23 +49,23 @@ public class MetalView: NSObject, MTKViewDelegate {
         device = MTLCreateSystemDefaultDevice()!
         commandQueue = device.makeCommandQueue()
         let library = try! device.makeLibrary(source: source, options: nil)
-        let function = library.makeFunction(name:"focusedWindowChangedEffect")!
+        let function = library.makeFunction(name: "focusedWindowChangedEffect")!
         cps = try! device.makeComputePipelineState(function: function)
-        
+
         super.init()
         view.delegate = self
         view.device = device
     }
-    
-    public func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {}
-    
+
+    public func mtkView(_: MTKView, drawableSizeWillChange _: CGSize) {}
+
     public func draw(in view: MTKView) {
         var time = Float(Date().timeIntervalSince(startDate))
-        
-        if (time > 1) {
+
+        if time > 1.0 {
             startDate = Date()
         }
-        
+
         var color = vector_float3(0.3, 0.2, 1.0) // rgba
 
         if let drawable = view.currentDrawable,
@@ -78,13 +78,13 @@ public class MetalView: NSObject, MTKViewDelegate {
             commandEncoder.setBytes(&color, length: MemoryLayout<Float>.size * 3, index: 1)
 
             let w = cps.threadExecutionWidth
-            let h = cps.maxTotalThreadsPerThreadgroup / w;
+            let h = cps.maxTotalThreadsPerThreadgroup / w
             let threadsPerThreadgroup = MTLSize(width: w, height: h, depth: 1)
-            let threadsPerGrid = MTLSize(width: Int(view.frame.width) * 2,
-                                         height: Int(view.frame.height) * 2,
-                                         depth: 1);
+            let threadsPerGrid = MTLSize(width: drawable.texture.width,
+                                         height: drawable.texture.height,
+                                         depth: 1)
             commandEncoder.dispatchThreads(threadsPerGrid,
-                                           threadsPerThreadgroup:threadsPerThreadgroup)
+                                           threadsPerThreadgroup: threadsPerThreadgroup)
             commandEncoder.endEncoding()
             commandBuffer.present(drawable)
             commandBuffer.commit()
@@ -97,4 +97,3 @@ let view = MTKView(frame: frame)
 let delegate = MetalView(mtkView: view)
 view.delegate = delegate
 PlaygroundPage.current.liveView = view
-
