@@ -20,12 +20,12 @@ kernel void focusedWindowChangedEffect(texture2d<float, access::write> o[[textur
     float width = o.get_width();
     float height = o.get_height();
 
-    float2 uv, p = float2(gid) / float2(width, height);
+    float2 p = float2(gid) / float2(width, height);
     p -= 0.5;
-    p.x *= max(width / height, 1.0);
-    p.y *= max(height / width, 1.0);
+    p.x *= min(width / height, 1.0);
+    p.y *= min(height / width, 1.0);
 
-    float r = time * 2.0 + 0.5;
+    float r = time * 0.5 + 0.8;
     float ir = clamp(-1.0 * time + 1.0, 0.4, 1.0);
 
     float3 c = circle(p, r, 0.04, color);
@@ -92,7 +92,7 @@ public class MetalView: NSObject, MTKViewDelegate {
     }
 }
 
-let frame = CGRect(x: 0, y: 0, width: 400, height: 600)
+let frame = CGRect(x: 0, y: 0, width: 800, height: 600)
 let view = MTKView(frame: frame)
 let delegate = MetalView(mtkView: view)
 view.delegate = delegate
