@@ -31,11 +31,13 @@ kernel void focusedWindowChangedEffect(texture2d<float, access::write> o[[textur
     float3 c = circle(p, r, 0.04, color);
     c -= circle(p, r, ir, color);
 
-    o.write(float4(c, 1.0), gid);
+    float alpha = max(max(c[0], c[1]), c[2]);
+
+    o.write(float4(c, alpha), gid);
 }
 """
 
-public class MetalView: NSObject, MTKViewDelegate {
+public class MetalViewRenderer: NSObject, MTKViewDelegate {
     weak var view: MTKView!
     let commandQueue: MTLCommandQueue!
     let device: MTLDevice!
@@ -98,7 +100,7 @@ public class MetalView: NSObject, MTKViewDelegate {
     }
 }
 
-struct RepresentedMetalView: NSViewRepresentable {
+struct RepresentedMTKView: NSViewRepresentable {
     let view : MTKView;
     
     func makeNSView(context: Context) -> MTKView {
@@ -110,7 +112,8 @@ struct RepresentedMetalView: NSViewRepresentable {
 }
 
 let view = MTKView()
-let delegate = MetalView(mtkView: view)
+view.layer?.isOpaque = false
+let delegate = MetalViewRenderer(mtkView: view)
 view.delegate = delegate
 //PlaygroundPage.current.liveView = view
 
@@ -118,15 +121,11 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("SwiftUI + Metal")
-            RepresentedMetalView(view: view).frame(
+            
+            RepresentedMTKView(view: view).frame(
                 minWidth: 200,
                 minHeight: 200
             )
-            Button(action:{
-                delegate?.restart()
-            }) {
-                Text("Restart")
-            }
             
             HStack {
                 Button(action:{
@@ -144,6 +143,12 @@ struct ContentView: View {
                 }) {
                     Text("Blue")
                 }
+            }
+            
+            Button(action:{
+                delegate?.restart()
+            }) {
+                Text("Restart")
             }
         }
     }
