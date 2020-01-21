@@ -41,11 +41,9 @@ public class MetalView: NSObject, MTKViewDelegate {
     let device: MTLDevice!
     let cps: MTLComputePipelineState!
     private var startDate: Date = Date()
-
+    private var color: vector_float3 = vector_float3(0.3, 0.2, 1.0) // rgb
     public init?(mtkView: MTKView) {
         view = mtkView
-        view.clearColor = MTLClearColorMake(0.5, 0.5, 0.5, 1)
-        view.colorPixelFormat = .bgra8Unorm
         device = MTLCreateSystemDefaultDevice()!
         commandQueue = device.makeCommandQueue()
         let library = try! device.makeLibrary(source: source, options: nil)
@@ -65,8 +63,6 @@ public class MetalView: NSObject, MTKViewDelegate {
         if time > 1.0 {
             view.isPaused = true
         }
-
-        var color = vector_float3(0.3, 0.2, 1.0) // rgba
 
         if let drawable = view.currentDrawable,
             let commandBuffer = commandQueue.makeCommandBuffer(),
@@ -94,6 +90,11 @@ public class MetalView: NSObject, MTKViewDelegate {
     func restart() {
         startDate = Date()
         view.isPaused = false
+    }
+    
+    func setColor(_ c: vector_float3) {
+        color = c
+        restart()
     }
 }
 
@@ -125,6 +126,24 @@ struct ContentView: View {
                 delegate?.restart()
             }) {
                 Text("Restart")
+            }
+            
+            HStack {
+                Button(action:{
+                    delegate?.setColor(vector_float3(1.0, 0.3, 0.2))
+                }) {
+                    Text("Red")
+                }
+                Button(action:{
+                    delegate?.setColor(vector_float3(0.2, 1.0, 0.3))
+                }) {
+                    Text("Green")
+                }
+                Button(action:{
+                    delegate?.setColor(vector_float3(0.3, 0.2, 1.0))
+                }) {
+                    Text("Blue")
+                }
             }
         }
     }
