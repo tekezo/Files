@@ -63,7 +63,7 @@ public class MetalView: NSObject, MTKViewDelegate {
         var time = Float(Date().timeIntervalSince(startDate))
 
         if time > 1.0 {
-            startDate = Date()
+            view.isPaused = true
         }
 
         var color = vector_float3(0.3, 0.2, 1.0) // rgba
@@ -90,10 +90,43 @@ public class MetalView: NSObject, MTKViewDelegate {
             commandBuffer.commit()
         }
     }
+    
+    func restart() {
+        startDate = Date()
+        view.isPaused = false
+    }
 }
 
-let frame = CGRect(x: 0, y: 0, width: 800, height: 600)
-let view = MTKView(frame: frame)
+struct RepresentedMetalView: NSViewRepresentable {
+    let view : MTKView;
+    
+    func makeNSView(context: Context) -> MTKView {
+        return view
+    }
+    
+    func updateNSView(_ view: MTKView, context: Context) {
+    }
+}
+
+let view = MTKView()
 let delegate = MetalView(mtkView: view)
 view.delegate = delegate
-PlaygroundPage.current.liveView = view
+//PlaygroundPage.current.liveView = view
+
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Text("SwiftUI + Metal")
+            RepresentedMetalView(view: view).frame(
+                minWidth: 200,
+                minHeight: 200
+            )
+            Button(action:{
+                delegate?.restart()
+            }) {
+                Text("Restart")
+            }
+        }
+    }
+}
+PlaygroundPage.current.setLiveView(ContentView())
