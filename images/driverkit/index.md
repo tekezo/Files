@@ -4,6 +4,8 @@
 
 ![dev](dev.png)
 
+---
+
 ## Type: Developer ID Application
 
 ![prod](prod.png)
